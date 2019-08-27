@@ -12,6 +12,7 @@ $(document).ready( function() {
 	// * ------------------------------------------------------------
 	// * 메인페이지 레이어 에니메이션 슬라이드(Animate.css + Slick.js)
 	// * 슬라이더 셋팅 http://kenwheeler.github.io/slick/
+	
 	$('.visual-slide').slick({
 	   autoplay: true,
 	   autoplaySpeed: 2000,
@@ -19,7 +20,7 @@ $(document).ready( function() {
 	   arrows: true,
 	   fade: false
 	});
-
+	
 	$('.slider-banner').slick({
 		autoplay: true,
 		autoplaySpeed: 2000,

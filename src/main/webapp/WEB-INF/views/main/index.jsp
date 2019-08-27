@@ -483,18 +483,7 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	console.log("asd");
-	// * 메인페이지 Header 스크롤 고정 스크립트
-	 $( window ).scroll(function() {
-		 var defaultPosition = $('#video-visual').offset().top + $('#video-visual').outerHeight();
-		 console.log(defaultPosition);
-		 if($(window).scrollTop() > defaultPosition){
-			 $( "#header" ).addClass("fixed-on");
-		 } else {
-			 $( "#header" ).removeClass("fixed-on");
-		 }
-		 
-	 });
+
 });
 </script>
 </head>
@@ -547,516 +536,347 @@ $(function(){
 	</section>
 	<!-- 메인페이지 비주얼 영상 끝 -->
 	<div id="wrap">
-	<!-- 해더 시작  -->
-	<header id="header" class="" style="left: 0px;">
-		<div class="gnb-bg" style="display: none;"></div>
-		<div class="logo">
-			<a href="/"><img src="${pageContext.request.contextPath}/resources/img/common/logo.png" alt=""></a>
-		</div>
-		<div id="gnb">
-			<div class="inner">
-				<ul><li class="gnb ">
-					<a href="/499/?pCode=499" data-text="다니엘 소개"><span>다니엘 소개</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/499/?pCode=499" data-text="다니엘의 특별함"><span>다니엘의 특별함</span></a>
-						</li><li class="lnb ">
-								<a href="/500/?pCode=500" data-text="의료진 소개"><span>의료진 소개</span></a>
-						</li><li class="lnb ">
-								<a href="/501/?pCode=501" data-text="진료시간/오시는길"><span>진료시간/오시는길</span></a>
-						</li><li class="lnb ">
-								<a href="/533/?pCode=533" data-text="보유장비"><span>보유장비</span></a>
-						</li><li class="lnb ">
-								<a href="/707/?pCode=707" data-text="선한이웃, 다니엘"><span>선한이웃, 다니엘</span></a>
-						</li></ul></li><li class="gnb ">
-					<a href="/521/?pCode=521" data-text="프리미엄 쁘띠클리닉"><span>프리미엄 쁘띠클리닉</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/521/?pCode=521" data-text="보톡스/필러"><span>보톡스/필러</span></a>
-						</li><li class="lnb ">
-								<a href="/522/?pCode=522" data-text="안면윤곽주사"><span>안면윤곽주사</span></a>
-						</li><li class="lnb ">
-								<a href="/523/?pCode=523" data-text="멀티파워주사"><span>멀티파워주사</span></a>
-						</li><li class="lnb ">
-								<a href="/565/?pCode=565" data-text="가격안내"><span>가격안내</span></a>
-						</li><li class="lnb ">
-								<a href="/683/?pCode=683" data-text="예약하기"><span>예약하기</span></a>
-						</li></ul></li><li class="gnb ">
-					<a href="/510/?pCode=510" data-text="레이저 클리닉"><span>레이저 클리닉</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/510/?pCode=510" data-text="다니엘 복합레이저"><span>다니엘 복합레이저</span></a>
-						</li><li class="lnb ">
-								<a href="/511/?pCode=511" data-text="난치성색소"><span>난치성색소</span></a>
-						</li><li class="lnb ">
-								<a href="/512/?pCode=512" data-text="여드름"><span>여드름</span></a>
-						</li><li class="lnb ">
-								<a href="/513/?pCode=513" data-text="안면홍조"><span>안면홍조</span></a>
-						</li><li class="lnb ">
-								<a href="/514/?pCode=514" data-text="모공/흉터"><span>모공/흉터</span></a>
-						</li><li class="lnb ">
-								<a href="/685/?pCode=685" data-text="프리미엄토닝"><span>프리미엄토닝</span></a>
-						</li><li class="lnb ">
-								<a href="/691/?pCode=691" data-text="웨딩패키지"><span>웨딩패키지</span></a>
-						</li></ul></li><li class="gnb ">
-					<a href="/517/?pCode=517" data-text="눈/코 성형"><span>눈/코 성형</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/517/?pCode=517" data-text="멜로디 눈성형"><span>멜로디 눈성형</span></a>
-						</li><li class="lnb ">
-								<a href="/518/?pCode=518" data-text="눈매교정"><span>눈매교정</span></a>
-						</li><li class="lnb ">
-								<a href="/519/?pCode=519" data-text="트임성형"><span>트임성형</span></a>
-						</li><li class="lnb ">
-								<a href="/520/?pCode=520" data-text="리듬 코성형"><span>리듬 코성형</span></a>
-						</li></ul></li><li class="gnb ">
-					<a href="/503/?pCode=503" data-text="동안/탄력 클리닉"><span>동안/탄력 클리닉</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/503/?pCode=503" data-text="리프팅 레이저"><span>리프팅 레이저</span></a>
-						</li><li class="lnb ">
-								<a href="/504/?pCode=504" data-text="안면거상술"><span>안면거상술</span></a>
-						</li><li class="lnb ">
-								<a href="/505/?pCode=505" data-text="이마내시경거상술"><span>이마내시경거상술</span></a>
-						</li><li class="lnb ">
-								<a href="/506/?pCode=506" data-text="실리프팅/스킨보톡스"><span>실리프팅/스킨보톡스</span></a>
-						</li><li class="lnb ">
-								<a href="/507/?pCode=507" data-text="광채 지방이식"><span>광채 지방이식</span></a>
-						</li><li class="lnb ">
-								<a href="/508/?pCode=508" data-text="상안검/하안검"><span>상안검/하안검</span></a>
-						</li><li class="lnb ">
-								<a href="/567/?pCode=567" data-text="슈링크 리프팅"><span>슈링크 리프팅</span></a>
-						</li><li class="lnb ">
-								<a href="/686/?pCode=686" data-text="필로가135주사"><span>필로가135주사</span></a>
-						</li><li class="lnb ">
-								<a href="/699/?pCode=699" data-text="코레지 리프팅"><span>코레지 리프팅</span></a>
-						</li><li class="lnb ">
-								<a href="/705/?pCode=705" data-text="써마지FLX"><span>써마지FLX</span></a>
-						</li></ul></li><li class="gnb ">
-					<a href="/509/?pCode=509" data-text="흉터 클리닉"><span>흉터 클리닉</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/509/?pCode=509" data-text="흉터 클리닉"><span>흉터 클리닉</span></a>
-						</li></ul></li><li class="gnb ">
-					<a href="/525/?pCode=525" data-text="체형 클리닉"><span>체형 클리닉</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/525/?pCode=525" data-text="하모니 지방흡입"><span>하모니 지방흡입</span></a>
-						</li><li class="lnb ">
-								<a href="/526/?pCode=526" data-text="아큐주사"><span>아큐주사</span></a>
-						</li><li class="lnb ">
-								<a href="/568/?pCode=568" data-text="리포리바인"><span>리포리바인</span></a>
-						</li><li class="lnb ">
-								<a href="/569/?pCode=569" data-text="팻다운 주사"><span>팻다운 주사</span></a>
-						</li><li class="lnb ">
-								<a href="/570/?pCode=570" data-text="바디슈링크"><span>바디슈링크</span></a>
-						</li></ul></li><li class="gnb ">
-					<a href="/515/?pCode=515" data-text="메디컬스킨케어"><span>메디컬스킨케어</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/515/?pCode=515" data-text="메디컬스킨케어"><span>메디컬스킨케어</span></a>
-						</li><li class="lnb ">
-								<a href="/516/?pCode=516" data-text="두피탈모"><span>두피탈모</span></a>
-						</li></ul></li><li class="gnb ">
-					<a href="/527/?pCode=527" data-text="커뮤니티"><span>커뮤니티</span></a>
-						<ul class="lnb-wrap"><li class="lnb ">
-								<a href="/527/?pCode=527" data-text="공지사항"><span>공지사항</span></a>
-						</li><li class="lnb ">
-								<a href="/528/?pCode=528" data-text="온라인 상담"><span>온라인 상담</span></a>
-						</li><li class="lnb ">
-								<a href="/529/?pCode=529" data-text="시술 전후 사진"><span>시술 전후 사진</span></a>
-						</li><li class="lnb ">
-								<a href="/530/?pCode=530" data-text="리얼스토리"><span>리얼스토리</span></a>
-						</li><li class="lnb ">
-								<a href="/696/?pCode=696" data-text="자필후기"><span>자필후기</span></a>
-						</li><li class="lnb ">
-								<a href="/563/?pCode=563" data-text="이벤트"><span>이벤트</span></a>
-						</li><li class="lnb ">
-								<a href="/590/?pCode=590" data-text="예약하기"><span>예약하기</span></a>
-						</li><li class="lnb ">
-								<a href="/591/?pCode=591" data-text="시술&amp;수술주의사항"><span>시술&amp;수술주의사항</span></a>
-						</li></ul></li></ul>		</div>
-		</div>
-		<div class="gnb-login">
-						<a href="/login" class="login">로그인 ▶</a>
+		<!-- 해더 시작  -->
+		<header id="header" class="" style="left: 0px;">
+			<div class="gnb-bg" style="display: none;"></div>
+			<div class="logo">
+				<a href="/"><img src="${pageContext.request.contextPath}/resources/img/common/logo.png" alt=""></a>
+			</div>
+			<div id="gnb">
+				<div class="inner">
+					<ul><li class="gnb ">
+						<a href="/499/?pCode=499" data-text="다니엘 소개"><span>다니엘 소개</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/499/?pCode=499" data-text="다니엘의 특별함"><span>다니엘의 특별함</span></a>
+							</li><li class="lnb ">
+									<a href="/500/?pCode=500" data-text="의료진 소개"><span>의료진 소개</span></a>
+							</li><li class="lnb ">
+									<a href="/501/?pCode=501" data-text="진료시간/오시는길"><span>진료시간/오시는길</span></a>
+							</li><li class="lnb ">
+									<a href="/533/?pCode=533" data-text="보유장비"><span>보유장비</span></a>
+							</li><li class="lnb ">
+									<a href="/707/?pCode=707" data-text="선한이웃, 다니엘"><span>선한이웃, 다니엘</span></a>
+							</li></ul></li><li class="gnb ">
+						<a href="/521/?pCode=521" data-text="프리미엄 쁘띠클리닉"><span>프리미엄 쁘띠클리닉</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/521/?pCode=521" data-text="보톡스/필러"><span>보톡스/필러</span></a>
+							</li><li class="lnb ">
+									<a href="/522/?pCode=522" data-text="안면윤곽주사"><span>안면윤곽주사</span></a>
+							</li><li class="lnb ">
+									<a href="/523/?pCode=523" data-text="멀티파워주사"><span>멀티파워주사</span></a>
+							</li><li class="lnb ">
+									<a href="/565/?pCode=565" data-text="가격안내"><span>가격안내</span></a>
+							</li><li class="lnb ">
+									<a href="/683/?pCode=683" data-text="예약하기"><span>예약하기</span></a>
+							</li></ul></li><li class="gnb ">
+						<a href="/510/?pCode=510" data-text="레이저 클리닉"><span>레이저 클리닉</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/510/?pCode=510" data-text="다니엘 복합레이저"><span>다니엘 복합레이저</span></a>
+							</li><li class="lnb ">
+									<a href="/511/?pCode=511" data-text="난치성색소"><span>난치성색소</span></a>
+							</li><li class="lnb ">
+									<a href="/512/?pCode=512" data-text="여드름"><span>여드름</span></a>
+							</li><li class="lnb ">
+									<a href="/513/?pCode=513" data-text="안면홍조"><span>안면홍조</span></a>
+							</li><li class="lnb ">
+									<a href="/514/?pCode=514" data-text="모공/흉터"><span>모공/흉터</span></a>
+							</li><li class="lnb ">
+									<a href="/685/?pCode=685" data-text="프리미엄토닝"><span>프리미엄토닝</span></a>
+							</li><li class="lnb ">
+									<a href="/691/?pCode=691" data-text="웨딩패키지"><span>웨딩패키지</span></a>
+							</li></ul></li><li class="gnb ">
+						<a href="/517/?pCode=517" data-text="눈/코 성형"><span>눈/코 성형</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/517/?pCode=517" data-text="멜로디 눈성형"><span>멜로디 눈성형</span></a>
+							</li><li class="lnb ">
+									<a href="/518/?pCode=518" data-text="눈매교정"><span>눈매교정</span></a>
+							</li><li class="lnb ">
+									<a href="/519/?pCode=519" data-text="트임성형"><span>트임성형</span></a>
+							</li><li class="lnb ">
+									<a href="/520/?pCode=520" data-text="리듬 코성형"><span>리듬 코성형</span></a>
+							</li></ul></li><li class="gnb ">
+						<a href="/503/?pCode=503" data-text="동안/탄력 클리닉"><span>동안/탄력 클리닉</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/503/?pCode=503" data-text="리프팅 레이저"><span>리프팅 레이저</span></a>
+							</li><li class="lnb ">
+									<a href="/504/?pCode=504" data-text="안면거상술"><span>안면거상술</span></a>
+							</li><li class="lnb ">
+									<a href="/505/?pCode=505" data-text="이마내시경거상술"><span>이마내시경거상술</span></a>
+							</li><li class="lnb ">
+									<a href="/506/?pCode=506" data-text="실리프팅/스킨보톡스"><span>실리프팅/스킨보톡스</span></a>
+							</li><li class="lnb ">
+									<a href="/507/?pCode=507" data-text="광채 지방이식"><span>광채 지방이식</span></a>
+							</li><li class="lnb ">
+									<a href="/508/?pCode=508" data-text="상안검/하안검"><span>상안검/하안검</span></a>
+							</li><li class="lnb ">
+									<a href="/567/?pCode=567" data-text="슈링크 리프팅"><span>슈링크 리프팅</span></a>
+							</li><li class="lnb ">
+									<a href="/686/?pCode=686" data-text="필로가135주사"><span>필로가135주사</span></a>
+							</li><li class="lnb ">
+									<a href="/699/?pCode=699" data-text="코레지 리프팅"><span>코레지 리프팅</span></a>
+							</li><li class="lnb ">
+									<a href="/705/?pCode=705" data-text="써마지FLX"><span>써마지FLX</span></a>
+							</li></ul></li><li class="gnb ">
+						<a href="/509/?pCode=509" data-text="흉터 클리닉"><span>흉터 클리닉</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/509/?pCode=509" data-text="흉터 클리닉"><span>흉터 클리닉</span></a>
+							</li></ul></li><li class="gnb ">
+						<a href="/525/?pCode=525" data-text="체형 클리닉"><span>체형 클리닉</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/525/?pCode=525" data-text="하모니 지방흡입"><span>하모니 지방흡입</span></a>
+							</li><li class="lnb ">
+									<a href="/526/?pCode=526" data-text="아큐주사"><span>아큐주사</span></a>
+							</li><li class="lnb ">
+									<a href="/568/?pCode=568" data-text="리포리바인"><span>리포리바인</span></a>
+							</li><li class="lnb ">
+									<a href="/569/?pCode=569" data-text="팻다운 주사"><span>팻다운 주사</span></a>
+							</li><li class="lnb ">
+									<a href="/570/?pCode=570" data-text="바디슈링크"><span>바디슈링크</span></a>
+							</li></ul></li><li class="gnb ">
+						<a href="/515/?pCode=515" data-text="메디컬스킨케어"><span>메디컬스킨케어</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/515/?pCode=515" data-text="메디컬스킨케어"><span>메디컬스킨케어</span></a>
+							</li><li class="lnb ">
+									<a href="/516/?pCode=516" data-text="두피탈모"><span>두피탈모</span></a>
+							</li></ul></li><li class="gnb ">
+						<a href="/527/?pCode=527" data-text="커뮤니티"><span>커뮤니티</span></a>
+							<ul class="lnb-wrap"><li class="lnb ">
+									<a href="/527/?pCode=527" data-text="공지사항"><span>공지사항</span></a>
+							</li><li class="lnb ">
+									<a href="/528/?pCode=528" data-text="온라인 상담"><span>온라인 상담</span></a>
+							</li><li class="lnb ">
+									<a href="/529/?pCode=529" data-text="시술 전후 사진"><span>시술 전후 사진</span></a>
+							</li><li class="lnb ">
+									<a href="/530/?pCode=530" data-text="리얼스토리"><span>리얼스토리</span></a>
+							</li><li class="lnb ">
+									<a href="/696/?pCode=696" data-text="자필후기"><span>자필후기</span></a>
+							</li><li class="lnb ">
+									<a href="/563/?pCode=563" data-text="이벤트"><span>이벤트</span></a>
+							</li><li class="lnb ">
+									<a href="/590/?pCode=590" data-text="예약하기"><span>예약하기</span></a>
+							</li><li class="lnb ">
+									<a href="/591/?pCode=591" data-text="시술&amp;수술주의사항"><span>시술&amp;수술주의사항</span></a>
+							</li></ul></li></ul>		</div>
+			</div>
+			<div class="gnb-login">
+				<a href="/login" class="login">로그인 ▶</a>
 				<a href="/join" class="join">회원가입 ▶</a>
+			</div>
+		
+			<a href="/590/?pCode=590" class="gnb-view"></a>
+		</header><!-- 해더 끝  -->
+	
+		<!-- 콘텐츠 영역 시작 (메인일 경우 #main-container / 서브일 경우 #sub-container) -->
+		<section id="main-container">
+		<!--  닫기 [위치 : include_web_footer.html ]  -->
+			<!-- 메인페이지 슬라이드 팝업 영역 시작 -->
+			<div id="pop_banner" style="display: none;">
+				<i class="pop-close-btn"></i>
+				<div class="pannel">
+					<div class="tlt">
+						<img src="${pageContext.request.contextPath}/resources/img/main/img_pop_logo.png" alt="">
+						<a href="#" class="pop-close-btn"></a>
+					</div>
+					<div class="con">
+						<ul>
+							<li><a href="/590/?pCode=590"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_001.png" alt=""></a></li>
+							<li><a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=46"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_002.png" alt=""></a></li>
+							<li><a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=45"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_003.png" alt=""></a></li>
+						</ul>
+					</div>
 				</div>
-	
-	
-		<a href="/590/?pCode=590" class="gnb-view"></a>
-	
-		<!--
-		<div id="all-gnb">
-			<ul><li class='gnb '>
-					<a href='/499/?pCode=499' data-text='다니엘 소개' ><span>다니엘 소개</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/499/?pCode=499' data-text='다니엘의 특별함' ><span>다니엘의 특별함</span></a>
-						</li><li class='lnb '>
-								<a href='/500/?pCode=500' data-text='의료진 소개' ><span>의료진 소개</span></a>
-						</li><li class='lnb '>
-								<a href='/501/?pCode=501' data-text='진료시간/오시는길' ><span>진료시간/오시는길</span></a>
-						</li><li class='lnb '>
-								<a href='/533/?pCode=533' data-text='보유장비' ><span>보유장비</span></a>
-						</li><li class='lnb '>
-								<a href='/707/?pCode=707' data-text='선한이웃, 다니엘' ><span>선한이웃, 다니엘</span></a>
-						</li></ul></li><li class='gnb '>
-					<a href='/521/?pCode=521' data-text='프리미엄 쁘띠클리닉' ><span>프리미엄 쁘띠클리닉</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/521/?pCode=521' data-text='보톡스/필러' ><span>보톡스/필러</span></a>
-						</li><li class='lnb '>
-								<a href='/522/?pCode=522' data-text='안면윤곽주사' ><span>안면윤곽주사</span></a>
-						</li><li class='lnb '>
-								<a href='/523/?pCode=523' data-text='멀티파워주사' ><span>멀티파워주사</span></a>
-						</li><li class='lnb '>
-								<a href='/565/?pCode=565' data-text='가격안내' ><span>가격안내</span></a>
-						</li><li class='lnb '>
-								<a href='/683/?pCode=683' data-text='예약하기' ><span>예약하기</span></a>
-						</li></ul></li><li class='gnb '>
-					<a href='/510/?pCode=510' data-text='레이저 클리닉' ><span>레이저 클리닉</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/510/?pCode=510' data-text='다니엘 복합레이저' ><span>다니엘 복합레이저</span></a>
-						</li><li class='lnb '>
-								<a href='/511/?pCode=511' data-text='난치성색소' ><span>난치성색소</span></a>
-						</li><li class='lnb '>
-								<a href='/512/?pCode=512' data-text='여드름' ><span>여드름</span></a>
-						</li><li class='lnb '>
-								<a href='/513/?pCode=513' data-text='안면홍조' ><span>안면홍조</span></a>
-						</li><li class='lnb '>
-								<a href='/514/?pCode=514' data-text='모공/흉터' ><span>모공/흉터</span></a>
-						</li><li class='lnb '>
-								<a href='/685/?pCode=685' data-text='프리미엄토닝' ><span>프리미엄토닝</span></a>
-						</li><li class='lnb '>
-								<a href='/691/?pCode=691' data-text='웨딩패키지' ><span>웨딩패키지</span></a>
-						</li></ul></li><li class='gnb '>
-					<a href='/517/?pCode=517' data-text='눈/코 성형' ><span>눈/코 성형</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/517/?pCode=517' data-text='멜로디 눈성형' ><span>멜로디 눈성형</span></a>
-						</li><li class='lnb '>
-								<a href='/518/?pCode=518' data-text='눈매교정' ><span>눈매교정</span></a>
-						</li><li class='lnb '>
-								<a href='/519/?pCode=519' data-text='트임성형' ><span>트임성형</span></a>
-						</li><li class='lnb '>
-								<a href='/520/?pCode=520' data-text='리듬 코성형' ><span>리듬 코성형</span></a>
-						</li></ul></li><li class='gnb '>
-					<a href='/503/?pCode=503' data-text='동안/탄력 클리닉' ><span>동안/탄력 클리닉</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/503/?pCode=503' data-text='리프팅 레이저' ><span>리프팅 레이저</span></a>
-						</li><li class='lnb '>
-								<a href='/504/?pCode=504' data-text='안면거상술' ><span>안면거상술</span></a>
-						</li><li class='lnb '>
-								<a href='/505/?pCode=505' data-text='이마내시경거상술' ><span>이마내시경거상술</span></a>
-						</li><li class='lnb '>
-								<a href='/506/?pCode=506' data-text='실리프팅/스킨보톡스' ><span>실리프팅/스킨보톡스</span></a>
-						</li><li class='lnb '>
-								<a href='/507/?pCode=507' data-text='광채 지방이식' ><span>광채 지방이식</span></a>
-						</li><li class='lnb '>
-								<a href='/508/?pCode=508' data-text='상안검/하안검' ><span>상안검/하안검</span></a>
-						</li><li class='lnb '>
-								<a href='/567/?pCode=567' data-text='슈링크 리프팅' ><span>슈링크 리프팅</span></a>
-						</li><li class='lnb '>
-								<a href='/686/?pCode=686' data-text='필로가135주사' ><span>필로가135주사</span></a>
-						</li><li class='lnb '>
-								<a href='/699/?pCode=699' data-text='코레지 리프팅' ><span>코레지 리프팅</span></a>
-						</li><li class='lnb '>
-								<a href='/705/?pCode=705' data-text='써마지FLX' ><span>써마지FLX</span></a>
-						</li></ul></li><li class='gnb '>
-					<a href='/509/?pCode=509' data-text='흉터 클리닉' ><span>흉터 클리닉</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/509/?pCode=509' data-text='흉터 클리닉' ><span>흉터 클리닉</span></a>
-						</li></ul></li><li class='gnb '>
-					<a href='/525/?pCode=525' data-text='체형 클리닉' ><span>체형 클리닉</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/525/?pCode=525' data-text='하모니 지방흡입' ><span>하모니 지방흡입</span></a>
-						</li><li class='lnb '>
-								<a href='/526/?pCode=526' data-text='아큐주사' ><span>아큐주사</span></a>
-						</li><li class='lnb '>
-								<a href='/568/?pCode=568' data-text='리포리바인' ><span>리포리바인</span></a>
-						</li><li class='lnb '>
-								<a href='/569/?pCode=569' data-text='팻다운 주사' ><span>팻다운 주사</span></a>
-						</li><li class='lnb '>
-								<a href='/570/?pCode=570' data-text='바디슈링크' ><span>바디슈링크</span></a>
-						</li></ul></li><li class='gnb '>
-					<a href='/515/?pCode=515' data-text='메디컬스킨케어' ><span>메디컬스킨케어</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/515/?pCode=515' data-text='메디컬스킨케어' ><span>메디컬스킨케어</span></a>
-						</li><li class='lnb '>
-								<a href='/516/?pCode=516' data-text='두피탈모' ><span>두피탈모</span></a>
-						</li></ul></li><li class='gnb '>
-					<a href='/527/?pCode=527' data-text='커뮤니티' ><span>커뮤니티</span></a>
-						<ul class='lnb-wrap'><li class='lnb '>
-								<a href='/527/?pCode=527' data-text='공지사항' ><span>공지사항</span></a>
-						</li><li class='lnb '>
-								<a href='/528/?pCode=528' data-text='온라인 상담' ><span>온라인 상담</span></a>
-						</li><li class='lnb '>
-								<a href='/529/?pCode=529' data-text='시술 전후 사진' ><span>시술 전후 사진</span></a>
-						</li><li class='lnb '>
-								<a href='/530/?pCode=530' data-text='리얼스토리' ><span>리얼스토리</span></a>
-						</li><li class='lnb '>
-								<a href='/696/?pCode=696' data-text='자필후기' ><span>자필후기</span></a>
-						</li><li class='lnb '>
-								<a href='/563/?pCode=563' data-text='이벤트' ><span>이벤트</span></a>
-						</li><li class='lnb '>
-								<a href='/590/?pCode=590' data-text='예약하기' ><span>예약하기</span></a>
-						</li><li class='lnb '>
-								<a href='/591/?pCode=591' data-text='시술&수술주의사항' ><span>시술&수술주의사항</span></a>
-						</li></ul></li></ul>	</div>
-		-->
-	</header>
-	<!-- 해더 끝  -->
-	
-	<!-- 콘텐츠 영역 시작 (메인일 경우 #main-container / 서브일 경우 #sub-container) -->
-	<section id="main-container">
-	<!--  닫기 [위치 : include_web_footer.html ]  -->
-	
-	
-	
-	<!-- 메인페이지 슬라이드 팝업 영역 시작 -->
-	<div id="pop_banner" style="display: none;">
-		<i class="pop-close-btn"></i>
-		<div class="pannel">
-			<div class="tlt">
-				<img src="${pageContext.request.contextPath}/resources/img/main/img_pop_logo.png" alt="">
-				<a href="#" class="pop-close-btn"></a>
 			</div>
-			<div class="con">
-				<ul>
-					<li><a href="/590/?pCode=590"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_001.png" alt=""></a></li>
-					<li><a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=46"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_002.png" alt=""></a></li>
-					<li><a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=45"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_003.png" alt=""></a></li>
-				</ul>
-			</div>
-		</div>
+			<script>
+			$('#pop_banner .pop-close-btn').on('click', function() {
+				$('#pop_banner').fadeOut();
+				return false;
+			});
+			</script>
+
+			<!-- 메인페이지 비주얼 슬라이드 시작 -->
+			<section class="visual-slide">
+				<div>
+					<img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg">
+				</div>
+				<div>
+					<img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg">
+				</div>
+				<div>
+					<img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg">
+				</div>
+				<div>
+					<img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg">
+				</div>
+				<div>
+					<a href=""><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg"></a>
+				</div>
+			</section><!-- 메인페이지 비주얼 슬라이드 끝 -->
+
+			<!-- 비주얼 타이틀 시작 -->
+			<section class="visual-title">
+				<img src="${pageContext.request.contextPath}/resources/img/main/visual_title.png" alt="DANIEL SPECIAL SKIN CLINC">
+			</section><!-- 비주얼 타이틀 시작 -->
+
+			<!-- 메인 플릿 플랍 에니메이션의 배너 시작 -->
+			<section class="visual-banner">
+				<div class="accordion">
+					<ul>
+						<!-- 아코디언 메뉴(여드름치료) 시작 -->
+						<li tabindex="1">
+							<div class="flip-flop">
+								<div class="flip">
+									<p class="cap">
+										여드름 치료<br>
+										효과 보기 어디 쉽나요?<br>
+										<b>다니엘</b>은 쉽습니다.
+									</p>
+									<i class="line"></i>
+									<h6 class="tit">여드름치료</h6>
+								</div>
+								<div class="flop" onclick="location.href='/512/?pCode=512'">
+									<h6 class="tit">여드름 치료</h6>
+									<span class="special">지문형 시스템으로<br>피부 진단부터 특별합니다.</span>
+									<p class="cap">풍부한 임상 경험과 체계화된 진단 시스템으로<br>여드름의 원인을 정확하게 파악합니다.</p>
+								</div>
+							</div>
+							<b class="num">01</b>
+						</li>
+						<!-- 아코디언 메뉴(여드름치료) 끝 -->
+			
+						<!-- 아코디언 메뉴(기미치료) 시작 -->
+						<li tabindex="2">
+							<div class="flip-flop">
+								<div class="flip">
+									<p class="cap">
+										피부과 시술<br>
+										다 거기서 거기 아닌가요?<br>
+										<b>다니엘</b>은 다릅니다.
+									</p>
+									<i class="line"></i>
+									<h6 class="tit">기미치료</h6>
+								</div>
+			
+								<div class="flop" onclick="location.href='/511/?pCode=511'">
+									<h6 class="tit">기미치료</h6>
+									<span class="special">피부 타입과 증상에 따라 <br>특화된 치료법을 개발하였습니다.</span>
+									<p class="cap">개개인의 피부 컨디션에 따라 선별적으로 사용되어 <br>100가지가 넘는 복합 프로그램이 존재합니다.</p>
+								</div>
+							</div>
+							<b class="num">02</b>
+						</li>
+						<!-- 아코디언 메뉴(기미치료) 끝 -->
+			
+						<!-- 아코디언 메뉴(다니엘 멜로디 눈성형) 시작 -->
+						<li tabindex="3">
+							<div class="flip-flop">
+								<div class="flip">
+									<p class="cap">
+										첫인상에서<br>
+										가장 중요한 부분은?<br>
+										<b>매력적인 눈</b>을 만들어 드립니다.
+									</p>
+									<i class="line"></i>
+									<h6 class="tit">다니엘<br>멜로디 눈성형</h6>
+								</div>
+			
+								<div class="flop" onclick="location.href='/517/?pCode=517'">
+									<h6 class="tit">다니엘 멜로디 눈성형</h6>
+									<span class="special">단순히 눈을 크게 만드는것이 아니라<br>얼굴의 전반적인 조화를 고려합니다.</span>
+									<p class="cap">얼굴의 형태, 눈의 크기, 피부상태, 눈꺼풀 지방의 함유량 등을 고려해<br>이상적인 비율과 균형을 이룰 수 있게 디자인 합니다.</p>
+								</div>
+							</div>
+							<b class="num">03</b>
+						</li>
+						<!-- 아코디언 메뉴(다니엘 멜로디 눈성형) 끝 -->
+			
+						<!-- 아코디언 메뉴(리프팅) 시작 -->
+						<li tabindex="4">
+							<div class="flip-flop">
+								<div class="flip">
+									<p class="cap">
+										빠르게, 부담없이, 자연스럽게<br>
+										수술없이 예쁜 얼굴라인을 만들고 싶어요<br>
+										후회없는 선택, <b>다니엘</b>
+									</p>
+									<i class="line"></i>
+									<h6 class="tit">리프팅</h6>
+								</div>
+			
+								<div class="flop" onclick="location.href='/503/?pCode=503'">
+									<h6 class="tit">리프팅</h6>
+									<span class="special">피부 복구와 노화 방지에 <br>최적화된 프로그램</span>
+									<p class="cap">피부 노화는 기능성 화장품으로 해결하기에는 역부족입니다.<br>피부타입, 노화 진행 패턴에 맞춰서 치료가 진행됩니다.</p>
+								</div>
+							</div>
+							<b class="num">04</b>
+						</li>
+						<!-- 아코디언 메뉴(리프팅) 끝 -->
+					</ul>
+				</div>
+			</section><!-- 메인 플릿 플랍 에니메이션의 배너 끝 -->
+	
+			<!-- 고정 배너영역 시작 -->
+			<section class="daniel-banner" style="background:none; padding-top:100px;">
+				<!-- 비주얼 타이틀 시작 -->
+				<div class="visual-title">
+					<img src="${pageContext.request.contextPath}/resources/img/main/visual_title02.png" alt="다니엘 성형외과의 이벤트와 소식을 알려드립니다.">
+				</div>
+				<!-- 비주얼 타이틀 끝 -->
+				
+				<!-- 슬라이드 배너 시작 -->
+				<ul class="slider-banner">
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb09.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">Summer</p>
+							<h6 class="tit">다니엘이 추천하는 상품</h6>
+							<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=46" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb08.png) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">NEW 4세대</p>
+							<h6 class="tit">써마지 FLX</h6>
+							<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=45" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb06.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">공명플라즈마</p>
+							<h6 class="tit">코레지 도입기념 이벤트</h6>
+							<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>	
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb04.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">Early Bird EVENT</p>
+							<h6 class="tit">얼리버드 데이 이벤트</h6>
+							<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=42" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>	
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb05.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">UP DAY EVENT</p>
+							<h6 class="tit">수요일엔 업데이 이벤트</h6>
+							<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=41" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb02.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">맞춤웨딩프로그램</p>
+							<h6 class="tit">웨딩 D-Day 패키지</h6>
+							<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=39" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+				</ul><!-- 슬라이드 배너 끝 -->
+			</section>
+		</section>
 	</div>
-	<script>
-	$('#pop_banner .pop-close-btn').on('click', function() {
-		$('#pop_banner').fadeOut();
-		return false;
-	});
-	</script>
-	
-	
-	
-	
-	<!-- 메인페이지 비주얼 슬라이드 시작 -->
-	<section class="visual-slide slick-initialized slick-slider slick-dotted"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"></button><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 17600px; transform: translate3d(-3200px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 1600px;"><div><li style="width: 100%; display: inline-block;"><a href="/590/?pCode=590" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg" alt="성형외과전문의 진료"></a></li></div></div><div class="slick-slide" data-slick-index="0" aria-hidden="true" role="tabpanel" id="slick-slide00" style="width: 1600px;" aria-describedby="slick-slide-control00" tabindex="-1"><div><li style="width: 100%; display: inline-block;"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg" alt="흉터, 고민말고 다니엘"></li></div></div><div class="slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" role="tabpanel" id="slick-slide01" style="width: 1600px;" aria-describedby="slick-slide-control01"><div><li style="width: 100%; display: inline-block;"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg" alt="성형외과 피부과 협진"></li></div></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" role="tabpanel" id="slick-slide02" style="width: 1600px;" aria-describedby="slick-slide-control02" tabindex="-1"><div><li style="width: 100%; display: inline-block;"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg" alt="프리미엄 오리지날 명품페이저"></li></div></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" role="tabpanel" id="slick-slide03" style="width: 1600px;" aria-describedby="slick-slide-control03" tabindex="-1"><div><li style="width: 100%; display: inline-block;"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg" alt="복합레이저시술"></li></div></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" role="tabpanel" id="slick-slide04" style="width: 1600px;" aria-describedby="slick-slide-control04" tabindex="-1"><div><li style="width: 100%; display: inline-block;"><a href="/590/?pCode=590" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg" alt="성형외과전문의 진료"></a></li></div></div><div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 1600px;"><div><li style="width: 100%; display: inline-block;"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg" alt="흉터, 고민말고 다니엘"></li></div></div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 1600px;"><div><li style="width: 100%; display: inline-block;"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg" alt="성형외과 피부과 협진"></li></div></div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 1600px;"><div><li style="width: 100%; display: inline-block;"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg" alt="프리미엄 오리지날 명품페이저"></li></div></div><div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1" style="width: 1600px;"><div><li style="width: 100%; display: inline-block;"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg" alt="복합레이저시술"></li></div></div><div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 1600px;"><div><li style="width: 100%; display: inline-block;"><a href="/590/?pCode=590" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg" alt="성형외과전문의 진료"></a></li></div></div></div></div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"></button><ul class="slick-dots" style="display: block;" role="tablist"><li class="" role="presentation"><button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 5" tabindex="-1">1</button></li><li role="presentation" class="slick-active"><button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 5" tabindex="0" aria-selected="true">2</button></li><li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control02" aria-controls="slick-slide02" aria-label="3 of 5" tabindex="-1">3</button></li><li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control03" aria-controls="slick-slide03" aria-label="4 of 5" tabindex="-1">4</button></li><li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control04" aria-controls="slick-slide04" aria-label="5 of 5" tabindex="-1">5</button></li></ul></section>
-	<!-- 메인페이지 비주얼 슬라이드 끝 -->
-	
-	<!-- 비주얼 타이틀 시작 -->
-	<section class="visual-title">
-		<img src="${pageContext.request.contextPath}/resources/img/main/visual_title.png" alt="DANIEL SPECIAL SKIN CLINC">
-	</section>
-	<!-- 비주얼 타이틀 시작 -->
-	
-	<!-- 메인 플릿 플랍 에니메이션의 배너 시작 -->
-	<section class="visual-banner">
-		<div class="accordion">
-			<ul>
-				<!-- 아코디언 메뉴(여드름치료) 시작 -->
-				<li tabindex="1">
-					<div class="flip-flop">
-						<div class="flip">
-							<p class="cap">
-								여드름 치료<br>
-								효과 보기 어디 쉽나요?<br>
-								<b>다니엘</b>은 쉽습니다.
-							</p>
-							<i class="line"></i>
-							<h6 class="tit">여드름치료</h6>
-						</div>
-						<div class="flop" onclick="location.href='/512/?pCode=512'">
-							<h6 class="tit">여드름 치료</h6>
-							<span class="special">지문형 시스템으로<br>피부 진단부터 특별합니다.</span>
-							<p class="cap">풍부한 임상 경험과 체계화된 진단 시스템으로<br>여드름의 원인을 정확하게 파악합니다.</p>
-						</div>
-					</div>
-					<b class="num">01</b>
-				</li>
-				<!-- 아코디언 메뉴(여드름치료) 끝 -->
-	
-				<!-- 아코디언 메뉴(기미치료) 시작 -->
-				<li tabindex="2">
-					<div class="flip-flop">
-						<div class="flip">
-							<p class="cap">
-								피부과 시술<br>
-								다 거기서 거기 아닌가요?<br>
-								<b>다니엘</b>은 다릅니다.
-							</p>
-							<i class="line"></i>
-							<h6 class="tit">기미치료</h6>
-						</div>
-	
-						<div class="flop" onclick="location.href='/511/?pCode=511'">
-							<h6 class="tit">기미치료</h6>
-							<span class="special">피부 타입과 증상에 따라 <br>특화된 치료법을 개발하였습니다.</span>
-							<p class="cap">개개인의 피부 컨디션에 따라 선별적으로 사용되어 <br>100가지가 넘는 복합 프로그램이 존재합니다.</p>
-						</div>
-					</div>
-					<b class="num">02</b>
-				</li>
-				<!-- 아코디언 메뉴(기미치료) 끝 -->
-	
-				<!-- 아코디언 메뉴(다니엘 멜로디 눈성형) 시작 -->
-				<li tabindex="3">
-					<div class="flip-flop">
-						<div class="flip">
-							<p class="cap">
-								첫인상에서<br>
-								가장 중요한 부분은?<br>
-								<b>매력적인 눈</b>을 만들어 드립니다.
-							</p>
-							<i class="line"></i>
-							<h6 class="tit">다니엘<br>멜로디 눈성형</h6>
-						</div>
-	
-						<div class="flop" onclick="location.href='/517/?pCode=517'">
-							<h6 class="tit">다니엘 멜로디 눈성형</h6>
-							<span class="special">단순히 눈을 크게 만드는것이 아니라<br>얼굴의 전반적인 조화를 고려합니다.</span>
-							<p class="cap">얼굴의 형태, 눈의 크기, 피부상태, 눈꺼풀 지방의 함유량 등을 고려해<br>이상적인 비율과 균형을 이룰 수 있게 디자인 합니다.</p>
-						</div>
-					</div>
-					<b class="num">03</b>
-				</li>
-				<!-- 아코디언 메뉴(다니엘 멜로디 눈성형) 끝 -->
-	
-				<!-- 아코디언 메뉴(리프팅) 시작 -->
-				<li tabindex="4">
-					<div class="flip-flop">
-						<div class="flip">
-							<p class="cap">
-								빠르게, 부담없이, 자연스럽게<br>
-								수술없이 예쁜 얼굴라인을 만들고 싶어요<br>
-								후회없는 선택, <b>다니엘</b>
-							</p>
-							<i class="line"></i>
-							<h6 class="tit">리프팅</h6>
-						</div>
-	
-						<div class="flop" onclick="location.href='/503/?pCode=503'">
-							<h6 class="tit">리프팅</h6>
-							<span class="special">피부 복구와 노화 방지에 <br>최적화된 프로그램</span>
-							<p class="cap">피부 노화는 기능성 화장품으로 해결하기에는 역부족입니다.<br>피부타입, 노화 진행 패턴에 맞춰서 치료가 진행됩니다.</p>
-						</div>
-					</div>
-					<b class="num">04</b>
-				</li>
-				<!-- 아코디언 메뉴(리프팅) 끝 -->
-			</ul>
-		</div>
-	</section>
-	<!-- 메인 플릿 플랍 에니메이션의 배너 끝 -->
-	
-	
-	
-	<!-- 고정 배너영역 시작 -->
-	<section class="daniel-banner" style="background:none; padding-top:100px;">
-		<!-- 비주얼 타이틀 시작 -->
-		<div class="visual-title">
-			<img src="${pageContext.request.contextPath}/resources/img/main/visual_title02.png" alt="다니엘 성형외과의 이벤트와 소식을 알려드립니다.">
-		</div>
-		<!-- 비주얼 타이틀 끝 -->
-	
-		<!-- 슬라이드 배너 시작 -->
-		<ul class="slider-banner slick-initialized slick-slider"><button class="slick-prev02 slick-arrow" aria-label="Previous" type="button" style="display: block;"></button><div class="slick-list"><div class="slick-track" style="opacity: 1; width: 5550px; transform: translate3d(-3330px, 0px, 0px); transition: transform 500ms ease 0s;"><div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb04.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">Early Bird EVENT</p>
-					<h6 class="tit">얼리버드 데이 이벤트</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=42" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb05.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">UP DAY EVENT</p>
-					<h6 class="tit">수요일엔 업데이 이벤트</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=41" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb02.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">맞춤웨딩프로그램</p>
-					<h6 class="tit">웨딩 D-Day 패키지</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=39" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 350px;" tabindex="-1"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb09.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">Summer</p>
-					<h6 class="tit">다니엘이 추천하는 상품</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=46" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 350px;" tabindex="-1"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb08.png&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">NEW 4세대</p>
-					<h6 class="tit">써마지 FLX</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=45" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 350px;" tabindex="-1"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb06.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">공명플라즈마</p>
-					<h6 class="tit">코레지 도입기념 이벤트</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=43" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb04.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">Early Bird EVENT</p>
-					<h6 class="tit">얼리버드 데이 이벤트</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=42" class="more" title="자세히 보기" data-slick-inner="5" tabindex="0">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb05.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">UP DAY EVENT</p>
-					<h6 class="tit">수요일엔 업데이 이벤트</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=41" class="more" title="자세히 보기" data-slick-inner="5" tabindex="0">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb02.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">맞춤웨딩프로그램</p>
-					<h6 class="tit">웨딩 D-Day 패키지</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=39" class="more" title="자세히 보기" data-slick-inner="5" tabindex="0">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb09.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">Summer</p>
-					<h6 class="tit">다니엘이 추천하는 상품</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=46" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb08.png&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">NEW 4세대</p>
-					<h6 class="tit">써마지 FLX</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=45" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb06.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">공명플라즈마</p>
-					<h6 class="tit">코레지 도입기념 이벤트</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=43" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb04.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">Early Bird EVENT</p>
-					<h6 class="tit">얼리버드 데이 이벤트</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=42" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb05.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">UP DAY EVENT</p>
-					<h6 class="tit">수요일엔 업데이 이벤트</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=41" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div><div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><li class="item" style="background: url(&quot;${pageContext.request.contextPath}/resources/img/main/thumb02.jpg&quot;) center top no-repeat; width: 100%; display: inline-block;">
-				<div class="slider-banner-info">
-					<i class="kinds">EVENT</i>
-					<p class="cap">맞춤웨딩프로그램</p>
-					<h6 class="tit">웨딩 D-Day 패키지</h6>
-					<a href="/563/?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=39" class="more" title="자세히 보기" data-slick-inner="5" tabindex="-1">자세히</a>
-				</div>
-			</li></div></div></div></div><button class="slick-next02 slick-arrow" aria-label="Next" type="button" style="display: block;"></button></ul>
-		<!-- 슬라이드 배너 끝 -->
-	</section></section></div>
 	
 	<div class="daniel-banner">
 		<!-- 고정 배너(4개) 시작 -->
@@ -1210,8 +1030,8 @@ $(function(){
 	</script>
 	<!-- 빠른상담 신청폼 -->
 	<!-- 빠른상담 신청하기 폼 시작 -->
-	<div id="quick-inquire" class="active">
-		<button class="active"><img src="${pageContext.request.contextPath}/resources/img/landing/web/theme/btn_quick_counsel.jpg" alt=""></button>
+	<div id="quick-inquire">
+		<button><img src="${pageContext.request.contextPath}/resources/img/landing/web/theme/btn_quick_counsel.jpg" alt=""></button>
 		<div class="inner">
 			<form name="land" id="land" method="post">
 			<fieldset>
