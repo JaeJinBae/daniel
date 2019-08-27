@@ -239,11 +239,11 @@ html, body{}
 #footer ul.fnb li a::before{position:absolute; content:''; width:1px; height:10px; background:#777; right:-25px; top:13px;}
 #footer ul.fnb li:last-child a::before{visibility:hidden;}
 
-#footer ul.footer-info{width:inherit; display:block;}
-#footer ul.footer-info p{height:25px; line-height:25px; color:#747474;}
-#footer ul.footer-info p span{display:inline-block; margin-right:25px;}
-#footer ul.footer-info p.copyright{margin-top:15px; font-size:0.85em; color:#555;}
-#footer ul.footer-info p.copyright a{color:#aaa;}
+#footer div.footer-info{width:inherit; display:block;}
+#footer div.footer-info p{height:25px; line-height:25px; color:#747474;}
+#footer div.footer-info p span{display:inline-block; margin-right:25px;}
+#footer div.footer-info p.copyright{margin-top:15px; font-size:0.85em; color:#555;}
+#footer div.footer-info p.copyright a{color:#aaa;}
 
 /**********************************************************************/
 
