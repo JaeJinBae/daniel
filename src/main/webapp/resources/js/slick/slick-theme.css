@@ -1,0 +1,57 @@
+@charset 'UTF-8';
+/* Slider */
+
+/* Arrows */
+.slick-prev{position:absolute; width:102px; height:183px; background:url("../../img/main/btn_prev.png") no-repeat left center; top: 50%; left:-10px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-prev:hover{background:url("../../img/main/btn_prev_on.png") no-repeat left center;}
+.slick-next{position:absolute; width:102px; height:183px; background:url("../../img/main/btn_next.png") no-repeat left center; top: 50%; right:-10px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-next:hover{background:url("../../img/main/btn_next_on.png") no-repeat left center;}
+
+.slick-prev02{position:absolute; width:91px; height:27px; background:url("../../img/main/btn_prev02.png") no-repeat left center; top: 50%; left:-150px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-prev02:hover{background:url("../../img/main/btn_prev02_on.png") no-repeat left center;}
+.slick-next02{position:absolute; width:91px; height:27px; background:url("../../img/main/btn_next02.png") no-repeat left center; top: 50%; right:-150px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-next02:hover{background:url("../../img/main/btn_next02_on.png") no-repeat left center;}
+
+.slick-prev03{position:absolute; width:63px; height:63px; background:url("../../img/main/btn_prev03.png") no-repeat left center; top: 50%; left:-120px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-next03{position:absolute; width:63px; height:63px; background:url("../../img/main/btn_next03.png") no-repeat left center; top: 50%; right:-120px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+
+
+.slick-prev04{position:absolute; width:91px; height:27px; background:url("../../img/main/btn_prev02.png") no-repeat left center; top: 50%; left:150px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-prev04:hover{background:url("../../img/main/btn_prev02_on.png") no-repeat left center;}
+.slick-next04{position:absolute; width:91px; height:27px; background:url("../../img/main/btn_next02.png") no-repeat left center; top: 50%; right:150px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-next04:hover{background:url("../../img/main/btn_next02_on.png") no-repeat left center;}
+
+
+/* Dots */
+.slick-dotted.slick-slider{position:relative;}
+.slick-dots{position: absolute; bottom: 45px; right:20%;}
+.slick-dots li{position: relative; display: inline-block;}
+.slick-dots li button{font-size:0; line-height:0; display:nline-block; float:left; width:14px; height:14px; margin:3px; background:#fff; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer; border-radius:20px;}
+.slick-dots li button:hover, .slick-dots li button:focus{outline: none;}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before{}
+.slick-dots li.slick-active button{width:14px; height:14px; background:#bc9248;}
+
+.slick-dots02{position: absolute; bottom:55px; left:50%; transform: translate(-50%, 0);}
+.slick-dots02 li{position: relative; display: inline-block;}
+.slick-dots02 li button{font-size:0; line-height:0; display:nline-block; float:left; width:14px; height:14px; margin:3px; background:#eee; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer; border-radius:20px;}
+.slick-dots02 li button:hover, .slick-dots li button:focus{outline: none;}
+.slick-dots02 li button:hover:before, .slick-dots li button:focus:before{}
+.slick-dots02 li.slick-active button{width:14px; height:14px; background:#bc9248;}
+
+
+.slick-dots03{position: absolute; bottom:-40px; left:40%; transform: translate(-50%, 0);}
+.slick-dots03 li{position: relative; display: inline-block;}
+.slick-dots03 li button{font-size:0; line-height:0; display:nline-block; float:left; width:14px; height:14px; margin:3px; background:#ddd; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer; border-radius:20px;}
+.slick-dots03 li button:hover, .slick-dots li button:focus{outline: none;}
+.slick-dots03 li button:hover:before, .slick-dots li button:focus:before{}
+.slick-dots03 li.slick-active button{width:14px; height:14px; background:#bc9248;}\
+
+
+/* 슬라이드 프로그래스 바 시작 */
+.progress-bar{position:absolute; width:100%; height:5px; bottom:0px;  left:0px; padding:0px; margin:0px; background:rgba(255,255,255,.20);}
+.progress-bar p{position:absolute; float:left; width:0px; height:5px; background:#00b0ff; left:0px; bottom:0px;}
+.slick-active .progress-bar p{width:100%; animation:progress-bar 11s both;}
+
+@-webkit-keyframes progress-bar{from{width:0px;}to{width:100%;}}
+@keyframes progress-bar{from{width:0px;}to{width:100%;}}
+/* 슬라이드 프로그래스 바 끝 */

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/**********************************************************************
+* Descript : 레이어팝업 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.06.29
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+/**********************************************************************
+* Descript : 레이어팝업 Dim 효과 및 전체영역 고정
+***********************************************************************/
+#pop-wrap{position:fixed; left:0; top:0; z-index:99;  width:100%; height:100%; box-sizing:border-box; padding:10px; box-sizing:border-box;}
+#pop-wrap::before{position:absolute; content:''; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.7); z-index:-1;}
+/**********************************************************************/
+
+/**********************************************************************
+* Descript : 레이어팝업 최소 넓이값 지정
+***********************************************************************/
+#pop-wrap .pop-inner{max-width:640px; min-width:320px; display:inline-block;}
+/**********************************************************************/
+
+/**********************************************************************
+* Descript : 레이어팝업 콘트롤박스(닫기 및 일주일간 공지창 띄우지 않음)
+***********************************************************************/
+#pop-wrap .pop-controller{position:relative; box-sizing:border-box; height:35px; line-height:35px; padding:0 10px; background:#111; text-align:right;}
+#pop-wrap .pop-controller label{position:absolute; text-align:left; display:block; color:#fff; font-size:13px; height:inherit; line-height:inherit; cursor:pointer;}
+#pop-wrap .pop-controller label input[type="checkbox"]{display:none;}
+#pop-wrap .pop-controller a{display:inline-block; color:#fff; font-size:15px; height:inherit; line-height:inherit; cursor:pointer;}
+/**********************************************************************/

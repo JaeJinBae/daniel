@@ -1,0 +1,20 @@
+@charset "utf-8"; 
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 게시판 페이징 CSS
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+/* --------------------------------------------------------------------------
+   페이징
+   -------------------------------------------------------------------------- */
+#board-pagenation{width:100%; max-width:1200px; margin:30px auto; text-align:center;}
+#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; font-size:1em; color:#333; background:#ebebeb; margin:0 2px; box-sizing:border-box;}
+#board-pagenation a:hover{text-decoration:underline;}
+#board-pagenation a.on{background:#ff3e62; color:#fff; font-weight:300;}

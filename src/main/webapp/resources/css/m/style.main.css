@@ -1,0 +1,125 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 메인페이지 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.06.01
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+/**********************************************************************
+* Descript : 메인 비주얼슬라이드
+***********************************************************************/
+.visual-slide{position:relative; max-width:640px; overflow:hidden; margin:0 auto;}
+/**********************************************************************/
+
+/**********************************************************************
+* Descript : 메인 비주얼 타이틀
+***********************************************************************/
+.visual-title{text-align:center;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 메인 비주얼 타이틀
+***********************************************************************/
+.visual-banner{width:100%; max-width:640px; margin:0 auto; background:#111;}
+.accordion {width: 100%; height: 100%; overflow: hidden;}
+.accordion ul {width: 100%; height:100%;}
+.accordion ul li {position: relative; width:100%; height:250px; text-align:center; box-sizing:border-box; background-size:cover;-webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.accordion ul li::before{position:absolute; display:inline-block; content:''; width:100%; height:730px; left:0; top:0; background:rgba(0,0,0,0.6);}
+.accordion ul li::after{position:absolute; display:inline-block; content:''; width:100%; height:730px; left:0; top:0; background:url(/assets/img/main/accordion_logo.png) no-repeat 30px 30px; }
+.accordion ul li b.num{position:absolute; right:30px; bottom:30px; font-size:46px; color:#fff; font-family: 'Nanum Myeongjo', serif;  color:#c5a264; opacity:0.7;}
+
+.accordion ul li div.flip-flop{position:absolute; width:90%; height:220px; left:50%; top:50%; transform:translate(-50%, -50%); transition: all 0.3s linear; z-index:1;}
+.accordion ul li div.flip-flop > div{position: absolute; width:100%; height:100%; padding:25px 15px;}
+
+.accordion ul li div.flip{left:0; top:0;}
+.accordion ul li div.flip p.cap{color:rgba(255,255,255,0.8); font-weight:700; font-size:1.1em; line-height:1.6em;}
+.accordion ul li div.flip p.cap b{color:#c5a264;}
+.accordion ul li div.flip h6.tit{font-size:2.6em; line-height:1.4em; font-weight:700; color:#fff; margin-top:20px;}
+
+.accordion ul li div.flop{display:none; background:rgba(23,43,77,0.9) url(/assets/img/main/accordion_more.png) no-repeat center 95%; box-sizing:border-box; z-index:1; cursor:pointer; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.accordion ul li div.flop h6.tit{font-size:2em; font-weight:700; color:#fff;}
+.accordion ul li div.flop span.special{display:block; font-size:1em; line-height:1.4em; font-weight:700; color:#dfc495; margin:15px 0;}
+.accordion ul li div.flop p.cap{font-size:1em; color:rgba(255,255,255,0.8); line-height:1.4em;}
+
+.accordion ul li:hover::before{background:rgba(0,0,0,0.1);}
+.accordion ul li:hover b.num{color:#fff;}
+.accordion ul li:hover div.flip{display:none;}
+.accordion ul li:hover div.flop{opacity:1;}
+
+
+
+.accordion ul li:nth-child(1) {background: url("/assets/img/main/accordion_bg02.png") no-repeat 80% center;}
+.accordion ul li:nth-child(2) {background: url("/assets/img/main/accordion_bg01.png") no-repeat 80% center;}
+.accordion ul li:nth-child(3) {background: url("/assets/img/main/accordion_bg03.png") no-repeat center center;}
+.accordion ul li:nth-child(4) {background: url("/assets/img/main/accordion_bg04.png") no-repeat center center;}
+
+
+.accordion ul li:focus {outline: none;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 메인 배너 슬라이드
+***********************************************************************/
+#daniel-banner{display:inline-block; width:100%; background:#f1f1f1; padding:30px 0;}
+#daniel-banner li{float:left; width:50%;}
+#daniel-banner li a{display:block; width:100%;}
+#daniel-banner li a img{width:100%;}
+
+
+#daniel-banner02{display:inline-block; width:100%; background:#fff; text-align:center; padding-bottom:70px;}
+#daniel-banner02 .visual-title{margin:50px 0 25px 0;}
+
+ul.slider-banner{max-width:320px; margin:0 auto;}
+  /* the slides */
+ul.slider-banner .slick-slide {
+    margin: 0 10px;
+  }
+  /* the parent */
+ul.slider-banner .slick-list {
+    margin: 0 -10px;
+  }
+ul.slider-banner li.item{padding-top:355px;}
+ul.slider-banner li.item div.slider-banner-info{position:relative; padding:50px 0 20px 0; background:#fff; border:1px solid #eee; border-top:0;}
+ul.slider-banner li.item div.slider-banner-info i.kinds{position:absolute; font-size:15px; font-weight:700; color:#222; left:10px; top:10px;}
+ul.slider-banner li.item div.slider-banner-info p.cap{font-size:18px; line-height:25px; color:#222;}
+ul.slider-banner li.item div.slider-banner-info h6.tit{font-size:24px; line-height:32px; color:#222; font-weight:700; margin:5px 0 10px 0;}
+ul.slider-banner li.item div.slider-banner-info a.more{display:inline-block; width:110px; height:37px; line-height:37px; border-radius:37px; background:#b18c4c; color:#fff; font-weigth:700;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 풋터 스타일
+***********************************************************************/
+#footer{width:100%; background:#eee; padding:20px 0; text-align:center;}
+
+#footer ul.fnb{display:inline-block; line-height:25px; margin-bottom:15px;}
+#footer ul.fnb li{float:left;}
+#footer ul.fnb li a{position:relative; display:block; height:inherit; line-height:inherit; margin-right:30px; color:#0a2341; font-weight:700; font-size:1em;}
+#footer ul.fnb li a::before{position:absolute; content:''; width:1px; height:10px; background:#777; right:-15px; top:8px;}
+#footer ul.fnb li:last-child a::before{visibility:hidden;}
+
+
+#footer ul.footer-info{width:inherit; display:block;}
+#footer ul.footer-info i{display:inline-block; margin:0 10px; font-size:10px; line-height:10px; vertical-align:2px;}
+#footer ul.footer-info p{line-height:25px; color:#747474;}
+#footer ul.footer-info p span{display:inline-block;}
+#footer ul.footer-info p.copyright{margin-top:15px; font-size:0.85em; color:#555;}
+#footer ul.footer-info p.copyright a{color:#aaa;}
+
+/**********************************************************************/
+
+
+
+
+
+
+
+
+
+
+

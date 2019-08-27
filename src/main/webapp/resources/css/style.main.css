@@ -1,0 +1,176 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 메인페이지 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.04.04
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+
+/**********************************************************************
+* Descript : 메인페이지 슬라이드 팝업 스타일
+***********************************************************************/
+#pop-slider{position:fixed; background:rgba(0,0,0,0.8); width:100%; height:100%; min-height:900px; left:0; top:0; z-index:99;}
+#pop-slider ul{position:absolute; width:900px; height:600px; top:50%; left:50%; transform: translate(-50%, -50%);}
+#pop-slider ul li.item{}
+#pop-slider .pop-slider-close-top, .pop-slider-close-bottom{position:absolute;  transform: translate(-50%, 0); display:inline-block; text-align:center; z-index:100; cursor:pointer; font-size:40px; color:rgba(255,255,255,0.3); -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+#pop-slider .pop-slider-close-top:hover, .pop-slider-close-bottom:hover{color:rgba(255,255,255,0.85);}
+#pop-slider .pop-slider-close-top{left:50%; top:25px;}
+#pop-slider .pop-slider-close-bottom{left:50%; bottom:25px;}
+
+#pop_banner {position:fixed; background:rgba(0,0,0,0.8); width:100%; height:100%; min-height:900px; left:0; top:0; z-index:99;}
+#pop_banner > .pop-close-btn {position:absolute; top:0; left:0; right:0; bottom:0; z-index:0;}
+#pop_banner .pannel {position:absolute; top:50%; left:50%; width:1080px; height:600px; margin-top:-300px; margin-left:-540px; background:#fff; z-index:1; overflow:hidden;}
+#pop_banner .tlt {position:relative; height:80px; line-height:80px; background:#30405d; text-align:center;}
+#pop_banner .tlt .pop-close-btn {display:block; position:absolute; width:39px; height:39px; top:50%; margin-top:-19px; right:30px; background:url('../img/main/img_btn_pop_close.png') no-repeat 50% 50%;}
+
+#pop_banner .con {padding:15px;}
+#pop_banner .con ul {display:table; width:100%;}
+#pop_banner .con li {display:table-cell; width:33.33%; text-align:center; padding:15px; box-sizing:border-box;}
+#pop_banner .con img {max-width:100%;}
+/**********************************************************************/
+
+
+
+
+
+.visual-slide{position:relative; width:100%; overflow:hidden;}
+
+.visual-title{text-align:center; padding:35px 0;}
+
+.visual-banner{width:100%; height:730px; background:#111;}
+.accordion {width: 100%; height: 100%; overflow: hidden;}
+.accordion ul {width: 100%; height:100%; display: table; table-layout: fixed;}
+.accordion ul li {display: table-cell; position: relative; width:25%; height: 100%; text-align:center; box-sizing:border-box; padding-top:150px; background-size:cover;-webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.accordion ul li::before{position:absolute; display:inline-block; content:''; width:100%; height:730px; left:0; top:0; background:rgba(0,0,0,0.6);}
+.accordion ul li::after{position:absolute; display:inline-block; content:''; width:100%; height:730px; left:0; top:0; background:url(../img/main/accordion_logo.png) no-repeat 30px 30px; }
+.accordion ul li b.num{position:absolute; right:30px; bottom:30px; font-size:46px; color:#fff; font-family: 'Nanum Myeongjo', serif;  color:#c5a264; opacity:0.7;}
+
+.accordion ul li div.flip-flop{position:absolute; width:60%; height:420px; left:50%; margin-left:-30%; transition: all 0.3s linear; z-index:1;}
+.accordion ul li div.flip-flop > div{position: absolute; width:100%; height:100%;}
+
+.accordion ul li div.flip{left:0; top:0;}
+.accordion ul li div.flip p.cap{color:rgba(255,255,255,0.8); font-weight:700; font-size:14px; line-height:20px;}
+.accordion ul li div.flip p.cap b{color:#c5a264;}
+.accordion ul li div.flip i.line{display:block; width:1px; height:100px; background:rgba(255,255,255,0.4); margin:35px auto;}
+.accordion ul li div.flip h6.tit{font-size:32px; line-height:40px; font-weight:700; color:#fff;}
+
+.accordion ul li div.flop{opacity:0; background:rgba(23,43,77,0.9) url(../img/main/accordion_more.png) no-repeat center 90%; box-sizing:border-box; padding:100px 0; z-index:1; cursor:pointer; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.accordion ul li div.flop h6.tit{font-size:24px; font-weight:700; color:#fff;}
+.accordion ul li div.flop span.special{display:block; font-size:15px; line-height:25px; font-weight:700; color:#dfc495; margin:15px 0 25px 0;}
+.accordion ul li div.flop p.cap{font-size:14px; color:rgba(255,255,255,0.8); line-height:20px;}
+
+.accordion ul li:hover::before{background:rgba(0,0,0,0.1);}
+.accordion ul li:hover b.num{color:#fff;}
+.accordion ul li:hover div.flip{display:none;}
+.accordion ul li:hover div.flop{opacity:1;}
+
+
+
+.accordion ul li:nth-child(1) {background: url("../img/main/accordion_bg02.png") no-repeat 80% center;}
+.accordion ul li:nth-child(2) {background: url("../img/main/accordion_bg01.png") no-repeat 80% center;}
+.accordion ul li:nth-child(3) {background: url("../img/main/accordion_bg03.png") no-repeat center center;}
+.accordion ul li:nth-child(4) {background: url("../img/main/accordion_bg04.png") no-repeat center center;}
+
+.accordion ul:hover li, .accordion ul:focus-within li {width: 20%;}
+.accordion ul li:focus {outline: none;}
+.accordion ul:hover li:hover,.accordion ul li:focus, .accordion ul:focus-within li:focus {width: 60%;}
+.accordion ul:hover li {width: 20% !important;}
+.accordion ul:hover li:hover {width: 60% !important;}
+
+
+
+
+.daniel-banner{width:100%; display:inline-block; padding:150px 0; text-align:center; background:#fff url(../img/main/visual_bg.png) no-repeat center top;}
+.daniel-banner ul.fixed-banner{display:inline-block; width:1100px;}
+.daniel-banner ul.fixed-banner li{float:left; width:50%; box-sizing:border-box; padding:5px;}
+
+ul.slider-banner{max-width:1090px; margin:0 auto;}
+  /* the slides */
+ul.slider-banner .slick-slide {
+    margin: 0 10px;
+  }
+  /* the parent */
+ul.slider-banner .slick-list {
+    margin: 0 -10px;
+  }
+ul.slider-banner li.item{padding-top:355px;}
+ul.slider-banner li.item div.slider-banner-info{position:relative; padding:50px 0 20px 0; background:#fff; border:1px solid #eee; border-top:0;}
+ul.slider-banner li.item div.slider-banner-info i.kinds{position:absolute; font-size:15px; font-weight:700; color:#222; left:10px; top:10px;}
+ul.slider-banner li.item div.slider-banner-info p.cap{font-size:18px; line-height:25px; color:#222;}
+ul.slider-banner li.item div.slider-banner-info h6.tit{font-size:24px; line-height:32px; color:#222; font-weight:700; margin:5px 0 10px 0;}
+ul.slider-banner li.item div.slider-banner-info a.more{display:inline-block; width:110px; height:37px; line-height:37px; border-radius:37px; background:#b18c4c; color:#fff; font-weigth:700;}
+
+
+/**********************************************************************
+* Descript : 메인 전체 풋터영역(오시는길, 진료시간, 상담문의) 스타일
+***********************************************************************/
+.daniel-location{position:relative; width:100%; display:inline-block; padding:50px 0; background:#eff0f3;}
+.daniel-location > ul{max-width:1090px; margin:0 auto;}
+.daniel-location > ul > li{float:left; height:400px; overflow:hidden; box-sizing:border-box;}
+.daniel-location > ul > li:nth-child(1){width:500px;}
+.daniel-location > ul > li:nth-child(2){width:275px; margin:0 20px;}
+.daniel-location > ul > li:nth-child(3){width:275px;}
+
+.daniel-location li.location{width:100%; background:url(../img/main/map.jpg) no-repeat left top; padding-top:270px;}
+.daniel-location li.location .location-info{position:relative; height:130px; box-sizing:border-box; padding:30px; background:#fff; border:1px solid #eee; border-top:0;}
+.daniel-location li.location .location-info i.kinds{font-size:30px; font-weight:700; color:#9c9ea2; font-family: 'Nanum Myeongjo', serif;}
+.daniel-location li.location .location-info h6.tit{font-size:22px; font-weight:700; color:#0a2341; margin:10px 0;}
+.daniel-location li.location .location-info p.cap{font-size:16px; color:#0a2341;}
+.daniel-location li.location .location-info a.more{position:absolute; display:inline-block; right:0; bottom:0; background:#8b8b8b url(../img/main/more_bg.png) no-repeat 95% center; color:#fff; font-weight:700; padding:10px 30px 10px 20px;}
+
+
+.daniel-location li.hospital-info{background:#0a2341; padding:25px; text-align:center;}
+.daniel-location li.hospital-info h6.tit{color:#fff; font-size:18px;}
+.daniel-location li.hospital-info h6.tit b{font-weight:700;}
+.daniel-location li.hospital-info i.bar{display:inline-block; width:20px; height:5px; background:#b18c4c; margin:20px 0;}
+.daniel-location li.hospital-info .time-table{width:100%; text-align:left;}
+.daniel-location li.hospital-info .time-table th{color:#c7c7c7; width:50px; font-size:14px; font-size:13px; padding:10px 0; border-bottom:1px dashed #3b4f67;}
+.daniel-location li.hospital-info .time-table td{color:#fff; text-align:right; font-size:13px; padding:10px 0; border-bottom:1px dashed #3b4f67;}
+.daniel-location li.hospital-info p.cap{font-size:14px; color:#b18c4c; margin:15px auto; text-align:left; font-size:13px; line-height:18px;}
+.daniel-location li.hospital-info a.more{display:block; text-align:center; padding:13px 0; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.5); color:#fff; font-weight:700; font-size:14px;}
+
+
+
+.daniel-location li.counsel{background:#fff; padding:45px 25px;}
+.daniel-location li.counsel .counsel-info{padding-bottom:25px; margin-bottom:25px; border-bottom:2px solid #eff0f3;}
+.daniel-location li.counsel .counsel-info h6.tit{font-size:18px; font-weight:700; color:#0a2341;}
+.daniel-location li.counsel .counsel-info a.call{font-size:36px; line-height:56px; font-weight:300; color:#0a2341; letter-spacing:-1px;}
+.daniel-location li.counsel .counsel-info a.call:hover{text-decoration:none;}
+.daniel-location li.counsel .counsel-info a.call b{font-weight:700;}
+.daniel-location li.counsel .counsel-info p.cap{font-size:13px; color:#5f6974;}
+
+.daniel-location li.counsel .counsel-sns{padding:0 25px;}
+.daniel-location li.counsel .counsel-sns a{display:block; font-size:17px; font-weight:700; color:#0a2341; height:60px; line-height:60px; padding-left:50px; background-repeat:no-repeat; background-position:left center;}
+.daniel-location li.counsel .counsel-sns a.kakao{background-image:url(../img/main/sns_kakao.png); line-height:40px;}
+.daniel-location li.counsel .counsel-sns a.kakao b{display:block; line-height:5px; font-size:13px;}
+.daniel-location li.counsel .counsel-sns a.naver{background-image:url(../img/main/sns_sms.png);}
+.daniel-location li.counsel .counsel-sns a.online{background-image:url(../img/main/sns_talk.png);}
+/**********************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

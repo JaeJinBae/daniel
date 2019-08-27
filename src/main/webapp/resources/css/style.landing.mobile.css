@@ -1,0 +1,114 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 랜딩 사이트의 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.04.23
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 전체영역 레이아웃 관리
+***********************************************************************/
+body{padding-top:105px;}
+.inner{position:relative; max-width:640px; margin:0 auto;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 해더 스타(로고, GNB)
+***********************************************************************/
+.header{position:fixed; left:0; top:0; width:100%; height:105px; background:#f4f4f4; border-bottom:1px solid #cecece; z-index:999;-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; text-align:center;}
+.header .inner{position:relative; max-width:640px; height:inherit;}
+.header a.btn-call{position:absolute; top:50%; right:20px; transform:translate(0, -50%);}
+.header a.btn-call img{width:3.2em;}
+.header a.logo{position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);}
+.header a.logo img{width:15em;}
+
+/* 햄버거 버튼 스타일 및 트랜지션 */
+.hamburger{position:absolute; top:50%; left:20px; transform:translate(0, -50%); z-index:11; cursor:pointer;}
+.hamburger:hover {opacity: 0.7;}
+.box {width:3.2em; height:24px; display:inline-block; position:relative;}
+.bar {display:block; top:50%;}
+.bar, .bar::before, .bar::after {width:inherit; height:4px; background-color:#454c6f; position:absolute; transition-property: transform; transition-duration: 0.15s; transition-timing-function: ease; }
+.bar::before, .bar::after {content: ""; display: block; }
+.bar::before{top:-1em; }
+.bar::after{bottom:-1em; }
+
+.spin .bar {transition-duration: 0.22s; transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.spin .bar::before { transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+.spin .bar::after {transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.spin.active .bar {transform: rotate(225deg); transition-delay: 0.12s; transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+.spin.active .bar::before {top:0; opacity:0; transition:top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+.spin.active .bar::after {bottom:0; transform: rotate(-90deg); transition:bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : GNB
+***********************************************************************/
+.gnb-dim{display:none; position:fixed; z-index:8; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.7);}
+#gnb{position:absolute; top:105px; width:100%; background:#fff; display:none; padding:0 40px; box-sizing:border-box;}
+#gnb ul li{width:100%;}
+#gnb ul li.gnb-reserve{padding:30px 0; box-sizing:border-box;}
+#gnb ul li a{position:relative; line-height:3.6em; display:block; color:#222; font-size:1.3em; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+#gnb ul li a::before{content:''; display:inline-block; width:100%; max-width:600px; position:absolute; bottom:0; left:50%; transform:translate(-50%, 0); height:1px; background:#d7d7d7; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+#gnb ul li:last-child a::before{display:none;}
+#gnb ul li a:hover{text-decoration:none; color:#222;}
+#gnb ul li a:hover::before{width:100%;}
+#gnb ul li.active a{color:#2c3d96; font-weight:700;}
+#gnb ul li.active a::before{width:100%; height:1px;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 우측하단 최상단으로 가기 버튼(jquery.landing.js)
+***********************************************************************/
+#top{position:fixed; opacity:0; width:50px; right:15px; bottom:25px; z-index:9;-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
+#top.fadeIn{opacity:1;}
+#top.fadeOut{opacity:0;}
+/**********************************************************************/
+
+
+
+
+#home{width:100%; height:calc(100% - 105px);}
+#home .bg01{height:100%; background:url(../img/landing/m/con_bg_01.png) no-repeat center top; background-size:cover;}
+#home .obj0101{padding-top:5%;}
+
+#hospital{width:100%;}
+#hospital .bg01{background:url(../img/landing/m/con_bg_02.png) no-repeat center top; background-size:cover;}
+#hospital .obj0101{padding:10% 0;}
+#hospital .obj0102{padding-bottom:10%;}
+#hospital .obj0103{padding-bottom:5%;}
+#hospital .obj0104{padding-bottom:5%;}
+#hospital .obj0105{padding-bottom:5%;}
+
+#special{width:100%;}
+#special .bg01{background:url(../img/landing/m/con_bg_03.png) no-repeat center top; background-size:cover;}
+#special .obj0101{}
+
+#doctor{width:100%; padding:3.4em 0; background:#f2f2f2;}
+#doctor .obj0101{padding-bottom:7%;}
+#doctor li.item{}
+#doctor li.item img{width:100%;}
+
+#location{width:100%; padding:3.4em 0;}
+#location .obj0101{padding-bottom:7%;}
+
+#subject{width:100%; background:#555d68;}
+
+
+/**********************************************************************
+* Descript : 우측하단 최상단으로 가기 버튼(jquery.landing.js)
+***********************************************************************/
+#top{position:fixed; opacity:0; width:50px; right:15px; bottom:25px; z-index:9;-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
+#top a{display:block; margin:5px 0;}
+#top.fadeIn{opacity:1;}
+#top.fadeOut{opacity:0;}
+/**********************************************************************/

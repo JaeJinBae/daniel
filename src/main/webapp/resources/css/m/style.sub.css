@@ -1,0 +1,454 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 서브페이지 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.06.01
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+.ready{padding:100px 0;}
+
+/**********************************************************************
+* Descript : 보유장비 탭 메뉴 스타일
+***********************************************************************/
+.quipment-titl{text-align:center; margin:100px 0 50px 0;}
+.privacy, .agree{text-align:left !important; line-height:30px; margin-bottom:100px;}
+#equipment-nav{width:100%; height:50px; margin:25px 0;}
+#equipment-nav .inner{border-top:3px solid #172b4d;}
+#equipment-nav ul li.pnb{float:left; width:50%; height:50px; line-height:50px; text-align:center; }
+#equipment-nav ul li.pnb a{display:block; color:#959595; font-weight:700; border:1px solid #eee; box-sizing:border-box;}
+#equipment-nav ul li.active a{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
+
+
+#equipment-list{width:100%; display:inline-block;}
+#equipment-list .inner{width:100%; }
+#equipment-list ul li.pnb{float:left; width:50%; text-align:center; }
+#equipment-list ul li.pnb a{display:block; height:50px; line-height:50px; background:#fbfbfb; color:#959595; font-weight:700;  border:1px solid #ddd; margin:0 0 -1px -1px;}
+#equipment-list ul li.active a{background:#5877ad; border:1px solid #5877ad; color:#fff; font-weight:700;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 풋터 스타일
+***********************************************************************/
+#footer{width:100%; background:#fff; padding:20px 0; text-align:center;}
+
+#footer ul.fnb{display:inline-block; line-height:25px; margin-bottom:15px;}
+#footer ul.fnb li{float:left;}
+#footer ul.fnb li a{position:relative; display:block; height:inherit; line-height:inherit; margin-right:30px; color:#0a2341; font-weight:700; font-size:1em;}
+#footer ul.fnb li a::before{position:absolute; content:''; width:1px; height:10px; background:#777; right:-15px; top:8px;}
+#footer ul.fnb li:last-child a::before{visibility:hidden;}
+
+#footer ul.footer-info{width:inherit; display:block;}
+#footer ul.footer-info i{display:inline-block; margin:0 10px; font-size:10px; line-height:10px; vertical-align:2px;}
+#footer ul.footer-info p{line-height:25px; color:#747474;}
+#footer ul.footer-info p span{display:inline-block;}
+#footer ul.footer-info p.copyright{margin-top:15px; font-size:0.85em; color:#555;}
+#footer ul.footer-info p.copyright a{color:#aaa;}
+
+/**********************************************************************/
+
+
+
+
+.equipment-item{position:relative; min-height:520px; margin:100px 0; text-align:left; box-sizing:border-box; padding:560px 0 25px 0; border-bottom:4px solid #172b4d;}
+.equipment-item h6.tit{font-size:32px; font-weight:700; color:#222;}
+.equipment-item p.con{font-size:15px; line-height:25px; color:#222; margin:25px 0;}
+.equipment-item b.tit-small{display:block; font-size:22px; font-weight:700; color:#b9975e; margin:70px 0 20px 0;}
+.equipment-item span.hashtag{color:#747474;}
+.equipment-item i.stamp{position:absolute; width:100%; max-width:401px; left:50%; top:0; transform:translate(-50%, 0); text-align:left;}
+
+.bg53301{background:url(/assets/img/contents/euipment01.png) no-repeat center top;}
+.bg53302{background:url(/assets/img/contents/euipment02.png) no-repeat center top;}
+.bg53303{background:url(/assets/img/contents/euipment03.png) no-repeat center top;}
+.bg53304{background:url(/assets/img/contents/euipment04.png) no-repeat center top;}
+.bg53305{background:url(/assets/img/contents/euipment05.png) no-repeat center top;}
+.bg53306{background:url(/assets/img/contents/euipment06.png) no-repeat center top;}
+.bg53307{background:url(/assets/img/contents/euipment07.png) no-repeat center top;}
+.bg53308{background:url(/assets/img/contents/euipment08.png) no-repeat center top;}
+.bg53309{background:url(/assets/img/contents/euipment09.png) no-repeat center top;}
+.bg53310{background:url(/assets/img/contents/euipment10.png) no-repeat center top;}
+.bg53311{background:url(/assets/img/contents/euipment11.png) no-repeat center top;}
+.bg53312{background:url(/assets/img/contents/euipment12.png) no-repeat center top;}
+.bg53313{background:url(/assets/img/contents/euipment13.png) no-repeat center top;}
+.bg53314{background:url(/assets/img/contents/euipment14.png) no-repeat center top;}
+.bg53315{background:url(/assets/img/contents/euipment15.png) no-repeat center top;}
+.bg53316{background:url(/assets/img/contents/euipment16.png) no-repeat center top;}
+.bg53317{background:url(/assets/img/contents/euipment17.png) no-repeat center top;}
+.bg53318{background:url(/assets/img/contents/euipment18.png) no-repeat center top;}
+.bg53319{background:url(/assets/img/contents/euipment19.png) no-repeat center top;}
+.bg53320{background:url(/assets/img/contents/euipment20.png) no-repeat center top;}
+.bg53321{background:url(/assets/img/contents/euipment21.png) no-repeat center top;}
+.bg53322{background:url(/assets/img/contents/euipment22.png) no-repeat center top;}
+.bg53323{background:url(/assets/img/contents/euipment23.png) no-repeat center top;}
+.bg53324{background:url(/assets/img/contents/euipment24.png) no-repeat center top;}
+.bg53325{background:url(/assets/img/contents/euipment25.png) no-repeat center top;}
+.bg53326{background:url(/assets/img/contents/euipment26.png) no-repeat center top;}
+.bg53327{background:url(/assets/img/contents/euipment27.png) no-repeat center top;}
+.bg53328{background:url(/assets/img/contents/euipment28.png) no-repeat center top;}
+.bg53329{background:url(/assets/img/contents/euipment29.png) no-repeat center top;}
+.bg53330{background:url(/assets/img/contents/euipment30.png) no-repeat center top;}
+.bg53331{background:url(/assets/img/contents/euipment31.png) no-repeat center top;}
+
+
+
+
+
+
+
+
+#reserve{display:inline-block; width:100%; padding:50px 0;}
+#reserve *::before, #reserve *::after, #reserve label, #reserve button{-webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+
+#reserve h3{font-size:36px; font-weight:700; text-align:center; margin-bottom:50px;}
+
+#reserve #surgery-picker,
+#reserve #date-picker{box-sizing:border-box;}
+
+#reserve #surgery-picker{width:100%; margin-bottom:10px;}
+#reserve #surgery-picker .surgery-title{font-size:22px; font-weight:700; color:#172b4d; text-align:center; padding:30px 0; border:1px solid #e1e1e1; border-top:2px solid #172b4d;}
+#reserve #surgery-picker .surgery-title span{}
+
+#reserve #surgery-picker .surgery{box-sizing:border-box; height:auto; border:1px solid #e1e1e1; border-top:0;}
+
+#reserve #surgery-picker .surgery .surgery-tab,
+#reserve #surgery-picker .surgery .surgery-option{box-sizing:border-box;}
+
+#reserve #surgery-picker .surgery .surgery-tab{width:100%; height:inherit; padding:20px;}
+#reserve #surgery-picker .surgery .surgery-tab button{display:inline-block; float:left; width:33.3333333333%; height:50px; margin-bottom:15px; line-height:50px; border-radius:50px; border:1px solid #e1e1e1; text-align:center; color:#5e5d5d; font-size:13px; box-sizing:border-box;}
+#reserve #surgery-picker .surgery .surgery-tab button:hover{background:#fafafa;}
+#reserve #surgery-picker .surgery .surgery-tab button.active{border:0; background:#172b4d; color:#fff;}
+@media(max-width:420px){
+	#reserve #surgery-picker .surgery .surgery-tab button{width:50%;}
+}
+
+
+
+#reserve #surgery-picker .surgery-option{width:100%; height:inherit; overflow-y:auto; padding:10px;}
+
+#reserve #surgery-picker .surgery-option::-webkit-scrollbar-track
+{
+	margin:10px 0;
+	border-radius: 10px;
+	background-color:none;
+}
+
+
+#reserve #surgery-picker .surgery-option::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: none;
+}
+
+#reserve #surgery-picker .surgery-option::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #c6c6c6;
+}
+
+
+#reserve #surgery-picker .surgery-option .surgery-inventory{display:none;}
+#reserve #surgery-picker .surgery-option #surgery-item01{display:block;}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .item{margin-bottom:5px;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item:last-child{margin-bottom:0;}
+
+/*  */
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > label{position:relative; width:100%; height:70px; padding:0 10px; line-height:70px; font-size:13px; font-weight:700; background:#f9f9f9; border:1px solid #f9f9f9; color:#5e5d5d; cursor:pointer; box-sizing:border-box; font-family: 'Nanum Gothic', '나눔고딕', sans-serif;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > label::before{position:absolute; display:inline-block; content:''; right:15px; top:50%; margin-top:-15px; width:30px; height:30px; border-radius:30px; background:#fff; border:1px solid #c6c6c6;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > label::after{position:absolute; display:inline-block; right:15px; top:50%; margin-top:-15px; width:30px; height:30px; line-height:31px; font-size:15px; text-align:center; color:#c6c6c6; font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f067";}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .item em{position:absolute; right:60px; top:0; z-index:1;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > input[type="radio"],
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > input[type="checkbox"]{display:none;}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > input[type="radio"]:checked + label,
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > input[type="checkbox"]:checked + label{background:#fff; border:1px solid #172b4d; color:#172b4d;}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > input[type="radio"]:checked + label::before,
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > input[type="checkbox"]:checked + label::before{border:1px solid #172b4d; background:#172b4d;}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > input[type="radio"]:checked + label::after,
+#reserve #surgery-picker .surgery-option .surgery-inventory .item > input[type="checkbox"]:checked + label::after{color:#fff;}
+/*  */
+
+/*  */
+#reserve #surgery-picker .surgery-option .surgery-inventory .child label{position:relative; width:100%; height:70px; padding-right:170px; line-height:70px; font-size:13px; font-weight:700; background:#fff; color:#5e5d5d; cursor:pointer; box-sizing:border-box; text-align:right; font-family: 'Nanum Gothic', '나눔고딕', sans-serif;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .child label::before{position:absolute; display:inline-block; content:''; right:15px; top:50%; margin-top:-15px; width:30px; height:30px; border-radius:30px; background:#fff; border:1px solid #c6c6c6;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .child label::after{position:absolute; display:inline-block; right:15px; top:50%; margin-top:-15px; width:30px; height:30px; line-height:31px; font-size:15px; text-align:center; color:#c6c6c6; font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f067";}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .child em{position:absolute; right:60px; top:0; z-index:1;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .child input[type="radio"],
+#reserve #surgery-picker .surgery-option .surgery-inventory .child input[type="checkbox"]{display:none;}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .child input[type="radio"]:checked + label,
+#reserve #surgery-picker .surgery-option .surgery-inventory .child input[type="checkbox"]:checked + label{background:#f9f9f9; color:#172b4d;}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .child input[type="radio"]:checked + label::before,
+#reserve #surgery-picker .surgery-option .surgery-inventory .child input[type="checkbox"]:checked + label::before{border:1px solid #172b4d; background:#172b4d;}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .child input[type="radio"]:checked + label::after,
+#reserve #surgery-picker .surgery-option .surgery-inventory .child input[type="checkbox"]:checked + label::after{color:#fff;}
+/*  */
+
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button{position:relative; width:100%; height:70px; padding:0 10px; line-height:70px; font-size:13px; font-weight:700; background:#f9f9f9; border:1px solid #f9f9f9; color:#5e5d5d; cursor:pointer; box-sizing:border-box; text-align:left; font-family: 'Nanum Gothic', '나눔고딕', sans-serif;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button::before{position:absolute; display:inline-block; content:''; right:15px; top:50%; margin-top:-15px; width:30px; height:30px; border-radius:30px; background:#fff; border:1px solid #c6c6c6;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button::after{position:absolute; display:inline-block; right:15px; top:50%; margin-top:-15px; width:30px; height:30px; line-height:34px; font-size:15px; text-align:center; color:#c6c6c6; font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f078";}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button.active{background:#fff; border:1px solid #172b4d; color:#172b4d;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button.active::before{border:1px solid #172b4d; background:#172b4d;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button.active::after{color:#fff;}
+
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button + ul{display:none; border:1px solid #e1e1e1; border-top:0;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button + ul li{border-bottom:1px dashed #ccc;}
+#reserve #surgery-picker .surgery-option .surgery-inventory .item button + ul li:last-child{border-bottom:0;}
+
+
+
+
+
+
+#reserve #date-picker{width:100%; border:1px solid #e1e1e1; border-top:2px solid #172b4d;}
+
+#reserve #date-picker .date-title{font-size:22px; font-weight:700; color:#172b4d; text-align:center; padding:30px 0;}
+#reserve #date-picker .date-title span{}
+
+#reserve #date-picker .month{width:100%; height:70px; text-align:center;}
+#reserve #date-picker .month .brick{display:inline-block;}
+#reserve #date-picker .month span{display:inline-block; float:left; height:70px; line-height:70px; font-size:28px; color:#172b4d; font-weight:700;}
+#reserve #date-picker .month button{display:inline-block; float:left; width:50px; height:70px; line-height:73px; font-size:28px; color:#dbdada;}
+#reserve #date-picker .month button:hover{color:#b0b0b0;}
+
+#reserve #date-picker .calendar{width:100%; padding:15px; height:380px; box-sizing:border-box;}
+#reserve #date-picker .calendar .calendar-tbl{width:100%; height:100%; border-top:1px solid #e1e1e1; border-left:1px solid #e1e1e1;}
+#reserve #date-picker .calendar .calendar-tbl caption{display:none;}
+
+#reserve #date-picker .calendar .calendar-tbl thead{}
+#reserve #date-picker .calendar .calendar-tbl thead th{text-align:center; vertical-align:middle; padding:10px 0; border-right:1px solid #fff; border-bottom:1px solid #d9d9d9; background:#f5f5f5;}
+#reserve #date-picker .calendar .calendar-tbl thead th:last-child{border-right:1px solid #e1e1e1;}
+#reserve #date-picker .calendar .calendar-tbl tbody{}
+#reserve #date-picker .calendar .calendar-tbl tbody td{text-align:center; vertical-align:middle; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1; cursor:pointer;}
+#reserve #date-picker .calendar .calendar-tbl tbody td:hover{background:#fcfcfc;}
+#reserve #date-picker .calendar .calendar-tbl tbody td.today{background:#e9e9e9;}
+#reserve #date-picker .calendar .calendar-tbl tbody td.selected{background:#172b4d;}
+#reserve #date-picker .calendar .calendar-tbl tbody td.selected button{color:#fff;}
+#reserve #date-picker .calendar .calendar-tbl tbody td.closed
+,#reserve #date-picker .calendar .calendar-tbl tbody td.sun{cursor:default;}
+#reserve #date-picker .calendar .calendar-tbl tbody td.closed button,
+#reserve #date-picker .calendar .calendar-tbl tbody td.sun button{color:#b4b4b4; cursor:default;}
+
+
+
+#reserve #date-picker .time-picker{height:150px; box-sizing:border-box; background:#f5f5f5; padding:15px 35px;}
+#reserve #date-picker .time-picker .time{float:left; width:16.6666666667%; text-align:center; box-sizing:border-box; padding:2px 5px;}
+#reserve #date-picker .time-picker .time.closed label{cursor:default; color:#a3a3a3;}
+#reserve #date-picker .time-picker label{display:inline-block; width:100%; height:35px; line-height:35px; border-radius:5px; background:#fff; border:1px solid #d6d6d6; cursor:pointer;}
+#reserve #date-picker .time-picker label:hover{background:#fcfcfc;}
+
+#reserve #date-picker .time-picker input[type="radio"]{display:none;}
+#reserve #date-picker .time-picker input[type="radio"]:checked + label{background:#172b4d; border:1px solid #172b4d; color:#fff;}
+
+@media(max-width:480px){
+	#reserve #date-picker .calendar{height:420px;}
+	#reserve #date-picker .time-picker{height:225px; padding:15px; margin-top:70px}
+	#reserve #date-picker .time-picker .time{width:25%;}
+}
+
+
+
+
+
+#order-form{display:inline-block; width:100%; padding:50px 0; background:#f9f9f9;}
+
+#order-form #order-info,
+#order-form #order-surgery{box-sizing:border-box;}
+
+#order-form .order-title{padding:20px 0; text-align:center; border-top:2px solid #cbcbcb; border-bottom:1px solid #cbcbcb;}
+#order-form .order-title span{font-size:22px; color:#172b4d; font-weight:700;}
+
+#order-form #order-info{width:100%; margin-bottom:10px;}
+#order-form #order-info .order-form{background:#fff; text-align:center; height:auto;}
+#order-form #order-info .order-form ul{padding:25px 50px; margin:0 20px; border-bottom:1px dashed #ccc;}
+#order-form #order-info .order-form ul li{position:relative; width:100%; box-sizing:border-box; padding-left:80px;}
+#order-form #order-info .order-form ul li label{position:absolute; left:0; top:0; width:60px; color:#5e5d5d; height:50px; line-height:50px;}
+#order-form #order-info .order-form ul li input[type="text"]{width:100%; background:#f9f9f9; border:1px solid #cbcbcb; border-radius:3px; height:40px; line-height:40px; margin:5px 0; padding:0 5px; box-sizing:border-box;}
+
+#order-form #order-info .agreement{padding:25px 35px; text-align:left;}
+#order-form #order-info .agreement p{position:relative; font-size:14px; color:#5e5d5d; padding-left:35px; margin-bottom:15px;}
+#order-form #order-info .agreement p input[type="checkbox"]{display:none;}
+
+#order-form #order-info .agreement p label{cursor:pointer; line-height:20px;}
+#order-form #order-info .agreement p label::before{position:absolute; display:inline-block; content:''; left:0; top:50%; margin-top:-10px; width:20px; height:20px; border-radius:20px; background:#f9f9f9; border:1px solid #c6c6c6;}
+#order-form #order-info .agreement p label::after{position:absolute; display:inline-block; left:5px; top:50%; margin-top:-10px; width:20px; height:20px; line-height:20px; font-size:20px; text-align:center; color:#c6c6c6; font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f00c";}
+
+#order-form #order-info .agreement p input[type="checkbox"]:checked + label::before{background:#fff;}
+#order-form #order-info .agreement p input[type="checkbox"]:checked + label::after{color:#b18c4c;}
+
+#order-form #order-info .agreement p em{font-size:13px; color:#222; font-weight:700;}
+#order-form #order-info .agreement p button{display:inline-block; color:#222; text-decoration:underline; font-weight:700; margin-left:5px;}
+
+
+#order-form #order-surgery{width:100%;}
+
+#order-form #order-surgery .order-inventory{background:#fff; min-height:393px;}
+
+#order-form #order-surgery .order-inventory .order-list{padding:25px 0; margin:0 20px; border-bottom:1px dashed #ccc;}
+#order-form #order-surgery .order-inventory .order-list p{position:relative; color:#172b4d; text-align:left; font-size:16px; line-height:25px; margin:15px 0; padding-right:60px;}
+#order-form #order-surgery .order-inventory .order-list p em:first-child{font-weight:700; }
+#order-form #order-surgery .order-inventory .order-list p em:last-child{display:inline-block; font-weight:700; position:absolute; right:0; top:0;}
+#order-form #order-surgery .order-inventory .order-list p span{display:inline-block; width:1px; height:14px; background:#b2b2b2; margin:0 15px; vertical-align:-2px;}
+
+#order-form #order-surgery .order-inventory .order-price{padding:25px 0; margin:0 20px; border-bottom:1px dashed #ccc; text-align:right;}
+#order-form #order-surgery .order-inventory .order-price p.txt01{font-size:19px; color:#5e5d5d;}
+#order-form #order-surgery .order-inventory .order-price p.txt01 em{font-size:32px; font-weight:700; color:#b18c4c;}
+#order-form #order-surgery .order-inventory .order-price p.txt02{font-size:14px; color:#5e5d5d; font-weight:700; padding:10px 0;}
+#order-form #order-surgery .order-inventory .order-price p.txt03{font-size:13px; color:#999;}
+
+#order-form #order-surgery .order-inventory .order-date{padding:25px 0;}
+#order-form #order-surgery .order-inventory .order-date p{text-align:center;}
+#order-form #order-surgery .order-inventory .order-date p::before{display:inline-block; content:''; width:30px; height:32px; background:url(/assets/img/m/contents/calendar.png) no-repeat center center; background-size:30px; vertical-align:-10px; margin-right:5px;}
+#order-form #order-surgery .order-inventory .order-date p em{display:inline-block; font-weight:700; color:#111; margin-right:20px;}
+
+#order-form #order-surgery .order-inventory .order-btn{}
+#order-form #order-surgery .order-inventory .order-btn button{display:block; width:100%; height:75px; line-height:75px; background:#b18c4c; color:#fff; font-size:22px; font-weight:700;}
+
+
+@media(max-width:480px){
+	#order-form #order-info .order-form{height:auto;}
+	#order-form #order-info .order-form ul{padding:25px 10px;}
+	#order-form #order-info .agreement{padding:25px 10px;}
+	#order-form #order-info .agreement p{font-size:12px; line-height:20px;}
+
+	#order-form #order-surgery .order-inventory{min-height:auto;}
+	#order-form #order-surgery .order-inventory .order-list p{font-size:12px;}
+	#order-form #order-surgery .order-inventory .order-list p span{margin:0 5px;}
+
+	#order-form #order-surgery .order-inventory .order-price p.txt01{font-size:14px;}
+	#order-form #order-surgery .order-inventory .order-price p.txt01 em{font-size:20px;}
+	#order-form #order-surgery .order-inventory .order-price p.txt02{font-size:13px;}
+	#order-form #order-surgery .order-inventory .order-price p.txt03{font-size:12px;}
+
+	#order-form #order-surgery .order-inventory .order-date p em{display:block; font-weight:700; color:#111; margin:10px 0;}
+	#order-form #order-surgery .order-inventory .order-btn button{height:45px; line-height:45px; background:#b18c4c; color:#fff; font-size:17px; font-weight:700;}
+}
+
+
+
+
+
+
+
+
+
+
+
+#pop-order{position:relative; display:inline-block; width:100%; min-height:100px; background:#172b4d; z-index:1; padding:25px 0 10px 0;}
+
+#pop-order #pop-order-list,
+#pop-order #pop-order-btn{position:relative; box-sizing:border-box; z-index:1;}
+
+#pop-order #pop-order-list{width:100%; padding:35px 0 10px 0;}
+#pop-order #pop-order-list::before{position:absolute; display:inline-block; content:''; left:0; top:0; color:#fff; font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f15c"; font-size:25px;}
+#pop-order #pop-order-list::after{position:absolute; display:inline-block; content:'선택된시술'; left:30px; top:0; font-size:22px; color:#fff; font-weight:700;}
+
+#pop-order #pop-order-list button{position:relative; text-align:left; display:inline-block; margin:3px 0; background:rgba(255,255,255,0.1); border:1px solid #8b95a6; font-size:15px; color:#fff; padding:8px 50px 8px 15px; width:100%; cursor:default;}
+#pop-order #pop-order-list button:hover{background:rgba(255,255,255,0.05);}
+#pop-order #pop-order-list button em{position:absolute; right:10px; top:6px; font-size:17px; cursor:pointer;}
+
+#pop-order #pop-order-btn{width:100%; text-align:center;}
+#pop-order #pop-order-btn .brick{display:inline-block; height:50px;}
+#pop-order #pop-order-btn button{display:inline-block; float:left; height:40px; padding:0 20px; line-height:43px; text-align:center; color:#fff; font-size:16px;}
+#pop-order #pop-order-btn button.btn-complete{background:#b18c4c; margin-right:5px;}
+#pop-order #pop-order-btn button.btn-reset{background:#8b8b8b;}
+#pop-order #pop-order-btn button.btn-reset em{display:inline-block; font-size:15px; line-height:40px; margin-right:10px;}
+
+
+
+/* 예약접수 완료 팝업 시작 */
+#order-complete{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.6); z-index:99;}
+#order-complete .brick{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); z-index:1; width:100%; max-width:500px; background:#fff; border-top:2px solid #b18c4c;}
+
+#order-complete .order-complete-txt{text-align:center; padding:120px 0 35px 0; background: url(/assets/img/m/contents/order_complete_bg.png) no-repeat center 25px; background-size:90px;}
+#order-complete .order-complete-txt p.txt01{font-size:20px; color:#000; font-weight:700; margin-bottom:10px;}
+#order-complete .order-complete-txt p.txt01 em{color:#a17b39;}
+#order-complete .order-complete-txt p.txt02{font-size:15px; color:#5e5d5d;}
+
+#order-complete .order-complete-form{background:#f8f8f8; padding:25px 35px; border-top:1px dashed #ccc; border-bottom:1px dashed #ccc;}
+#order-complete .order-complete-form table{color:#5e5d5d;}
+#order-complete .order-complete-form table caption{display:none;}
+#order-complete .order-complete-form table th{position:relative; text-align:left; vertical-align:middle; padding:10px;}
+#order-complete .order-complete-form table th::before{position:absolute; display:inline-block; content:''; width:3px; height:3px; border-radius:3px; background:#5e5d5d; left:0; top:50%; margin-top:-1.5px;}
+#order-complete .order-complete-form table td{text-align:left; vertical-align:middle; padding:10px; font-weight:700; color:#222;}
+#order-complete .order-complete-form table td em{color:#b18c4c;}
+#order-complete .order-complete-form table td span{}
+
+
+#order-complete .order-complete-cs{padding:20px 0; font-size:13px; line-height:1.5em; text-align:center; color:#111;}
+
+
+#order-complete .order-complete-btn{}
+#order-complete .order-complete-btn button{float:left; width:50%; display:inline-block; height:75px; line-height:78px; text-align:center; font-size:18px;}
+#order-complete .order-complete-btn button.order-btn-kakao{background:#f8f8f8; color:#222;}
+#order-complete .order-complete-btn button.order-btn-kakao img{line-height:73px; margin-right:5px;}
+#order-complete .order-complete-btn button.order-btn-complete{background:#b18c4c; color:#fff;}
+
+@media(max-width:480px){
+	#order-complete .order-complete-txt p.txt01{font-size:16px;}
+	#order-complete .order-complete-txt p.txt02{font-size:13px; line-height:20px;}
+
+	#order-complete .order-complete-form{padding:20px 10px;}
+	#order-complete .order-complete-btn button{font-size:15px;}
+}
+/* 예약접수 완료 팝업 끝 */
+
+
+
+#pop-agreement{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.6); z-index:99;}
+#pop-agreement .pop-private,
+#pop-agreement .pop-marketing{display:none; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); z-index:1; width:90%;  max-width:640px;  background:#fff;}
+#pop-agreement .pop-private p,
+#pop-agreement .pop-marketing p{padding:25px; font-size:14px; line-height:1.5em; max-height:380px; overflow-y:auto;}
+#pop-agreement .pop-private button,
+#pop-agreement .pop-marketing button{display:block; width:100%; height:50px; line-height:50px; background:#b18c4c; color:#fff; font-size:15px; font-weight:700; text-align:center;}
+
+
+
+
+
+
+
+/* 시술&수술 후 주의사항 시작 */
+#caoution{margin-top:50px;}
+#caoution .inner{max-width:640px;}
+#caoution .caoution-title{position:relative; padding:50px 0 30px 0; text-align:center; font-size:22px; line-height:1.5em; color:#a5803d; letter-spacing:-0.5px;}
+#caoution .caoution-title::before{position:absolute; display:inline-block; content:''; left:0; top:0; width:100%; height:10px; background:url(/assets/img/common/pattern01.png) repeat-x left top;}
+#caoution .caoution-title p{font-size:26px; color:#757575;}
+#caoution .caoution-title p em{color:#111; font-weight:700;}
+
+#caoution .caoution-list{position:relative; display:inline-block; width:100%; background:#f8f8f8 url(/assets/img/common/simbol.png) no-repeat 30px 50px; padding:50px 0;}
+#caoution .caoution-list::before{position:absolute; display:inline-block; content:''; width:44px; height:5px; left:15px; top:85px; background:#b79964;}
+#caoution .caoution-list ol{counter-reset:li; text-align:left; padding:0 15px;}
+#caoution .caoution-list ol li::before{display:inline-block; content: counter(li); counter-increment: li; margin-right:5px; left:-10px; top:4px; font-size:13px; width:22px; height:22px; border-radius:22px; line-height:22px; text-align:center; background:#b79964; font-weight:700; color:#fff;}
+#caoution .caoution-list ol li{position:relative; content:'';height:30px; line-height:30px; color:#111; font-size:12px; box-sizing:border-box;}
+
+#caoution .caoution-list span{display:inline-block;  transform:translate(0, -50%); font-size:22px; color:#757575; line-height:1.2em; margin-left:15px;}
+#caoution .caoution-list span em{display:block; color:#111; font-weight:700;}
+
+
+#caoution .caoution-info{text-align:center; margin:25px 0 50px 0; padding:15px; font-size:15px; background:#132b49; color:#fff;}
+#caoution .caoution-info em{color:#eac688; font-weight:700;}
+
+#caoution .double-banner{position:relative; display:inline-block; width:100%; margin-bottom:25px;}
+#caoution .double-banner li{margin-bottom:10px;}
+#caoution .double-banner li img{width:100%;}
+/* 시술&수술 후 주의사항 끝 */
+
+
+.pcode708-movie {position:relative;}
+.pcode708-movie .movie {position:absolute; top:44.49%; left:.5rem; right:.5rem; height:30.74%;}
+.pcode708-movie .movie iframe {width:100%; height:100%;}
+
+
+

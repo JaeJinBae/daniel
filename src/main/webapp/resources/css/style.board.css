@@ -1,0 +1,406 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 게시판 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.04.04
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+
+/**********************************************************************
+* Descript : NEWS 게시판 스타일
+***********************************************************************/
+.board-tit{text-align:center; padding:100px 0 50px 0;}
+
+.board-notice-list{width:100%;}
+.board-notice-list thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
+.board-notice-list thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
+
+.board-notice-list tbody td{background:#fff; border-bottom:1px solid #cfd1d4; text-align:center; padding:15px 0; font-size:13px;}
+.board-notice-list tbody td i.notice{display:inline-block; padding:10px; background:#172b4d; color:#fff; border-radius:25px; font-size:11px; font-weight:700;}
+.board-notice-list tbody td.subject{text-align:left;}
+.board-notice-list tbody td.subject a{color:#222;}
+.board-notice-list tbody td.date{font-size:12px;}
+.board-notice-list tbody td.hit{font-size:12px;}
+
+
+
+.board-notice-view{width:100%;}
+.board-notice-view thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
+.board-notice-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
+
+.board-notice-view tbody td{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:center; padding:15px; font-size:13px; line-height:23px;}
+.board-notice-view tbody td i.notice{display:inline-block; padding:5px; background:#172b4d; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
+.board-notice-view tbody td.subject{text-align:left;}
+.board-notice-view tbody td.subject a{color:#222;}
+.board-notice-view tbody td.date{font-size:12px;}
+.board-notice-view tbody td.con{padding:25px 15px; font-size:13px; line-height:21px; text-align:left;}
+.board-notice-view tbody td.con img{max-width:100%;}
+.board-notice-view tbody td a{color:#999;}
+
+.prev-next-list{width:100%;}
+.prev-next-list ul{}
+.prev-next-list ul li{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:left; padding:10px 15px; font-size:13px; line-height:23px;}
+.prev-next-list ul li span{display:inline-block; width:100px; font-weight:700; text-align:center;}
+.prev-next-list ul li a{display:inline-block; width:calc(100% - 100px); box-sizing:border-box; padding:0 25px; color:#222;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 페이징 스타일
+***********************************************************************/
+#board-pagenation{width:100%;}
+#board-pagenation{width:100%; max-width:1200px; margin:30px auto 100px auto; text-align:center;}
+#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; border:1px solid #ddd; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box;}
+#board-pagenation a:hover{text-decoration:underline;}
+#board-pagenation a.on{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 검색 폼 스타일
+***********************************************************************/
+.search-box{width:640px; height:35px; margin:0 auto 100px auto;}
+.search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
+.search-box input[type="text"]{width:68%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../img/board/search.png) no-repeat 98% center; background-size:20px;}
+.search-box button{width:15%; background:#172b4d; color:#fff; font-weight:700; cursor:pointer;}
+.search-box select{width:15%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(../img/common/arrow.png) no-repeat 98% center;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 버튼 스타일
+***********************************************************************/
+.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+	button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
+	button.btn:hover, a.btn:hover{text-decoration:none;}
+	.btn-list{background:#172b4d; color:#fff;}
+	.btn-submit{background:#172b4d; color:#fff;}
+	.btn-my-list{background:#333; color:#fff;}
+	.btn-del{background:#f4f4f4; border:1px solid #ccc; color:#222;}
+	.btn-update{background:#172b4d; color:#fff;}
+	.btn-view-list{background:#858585; color:#fff;}
+	.btn-cancel{background:#cbcbcb; color:#fff;}
+
+/**********************************************************************/
+
+
+
+
+/**********************************************************************
+* Descript : 온라인상담 게시판 스타일
+***********************************************************************/
+.board-tit{text-align:center; padding:100px 0 50px 0;}
+
+.board-counsel-list{width:100%;}
+.board-counsel-list thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
+.board-counsel-list thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
+
+.board-counsel-list tbody td{background:#fff; border-bottom:1px solid #cfd1d4; text-align:center; padding:15px 0; font-size:13px;}
+.board-counsel-list tbody td i.notice{display:inline-block; padding:10px; background:#172b4d; color:#fff; border-radius:25px; font-size:11px; font-weight:700;}
+.board-counsel-list tbody td.subject{text-align:left;}
+.board-counsel-list tbody td.subject a{color:#222;}
+.board-counsel-list tbody td.date{font-size:12px;}
+.board-counsel-list tbody td.hit{font-size:12px;}
+.board-counsel-list tbody td i.state{display:inline-block; padding:10px 20px; color:#fff; border-radius:25px; font-size:12px; font-weight:700;}
+.board-counsel-list tbody td i.com{background:#2ab3bc; }
+.board-counsel-list tbody td i.ready{background:#cbcbcb; }
+.board-counsel-list tbody td a{color:#222;}
+
+
+.board-counsel-view{width:100%; }
+.board-counsel-view thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
+.board-counsel-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
+
+.board-counsel-view tbody td{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:center; padding:15px; font-size:13px; line-height:23px;}
+.board-counsel-view tbody td i.notice{display:inline-block; padding:5px; background:#172b4d; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
+.board-counsel-view tbody td.subject{text-align:left;}
+.board-counsel-view tbody td.subject a{color:#222;}
+.board-counsel-view tbody td.date{font-size:12px;}
+.board-counsel-view tbody td.con{padding:25px 15px; font-size:13px; line-height:21px; text-align:left;}
+.board-counsel-view tbody td.con img{max-width:100%;}
+.board-counsel-view tbody td i.state{display:inline-block; padding:10px 20px; color:#fff; border-radius:25px; font-size:12px; font-weight:700;}
+.board-counsel-view tbody td i.com{background:#2ab3bc; }
+.board-counsel-view tbody td i.ready{background:#cbcbcb; }
+.board-counsel-view tbody td a{color:#999;}
+
+.board-counsel-content{padding:25px;}
+
+.board-counsel-reply{padding:25px; background:#f4f4f4; border-top:1px solid #cfd1d4; border-bottom:1px solid #cfd1d4;}
+.board-counsel-reply .reply-title{position:relative; display:inline-block; width:100%; height:30px; line-height:30px;  padding-left:100px; box-sizing:border-box; font-weight:700; margin-bottom:25px;}
+.board-counsel-reply .reply-title i{position:absolute; left:0; top:0; display:inline-block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; background:#0ca9b3; font-size:13px;}
+.board-counsel-reply .reply-txt{font-size:13px; line-height:20px;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 온라인상담 글쓰기 폼 스타일
+***********************************************************************/
+.board-cousel-form{width:100%;}
+.board-cousel-form input[type="text"],
+.board-cousel-form input[type="password"],
+.board-cousel-form select{min-width:100px; height:35px; line-height:35px; box-sizing:border-box; border:1px solid #cacaca; padding:0 5px;}
+.board-cousel-form select{background:url(../img/common/arrow.png) no-repeat 90% center;}
+.board-cousel-form textarea{width:100%; max-width:100%; min-width:100%; height:150px; bbox-sizing:border-box; padding:5px; border:1px solid #cacaca; color:#222; font-size:12px; line-height:20px;}
+.board-cousel-form input[element-name="제목"]{width:100%;}
+
+.board-cousel-form tbody{border-top:2px solid #858585;}
+.board-cousel-form tbody th{width:125px; padding:10px 20px; text-align:left; background:#f8f8f8; border-bottom:1px solid #cfd1d4; font-size:13px; font-weight:700;}
+.board-cousel-form tbody td{padding:10px 20px; text-align:left; border-bottom:1px solid #cfd1d4;}
+
+.private-agree{}
+.private-agree textarea{width:100%; max-width:100%; min-width:100%; height:150px; background:#f4f4f4; box-sizing:border-box; padding:25px; color:#222; font-size:12px; line-height:20px; margin:15px 0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 체크박스 및 라디오버튼 스타일
+***********************************************************************/
+.private-agree{text-align:right;}
+.private-agree input[type="radio"],
+.private-agree input[type="checkbox"]{display:none;}
+
+.private-agree input[type="radio"] + label,
+.private-agree input[type="checkbox"] + label{font-size:14px; position:relative; cursor:pointer;}
+
+.private-agree input[type="radio"] + label::before,
+.private-agree input[type="checkbox"] + label::before{position:absolute; content:""; display:inline-block; left:-25px; top:-3px; border:1px solid #ddd; width:23px; height:23px; margin-right:10px; box-sizing: border-box; cursor:pointer; vertical-align:middle;}
+
+.private-agree input[type="radio"]:checked + label:after,
+.private-agree input[type="checkbox"]:checked + label::after{position:absolute; content:""; display:inline-block; width:15px; height:15px; left:-21px; top:1px; background:#172b4d}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 온라인상담하기 비밀번호 입력폼 스타일
+***********************************************************************/
+.check-password{width:620px; background:#eee; margin:50px auto; border:1px solid #333; text-align:center;}
+.check-password h3{background:#333; color:#fff; padding:20px; font-size:15px; font-weight:700;}
+.check-password p{font-size:13px; color:#777; padding:25px 0 10px 0; line-height:20px;}
+.check-password input[type="password"]{width:50%; border:1px solid #ccc; box-size:border-box; padding:7px; background:#fff;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 비포 엔 에프터 게시판 분류탭 스타일
+***********************************************************************/
+.board-titl{width:100%; padding:60px 0; text-align:center;}
+.board-titl h5{font-size:36px; font-weight:700; color:#172b4d;}
+
+.board-kinds{width:100%; display:inline-block;}
+.board-kinds li{float:left; width:25%; box-sizing:border-box;}
+.board-kinds li a{display:block; height:70px; line-height:70px; text-align:center; font-size:18px; color:#172b4d; background:#fbfbfb; border:1px solid #dddddd; margin:-1px;}
+.board-kinds li.active a{color:#fff; background:#5877ad; border:1px solid #5877ad; margin:-1px;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 비포 엔 에프터 게시판 스타일
+***********************************************************************/
+.before-after{width:100%; margin:25px 0 50px 0;}
+.before-after li.item{position:relative; width:100%; height:500px;}
+.before-after li.item span{position:relative; display:inline-block; float:left; width:50%; height:450px; background-position:center center; background-repeat:no-repeat; background-color:#fafafa;}
+.before-after li.item span.full{width:100% !important;}
+.before-after li.item span i{position:absolute; display:inline-block; width:120px; height:40px; line-height:40px; text-align:center; color:#fff; font-weight:700; font-size:17px;}
+.before-after li.item span.before{}
+.before-after li.item span.before i{right:0; bottom:0; background:#b9975e;}
+.before-after li.item span.after{}
+.before-after li.item span.after i{left:0; bottom:0; background:#2e405e;}
+.before-after li.item p{position:absolute; left:0; bottom:0; width:100%; height:50px; line-height:50px; background:#f1f1f1; font-size:17px; color:#222; text-align:center; font-weight:700; z-index:1;}
+
+
+.before-after-thumb{width:100%; display:inline-block;}
+.before-after-thumb li.item{position:relative; float:left; width:32%; height:230px; margin-bottom:25px; cursor:pointer;}
+.before-after-thumb li.item::before{opacity:0; position:absolute; display:inline-block; content:''; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.7); z-index:2; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.before-after-thumb li.item::after{opacity:0; position:absolute; display:inline-block; content:'자세히 보기'; padding:10px 20px; top:50%; left:50%; transform: translate(-50%, -50%); background:#b9975e; color:#fff; font-weight:700; font-size:15px; z-index:3; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.before-after-thumb li.item:nth-child(3n+2){margin:0 2%;}
+.before-after-thumb li.item:hover::before,
+.before-after-thumb li.item:hover::after{opacity:1;}
+.before-after-thumb li.item span{position:relative; display:inline-block; float:left; width:50%; height:190px; background-size:cover; background-repeat:no-repeat; background-position:center center;}
+.before-after-thumb li.item span.full{width:100% !important;}
+.before-after-thumb li.item span i{position:absolute; display:inline-block; width:65px; height:25px; line-height:25px; text-align:center; color:#fff; font-weight:700; font-size:13px;}
+.before-after-thumb li.item span.before{}
+.before-after-thumb li.item span.before i{right:0; bottom:0; background:#b9975e;}
+.before-after-thumb li.item span.after{}
+.before-after-thumb li.item span.after i{left:0; bottom:0; background:#2e405e;}
+.before-after-thumb li.item p{position:absolute; left:0; bottom:0; width:100%; height:40px; line-height:40px; background:#f1f1f1; font-size:14px; color:#222; text-align:center; font-weight:700; z-index:1;}
+/**********************************************************************/
+
+
+
+
+
+/**********************************************************************
+* Descript : 리얼스토리 게시판 스타일
+***********************************************************************/
+.board-gallery{width:100%; display:inline-block; margin-top:25px;}
+.board-gallery li.item{position:relative; float:left; width:23.5%; height:350px; margin-bottom:20px; cursor:pointer;}
+.board-gallery li.item:nth-child(4n+2){margin:0 2%;}
+.board-gallery li.item:nth-child(4n+3){margin-right:2%;}
+.board-gallery li.item{}
+.board-gallery li.item a{position:relative; display:inline-block; width:100%; height:100%; background-size:cover; background-repeat:no-repeat; background-position:center center;}
+.board-gallery li.item a::before{opacity:0; position:absolute; display:inline-block; content:''; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.7); z-index:2; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.board-gallery li.item a::after{opacity:0; position:absolute; display:inline-block; content:'자세히 보기'; padding:10px 20px; top:50%; left:50%; transform: translate(-50%, -50%); background:#b9975e; color:#fff; font-weight:700; font-size:15px; z-index:3; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.board-gallery li.item a:hover::before,
+.board-gallery li.item a:hover::after{opacity:1;}
+.board-gallery li.item a b{position:absolute; left:0; bottom:0; width:100%; height:60px; line-height:60px; background:#f1f1f1; font-size:15px; color:#222; text-align:center; font-weight:700; z-index:1;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 로그인폼 스타일 (/login)
+***********************************************************************/
+#login-form{max-width:1100px; margin:0 auto 100px auto; text-align:center; padding:50px; box-sizing:border-box; background:#fafafa; border-top:2px solid #333;}
+#login-form p.cap{font-size:15px; line-height:25px;}
+#login-form ul.login-inner{width:100%; max-width:500px; display:inline-block; text-align:left;}
+#login-form li.login{}
+#login-form li.login p{position:relative; padding-left:100px; margin:10px 0;}
+#login-form li.login label{position:absolute; left:0; top; display:inline-block; width:100px; height:35px; line-height:35px;}
+#login-form li.login input[type="text"],#login-form li.login input[type="password"]{width:100%; height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px;}
+#login-form li.login button[type="submit"]{width:100%; height:50px; line-height:50px; background:#172b4d; font-size:15px; color:#fff; font-weight:700;}
+#login-form li.login button[type="button"]{width:100%; height:50px; line-height:50px; background:#172b4d; font-size:15px; color:#fff; font-weight:700;}
+
+#login-form li.member{padding:15px 0; height:35px; line-height:35px;}
+#login-form li.member p{position:relative; margin:5px 0; padding-left:13px; font-size:13px;}
+#login-form li.member p::before{position:absolute; display:inline-block; content:''; width:5px; height:5px; background:#333; border-radius:5px; left:0; top:15px;}
+#login-form li.member p a{position:absolute; height:35px; line-height:35px; right:0; top:0; width:135px; text-align:center; border:1px solid #eee; font-size:12px; background:#fff; color:#222;}
+#login-form li.member p a.btn-join{background:#172b4d; border:1px solid #172b4d; color:#fff;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 회원가입하기 폼 스타일
+***********************************************************************/
+#join-form{}
+#join-form li.private{text-align:right;}
+#join-form li.private p{text-align:left; box-sizing:border-box; background:#eee; border:1px solid #ccc; color:#222; font-size:13px; line-height:18px; padding:5px; margin-bottom:10px;}
+
+#join-form li.join-form{}
+#join-form li.join-form p{padding:5px 0; font-size:12px; color:#22;}
+#join-form li.join-form p b{color:#cc0000;}
+#join-form li.join-form table.join-insert-form{width:100%; border-top:2px solid #172b4d; font-size:13px;}
+#join-form li.join-form table.join-insert-form th{width:125px; padding:10px; background:#f1f1f1; border-bottom:1px solid #ddd; font-weight:700;}
+#join-form li.join-form table.join-insert-form th i{color:#cc0000;}
+#join-form li.join-form table.join-insert-form td{padding:20px 15px; background:#fff; border-bottom:1px solid #eee}
+#join-form li.join-form table.join-insert-form td p.cap{color:#b18c4c; font-size:11px;}
+#join-form li.join-form table.join-insert-form td input[type="text"],
+#join-form li.join-form table.join-insert-form td input[type="password"],
+#join-form li.join-form table.join-insert-form td select{height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px;}
+#join-form li.join-form table.join-insert-form td select{min-width:125px; background:#fff url(../img/common/arrow.png) no-repeat 95% center;;}
+#join-form li.join-form table.join-insert-form td input.full[type="text"]{width:100%;}
+#join-form li.join-form table.join-insert-form td button{min-width:100px; height:35px; line-height:35px; background:#172b4d; font-size:13px; color:#fff; font-weight:700; padding:0 10px;}
+
+
+/**********************************************************************
+* Descript : 로그인 및 회원가입 폼 체크박스 및 라디오버튼 스타일
+***********************************************************************/
+#join-form li.private input[type="checkbox"]{display:none;}
+#join-form li.private input[type="checkbox"] + label{font-size:14px; position:relative;}
+#join-form li.private input[type="checkbox"] + label::before{position:absolute; content:""; display:inline-block; left:-25px; top:-3px; border:1px solid #ddd; width:23px; height:23px; margin-right:10px; box-sizing: border-box; cursor:pointer; vertical-align:middle;}
+#join-form li.private input[type="checkbox"]:checked + label::after{position:absolute; content:""; display:inline-block; width:15px; height:15px; left:-21px; top:1px; background:#172b4d}
+
+#join-form li.join-form table.join-insert-form td input[type="radio"]{display:none;}
+#join-form li.join-form table.join-insert-form td input[type="radio"] + label{font-size:14px; position:relative; cursor:pointer; margin-left:23px;}
+#join-form li.join-form table.join-insert-form td input[type="radio"] + label::before{position:absolute; content:""; display:inline-block; left:-25px; top:-3px; border:1px solid #ddd; width:23px; height:23px; border-radius:23px; margin-right:10px; box-sizing: border-box; cursor:pointer; vertical-align:middle;}
+#join-form li.join-form table.join-insert-form td input[type="radio"]:checked + label:after{position:absolute; content:""; display:inline-block; width:15px; height:15px; border-radius:15px; left:-21px; top:1px; background:#172b4d}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 회원가입 완료 스타일
+***********************************************************************/
+#join-finish-form{}
+#join-finish-form .celebration{font-size:20px; margin-bottom:15px;}
+#join-finish-form li.join-finish-cap{text-align:center;}
+#join-finish-form li.join-finish-cap p{font-size:13px; color:#222;}
+#join-finish-form li.join-finish-cap p b{font-weight:700;}
+
+#join-finish-form li.join-finish-info{padding:25px 0;}
+#join-finish-form li.join-finish-info p{padding:5px 0; font-size:12px; color:#22;}
+#join-finish-form li.join-finish-info p b{color:#cc0000;}
+#join-finish-form li.join-finish-info table.join-finish-form{width:100%; border-top:2px solid #172b4d; font-size:13px;}
+#join-finish-form li.join-finish-info table.join-finish-form th{width:125px; padding:10px; background:#f1f1f1; border-bottom:1px solid #ddd; font-weight:700;}
+#join-finish-form li.join-finish-info table.join-finish-form td{padding:20px 15px; background:#fff; border-bottom:1px solid #eee}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 아이디 및 비밀번호 찾기 폼 스타일
+***********************************************************************/
+#find-account{max-width:1100px; margin:0 auto 100px auto; text-align:center; background:#fafafa; border-top:2px solid #333;}
+#find-account .find-account-nav{width:100%;}
+#find-account .find-account-nav a{display:inline-block; width:50%; float:left; height:50px; line-height:50px; text-align:center; font-size:15px; background:#fff; color:#222;}
+#find-account .find-account-nav a.active{background:#172b4d; color:#fff; font-weight:700;}
+
+#find-account .find-account-inner{width:100%; max-width:600px; display:inline-block; box-sizing:border-box; padding:25px 0 50px 0;}
+#find-account .find-account-inner .find-account-form{width:100%; text-align:left;}
+#find-account .find-account-inner .find-account-form th{width:100px; padding:10px 0; font-weight:700;}
+#find-account .find-account-inner .find-account-form td{padding:10px 0;}
+#find-account .find-account-inner .find-account-form td i{display:inline-block; width:20px; text-align:center;}
+#find-account .find-account-inner .find-account-form td input[type="text"]{width:100px; height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px;}
+#find-account .find-account-inner .find-account-form td input[element-name='이름'],#find-account .find-account-inner .find-account-form td input[element-name='아이디']{width:100%;}
+#find-account .find-account-inner .find-account-form td select{height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px; min-width:125px; background:#fff url(../img/common/arrow.png) no-repeat 95% center;;}
+#find-account .find-account-inner button{width:100%; height:50px; line-height:50px; background:#172b4d; font-size:15px; color:#fff; font-weight:700;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 아이디 및 비밀번호 확인 스타일
+***********************************************************************/
+#find-account-check{margin-bottom:100px;}
+#find-account-check .inner{max-width:480px;}
+#find-account-check li.join-finish-cap{text-align:center;}
+#find-account-check li.join-finish-cap p{font-size:13px; color:#222;}
+#find-account-check li.join-finish-cap p b{font-weight:700;}
+
+#find-account-check li.join-finish-info{padding:10px 0;}
+#find-account-check li.join-finish-info p{padding:5px 0; font-size:12px; color:#22;}
+#find-account-check li.join-finish-info p b{color:#cc0000;}
+#find-account-check li.join-finish-info table.join-finish-form{width:100%; border-top:2px solid #172b4d; font-size:13px;}
+#find-account-check li.join-finish-info table.join-finish-form th{width:125px; padding:10px; background:#f1f1f1; border-bottom:1px solid #ddd; font-weight:700;}
+#find-account-check li.join-finish-info table.join-finish-form td{padding:20px 15px; background:#fff; border-bottom:1px solid #eee}
+
+#find-account-check li.member{}
+#find-account-check li.member p{position:relative; margin:5px 0; padding-left:13px; font-size:13px; height:35px; line-height:35px;}
+#find-account-check li.member p::before{position:absolute; display:inline-block; content:''; width:5px; height:5px; background:#333; border-radius:5px; left:0; top:15px;}
+#find-account-check li.member p a{position:absolute; height:35px; line-height:35px; right:0; top:0; width:135px; text-align:center; border:1px solid #eee; font-size:12px; background:#fff; color:#222;}
+#find-account-check li.member p a.btn-join{background:#172b4d; border:1px solid #172b4d; color:#fff;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 커뮤니티 -> 이벤트 스타일
+***********************************************************************/
+.daniel-event{width:100%; display:inline-block; text-align:center; margin-bottom:50px;}
+.daniel-event ul{max-width:1100px; margin:0 auto;}
+.daniel-event ul li.item{padding-top:355px; float:left; width:32%; margin-bottom:25px; background-size:357px !important;}
+.daniel-event ul li.item:nth-child(3n+2){margin:0 2%;}
+.daniel-event ul li.item div.daniel-event-info{position:relative; padding:30px 0 20px 0; background:#fff; border:1px solid #eee; border-top:0;}
+.daniel-event ul li.item div.daniel-event-info i[data-sec="진행중"]{position:absolute; font-size:15px; font-weight:700; color:#fff; left:0; top:0; background:#172b4d; padding:10px;}
+.daniel-event ul li.item div.daniel-event-info i[data-sec="종료"]{position:absolute; font-size:15px; font-weight:700; color:#fff; left:0; top:0; background:#ddd; padding:10px;}
+.daniel-event ul li.item div.daniel-event-info p.cap{font-size:15px; line-height:25px; color:#222; margin:5px 0;}
+.daniel-event ul li.item div.daniel-event-info p.cap img{margin-right:5px;}
+.daniel-event ul li.item div.daniel-event-info h6.tit{font-size:20px; line-height:30px; color:#222; font-weight:700;}
+.daniel-event ul li.item div.daniel-event-info a.more{display:inline-block; width:110px; height:37px; line-height:37px; border-radius:37px; background:#b18c4c; color:#fff; font-weigth:700;}
+/**********************************************************************/
+
+.daniel-event-view{margin-bottom:50px;}
+.daniel-event-view table{width:100%;}
+.daniel-event-view th{padding:25px 0; text-align:center; background:#fafafa; border-top:2px solid #222; border-bottom:1px solid #ccc; font-weight:700;}
+.daniel-event-view td{padding:15px; border-bottom:1px solid #ddd;}
+.daniel-event-view td.con{padding:35px 15px; font-size:1em; line-height:1.6em; color:#222;}
+.daniel-event-view td.con img{max-width:100%;}
+.daniel-event-view td h6.tit{font-size:20px; line-height:30px; color:#222; font-weight:700;}
+.daniel-event-view td p.cap{font-size:15px; line-height:25px; color:#222; margin:5px 0;}
+.daniel-event-view td p.cap img{margin-right:5px;}
+.daniel-event-view td i[data-sec="진행중"]{display:inline-block; width:100px; font-size:15px; font-weight:700; color:#fff; left:0; top:0; background:#172b4d; padding:10px;}
+.daniel-event-view td i[data-sec="종료"]{display:inline-block; width:100px; font-size:15px; font-weight:700; color:#fff; left:0; top:0; background:#ddd; padding:10px;}

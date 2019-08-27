@@ -1,0 +1,446 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 서브페이지 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.04.04
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+.quipment-titl{text-align:center; margin:50px 0;}
+#equipment-nav{width:100%; height:50px; margin:50px 0;}
+#equipment-nav .inner{border-top:3px solid #172b4d;}
+#equipment-nav ul li.pnb{float:left; width:50%; height:50px; line-height:50px; text-align:center; }
+#equipment-nav ul li.pnb a{display:block; color:#959595; font-weight:700; border:1px solid #eee; box-sizing:border-box;}
+#equipment-nav ul li.active a{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
+
+
+#equipment-list{width:100%; display:inline-block;}
+#equipment-list .inner{width:100%;}
+#equipment-list ul li.pnb{float:left; width:20%; text-align:center; }
+#equipment-list ul li.pnb a{display:block; height:50px; line-height:50px; background:#fbfbfb; color:#959595; font-weight:700;  border:1px solid #ddd; margin:0 0 -1px -1px;}
+#equipment-list ul li.active a{background:#5877ad; border:1px solid #5877ad; color:#fff; font-weight:700;}
+
+
+
+/**********************************************************************
+* Descript : 다니엘의 특별함 스타일
+***********************************************************************/
+.sub-contents{position:relative; width:100%; text-align:center;}
+.sub-contents.pcode49900{height:800px; margin:100px 0; text-align:center; background:url(../img/contents/499_bg_00.jpg) no-repeat center bottom;}
+.sub-contents.pcode49900 i.num{font-size:42px; font-family: 'Nanum Myeongjo', serif; color:#c5a264;}
+.sub-contents.pcode49900 h6.tit{font-size:26px; font-weight:700; color:#757575; margin:25px 0;}
+.sub-contents.pcode49900 p.con{font-size:16px; color:#757575; line-height:24px;}
+
+
+.sub-contents.pcode49901{padding:100px 0; text-align:center; background:url(../img/contents/499_bg_01.jpg) no-repeat center top;}
+.sub-contents.pcode49901 a.more{display:inline-block; width:80px; height:80px; background:url(../img/contents/499_img_more.png) no-repeat center center;}
+.sub-contents.pcode49901 i.num{font-size:42px; font-family: 'Nanum Myeongjo', serif; color:#c5a264;}
+.sub-contents.pcode49901 h6.tit{font-size:26px; font-weight:700; color:#fff; margin:25px 0;}
+.sub-contents.pcode49901 p.con{font-size:16px; color:#fff; line-height:24px;}
+.sub-contents.pcode49901 ul.inner{height:250px; margin:50px auto;}
+.sub-contents.pcode49901 li.item{position:relative; float:left; width:25%;}
+.sub-contents.pcode49901 li.item::before{position:absolute; display:inline-block; content:''; width:1px; height:100%; background:#c5a264; top:0; right:0;}
+.sub-contents.pcode49901 li.item:last-child::before{display:none;}
+.sub-contents.pcode49901 li.item a{position:relative; display:block; width:100%; height:250px;}
+.sub-contents.pcode49901 li.item a b{position:absolute; display:inline-block; width:150px; height:30px; line-height:30px; bottom:0; left:50%;  transform: translate(-50%, 0); text-align:center; color:#fff; font-size:15px; font-weight:700; background:#c5a264;}
+
+
+.sub-contents.pcode49901 li.item.bg01{background:url(../img/contents/499_img_0101.png) no-repeat center top;}
+.sub-contents.pcode49901 li.item.bg02{background:url(../img/contents/499_img_0102.png) no-repeat center top;}
+.sub-contents.pcode49901 li.item.bg03{background:url(../img/contents/499_img_0103.png) no-repeat center top;}
+.sub-contents.pcode49901 li.item.bg04{background:url(../img/contents/499_img_0104.png) no-repeat center top;}
+
+
+.sub-contents.pcode49902{margin:100px 0; text-align:center;}
+.sub-contents.pcode49902 i.num{font-size:42px; font-family: 'Nanum Myeongjo', serif; color:#c5a264;}
+.sub-contents.pcode49902 h6.tit{font-size:26px; font-weight:700; color:#757575; margin:25px 0;}
+.sub-contents.pcode49902 p.con{font-size:16px; color:#757575; line-height:24px;}
+
+.sub-contents.pcode49902 ul.inner{height:170px; margin:50px auto;}
+.sub-contents.pcode49902 li.item{position:relative; float:left; width:20%; text-align:center; padding-top:125px;}
+.sub-contents.pcode49902 li.item a{position:relative; display:block; width:100%;}
+.sub-contents.pcode49902 li.item a b{display:block; font-size:15px; font-weight:700; color:#757575; margin-bottom:15px;}
+.sub-contents.pcode49902 li.item a i{display:block;}
+
+.sub-contents.pcode49902 li.item.bg01{background:url(../img/contents/499_img_0201.png) no-repeat center top;}
+.sub-contents.pcode49902 li.item.bg02{background:url(../img/contents/499_img_0202.png) no-repeat center top;}
+.sub-contents.pcode49902 li.item.bg03{background:url(../img/contents/499_img_0203.png) no-repeat center top;}
+.sub-contents.pcode49902 li.item.bg04{background:url(../img/contents/499_img_0204.png) no-repeat center top;}
+.sub-contents.pcode49902 li.item.bg05{background:url(../img/contents/499_img_0205.png) no-repeat center top;}
+
+
+.sub-contents.pcode49903{height:800px; margin:100px 0; text-align:center; background:url(../img/contents/499_bg_02.jpg) no-repeat center bottom;}
+.sub-contents.pcode49903 i.num{font-size:42px; font-family: 'Nanum Myeongjo', serif; color:#c5a264;}
+.sub-contents.pcode49903 h6.tit{font-size:26px; font-weight:700; color:#757575; margin:25px 0;}
+.sub-contents.pcode49903 p.con{font-size:16px; color:#757575; line-height:24px;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 의료진 소개 스타일
+***********************************************************************/
+.sub-contents.pcode50000{height:800px; margin:50px 0; text-align:center; background:url(../img/contents/500_bg_00.jpg) no-repeat center top;}
+.sub-contents.pcode50000 .history{text-align:left; display:inline-block; padding-top:100px;}
+.sub-contents.pcode50000 .history i.position{font-size:19px; color:#757575;}
+.sub-contents.pcode50000 .history h6.tit{font-size:46px; line-height:46px; font-weight:700; background:url(../img/contents/500_img_0101.png) no-repeat left center; padding-left:80px; margin:10px 0 25px 0;}
+.sub-contents.pcode50000 .history p.con{font-size:15px; line-height:24px;}
+
+
+.sub-contents.pcode50001{height:700px; margin:50px 0; text-align:center; background:url(../img/contents/500_bg_01.jpg) no-repeat center top;}
+.sub-contents.pcode50001 .history{text-align:left; display:inline-block; padding-top:100px;}
+.sub-contents.pcode50001 .history i.position{font-size:19px; color:#757575;}
+.sub-contents.pcode50001 .history h6.tit{font-size:46px; line-height:46px; font-weight:700; background:url(../img/contents/500_img_0101.png) no-repeat left center; padding-left:80px; margin:10px 0 25px 0;}
+.sub-contents.pcode50001 .history p.con{font-size:15px; line-height:24px;}
+
+
+.sub-contents.pcode50002{height:700px; margin:50px 0; text-align:center; background:url(../img/contents/500_bg_02.jpg) no-repeat center top;}
+.sub-contents.pcode50002 .history{text-align:left; display:inline-block; padding-top:100px;}
+.sub-contents.pcode50002 .history i.position{font-size:19px; color:#757575;}
+.sub-contents.pcode50002 .history h6.tit{font-size:46px; line-height:46px; font-weight:700; background:url(../img/contents/500_img_0101.png) no-repeat left center; padding-left:80px; margin:10px 0 25px 0;}
+.sub-contents.pcode50002 .history p.con{font-size:15px; line-height:24px;}
+
+.sub-contents.pcode50003{height:700px; margin:50px 0; text-align:center; background:url(../img/contents/500_bg_03.jpg) no-repeat center top;}
+.sub-contents.pcode50003 .history{text-align:left; display:inline-block; padding-top:100px;}
+.sub-contents.pcode50003 .history i.position{font-size:19px; color:#757575;}
+.sub-contents.pcode50003 .history h6.tit{font-size:46px; line-height:46px; font-weight:700; background:url(../img/contents/500_img_0101.png) no-repeat left center; padding-left:80px; margin:10px 0 25px 0;}
+.sub-contents.pcode50003 .history p.con{font-size:15px; line-height:24px;}
+
+
+.sub-contents.pcode50004{position:relative; height:300px; text-align:center; background:url(../img/contents/500_bg_04.jpg) no-repeat center top;}
+.sub-contents.pcode50004 .banner-title{position:absolute; left:50%; top:50%; transform: translate(-50%, -50%);}
+.sub-contents.pcode50004 h6.tit{font-size:26px; line-height:26px; margin:10px 0; font-family: 'Nanum Myeongjo', serif; color:#fff;}
+.sub-contents.pcode50004 p.con{font-size:15px; line-height:24px; font-family: 'Nanum Myeongjo', serif; color:#fff;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 진료시간 및 오시는길 스타일
+***********************************************************************/
+.sub-contents .pcode50100{height:480px; background:url(../img/contents/501_img_0101.png) no-repeat center top; background-size:cover; margin:50px auto;}
+.sub-contents .pcode50100 .address{position:absolute; width:320px; height:320px; box-sizing:border-box; padding:35px; background:rgba(40,64,94,0.8); right:20px; top:70px; text-align:left;}
+.sub-contents .pcode50100 .address h6.tit{font-size:22px; color:#b9975e; font-weight:700;}
+.sub-contents .pcode50100 .address p.con{font-size:18px; color:#fff; line-height:24px; margin:10px 0;}
+.sub-contents .pcode50100 .address a{display:block;}
+.sub-contents .pcode50100 .address a.tel{font-size:14px; color:#aaa; margin-bottom:35px;}
+.sub-contents .pcode50100 .address a.btn-naver-map{width:100%; margin:5px 0; height:50px; line-height:50px; text-align:center; color:#fff; border:1px solid rgba(255,255,255,0.7); background:url(../img/contents/501_img_0102.png) no-repeat 50px center;}
+.sub-contents .pcode50100 .address a.btn-daum-map{width:100%; margin:5px 0; height:50px; line-height:50px; text-align:center; color:#fff; border:1px solid rgba(255,255,255,0.7); background:url(../img/contents/501_img_0103.png) no-repeat 50px center;}
+
+
+
+.sub-contents .pcode50101{}
+.sub-contents .pcode50101 h6.tit{font-size:24px; width:100%; text-align:center; padding-bottom:25px; border-bottom:1px solid #222;}
+.sub-contents .pcode50101 .time-table{padding:50px 0; border-bottom:1px solid #ddd; text-align:center;}
+.sub-contents .pcode50101 .time-table .inner{width:800px; height:180px; margin:0 auto;}
+.sub-contents .pcode50101 .time-table .inner::before{position:absolute; display:inline-block; content:''; width:5px; height:100%; background:#ddd; left:50%; top:0;}
+.sub-contents .pcode50101 .time-table ul{float:left; width:50%; text-align:left; box-sizing:border-box}
+.sub-contents .pcode50101 .time-table ul.time li{position:relative; height:48px; line-height:48px; font-size:17px; color:#222;}
+.sub-contents .pcode50101 .time-table ul.time li::before{position:absolute; display:inline-block; content:''; width:6px; height:6px; border-radius:6px; background:#b9975e; left:-13px; top:22px;}
+.sub-contents .pcode50101 .time-table ul.time li b{display:inline-block; width:100px;}
+.sub-contents .pcode50101 .time-table ul.time li span{}
+.sub-contents .pcode50101 .time-table ul.info{ padding:60px 0 0 100px; background:url(../img/contents/501_img_0104.png) no-repeat center top;}
+.sub-contents .pcode50101 .time-table ul.info li{position:relative; height:30px; line-height:30px; font-size:15px;}
+.sub-contents .pcode50101 .time-table ul.info li::before{position:absolute; display:inline-block; content:''; width:4px; height:4px; border-radius:4px; background:#b9975e; left:-9px; top:12px;}
+.sub-contents .pcode50101 .time-table ul.info li b{font-weight:700;}
+
+
+
+.location-bus{width:100%; box-sizing:border-box; padding:50px 200px; border-bottom:1px solid #ddd; background:url(../img/contents/501_img_0105.png) no-repeat 50px center; text-align:left;}
+.location-bus p.tit{font-size:18px; font-weight:700; color:#b9975e; margin-bottom:15px;}
+.location-bus p.con{font-size:15px; line-height:20px; color:#777;}
+.location-bus p.con i{color:#222;}
+.location-bus p.imp{font-size:15px; font-weight:700; color:#222; margin-top:15px;}
+
+.location-parking{width:100%; box-sizing:border-box; padding:50px 200px; background:url(../img/contents/501_img_0106.png) no-repeat 50px center; text-align:left;}
+.location-parking p.tit{font-size:18px; font-weight:700; color:#b9975e; margin-bottom:15px;}
+.location-parking p.con{font-size:15px; line-height:20px; color:#777;}
+.location-parking p.con i{color:#222;}
+.location-parking p.imp{font-size:15px; font-weight:700; color:#222; margin-top:15px;}
+/**********************************************************************/
+
+
+
+
+/**********************************************************************
+* Descript : 서브페이지 전체 풋터영역(오시는길, 진료시간, 상담문의) 스타일
+***********************************************************************/
+.daniel-location{position:relative; width:100%; display:inline-block; padding:50px 0; background:#eff0f3;}
+.daniel-location > ul{max-width:1200px; margin:0 auto;}
+.daniel-location > ul > li{float:left; height:400px; overflow:hidden; box-sizing:border-box;}
+.daniel-location > ul > li:nth-child(1){width:500px;}
+.daniel-location > ul > li:nth-child(2){width:330px; margin:0 20px;}
+.daniel-location > ul > li:nth-child(3){width:330px;}
+
+.daniel-location li.location{width:100%; background:url(../img/main/map.jpg) no-repeat left top; padding-top:270px;}
+.daniel-location li.location .location-info{position:relative; height:130px; box-sizing:border-box; padding:30px; background:#fff; border:1px solid #eee; border-top:0;}
+.daniel-location li.location .location-info i.kinds{font-size:30px; font-weight:700; color:#9c9ea2; font-family: 'Nanum Myeongjo', serif;}
+.daniel-location li.location .location-info h6.tit{font-size:22px; font-weight:700; color:#0a2341; margin:10px 0;}
+.daniel-location li.location .location-info p.cap{font-size:16px; color:#0a2341;}
+.daniel-location li.location .location-info a.more{position:absolute; display:inline-block; right:0; bottom:0; background:#8b8b8b url(../img/main/more_bg.png) no-repeat 95% center; color:#fff; font-weight:700; padding:10px 30px 10px 20px;}
+
+
+.daniel-location li.hospital-info{background:#0a2341; padding:25px; text-align:center;}
+.daniel-location li.hospital-info h6.tit{color:#fff; font-size:18px;}
+.daniel-location li.hospital-info h6.tit b{font-weight:700;}
+.daniel-location li.hospital-info i.bar{display:inline-block; width:20px; height:5px; background:#b18c4c; margin:20px 0;}
+.daniel-location li.hospital-info .time-table{width:100%; text-align:left;}
+.daniel-location li.hospital-info .time-table th{color:#c7c7c7; width:60px; font-size:14px; font-size:13px; padding:15px 0; border-bottom:1px dashed #3b4f67;}
+.daniel-location li.hospital-info .time-table td{color:#fff; text-align:right; font-size:13px; padding:15px 0; border-bottom:1px dashed #3b4f67;}
+.daniel-location li.hospital-info p.cap{font-size:14px; color:#b18c4c; margin:15px auto; text-align:left; font-size:13px; line-height:18px;}
+.daniel-location li.hospital-info a.more{display:block; text-align:center; padding:13px 0; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.5); color:#fff; font-weight:700; font-size:14px;}
+
+
+
+.daniel-location li.counsel{background:#fff; padding:45px 25px;}
+.daniel-location li.counsel .counsel-info{padding-bottom:25px; margin-bottom:25px; border-bottom:2px solid #eff0f3;}
+.daniel-location li.counsel .counsel-info h6.tit{font-size:18px; font-weight:700; color:#0a2341;}
+.daniel-location li.counsel .counsel-info a.call{font-size:36px; line-height:56px; font-weight:300; color:#0a2341; letter-spacing:-1px;}
+.daniel-location li.counsel .counsel-info a.call:hover{text-decoration:none;}
+.daniel-location li.counsel .counsel-info a.call b{font-weight:700;}
+.daniel-location li.counsel .counsel-info p.cap{font-size:13px; color:#5f6974;}
+
+.daniel-location li.counsel .counsel-sns{padding:0 25px;}
+.daniel-location li.counsel .counsel-sns a{display:block; font-size:17px; font-weight:700; color:#0a2341; height:60px; line-height:60px; padding-left:50px; background-repeat:no-repeat; background-position:left center;}
+.daniel-location li.counsel .counsel-sns a.kakao{background-image:url(../img/main/sns_kakao.png); line-height:40px;}
+.daniel-location li.counsel .counsel-sns a.kakao b{display:block; line-height:5px; font-size:13px;}
+.daniel-location li.counsel .counsel-sns a.naver{background-image:url(../img/main/sns_sms.png);}
+.daniel-location li.counsel .counsel-sns a.online{background-image:url(../img/main/sns_talk.png);}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 다니엘소개 -> 보유장비 스타일
+***********************************************************************/
+.pcode50301{padding:50px 0;}
+.pcode50302{background:url(../img/contents/503_bg_02.png) no-repeat center center;}
+.pcode50305{background:url(../img/contents/503_bg_05.png) no-repeat center center;}
+.pcode50309{padding:50px 0;}
+
+
+.pcode50307{max-width:1800px; margin:100px auto 15px auto;}
+
+.pcode50308{width:100%; display:inline-block;}
+.pcode50308 ul{width:100%; max-width:1800px; margin:0 auto; }
+.pcode50308 ul li{position:relative; float:left; width:20%; height:500px; box-sizing:border-box; background-size:cover; text-align:center;}
+.pcode50308 ul li:hover .txt-hover{display:block;}
+.pcode50308 ul li:hover .txt{display:none;}
+.pcode50308 ul li .txt{position:absolute; width:70%; left:50%; top:50%; transform: translate(-50%, -50%);}
+.pcode50308 ul li .txt span{font-size:16px; color:#eec67d; line-height:26px;}
+.pcode50308 ul li .txt p{font-size:20px; color:#fff; line-height:30px;}
+
+.pcode50308 ul li .txt-hover{display:none; position:absolute; width:70%; left:50%; top:50%; transform: translate(-50%, -50%);}
+.pcode50308 ul li .txt-hover span{font-size:16px; color:#142c49; font-weight:700; line-height:20px; margin-bottom:10px; display:block;}
+.pcode50308 ul li .txt-hover p{display:inline-block; padding:25px; background:rgba(173,134,64,0.9); font-size:20px; color:#fff; line-height:30px;}
+
+.pcode50308 ul li.item01{background:url(../img/contents/503_img_0801.png) no-repeat center center;}
+.pcode50308 ul li.item01:hover{background:url(../img/contents/503_img_0801_on.png) no-repeat center center;}
+
+.pcode50308 ul li.item02{background:url(../img/contents/503_img_0802.png) no-repeat center center;}
+.pcode50308 ul li.item02:hover{background:url(../img/contents/503_img_0802_on.png) no-repeat center center;}
+
+.pcode50308 ul li.item03{background:url(../img/contents/503_img_0803.png) no-repeat center center;}
+.pcode50308 ul li.item03:hover{background:url(../img/contents/503_img_0803_on.png) no-repeat center center;}
+
+.pcode50308 ul li.item04{background:url(../img/contents/503_img_0804.png) no-repeat center center;}
+.pcode50308 ul li.item04:hover{background:url(../img/contents/503_img_0804_on.png) no-repeat center center;}
+
+.pcode50308 ul li.item05{background:url(../img/contents/503_img_0805.png) no-repeat center center;}
+.pcode50308 ul li.item05:hover{background:url(../img/contents/503_img_0805_on.png) no-repeat center center;}
+
+
+.pcode50310{display:inline-block; width:100%; padding:100px 0; margin-bottom:50px; background:url(../img/contents/503_bg_10.png) repeat-y center center; background-size:100%;}
+.pcode50310 ul li.item{position:relative; float:left; width:calc(25% - 10px); height:360px; margin:5px; box-sizing:border-box; border-top:2px solid #152b4d; padding:25px; text-align:left;}
+.pcode50310 ul li.item:hover a.more{display:block;}
+.pcode50310 ul li.item h6.tit{font-size:18px; font-weight:700; color:#152b4d; margin-bottom:15px;}
+.pcode50310 ul li.item p.cap{font-size:14px; color:#936b25; line-height:20px;}
+.pcode50310 ul li.item i{}
+
+.pcode50310 ul li.item a.more{display:none; position:absolute; width:90%; margin:0 5%; background:rgba(21,43,77,0.9); left:0; bottom:25px; padding:70px 0; color:#fff; text-align:center;}
+.pcode50310 ul li.item a.more:hover{text-decoration:none;}
+.pcode50310 ul li.item a i{display:block; margin-top:15px;}
+
+.pcode50310 ul li.bg01{background:#fff url(../img/contents/503_img_1001.png) no-repeat center bottom;}
+.pcode50310 ul li.bg02{background:#fff url(../img/contents/503_img_1002.png) no-repeat center bottom;}
+.pcode50310 ul li.bg03{background:#fff url(../img/contents/503_img_1003.png) no-repeat center bottom;}
+.pcode50310 ul li.bg04{background:#fff url(../img/contents/503_img_1004.png) no-repeat center bottom;}
+.pcode50310 ul li.bg05{background:#fff url(../img/contents/503_img_1005.png) no-repeat center bottom;}
+.pcode50310 ul li.bg06{background:#fff url(../img/contents/503_img_1006.png) no-repeat center bottom;}
+.pcode50310 ul li.bg07{background:#fff url(../img/contents/503_img_1007.png) no-repeat center bottom;}
+.pcode50310 ul li.bg08{background:#fff url(../img/contents/503_img_1008.png) no-repeat center bottom;}
+.pcode50310 ul li.bg09{background:#fff url(../img/contents/503_img_1009.png) no-repeat center bottom;}
+.pcode50310 ul li.bg10{background:#fff url(../img/contents/503_img_1010.png) no-repeat center bottom;}
+.pcode50310 ul li.bg11{background:#fff url(../img/contents/503_img_1011.png) no-repeat center bottom;}
+.pcode50310 ul li.bg12{background:#fff url(../img/contents/503_img_1012.png) no-repeat center bottom;}
+
+.pcode50312{background:url(../img/contents/503_bg_04.png) no-repeat center top;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 레이저 클리닉 -> 다니엘 복합레이저
+***********************************************************************/
+.pcode51001{background:url(../img/contents/510_bg_01.jpg) no-repeat center center; margin:50px 0;}
+.pcode51003{box-sizing:border-box; height:600px; padding-top:260px; background:url(../img/contents/510_bg_03.jpg) no-repeat center center;}
+.pcode51003 li.item{position:relative; width:25%; height:250px; float:left;}
+
+.pcode51003 li.bg01{background:url(../img/contents/510_img_0301.png) no-repeat center center;}
+.pcode51003 li.bg01::after{background:url(../img/contents/510_img_0301_on.png) no-repeat center center;}
+
+.pcode51003 li.bg02{background:url(../img/contents/510_img_0302.png) no-repeat center center;}
+.pcode51003 li.bg02::after{background:url(../img/contents/510_img_0302_on.png) no-repeat center center;}
+
+.pcode51003 li.bg03{background:url(../img/contents/510_img_0303.png) no-repeat center center;}
+.pcode51003 li.bg03::after{background:url(../img/contents/510_img_0303_on.png) no-repeat center center;}
+
+.pcode51003 li.bg04{background:url(../img/contents/510_img_0304.png) no-repeat center center;}
+.pcode51003 li.bg04::after{background:url(../img/contents/510_img_0304_on.png) no-repeat center center;}
+
+.pcode51003 li.item::after{display:none !important; position:absolute; display:inline-block; content:''; width:100%; height:100%; left:0; top:0;}
+.pcode51003 li.item:hover::after{display:block !important;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 레이저 클리닉 -> 난치성 색소
+***********************************************************************/
+.pcode51101{padding:50px 0;}
+.pcode51102{max-width:1800px; margin:100px auto 15px auto;}
+
+.pcode51103{width:100%; display:inline-block;}
+.pcode51103 ul{width:100%; max-width:1800px; margin:0 auto; }
+.pcode51103 ul li{position:relative; float:left; width:20%; height:500px; box-sizing:border-box; background-size:cover; text-align:center;}
+.pcode51103 ul li:hover .txt-hover{display:block;}
+.pcode51103 ul li:hover .txt{display:none;}
+.pcode51103 ul li .txt{position:absolute; width:70%; left:50%; top:50%; transform: translate(-50%, -50%);}
+.pcode51103 ul li .txt span{font-size:16px; color:#eec67d; line-height:26px;}
+.pcode51103 ul li .txt p{font-size:20px; color:#fff; line-height:30px;}
+
+.pcode51103 ul li .txt-hover{display:none; position:absolute; width:70%; left:50%; top:50%; transform: translate(-50%, -50%);}
+.pcode51103 ul li .txt-hover span{font-size:16px; color:#142c49; font-weight:700; line-height:20px; margin-bottom:10px; display:block;}
+.pcode51103 ul li .txt-hover p{display:inline-block; padding:25px; background:rgba(173,134,64,0.9); font-size:20px; color:#fff; line-height:30px;}
+
+.pcode51103 ul li.item01{background:url(../img/contents/511_img_0301.png) no-repeat center center;}
+.pcode51103 ul li.item01:hover{background:url(../img/contents/511_img_0301_on.png) no-repeat center center;}
+
+.pcode51103 ul li.item02{background:url(../img/contents/511_img_0302.png) no-repeat center center;}
+.pcode51103 ul li.item02:hover{background:url(../img/contents/511_img_0302_on.png) no-repeat center center;}
+
+.pcode51103 ul li.item03{background:url(../img/contents/511_img_0303.png) no-repeat center center;}
+.pcode51103 ul li.item03:hover{background:url(../img/contents/511_img_0303_on.png) no-repeat center center;}
+
+.pcode51103 ul li.item04{background:url(../img/contents/511_img_0304.png) no-repeat center center;}
+.pcode51103 ul li.item04:hover{background:url(../img/contents/511_img_0304_on.png) no-repeat center center;}
+
+.pcode51103 ul li.item05{background:url(../img/contents/511_img_0305.png) no-repeat center center;}
+.pcode51103 ul li.item05:hover{background:url(../img/contents/511_img_0305_on.png) no-repeat center center;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 눈/코 성형 
+***********************************************************************/
+
+.pcode51701{background:url(../img/contents/517_bg_01.png) no-repeat center center;}
+.pcode51702{padding:50px 0;}
+.pcode51703{background:url(../img/contents/517_bg_03.png) no-repeat center center;}
+.pcode51704{padding:50px 0;}
+.pcode51705{padding:50px 0;}
+.pcode51706{padding:50px 0;}
+.pcode51707{padding:50px 0;}
+.pcode51708{padding:0 0 80px 0;}
+
+
+.pcode52001{background:url(../img/contents/520_bg_01.png) no-repeat center center;}
+.pcode52002{background:url(../img/contents/520_bg_02.png) no-repeat center center;}
+.pcode52003{padding:50px 0;}
+.pcode52004{padding:50px 0;}
+.pcode52005{padding:50px 0;}
+.pcode52006{padding:50px 0;}
+.pcode52007{padding:50px 0;}
+.pcode52008{padding:50px 0;}
+.pcode52009{padding:0 0 80px 0;}
+
+
+/**********************************************************************
+* Descript : 프리미엄 쁘띠클리닉
+***********************************************************************/
+
+.pcode52101{padding:50px 0;}
+.pcode52102{background:url(../img/contents/521_bg_02.png) no-repeat center center;}
+.pcode52103{padding:50px 0;}
+.pcode52104{padding:50px 0;}
+.pcode52105{padding:50px 0;}
+.pcode52106{background:url(../img/contents/521_bg_06.png) no-repeat center center;}
+.pcode52107{padding:50px 0;}
+.pcode52108{padding:0 0 80px 0;}
+.pcode52109{background:url(../img/contents/521_bg_09.png) no-repeat center center;}
+.pcode52110{padding:50px 0;}
+
+.pcode52201{padding:50px 0;}
+.pcode52202{background:url(../img/contents/522_bg_02.png) no-repeat center center;}
+.pcode52203{padding:50px 0 0 0;}
+.pcode52204{padding:0 0 80px 0;}
+
+
+
+/**********************************************************************
+* Descript : 체형클리닉
+***********************************************************************/
+
+.pcode52401{padding:50px 0;}
+.pcode52402{background:url(../img/contents/524_bg_02.png) no-repeat center center;}
+.pcode52403{padding:50px 0;}
+.pcode52404{padding:0 0 80px 0;}
+
+
+
+.pcode52501{padding:50px 0;}
+.pcode52502{padding:50px 0;}
+.pcode52503{background:url(../img/contents/525_bg_03.png) no-repeat center center;}
+.pcode52504{padding:50px 0;}
+.pcode52505{padding:0 0 80px 0;}
+
+
+
+
+
+
+
+.equipment-item{position:relative; min-height:520px; margin:100px 0; text-align:left; box-sizing:border-box; padding:50px 0 0 450px; border-bottom:4px solid #172b4d;}
+.equipment-item h6.tit{font-size:32px; font-weight:700; color:#222;}
+.equipment-item p.con{font-size:15px; line-height:25px; color:#222; margin:25px 0;}
+.equipment-item b.tit-small{display:block; font-size:22px; font-weight:700; color:#b9975e; margin:70px 0 20px 0;}
+.equipment-item span.hashtag{color:#747474;}
+.equipment-item i.stamp{position:absolute; left:0; top:0;}
+
+.bg53301{background:url(../img/contents/euipment01.png) no-repeat left top;}
+.bg53302{background:url(../img/contents/euipment02.png) no-repeat left top;}
+.bg53303{background:url(../img/contents/euipment03.png) no-repeat left top;}
+.bg53304{background:url(../img/contents/euipment04.png) no-repeat left top;}
+.bg53305{background:url(../img/contents/euipment05.png) no-repeat left top;}
+.bg53306{background:url(../img/contents/euipment06.png) no-repeat left top;}
+.bg53307{background:url(../img/contents/euipment07.png) no-repeat left top;}
+.bg53308{background:url(../img/contents/euipment08.png) no-repeat left top;}
+.bg53309{background:url(../img/contents/euipment09.png) no-repeat left top;}
+.bg53310{background:url(../img/contents/euipment10.png) no-repeat left top;}
+.bg53311{background:url(../img/contents/euipment11.png) no-repeat left top;}
+.bg53312{background:url(../img/contents/euipment12.png) no-repeat left top;}
+.bg53313{background:url(../img/contents/euipment13.png) no-repeat left top;}
+.bg53314{background:url(../img/contents/euipment14.png) no-repeat left top;}
+.bg53315{background:url(../img/contents/euipment15.png) no-repeat left top;}
+.bg53316{background:url(../img/contents/euipment16.png) no-repeat left top;}
+.bg53317{background:url(../img/contents/euipment17.png) no-repeat left top;}
+.bg53318{background:url(../img/contents/euipment18.png) no-repeat left top;}
+.bg53319{background:url(../img/contents/euipment19.png) no-repeat left top;}
+.bg53320{background:url(../img/contents/euipment20.png) no-repeat left top;}
+.bg53321{background:url(../img/contents/euipment21.png) no-repeat left top;}
+.bg53322{background:url(../img/contents/euipment22.png) no-repeat left top;}
+.bg53323{background:url(../img/contents/euipment23.png) no-repeat left top;}
+.bg53324{background:url(../img/contents/euipment24.png) no-repeat left top;}
+.bg53325{background:url(../img/contents/euipment25.png) no-repeat left top;}
+.bg53326{background:url(../img/contents/euipment26.png) no-repeat left top;}
+.bg53327{background:url(../img/contents/euipment27.png) no-repeat left top;}
+.bg53330{background:url(../img/contents/euipment30.png) no-repeat left top;}

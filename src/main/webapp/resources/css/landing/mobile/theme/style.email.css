@@ -1,0 +1,42 @@
+
+body{}
+#email{display:block; width:100%; max-width:640px; margin:0 auto;}
+#email area:focus{outline:none;}
+
+#quick-inquire {background:#0a1d55; padding:30px 10px; color:#fff; font-size:16px; font-weight:700; text-align:center;}
+#quick-inquire img {width:80%; margin-bottom:30px;}
+#quick-inquire  li {text-align:left;}
+
+#quick-inquire .quick-counsel01 li  {position:relative; display:block; width:100%; height:40px; box-sizing:border-box; padding:0 10px; margin-bottom:15px;}
+#quick-inquire li > label {width: 25%; line-height:40px; float:left;}
+#quick-inquire li input[type="text"] {width: 75%; height:100%; float:left; box-sizing:border-box; border:1px solid #aaa; background:#fff; padding:5px;}
+#quick-inquire li select {width: 75%; height:100%; float:left; box-sizing:border-box; border:1px solid #aaa; padding:5px; background:url('/assets/img/adv/dropdown_arrow.svg') no-repeat 95% center #fff; background-size:18px;}
+
+#quick-inquire .quick-counsel02 .btn-private 
+{width:150px; height:34px; margin-right:10px; box-sizing:border-box; color:#fff; font-size:14px; line-height:35px; background:#555; cursor:pointer; text-align:center;}
+
+#quick-inquire .quick-counsel02 .private input[type="checkbox"]
+{display:none;}
+
+#quick-inquire .quick-counsel02 .private input[type="checkbox"] + label::before
+ {content:''; display:inline-block; width:20px; height:20px; background:#fff; left:0; top:7px;}
+
+#quick-inquire .quick-counsel02 .private input[type="checkbox"]:checked + label::after
+ {content:''; display:inline-block; width:14px; height:14px; background:#eb5037; left:3px; top:10px;}
+
+#quick-inquire .quick-counsel02 .private input[type="checkbox"] + label 
+{position:relative; height:34px; font-size:14px; padding-left:30px; line-height:34px;cursor:pointer;}
+
+#quick-inquire .quick-counsel02 button {width:100%; height:50px; background:#eb5037; color:#fff; font-size:18px; font-weight:700; text-align:center; margin:10px 0;}
+
+
+/**********************************************************************
+* Descript : 빠른상담 자세히보기 Dim 팝업 스타일
+***********************************************************************/
+.pop-private{display:none; position:fixed; left:0; top:0; z-index:9999; width:100%; height:100%; background:rgba(0,0,0,0.9);}
+.pop-private .pop-inner{width:90%; max-width:640px; margin:50px auto 0 auto; background:#fff; border:5px solid #ffc200; border-radius:5px;}
+.pop-private .pop-inner h3{text-align:center; padding:20px 0; background:#ffc200; color:#fff; font-size:17px; font-weight:700;}
+.pop-private .pop-inner p{padding:15px; font-size:14px; line-height:24px; height:350px; overflow:auto; color:#333;}
+.pop-private .pop-inner p b{display:block; font-weight:700; color:#222;}
+.pop-private .pop-inner button{display:block; width:100%; text-align:center; padding:10px 0; font-size:15px; cursor:pointer;}
+/**********************************************************************/

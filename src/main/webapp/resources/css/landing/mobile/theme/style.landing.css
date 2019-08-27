@@ -1,0 +1,165 @@
+@charset "utf-8"; 
+
+html {font-size:20px;}
+@media all and (max-width:640px) { html {font-size:20px;} }
+@media all and (max-width:608px) { html {font-size:19px;} }
+@media all and (max-width:576px) { html {font-size:18px;} }
+@media all and (max-width:544px) { html {font-size:17px;} }
+@media all and (max-width:512px) { html {font-size:16px;} }
+@media all and (max-width:480px) { html {font-size:15px;} }
+@media all and (max-width:448px) { html {font-size:14px;} }
+@media all and (max-width:416px) { html {font-size:13px;} }
+@media all and (max-width:384px) { html {font-size:12px;} }
+@media all and (max-width:352px) { html {font-size:11px;} }
+@media all and (max-width:320px) { html {font-size:10px;} }
+
+
+
+/**********************************************************************
+* Descript : 전체영역 레이아웃 관리
+***********************************************************************/
+body{padding-top:4rem; font-family: 'Nanum Gothic', sans-serif;}
+.inner{position:relative; max-width:640px; margin:0 auto;}
+
+/**********************************************************************/
+
+mark{background:none; color:#fff;}
+
+:focus{outline:none;}
+
+
+/**********************************************************************
+* Descript : 해더 스타(로고, GNB)
+***********************************************************************/
+#header{position:fixed; left:0; top:0; width:100%; height:4rem; background:#30405d; z-index:999; -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; text-align:center;}
+#header.fixed{box-shadow:0 0 20px rgba(0,0,0,0.1);}
+#header .inner{position:relative; max-width:640px; height:inherit;}
+#header a.logo{position:absolute; top:50%; left:1em; margin-top:-0.95rem;}
+#header a.logo img{height:1.9rem;}
+
+/* 햄버거 버튼 스타일 및 트랜지션 */
+.hamburger{position:absolute; top:50%; right:1rem; transform:translate(0, -50%); z-index:11; cursor:pointer;}
+.box {width:1.7rem; height:1.2rem; display:inline-block; position:relative;}
+.bar {display:block; top:50%;}
+.bar, .bar::before, .bar::after {width:inherit; height:1px; background-color:#c4a165; position:absolute; transition-property: transform; transition-duration: 0.15s; transition-timing-function: ease; }
+.bar::before, .bar::after {content: ""; display: block; }
+.bar::before{top:-.5rem;  }
+.bar::after{bottom:-.5rem; }
+
+.spin .bar {transition-duration: 0.22s; transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.spin .bar::before { transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+.spin .bar::after {transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.spin.active .bar {transform: rotate(225deg); transition-delay: 0.12s; transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+.spin.active .bar::before {top:0; opacity:0; transition:top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+.spin.active .bar::after {bottom:0; transform: rotate(-90deg); transition:bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : GNB
+***********************************************************************/
+.gnb-dim{display:none; position:fixed; z-index:8; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.7);}
+
+#gnb{position:absolute; top:4rem; width:100%; display:none; box-sizing:border-box; background:#fff; padding-bottom:1.5rem;}
+#gnb ul{padding:0 1rem;}
+#gnb ul li{width:100%; border-bottom:1px solid #dedede; }
+#gnb ul li a{position:relative; display:block; color:#777777; font-weight:bold; font-size:1rem; padding:1.1rem 1.2rem; text-align:left; box-sizing:border-box;}
+#gnb ul li a:hover{text-decoration:none; color:#102751; font-weight:bold;}
+#gnb ul li.active a{color:#102751; font-weight:bold;}
+#gnb ul li.active a:before {content:"▶"; display:block; position:absolute; left:0; top:1.2rem; font-size:.7rem;}
+
+/**********************************************************************/
+
+
+#home{font-size:0; line-height:0;}
+#home .slick-active .inner{animation:fadeInUp 0.3s both .75s;}
+#home .slick-dots {position:absolute; bottom:50px; left:0; right:0; text-align:center;}
+#home .slick-dots li + li {margin-left:10px;}
+#home .slick-dots li button {display:block; position:relative; width:auto; padding:0 0 .5rem 0; color:#fff; font-size:.9rem; font-weight:bold; border-radius:0; background:transparent; padding-bottom:.5rem;}
+#home .slick-dots li button:before {content:"0";}
+#home .slick-dots li button:after {content:""; display:none; position:absolute; left:0; right:0; bottom:0; height:.15rem; background:#fff;}
+#home .slick-dots .slick-active button:after {display:block;}
+
+#sec_04 {position:relative;}
+#sec_04 .video-area {position:absolute; width:30rem; height:16.85rem; top:17.5rem; left:1rem;}
+#sec_04 .video-area video {width:100%; height:100%;}
+
+#location{position:relative; width:100%;}
+#location .obj0101,
+#location .root_daum_roughmap,
+#location .wrap_map {width:100% !important; height:100% !important;}
+#location .root_daum_roughmap {padding:0;}
+
+/**********************************************************************
+* Descript : 우측하단 최상단으로 가기 버튼(jquery.landing.js)
+***********************************************************************/
+#top{position:fixed; height:6.5rem; opacity:1; right:0; left:0; bottom:0; z-index:999;-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; background-size:contain;}
+#top a {display:block; position:absolute; left:0; right:0;}
+#top a#goto_home {bottom:0; top:8rem;}
+#top a#link_kakao {top:0; height:4rem;}
+#top a#link_blog {top:4rem; height:4rem;}
+
+/**********************************************************************/
+
+#landing-footer{position:relative; background:#333333; padding-bottom:10rem;}
+.wrap_controllers,
+.map_border{display:none !important;}
+
+
+/* 공통 간편상담신청 시작 */
+#quick-inquire{position:fixed; box-sizing:border-box; left:0; bottom:-33.5rem; width:100%; height:40rem; z-index:99; text-align:center; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+
+#quick-inquire > button{position:fixed; width:17rem; height:3.5rem; background:#c4a165 url(/assets/img/landing/mobile/theme/btn_quick_bg.jpg) no-repeat center center; background-size:cover; left:50%; bottom:6.5rem; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); cursor:pointer; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+#quick-inquire > button img{display:none;}
+
+#quick-inquire.active{bottom:0;}
+#quick-inquire > button.active{bottom:40rem;}
+
+#quick-inquire .inner{position:relative; padding:7.5rem 1rem 9rem 1rem; box-sizing:border-box; background:#333333 url(/assets/img/landing/mobile/theme/bak_quick_bg.jpg) no-repeat center top; background-size:contain;}
+#quick-inquire .quick-counsel01,
+#quick-inquire .quick-counsel02{position:relative; width:100%; box-sizing:border-box; z-index:9;}
+
+
+#quick-inquire .quick-counsel01{}
+#quick-inquire .quick-counsel01 li{position:relative; display:inline-block; width:100%; margin-bottom:.5rem ;}
+#quick-inquire .quick-counsel01 li > label{float:left; width:4.5rem; height:2.5rem; line-height:2.5rem; box-sizing:border-box; color:#fff; text-align:left; font-size:1rem;}
+#quick-inquire .quick-counsel01 li input[type="text"]{float:left; width:calc(100% - 4.5rem); width:-webkit-calc(100% - 4.5rem); height:2.5rem; line-height:2.5rem; padding:0 .5rem; box-sizing:border-box; background:#fff;}
+#quick-inquire .quick-counsel01 li select{float:left; height:2.5rem; line-height:2.5rem; padding:0 .5rem; box-sizing:border-box; background:#fff url(/assets/img/landing/mobile/theme/select_arrow.png) no-repeat 95% center; background-size:.5rem; cursor:pointer;}
+#quick-inquire .quick-counsel01 li select{width:calc(100% - 4.5rem); width:-webkit-calc(100% - 4.5rem);}
+#quick-inquire .quick-counsel01 li input[data-name="연락처"]{width:calc(33.3333333333% - 1.77rem); margin-right:.4rem;}
+#quick-inquire .quick-counsel01 li input[data-name="연락처"]:last-child{margin-right:0;}
+#quick-inquire .quick-counsel02 li button,
+#quick-inquire .quick-counsel02 li .private{float:left;}
+#quick-inquire .quick-counsel02 li button{display:inline-block; font-size:.8rem; height:1.7rem; line-height:1.7rem; padding:0 1rem; background:#444; color:#fff; cursor:pointer;}
+#quick-inquire .quick-counsel02 input[type="checkbox"]{display:none;}
+#quick-inquire .quick-counsel02 input[type="checkbox"] + label{font-size:.8rem; position:relative; padding-left:1.6rem; cursor:pointer; height:1.7rem; line-height:1.7rem; color:#e1e1e1; margin-left:.9rem;}
+#quick-inquire .quick-counsel02 input[type="checkbox"] + label::before{content:""; display:inline-block; position:absolute; left:0; top:50%; margin-top:-.5rem; width:1rem; height:1rem; box-sizing: border-box; background:#fff;}
+#quick-inquire .quick-counsel02 input[type="checkbox"]:checked + label::after{content:""; display:inline-block; position:absolute; width:.7rem; height:.7rem; left:.15rem; top:50%; margin-top:-.35rem; background:#c4a165}
+#quick-inquire .quick-counsel02{}
+#quick-inquire .quick-counsel02 li{}
+#quick-inquire .quick-counsel02 li:first-child{height:6.8rem; padding-left:4.5rem; box-sizing:border-box;}
+#quick-inquire .quick-counsel02 li label[data-name="상담내용"]{display:none;}
+#quick-inquire .quick-counsel02 li textarea{width:100%; height:6.9rem; margin-bottom:1.7rem; background:#fff; max-width:100%; max-height:6.9rem; min-width:100%; min-height:6.9rem; box-sizing:border-box; padding:.5rem;}
+
+#quick-inquire .quick-counsel02 li:last-child {margin-left:4.5rem;}
+#quick-inquire .quick-counsel02 li:last-child{display:block; clear:both; padding-top:1.2rem; height:3.6rem;}
+#quick-inquire .quick-counsel02 li:last-child button{display:block; width:100%; height:100%; background:url(/assets/img/landing/mobile/theme/btn_quick.jpg) no-repeat center center; background-size:cover; cursor:pointer;}
+#quick-inquire .quick-counsel02 li:last-child button img {display:none;}
+
+/**********************************************************************
+* Descript : 빠른상담 자세히보기 Dim 팝업 스타일
+***********************************************************************/
+.pop-private{display:none; position:fixed; left:0; top:0; z-index:9999; width:100%; height:100%; background:rgba(0,0,0,0.9);}
+.pop-private .pop-inner{width:90%; max-width:640px; margin:50px auto 0 auto; background:#fff; border:5px solid #c4a165; border-radius:5px;}
+.pop-private .pop-inner h3{text-align:center; padding:20px 0; background:#c4a165; color:#fff; font-size:17px; font-weight:700;}
+.pop-private .pop-inner p{padding:15px; font-size:14px; line-height:24px; height:350px; overflow:auto;}
+.pop-private .pop-inner p b{display:block; font-weight:700; color:#222;}
+.pop-private .pop-inner button{display:block; width:100%; text-align:center; padding:10px 0; font-size:15px; cursor:pointer;}
+/**********************************************************************/
+
+
+
+
+
