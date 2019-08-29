@@ -480,16 +480,17 @@ keyframes fa-spin { 0%{
 	position: static;
 	width: auto
 }
+
 </style>
 <script>
 $(function(){
-
+	
 });
 </script>
 </head>
 <body>
 	<!-- 페이지 로딩 시작 -->
-	<div id="loader-wrapper" style="display: none;">
+	<div id="loader-wrapper">
 		<div id="loading"></div>
 	</div>
 	<!-- 페이지 로딩 끝 -->
@@ -750,7 +751,7 @@ $(function(){
 				</ul><!-- 슬라이드 배너 끝 -->
 			</section>
 		</section>
-	</div>
+	</div><!-- #wrap end -->
 	
 	<div class="daniel-banner">
 		<!-- 고정 배너(4개) 시작 -->
@@ -772,6 +773,7 @@ $(function(){
 	</div>
 	<!-- 고정 배너영역 끝 -->
 	<!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
+	
 	<!-- 메인페이지 오시는길(오시는길, 진료시간 안내, 상담문의) 시작 -->
 	<jsp:include page="../include/pcBottom.jsp"></jsp:include>
 	<!-- 메인페이지 오시는길(오시는길, 진료시간 안내, 상담문의) 끝 -->
@@ -780,7 +782,12 @@ $(function(){
 	<jsp:include page="../include/pcFooter.jsp"></jsp:include>
 	<!-- 풋터 끝 (style.layout.css) -->
 	
+	<!-- 빠른상담 신청하기 폼 시작 -->
+	<jsp:include page="../include/pcQuickInquire.jsp"></jsp:include>
+	<!-- 빠른상담 신청하기 폼 끝 -->
 	
-	
+	<!-- 개인정보 취급방침 팝업 시작 -->
+	<jsp:include page="../include/pcPopPrivate.jsp"></jsp:include>
+	<!-- 개인정보 취급방침 팝업 끝 -->
 </body>
 </html>
