@@ -510,14 +510,9 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="다니엘의 특별함">
+			<div id="sub-visual" data-menu="의료진 소개">
 				<div class="sub-visual-tit">
-					<!--
-							<h2 class='tit'>다니엘의 특별함</h2>
-					<p class='cap'>
-						빠른 시술로 많은 고객들을 만나기 보다<br/>
-						<b>진심을 다한 믿음이 있는 치료</b>에 마음을 다합니다.
-					</p> -->
+				
 				</div>
 			</div>
 			<!-- 서브 비주얼영역 끝 -->
@@ -540,17 +535,17 @@ $(function(){
 								<li><a href="/509/?pCode=509">흉터 클리닉</a></li>
 								<li><a href="/525/?pCode=525">체형 클리닉</a></li>
 								<li><a href="/515/?pCode=515">메디컬스킨케어</a></li>
-								<li><a href="/527/?pCode=527">커뮤니티</a></li>				
+								<li><a href="/527/?pCode=527">커뮤니티</a></li>
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>다니엘의 특별함 ▼</button>
+							<button>의료진 소개 ▼</button>
 							<ul>
 								<li><a href="/499/?pCode=499">다니엘의 특별함</a></li>
 								<li><a href="/500/?pCode=500">의료진 소개</a></li>
 								<li><a href="/501/?pCode=501">진료시간/오시는길</a></li>
 								<li><a href="/533/?pCode=533">보유장비</a></li>
-								<li><a href="/707/?pCode=707">선한이웃, 다니엘</a></li>				
+								<li><a href="/707/?pCode=707">선한이웃, 다니엘</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -558,98 +553,94 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode49900">
-				<i class="num">01</i>
-				<h6 class="tit">성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과</h6>
-				<p class="con">
-					피부과와 성형외과 협진으로 전문적인 치료&amp;시술이 가능합니다.<br>
-					불필요한 수술과 시술은 권하지 않고 꼭 필요한 효과적인 시술을 제안합니다.<br>
-					피부과 시술로 원하는 결과를 얻기 어려운 경우, 성형외과 시술이 병행되어<br>
-					시술 과정이 효율적으로 진행되어 고객이 원하는 결과를 더 빠르게 얻을 수 있습니다. 
-				</p>
+			<!-- 윤상호 원장님 소개 시작 -->
+			<div class="sub-contents pcode50000">
+				<div class="inner tar">
+					<div class="history">
+						<i class="position">다니엘 대표원장</i>
+						<h6 class="tit">윤상호</h6>
+						<p class="con">
+							성형외과 전문의<br>
+							대한성형외과학회 종신회원<br>
+							대한미용성형외과학회 정회원<br>
+							대한두개안면성형외과학회 정회원<br>
+							대한성형외과학회 눈성형연구회 정회원<br>
+							대한성형외과학회 코성형연구회 정회원<br>
+							대한성형외과학회 항노화연구회 정회원<br>
+							대한성형외과학회 보톡스필러연구회 정회원<br><br>
+			
+							일본 Fukuoka University Hospital 연수<br>
+							대만 Chang-Gung Memorial Hospital 연수<br><br>
+							
+							베트남, 태국 구순구개열 성형봉사<br>
+							2009-2010년 태국 YWCA 초청 구순구개열 수술<br>
+							2012-2014년 베트남 세계로병원 사역<br>
+							미국성형외과학회 : 눈가 주위 노화현상에 관한 논문 발표<br>
+							극동방송 성형외과 자문의<br>
+							MBC방송 성형외과 자문의
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 윤상호 원장님 소개 끝 -->
+			<!-- 김지아 원장님 소개 시작 -->
+			<div class="sub-contents pcode50001">
+				<div class="inner tal">
+					<div class="history">
+						<i class="position">다니엘 원장</i>
+						<h6 class="tit">김지아</h6>
+						<p class="con">
+							대구 재생병원 진료과장<br>
+							제니스성형외과 피부과 원장<br>
+							울산 제일병원 피부과 원장<br><br>
+			
+							대한비만체형학회 정회원<br>
+							대한피부모발학회 정회원<br>
+							대한비만미용치료학회 정회원<br>
+							대한미용성형레이저의학회 정회원<br>
+							대한미용성형학회 정회원<br>
+							대한피부모발학회 탈모치료 아카데미 수료<br><br>
+							
+							베트남 세계로선교병원 후원<br>
+							매년 필리핀 의료자원봉사<br>
+							극동방송 피부과 자문의<br>
+							MBC방송 피부과 자문의
+			
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 김지아 원장님 소개 끝 -->
+			<!-- 신홍일 원장님 소개 시작 -->
+			<div class="sub-contents pcode50002">
+				<div class="inner tar">
+					<div class="history">
+						<i class="position">다니엘 피부과 원장</i>
+						<h6 class="tit">신홍일</h6>
+						<p class="con">
+						
+			                진해 해양의료원 과장<br>
+			                안동의료원 과장<br><br>
+							
+			        		대한비만미용치료학회<br>
+			                대한미용성형레이져의학회<br>
+			                대한피부모발학회<br>
+			                대한여드름학회<br><br>
+			
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 박혜리 원장님 소개 끝 -->
+			<div class="sub-contents pcode50004">
+				<div class="banner-title">
+					<h6 class="tit">끊임없이 연구하고 소통하는 다니엘</h6>
+					<p class="con">다니엘의 4인의 전문 의료진과 함께 합니다</p>
+				</div>
 			</div>
 			
-			<div class="sub-contents pcode49901">
-				<i class="num">02</i>
-				<h6 class="tit">프리미엄 오리지널 명품 레이저 보유</h6>
-				<p class="con">
-					오리지널 명품 레이저의 정교함으로 피부 자극을 최소화합니다.<br>
-					적은 시술 횟수로 만족할 수 있는 시술 결과를 확인할 수 있습니다. 저렴한 국산 카피 제품으로 고객을 현혹하지 않습니다. 
-				</p>
-				<ul class="inner">
-					<li class="item bg01">
-						<a href="/html/?pCode=533">
-							<b>인라이튼</b>
-						</a>
-					</li>
-					<li class="item bg02">
-						<a href="/html/?pCode=534">
-							<b>사이톤줄</b>
-						</a>
-					</li>
-					<li class="item bg03">
-						<a href="/html/?pCode=535">
-							<b>엑셀v</b>
-						</a>
-					</li>
-					<li class="item bg04">
-						<a href="/html/?pCode=536">
-							<b>스킨타이트</b>
-						</a>
-					</li>
-				</ul>
-				<a href="/html/?pCode=533" class="more"></a>
-			</div>
 			
-			<div class="sub-contents pcode49902">
-				<i class="num">03</i>
-				<h6 class="tit">오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램</h6>
-				<p class="con">
-					피부과와 성형외과의 노하우를 집약하여 <br>
-					원인에 따른 최적의 복합 프로그램을 구성했습니다. 
-				</p>
-				<ul class="inner">
-					<li class="item bg01">
-						<a href="/html/?pCode=510">
-							<b>다니엘 복합레이저</b>
-							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
-						</a>
-					</li>
-					<li class="item bg02">
-						<a href="/html/?pCode=509">
-							<b>흉터클리닉</b>
-							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
-						</a>
-					</li>
-					<li class="item bg03">
-						<a href="/html/?pCode=507">
-							<b>광채지방이식</b>
-							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
-						</a>
-					</li>
-					<li class="item bg04">
-						<a href="/html/?pCode=503">
-							<b>리프팅 레이저</b>
-							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
-						</a>
-					</li>
-					<li class="item bg05">
-						<a href="/html/?pCode=504">
-							<b>안면 거상술</b>
-							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
-						</a>
-					</li>
-				</ul>
-			</div>
 			
-			<div class="sub-contents pcode49903">
-				<i class="num">04</i>
-				<h6 class="tit">주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리</h6>
-				<p class="con">
-					담당 원장님의 진료와 더불어 전담 관리사가 관리하기 때문에<br>
-					고객의 작은 변화에도 민감하게 반응하여 고객의 컨디션에 맞게 시술과 관리가 커스텀되어 진행됩니다. 
-				</p>
-			</div>
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
 	
