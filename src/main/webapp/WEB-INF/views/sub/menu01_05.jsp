@@ -508,11 +508,11 @@ $(function(){
 		<!-- 콘텐츠 영역 시작 (메인일 경우 #main-container / 서브일 경우 #sub-container) -->
 		<section id="sub-container">
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
-
+			
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="진료시간/오시는길">
+			<div id="sub-visual" data-menu="선한이웃, 다니엘">
 				<div class="sub-visual-tit">
-
+				
 				</div>
 			</div>
 			<!-- 서브 비주얼영역 끝 -->
@@ -531,7 +531,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>진료시간/오시는길 ▼</button>
+							<button>선한이웃, 다니엘 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu01_01">다니엘의 특별함</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu01_02">의료진 소개</a></li>
@@ -545,67 +545,24 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<!-- 지도시작 -->
-			<div class="sub-contents">
-				<div class="inner pcode50100">
-					<div class="address">
-						<h6 class="tit">주소</h6>
-						<p class="con">경남 창원시 성산구 마디미로 22번길 12, 4F</p>
-						<a href="tel:055-284-0911" class="tel">TEL 055 / 284 / 0911</a>
-						<a href="http://naver.me/GvZ3qwUj" target="_blank" class="btn-naver-map">네이버 지도 &gt;</a>
-						<a href="http://map.daum.net/?urlX=883179&amp;urlY=482896&amp;itemId=26820084" target="_blank" class="btn-daum-map">다음 지도 &gt;</a>
+			<div class="sub-contents pcode70700">
+				<div class="inner">
+					<div class="movie">
+						<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="gs_mv" src="https://www.youtube.com/embed/vjmJIe1lW_A?rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;vq=hd1080"></iframe>
 					</div>
 				</div>
 			</div>
-			<!-- 지도 끝 -->
 			
-			<!-- 진료시간 안내 시작 -->
-			<div class="sub-contents">
-				<div class="inner pcode50101">
-					<h6 class="tit">진료시간 안내</h6>
-					<div class="time-table">
-						<div class="inner">
-							<ul class="time">
-								<li>
-									<b>월·수·목</b><span>오전 10시 – 오후 7시</span>
-								</li>
-								<li>
-									<b>화</b><span>오후 2시 30분 – 저녁 9시 (야간)</span>
-								</li>
-								<li>
-									<b>금</b><span>오전 10시 – 저녁 9시 (야간)</span>
-								</li>
-								<li>
-									<b>토요일</b><span>오전 10시 – 오후 2시</span>
-								</li>
-								<li>
-									<b>점심시간</b><span>오후 1시 – 오후 2시 30분</span>
-								</li>
-							</ul>
-							<ul class="info">
-								<li>토요일은 점심시간 없이 진료합니다.</li>
-								<li>일요일 및 공휴일은 휴진입니다.</li>
-								<li>성형상담문의 ▶ <b>055 / 284 / 0911</b></li>
-								<li>피부상담문의 ▶ <b>055 / 284 / 0912</b></li>
-							</ul>
-						</div>
-					</div>
-					<div class="location-bus">
-						<p class="tit"><b>버스이용 시</b></p>
-						<p class="con"><i>간선▶</i>100&nbsp;103&nbsp;105&nbsp;106&nbsp;107&nbsp;113&nbsp;115&nbsp;116&nbsp;150&nbsp;151&nbsp;155&nbsp;58&nbsp;59&nbsp;97&nbsp;98</p>
-						<p class="con"><i>지선▶</i>10&nbsp;11&nbsp;12&nbsp;13&nbsp;14&nbsp;170&nbsp;210&nbsp;211&nbsp;212&nbsp;216&nbsp;220&nbsp;221&nbsp;30&nbsp;31&nbsp;32&nbsp;34&nbsp;35&nbsp;503&nbsp;506</p>
-						<p class="con"><i>좌석▶</i>703&nbsp;710&nbsp;757</p>
-						<p class="con"><i>좌석▶</i>800</p>
-						<p class="imp">은아아파트, 수협도지회 / 수협경남금융본부 하차</p>
-					</div>
-					<div class="location-parking">
-						<p class="tit"><b>주차안내</b></p><br>
-					<!--<p class="con"><i>내용이 없습니다.</i></p>-->
-						<p class="imp">병원 뒷편 공영주차장 혹은 상남주차장, 코끼리주차장을 이용해주세요.</p><br>
-					</div>
+			<div class="sub-contents pcode70701">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/707_01.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/707_02.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/707_03.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/707_04.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/707_05.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/707_06.jpg" alt="">
 				</div>
 			</div>
-			<!-- 진료시간 안내 끝 -->
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	

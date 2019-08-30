@@ -532,25 +532,17 @@ $(function(){
 						<li class="gnb">
 							<button>다니엘 소개 ▼</button>
 							<ul>
-								<li><a href="/499/?pCode=499">다니엘 소개</a></li>
-								<li><a href="/521/?pCode=521">프리미엄 쁘띠클리닉</a></li>
-								<li><a href="/510/?pCode=510">레이저 클리닉</a></li>
-								<li><a href="/517/?pCode=517">눈/코 성형</a></li>
-								<li><a href="/503/?pCode=503">동안/탄력 클리닉</a></li>
-								<li><a href="/509/?pCode=509">흉터 클리닉</a></li>
-								<li><a href="/525/?pCode=525">체형 클리닉</a></li>
-								<li><a href="/515/?pCode=515">메디컬스킨케어</a></li>
-								<li><a href="/527/?pCode=527">커뮤니티</a></li>				
+								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
 							<button>다니엘의 특별함 ▼</button>
 							<ul>
-								<li><a href="/499/?pCode=499">다니엘의 특별함</a></li>
-								<li><a href="/500/?pCode=500">의료진 소개</a></li>
-								<li><a href="/501/?pCode=501">진료시간/오시는길</a></li>
-								<li><a href="/533/?pCode=533">보유장비</a></li>
-								<li><a href="/707/?pCode=707">선한이웃, 다니엘</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu01_01">다니엘의 특별함</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu01_02">의료진 소개</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu01_03">진료시간/오시는길</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu01_04">보유장비</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu01_05">선한이웃, 다니엘</a></li>			
 							</ul>
 						</li>
 					</ul>
