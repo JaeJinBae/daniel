@@ -185,7 +185,7 @@ public class HomeController {
 	public String menu05_03(Locale locale, Model model) {
 		logger.info("menu05_03 GET");
 		
-		return "sub/menu05_01";
+		return "sub/menu05_03";
 	}
 	
 	@RequestMapping(value = "/menu05_04", method = RequestMethod.GET)

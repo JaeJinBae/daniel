@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -510,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="안면거상술">
+			<div id="sub-visual" data-menu="실리프팅/스킨보톡스">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -531,7 +532,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>안면거상술 ▼</button>
+							<button>실리프팅/스킨보톡스 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu05_01">리프팅 레이저</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu05_02">안면거상술</a></li>
@@ -550,44 +551,41 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode50401">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_01.png" alt="">
-				</div>
-			</div>
-			
-			
-			<div class="sub-contents pcode50402">
+			<div class="inner pcode50601">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_02.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_01.png" alt="">
 				</div>
 			</div>
-			
-			<div class="sub-contents pcode50403">
+			<div class="sub-contents pcode50602">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_02.png" alt="">
 				</div>
 			</div>
-			
-			
-			<div class="sub-contents pcode50404">
+			<div class="sub-contents pcode50603">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_03.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50604">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_04.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50605">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_04.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_05.png" alt="">
 				</div>
 			</div>
-			
-			<div class="sub-contents pcode50405">
+			<div class="sub-contents pcode50606">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_06.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50607">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_05.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_07.png" alt="">
 				</div>
 			</div>
-			
-			<div class="sub-contents pcode50406">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_06.png" alt="">
-				</div>
-			</div>
-			
 			
 			<div id="caoution">
 				<div class="inner">
@@ -601,15 +599,16 @@ $(function(){
 		
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>안면거상술</em>주의사항</span>
+						<span><em>실리프팅</em>주의사항</span>
 						<ol>
-							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
-							<li>3주간 금주,금연하여 주세요.</li>
-							<li>시술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요</li>
+							<li>일상생활 바로 가능합니다. (세안,메이크업)</li>
+							<li>세안 시 문지르지 말아주세요.</li>
+							<li>일주일간 금주,금연해주세요.</li>
+							<li>빨대 3주간 사용 금지하여 주세요.</li>
 							<li>처방약을 꼭 복용해주세요.</li>
-							<li>수술부위 연고를 꼭 발라주세요</li>
-							<li>압박밴드는 1~3개월동안 착용하여 주세요.</li>
-							
+							<li>냉찜질은 붓기 완화에 도움이 됩니다.</li>
+							<li>입을 크게 벌리지 마세요.</li>
+							<li>시술 당일 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
 						</ol>	
 					</div>
 					<!-- 주의사항 리스트 끝 -->
@@ -620,10 +619,10 @@ $(function(){
 					<div class="double-banner">
 						<ul>
 							<li>
-								<a href="/563/?pCode=563"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
+								<a href="/html/?pCode=563"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
 							</li>
 							<li>
-								<a href="/521/?pCode=521"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
+								<a href="/html/?pCode=521"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
 							</li>
 						</ul>
 					</div>
