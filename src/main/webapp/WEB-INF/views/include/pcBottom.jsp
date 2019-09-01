@@ -8,7 +8,7 @@
 				<i class="kinds">MAP</i>
 				<h6 class="tit">오시는 길</h6>
 				<p class="cap">경남 창원시 성산구 마디미로22번길 12, 4F</p>
-				<a href="/501/?pCode=501" class="more" title="자세히 보기">자세히</a>
+				<a href="${pageContext.request.contextPath}/menu01_03" class="more" title="자세히 보기">자세히</a>
 			</div>
 		</li>
 		<!-- 오시는길(지도)끝 -->
@@ -46,7 +46,7 @@
 				※ 토요일은 점심시간 없이 진료합니다.<br>
 				※ 일요일 및 공휴일은 휴진입니다.
 			</p>
-			<a href="/501/?pCode=501" class="more" title="자세히 보기">자세히 보기</a>
+			<a href="${pageContext.request.contextPath}/menu01_03" class="more" title="자세히 보기">자세히 보기</a>
 		</li>
 		<!-- 진료시간 안내 끝 -->
 
