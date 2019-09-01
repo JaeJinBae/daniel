@@ -510,7 +510,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="프리미엄토닝">
+			<div id="sub-visual" data-menu="웨딩패키지">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -531,7 +531,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>프리미엄토닝 ▼</button>
+							<button>웨딩패키지 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu03_01">다니엘 복합레이저</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu03_02">난치성색소</a></li>
@@ -547,74 +547,49 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode68501">
+			<div class="sub-contents pcode69101">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_01.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68502">
+			<div class="sub-contents pcode69102">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_02.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68503">
+			<div class="sub-contents pcode69103">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_03.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68504">
+			<div class="sub-contents pcode69104">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_04.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_04.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68505">
+			<div class="sub-contents pcode69105">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_05.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_05.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68506">
+			<div class="sub-contents pcode69106">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_06.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_06.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68507">
+			<div class="sub-contents pcode69107">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_07.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_07.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68508">
+			<div class="sub-contents pcode69108">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_08.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_08.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68509">
+			<div class="sub-contents pcode69109">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_09.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode68510">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_10.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode68511">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_11.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode68512">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_12.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode68513">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_13.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode68514">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_14.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_09.png" alt="">
 				</div>
 			</div>
 			
