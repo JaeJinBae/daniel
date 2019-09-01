@@ -510,7 +510,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="보톡스/필러">
+			<div id="sub-visual" data-menu="멀티파워주사">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -531,7 +531,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>보톡스/필러 ▼</button>
+							<button>멀티파워주사 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu02_01">보톡스/필러</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu02_02">안면윤곽주사</a></li>
@@ -545,109 +545,74 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode52101">
+			<div class="sub-contents pcode52301">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_01.png" alt="">
 				</div>
 			</div>
 			
 			
-			<div class="sub-contents pcode52102">
+			<div class="sub-contents pcode52302">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_02.png" alt="">
-				</div>
-			</div>
-			
-			<div class="sub-contents pcode52103">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_02.png" alt="">
 				</div>
 			</div>
 			
 			
-			<div class="sub-contents pcode52104">
+			<div class="sub-contents pcode52303">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_04.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_03.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode52105">
+			
+			<div class="sub-contents pcode52304">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_05.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_04.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode52106">
+			<div class="sub-contents pcode52305">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_06.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_05.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode52107">
+			<div class="sub-contents pcode52306">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_07.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_06.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode52108">
+			<div class="sub-contents pcode52307">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_08.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_07.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode52109">
+			<div class="sub-contents pcode52308">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_09.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_08.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode52110">
+			<div class="sub-contents pcode52309">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/521_img_10.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_09.png" alt="">
 				</div>
 			</div>
 			
-			<div id="caoution">
+			<div class="sub-contents pcode52310">
 				<div class="inner">
-					<div class="caoution-title">
-						다니엘성형외과
-						<p>
-							시술&amp;수술 후 <em>주의사항</em>
-						</p>
-					</div>
-		
-					<!-- 주의사항 리스트 시작 -->
-					<div class="caoution-list">
-						<span><em>보톡스/필러</em>주의사항</span>
-						<ol>
-							<li>일상생활 바로 가능합니다. (세안,메이크업)</li>
-							<li>일주일간 금주,금연해주세요.</li>
-							<li>시술 당일 목욕,사우나,운동은 삼가주세요.</li>
-							<li>처방약을 꼭 복용해주세요.</li>
-							<li>시술부위 손으로 만지지 마세요.</li>
-							<li>턱보톡스 시술 시, 질기고 딱딱한 음식 금해주세요.</li>
-				
-						</ol>	
-					</div>
-					<!-- 주의사항 리스트 끝 -->
-		
-		
-					<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
-		
-					<div class="double-banner">
-						<ul>
-							<li>
-								<a href="/563/?pCode=563"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
-							</li>
-							<li>
-								<a href="/503/?pCode=503"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner03.png" alt="다니엘 동안탄력"></a>
-							</li>
-						</ul>
-					</div>
-		
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_10.png" alt="">
 				</div>
 			</div>
 			
+			<div class="sub-contents pcode52311">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/523_img_11.png" alt="">
+				</div>
+			</div>
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
