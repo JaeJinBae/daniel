@@ -5,19 +5,19 @@
 		<!-- fnb 시작 -->
 		<ul class="fnb">
 			<li>
-				<a href="/499/?pCode=499">다니엘 소개</a>
+				<a href="${pageContext.request.contextPath}/menu01_01">다니엘 소개</a>
 			</li>
 			<li>
-				<a href="/501/?pCode=501">찾아오시는 길</a>
+				<a href="${pageContext.request.contextPath}/menu01_03">찾아오시는 길</a>
 			</li>
 			<li>
-				<a href="/personal">개인정보보호정책</a>
+				<a href="${pageContext.request.contextPath}/personal">개인정보보호정책</a>
 			</li>
 			<li>
-				<a href="/agree">이용약관</a>
+				<a href="${pageContext.request.contextPath}/agree">이용약관</a>
 			</li>
 			<li>
-				<a href="/528/?pCode=528">온라인상담</a>
+				<a href="${pageContext.request.contextPath}/menu09_02">온라인상담</a>
 			</li>
 		</ul>
 		<!-- fnb 끝 -->

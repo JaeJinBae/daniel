@@ -525,7 +525,7 @@ $(function(){
 				<div class="inner">
 					<ul>
 						<li class="home">
-							<a href="/" title="메인페이지로 이동"></a>
+							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
 							<button>커뮤니티 ▼</button>
@@ -627,10 +627,10 @@ $(function(){
 										<div class="double-banner">
 											<ul>
 												<li>
-													<a href="/html/?pCode=563"><img src="/assets/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
+													<a href="/html/?pCode=563"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
 												</li>
 												<li>
-													<a href="/html/?pCode=521"><img src="/assets/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
+													<a href="/html/?pCode=521"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
 												</li>
 											</ul>
 										</div>

@@ -483,8 +483,7 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(2)").addClass("active");
+	
 });
 </script>
 </head>
@@ -513,7 +512,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="온라인 상담">
+			<div id="sub-visual" data-menu="">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -528,212 +527,242 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>커뮤니티 ▼</button>
-							<ul>
-								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
-							</ul>
+							<button>멤버쉽 ▼</button>
+
 						</li>
 						<li class="gnb">
-							<button>온라인 상담 ▼</button>
-							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu09_01">공지사항</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu09_02">온라인 상담</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu09_03">시술 전후 사진</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu09_04">리얼스토리</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu09_05">자필후기</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu09_06">이벤트</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu09_07">예약하기</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu09_08">시술&수술주의사항</a></li>
-							</ul>
+							<button>개인정보취급방침 ▼</button>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<!-- 게시판 타이틀 시작 -->
 			<div class="board-titl">
-				<h5>온라인 상담</h5>
-			</div>
-			<!-- 게시판 타이틀 끝 -->
-			<div class="inner">
-				<table class="board-counsel-list">
-					<caption>온라인 상담 리스트 테이블 Type A</caption>
-					<colgroup>
-						<col style="width: 100px;">
-						<col>
-						<col style="width: 140px;">
-						<col style="width: 140px;">
-						<col style="width: 140px;">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>답변여부</th>
-							<th>작성자</th>
-							<th>작성일</th>
-						</tr>
-					</thead>
-						<tr>
-							<td>1124</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2497&amp;nextmode=view">이중턱 지흡 문의 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state ready">답변대기</i></td>
-							<td></td>
-							<td>2019-09-02</td>
-						</tr>
-					
-						<tr>
-							<td>1123</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2495&amp;nextmode=view">콧볼축소술 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state ready">답변대기</i></td>
-							<td></td>
-							<td>2019-09-01</td>
-						</tr>
-					
-						<tr>
-							<td>1122</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2474&amp;nextmode=view">얼굴 윤곽 주사 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state com">답변완료</i></td>
-							<td>김대명</td>
-							<td>2019-08-19</td>
-						</tr>
-					
-						<tr>
-							<td>1121</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2260&amp;nextmode=view">짝눈교정은 어떻게하나요? <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state com">답변완료</i></td>
-							<td>김주희</td>
-							<td>2019-04-12</td>
-						</tr>
-					
-						<tr>
-							<td>1120</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2259&amp;nextmode=view">주근깨 제거비용이 알고싶습니다 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state com">답변완료</i></td>
-							<td>다니엘</td>
-							<td>2019-04-09</td>
-						</tr>
-					
-						<tr>
-							<td>1119</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2258&amp;nextmode=view">앞트임 흉터 ,쌍꺼풀 절개 흉터 레이저 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state com">답변완료</i></td>
-							<td>다니엘</td>
-							<td>2019-04-09</td>
-						</tr>
-					
-						<tr>
-							<td>1118</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2257&amp;nextmode=view">흉터제거 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state com">답변완료</i></td>
-							<td>.다니엘</td>
-							<td>2019-04-07</td>
-						</tr>
-					
-						<tr>
-							<td>1117</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2256&amp;nextmode=view">인중제모가격문의 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state com">답변완료</i></td>
-							<td>이해원</td>
-							<td>2019-04-04</td>
-						</tr>
-					
-						<tr>
-							<td>1116</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2255&amp;nextmode=view">얼굴 윤곽 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state com">답변완료</i></td>
-							<td>다니엘</td>
-							<td>2019-03-29</td>
-						</tr>
-					
-						<tr>
-							<td>1115</td>
-							<td class="subject" data-state="비공개">
-					
-								<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2254&amp;nextmode=view">눈밑지방제거 <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
-							</td>
-							<td><i class="state com">답변완료</i></td>
-							<td>박수진</td>
-							<td>2019-03-29</td>
-						</tr>
-				</table>
+				<h5>개인정보취급방침</h5>
 			</div>
 			
-			<!-- 게시판 버튼 시작 -->
-			<div class="btn-group">
+			<div class="sub-contents privacy">
 				<div class="inner">
-					<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;mode=insert&amp;distinction=insert&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1" class="btn btn-list">글쓰기</a>	</div>
-			</div>
-			<!-- 게시판 버튼 끝 -->
-			
-			
-			<!-- 페이징 시작 -->
-			<div id="board-pagenation">
-				<div class="inner">
-					<a href="javascript:;">
-						<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
-					</a>
-					<a href="javascript:;">
-						<svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> -->
-					</a>
-					<a href="javascript:;" class="on">1</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=2 ">2</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=3 ">3</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=4 ">4</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=5 ">5</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=6 ">6</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=7 ">7</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=8 ">8</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=9 ">9</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=10 ">10</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=11 ">
-						<svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> -->
-					</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=113 ">
-						<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
-					</a>
+					개인정보의 수집범위<br>
+					<br>
+					다니엘성형외과의원은(는) 별도의 회원가입 절차 없이 대부분의 콘텐츠에 자유롭게 접근할 수 있습니다. 다니엘성형외과의원의 회원제 서비스를 이용하시고자 할 경우 다음의 정보를 입력해주셔야 하며 선택항목을 입력하시지 않았다 하여 서비스 이용에 제한은 없습니다.<br>
+					<br>
+					1) 회원 가입시 수집하는 개인정보의 범위<br>
+					<br>
+					- 필수항목 : 희망 ID, 비밀번호, 이름, 닉네임<br>
+					<br>
+					- 선택항목 : 이메일주소, 이메일 수신 여부, SMS 수신여부, 정보공개여부, 휴대폰번호<br>
+					<br>
+					개인정보의 수집 및 이용 목적<br>
+					<br>
+					① 다니엘성형외과의원은(는) 회원님께 최대한으로 최적화되고 맞춤화된 서비스를 제공하기 위하여 다음과 같은 목적으로 개인정보를 수집하고 있습니다.<br>
+					<br>
+					- 이름, 아이디, 비밀번호, 닉네임 : 회원제 서비스 이용에 따른 본인 식별 절차에 이용<br>
+					<br>
+					- 이메일주소, 이메일 수신여부, SMS 수신여부, 휴대폰 번호: 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보, 새로운 서비스/신상품이나 이벤트 정보의 안내<br>
+					<br>
+					- 주소: 경품과 쇼핑 물품 배송에 대한 정확한 배송지의 확보<br>
+					<br>
+					- 그 외 선택항목 : 개인맞춤 서비스를 제공하기 위한 자료<br>
+					<br>
+					② 단, 이용자의 기본적 인권 침해의 우려가 있는 민감한 개인정보(인종 및 민족, 사상 및 신조, 출신지 및 본적지, 정치적 성향 및 범죄기록, 건강상태 및 성생활 등)는 수집하지 않습니다.<br>
+					<br>
+					개인정보의 보유기간 및 이용기간<br>
+					<br>
+					① 귀하의 개인정보는 다음과 같이 개인정보의 수집목적 또는 제공받은 목적이 달성되면 파기됩니다. 단, 상법 등 관련법령의 규정에 의하여 다음과 같이 거래 관련 권리 의무 관계의 확인 등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간 보유합니다.<br>
+					<br>
+					- 회원가입정보의 경우, 회원가입을 탈퇴하거나 회원에서 제명된 경우 등 일정한 사전에 보유목적, 기간 및 보유하는 개인정보 항목을 명시하여 동의를 구합니다.<br>
+					<br>
+					- 계약 또는 청약철회 등에 관한 기록 : 5년<br>
+					<br>
+					- 대금결제 및 재화등의 공급에 관한 기록 : 5년<br>
+					<br>
+					- 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년<br>
+					<br>
+					② 귀하의 동의를 받아 보유하고 있는 거래정보 등을 귀하께서 열람을 요구하는 경우 다니엘성형외과의원은(는) 지체없이 그 열람,확인 할 수 있도록 조치합니다 <br>
+					<br>
+					필수 개인정보 수집을 동의하지 않는 경우<br>
+					<br>
+					① 귀하의 개인정보 수집을 거부할 수 있는 권리가 있으며 이 경우 당사의 회원전용 서비스 또는 고객 문의사항에 대한 답변이 필수인 코너를 이용하는데 있어 회원 가입 또는 게시물 등록이 불가능 할 수 있습니다.<br>
+					<br>
+					② 필수 정보가 아닌 선택 정보의 경우 개인정보 수집에 동의하지 않을 수 있으며 서비스 이용에 제한은 없습니다.<!--
+					<div>&#39;바람K성형외과&#39;는 (이하 &#39;본원&#39;은) 고객님의 개인정보를 중요시하며, 「개인정보보호법」을 준수하고 있습니다.</div>
+					
+					<div>본원은 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 수집하는 개인정보 항목</div>
+					
+					<div>본원은 회원가입, 상담, 서비스 신청 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.</div>
+					
+					<div>&omicron; 수집항목 : 이름 , 로그인ID , 비밀번호 , 주소 , 휴대전화번호 , 이메일 등</div>
+					
+					<div>&omicron; 개인정보 수집방법 : 홈페이지(회원가입, 상담게시판, 온라인예약 등)</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 개인정보의 수집 및 이용목적</div>
+					
+					<div>본원은 수집한 개인정보를 다음의 목적을 위해 활용합니다.</div>
+					
+					<div>&omicron; 서비스 제공에 관한 계약 이행</div>
+					
+					<div>&omicron; 회원 관리</div>
+					
+					<div>회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 가입 의사 확인 , 연령확인, 불만처리 등 민원처리 , 고지사항 전달</div>
+					
+					<div>&omicron; 마케팅 및 광고에 활용</div>
+					
+					<div>이벤트 등 광고성 정보 전달 , 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계</div>
+					
+					<div>&omicron; 휴대폰번호는 나이스평가정보에서 인증 받은 휴대폰 번호를 사용 하고 있습니다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 개인정보의 보유 및 이용기간</div>
+					
+					<div>본원은 개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 지체 없이 파기합니다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 개인정보의 파기절차 및 방법</div>
+					
+					<div>본원은 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.</div>
+					
+					<div>&omicron; 파기절차</div>
+					
+					<div>회원님이 회원가입 등을 위해 입력하신 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함) 내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간 참조) 일정 기간 저장된 후 파기되어집니다.</div>
+					
+					<div>별도 DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 보유되어지는 이외의 다른 목적으로 이용되지 않습니다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>&omicron; 파기방법</div>
+					
+					<div>- 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</div>
+					
+					<div>- 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 수집한 개인정보의 위탁</div>
+					
+					<div>본원은 고객님의 동의없이 고객님의 정보를 외부 업체에 위탁하지 않습니다. 향후 그러한 필요가 생길 경우, 위탁 대상자와 위탁 업무 내용에 대해 고객님에게 통지하고 필요한 경우 사전 동의를 받도록 하겠습니다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 이용자의 권리와 그 행사방법</div>
+					
+					<div>이용자는 언제든지 등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있으며 가입해지를 요청할 수도 있습니다. (단, 만 14세 미만의 아동은 가입이 제한됩니다)</div>
+					
+					<div>이용자의 개인정보 조회, 수정을 위해서는 &lsquo;개인정보변경&rsquo;(또는 &lsquo;회원정보수정&rsquo; 등)을 가입해지(동의철회)를 위해서는 &ldquo;회원탈퇴&rdquo;를 클릭하여 본인 확인 절차를 거치신 후 직접 열람, 정정 또는 탈퇴가 가능합니다. 혹은 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체없이 조치하겠습니다.</div>
+					
+					<div>귀하가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체없이 통지하여 정정이 이루어지도록 하겠습니다.</div>
+					
+					<div>본원은 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제된 개인정보는 &ldquo;본원이 수집하는 개인정보의 보유 및 이용기간&rdquo;에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항</div>
+					
+					<div>쿠키 등 인터넷 서비스 이용 시 자동 생성되는 개인정보를 수집하는 장치를 운영하지 않습니다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 개인정보에 관한 민원서비스</div>
+					
+					<div>본원은 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다.</div>
+					
+					<div>- 개인정보책임관리자 : 강상윤</div>
+					
+					<div>- 문의전화 : 051.731. 7577</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>귀하께서는 병원의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보관리책임자 혹은 개인정보실무책임자로 신고하실 수 있습니다. 병원는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.</div>
+					
+					<div>기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.</div>
+					
+					<div>1.개인분쟁조정위원회 (www.1336.or.kr/1336)</div>
+					
+					<div>2.정보보호마크인증위원회 (www.eprivacy.or.kr/02-580-0533~4)</div>
+					
+					<div>3.대검찰청 인터넷범죄수사센터 (http://icic.sppo.go.kr/02-3480-3600)</div>
+					
+					<div>4.경찰청 사이버테러대응센터 (www.ctrc.go.kr/02-392-0330)</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>❑ 환자의 권리와 의무(제1조의2 제1항 관련)</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>1. 환자의 권리</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>가. 진료 받을 권리</div>
+					
+					<div>환자는 자신의 건강보호를 위해 적절한 보건의료서비스를 받고, 성별 나이&middot;종교&middot;신분&middot;경제적 사정등을</div>
+					
+					<div>이유로 이를 침해받지 아니하며, 의료인은 정당한 사유없이 진료를 거부하지 못한다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>나. 알 권리 및 자기결정권</div>
+					
+					<div>환자는 자신의 건강보호를 위해 적절한 보건의료서비스를 받고, 성별 나이&middot;종교&middot;신분&middot;경제적 사정등을</div>
+					
+					<div>이유로 이를 침해받지 아니하며, 의료인은 정당한 사유없이 진료를 거부하지 못한다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>다. 비밀을 보호받을 권리</div>
+					
+					<div>환자는 진료와 관련된 신체상&middot;건강상 비밀을 보호받으며, 의료인과 의료기관은 환자의 동의를 받지 않거나</div>
+					
+					<div>범죄수사 등 법률이 정한 경우 외에는 비밀을 누설&middot;발표하지 못한다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>라. 피해를 구제받을 권리</div>
+					
+					<div>환자는 권리를 침해 받아 생명&middot;신체적&middot;금전적 피해가 발생한 경우,</div>
+					
+					<div>한국의료분쟁조정중재원(02-6210-0114, www.k-medi.or.kr)에 상담 및 구제 신청을 할 수 있다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>2. 환자의 의무</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>가. 의료인에 대한 신뢰&middot;존중 의무</div>
+					
+					<div>환자는 자신의 건강관련 정보를 의료인에게 정확히 알리고, 의료인의 치료 계획에 대해 신뢰하고 존중하여야 한다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>나. 부정한 방법으로 진료를 받지 않을 의무</div>
+					
+					<div>환자는 진료 전에 본인의 신분을 밝혀야하고, 타인의 명의로 진료를 받는 등 거짓이나 부정한 방법으로 진료를 받지 아니한다.</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>&nbsp;</div>
+					
+					<div>부칙</div>
+					
+					<div>이 약관은 2017년 2월 15일 시행합니다.</div>-->
 				</div>
-			</div><!-- 페이징 끝 -->
-			
-			<div class="search-box">
-				<form name="board_search" method="post" action="" onsubmit="return board_search_it(this)">
-					<select name="select_key" id="select_key">
-						<option value="i_title|i_content|i_name">전체</option>
-						<option value="i_title">제목</option>
-						<option value="i_content">내용</option>
-						<option value="i_name">작성자</option>
-					</select>		
-					<input type="text" title="검색어" name="input_key" value="">
-					<button type="submit">검색</button>
-				</form>
 			</div>
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->

@@ -524,7 +524,7 @@ $(function(){
 				<div class="inner">
 					<ul>
 						<li class="home">
-							<a href="/" title="메인페이지로 이동"></a>
+							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
 							<button>체형 클리닉 ▼</button>
