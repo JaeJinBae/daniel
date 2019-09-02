@@ -65,7 +65,7 @@
 ***********************************************************************/
 .search-box{width:100%; max-width:640px; height:35px; margin:0 auto 25px auto;}
 .search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
-.search-box input[type="text"]{width:58%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(/assets/img/board/search.png) no-repeat 98% center; background-size:20px;}
+.search-box input[type="text"]{width:58%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../../img/board/search.png) no-repeat 98% center; background-size:20px;}
 .search-box button{width:15%; background:#525c5d; color:#fff; font-weight:700; cursor:pointer;}
 .search-box select{width:25%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(/assets/img/common/arrow.png) no-repeat 98% center;}
 /**********************************************************************/

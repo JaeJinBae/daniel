@@ -27,7 +27,7 @@
 .accordion ul {width: 100%; height:100%;}
 .accordion ul li {position: relative; width:100%; height:250px; text-align:center; box-sizing:border-box; background-size:cover;-webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
 .accordion ul li::before{position:absolute; display:inline-block; content:''; width:100%; height:730px; left:0; top:0; background:rgba(0,0,0,0.6);}
-.accordion ul li::after{position:absolute; display:inline-block; content:''; width:100%; height:730px; left:0; top:0; background:url(/assets/img/main/accordion_logo.png) no-repeat 30px 30px; }
+.accordion ul li::after{position:absolute; display:inline-block; content:''; width:100%; height:730px; left:0; top:0; background:url(../../img/main/accordion_logo.png) no-repeat 30px 30px; }
 .accordion ul li b.num{position:absolute; right:30px; bottom:30px; font-size:46px; color:#fff; font-family: 'Nanum Myeongjo', serif;  color:#c5a264; opacity:0.7;}
 
 .accordion ul li div.flip-flop{position:absolute; width:90%; height:220px; left:50%; top:50%; transform:translate(-50%, -50%); transition: all 0.3s linear; z-index:1;}
@@ -38,7 +38,7 @@
 .accordion ul li div.flip p.cap b{color:#c5a264;}
 .accordion ul li div.flip h6.tit{font-size:2.6em; line-height:1.4em; font-weight:700; color:#fff; margin-top:20px;}
 
-.accordion ul li div.flop{display:none; background:rgba(23,43,77,0.9) url(/assets/img/main/accordion_more.png) no-repeat center 95%; box-sizing:border-box; z-index:1; cursor:pointer; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.accordion ul li div.flop{display:none; background:rgba(23,43,77,0.9) url(../../img/main/accordion_more.png) no-repeat center 95%; box-sizing:border-box; z-index:1; cursor:pointer; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
 .accordion ul li div.flop h6.tit{font-size:2em; font-weight:700; color:#fff;}
 .accordion ul li div.flop span.special{display:block; font-size:1em; line-height:1.4em; font-weight:700; color:#dfc495; margin:15px 0;}
 .accordion ul li div.flop p.cap{font-size:1em; color:rgba(255,255,255,0.8); line-height:1.4em;}
@@ -50,10 +50,10 @@
 
 
 
-.accordion ul li:nth-child(1) {background: url("/assets/img/main/accordion_bg02.png") no-repeat 80% center;}
-.accordion ul li:nth-child(2) {background: url("/assets/img/main/accordion_bg01.png") no-repeat 80% center;}
-.accordion ul li:nth-child(3) {background: url("/assets/img/main/accordion_bg03.png") no-repeat center center;}
-.accordion ul li:nth-child(4) {background: url("/assets/img/main/accordion_bg04.png") no-repeat center center;}
+.accordion ul li:nth-child(1) {background: url("../../img/main/accordion_bg02.png") no-repeat 80% center;}
+.accordion ul li:nth-child(2) {background: url("../../img/main/accordion_bg01.png") no-repeat 80% center;}
+.accordion ul li:nth-child(3) {background: url("../../img/main/accordion_bg03.png") no-repeat center center;}
+.accordion ul li:nth-child(4) {background: url("../../img/main/accordion_bg04.png") no-repeat center center;}
 
 
 .accordion ul li:focus {outline: none;}

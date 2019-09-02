@@ -128,59 +128,59 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 #sub-visual[data-sec="멤버쉽"], #sub-visual[data-sec="동안/탄력 클리닉"]{display:none;}
 /* 1차 카테고리명으로 bg 깔기 */
 #sub-visual[data-sec="흉터 클리닉"]{display:none;}
-#sub-visual[data-sec="레이저 클리닉"]{background:url(/assets/img/m/common/visual_bg0101.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-sec="메디컬스킨케어"]{background:url(/assets/img/m/common/visual_bg0501.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-sec="레이저 클리닉"]{background:url(../../img/m/common/visual_bg0101.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-sec="메디컬스킨케어"]{background:url(../../img/m/common/visual_bg0501.jpg) no-repeat center center; background-size:cover; height:600px;}
 #sub-visual[data-sec="눈/코 성형"]{display:none;}
-#sub-visual[data-sec="프리미엄 쁘띠클리닉"]{display:none; background:url(/assets/img/m/common/visual_bg0101.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-sec="체형 클리닉"]{display:none; background:url(/assets/img/m/common/visual_bg0101.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-sec="커뮤니티"]{background:url(/assets/img/m/common/visual_bg0901.jpg) no-repeat center center; background-size:cover; height:350px;}
+#sub-visual[data-sec="프리미엄 쁘띠클리닉"]{display:none; background:url(../../img/m/common/visual_bg0101.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-sec="체형 클리닉"]{display:none; background:url(../../img/m/common/visual_bg0101.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-sec="커뮤니티"]{background:url(../../img/m/common/visual_bg0901.jpg) no-repeat center center; background-size:cover; height:350px;}
 
 /* 2차 카테고리명으로 bg 깔기 */
-#sub-visual[data-menu="다니엘의 특별함"]{background:url(/assets/img/m/common/visual_bg0101.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="의료진 소개"]{background:url(/assets/img/m/common/visual_bg0102.jpg) no-repeat center center; background-size:cover; height:350px;}
-#sub-visual[data-menu="진료시간/오시는길"]{background:url(/assets/img/m/common/visual_bg0103.jpg) no-repeat center center; background-size:cover; height:350px;}
-#sub-visual[data-menu="보유장비"]{background:url(/assets/img/m/common/visual_bg0104.jpg) no-repeat center center; background-size:cover; height:350px;}
+#sub-visual[data-menu="다니엘의 특별함"]{background:url(../../img/m/common/visual_bg0101.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="의료진 소개"]{background:url(../../img/m/common/visual_bg0102.jpg) no-repeat center center; background-size:cover; height:350px;}
+#sub-visual[data-menu="진료시간/오시는길"]{background:url(../../img/m/common/visual_bg0103.jpg) no-repeat center center; background-size:cover; height:350px;}
+#sub-visual[data-menu="보유장비"]{background:url(../../img/m/common/visual_bg0104.jpg) no-repeat center center; background-size:cover; height:350px;}
 #sub-visual[data-menu="선한이웃, 다니엘"] {display:none;}
 
-#sub-visual[data-menu="리프팅 레이저"]{display:block; background:url(/assets/img/m/common/visual_bg0201.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="안면거상술"]{display:block; background:url(/assets/img/m/common/visual_bg0202.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="이마내시경거상술"]{display:block; background:url(/assets/img/m/common/visual_bg0203.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="실리프팅/스킨보톡스"]{display:block; background:url(/assets/img/m/common/visual_bg0204.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="광채 지방이식"]{display:block; background:url(/assets/img/m/common/visual_bg0205.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="상안검/하안검"]{display:block; background:url(/assets/img/m/common/visual_bg0206.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="슈링크 리프팅"]{display:block; background:url(/assets/img/m/common/visual_bg0207.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="필로가135주사"]{display:block; background:url(/assets/img/m/common/visual_bg0208.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="코레지 리프팅"]{display:block; background:url(/assets/img/m/common/visual_bg0209.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="써마지FLX"]{display:block; background:url(/assets/img/m/common/visual_bg0210.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="리프팅 레이저"]{display:block; background:url(../../img/m/common/visual_bg0201.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="안면거상술"]{display:block; background:url(../../img/m/common/visual_bg0202.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="이마내시경거상술"]{display:block; background:url(../../img/m/common/visual_bg0203.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="실리프팅/스킨보톡스"]{display:block; background:url(../../img/m/common/visual_bg0204.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="광채 지방이식"]{display:block; background:url(../../img/m/common/visual_bg0205.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="상안검/하안검"]{display:block; background:url(../../img/m/common/visual_bg0206.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="슈링크 리프팅"]{display:block; background:url(../../img/m/common/visual_bg0207.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="필로가135주사"]{display:block; background:url(../../img/m/common/visual_bg0208.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="코레지 리프팅"]{display:block; background:url(../../img/m/common/visual_bg0209.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="써마지FLX"]{display:block; background:url(../../img/m/common/visual_bg0210.jpg) no-repeat center center; background-size:cover; height:600px;}
 
-#sub-visual[data-menu="흉터 클리닉"]{display:block; background:url(/assets/img/m/common/visual_bg0301.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="흉터 클리닉"]{display:block; background:url(../../img/m/common/visual_bg0301.jpg) no-repeat center center; background-size:cover; height:600px;}
 
-#sub-visual[data-menu="다니엘 복합레이저"]{background:url(/assets/img/m/common/visual_bg0401.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="난치성색소"]{background:url(/assets/img/m/common/visual_bg0402.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="여드름"]{background:url(/assets/img/m/common/visual_bg0403.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="안면홍조"]{background:url(/assets/img/m/common/visual_bg0404.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="모공/흉터"]{background:url(/assets/img/m/common/visual_bg0405.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="프리미엄 토닝"]{background:url(/assets/img/m/common/visual_bg0406.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="웨딩패키지"]{background:url(/assets/img/m/common/visual_bg0407.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="다니엘 복합레이저"]{background:url(../../img/m/common/visual_bg0401.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="난치성색소"]{background:url(../../img/m/common/visual_bg0402.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="여드름"]{background:url(../../img/m/common/visual_bg0403.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="안면홍조"]{background:url(../../img/m/common/visual_bg0404.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="모공/흉터"]{background:url(../../img/m/common/visual_bg0405.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="프리미엄 토닝"]{background:url(../../img/m/common/visual_bg0406.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="웨딩패키지"]{background:url(../../img/m/common/visual_bg0407.jpg) no-repeat center center; background-size:cover; height:600px;}
 
-#sub-visual[data-menu="두피탈모"]{background:url(/assets/img/m/common/visual_bg0502.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="두피탈모"]{background:url(../../img/m/common/visual_bg0502.jpg) no-repeat center center; background-size:cover; height:600px;}
 
-#sub-visual[data-menu="멜로디 눈성형"]{display:block; background:url(/assets/img/m/common/visual_bg0601.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="눈매교정"]{display:block; background:url(/assets/img/m/common/visual_bg0602.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="트임성형"]{display:block; background:url(/assets/img/m/common/visual_bg0603.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="리듬 코성형"]{display:block; background:url(/assets/img/m/common/visual_bg0604.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="멜로디 눈성형"]{display:block; background:url(../../img/m/common/visual_bg0601.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="눈매교정"]{display:block; background:url(../../img/m/common/visual_bg0602.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="트임성형"]{display:block; background:url(../../img/m/common/visual_bg0603.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="리듬 코성형"]{display:block; background:url(../../img/m/common/visual_bg0604.jpg) no-repeat center center; background-size:cover; height:600px;}
 
-#sub-visual[data-menu="보톡스/필러"]{display:block; background:url(/assets/img/m/common/visual_bg0701.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="안면윤곽주사"]{display:block; background:url(/assets/img/m/common/visual_bg0702.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="멀티파워주사"]{display:block; background:url(/assets/img/m/common/visual_bg0703.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="보톡스/필러"]{display:block; background:url(../../img/m/common/visual_bg0701.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="안면윤곽주사"]{display:block; background:url(../../img/m/common/visual_bg0702.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="멀티파워주사"]{display:block; background:url(../../img/m/common/visual_bg0703.jpg) no-repeat center center; background-size:cover; height:600px;}
 
-#sub-visual[data-menu="삭센다주사"]{display:block; background:url(/assets/img/m/common/visual_bg0801.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="하모니 지방흡입"]{display:block; background:url(/assets/img/m/common/visual_bg0802.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="아큐주사"]{display:block; background:url(/assets/img/m/common/visual_bg0803.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="아큐주사"]{display:block; background:url(/assets/img/m/common/visual_bg0803.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="리포리바인"]{display:block; background:url(/assets/img/m/common/visual_bg0804.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="팻다운 주사"]{display:block; background:url(/assets/img/m/common/visual_bg0805.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="바디슈링크"]{display:block; background:url(/assets/img/m/common/visual_bg0806.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="삭센다주사"]{display:block; background:url(../../img/m/common/visual_bg0801.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="하모니 지방흡입"]{display:block; background:url(../../img/m/common/visual_bg0802.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="아큐주사"]{display:block; background:url(../../img/m/common/visual_bg0803.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="아큐주사"]{display:block; background:url(../../img/m/common/visual_bg0803.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="리포리바인"]{display:block; background:url(../../img/m/common/visual_bg0804.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="팻다운 주사"]{display:block; background:url(../../img/m/common/visual_bg0805.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="바디슈링크"]{display:block; background:url(../../img/m/common/visual_bg0806.jpg) no-repeat center center; background-size:cover; height:600px;}
 
 @media (max-width:640px){
 	#sub-visual{background-size:100% !important; height:0 !important; padding-top:93%;}
@@ -199,7 +199,7 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 /**********************************************************************
 * Descript : 메인페이지 비주얼 동영상 스타일
 ***********************************************************************/
-#video-visual{position:relative; width:100%; height:100%; min-width:320px; overflow:hidden; background:#000 url(/assets/img/common/visual_video_bg.jpg) no-repeat center center; background-size:cover; z-index:1;}
+#video-visual{position:relative; width:100%; height:100%; min-width:320px; overflow:hidden; background:#000 url(../../img/common/visual_video_bg.jpg) no-repeat center center; background-size:cover; z-index:1;}
 #video-visual::before{position:absolute; display:inline-block; content:''; width:100%; height:100%; left:0; top:0; background:rgba(16,34,63,0.6); z-index:1;}
 #video-visual i.visual-logo{position:absolute; right:20px; top:20px; z-index:3;}
 #video-visual a.visual-txt{display:inline-block; position:absolute; left: 50%; top:50%; transform: translate(-50%, -50%);z-index:3;}
@@ -222,10 +222,10 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 #video-visual .visual-icon{position:absolute; left:20px; top:150px; z-index:3;}
 #video-visual .visual-icon a{display:block; margin:25px 0;}
 
-#video-visual .visual-footer{position:absolute; width:100%; height:100px; background:#b18c4c /* url(/assets/img/m/common/logo_white.png) no-repeat 25px center */; left:0; bottom:0; z-index:1; text-align:right;}
-#video-visual .visual-footer a.quick-reserve{position:absolute; left:0; bottom:0; width:100px; height:100px; background:#172b4d url(/assets/img/common/gnb_bg.png) no-repeat center center}
+#video-visual .visual-footer{position:absolute; width:100%; height:100px; background:#b18c4c /* url(../../img/m/common/logo_white.png) no-repeat 25px center */; left:0; bottom:0; z-index:1; text-align:right;}
+#video-visual .visual-footer a.quick-reserve{position:absolute; left:0; bottom:0; width:100px; height:100px; background:#172b4d url(../../img/common/gnb_bg.png) no-repeat center center}
 #video-visual .visual-footer div{display:inline-block; height:100px; line-height:100px; box-sizing:border-box; text-align:left;}
-#video-visual .visual-footer .call{position:absolute; right:0; top:0; padding:30px 25px 0 55px; background:#b18c4c url(/assets/img/common/video_call.png) no-repeat left center;}
+#video-visual .visual-footer .call{position:absolute; right:0; top:0; padding:30px 25px 0 55px; background:#b18c4c url(../../img/common/video_call.png) no-repeat left center;}
 #video-visual .visual-footer .call a{font-size:14px; color:#fff; line-height:40px; display:block;}
 /**********************************************************************/
 
@@ -243,7 +243,7 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 .daniel-location li.location .location-info i.kinds{font-size:30px; font-weight:700; color:#9c9ea2; font-family: 'Nanum Myeongjo', serif;}
 .daniel-location li.location .location-info h6.tit{font-size:22px; font-weight:700; color:#0a2341; margin:15px 0;}
 .daniel-location li.location .location-info p.cap{font-size:16px; color:#0a2341;}
-.daniel-location li.location .location-info a.more{position:absolute; display:inline-block; right:0; bottom:0; background:#8b8b8b url(/assets/img/main/more_bg.png) no-repeat 95% center; color:#fff; font-weight:700; padding:10px 30px 10px 20px;}
+.daniel-location li.location .location-info a.more{position:absolute; display:inline-block; right:0; bottom:0; background:#8b8b8b url(../../img/main/more_bg.png) no-repeat 95% center; color:#fff; font-weight:700; padding:10px 30px 10px 20px;}
 /**********************************************************************/
 
 
@@ -272,13 +272,13 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 /* 공통 간편상담신청 시작 */
 #quick-inquire{position:fixed; box-sizing:border-box; left:0; bottom:-33.5rem; width:100%; height:40rem; z-index:99; text-align:center; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
-#quick-inquire > button{position:fixed; width:17rem; height:3.5rem; background:#c4a165 url(/assets/img/landing/mobile/theme/btn_quick_bg.jpg) no-repeat center center; background-size:cover; left:50%; bottom:6.5rem; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); cursor:pointer; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+#quick-inquire > button{position:fixed; width:17rem; height:3.5rem; background:#c4a165 url(../../img/landing/mobile/theme/btn_quick_bg.jpg) no-repeat center center; background-size:cover; left:50%; bottom:6.5rem; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); cursor:pointer; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
 #quick-inquire > button img{display:none;}
 
 #quick-inquire.active{bottom:0;}
 #quick-inquire > button.active{bottom:40rem;}
 
-#quick-inquire .inner{position:relative; padding:7.5rem 1rem 9rem 1rem; box-sizing:border-box; background:#333333 url(/assets/img/landing/mobile/theme/bak_quick_bg.jpg) no-repeat center top; background-size:contain;}
+#quick-inquire .inner{position:relative; padding:7.5rem 1rem 9rem 1rem; box-sizing:border-box; background:#333333 url(../../img/landing/mobile/theme/bak_quick_bg.jpg) no-repeat center top; background-size:contain;}
 #quick-inquire .quick-counsel01,
 #quick-inquire .quick-counsel02{position:relative; width:100%; box-sizing:border-box; z-index:9;}
 
@@ -287,7 +287,7 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 #quick-inquire .quick-counsel01 li{position:relative; display:inline-block; width:100%; margin-bottom:.5rem ;}
 #quick-inquire .quick-counsel01 li > label{float:left; width:4.5rem; height:2.5rem; line-height:2.5rem; box-sizing:border-box; color:#fff; text-align:left; font-size:1rem;}
 #quick-inquire .quick-counsel01 li input[type="text"]{float:left; width:calc(100% - 4.5rem); width:-webkit-calc(100% - 4.5rem); height:2.5rem; line-height:2.5rem; padding:0 .5rem; box-sizing:border-box; background:#fff;}
-#quick-inquire .quick-counsel01 li select{float:left; height:2.5rem; line-height:2.5rem; padding:0 .5rem; box-sizing:border-box; background:#fff url(/assets/img/landing/mobile/theme/select_arrow.png) no-repeat 95% center; background-size:.5rem; cursor:pointer;}
+#quick-inquire .quick-counsel01 li select{float:left; height:2.5rem; line-height:2.5rem; padding:0 .5rem; box-sizing:border-box; background:#fff url(../../img/landing/mobile/theme/select_arrow.png) no-repeat 95% center; background-size:.5rem; cursor:pointer;}
 #quick-inquire .quick-counsel01 li select{width:calc(100% - 4.5rem); width:-webkit-calc(100% - 4.5rem);}
 #quick-inquire .quick-counsel01 li input[data-name="연락처"]{width:calc(33.3333333333% - 1.77rem); margin-right:.4rem;}
 #quick-inquire .quick-counsel01 li input[data-name="연락처"]:last-child{margin-right:0;}
@@ -306,7 +306,7 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 
 #quick-inquire .quick-counsel02 li:last-child {margin-left:4.5rem;}
 #quick-inquire .quick-counsel02 li:last-child{display:block; clear:both; padding-top:1.2rem; height:3.6rem;}
-#quick-inquire .quick-counsel02 li:last-child button{display:block; width:100%; height:100%; background:url(/assets/img/landing/mobile/theme/btn_quick.jpg) no-repeat center center; background-size:cover; cursor:pointer;}
+#quick-inquire .quick-counsel02 li:last-child button{display:block; width:100%; height:100%; background:url(../../img/landing/mobile/theme/btn_quick.jpg) no-repeat center center; background-size:cover; cursor:pointer;}
 #quick-inquire .quick-counsel02 li:last-child button img {display:none;}
 
 /**********************************************************************
