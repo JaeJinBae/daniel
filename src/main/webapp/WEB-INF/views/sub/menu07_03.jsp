@@ -482,7 +482,7 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	$("#header > #gnb > .inner > ul > li:nth-child(6)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(7)").addClass("active");
 });
 </script>
 </head>
@@ -511,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="흉터 클리닉">
+			<div id="sub-visual" data-menu="리포리바인">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -526,15 +526,19 @@ $(function(){
 							<a href="/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>흉터 클리닉 ▼</button>
+							<button>체형 클리닉 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>흉터 클리닉 ▼</button>
+							<button>리포리바인 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu06_01">흉터 클리닉</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu07_01">하모니 지방흡입</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu07_02">아큐주사</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu07_03">리포리바인</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu07_04">팻다운 주사</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu07_05">바디슈링크</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -542,101 +546,39 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode50901">
+			<div class="sub-contents pcode56801">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/568_img_01.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50902">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_02.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50903">
+			<div class="sub-contents pcode56802">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/568_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50904">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_04.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50905">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_05.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50906">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_06.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50907">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_07.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50908">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_08.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50909">
+			<div class="sub-contents pcode56803">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_09.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/568_img_03.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50910">
+			<div class="sub-contents pcode56804">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_10.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/568_img_04.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50911">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_11.png" alt="">
+			<div class="sub-contents pcode56805">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/568_img_05.png" alt="">
 				</div>
 			</div>
-			
-			<div id="caoution">
-				<div class="inner">
-					
-					<div class="caoution-title">
-						다니엘성형외과
-						<p>
-							시술&amp;수술 후 <em>주의사항</em>
-						</p>
-					</div>
-			
-					<!-- 주의사항 리스트 시작 -->
-					<div class="caoution-list">
-						<span><em>흉터레이저</em>주의사항</span>
-						<ol>
-							<li>레이저 자국이 남을 가능성이 있습니다.</li>
-							<li>일주일간 금주,금연하여 주세요.</li>
-							<li>일주일간 목욕,사우나,수영장,격한운동은 삼가주세요.</li>
-							<li>얼굴 마사지(마찰)는 피해주세요. (필링제 사용 금지)</li>
-							<li>24시간 이후에 세안이 가능합니다.</li>
-							<li>화끈거림,열감증상 시 시트팩 사용을을 권합니다.</li>
-							
-						</ol>	
-			
-					</div>
-					<!-- 주의사항 리스트 끝 -->
-			
-				<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
-			
-					<div class="double-banner">
-						<ul>
-							<li>
-								<a href="/563/?pCode=563"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
-							</li>
-							<li>
-								<a href="/510/?pCode=510"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner04.png" alt="다니엘 레이저"></a>
-							</li>
-						</ul>
-					</div>
-			
+			<div class="sub-contents pcode56806">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/568_img_06.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode56807">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/568_img_07.png" alt="">
 				</div>
 			</div>
 			
