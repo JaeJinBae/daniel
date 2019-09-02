@@ -484,7 +484,7 @@ keyframes fa-spin { 0%{
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(4)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(5)").addClass("active");
 });
 </script>
 </head>
@@ -534,7 +534,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>리얼스토리 ▼</button>
+							<button>자필후기 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu09_01">공지사항</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu09_02">온라인 상담</a></li>
@@ -558,9 +558,9 @@ $(function(){
 			<!-- 게시판 타이틀 끝 -->
 			
 			<div class="inner">
-				<!-- 공지사항 게시판 뷰 시작 -->
-				<table class="board-notice-view">
-					<caption>공지사항 게시판 뷰</caption>
+				<!-- 공지사항 게시판 시작 -->
+				<table class="board-notice-list">
+					<caption>공지사항 게시판</caption>
 					<colgroup>
 						<col style="width: 100px;">
 						<col>
@@ -576,53 +576,113 @@ $(function(){
 						</tr>
 					</thead>
 					<tr>
-						<td>2064</td>
-						<td class="subject"> 리얼스토리 드림패키지 고객인터뷰 허지영</td>
-						<td>2019-04-02</td>
-						<td>69</td>
+						<td class="">23</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2102"> [자필후기] 여드름과 여드름흉터, 주근깨 치료 후기입니다.</a>
+						</td>
+						<td class="date">2019-07-15</td>
+						<td class="hit">17</td>
 					</tr>
 					<tr>
-						<td colspan="4" class="con">
-							<div>
-								<div style="text-align: center;">다니엘성형외과 리얼스토리</div>
-								<div style="text-align: center;">&nbsp;김지아 원장님과 10년동안 인연을 이어온 허지영님</div>
-								<div style="text-align: center;">드림패키지로 동안피부를 유지하는 솔직담백한 인터뷰를 개합니다.</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div style="text-align: center;">#40대 워킹맘 피부관리</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div>
-									<div style="text-align: center;">&nbsp;<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/noDG-RMO2tc" style="margin: 0px auto; max-width: 640px;" width="640"></iframe></div>
-									<div style="text-align: center;">&nbsp;</div>									
-									<div style="text-align: center;"><a href="https://www.youtube.com/watch?v=noDG-RMO2tc&amp;feature=youtu.be" target="_blank"><strong>본편 보러가기&nbsp;클릭&nbsp;</strong></a></div>
-								</div>
-							</div>
+						<td class="">22</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2101"> [자필후기] 눈밑기미와 피부 흉터치료 후기입니다.</a>
 						</td>
+						<td class="date">2019-07-15</td>
+						<td class="hit">14</td>
+					</tr>
+					<tr>
+						<td class="">21</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2093"> [자필후기] 색소(잡티) 치료 후기입니다.</a>
+						</td>
+						<td class="date">2019-06-11</td>
+						<td class="hit">39</td>
+					</tr>
+					<tr>
+						<td class="">20</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2092"> [자필후기] 동안/탄력 레이저 시술 후기입니다.</a>
+						</td>
+						<td class="date">2019-06-11</td>
+						<td class="hit">41</td>
+					</tr>
+					<tr>
+						<td class="">19</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2091"> [자필후기] 색소(오타모반, 기미) 치료 후기입니다.</a>
+						</td>
+						<td class="date">2019-06-11</td>
+						<td class="hit">30</td>
+					</tr>
+					<tr>
+						<td class="">18</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2090"> [자필후기] 피부트러블, 여드름흉터 치료 후기입니다.</a>
+						</td>
+						<td class="date">2019-06-11</td>
+						<td class="hit">45</td>
+					</tr>
+					<tr>
+						<td class="">17</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2067"> [자필후기] 코필러 시술 후기입니다.</a>	
+						</td>
+						<td class="date">2019-04-03</td>
+						<td class="hit">147</td>
+					</tr>
+					<tr>
+						<td class="">16</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2066"> [자필후기] 기미치료후기입니다.</a>	
+						</td>
+						<td class="date">2019-04-03</td>
+						<td class="hit">118</td>
+					</tr>
+					<tr>
+						<td class="">15</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2065"> [자필후기]  주근깨 치료 후기입니다.</a>	
+						</td>
+						<td class="date">2019-04-03</td>
+						<td class="hit">80</td>
+					</tr>
+					<tr>
+						<td class="">14</td>
+						<td class="subject">
+							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2054"> [자필후기] 악성기미 치료후기입니다.</a>
+						</td>
+						<td class="date">2019-03-08</td>
+						<td class="hit">99</td>
 					</tr>
 				</table>
-				<!-- 공지사항 게시판 뷰 끝 -->
-			</div>
-			
-			<div class="prev-next-list">
-				<ul class="inner">
-					<li>
-						<span>이전글</span><a href="?pCode=530&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;seq=2056"> 피부과 의사의 시간은 거꾸로 간다?</a>		</li>
-					<li>
-						<span>다음글</span><a href="?pCode=530&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;seq=1977"> 쌍꺼풀 풀림 재수술</a>		</li>
-				</ul>
-			</div>
-			
-			<!-- 게시판 버튼 시작 -->
-			<div class="btn-group">
-				<div class="inner">
-					<a href="/530/?pCode=530&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+				<!-- 공지사항 게시판 끝 -->
+				
+				<!-- 페이징 시작 -->
+				<div id="board-pagenation">
+					<div class="inner">
+						<a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+						<a href="javascript:;" class="on">1</a>
+						<a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=2 ">2</a>
+						<a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=3 ">3</a>
+						<a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=3 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+					</div>
+				</div>	<!-- 페이징 끝 -->
+				
+				<div class="search-box">
+					<form name="board_search" method="post" action="" onsubmit="return board_search_it(this)">
+						<select name="select_key" id="select_key">
+							<option value="b_title|b_content|m_id|m_name">전체</option>
+							<option value="b_title">제목</option>
+							<option value="b_content">내용</option>
+							<option value="m_id">아이디</option>
+							<option value="m_name">작성자</option>
+						</select>
+						<input type="text" title="검색어" name="input_key" value="">
+						<button type="submit">검색</button>
+					</form>
 				</div>
 			</div>
-			<!-- 게시판 버튼 끝 -->
-			
-			<form name="board" method="post" action="/html/board/board_proc.php">
-				<input type="hidden" name="fparam">
-			</form>
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	

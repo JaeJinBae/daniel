@@ -484,7 +484,7 @@ keyframes fa-spin { 0%{
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(4)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(5)").addClass("active");
 });
 </script>
 </head>
@@ -534,7 +534,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>리얼스토리 ▼</button>
+							<button>자필후기 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu09_01">공지사항</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu09_02">온라인 상담</a></li>
@@ -575,30 +575,18 @@ $(function(){
 							<th>조회수</th>
 						</tr>
 					</thead>
-					<tr>
-						<td>2064</td>
-						<td class="subject"> 리얼스토리 드림패키지 고객인터뷰 허지영</td>
-						<td>2019-04-02</td>
-						<td>69</td>
-					</tr>
-					<tr>
-						<td colspan="4" class="con">
-							<div>
-								<div style="text-align: center;">다니엘성형외과 리얼스토리</div>
-								<div style="text-align: center;">&nbsp;김지아 원장님과 10년동안 인연을 이어온 허지영님</div>
-								<div style="text-align: center;">드림패키지로 동안피부를 유지하는 솔직담백한 인터뷰를 개합니다.</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div style="text-align: center;">#40대 워킹맘 피부관리</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div>
-									<div style="text-align: center;">&nbsp;<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/noDG-RMO2tc" style="margin: 0px auto; max-width: 640px;" width="640"></iframe></div>
-									<div style="text-align: center;">&nbsp;</div>									
-									<div style="text-align: center;"><a href="https://www.youtube.com/watch?v=noDG-RMO2tc&amp;feature=youtu.be" target="_blank"><strong>본편 보러가기&nbsp;클릭&nbsp;</strong></a></div>
-								</div>
-							</div>
-						</td>
-					</tr>
+					<tbody>
+						<tr>
+							<td>2102</td>
+							<td class="subject"> [자필후기] 여드름과 여드름흉터, 주근깨 치료 후기입니다.</td>
+							<td>2019-07-15</td>
+							<td>17</td>
+						</tr>
+						<tr>
+							<td colspan="4" class="con">
+								<div style="text-align: center;"><img alt="" src="/filedata/ckeditor/20190715_DA347AA472B0F61F.jpg"></div>				</td>
+						</tr>
+					</tbody>
 				</table>
 				<!-- 공지사항 게시판 뷰 끝 -->
 			</div>
@@ -606,16 +594,16 @@ $(function(){
 			<div class="prev-next-list">
 				<ul class="inner">
 					<li>
-						<span>이전글</span><a href="?pCode=530&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;seq=2056"> 피부과 의사의 시간은 거꾸로 간다?</a>		</li>
-					<li>
-						<span>다음글</span><a href="?pCode=530&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;seq=1977"> 쌍꺼풀 풀림 재수술</a>		</li>
+						<span>이전글</span><a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;seq=2101"> [자필후기] 눈밑기미와 피부 흉터치료 후기입니다.</a>
+					</li>
+					<li><span>다음글</span><a href="javascript:alert('다음글이 없습니다');">다음글이 없습니다</a></li>
 				</ul>
 			</div>
 			
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group">
 				<div class="inner">
-					<a href="/530/?pCode=530&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+					<a href="/696/?pCode=696&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->

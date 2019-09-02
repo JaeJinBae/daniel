@@ -484,7 +484,7 @@ keyframes fa-spin { 0%{
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(4)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(6)").addClass("active");
 });
 </script>
 </head>
@@ -534,7 +534,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>리얼스토리 ▼</button>
+							<button>이벤트 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu09_01">공지사항</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu09_02">온라인 상담</a></li>
@@ -553,76 +553,50 @@ $(function(){
 			
 			<!-- 게시판 타이틀 시작 -->
 			<div class="board-titl">
-				<h5>리얼스토리</h5>
+				<h5>이벤트</h5>
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			
-			<div class="inner">
-				<!-- 공지사항 게시판 뷰 시작 -->
-				<table class="board-notice-view">
-					<caption>공지사항 게시판 뷰</caption>
-					<colgroup>
-						<col style="width: 100px;">
-						<col>
-						<col style="width: 120px;">
-						<col style="width: 120px;">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>등록일</th>
-							<th>조회수</th>
-						</tr>
-					</thead>
-					<tr>
-						<td>2064</td>
-						<td class="subject"> 리얼스토리 드림패키지 고객인터뷰 허지영</td>
-						<td>2019-04-02</td>
-						<td>69</td>
-					</tr>
-					<tr>
-						<td colspan="4" class="con">
-							<div>
-								<div style="text-align: center;">다니엘성형외과 리얼스토리</div>
-								<div style="text-align: center;">&nbsp;김지아 원장님과 10년동안 인연을 이어온 허지영님</div>
-								<div style="text-align: center;">드림패키지로 동안피부를 유지하는 솔직담백한 인터뷰를 개합니다.</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div style="text-align: center;">#40대 워킹맘 피부관리</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div style="text-align: center;">&nbsp;</div>
-								<div>
-									<div style="text-align: center;">&nbsp;<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/noDG-RMO2tc" style="margin: 0px auto; max-width: 640px;" width="640"></iframe></div>
-									<div style="text-align: center;">&nbsp;</div>									
-									<div style="text-align: center;"><a href="https://www.youtube.com/watch?v=noDG-RMO2tc&amp;feature=youtu.be" target="_blank"><strong>본편 보러가기&nbsp;클릭&nbsp;</strong></a></div>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</table>
-				<!-- 공지사항 게시판 뷰 끝 -->
-			</div>
-			
-			<div class="prev-next-list">
-				<ul class="inner">
-					<li>
-						<span>이전글</span><a href="?pCode=530&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;seq=2056"> 피부과 의사의 시간은 거꾸로 간다?</a>		</li>
-					<li>
-						<span>다음글</span><a href="?pCode=530&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;seq=1977"> 쌍꺼풀 풀림 재수술</a>		</li>
-				</ul>
-			</div>
-			
-			<!-- 게시판 버튼 시작 -->
-			<div class="btn-group">
+			<!-- 이벤트 뷰 시작 -->
+			<div class="daniel-event-view">
 				<div class="inner">
-					<a href="/530/?pCode=530&amp;select_key=&amp;input_key=&amp;Scod=BRD21&amp;pCode=530&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+					<table>
+						<tbody>
+						<tr>
+							<th>이벤트</th>
+							<th>진행여부</th>
+						</tr>
+						<tr>
+							<td align="left" valign="middle">
+								<h6 class="tit">가을, 다니엘이 추천하는 상품</h6>
+								<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-09-02 ~ 2019-11-30</p>
+							</td>
+							<td align="center" valign="middle" width="200px">
+								<i data-sec="진행중">진행중</i>
+							</td>
+						</tr>
+						<tr>
+							<td align="left" valign="middle" class="con" colspan="2">
+							<div style="text-align: center;"><img alt="" src="${pageContext.request.contextPath}/resources/filedata/ckeditor/20190901_DFB87345549B248F.jpg" style="width: 1170px;"><img alt="" src="/filedata/ckeditor/20190901_E4080B56E5011FD9.jpg" style="width: 1170px;"><img alt="" src="/filedata/ckeditor/20190901_8AD97BF5199BEFA2.jpg" style="width: 1170px;"><img alt="" src="/filedata/ckeditor/20190901_B8F883C6DE825083.jpg" style="width: 1170px;" usemap="#imgmap"><map id="imgmap" name="imgmap"><area alt="드림패키지 자세히보기" coords="748,1247,1075,1322" href="http://www.danielps.co.kr/511/?pCode=511" shape="rect" target="" title=""> <area alt="프리미엄토닝 자세히보기" coords="751,1526,1073,1600" href="http://www.danielps.co.kr/685/?pCode=685" shape="rect" target="" title=""></map><img alt="" src="/filedata/ckeditor/20190901_CF817D9320ABA000.jpg" style="width: 1170px;"><a href="http://www.danielps.co.kr/705/?pCode=705"><img alt="" src="/filedata/ckeditor/20190902_DEED6F37018FB5EB.jpg" style="width: 1170px; height: 615px;"></a><img alt="" src="/filedata/ckeditor/20190901_F1C23BF9DFC091DF.jpg" style="width: 1170px;"></div>				</td>
+						
+						</tr></tbody>
+					</table>
 				</div>
+				<script>
+					$(function(){
+						$("img[usemap]").rwdImageMaps();
+					});
+					
+				</script>
+				<!-- 게시판 버튼 시작 -->
+				<div class="btn-group">
+					<div class="inner">
+						<a href="?pCode=563&amp;page=1 pCode=563" class="btn btn-list">목록으로</a>
+					</div>
+				</div>
+				<!-- 게시판 버튼 끝 -->
 			</div>
-			<!-- 게시판 버튼 끝 -->
-			
-			<form name="board" method="post" action="/html/board/board_proc.php">
-				<input type="hidden" name="fparam">
-			</form>
+			<!-- 이벤트 뷰 끝 -->
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
