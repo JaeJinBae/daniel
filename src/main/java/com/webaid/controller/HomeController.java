@@ -300,11 +300,39 @@ public class HomeController {
 		return "sub/menu09_01";
 	}
 	
+	@RequestMapping(value = "/menu09_01read", method = RequestMethod.GET)
+	public String menu09_01read(Locale locale, Model model) {
+		logger.info("menu09_01read GET");
+		
+		return "sub/menu09_01read";
+	}
+	
 	@RequestMapping(value = "/menu09_02", method = RequestMethod.GET)
 	public String menu09_02(Locale locale, Model model) {
 		logger.info("menu09_02 GET");
 		
 		return "sub/menu09_02";
+	}
+	
+	@RequestMapping(value = "/menu09_02pwChk", method = RequestMethod.GET)
+	public String menu09_02pwChk(Locale locale, Model model) {
+		logger.info("menu09_02pwChk GET");
+		
+		return "sub/menu09_02pwChk";
+	}
+	
+	@RequestMapping(value = "/menu09_02read", method = RequestMethod.GET)
+	public String menu09_02read(Locale locale, Model model) {
+		logger.info("menu09_02read GET");
+		
+		return "sub/menu09_02read";
+	}
+	
+	@RequestMapping(value = "/menu09_02read2", method = RequestMethod.GET)
+	public String menu09_02read2(Locale locale, Model model) {
+		logger.info("menu09_02read2 GET");
+		
+		return "sub/menu09_02read2";
 	}
 	
 	@RequestMapping(value = "/menu09_03", method = RequestMethod.GET)

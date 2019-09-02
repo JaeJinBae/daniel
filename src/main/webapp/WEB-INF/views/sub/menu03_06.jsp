@@ -482,6 +482,7 @@ keyframes fa-spin { 0%{
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(3)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(3) > .lnb-wrap > li:nth-child(6)").addClass("active");
 });
 </script>
 </head>
