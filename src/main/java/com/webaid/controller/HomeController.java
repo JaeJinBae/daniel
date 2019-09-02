@@ -397,4 +397,11 @@ public class HomeController {
 		
 		return "sub/menu09_08";
 	}
+	
+	@RequestMapping(value = "/menu09_08read", method = RequestMethod.GET)
+	public String menu09_08read(Locale locale, Model model) {
+		logger.info("menu09_08read GET");
+		
+		return "sub/menu09_08read";
+	}
 }
