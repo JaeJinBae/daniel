@@ -570,21 +570,11 @@ $(function(){
 
 			<!-- 메인페이지 비주얼 슬라이드 시작 -->
 			<section class="visual-slide">
-				<div>
-					<img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg">
-				</div>
-				<div>
-					<img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg">
-				</div>
-				<div>
-					<img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg">
-				</div>
-				<div>
-					<img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg">
-				</div>
-				<div>
-					<a href=""><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg"></a>
-				</div>
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg"></div>
+				<div><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg"></a></div>
 			</section><!-- 메인페이지 비주얼 슬라이드 끝 -->
 
 			<!-- 비주얼 타이틀 시작 -->
@@ -756,18 +746,10 @@ $(function(){
 	<div class="daniel-banner">
 		<!-- 고정 배너(4개) 시작 -->
 		<ul class="fixed-banner">
-			<li>
-				<a href="/520/?pCode=520" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner01.jpg" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a>
-			</li>
-			<li>
-				<a href="/514/?pCode=514" title="모공＆흉터치료"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner02.jpg" alt="여드름 흉터와 모공 흔적없이 지워드립니다. 모공 및 흉터치료"></a>
-			</li>
-			<li>
-				<a href="/510/?pCode=510" title="다니엘 복합레이저"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner03.jpg" alt="말 뿐인 맞춤시술과 비교를 거부합니다. 다니엘 복합레이저"></a>
-			</li>
-			<li>
-				<a href="/521/?pCode=521" title="보톡스＆필러"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner04.jpg" alt="성형외과 전문의가 직접 시술하는 보톡스 및 필러"></a>
-			</li>
+			<li><a href="/520/?pCode=520" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner01.jpg" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a></li>
+			<li><a href="/514/?pCode=514" title="모공＆흉터치료"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner02.jpg" alt="여드름 흉터와 모공 흔적없이 지워드립니다. 모공 및 흉터치료"></a></li>
+			<li><a href="/510/?pCode=510" title="다니엘 복합레이저"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner03.jpg" alt="말 뿐인 맞춤시술과 비교를 거부합니다. 다니엘 복합레이저"></a></li>
+			<li><a href="/521/?pCode=521" title="보톡스＆필러"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner04.jpg" alt="성형외과 전문의가 직접 시술하는 보톡스 및 필러"></a></li>
 		</ul>
 		<!-- 고정 배너(4개) 끝 -->
 	</div>
