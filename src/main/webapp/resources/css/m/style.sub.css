@@ -59,37 +59,37 @@
 .equipment-item span.hashtag{color:#747474;}
 .equipment-item i.stamp{position:absolute; width:100%; max-width:401px; left:50%; top:0; transform:translate(-50%, 0); text-align:left;}
 
-.bg53301{background:url(/assets/img/contents/euipment01.png) no-repeat center top;}
-.bg53302{background:url(/assets/img/contents/euipment02.png) no-repeat center top;}
-.bg53303{background:url(/assets/img/contents/euipment03.png) no-repeat center top;}
-.bg53304{background:url(/assets/img/contents/euipment04.png) no-repeat center top;}
-.bg53305{background:url(/assets/img/contents/euipment05.png) no-repeat center top;}
-.bg53306{background:url(/assets/img/contents/euipment06.png) no-repeat center top;}
-.bg53307{background:url(/assets/img/contents/euipment07.png) no-repeat center top;}
-.bg53308{background:url(/assets/img/contents/euipment08.png) no-repeat center top;}
-.bg53309{background:url(/assets/img/contents/euipment09.png) no-repeat center top;}
-.bg53310{background:url(/assets/img/contents/euipment10.png) no-repeat center top;}
-.bg53311{background:url(/assets/img/contents/euipment11.png) no-repeat center top;}
-.bg53312{background:url(/assets/img/contents/euipment12.png) no-repeat center top;}
-.bg53313{background:url(/assets/img/contents/euipment13.png) no-repeat center top;}
-.bg53314{background:url(/assets/img/contents/euipment14.png) no-repeat center top;}
-.bg53315{background:url(/assets/img/contents/euipment15.png) no-repeat center top;}
-.bg53316{background:url(/assets/img/contents/euipment16.png) no-repeat center top;}
-.bg53317{background:url(/assets/img/contents/euipment17.png) no-repeat center top;}
-.bg53318{background:url(/assets/img/contents/euipment18.png) no-repeat center top;}
-.bg53319{background:url(/assets/img/contents/euipment19.png) no-repeat center top;}
-.bg53320{background:url(/assets/img/contents/euipment20.png) no-repeat center top;}
-.bg53321{background:url(/assets/img/contents/euipment21.png) no-repeat center top;}
-.bg53322{background:url(/assets/img/contents/euipment22.png) no-repeat center top;}
-.bg53323{background:url(/assets/img/contents/euipment23.png) no-repeat center top;}
-.bg53324{background:url(/assets/img/contents/euipment24.png) no-repeat center top;}
-.bg53325{background:url(/assets/img/contents/euipment25.png) no-repeat center top;}
-.bg53326{background:url(/assets/img/contents/euipment26.png) no-repeat center top;}
-.bg53327{background:url(/assets/img/contents/euipment27.png) no-repeat center top;}
-.bg53328{background:url(/assets/img/contents/euipment28.png) no-repeat center top;}
-.bg53329{background:url(/assets/img/contents/euipment29.png) no-repeat center top;}
-.bg53330{background:url(/assets/img/contents/euipment30.png) no-repeat center top;}
-.bg53331{background:url(/assets/img/contents/euipment31.png) no-repeat center top;}
+.bg53301{background:url(../../img/contents/euipment01.png) no-repeat center top;}
+.bg53302{background:url(../../img/contents/euipment02.png) no-repeat center top;}
+.bg53303{background:url(../../img/contents/euipment03.png) no-repeat center top;}
+.bg53304{background:url(../../img/contents/euipment04.png) no-repeat center top;}
+.bg53305{background:url(../../img/contents/euipment05.png) no-repeat center top;}
+.bg53306{background:url(../../img/contents/euipment06.png) no-repeat center top;}
+.bg53307{background:url(../../img/contents/euipment07.png) no-repeat center top;}
+.bg53308{background:url(../../img/contents/euipment08.png) no-repeat center top;}
+.bg53309{background:url(../../img/contents/euipment09.png) no-repeat center top;}
+.bg53310{background:url(../../img/contents/euipment10.png) no-repeat center top;}
+.bg53311{background:url(../../img/contents/euipment11.png) no-repeat center top;}
+.bg53312{background:url(../../img/contents/euipment12.png) no-repeat center top;}
+.bg53313{background:url(../../img/contents/euipment13.png) no-repeat center top;}
+.bg53314{background:url(../../img/contents/euipment14.png) no-repeat center top;}
+.bg53315{background:url(../../img/contents/euipment15.png) no-repeat center top;}
+.bg53316{background:url(../../img/contents/euipment16.png) no-repeat center top;}
+.bg53317{background:url(../../img/contents/euipment17.png) no-repeat center top;}
+.bg53318{background:url(../../img/contents/euipment18.png) no-repeat center top;}
+.bg53319{background:url(../../img/contents/euipment19.png) no-repeat center top;}
+.bg53320{background:url(../../img/contents/euipment20.png) no-repeat center top;}
+.bg53321{background:url(../../img/contents/euipment21.png) no-repeat center top;}
+.bg53322{background:url(../../img/contents/euipment22.png) no-repeat center top;}
+.bg53323{background:url(../../img/contents/euipment23.png) no-repeat center top;}
+.bg53324{background:url(../../img/contents/euipment24.png) no-repeat center top;}
+.bg53325{background:url(../../img/contents/euipment25.png) no-repeat center top;}
+.bg53326{background:url(../../img/contents/euipment26.png) no-repeat center top;}
+.bg53327{background:url(../../img/contents/euipment27.png) no-repeat center top;}
+.bg53328{background:url(../../img/contents/euipment28.png) no-repeat center top;}
+.bg53329{background:url(../../img/contents/euipment29.png) no-repeat center top;}
+.bg53330{background:url(../../img/contents/euipment30.png) no-repeat center top;}
+.bg53331{background:url(../../img/contents/euipment31.png) no-repeat center top;}
 
 
 
@@ -308,7 +308,7 @@
 
 #order-form #order-surgery .order-inventory .order-date{padding:25px 0;}
 #order-form #order-surgery .order-inventory .order-date p{text-align:center;}
-#order-form #order-surgery .order-inventory .order-date p::before{display:inline-block; content:''; width:30px; height:32px; background:url(/assets/img/m/contents/calendar.png) no-repeat center center; background-size:30px; vertical-align:-10px; margin-right:5px;}
+#order-form #order-surgery .order-inventory .order-date p::before{display:inline-block; content:''; width:30px; height:32px; background:url(../../img/m/contents/calendar.png) no-repeat center center; background-size:30px; vertical-align:-10px; margin-right:5px;}
 #order-form #order-surgery .order-inventory .order-date p em{display:inline-block; font-weight:700; color:#111; margin-right:20px;}
 
 #order-form #order-surgery .order-inventory .order-btn{}
@@ -370,7 +370,7 @@
 #order-complete{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.6); z-index:99;}
 #order-complete .brick{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); z-index:1; width:100%; max-width:500px; background:#fff; border-top:2px solid #b18c4c;}
 
-#order-complete .order-complete-txt{text-align:center; padding:120px 0 35px 0; background: url(/assets/img/m/contents/order_complete_bg.png) no-repeat center 25px; background-size:90px;}
+#order-complete .order-complete-txt{text-align:center; padding:120px 0 35px 0; background: url(../../img/m/contents/order_complete_bg.png) no-repeat center 25px; background-size:90px;}
 #order-complete .order-complete-txt p.txt01{font-size:20px; color:#000; font-weight:700; margin-bottom:10px;}
 #order-complete .order-complete-txt p.txt01 em{color:#a17b39;}
 #order-complete .order-complete-txt p.txt02{font-size:15px; color:#5e5d5d;}
@@ -423,11 +423,11 @@
 #caoution{margin-top:50px;}
 #caoution .inner{max-width:640px;}
 #caoution .caoution-title{position:relative; padding:50px 0 30px 0; text-align:center; font-size:22px; line-height:1.5em; color:#a5803d; letter-spacing:-0.5px;}
-#caoution .caoution-title::before{position:absolute; display:inline-block; content:''; left:0; top:0; width:100%; height:10px; background:url(/assets/img/common/pattern01.png) repeat-x left top;}
+#caoution .caoution-title::before{position:absolute; display:inline-block; content:''; left:0; top:0; width:100%; height:10px; background:url(../../img/common/pattern01.png) repeat-x left top;}
 #caoution .caoution-title p{font-size:26px; color:#757575;}
 #caoution .caoution-title p em{color:#111; font-weight:700;}
 
-#caoution .caoution-list{position:relative; display:inline-block; width:100%; background:#f8f8f8 url(/assets/img/common/simbol.png) no-repeat 30px 50px; padding:50px 0;}
+#caoution .caoution-list{position:relative; display:inline-block; width:100%; background:#f8f8f8 url(../../img/common/simbol.png) no-repeat 30px 50px; padding:50px 0;}
 #caoution .caoution-list::before{position:absolute; display:inline-block; content:''; width:44px; height:5px; left:15px; top:85px; background:#b79964;}
 #caoution .caoution-list ol{counter-reset:li; text-align:left; padding:0 15px;}
 #caoution .caoution-list ol li::before{display:inline-block; content: counter(li); counter-increment: li; margin-right:5px; left:-10px; top:4px; font-size:13px; width:22px; height:22px; border-radius:22px; line-height:22px; text-align:center; background:#b79964; font-weight:700; color:#fff;}

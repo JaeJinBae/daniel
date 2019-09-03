@@ -67,7 +67,7 @@
 .search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
 .search-box input[type="text"]{width:58%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../../img/board/search.png) no-repeat 98% center; background-size:20px;}
 .search-box button{width:15%; background:#525c5d; color:#fff; font-weight:700; cursor:pointer;}
-.search-box select{width:25%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(/assets/img/common/arrow.png) no-repeat 98% center;}
+.search-box select{width:25%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(../../img/common/arrow.png) no-repeat 98% center;}
 /**********************************************************************/
 
 
@@ -153,7 +153,7 @@
 .board-cousel-form input[type="text"],
 .board-cousel-form input[type="password"],
 .board-cousel-form select{height:35px; line-height:35px; box-sizing:border-box; border:1px solid #cacaca; padding:0 5px;}
-.board-cousel-form select{min-width:80px;background:url(/assets/img/common/arrow.png) no-repeat 90% center;}
+.board-cousel-form select{min-width:80px;background:url(../../img/common/arrow.png) no-repeat 90% center;}
 .board-cousel-form textarea{width:100%; max-width:100%; min-width:100%; height:150px; bbox-sizing:border-box; padding:5px; border:1px solid #cacaca; color:#222; font-size:12px; line-height:20px;}
 .board-cousel-form input[element-name="제목"]{width:100%;}
 .board-cousel-form input[element-name="연락처"]{width:25%;}
@@ -245,7 +245,7 @@
 .join-form li p.radio{display:inline-block;}
 .join-form li div.check{display:inline-block;}
 .join-form li > label{display:inline-block; width:130px; color:#222; font-weight:700; padding:0 15px; font-size:1em;}
-.join-form li select{width:25%; max-width:100px; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:#fff url(/assets/img/common/arrow.png) no-repeat 98% center;}
+.join-form li select{width:25%; max-width:100px; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:#fff url(../../img/common/arrow.png) no-repeat 98% center;}
 .join-form li button{height:35px; line-height:35px; background:#545869; color:#fff; padding:0 15px; font-weight:700;}
 .join-form li input[element-name="휴대전화"], .join-form li input[element-name="이메일"]{width:100px;}
 .join-form li input[element-name="우편번호"]{width:100px;}
@@ -314,7 +314,7 @@
 #find-account .find-account-inner .find-account-form td i{display:inline-block; width:20px; text-align:center;}
 #find-account .find-account-inner .find-account-form td input[type="text"]{width:25%; height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px;}
 #find-account .find-account-inner .find-account-form td input[element-name='이름'],#find-account .find-account-inner .find-account-form td input[element-name='아이디']{width:100%;}
-#find-account .find-account-inner .find-account-form td select{height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px; min-width:25%; background:#fff url(/assets/img/common/arrow.png) no-repeat 95% center;;}
+#find-account .find-account-inner .find-account-form td select{height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px; min-width:25%; background:#fff url(../../img/common/arrow.png) no-repeat 95% center;;}
 #find-account .find-account-inner button{width:100%; height:50px; line-height:50px; background:#172b4d; font-size:15px; color:#fff; font-weight:700;}
 /**********************************************************************/
 

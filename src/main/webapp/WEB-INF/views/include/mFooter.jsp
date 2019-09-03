@@ -10,7 +10,7 @@
 				<i class="kinds">MAP</i>
 				<h6 class="tit">오시는 길</h6>
 				<p class="cap">경남 창원시 성산구 마디미로22번길 12, 4F</p>
-				<a href="/m/501/?pCode=501" class="more" title="자세히 보기">자세히</a>
+				<a href="${pageContext.request.contextPath}/m/menu01_03" class="more" title="자세히 보기">자세히</a>
 			</div>
 		</li>
 		<!-- 오시는길(지도)끝 -->
@@ -21,11 +21,11 @@
 <!-- 전체 페이지 SNS 시작 -->
 <section id="sns-banner">
 	<ul class="inner">
-		<li class="item"><a href="/m/501/?pCode=501" title="진료시간"><img src="${pageContext.request.contextPath}/resources/img/m/main/sns_button01.png" alt="진료시간"></a></li>
+		<li class="item"><a href="${pageContext.request.contextPath}/m/menu01_03" title="진료시간"><img src="${pageContext.request.contextPath}/resources/img/m/main/sns_button01.png" alt="진료시간"></a></li>
 		<li class="item"><a href="http://pf.kakao.com/_EZraj" title="카카오톡 상담하기" target="_blank"><img src="${pageContext.request.contextPath}/resources/img/m/main/sns_button02.png" alt="카카오톡 상담하기"></a></li>
 		<li class="item"><a href="https://talk.naver.com/ct/wc45p6" title="네이버톡톡" target="_blank"><img src="${pageContext.request.contextPath}/resources/img/m/main/sns_button03.png" alt="네이버톡톡"></a></li>
-		<li class="item"><a href="/m/528/?pCode=528" title="온라인상담"><img src="${pageContext.request.contextPath}/resources/img/m/main/sns_button04.png" alt="온라인상담"></a></li>
-		<li class="item"><a href="/m/566/?pCode=566" title="가격안내"><img src="${pageContext.request.contextPath}/resources/img/m/main/sns_button05.png" alt="가격안내"></a></li>
+		<li class="item"><a href="${pageContext.request.contextPath}/m/menu09_02" title="온라인상담"><img src="${pageContext.request.contextPath}/resources/img/m/main/sns_button04.png" alt="온라인상담"></a></li>
+		<li class="item"><a href="${pageContext.request.contextPath}/m/menu02_04" title="가격안내"><img src="${pageContext.request.contextPath}/resources/img/m/main/sns_button05.png" alt="가격안내"></a></li>
 	</ul>
 </section>
 <!-- 전체 페이지 SNS 끝 -->
@@ -37,13 +37,13 @@
 		<!-- fnb 시작 -->
 		<ul class="fnb">
 			<li>
-				<a href="/m/499/?pCode=499">다니엘 소개</a>
+				<a href="${pageContext.request.contextPath}/m/menu01_01">다니엘 소개</a>
 			</li>
 			<li>
-				<a href="/m-personal">개인정보보호정책</a>
+				<a href="${pageContext.request.contextPath}/m/personal">개인정보보호정책</a>
 			</li>
 			<li>
-				<a href="/m-agree">이용약관</a>
+				<a href="${pageContext.request.contextPath}/m/agree">이용약관</a>
 			</li>
 		</ul>
 		<!-- fnb 끝 -->

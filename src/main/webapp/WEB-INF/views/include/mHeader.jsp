@@ -3,7 +3,7 @@
 <header id="header" class="trn">
 	<div class="inner">
 		<div class="logo">
-			<a href="/m/"><img src="${pageContext.request.contextPath}/resources/img/m/common/logo.png" alt="로고"></a>
+			<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/m/common/logo.png" alt="로고"></a>
 		</div>
 		<div id="hamburger" class="hamburger spin">
 			<div class="box">
