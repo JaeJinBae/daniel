@@ -282,7 +282,7 @@ public class MobileController {
 	public String mMenu07_04(Model model) {
 		logger.info("mMenu07_04 GET");
 		
-		return "mobile/meMnu07_04";
+		return "mobile/mMenu07_04";
 	}
 	
 	@RequestMapping(value = "/menu07_05", method = RequestMethod.GET)
