@@ -65,6 +65,20 @@ public class HomeController {
 		return "sub/fAgree";
 	}
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model) {
+		logger.info("login GET");
+		
+		return "sub/login";
+	}
+	
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public String join(Model model) {
+		logger.info("join GET");
+		
+		return "sub/join";
+	}
+	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(Model model) {
 		logger.info("menu01_01 GET");

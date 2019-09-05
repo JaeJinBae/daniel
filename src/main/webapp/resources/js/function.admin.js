@@ -2,8 +2,13 @@ $(function(){
 
 	//좌측메뉴
 	$(".left_menu dt").click(function(e){
-		$(".left_menu dd").slideUp();
-		$(this).nextUntil('dt').slideDown();
+		if($(this).parent().find("dd").css("display") == "block"){
+			$(".left_menu dd").slideUp();
+		}else{
+			$(".left_menu dd").slideUp();
+			$(this).nextUntil('dt').slideDown();
+		}
+		
 		return false;
 	});
 

@@ -104,8 +104,8 @@
 	</div>
 	</div>
 	<div class="gnb-login">
-		<a href="/login" class="login">로그인 ▶</a>
-		<a href="/join" class="join">회원가입 ▶</a>
+		<a href="${pageContext.request.contextPath}/login" class="login">로그인 ▶</a>
+		<a href="${pageContext.request.contextPath}/join" class="join">회원가입 ▶</a>
 	</div>
 
 	<a href="/590/?pCode=590" class="gnb-view"></a>

@@ -13,8 +13,8 @@
 		<div id="gnb">
 			<div class="inner">
 				<div class="memer-service">
-					<a href="/m-login" class="login">로그인 ▶</a>
-					<a href="/m-join" class="join">회원가입 ▶</a>
+					<a href="${pageContext.request.contextPath}/m/login" class="login">로그인 ▶</a>
+					<a href="${pageContext.request.contextPath}/m/join" class="join">회원가입 ▶</a>
 				</div>
 				<ul>
 					<li class="gnb ">

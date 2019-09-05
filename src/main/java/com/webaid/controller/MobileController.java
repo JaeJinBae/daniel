@@ -26,6 +26,20 @@ public class MobileController {
 		return "main/mIndex";
 	}*/
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String mLogin(Model model) {
+		logger.info("login GET");
+		
+		return "mobile/mLogin";
+	}
+	
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public String mJoin(Model model) {
+		logger.info("join GET");
+		
+		return "mobile/mJoin";
+	}
+	
 	@RequestMapping(value = "/personal", method = RequestMethod.GET)
 	public String personal(Model model) {
 		logger.info("personal GET");
