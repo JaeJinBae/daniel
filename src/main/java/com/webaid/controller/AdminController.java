@@ -145,4 +145,20 @@ public class AdminController {
 		
 		return "admin/menu01_05update";
 	}
+	
+	@RequestMapping(value = "/menu02_01", method = RequestMethod.GET)
+	public String menu02_01(Model model) {
+		logger.info("menu02_01 GET");
+		
+		return "admin/menu02_01";
+	}
+	
+	@RequestMapping(value = "/menu02_01update", method = RequestMethod.GET)
+	public String menu02_01update(Model model) {
+		logger.info("menu02_01update GET");
+		
+		return "admin/menu02_01update";
+	}
+	
+	
 }
