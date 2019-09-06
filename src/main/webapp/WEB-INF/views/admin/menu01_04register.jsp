@@ -43,12 +43,12 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>리얼스토리</h1>
+				<h1>시술&수술시주의사항</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>리얼스토리</li>
+					<li>시술&수술시주의사항</li>
 				</ul>
 			</div>
 			
@@ -69,7 +69,7 @@ $(function(){
 							<input type="hidden" name="input_key" value="">
 							<input type="hidden" name="page" value="1">
 							<input type="hidden" name="pseq" value="">
-							<input type="hidden" name="Scod" value="BRD21">
+							<input type="hidden" name="Scod" value="BRD05">
 							<input type="hidden" name="radio_key" value="">
 							<input type="hidden" name="Sfle" value="1">
 			
@@ -80,6 +80,13 @@ $(function(){
 								</colgroup>
 			
 								
+								<tr class="cont">
+									<td class="title">분류</td>
+									<td>
+										<select name="b_tap" id="b_tap" class="search_sel"><option value="동안·탄력 클리닉">동안·탄력 클리닉</option><option value="레이저클리닉">레이저클리닉</option><option value="흉터클리닉">흉터클리닉</option><option value="눈·코 성형">눈·코 성형</option><option value="프리미엄 쁘띠클리닉">프리미엄 쁘띠클리닉</option><option value="체형클리닉">체형클리닉</option><option value="두피클리닉">두피클리닉</option></select>
+									</td>
+								</tr>
+							
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
@@ -99,6 +106,8 @@ $(function(){
 										<input type="text" class="w_form_s" name="b_readcnt" value="" valid="none,number" element-name="조회수">
 									</td>
 								</tr>
+				
+				
 								<tr class="cont">
 									<td class="title">제목</td>
 									<td>
@@ -113,8 +122,9 @@ $(function(){
 								</tr>
 								<tr class="cont">
 									<td class="title">첨부파일</td>
-									<td id="attach"><div><input type="file" name="upload[0]"></div><br><strong></strong></td>
+									<td id="attach"><div><input type="file" name="upload[0]"></div><br><strong>650*500사이즈 전,후 순서로 첨부</strong></td>
 								</tr>
+			
 								<tr class="cont" id="tr_crop_image" style="display:none">
 									<td colspan="2">
 										<div class="edit-set">
@@ -132,7 +142,8 @@ $(function(){
 										<div id="crop_image"></div>
 									</td>
 								</tr>
-							</table>
+			
+							</tbody></table>
 						</form>
 					</div>
 			
@@ -140,12 +151,13 @@ $(function(){
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="">리스트</button>
+							<button type="button" class="btn_gray" onclick="board_it('list', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;page=1&amp;radio_key=')">리스트</button>
 						</p>
 			
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="">등록</button>
-							<button type="button" class="btn_gray" onclick="">취소</button>
+			
+							<button type="button" class="btn_black" onclick="board_it('submit')">등록</button>
+							<button type="button" class="btn_gray" onclick="board_it('reset', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;page=1&amp;radio_key=')">취소</button>
 						</p>
 					</div>
 			

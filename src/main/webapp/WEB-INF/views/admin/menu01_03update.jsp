@@ -62,8 +62,8 @@ $(function(){
 			
 						<form name="board" id="board" method="post" enctype="multipart/form-data" action="board_proc.php">
 							<input type="hidden" name="data_array" value="Y">
-							<input type="hidden" name="mode" value="insert">
-							<input type="hidden" name="seq" value="">
+							<input type="hidden" name="mode" value="modify">
+							<input type="hidden" name="seq" value="2064">
 							<input type="hidden" name="search" value="">
 							<input type="hidden" name="select_key" value="">
 							<input type="hidden" name="input_key" value="">
@@ -79,41 +79,71 @@ $(function(){
 									<col width="*">
 								</colgroup>
 			
-								
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
-										<input type="text" class="w_form_s" name="m_name" value="다니엘성형외과" valid="required" element-name="작성자">
+										<input type="text" class="w_form_s" name="m_name" value="theweb" valid="required" element-name="작성자">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성일</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_regdate" value="" readonly="">
+										<input type="text" class="w_form_s" name="b_regdate" value="2019-04-02" readonly="">
 										<button type="button" class="btn_black btn_small" onclick="jCal('b_regdate')">달력</button>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">조회수</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_readcnt" value="" valid="none,number" element-name="조회수">
+										<input type="text" class="w_form_s" name="b_readcnt" value="71" valid="none,number" element-name="조회수">
 									</td>
 								</tr>
+			
+			
 								<tr class="cont">
 									<td class="title">제목</td>
 									<td>
-										<input type="text" class="w_form_l" name="b_title" value="" onkeypress="fnChkRemark(this, '120')" onkeyup="fnChkRemark(this, '120')" valid="required" element-name="제목">
+										<input type="text" class="w_form_l" name="b_title" value="리얼스토리 드림패키지 고객인터뷰 허지영" onkeypress="fnChkRemark(this, '120')" onkeyup="fnChkRemark(this, '120')" valid="required" element-name="제목">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">내용</td>
 									<td>
-										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;"></textarea>
+										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;">&lt;div&gt;
+											&lt;div style="text-align: center;"&gt;다니엘성형외과 리얼스토리&lt;/div&gt;
+											
+											&lt;div style="text-align: center;"&gt;&nbsp;김지아 원장님과 10년동안 인연을 이어온 허지영님&lt;/div&gt;
+											
+											&lt;div style="text-align: center;"&gt;드림패키지로 동안피부를 유지하는 솔직담백한 인터뷰를 개합니다.&lt;/div&gt;
+											
+											&lt;div style="text-align: center;"&gt;&nbsp;&lt;/div&gt;
+											
+											&lt;div style="text-align: center;"&gt;#40대 워킹맘 피부관리&lt;/div&gt;
+											
+											&lt;div style="text-align: center;"&gt;&nbsp;&lt;/div&gt;
+											
+											&lt;div style="text-align: center;"&gt;&nbsp;&lt;/div&gt;
+											
+											&lt;div&gt;
+											&lt;div style="text-align: center;"&gt;&nbsp;&lt;iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/noDG-RMO2tc" style="margin: 0px auto; max-width: 640px;" width="640"&gt;&lt;/iframe&gt;&lt;/div&gt;
+											
+											&lt;div style="text-align: center;"&gt;&nbsp;&lt;/div&gt;
+											
+											&lt;div style="text-align: center;"&gt;&lt;a href="https://www.youtube.com/watch?v=noDG-RMO2tc&amp;feature=youtu.be" target="_blank"&gt;&lt;strong&gt;본편 보러가기&nbsp;클릭&nbsp;&lt;/strong&gt;&lt;/a&gt;&lt;/div&gt;
+											&lt;/div&gt;
+											&lt;/div&gt;
+										</textarea>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">첨부파일</td>
-									<td id="attach"><div><input type="file" name="upload[0]"></div><br><strong></strong></td>
+									<td id="attach">
+										<div id="file_1135">
+											<a href="javascript:;" onclick="board_it('download', '1135')">원내영상2.png</a>
+											<img src="/admin/assets/img/icon_image_edit.png" class="cursor vimg" onclick="board_it('image_modify', '1135')">
+											<img src="/admin/assets/img/icon_x.png" class="vimg cursor" onclick="board_it('attach_del', '1135')">
+										</div><br><strong></strong>
+									</td>
 								</tr>
 								<tr class="cont" id="tr_crop_image" style="display:none">
 									<td colspan="2">
@@ -132,6 +162,7 @@ $(function(){
 										<div id="crop_image"></div>
 									</td>
 								</tr>
+			
 							</table>
 						</form>
 					</div>
@@ -140,18 +171,19 @@ $(function(){
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="">리스트</button>
+							<button type="button" class="btn_gray" onclick="board_it('list', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;page=1&amp;radio_key=')">리스트</button>
 						</p>
 			
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="">등록</button>
-							<button type="button" class="btn_gray" onclick="">취소</button>
+			
+							<button type="button" class="btn_gray" onclick="board_it('reply', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;page=1&amp;radio_key=&amp;mode=reply&amp;pseq=2064')">답변</button>&nbsp;<button type="button" class="btn_black" onclick="board_it('submit')">수정</button>&nbsp;<button type="button" class="btn_red" onclick="board_it('each_delete', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;page=1&amp;radio_key=&amp;seq=2064')">삭제</button>
+							<button type="button" class="btn_gray" onclick="board_it('reset', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;page=1&amp;radio_key=')">취소</button>
 						</p>
 					</div>
 			
 				</div>
 			</div>
-			<!-- main_bottom_area -->
+			<!-- main_bottom_area end -->
 			
 			<form id="board_crop" name="board_crop" method="post">
 				<input type="hidden" id="seq" name="seq">

@@ -43,12 +43,12 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>리얼스토리</h1>
+				<h1>시술&수술시주의사항</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>리얼스토리</li>
+					<li>시술&수술시주의사항</li>
 				</ul>
 			</div>
 			
@@ -62,14 +62,14 @@ $(function(){
 			
 						<form name="board" id="board" method="post" enctype="multipart/form-data" action="board_proc.php">
 							<input type="hidden" name="data_array" value="Y">
-							<input type="hidden" name="mode" value="insert">
-							<input type="hidden" name="seq" value="">
+							<input type="hidden" name="mode" value="modify">
+							<input type="hidden" name="seq" value="2006">
 							<input type="hidden" name="search" value="">
 							<input type="hidden" name="select_key" value="">
 							<input type="hidden" name="input_key" value="">
 							<input type="hidden" name="page" value="1">
 							<input type="hidden" name="pseq" value="">
-							<input type="hidden" name="Scod" value="BRD21">
+							<input type="hidden" name="Scod" value="BRD05">
 							<input type="hidden" name="radio_key" value="">
 							<input type="hidden" name="Sfle" value="1">
 			
@@ -81,40 +81,97 @@ $(function(){
 			
 								
 								<tr class="cont">
+									<td class="title">분류</td>
+									<td>
+										<select name="b_tap" id="b_tap" class="search_sel"><option value="동안·탄력 클리닉" selected="">동안·탄력 클리닉</option><option value="레이저클리닉">레이저클리닉</option><option value="흉터클리닉">흉터클리닉</option><option value="눈·코 성형">눈·코 성형</option><option value="프리미엄 쁘띠클리닉">프리미엄 쁘띠클리닉</option><option value="체형클리닉">체형클리닉</option><option value="두피클리닉">두피클리닉</option></select>
+									</td>
+								</tr>
+										
+								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
-										<input type="text" class="w_form_s" name="m_name" value="다니엘성형외과" valid="required" element-name="작성자">
+										<input type="text" class="w_form_s" name="m_name" value="theweb" valid="required" element-name="작성자">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성일</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_regdate" value="" readonly="">
+										<input type="text" class="w_form_s" name="b_regdate" value="2018-10-11" readonly="">
 										<button type="button" class="btn_black btn_small" onclick="jCal('b_regdate')">달력</button>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">조회수</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_readcnt" value="" valid="none,number" element-name="조회수">
+										<input type="text" class="w_form_s" name="b_readcnt" value="143" valid="none,number" element-name="조회수">
 									</td>
 								</tr>
+			
+			
 								<tr class="cont">
 									<td class="title">제목</td>
 									<td>
-										<input type="text" class="w_form_l" name="b_title" value="" onkeypress="fnChkRemark(this, '120')" onkeyup="fnChkRemark(this, '120')" valid="required" element-name="제목">
+										<input type="text" class="w_form_l" name="b_title" value="리프팅레이저" onkeypress="fnChkRemark(this, '120')" onkeyup="fnChkRemark(this, '120')" valid="required" element-name="제목">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">내용</td>
 									<td>
-										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;"></textarea>
+										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;">&lt;div id="caoution"&gt;
+											&lt;div class="inner"&gt;
+												
+												&lt;div class="caoution-title"&gt;
+													다니엘성형외과
+													&lt;p&gt;
+														시술&amp;수술 후 &lt;em&gt;주의사항&lt;/em&gt;
+													&lt;/p&gt;
+												&lt;/div&gt;
+									
+												&lt;!-- 주의사항 리스트 시작 --&gt;
+												&lt;div class="caoution-list"&gt;
+													&lt;span&gt;&lt;em&gt;리프팅레이저&lt;/em&gt;주의사항&lt;/span&gt;
+													&lt;ol&gt;
+														&lt;li&gt;1~2주간 욱신거림이 발생할 수 있습니다.&lt;/li&gt;
+														&lt;li&gt;재생크림,썬크림은 꼭 발라주세요.&lt;/li&gt;
+														&lt;li&gt;얼굴마사지나 경락은 피해주세요.&lt;/li&gt;
+														&lt;li&gt;일주일간 금주,금연해주세요.&lt;/li&gt;
+														&lt;li&gt;목욕,사우나,운동,수영장,격한운동은 주의하세요.&lt;/li&gt;
+													&lt;/ol&gt;	
+												&lt;/div&gt;
+												&lt;!-- 주의사항 리스트 끝 --&gt;
+									
+									
+												&lt;div class="caoution-info"&gt;&lt;img src="/assets/img/contents/icon_caoution.png" alt=""&gt;위 주의사항은 꼭 지켜주시고 &lt;em&gt;이상증상이 있을 시 연락&lt;/em&gt;주세요.&lt;/div&gt;
+									
+												&lt;div class="double-banner"&gt;
+													&lt;ul&gt;
+														&lt;li&gt;
+															&lt;a href="/html/?pCode=563"&gt;&lt;img src="/assets/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"&gt;&lt;/a&gt;
+														&lt;/li&gt;
+														&lt;li&gt;
+															&lt;a href="/html/?pCode=521"&gt;&lt;img src="/assets/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"&gt;&lt;/a&gt;
+														&lt;/li&gt;
+													&lt;/ul&gt;
+												&lt;/div&gt;
+									
+											&lt;/div&gt;
+										&lt;/div&gt;
+										</textarea>
 									</td>
 								</tr>
+			
+								
 								<tr class="cont">
 									<td class="title">첨부파일</td>
-									<td id="attach"><div><input type="file" name="upload[0]"></div><br><strong></strong></td>
+									<td id="attach">
+										<div id="file_1040">
+											<a href="javascript:;" onclick="board_it('download', '1040')">리프팅레이저.jpg</a>
+											<img src="/admin/assets/img/icon_image_edit.png" class="cursor vimg" onclick="board_it('image_modify', '1040')">
+											<img src="/admin/assets/img/icon_x.png" class="vimg cursor" onclick="board_it('attach_del', '1040')">
+										</div><br><strong>650*500사이즈 전,후 순서로 첨부</strong>
+									</td>
 								</tr>
+			
 								<tr class="cont" id="tr_crop_image" style="display:none">
 									<td colspan="2">
 										<div class="edit-set">
@@ -132,6 +189,7 @@ $(function(){
 										<div id="crop_image"></div>
 									</td>
 								</tr>
+			
 							</table>
 						</form>
 					</div>
@@ -144,14 +202,15 @@ $(function(){
 						</p>
 			
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="">등록</button>
+			
+							<button type="button" class="btn_gray" onclick="">답변</button>&nbsp;<button type="button" class="btn_black" onclick="board_it('submit')">수정</button>&nbsp;<button type="button" class="btn_red" onclick="board_it('each_delete', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;page=1&amp;radio_key=&amp;seq=2006')">삭제</button>
 							<button type="button" class="btn_gray" onclick="">취소</button>
 						</p>
 					</div>
 			
 				</div>
 			</div>
-			<!-- main_bottom_area -->
+			<!-- main_bottom_area end -->
 			
 			<form id="board_crop" name="board_crop" method="post">
 				<input type="hidden" id="seq" name="seq">

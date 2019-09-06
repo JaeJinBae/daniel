@@ -43,12 +43,12 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>리얼스토리</h1>
+				<h1>자필후기</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>리얼스토리</li>
+					<li>자필후기</li>
 				</ul>
 			</div>
 			
@@ -69,9 +69,9 @@ $(function(){
 							<input type="hidden" name="input_key" value="">
 							<input type="hidden" name="page" value="1">
 							<input type="hidden" name="pseq" value="">
-							<input type="hidden" name="Scod" value="BRD21">
+							<input type="hidden" name="Scod" value="BRD22">
 							<input type="hidden" name="radio_key" value="">
-							<input type="hidden" name="Sfle" value="1">
+							<input type="hidden" name="Sfle" value="0">
 			
 							<table class="write_table" cellpadding="0">
 								<colgroup>
@@ -99,6 +99,8 @@ $(function(){
 										<input type="text" class="w_form_s" name="b_readcnt" value="" valid="none,number" element-name="조회수">
 									</td>
 								</tr>
+			
+			
 								<tr class="cont">
 									<td class="title">제목</td>
 									<td>
@@ -110,10 +112,6 @@ $(function(){
 									<td>
 										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;"></textarea>
 									</td>
-								</tr>
-								<tr class="cont">
-									<td class="title">첨부파일</td>
-									<td id="attach"><div><input type="file" name="upload[0]"></div><br><strong></strong></td>
 								</tr>
 								<tr class="cont" id="tr_crop_image" style="display:none">
 									<td colspan="2">
@@ -132,6 +130,7 @@ $(function(){
 										<div id="crop_image"></div>
 									</td>
 								</tr>
+			
 							</table>
 						</form>
 					</div>
@@ -140,10 +139,11 @@ $(function(){
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="">리스트</button>
+							<button type="button" class="btn_gray" onclick="board_it('list', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD22&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;page=1&amp;radio_key=')">리스트</button>
 						</p>
 			
 						<p class="btn_right">
+			
 							<button type="button" class="btn_black" onclick="">등록</button>
 							<button type="button" class="btn_gray" onclick="">취소</button>
 						</p>

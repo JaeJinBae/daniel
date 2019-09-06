@@ -43,12 +43,12 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>리얼스토리</h1>
+				<h1>자필후기</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>리얼스토리</li>
+					<li>자필후기</li>
 				</ul>
 			</div>
 			
@@ -62,16 +62,16 @@ $(function(){
 			
 						<form name="board" id="board" method="post" enctype="multipart/form-data" action="board_proc.php">
 							<input type="hidden" name="data_array" value="Y">
-							<input type="hidden" name="mode" value="insert">
-							<input type="hidden" name="seq" value="">
+							<input type="hidden" name="mode" value="modify">
+							<input type="hidden" name="seq" value="2102">
 							<input type="hidden" name="search" value="">
 							<input type="hidden" name="select_key" value="">
 							<input type="hidden" name="input_key" value="">
 							<input type="hidden" name="page" value="1">
 							<input type="hidden" name="pseq" value="">
-							<input type="hidden" name="Scod" value="BRD21">
+							<input type="hidden" name="Scod" value="BRD22">
 							<input type="hidden" name="radio_key" value="">
-							<input type="hidden" name="Sfle" value="1">
+							<input type="hidden" name="Sfle" value="0">
 			
 							<table class="write_table" cellpadding="0">
 								<colgroup>
@@ -83,38 +83,36 @@ $(function(){
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
-										<input type="text" class="w_form_s" name="m_name" value="다니엘성형외과" valid="required" element-name="작성자">
+										<input type="text" class="w_form_s" name="m_name" value="theweb" valid="required" element-name="작성자">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성일</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_regdate" value="" readonly="">
+										<input type="text" class="w_form_s" name="b_regdate" value="2019-07-15" readonly="">
 										<button type="button" class="btn_black btn_small" onclick="jCal('b_regdate')">달력</button>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">조회수</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_readcnt" value="" valid="none,number" element-name="조회수">
+										<input type="text" class="w_form_s" name="b_readcnt" value="22" valid="none,number" element-name="조회수">
 									</td>
 								</tr>
+			
+			
 								<tr class="cont">
 									<td class="title">제목</td>
 									<td>
-										<input type="text" class="w_form_l" name="b_title" value="" onkeypress="fnChkRemark(this, '120')" onkeyup="fnChkRemark(this, '120')" valid="required" element-name="제목">
+										<input type="text" class="w_form_l" name="b_title" value="[자필후기] 여드름과 여드름흉터, 주근깨 치료 후기입니다." onkeypress="fnChkRemark(this, '120')" onkeyup="fnChkRemark(this, '120')" valid="required" element-name="제목">
 									</td>
 								</tr>
-								<tr class="cont">
+								<tr class="cont"> 
 									<td class="title">내용</td>
 									<td>
-										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;"></textarea>
+										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;">&lt;div style="text-align: center;"&gt;&lt;img alt="" src="/filedata/ckeditor/20190715_DA347AA472B0F61F.jpg" /&gt;&lt;/div&gt;</textarea>
 									</td>
-								</tr>
-								<tr class="cont">
-									<td class="title">첨부파일</td>
-									<td id="attach"><div><input type="file" name="upload[0]"></div><br><strong></strong></td>
-								</tr>
+								</tr>			
 								<tr class="cont" id="tr_crop_image" style="display:none">
 									<td colspan="2">
 										<div class="edit-set">
@@ -132,6 +130,7 @@ $(function(){
 										<div id="crop_image"></div>
 									</td>
 								</tr>
+			
 							</table>
 						</form>
 					</div>
@@ -144,7 +143,8 @@ $(function(){
 						</p>
 			
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="">등록</button>
+			
+							<button type="button" class="btn_gray" onclick="">답변</button>&nbsp;<button type="button" class="btn_black" onclick="board_it('submit')">수정</button>&nbsp;<button type="button" class="btn_red" onclick="board_it('each_delete', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD22&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;page=1&amp;radio_key=&amp;seq=2102')">삭제</button>
 							<button type="button" class="btn_gray" onclick="">취소</button>
 						</p>
 					</div>
