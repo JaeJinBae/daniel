@@ -575,14 +575,15 @@ $(function(){
 					</thead>
 					<tbody>
 						<tr>
-							<td>2075</td>
-							<td class="subject"> 다니엘 성형외과 5월 워크샵 휴진 안내</td>
-							<td>2019-05-07</td>
-							<td>164</td>
+							<td>${item.no}</td>
+							<td class="subject"> ${item.title}</td>
+							<td>${item.regdate}</td>
+							<td>${item.cnt}</td>
 						</tr>
 						<tr>
 							<td colspan="4" class="con">
-								<div style="text-align: center;"><img alt="" src="/filedata/ckeditor/20190507_8A7870A9DE44CE52.jpg"></div>				</td>
+								${item.content}
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -594,9 +595,27 @@ $(function(){
 			<div class="prev-next-list">
 				<ul class="inner">
 					<li>
-						<span>이전글</span><a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=527&amp;btap=&amp;seq=2073"><b>[공지]</b> 경남신문 의료칼럼 - 체중감량 프로그램에서 운동...</a>		</li>
+						<span>이전글</span>
+						<c:choose>
+							<c:when test="${beforeItem.no eq null}">
+								이전글이 없습니다.
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu09_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 					<li>
-						<span>다음글</span><a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=527&amp;btap=&amp;seq=2087"><b>[공지]</b> 경남신문 의료칼럼- 자꾸 번지는 쥐젖, 어떡하나</a>		</li>
+						<span>다음글</span>
+						<c:choose>
+							<c:when test="${afterItem.no eq null}">
+								존재하지 않습니다.
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu09_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 			</div>
 			
@@ -604,7 +623,7 @@ $(function(){
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group">
 				<div class="inner">
-					<a href="/527/?pCode=527&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=527&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/menu09_01${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->

@@ -5,35 +5,39 @@
 <mapper namespace="com.webaid.mappers.NoticeMapper">
 
 	<select id="selectAll" resultType="NoticeVO">
-		select * from notice order by no desc
+		select * from notice order by no desc and use_state='o'
 	</select>
 	
 	<select id="selectOne" resultType="NoticeVO">
-		select * from notice where no=#{no}
+		select * from notice where no=#{no} and use_state='o'
 	</select>
 	
 	<select id="selectBefore" resultType="NoticeVO">
-		select * from notice where no=(select min(no) from notice where no<![CDATA[>]]>#{no}) and top_state='n'
+		select * from notice where no=(select min(no) from notice where no<![CDATA[>]]>#{no}) and top_state='x' and use_state='o'
 	</select>
 	
 	<select id="selectAfter" resultType="NoticeVO">
-		select * from notice where no=(select max(no) from notice where no<![CDATA[<]]>#{no}) and top_state='n'
+		select * from notice where no=(select max(no) from notice where no<![CDATA[<]]>#{no}) and top_state='x' and use_state='o'
 	</select>
 	
 	<select id="selectTopNotice" resultType="NoticeVO">
-		select * from notice where top_state='y' order by no desc;
+		select * from notice where top_state='o' order by no desc;
 	</select>
 	
 	<insert id="insert">
-		insert into notice values(0, #{title}, #{content}, #{writer}, #{regdate}, 0, #{top_state})
+		insert into notice values(0, #{top_state}, #{writer}, #{regdate}, #{cnt}, #{title}, #{content}, #{use_state})
 	</insert>
 	
 	<update id="update">
-		update notice set title=#{title}, writer=#{writer}, content=#{content}, top_state=#{top_state} where no=#{no}
+		update notice set top_state=#{top_state}, writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, use_state=#{use_state} where no=#{no}
 	</update>
 	
 	<update id="updateCnt">
 		update notice set cnt=cnt+1 where no=#{no}
+	</update>
+	
+	<update id="updateUseState">
+		update notice set useState=#{use_state} where no=#{no}
 	</update>
 	
 	<delete id="delete">
@@ -41,11 +45,11 @@
 	</delete>
 	
 	<select id="listSearch" resultType="NoticeVO">
-		select * from notice where top_state='n' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from notice where top_state='x' and use_state='o' <include refid="search"></include> and use_state='o' order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<select id="listSearchAll" resultType="NoticeVO">
-		select * from notice where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from notice where no>0 <include refid="search"></include> and use_state='o' order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<sql id="search">
@@ -61,7 +65,7 @@
 	</sql>
 	
 	<select id="listSearchCount" resultType="int">
-		select count(no) from notice where top_state='n' <include refid="search"></include>
+		select count(no) from notice where top_state='x' <include refid="search"></include> and use_state='o'
 	</select>
 	
 </mapper>

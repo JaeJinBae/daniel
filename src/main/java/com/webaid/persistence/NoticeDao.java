@@ -14,6 +14,7 @@ public interface NoticeDao {
 	public void insert(NoticeVO vo);
 	public void update(NoticeVO vo);
 	public void updateCnt(int no);
+	public void updateUseState(NoticeVO vo);
 	public void delete(int no);
 	public List<NoticeVO> listSearch(SearchCriteria cri) throws Exception;
 	public List<NoticeVO> listSearchAll(SearchCriteria cri) throws Exception;

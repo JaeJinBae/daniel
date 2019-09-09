@@ -1,8 +1,7 @@
 package com.webaid.domain;
 
-public class NoticeVO {
+public class ReviewVO {
 	private int no;
-	private String top_state;
 	private String writer;
 	private String regdate;
 	private int cnt;
@@ -10,7 +9,7 @@ public class NoticeVO {
 	private String content;
 	private String use_state;
 
-	public NoticeVO() {
+	public ReviewVO() {
 		super();
 	}
 
@@ -20,14 +19,6 @@ public class NoticeVO {
 
 	public void setNo(int no) {
 		this.no = no;
-	}
-
-	public String getTop_state() {
-		return top_state;
-	}
-
-	public void setTop_state(String top_state) {
-		this.top_state = top_state;
 	}
 
 	public String getWriter() {
@@ -80,8 +71,8 @@ public class NoticeVO {
 
 	@Override
 	public String toString() {
-		return "NoticeVO [no=" + no + ", top_state=" + top_state + ", writer=" + writer + ", regdate=" + regdate
-				+ ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state + "]";
+		return "ReviewVO [no=" + no + ", writer=" + writer + ", regdate=" + regdate + ", cnt=" + cnt + ", title="
+				+ title + ", content=" + content + ", use_state=" + use_state + "]";
 	}
 
 }

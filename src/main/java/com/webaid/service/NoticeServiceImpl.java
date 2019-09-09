@@ -56,6 +56,11 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
+	public void updateUseState(NoticeVO vo) {
+		dao.updateUseState(vo);
+	}
+
+	@Override
 	public void delete(int no) {
 		dao.delete(no);
 	}

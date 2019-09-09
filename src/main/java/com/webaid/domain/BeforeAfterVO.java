@@ -1,16 +1,18 @@
 package com.webaid.domain;
 
-public class NoticeVO {
+public class BeforeAfterVO {
 	private int no;
-	private String top_state;
+	private String clinic_type;
 	private String writer;
 	private String regdate;
 	private int cnt;
 	private String title;
 	private String content;
 	private String use_state;
+	private String img_before;
+	private String img_after;
 
-	public NoticeVO() {
+	public BeforeAfterVO() {
 		super();
 	}
 
@@ -22,12 +24,12 @@ public class NoticeVO {
 		this.no = no;
 	}
 
-	public String getTop_state() {
-		return top_state;
+	public String getClinic_type() {
+		return clinic_type;
 	}
 
-	public void setTop_state(String top_state) {
-		this.top_state = top_state;
+	public void setClinic_type(String clinic_type) {
+		this.clinic_type = clinic_type;
 	}
 
 	public String getWriter() {
@@ -78,10 +80,27 @@ public class NoticeVO {
 		this.use_state = use_state;
 	}
 
+	public String getImg_before() {
+		return img_before;
+	}
+
+	public void setImg_before(String img_before) {
+		this.img_before = img_before;
+	}
+
+	public String getImg_after() {
+		return img_after;
+	}
+
+	public void setImg_after(String img_after) {
+		this.img_after = img_after;
+	}
+
 	@Override
 	public String toString() {
-		return "NoticeVO [no=" + no + ", top_state=" + top_state + ", writer=" + writer + ", regdate=" + regdate
-				+ ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state + "]";
+		return "BeforeAfterVO [no=" + no + ", clinic_type=" + clinic_type + ", writer=" + writer + ", regdate="
+				+ regdate + ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state
+				+ ", img_before=" + img_before + ", img_after=" + img_after + "]";
 	}
 
 }

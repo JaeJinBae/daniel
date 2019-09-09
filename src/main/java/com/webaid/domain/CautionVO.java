@@ -1,16 +1,17 @@
 package com.webaid.domain;
 
-public class NoticeVO {
+public class CautionVO {
 	private int no;
-	private String top_state;
+	private String clinic_type;
 	private String writer;
 	private String regdate;
 	private int cnt;
 	private String title;
 	private String content;
 	private String use_state;
+	private String thumb;
 
-	public NoticeVO() {
+	public CautionVO() {
 		super();
 	}
 
@@ -22,12 +23,12 @@ public class NoticeVO {
 		this.no = no;
 	}
 
-	public String getTop_state() {
-		return top_state;
+	public String getClinic_type() {
+		return clinic_type;
 	}
 
-	public void setTop_state(String top_state) {
-		this.top_state = top_state;
+	public void setClinic_type(String clinic_type) {
+		this.clinic_type = clinic_type;
 	}
 
 	public String getWriter() {
@@ -78,10 +79,19 @@ public class NoticeVO {
 		this.use_state = use_state;
 	}
 
+	public String getThumb() {
+		return thumb;
+	}
+
+	public void setThumb(String thumb) {
+		this.thumb = thumb;
+	}
+
 	@Override
 	public String toString() {
-		return "NoticeVO [no=" + no + ", top_state=" + top_state + ", writer=" + writer + ", regdate=" + regdate
-				+ ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state + "]";
+		return "CautionVO [no=" + no + ", clinic_type=" + clinic_type + ", writer=" + writer + ", regdate=" + regdate
+				+ ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state + ", thumb="
+				+ thumb + "]";
 	}
 
 }

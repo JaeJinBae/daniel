@@ -58,6 +58,11 @@ public class NoticeDaoImpl implements NoticeDao {
 	}
 
 	@Override
+	public void updateUseState(NoticeVO vo) {
+		session.update(namespace + ".updateUseState", vo);
+	}
+
+	@Override
 	public void delete(int no) {
 		session.delete(namespace + ".delete", no);
 
