@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria5;
 import com.webaid.persistence.NoticeDao;
 
 @Service
@@ -69,6 +70,12 @@ public class NoticeServiceImpl implements NoticeService {
 	public List<NoticeVO> listSearch(SearchCriteria cri) throws Exception {
 		return dao.listSearch(cri);
 	}
+	
+	@Override
+	public List<NoticeVO> listSearch5(SearchCriteria5 cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listSearch5(cri);
+	}
 
 	@Override
 	public List<NoticeVO> listSearchAll(SearchCriteria cri) throws Exception {
@@ -79,5 +86,12 @@ public class NoticeServiceImpl implements NoticeService {
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
 	}
+
+	@Override
+	public int listSearchCount5(SearchCriteria5 cri) throws Exception {
+		return dao.listSearchCount5(cri);
+	}
+
+	
 
 }

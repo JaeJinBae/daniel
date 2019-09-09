@@ -552,13 +552,14 @@ $(function(){
 			<div class="board-notice-view">
 				<ul class="full">
 					<li class="subject">	
-						<div class="title"> 다니엘 성형외과 5월 워크샵 휴진 안내</div>
+						<div class="title"> ${item.title}</div>
 						<p class="info">
-							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">2019-05-07</i><span class="line">|</span><i class="hit">조회수		165</i>
+							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">${item.regdate}</i><span class="line">|</span><i class="hit">조회수		${item.cnt}</i>
 						</p>
 					</li>
 					<li class="con">
-						<div style="text-align: center;"><img alt="" src="/filedata/ckeditor/20190507_8A7870A9DE44CE52.jpg"></div>		</li>
+						${item.content}
+					</li>
 				</ul>
 			</div>
 			
@@ -566,9 +567,27 @@ $(function(){
 			<div class="prev-next-list">
 				<ul class="full">
 					<li>
-						<span>이전글</span><a href="javascript:alert('이전글이 없습니다');">이전글이 없습니다</a>		</li>
+						<span>이전글</span>
+						<c:choose>
+							<c:when test="${beforeItem.no eq null}">
+								이전글이 없습니다.
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/m/menu09_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 					<li>
-						<span>다음글</span><a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;seq=2036"><b>[공지]</b> 다니엘 성형외과 화요일 진료시간변경안내</a>		</li>
+						<span>다음글</span>
+						<c:choose>
+							<c:when test="${afterItem.no eq null}">
+								존재하지 않습니다.
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/m/menu09_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 			</div>
 			
@@ -576,16 +595,10 @@ $(function(){
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group">
 				<div class="inner">
-					<a href="/m/527/?pCode=527&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/m/menu09_01${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->
-			
-			
-			
-			<form name="board" method="post" action="/html/board/board_proc.php">
-				<input type="hidden" name="fparam">
-			</form>
 			
 		</section>
 	

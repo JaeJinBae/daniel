@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.PageMaker5;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria5;
 import com.webaid.service.NoticeService;
 
 /**
@@ -337,7 +339,7 @@ public class MobileController {
 		List<NoticeVO> topList = nService.selectTopNotice();
 		List<NoticeVO> list = nService.listSearch(cri);
 		
-		PageMaker pageMaker = new PageMaker();
+		PageMaker5 pageMaker = new PageMaker5();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(nService.listSearchCount(cri));
@@ -359,7 +361,7 @@ public class MobileController {
 		
 		nService.updateCnt(no);
 		
-		PageMaker pageMaker = new PageMaker();
+		PageMaker5 pageMaker = new PageMaker5();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(nService.listSearchCount(cri));

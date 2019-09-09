@@ -628,12 +628,6 @@ $(function(){
 			</div>
 			<!-- 게시판 버튼 끝 -->
 			
-			
-			
-			<form name="board" method="post" action="/html/board/board_proc.php">
-				<input type="hidden" name="fparam">
-			</form>
-			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
 	

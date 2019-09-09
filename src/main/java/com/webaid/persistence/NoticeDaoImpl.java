@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria5;
 
 @Repository
 public class NoticeDaoImpl implements NoticeDao {
@@ -72,6 +73,11 @@ public class NoticeDaoImpl implements NoticeDao {
 	public List<NoticeVO> listSearch(SearchCriteria cri) throws Exception {
 		return session.selectList(namespace + ".listSearch", cri);
 	}
+	
+	@Override
+	public List<NoticeVO> listSearch5(SearchCriteria5 cri) throws Exception {
+		return session.selectList(namespace+".listSearch", cri);
+	}
 
 	@Override
 	public List<NoticeVO> listSearchAll(SearchCriteria cri) throws Exception {
@@ -82,5 +88,12 @@ public class NoticeDaoImpl implements NoticeDao {
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
+
+	@Override
+	public int listSearchCount5(SearchCriteria5 cri) throws Exception {
+		return session.selectOne(namespace+".listSearchCount", cri);
+	}
+
+	
 
 }
