@@ -573,17 +573,20 @@ $(function(){
 							<th>조회수</th>
 						</tr>
 					</thead>
-					<c:if test="${fn:length(topList) != 0}">
-						<c:forEach var="item" items="${topList}">
-							<tr class="noticeTop">
-								<td class=""><i class="ico notice">공지</i></td>
-								<td class="subject">
-									<a href="${pageContext.request.contextPath}/menu09_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
-								</td>
-								<td class="date">${item.regdate}</td>
-								<td class="hit">${item.cnt}</td>
-							</tr>	
-						</c:forEach>
+					<c:if test="${pageMaker.cri.page == 1}">
+					
+						<c:if test="${fn:length(topList) != 0}">
+							<c:forEach var="item" items="${topList}">
+								<tr class="noticeTop">
+									<td class=""><i class="ico notice">공지</i></td>
+									<td class="subject">
+										<a href="${pageContext.request.contextPath}/menu09_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
+									</td>
+									<td class="date">${item.regdate}</td>
+									<td class="hit">${item.cnt}</td>
+								</tr>	
+							</c:forEach>
+						</c:if>
 					</c:if>
 					<c:choose>
 					    <c:when test="${fn:length(list) == 0}">

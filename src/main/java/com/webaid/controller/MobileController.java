@@ -1,11 +1,20 @@
 package com.webaid.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.webaid.domain.NoticeVO;
+import com.webaid.domain.PageMaker;
+import com.webaid.domain.SearchCriteria;
+import com.webaid.service.NoticeService;
 
 /**
  * Handles requests for the application home page.
@@ -16,9 +25,10 @@ public class MobileController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MobileController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
+	@Autowired
+	private NoticeService nService;
+	
+	
 	/*@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		logger.info("index GET");
@@ -321,15 +331,43 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value = "/menu09_01", method = RequestMethod.GET)
-	public String mMenu09_01(Model model) {
+	public String mMenu09_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("mMenu09_01 GET");
+		
+		List<NoticeVO> topList = nService.selectTopNotice();
+		List<NoticeVO> list = nService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "mobile/mMenu09_01";
 	}
 	
 	@RequestMapping(value = "/menu09_01read", method = RequestMethod.GET)
-	public String mMenu09_01read(Model model) {
+	public String mMenu09_01read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("mMenu09_01read GET");
+		
+		NoticeVO vo=nService.selectOne(no);
+		NoticeVO beforeVO = nService.selectBefore(no);
+		NoticeVO afterVO = nService.selectAfter(no);
+		
+		nService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "mobile/mMenu09_01read";
 	}

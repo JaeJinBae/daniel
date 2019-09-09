@@ -565,61 +565,7 @@ $(function(){
 						</a>	
 					</li>
 				
-					<li>
-						<a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1&amp;seq=1947">
-							<b>  김지아 원장님께서 "컴패션 기업후원자의 밤" 모임에 참석하셨습니다.</b>
-							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">2018-07-06</i>
-						</a>	
-					</li>
-				
-					<li>
-						<a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1&amp;seq=921">
-							<b>  다니엘 ★뇌병변 부모회 감사패 수여★</b>
-							<!--i class='name'>최</i><span class='line'>|</span--><i class="date">2018-03-26</i>
-						</a>	
-					</li>
-				
-					<li>
-						<a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1&amp;seq=2110">
-							<b>  경남신문 의료칼럼 - 짧은 코 성형, 이것만 생각하자</b>
-							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">2019-09-02</i>
-						</a>	
-					</li>
-				
-					<li>
-						<a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1&amp;seq=2109">
-							<b>  경남신문 의료칼럼 - 문신 제거를 위한 올바른 선택</b>
-							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">2019-08-19</i>
-						</a>	
-					</li>
-				
-					<li>
-						<a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1&amp;seq=2108">
-							<b>  다니엘 성형외과 8월 진료안내</b>
-							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">2019-08-13</i>
-						</a>	
-					</li>
-				
-					<li>
-						<a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1&amp;seq=2107">
-							<b>  경남신문 의료칼럼 - 남 흉 보기 전에 흉 지워야죠… 여드름 치료</b>
-							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">2019-08-12</i>
-						</a>	
-					</li>
-				
-					<li>
-						<a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1&amp;seq=2106">
-							<b>  경남신문 의료칼럼- 휴가철 피부 관리</b>
-							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">2019-08-05</i>
-						</a>	
-					</li>
-				
-					<li>
-						<a href="?pCode=527&amp;mode=view&amp;perm=Y&amp;pCode=527&amp;select_key=&amp;input_key=&amp;backpage=/m/527/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=1&amp;seq=2105">
-							<b>  경남신문 의료칼럼 - 여드름·모공 흉터 원인과 개선</b>
-							<!--i class='name'>다</i><span class='line'>|</span--><i class="date">2019-07-15</i>
-						</a>	
-					</li>
+					
 				</ul>
 			</div>
 			
