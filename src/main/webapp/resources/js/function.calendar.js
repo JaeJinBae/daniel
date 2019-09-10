@@ -26,8 +26,8 @@ function jCal($Obj, $OPTION){
 	$("#Mask").after("<div id='AjaxjCalendar' style='position:absolute;top:0;left:0;display:none'></div>");
 	$("#AjaxjCalendar").css({
 		"z-index" : 90000,
-		"top" : $Obj_H.User_TOP + "px",
-		"left" : $Obj_H.User_LEFT + "px"
+		"top" : "100px",
+		"left" : "100px"
 	});
 
 	jCal_load($Params);
@@ -135,9 +135,8 @@ function jChk_Compare($Obj, $Date, $Compare, $Diff){
 
 //달력실행
 function jCal_load($Params){
-	var $PAGE = "/lib/js/jCal/jCal.php?" + $Params;
-
-	$("#AjaxjCalendar").load($PAGE).show();
+	/*var $PAGE = "/lib/js/jCal/jCal.php?" + $Params;*/
+	$("#AjaxjCalendar").html($Params);
 }
 
 

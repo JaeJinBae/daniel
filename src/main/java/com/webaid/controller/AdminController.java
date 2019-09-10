@@ -1,6 +1,14 @@
 package com.webaid.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +18,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
@@ -49,6 +61,50 @@ public class AdminController {
 		return "admin/main";
 	}
 	
+	@ResponseBody
+	@RequestMapping("/imgUpload")
+	public Map<String, Object> imgaeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
+			throws Exception {
+		logger.info("image upload!!!!!");
+
+		// http body
+		OutputStream out = null;
+
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		// 오리지날 파일명
+		String originalName = upload.getOriginalFilename();
+
+		// 랜덤이름 생성(중복 방지용)
+		UUID uid = UUID.randomUUID();
+		String savedName = uid.toString() + "_" + originalName;
+
+		// 업로드한 파일 이름
+		String fileName = savedName;
+
+		// 바이트 배열로 변환
+		byte[] bytes = upload.getBytes();
+
+		// 이미지를 업로드할 디렉토리(배포경로로 설정)
+		String innerUploadPath = "resources/upload/";
+		String uploadPath = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		logger.info(uploadPath);
+
+		out = new FileOutputStream(new File(uploadPath + fileName));// 서버에 파일 저장
+		// 서버에 저장됨
+		out.write(bytes);
+
+		String fileUrl = "/" + innerUploadPath + fileName;
+
+		System.out.println(fileUrl);
+
+		map.put("uploaded", 1);
+		map.put("fileName", fileName);
+		map.put("url", fileUrl);
+
+		return map;
+	}
+	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu01_01 GET");
@@ -77,10 +133,40 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_01update", method = RequestMethod.GET)
-	public String menu01_01update(Model model) {
+	public String menu01_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model,
+			HttpServletRequest req) throws Exception {
 		logger.info("menu01_01update GET");
 		
+		NoticeVO vo = nService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "admin/menu01_01update";
+	}
+	
+	@RequestMapping(value = "/menu01_01update", method = RequestMethod.POST)
+	public String menu01_01updatePost(NoticeVO vo, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu01_01update Post");
+		
+		nService.update(vo);
+
+		rtts.addAttribute("no", vo.getNo());
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(nService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+
+		return "redirect:/admin/menu01_01update";
 	}
 	
 	@RequestMapping(value = "/menu01_02", method = RequestMethod.GET)

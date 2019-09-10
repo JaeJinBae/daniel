@@ -34,7 +34,7 @@ ul,li {display: block; margin:0;padding:0;list-style:none;}
 
 /* 탑(헤더) 영역 */
 
-#header		{ position: fixed; top: 0; left: 0; bottom: 0; width: 240px; background: url('../images/adm-body-bg.gif') repeat-y left top; overflow-y: auto;}
+#header		{ position: fixed; top: 0; left: 0; bottom: 0; width: 240px; background: url('../../img/admin/adm-body-bg.gif') repeat-y left top; overflow-y: auto;}
 #header #logo	{ height: 150px; line-height: 200px; text-align: center; text-indent: -20px; position: relative; }
 #header #logo img	{ max-width: 70%; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); }
 
@@ -42,7 +42,7 @@ ul,li {display: block; margin:0;padding:0;list-style:none;}
 #gnb_box fieldset input	{ display: block; box-sizing: border-box; border: 1px solid #333; height: 35px; border-radius: 2px; background: #242424; width: 100%; color: #fff; padding: 0 10px; }
 
 #navi_menu li			{ display: block; }
-#navi_menu > li > a		{ display: block; color: #fff; font-size: 14px; padding-left: 25px; line-height: 49px; text-decoration: none; background: url('../images/left_menu_bg.jpg') no-repeat; border-bottom: 1px solid #414141; }
+#navi_menu > li > a		{ display: block; color: #fff; font-size: 14px; padding-left: 25px; line-height: 49px; text-decoration: none; background: url('../../img/admin/left_menu_bg.jpg') no-repeat; border-bottom: 1px solid #414141; }
 #navi_menu > li > a:hover,
 #navi_menu > li.on > a		{ background-image: url('../images/left_menu_bg_on.jpg'); }
 #navi_menu ul				{ display: none; }
@@ -57,7 +57,7 @@ ul,li {display: block; margin:0;padding:0;list-style:none;}
 
 #tnb_info				{ float: left; padding: 0 20px; }
 #tnb_info span			{ display: block; position: relative; padding-left: 25px; color: #00b6ed; font-weight: 600; }
-#tnb_info span:before	{ content: ""; display: block; position: absolute; left: 0; top: 50%; margin-top: -10px; width: 22px; height: 21px; background: url('../images/top_icon_id.png') no-repeat 50% 50%; }
+#tnb_info span:before	{ content: ""; display: block; position: absolute; left: 0; top: 50%; margin-top: -10px; width: 22px; height: 21px; background: url('../../img/admin/top_icon_id.png') no-repeat 50% 50%; }
 
 
 

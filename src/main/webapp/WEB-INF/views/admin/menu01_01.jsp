@@ -131,7 +131,7 @@ $(function(){
 			                                     </td>
 												<td><i class="ico notice">공지</i></td>
 												<td>
-													<a href="${pageContext.request.contextPath}/admin/menu01_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a>
+													<a href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a>
 												</td>
 												<td>${item.writer}</td>
 												<td>${item.regdate}</td>
@@ -160,7 +160,7 @@ $(function(){
 													</c:choose>
 													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
 													<td><i class="ico notice">${num}</i></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu01_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
 													<td>${item.writer}</td>
 													<td>${item.regdate}</td>
 													<td></td>
@@ -180,7 +180,7 @@ $(function(){
 							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01register'">등록</button>
 						</p>
 					</div>
 			
