@@ -9,7 +9,7 @@
 	</select>
 	
 	<select id="selectOne" resultType="NoticeVO">
-		select * from notice where no=#{no} and use_state='o'
+		select * from notice where no=#{no}
 	</select>
 	
 	<select id="selectBefore" resultType="NoticeVO">
@@ -21,7 +21,7 @@
 	</select>
 	
 	<select id="selectTopNotice" resultType="NoticeVO">
-		select * from notice where top_state='o' order by no desc;
+		select * from notice where top_state ='o' and use_state like concat('%',#{use_state},'%') order by no desc;
 	</select>
 	
 	<insert id="insert">
@@ -45,11 +45,11 @@
 	</delete>
 	
 	<select id="listSearch" resultType="NoticeVO">
-		select * from notice where top_state='x' and use_state='o' <include refid="search"></include> and use_state='o' order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from notice where top_state='x' and use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<select id="listSearchAll" resultType="NoticeVO">
-		select * from notice where no>0 <include refid="search"></include> and use_state='o' order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from notice where top_state='x' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<sql id="search">
@@ -65,7 +65,11 @@
 	</sql>
 	
 	<select id="listSearchCount" resultType="int">
-		select count(no) from notice where top_state='x' <include refid="search"></include> and use_state='o'
+		select count(no) from notice where top_state='x' and use_state='o' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchCountAll" resultType="int">
+		select count(no) from notice where top_state='x' <include refid="search"></include>
 	</select>
 	
 </mapper>

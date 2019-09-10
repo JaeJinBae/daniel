@@ -55,12 +55,12 @@ $(function(){
 			<div class="main_bottom_area">
 				<div class="list_area">
 					<div class="list_box">
-						<div class="board_top">
-							<div class="top-left">
-								<input type="radio" name="radio_key" id="radio_key1" value="" checked="checked"> <label for="radio_key1"><i></i>전체</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<input type="radio" name="radio_key" id="radio_key2" value="공지"> <label for="radio_key2"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<input type="radio" name="radio_key" id="radio_key3" value="이벤트"> <label for="radio_key3"><i></i>이벤트</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							</div>
+						<div class="board_top"> 
+							<!-- <div class="top-left">
+								<input type="radio" name="radio_key" id="radio_key1" value="all" checked="checked"> <label for="radio_key1"><i></i>전체</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key2" value="top_notice"> <label for="radio_key2"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key3" value="normal_notice"> <label for="radio_key3"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							</div> -->
 			
 							<form name="search" method="post" action="" onsubmit="return search_it(this)">
 								<div class="search_area">
@@ -91,7 +91,7 @@ $(function(){
 									<col width="3%">
 									<col width="5%">
 			                        <col width="6%">
-									<col width="3%">
+									<col width="4%">
 									<col width="*">
 									<col width="10%">
 									<col width="10%">
@@ -109,206 +109,101 @@ $(function(){
 									<th>파일</th>
 									<th>조회</th>
 								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2075"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="delflag_2075" onclick="vboard_it('delflag', '2075')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2075" onclick="vboard_it('is_main', '2075')"></td>
-									<td><i class="ico notice">공지</i></td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 다니엘 성형외과 5월 워크샵 휴진 안내
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2019-05-07</td>
-									<td></td>
-									<td>165</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2036"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036" onclick="vboard_it('delflag', '2036')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036" onclick="vboard_it('is_main', '2036')"></td>
-									<td><i class="ico notice">공지</i></td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 다니엘 성형외과 화요일 진료시간변경안내
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2019-02-15</td>
-									<td></td>
-									<td>5307</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="1947"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_1947" onclick="vboard_it('delflag', '1947')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_1947" onclick="vboard_it('is_main', '1947')"></td>
-									<td><i class="ico notice">공지</i></td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 김지아 원장님께서 "컴패션 기업후원자의 밤&amp;...
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2018-07-06</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>259</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="921"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_921" onclick="vboard_it('delflag', '921')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_921" onclick="vboard_it('is_main', '921')"></td>
-									<td><i class="ico notice">공지</i></td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 다니엘 ★뇌병변 부모회 감사패 수여★
-											</p>
-										</a>
-									</td>
-									<td>최고관리자</td>
-									<td>2018-03-26</td>
-									<td></td>
-									<td>342</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2110"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2110" onclick="vboard_it('delflag', '2110')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2110" onclick="vboard_it('is_main', '2110')"></td>
-									<td>165</td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 경남신문 의료칼럼 - 짧은 코 성형, 이것만 생각하자
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2019-09-02</td>
-									<td></td>
-									<td>1</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2109"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2109" onclick="vboard_it('delflag', '2109')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2109" onclick="vboard_it('is_main', '2109')"></td>
-									<td>164</td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 경남신문 의료칼럼 - 문신 제거를 위한 올바른 선택
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2019-08-19</td>
-									<td></td>
-									<td>1</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2108"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2108" onclick="vboard_it('delflag', '2108')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2108" onclick="vboard_it('is_main', '2108')"></td>
-									<td>163</td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 다니엘 성형외과 8월 진료안내
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2019-08-13</td>
-									<td></td>
-									<td>11</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2107"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2107" onclick="vboard_it('delflag', '2107')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2107" onclick="vboard_it('is_main', '2107')"></td>
-									<td>162</td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 경남신문 의료칼럼 - 남 흉 보기 전에 흉 지워야죠...
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2019-08-12</td>
-									<td></td>
-									<td>7</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2106"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2106" onclick="vboard_it('delflag', '2106')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2106" onclick="vboard_it('is_main', '2106')"></td>
-									<td>161</td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 경남신문 의료칼럼- 휴가철 피부 관리
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2019-08-05</td>
-									<td></td>
-									<td>6</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2105"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2105" onclick="vboard_it('delflag', '2105')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2105" onclick="vboard_it('is_main', '2105')"></td>
-									<td>160</td>
-									<td>
-										<a href="">
-											<p class="title">
-												<b>[공지]</b> 경남신문 의료칼럼 - 여드름·모공 흉터 원인과 개선
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2019-07-15</td>
-									<td></td>
-									<td>7</td>
-								</tr>		
+								<c:if test="${pageMaker.cri.page == 1}">
+									<c:if test="${fn:length(topList) != 0}">
+										<c:forEach var="item" items="${topList}">
+											<tr class="cont">
+												<td><input type="checkbox" name="" value="${item.no}"></td>
+												<c:choose>
+													<c:when test="${item.use_state == 'o'}">
+														<td>
+															<img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036">
+														</td>
+													</c:when>
+													<c:otherwise>
+														<td>
+					                                     	<img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036">
+					                                     </td>
+													</c:otherwise>
+												</c:choose>
+												<td>
+			                                     	<img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036">
+			                                     </td>
+												<td><i class="ico notice">공지</i></td>
+												<td>
+													<a href="${pageContext.request.contextPath}/admin/menu01_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a>
+												</td>
+												<td>${item.writer}</td>
+												<td>${item.regdate}</td>
+												<td></td>
+												<td>${item.cnt}</td>
+											</tr>	
+										</c:forEach>
+									</c:if>
+								</c:if>
+								<c:choose>
+									<c:when test="${fn:length(list) ==0 }">
+										<tr><td colspan="8">등록된 게시물이 없습니다.</td></tr>
+									</c:when>
+									<c:otherwise>
+										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+									        <c:forEach var="item" items="${list}">
+												<tr class="cont">
+													<td><input type="checkbox" name="" value="${item.no}"></td>
+													<c:choose>
+														<c:when test="${item.use_state == 'o'}">
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
+														</c:when>
+														<c:otherwise>
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+														</c:otherwise>
+													</c:choose>
+													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+													<td><i class="ico notice">${num}</i></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu01_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
+													<td>${item.writer}</td>
+													<td>${item.regdate}</td>
+													<td></td>
+													<td>${item.cnt}</td>
+												</tr>
+												<c:set var="num" value="${num-1}"></c:set>	
+											</c:forEach>
+									</c:otherwise>
+								</c:choose>
 							</table>
 						</form>
 					</div>
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="board_it('delete')">선택삭제</button>
-							<button type="button" class="btn_gray" onclick="board_it('tap_change', 'BRD01')">게시물이동</button>
+							<button type="button" class="btn_gray">선택삭제</button>
+							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="board_it('insert_form', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1')">등록</button>
+							<button type="button" class="btn_black">등록</button>
 						</p>
 					</div>
 			
+					<!-- 페이징 시작 -->
 					<div class="board_paging no_print">
-						<a href="javascript:;" class="direction">&lt;&lt;</a>
-						<a href="javascript:;" class="direction">&lt;</a>
-						<a href="javascript:;" class="on">1</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=2 ">2</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=3 ">3</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=4 ">4</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=5 ">5</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=6 ">6</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=7 ">7</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=8 ">8</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=9 ">9</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=10 ">10</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=11 " class="direction">&gt;</a>
-						<a href="?select_key=&amp;input_key=&amp;search=&amp;Scod=BRD01&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=17 " class="direction">&gt;&gt;</a>
-					</div>
+						<a href="${pageMaker.makeSearch(1)}" class="direction">&lt;&lt;</a>
+						<c:if test="${!pageMaker.prev}"><!-- 이전페이지가 존재하지 않는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&lt;</a>
+						</c:if>
+						<c:if test="${pageMaker.prev}"><!-- 이전페이지가 존재하는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}" class="direction">&lt;</a>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+						</c:forEach>
+						<c:if test="${pageMaker.next}"><!-- 뒤에페이지가 존재하는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}" class="direction">&gt;</a>
+						</c:if>
+						<c:if test="${!pageMaker.next}"><!-- 뒤에 페이지가 존재하지 않는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&gt;</a>
+						</c:if>
+						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
+					</div>	<!-- 페이징 끝 -->
 				</div>
 			</div>
 			

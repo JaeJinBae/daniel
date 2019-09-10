@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webaid.domain.NoticeVO;
-import com.webaid.domain.PageMaker;
 import com.webaid.domain.PageMaker5;
 import com.webaid.domain.SearchCriteria;
-import com.webaid.domain.SearchCriteria5;
 import com.webaid.service.NoticeService;
 
 /**
@@ -336,7 +334,7 @@ public class MobileController {
 	public String mMenu09_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("mMenu09_01 GET");
 		
-		List<NoticeVO> topList = nService.selectTopNotice();
+		List<NoticeVO> topList = nService.selectTopNotice("o");
 		List<NoticeVO> list = nService.listSearch(cri);
 		
 		PageMaker5 pageMaker = new PageMaker5();

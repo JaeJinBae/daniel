@@ -11,7 +11,8 @@ public class PageMaker {
 	private boolean next;// 이후 10개 존재여부
 	private int displayPageNum = 10;// 보이는 페이지번호의 갯수
 	private Criteria cri;// 현재 페이지 번호를 알아야 시작과 끝을 구할 수 있음
-
+	private int finalPage;//제일 뒷 페이지
+	
 	private void calData() {
 		endPage = (int) (Math.ceil(cri.getPage() / (double) displayPageNum) * displayPageNum);// 현재 페이지의 끝 번호를 구한다. ex)15/10 => Math.ceil(1.5) => 2*19 => 20
 		startPage=(endPage-displayPageNum)+1;//현재 페이지의 시작 번호를 구한다. ex)20-10+1=11
@@ -95,6 +96,17 @@ public class PageMaker {
 
 	public void setCri(Criteria cri) {
 		this.cri = cri;
+	}
+
+	
+	
+	public int getFinalPage() {
+		return finalPage;
+	}
+
+	public void setFinalPage(int finalPage) {
+		
+		this.finalPage = (int) Math.ceil(totalCount/10);
 	}
 
 	@Override

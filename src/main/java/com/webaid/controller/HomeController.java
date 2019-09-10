@@ -358,13 +358,14 @@ public class HomeController {
 	public String menu09_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu09_01 GET");
 		
-		List<NoticeVO> topList = nService.selectTopNotice();
+		List<NoticeVO> topList = nService.selectTopNotice("o");
 		List<NoticeVO> list = nService.listSearch(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		pageMaker.setFinalPage(nService.listSearchCount(cri));
 		
 		model.addAttribute("topList", topList);
 		model.addAttribute("list", list);
@@ -387,6 +388,7 @@ public class HomeController {
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		pageMaker.setFinalPage(nService.listSearchCount(cri));
 		
 		model.addAttribute("item", vo);
 		model.addAttribute("beforeItem", beforeVO);
