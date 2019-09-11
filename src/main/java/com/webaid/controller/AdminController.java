@@ -126,10 +126,18 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_01register", method = RequestMethod.GET)
-	public String menu01_01register(Model model) {
+	public String menu01_01register(NoticeVO vo) {
 		logger.info("menu01_01register GET");
-		
+
 		return "admin/menu01_01register";
+	}
+	
+	@RequestMapping(value = "/menu01_01register", method = RequestMethod.POST)
+	public String menu01_01registerPOST(NoticeVO vo) {
+		logger.info("menu01_01register POST");
+		System.out.println(vo);
+		nService.insert(vo);
+		return "redirect:/admin/menu01_01";
 	}
 	
 	@RequestMapping(value = "/menu01_01update", method = RequestMethod.GET)

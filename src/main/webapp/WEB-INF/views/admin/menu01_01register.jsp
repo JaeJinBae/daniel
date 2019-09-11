@@ -25,8 +25,19 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
-	$.ajaxSetup({cache:false});
-	$( "#regdate" ).datepicker({
+	//$.ajaxSetup({cache:false});
+	
+	var ndate = new Date();
+	var year = ndate.getFullYear();
+	var month = ndate.getMonth()+1;
+	var date = ndate.getDate();
+	
+	month = (month > 10) ? month+"":"0"+month;
+	date = (date > 10) ? date+"":"0"+date;
+	
+	$("#regdate").val(year+"-"+month+"-"+date);
+	
+	$("#regdate").datepicker({
 		changeMonth: true, 
 		changeYear: true,
 		dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
@@ -36,21 +47,17 @@ $(function(){
 		dateFormat: "yy-mm-dd"
     });
 	
-	$("#result").click(function(){
-		alert($("input[name='regdate']").val());
-	});
-	
 	//예외처리
 	$("#form1").submit(function(){
-
-		if($("input[name='writer']").val()==""||$("input[name='writer']").val()==null){
+		if($("input[name='writer']").val()==""){
 			alert("작성자를 입력해주세요.");
 			return false;
-		}else if($("input[name='title']").val()==""||$("input[name='title']").val()==null){
+		}
+		if($("input[name='title']").val()==""){
 			alert("제목을 입력해주세요.");
 			return false;
 		}
-	})
+	});
 });
 </script>
 </head>
@@ -79,8 +86,8 @@ $(function(){
 			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
 			
 			<div class="main_bottom_area">
-				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}">
-					<input type="hidden" name="no" value="${item.no}">
+				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu01_01register${pageMaker.makeSearch(pageMaker.cri.page)}">
+					<input type="hidden" name="no" value="0">
 					<div class="write_area">
 						<div class="write_box">
 							<table class="write_table" cellpadding="0">
@@ -91,33 +98,33 @@ $(function(){
 								<tr class="cont">
 									<td class="title">사용유무</td>
 									<td>
-										<input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><label for="b_notice1"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="use_state" id="b_notice2" value="x"><label for="b_notice2"><i></i>미사용</label>
+										<label><input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										<label><input type="radio" name="use_state" id="b_notice2" value="x"><i></i>미사용</label>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">공지</td>
 									<td>
-										<input type="radio" name="top_state" id="b_notice1" value="o"><label for="b_notice1"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><label for="b_notice2"><i></i>일반</label>
+										<label><input type="radio" name="top_state" id="b_notice1" value="o"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										<label><input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><i></i>일반</label>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
-										<input type="text" class="w_form_s" name="writer" value="">
+										<input type="text" class="w_form_s" name="writer" value="다니엘성형외과">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성일</td>
 									<td>
-										<input type="text" id="regdate" class="w_form_s" name="regdate" value="">
+										<input type="text" id="regdate" class="w_form_s" name="regdate" value="" autocomplete="off">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">조회수</td>
 									<td>
-										<input type="text" class="w_form_s" name="cnt" value="">
+										<input type="text" class="w_form_s" name="cnt" value="0">
 									</td>
 								</tr>
 								<tr class="cont">
@@ -133,7 +140,7 @@ $(function(){
 									</td>
 								</tr>
 							</table>
-						</div>
+						</div><!-- write_box end -->
 				
 						<div class="btn_area">
 							<p class="btn_left">
@@ -141,13 +148,12 @@ $(function(){
 							</p>
 							<p class="btn_right">
 								<input type="submit" class="btn_black" value="등록">&nbsp;
-								<button type="button" class="btn_gray">취소</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01register'">취소</button>
 							</p>
-						</div>
-				
-					</div>
+						</div><!-- btn_area end -->
+					</div><!-- write_area end -->
 				</form>
-			</div>
+			</div><!-- main_bottom_area -->
 			
 			<script type="text/javascript">
 					CKEDITOR.replace('content',{filebrowserUploadUrl:"/admin/imgUpload", width:'100%', height:'500px'});

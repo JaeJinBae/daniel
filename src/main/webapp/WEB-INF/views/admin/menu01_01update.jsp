@@ -26,6 +26,7 @@
 <script>
 $(function(){
 	$.ajaxSetup({cache:false});
+	
 	$( "#regdate" ).datepicker({
 		changeMonth: true, 
 		changeYear: true,
@@ -42,7 +43,6 @@ $(function(){
 	
 	//예외처리
 	$("#form1").submit(function(){
-
 		if($("input[name='writer']").val()==""||$("input[name='writer']").val()==null){
 			alert("작성자를 입력해주세요.");
 			return false;
@@ -92,12 +92,12 @@ $(function(){
 									<td class="title">사용유무</td>
 									<td>
 										<c:if test="${item.use_state == 'o'}">
-											<input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><label for="b_notice1"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<input type="radio" name="use_state" id="b_notice2" value="x"> <label for="b_notice2"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="use_state" id="b_notice2" value="x"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										</c:if>
 										<c:if test="${item.use_state == 'x'}">
-											<input type="radio" name="use_state" id="b_notice1" value="o"><label for="b_notice1"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<input type="radio" name="use_state" id="b_notice2" value="x" checked="checked"><label for="b_notice2"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="use_state" id="b_notice1" value="o"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="use_state" id="b_notice2" value="x" checked="checked"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										</c:if>
 									</td>
 								</tr>
@@ -105,12 +105,12 @@ $(function(){
 									<td class="title">공지</td>
 									<td>
 										<c:if test="${item.top_state == 'o'}">
-											<input type="radio" name="top_state" id="b_notice1" value="o" checked="checked"><label for="b_notice1"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<input type="radio" name="top_state" id="b_notice2" value="x"> <label for="b_notice2"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="top_state" id="b_notice1" value="o" checked="checked"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="top_state" id="b_notice2" value="x"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										</c:if>
 										<c:if test="${item.top_state == 'x'}">
-											<input type="radio" name="top_state" id="b_notice1" value="o"><label for="b_notice1"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><label for="b_notice2"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="top_state" id="b_notice1" value="o"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										</c:if>
 									</td>
 								</tr>
@@ -123,7 +123,7 @@ $(function(){
 								<tr class="cont">
 									<td class="title">작성일</td>
 									<td>
-										<input type="text" id="regdate" class="w_form_s" name="regdate" value="${item.regdate}">
+										<input type="text" id="regdate" class="w_form_s" name="regdate" value="${item.regdate}" autocomplete="off">
 									</td>
 								</tr>
 								<tr class="cont">
