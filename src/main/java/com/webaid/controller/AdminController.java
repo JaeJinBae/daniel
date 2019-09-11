@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -175,6 +176,15 @@ public class AdminController {
 		rtts.addAttribute("page", page);
 
 		return "redirect:/admin/menu01_01update";
+	}
+	
+	@RequestMapping(value="/menu01_01delete/{no}", method=RequestMethod.GET)
+	public String menu01_01delete(@PathVariable("no") int no){
+		logger.info("notice delete");
+		
+		nService.delete(no);
+		
+		return "redirect:/admin/menu01_01";
 	}
 	
 	@RequestMapping(value = "/menu01_02", method = RequestMethod.GET)
