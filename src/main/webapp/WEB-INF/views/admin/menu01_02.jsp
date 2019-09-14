@@ -61,7 +61,13 @@ $(function(){
 							<form name="search" method="post" action="" onsubmit="return search_it(this)">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
-									<select name="select_key" id="select_key" class="search_sel"><option value="m_id|m_name|b_content">전체</option><option value="m_id">아이디</option><option value="m_name">이름</option><option value="b_content">내용</option></select>						<input type="text" name="input_key" class="search_t_box" value="">
+									<select name="select_key" id="select_key" class="search_sel">
+										<option value="m_id|m_name|b_content">전체</option>
+										<option value="m_id">아이디</option>
+										<option value="m_name">이름</option>
+										<option value="b_content">내용</option>
+									</select>						
+									<input type="text" name="input_key" class="search_t_box" value="">
 									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
 								</div>
 							</form>
@@ -98,53 +104,70 @@ $(function(){
 									<th>등록일</th>
 									<th>파일</th>
 									<th>조회</th>
-								</tr>
-			
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2104"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2104" onclick="vboard_it('delflag', '2104')"></td>
-                                       <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2104" onclick="vboard_it('is_main', '2104')"></td>
-									<td>103</td>
-									<td>
-										<p class="title">
-											<a href=""><b>[눈·코 성형]</b> 하안검 절개</a>
-										</p>
-									</td>
-									<td>theweb</td>
-									<td>2019-07-15</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>0</td>
-								</tr>
+								</tr> 
+								<c:choose>
+									<c:when test="${fn:length(list) ==0 }">
+										<tr><td colspan="8">등록된 게시물이 없습니다.</td></tr>
+									</c:when>
+									<c:otherwise>
+										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+									        <c:forEach var="item" items="${list}">
+												<tr class="cont">
+													<td><input type="checkbox" name="" value="${item.no}"></td>
+													<c:choose>
+														<c:when test="${item.use_state == 'o'}">
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
+														</c:when>
+														<c:otherwise>
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+														</c:otherwise>
+													</c:choose>
+													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+													<td><i class="ico notice">${num}</i></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"><b>${item.clinic_type}</b> ${item.title}</p></a></td>
+													<td>${item.writer}</td>
+													<td>${item.regdate}</td>
+													<td></td>
+													<td>${item.cnt}</td>
+												</tr>
+												<c:set var="num" value="${num-1}"></c:set>	
+											</c:forEach>
+									</c:otherwise>
+								</c:choose>
 							</table>
 						</form>
 					</div>
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="board_it('delete')">선택삭제</button>
-							<button type="button" class="btn_gray" onclick="board_it('tap_change', 'BRD20')">게시물이동</button>
+							<button type="button" class="btn_gray">선택삭제</button>
+							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_02register'">등록</button>
 						</p>
 					</div>
 			
+					<!-- 페이징 시작 -->
 					<div class="board_paging no_print">
-						<a href="javascript:;" class="direction">&lt;&lt;</a>
-						<a href="javascript:;" class="direction">&lt;</a>
-						<a href="javascript:;" class="on">1</a>
-						<a href="">2</a>
-						<a href="">3</a>
-						<a href="">4</a>
-						<a href="">5</a>
-						<a href="">6</a>
-						<a href="">7</a>
-						<a href="">8</a>
-						<a href="">9</a>
-						<a href="">10</a>
-						<a href="" class="direction">&gt;</a>
-						<a href="" class="direction">&gt;&gt;</a>
-					</div>
+						<a href="${pageMaker.makeSearch(1)}" class="direction">&lt;&lt;</a>
+						<c:if test="${!pageMaker.prev}"><!-- 이전페이지가 존재하지 않는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&lt;</a>
+						</c:if>
+						<c:if test="${pageMaker.prev}"><!-- 이전페이지가 존재하는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}" class="direction">&lt;</a>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+						</c:forEach>
+						<c:if test="${pageMaker.next}"><!-- 뒤에페이지가 존재하는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}" class="direction">&gt;</a>
+						</c:if>
+						<c:if test="${!pageMaker.next}"><!-- 뒤에 페이지가 존재하지 않는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&gt;</a>
+						</c:if>
+						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
+					</div>	<!-- 페이징 끝 -->
 				</div>
 			</div>
 			

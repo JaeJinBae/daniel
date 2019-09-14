@@ -24,9 +24,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NoticeService;
 
 /**
@@ -40,6 +42,9 @@ public class AdminController {
 	
 	@Autowired
 	private NoticeService nService;
+	
+	@Autowired
+	private BeforeAfterService baService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -188,8 +193,19 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_02", method = RequestMethod.GET)
-	public String menu01_02(Model model) {
+	public String menu01_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu01_02 GET");
+		
+		List<BeforeAfterVO> list = baService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(baService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(baService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "admin/menu01_02";
 	}
