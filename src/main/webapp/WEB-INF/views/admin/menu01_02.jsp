@@ -73,69 +73,59 @@ $(function(){
 							</form>
 						</div>
 			
-						<form name="board" id="board" method="post" action="board_proc.php">
-							<input type="hidden" name="mode" value="delete">
-							<input type="hidden" name="page" value="1">
-							<input type="hidden" name="search" value="">
-							<input type="hidden" name="select_key" value="">
-							<input type="hidden" name="input_key" value="">
-							<input type="hidden" name="Scod" value="BRD20">
-							<input type="hidden" name="radio_key" value="">
-			
-							<table class="list_table" cellpadding="0">
-								<colgroup>
-									<col width="3%">
-									<col width="5%">
-			                        <col width="6%">
-									<col width="3%">
-									<col width="*">
-									<col width="10%">
-									<col width="10%">
-									<col width="5%">
-									<col width="5%">
-								</colgroup>
-								<tr class="cont">
-									<th><input type="checkbox" id="selectall"></th>
-									<th>사용유무</th>
-			                        <th>메인노출유무</th>
-									<th>번호</th>
-									<th>제목</th>
-									<th>작성자</th>
-									<th>등록일</th>
-									<th>파일</th>
-									<th>조회</th>
-								</tr> 
-								<c:choose>
-									<c:when test="${fn:length(list) ==0 }">
-										<tr><td colspan="8">등록된 게시물이 없습니다.</td></tr>
-									</c:when>
-									<c:otherwise>
-										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
-									        <c:forEach var="item" items="${list}">
-												<tr class="cont">
-													<td><input type="checkbox" name="" value="${item.no}"></td>
-													<c:choose>
-														<c:when test="${item.use_state == 'o'}">
-															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
-														</c:when>
-														<c:otherwise>
-															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
-														</c:otherwise>
-													</c:choose>
-													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
-													<td><i class="ico notice">${num}</i></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"><b>${item.clinic_type}</b> ${item.title}</p></a></td>
-													<td>${item.writer}</td>
-													<td>${item.regdate}</td>
-													<td></td>
-													<td>${item.cnt}</td>
-												</tr>
-												<c:set var="num" value="${num-1}"></c:set>	
-											</c:forEach>
-									</c:otherwise>
-								</c:choose>
-							</table>
-						</form>
+						<table class="list_table" cellpadding="0">
+							<colgroup>
+								<col width="3%">
+								<col width="5%">
+		                        <col width="6%">
+								<col width="3%">
+								<col width="*">
+								<col width="10%">
+								<col width="10%">
+								<col width="5%">
+								<col width="5%">
+							</colgroup>
+							<tr class="cont">
+								<th><input type="checkbox" id="selectall"></th>
+								<th>사용유무</th>
+		                        <th>메인노출유무</th>
+								<th>번호</th>
+								<th>제목</th>
+								<th>작성자</th>
+								<th>등록일</th>
+								<th>파일</th>
+								<th>조회</th>
+							</tr> 
+							<c:choose>
+								<c:when test="${fn:length(list) ==0 }">
+									<tr><td colspan="9">등록된 게시물이 없습니다.</td></tr>
+								</c:when>
+								<c:otherwise>
+									<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+								        <c:forEach var="item" items="${list}">
+											<tr class="cont">
+												<td><input type="checkbox" name="" value="${item.no}"></td>
+												<c:choose>
+													<c:when test="${item.use_state == 'o'}">
+														<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
+													</c:when>
+													<c:otherwise>
+														<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+													</c:otherwise>
+												</c:choose>
+												<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+												<td><i class="ico notice">${num}</i></td>
+												<td><a href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"><b>${item.clinic_type}</b> ${item.title}</p></a></td>
+												<td>${item.writer}</td>
+												<td>${item.regdate}</td>
+												<td></td>
+												<td>${item.cnt}</td>
+											</tr>
+											<c:set var="num" value="${num-1}"></c:set>	
+										</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</table>
 					</div>
 			
 					<div class="btn_area">

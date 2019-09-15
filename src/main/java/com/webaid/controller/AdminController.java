@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.BeforeAfterVO;
@@ -215,6 +216,15 @@ public class AdminController {
 		logger.info("menu01_02register GET");
 		
 		return "admin/menu01_02register";
+	}
+	
+	@RequestMapping(value = "/menu01_02register", method = RequestMethod.POST)
+	public String menu01_02registerPost(MultipartHttpServletRequest mtfRequest, Model model) {
+		logger.info("menu01_02register POST");
+		System.out.println(mtfRequest.getParameter("title"));
+		//System.out.println(vo);
+		
+		return "redirect:/admin/menu01_02";
 	}
 	
 	@RequestMapping(value = "/menu01_02update", method = RequestMethod.GET)
