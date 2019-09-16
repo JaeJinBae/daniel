@@ -16,10 +16,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,6 +37,7 @@ import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NoticeService;
+import com.webaid.util.FileDelete;
 
 /**
  * Handles requests for the application home page.
@@ -245,7 +249,6 @@ public class AdminController {
 				storedFileName = System.currentTimeMillis()+"_"+fileName;
 			}
 			
-			
 			imgNameList.add(fileName);
 			imgNameList.add(storedFileName);
 			try {
@@ -293,10 +296,135 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_02update", method = RequestMethod.POST)
-	public String menu01_02updatePOST(Model model) {
+	public String menu01_02updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
 		logger.info("menu01_02update POST");
 		
+		
+		
+		
+		List<String> imgNameList = new ArrayList<String>();
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/img/beforeAfter/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			imgNameList.add(fileName);
+			imgNameList.add(storedFileName);
+			try {
+				//mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		for(int i =0; i<imgNameList.size(); i++){
+			System.out.println(imgNameList.get(i));
+		}
+		String ImgBeforeChange = mtfReq.getParameter("imgBeforeChange");
+		String ImgAfterChange = mtfReq.getParameter("imgAfterChange");
+		
+		BeforeAfterVO vo = new BeforeAfterVO();
+		BeforeAfterVO prevVO = baService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setClinic_type(mtfReq.getParameter("clinic_type"));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		if(ImgBeforeChange.equals("o") && ImgAfterChange.equals("o")){
+			vo.setImg_before_origin(imgNameList.get(0));
+			vo.setImg_before_stored(imgNameList.get(1));
+			vo.setImg_after_origin(imgNameList.get(2));
+			vo.setImg_after_stored(imgNameList.get(3));
+		}else if(ImgBeforeChange.equals("o")){
+			vo.setImg_before_origin(imgNameList.get(0));
+			vo.setImg_before_stored(imgNameList.get(1));
+			vo.setImg_after_origin(prevVO.getImg_after_origin());
+			vo.setImg_after_stored(prevVO.getImg_after_stored());
+		}else if(ImgAfterChange.equals("o")){
+			vo.setImg_before_origin(prevVO.getImg_before_origin());
+			vo.setImg_before_stored(prevVO.getImg_after_stored());
+			vo.setImg_after_origin(imgNameList.get(0));
+			vo.setImg_after_stored(imgNameList.get(1));
+		}else if(ImgBeforeChange.equals("x") && ImgAfterChange.equals("x")){
+			vo.setImg_before_origin(prevVO.getImg_before_origin());
+			vo.setImg_before_stored(prevVO.getImg_after_stored());
+			vo.setImg_after_origin(prevVO.getImg_after_origin());
+			vo.setImg_after_stored(prevVO.getImg_after_stored());
+		}
+		
+		baService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(baService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
 		return "redirect:/admin/menu01_02update";
+	}
+	
+	@RequestMapping(value = "/menu01_02uploadImgDelete", method = RequestMethod.POST)
+	public ResponseEntity<String> menu01_02uploadImgDelete(HttpServletRequest req, @RequestBody Map<String, String> info) {
+		logger.info("menu01_02update POST");
+		ResponseEntity<String> entity = null;
+		
+		int no = Integer.parseInt(info.get("no"));
+		String type = info.get("type");
+		
+		String innerUploadPath = "resources/img/beforeAfter/";
+		String path = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		System.out.println(path);
+		BeforeAfterVO prevVO = baService.selectOne(no);
+		FileDelete fd = new FileDelete();
+		
+		BeforeAfterVO vo = new BeforeAfterVO();
+		vo.setNo(no);
+		
+		try {
+			if(type.equals("before")){
+				fd.fileDelete(path, prevVO.getImg_before_stored());
+				
+				vo.setImg_before_origin("");
+				vo.setImg_before_stored("");
+				baService.updateBeforeImg(vo);
+			}else{
+				fd.fileDelete(path, prevVO.getImg_after_stored());
+				
+				vo.setImg_after_origin("");
+				vo.setImg_after_stored("");
+				baService.updateAfterImg(vo);
+			}
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			e.printStackTrace();
+		}
+		
+		
+		return entity;
 	}
 	
 	@RequestMapping(value = "/menu01_03", method = RequestMethod.GET)

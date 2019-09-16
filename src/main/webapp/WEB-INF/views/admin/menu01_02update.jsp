@@ -24,6 +24,24 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
+function deleteUploadImg(no, type){
+	var info = {no:no, type:type};
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/menu01_02uploadImgDelete",
+		type:"post",
+		data:JSON.stringify(info),
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		async:false,
+		success:function(json){
+			console.log(json);
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
 $(function(){
 	
 	var ndate = new Date();
@@ -46,20 +64,19 @@ $(function(){
 		dateFormat: "yy-mm-dd"
     });
 	
+	var c_type = "${item.clinic_type}";
+	$("#b_tap > option[value='"+c_type+"']").prop("selected", true);
+	
 	//예외처리
 	$("#form1").submit(function(){
-		var clinic_type = $(".search_sel").val();
+		var clinic_type = $("select[name='clinic_type']").val();
 		var writer = $(".write_table tr td > input[name='writer']").val();
 		var regdate = $(".write_table tr td > input[name='regdate']").val();
 		var cnt = $(".write_table tr td > input[name='cnt']").val();
 		var title = $(".write_table tr td > input[name='title']").val();
 		var content = $(".write_table tr td > textarea[name='content']").val();
 		var b_img = $(".write_table tr td > div > input[name='img_before']").val();
-		var a_img = $(".write_table tr td > div > input[name='img_after']").val();
-		
-		
-		console.log(clinic_type+"\n"+writer+"\n"+regdate+"\n"+cnt+"\n"+title+"\n"+content+"\n"+b_img+"\n"+a_img);
-		
+		var a_img = $(".write_table tr td > div > input[name='img_after']").val();		
 		
 		if($("input[name='writer']").val()==""){
 			alert("작성자를 입력해주세요.");
@@ -70,6 +87,19 @@ $(function(){
 			return false;
 		}
 		//return false;
+	});
+	
+	$("#img_b").click(function(){
+		var no = $("#form1 > input[name='no']").val();
+		deleteUploadImg(no, "before");
+		$(this).parent().html("<input type='file' name='img_before'>");
+		$("#imgBeforeChange").val("o");
+	});
+	$("#img_a").click(function(){
+		var no = $("#form1 > input[name='no']").val();
+		deleteUploadImg(no, "after");
+		$(this).parent().html("<input type='file' name='img_after'>");
+		$("#imgAfterChange").val("o");
 	});
 	
 });
@@ -100,12 +130,12 @@ $(function(){
 			<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js" type="text/javascript"></script>
 			
 			<div class="main_bottom_area">
-				<form name="board" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu01_02register">
-					<input type="hidden" name="no" value="0">
-					<input type="hidden" name="use_state" value="o">
+				<form name="board" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu01_02update${pageMaker.makeSearch(pageMaker.cri.page)}">
+					<input type="hidden" name="no" value="${item.no}">
+					<input type="hidden" name="use_state" value="${item.use_state}">
 					<div class="write_area">
 						<div class="write_box">
-							<table class="write_table" cellpadding="0">
+							<table class="write_table">
 								<colgroup>
 									<col width="11%">
 									<col width="*">
@@ -158,6 +188,9 @@ $(function(){
 								<tr class="cont">
 									<td class="title">첨부파일</td>
 									<td id="attach">
+										<input type="hidden" id="imgBeforeChange" name="imgBeforeChange"value="x">
+										<input type="hidden" id="imgAfterChange" name="imgAfterChange"value="x">
+										<!-- 시술 전 사진 -->
 										<c:choose>
 											<c:when test="${item.img_before_origin == ''}">
 												<div><input type="file" name="img_before"></div>
@@ -165,18 +198,21 @@ $(function(){
 											<c:otherwise>
 												<div>
 													<a href="">${item.img_before_origin}</a>
-													<img src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+													<img id="img_b" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+													<input type="hidden" name="img_before" value="${item.img_before_origin}">
 												</div>
 											</c:otherwise>
 										</c:choose>
+										<!-- 시술 후 사진 -->
 										<c:choose>
-											<c:when test="${item.img_before_origin == ''}">
-												<div><input type="file" name="img_before"></div>
+											<c:when test="${item.img_after_origin == ''}">
+												<div><input type="file" name="img_after"></div>
 											</c:when>
 											<c:otherwise>
 												<div class="marginT10">
 													<a href="">${item.img_after_origin}</a>
-													<img src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+													<img id="img_a" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+													<input type="hidden" name="img_after" value="${item.img_after_origin}">
 												</div>
 											</c:otherwise>
 										</c:choose>

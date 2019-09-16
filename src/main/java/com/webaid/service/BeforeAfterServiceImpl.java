@@ -14,7 +14,7 @@ public class BeforeAfterServiceImpl implements BeforeAfterService {
 
 	@Autowired
 	private BeforeAfterDao dao;
-	
+
 	@Override
 	public List<BeforeAfterVO> selectAll() {
 		return dao.selectAll();
@@ -43,6 +43,16 @@ public class BeforeAfterServiceImpl implements BeforeAfterService {
 	@Override
 	public void updateUseState(BeforeAfterVO vo) {
 		dao.updateUseState(vo);
+	}
+
+	@Override
+	public void updateBeforeImg(BeforeAfterVO vo) {
+		dao.updateBeforeImg(vo);
+	}
+
+	@Override
+	public void updateAfterImg(BeforeAfterVO vo) {
+		dao.updateAfterImg(vo);
 	}
 
 	@Override

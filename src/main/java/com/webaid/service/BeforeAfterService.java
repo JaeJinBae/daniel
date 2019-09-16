@@ -12,6 +12,8 @@ public interface BeforeAfterService {
 	public void insert(BeforeAfterVO vo);
 	public void update(BeforeAfterVO vo);
 	public void updateUseState(BeforeAfterVO vo);
+	public void updateBeforeImg(BeforeAfterVO vo);
+	public void updateAfterImg(BeforeAfterVO vo);
 	public void delete(int no);
 	public List<BeforeAfterVO> listSearch(SearchCriteria cri) throws Exception;
 	public List<BeforeAfterVO> listSearchAll(SearchCriteria cri) throws Exception;
