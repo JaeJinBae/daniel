@@ -151,8 +151,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_01update", method = RequestMethod.GET)
-	public String menu01_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model,
-			HttpServletRequest req) throws Exception {
+	public String menu01_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
 		logger.info("menu01_01update GET");
 		
 		NoticeVO vo = nService.selectOne(no);
@@ -228,7 +227,7 @@ public class AdminController {
 		List<String> imgNameList = new ArrayList<String>();
 		
 		//이미지 업로드
-		String innerUploadPath = "resources/upload/";
+		String innerUploadPath = "resources/img/beforeAfter/";
 		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
 		String fileName = "";
 		String storedFileName = "";
@@ -240,8 +239,13 @@ public class AdminController {
 			
 			MultipartFile mFile = mtfReq.getFile(uploadFile);
 			fileName = mFile.getOriginalFilename();
-			storedFileName = System.currentTimeMillis()+"_"+fileName;
-			System.out.println("실제 파일이름: "+fileName);
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			
 			imgNameList.add(fileName);
 			imgNameList.add(storedFileName);
 			try {
@@ -272,10 +276,27 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_02update", method = RequestMethod.GET)
-	public String menu01_02update(Model model) {
+	public String menu01_02update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
 		logger.info("menu01_02update GET");
 		
+		BeforeAfterVO vo = baService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(baService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "admin/menu01_02update";
+	}
+	
+	@RequestMapping(value = "/menu01_02update", method = RequestMethod.POST)
+	public String menu01_02updatePOST(Model model) {
+		logger.info("menu01_02update POST");
+		
+		return "redirect:/admin/menu01_02update";
 	}
 	
 	@RequestMapping(value = "/menu01_03", method = RequestMethod.GET)
