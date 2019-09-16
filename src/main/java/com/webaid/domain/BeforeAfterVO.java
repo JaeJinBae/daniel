@@ -9,8 +9,10 @@ public class BeforeAfterVO {
 	private String title;
 	private String content;
 	private String use_state;
-	private String img_before;
-	private String img_after;
+	private String img_before_origin;
+	private String img_before_stored;
+	private String img_after_origin;
+	private String img_after_stored;
 
 	public BeforeAfterVO() {
 		super();
@@ -80,27 +82,44 @@ public class BeforeAfterVO {
 		this.use_state = use_state;
 	}
 
-	public String getImg_before() {
-		return img_before;
+	public String getImg_before_origin() {
+		return img_before_origin;
 	}
 
-	public void setImg_before(String img_before) {
-		this.img_before = img_before;
+	public void setImg_before_origin(String img_before_origin) {
+		this.img_before_origin = img_before_origin;
 	}
 
-	public String getImg_after() {
-		return img_after;
+	public String getImg_before_stored() {
+		return img_before_stored;
 	}
 
-	public void setImg_after(String img_after) {
-		this.img_after = img_after;
+	public void setImg_before_stored(String img_before_stored) {
+		this.img_before_stored = img_before_stored;
+	}
+
+	public String getImg_after_origin() {
+		return img_after_origin;
+	}
+
+	public void setImg_after_origin(String img_after_origin) {
+		this.img_after_origin = img_after_origin;
+	}
+
+	public String getImg_after_stored() {
+		return img_after_stored;
+	}
+
+	public void setImg_after_stored(String img_after_stored) {
+		this.img_after_stored = img_after_stored;
 	}
 
 	@Override
 	public String toString() {
 		return "BeforeAfterVO [no=" + no + ", clinic_type=" + clinic_type + ", writer=" + writer + ", regdate="
 				+ regdate + ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state
-				+ ", img_before=" + img_before + ", img_after=" + img_after + "]";
+				+ ", img_before_origin=" + img_before_origin + ", img_before_stored=" + img_before_stored
+				+ ", img_after_origin=" + img_after_origin + ", img_after_stored=" + img_after_stored + "]";
 	}
 
 }

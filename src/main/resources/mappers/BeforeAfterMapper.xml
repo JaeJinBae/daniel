@@ -17,11 +17,11 @@
 	</select>
 	
 	<insert id="insert">
-		insert into before_after values(0, #{clinic_type}, #{writer}, #{regdate}, 0, #{title}, #{content}, #{use_state}, #{img_before}, #{img_after})
+		insert into before_after values(0, #{clinic_type}, #{writer}, #{regdate}, 0, #{title}, #{content}, #{use_state}, #{img_before_origin}, #{img_before_stored}, #{img_after_origin}, #{img_after_stored})
 	</insert>
 	
 	<update id="update">
-		update before_after set writer=#{writer}, regdate=#{regdate}, title=#{title}, content=#{content}, use_state=#{use_state}, img_before=#{img_before}, img_after=#{img_after} where no=#{no}
+		update before_after set writer=#{writer}, regdate=#{regdate}, title=#{title}, content=#{content}, use_state=#{use_state}, img_before_origin=#{img_before_origin}, img_before_stored=#{img_before_stored}, img_after_origin=#{img_after_origin}, img_after_stored=#{img_after_stored} where no=#{no}
 	</update>
 	
 	<update id="updateUseState">

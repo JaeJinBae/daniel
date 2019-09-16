@@ -2,8 +2,11 @@ package com.webaid.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -219,11 +222,52 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_02register", method = RequestMethod.POST)
-	public String menu01_02registerPost(MultipartHttpServletRequest mtfRequest, Model model) {
+	public String menu01_02registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
 		logger.info("menu01_02register POST");
-		System.out.println(mtfRequest.getParameter("title"));
-		//System.out.println(vo);
 		
+		List<String> imgNameList = new ArrayList<String>();
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/upload/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			storedFileName = System.currentTimeMillis()+"_"+fileName;
+			System.out.println("실제 파일이름: "+fileName);
+			imgNameList.add(fileName);
+			imgNameList.add(storedFileName);
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		
+		BeforeAfterVO vo = new BeforeAfterVO();
+		
+		vo.setNo(0);
+		vo.setClinic_type(mtfReq.getParameter("clinic_type"));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		vo.setImg_before_origin(imgNameList.get(0));
+		vo.setImg_before_stored(imgNameList.get(1));
+		vo.setImg_after_origin(imgNameList.get(2));
+		vo.setImg_after_stored(imgNameList.get(3));
+		
+		
+		baService.insert(vo);
 		return "redirect:/admin/menu01_02";
 	}
 	
