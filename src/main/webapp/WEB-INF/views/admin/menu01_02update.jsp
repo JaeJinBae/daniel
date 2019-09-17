@@ -102,6 +102,21 @@ $(function(){
 		$("#imgAfterChange").val("o");
 	});
 	
+	$("#delBtn").click(function(){
+		var no = $("input[name='no']").val();
+		
+		$.ajax({
+			url:"${pageContext.request.contextPath}/admin/menu01_02delete/"+no,
+			type:"get",
+			dataType:"text",
+			async:false,
+			success:function(json){
+				location.href="${pageContext.request.contextPath}/admin/menu01_02";
+			} 
+		});
+		
+	});
+	
 });
 </script>
 </head>

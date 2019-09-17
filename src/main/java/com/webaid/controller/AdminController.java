@@ -427,6 +427,15 @@ public class AdminController {
 		return entity;
 	}
 	
+	@RequestMapping(value="/menu01_02delete/{no}", method=RequestMethod.GET)
+	public String menu01_02delete(@PathVariable("no") int no){
+		logger.info("BeforeAfter delete");
+		
+		baService.delete(no);
+		
+		return "redirect:/admin/menu01_02";
+	}
+	
 	@RequestMapping(value = "/menu01_03", method = RequestMethod.GET)
 	public String menu01_03(Model model) {
 		logger.info("menu01_03 GET");
