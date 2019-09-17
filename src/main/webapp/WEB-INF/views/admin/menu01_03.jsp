@@ -162,7 +162,7 @@ $(function(){
 							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01register'">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_03register'">등록</button>
 						</p>
 					</div>
 					<!-- 페이징 시작 -->

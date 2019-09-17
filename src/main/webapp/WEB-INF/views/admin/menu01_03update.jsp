@@ -16,17 +16,96 @@
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <!-- ************************************************************************************************* -->
-<script src="${pageContext.request.contextPath}/resources/js/function.calendar.js"></script><!-- 달력  -->
+<!-- jQuery UI CSS파일 -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
+function deleteUploadImg(no, type){
+	var info = {no:no, type:type};
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/menu01_03uploadImgDelete",
+		type:"post",
+		data:JSON.stringify(info),
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		async:false,
+		success:function(json){
+			console.log(json);
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
 $(function(){
-	$(function(){
-		$.ajaxSetup({cache:false});
-	})
+	
+	var ndate = new Date();
+	var year = ndate.getFullYear();
+	var month = ndate.getMonth()+1;
+	var date = ndate.getDate();
+	
+	month = (month > 10) ? month+"":"0"+month;
+	date = (date > 10) ? date+"":"0"+date;
+	
+	$("#regdate").val(year+"-"+month+"-"+date);
+	
+	$("#regdate").datepicker({
+		changeMonth: true, 
+		changeYear: true,
+		dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+		monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dateFormat: "yy-mm-dd"
+    });
+	
+	//예외처리
+	$("#form1").submit(function(){
+		var writer = $(".write_table tr td > input[name='writer']").val();
+		var regdate = $(".write_table tr td > input[name='regdate']").val();
+		var cnt = $(".write_table tr td > input[name='cnt']").val();
+		var title = $(".write_table tr td > input[name='title']").val();
+		var content = $(".write_table tr td > textarea[name='content']").val();
+		var thumb = $(".write_table tr td > div > input[name='thumb']").val();		
+		
+		if($("input[name='writer']").val()==""){
+			alert("작성자를 입력해주세요.");
+			return false;
+		}
+		if($("input[name='title']").val()==""){
+			alert("제목을 입력해주세요.");
+			return false;
+		}
+		//return false;
+	});
+	
+	$("#thumb").click(function(){
+		var no = $("#form1 > input[name='no']").val();
+		deleteUploadImg(no, "before");
+		$(this).parent().html("<input type='file' name='thumb'>");
+		$("#thumbState").val("o");
+	});
+	
+	$("#delBtn").click(function(){
+		var no = $("input[name='no']").val();
+		
+		$.ajax({
+			url:"${pageContext.request.contextPath}/admin/menu01_03delete/"+no,
+			type:"get",
+			dataType:"text",
+			async:false,
+			success:function(json){
+				location.href="${pageContext.request.contextPath}/admin/menu01_03";
+			} 
+		});
+		
+	});
+	
 });
 </script>
 </head>
@@ -52,28 +131,15 @@ $(function(){
 				</ul>
 			</div>
 			
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin/cropper.css">
-			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.cropper.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js" type="text/javascript"></script>
 			
 			<div class="main_bottom_area">
-				<div class="write_area">
-					<div class="write_box">
-			
-						<form name="board" id="board" method="post" enctype="multipart/form-data" action="board_proc.php">
-							<input type="hidden" name="data_array" value="Y">
-							<input type="hidden" name="mode" value="modify">
-							<input type="hidden" name="seq" value="2064">
-							<input type="hidden" name="search" value="">
-							<input type="hidden" name="select_key" value="">
-							<input type="hidden" name="input_key" value="">
-							<input type="hidden" name="page" value="1">
-							<input type="hidden" name="pseq" value="">
-							<input type="hidden" name="Scod" value="BRD21">
-							<input type="hidden" name="radio_key" value="">
-							<input type="hidden" name="Sfle" value="1">
-			
-							<table class="write_table" cellpadding="0">
+				<form name="board" id="board" method="post" enctype="multipart/form-data" action="board_proc.php">
+					<input type="hidden" name="no" value="${item.no}">
+					<input type="hidden" name="use_state" value="${item.use_state}">
+					<div class="write_area">
+						<div class="write_box">
+							<table class="write_table">
 								<colgroup>
 									<col width="11%">
 									<col width="*">
@@ -82,251 +148,72 @@ $(function(){
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
-										<input type="text" class="w_form_s" name="m_name" value="theweb" valid="required" element-name="작성자">
+										<input type="text" class="w_form_s" name="writer" value="${item.writer}">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성일</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_regdate" value="2019-04-02" readonly="">
-										<button type="button" class="btn_black btn_small" onclick="jCal('b_regdate')">달력</button>
+										<input type="text" class="w_form_s" name="regdate" value="${item.regdate}">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">조회수</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_readcnt" value="71" valid="none,number" element-name="조회수">
+										<input type="text" class="w_form_s" name="cnt" value="${item.cnt}">
 									</td>
 								</tr>
-			
-			
 								<tr class="cont">
 									<td class="title">제목</td>
 									<td>
-										<input type="text" class="w_form_l" name="b_title" value="리얼스토리 드림패키지 고객인터뷰 허지영" onkeypress="fnChkRemark(this, '120')" onkeyup="fnChkRemark(this, '120')" valid="required" element-name="제목">
+										<input type="text" class="w_form_l" name="title" value="${item.title}">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">내용</td>
 									<td>
-										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;">&lt;div&gt;
-											&lt;div style="text-align: center;"&gt;다니엘성형외과 리얼스토리&lt;/div&gt;
-											
-											&lt;div style="text-align: center;"&gt;&nbsp;김지아 원장님과 10년동안 인연을 이어온 허지영님&lt;/div&gt;
-											
-											&lt;div style="text-align: center;"&gt;드림패키지로 동안피부를 유지하는 솔직담백한 인터뷰를 개합니다.&lt;/div&gt;
-											
-											&lt;div style="text-align: center;"&gt;&nbsp;&lt;/div&gt;
-											
-											&lt;div style="text-align: center;"&gt;#40대 워킹맘 피부관리&lt;/div&gt;
-											
-											&lt;div style="text-align: center;"&gt;&nbsp;&lt;/div&gt;
-											
-											&lt;div style="text-align: center;"&gt;&nbsp;&lt;/div&gt;
-											
-											&lt;div&gt;
-											&lt;div style="text-align: center;"&gt;&nbsp;&lt;iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/noDG-RMO2tc" style="margin: 0px auto; max-width: 640px;" width="640"&gt;&lt;/iframe&gt;&lt;/div&gt;
-											
-											&lt;div style="text-align: center;"&gt;&nbsp;&lt;/div&gt;
-											
-											&lt;div style="text-align: center;"&gt;&lt;a href="https://www.youtube.com/watch?v=noDG-RMO2tc&amp;feature=youtu.be" target="_blank"&gt;&lt;strong&gt;본편 보러가기&nbsp;클릭&nbsp;&lt;/strong&gt;&lt;/a&gt;&lt;/div&gt;
-											&lt;/div&gt;
-											&lt;/div&gt;
-										</textarea>
+										<textarea id="b_content" name="content">${item.content}</textarea>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">첨부파일</td>
 									<td id="attach">
-										<div id="file_1135">
-											<a href="javascript:;" onclick="board_it('download', '1135')">원내영상2.png</a>
-											<img src="/admin/assets/img/icon_image_edit.png" class="cursor vimg" onclick="board_it('image_modify', '1135')">
-											<img src="/admin/assets/img/icon_x.png" class="vimg cursor" onclick="board_it('attach_del', '1135')">
-										</div><br><strong></strong>
+										<input type="hidden" id="thumbState" name="thumbState" value="x">
+										<c:choose>
+											<c:when test="${item.thumb_origin == ''}">
+												<div><input type="file" name="thumb"></div>
+											</c:when>
+											<c:otherwise>
+												<div>
+													<a href="">${item.thumb_origin}</a>
+													<img id="img_b" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+													<input type="hidden" name="thumb" value="${item.thumb_origin}">
+												</div>
+											</c:otherwise>
+										</c:choose>
 									</td>
 								</tr>
-								<tr class="cont" id="tr_crop_image" style="display:none">
-									<td colspan="2">
-										<div class="edit-set">
-											<p class="btn-set">
-												<button type="button" class="btn_gray btn_small" onclick="vboard_it('reset')">초기화</button>
-												<!-- <button type="button" class="btn_gray btn_small" onClick="vboard_it('rotate', 'plus')">회전+</button>
-												<button type="button" class="btn_gray btn_small" onClick="vboard_it('rotate', 'minus')">회전-</button> -->
-												<button type="button" class="btn_black btn_small" onclick="vboard_it('submit')">적용</button>
-												<button type="button" class="btn_gray btn_small" onclick="vboard_it('close')">닫기</button>
-											</p>
-											<p class="resizing">
-												가로크기 : <span id="n_width">0</span> * 세로크기 : <span id="n_height">0</span>
-											</p>
-										</div>
-										<div id="crop_image"></div>
-									</td>
-								</tr>
-			
 							</table>
-						</form>
+						</div><!-- write_box end -->
+				
+						<div class="btn_area">
+							<p class="btn_left">
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_03'">리스트</button>
+							</p>
+							<p class="btn_right">
+								<input type="submit" class="btn_black" value="수정">&nbsp;
+								<button type="button" class="btn_red" id="delBtn">삭제</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_03'">취소</button>
+							</p>
+						</div>
 					</div>
-			
-					<br><div id="comment"><!-- 댓글 --></div><br>
-			
-					<div class="btn_area">
-						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="board_it('list', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;page=1&amp;radio_key=')">리스트</button>
-						</p>
-			
-						<p class="btn_right">
-			
-							<button type="button" class="btn_gray" onclick="board_it('reply', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;page=1&amp;radio_key=&amp;mode=reply&amp;pseq=2064')">답변</button>&nbsp;<button type="button" class="btn_black" onclick="board_it('submit')">수정</button>&nbsp;<button type="button" class="btn_red" onclick="board_it('each_delete', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;page=1&amp;radio_key=&amp;seq=2064')">삭제</button>
-							<button type="button" class="btn_gray" onclick="board_it('reset', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;page=1&amp;radio_key=')">취소</button>
-						</p>
-					</div>
-			
-				</div>
-			</div>
-			<!-- main_bottom_area end -->
-			
-			<form id="board_crop" name="board_crop" method="post">
-				<input type="hidden" id="seq" name="seq">
-				<input type="hidden" id="dataX" name="dataX">
-				<input type="hidden" id="dataY" name="dataY">
-				<input type="hidden" id="dataWidth" name="dataWidth">
-				<input type="hidden" id="dataHeight" name="dataHeight">
-				<input type="hidden" id="dataRotate" name="dataRotate">
-				<input type="hidden" id="dataScaleX" name="dataScaleX">
-				<input type="hidden" id="dataScaleY" name="dataScaleY">
-				<input type="hidden" name="mode" value="crop_image">
-			</form>
+				</form>
+			</div><!-- main_bottom_area end -->
 			
 			<script type="text/javascript">
 				$(function(){
-					CKEDITOR.replace('b_content', {width:'100%', height:'300px'});
-			
-					var $Scmt = "N",
-						$mode = "insert",
-						$reload = "";
-			
-					if( ($Scmt == "Y") && ($mode == "modify") )	vboard_it('comment', 'Scod=BRD21&b_seq=');
-					if($reload)		board_it('image_modify', $reload);
+					CKEDITOR.replace('content', {width:'100%', height:'300px'});
 				});
-			
-				var $index = $(".attach").size();
-			
-				function vboard_it($mode, $param){
-					if($mode == "comment"){
-						$param = ($param == undefined) ? "" : $param;
-			
-						$("#comment").load("board_comment.html?"+$param);
-			
-					}else if($mode == "crop"){
-						$("#crop_image > img").cropper({
-							crop: function(e) {
-								$("#dataX").val(Math.round(e.x));
-								$("#dataY").val(Math.round(e.y));
-								$("#dataHeight").val(Math.round(e.height));
-								$("#dataWidth").val(Math.round(e.width));
-								$("#dataRotate").val(e.rotate);
-								$("#dataScaleX").val(e.scaleX);
-								$("#dataScaleY").val(e.scaleY);
-								$("#n_width").html(Math.round(e.width));
-								$("#n_height").html(Math.round(e.height));
-							},
-			
-							autoCropArea : 1.0
-						});
-			
-						vboard_it('crop_init');
-						vboard_it('scroll_down');
-			
-					}else if($mode == "crop_init"){
-						$("#crop_image > img").cropper("setData", {'width' : 353,'height' : 183});
-			
-					}else if($mode == "scroll_down"){
-						var $h = $(window).height();
-			
-						$('html, body').animate({scrollTop : $h}, 'slow');
-			
-					}else if($mode == "reset"){
-						$("#crop_image > img").cropper("reset");
-			
-						vboard_it('crop_init');
-			
-					}else if($mode == "rotate"){
-						if($param == "plus")	$("#crop_image > img").cropper("rotate", 45);
-						else					$("#crop_image > img").cropper("rotate", -45);
-			
-					}else if($mode == "submit"){
-						$.post("board_proc.php", $("#board_crop").serialize(), function(data){
-							if(data == 0){
-								alert("오류가 발생하였습니다");
-								return;
-							}else{
-								var answer = confirm("정상적으로 변경되었습니다\n\n이미지를 다시 불러오시겠습니까?");
-			
-								if(answer){
-									$param = (window.location.pathname) + (window.location.search) + "&reload=" + document.board_crop.seq.value;
-			
-									location.href = $param;
-								}
-							}
-						});
-			
-					}else if($mode == "close"){
-						document.board_crop.reset();
-						$("#tr_crop_image").hide();
-			
-					}else if($mode == "attach_add"){
-						var $total = "1",
-							$count = $(".attach").size(),
-							$content = $plus_icon = $minus_icon = "";
-			
-						$index++;
-			
-						if($count >= $total){
-							alert("더이상 추가할 수 없습니다");
-							$(".attach").css("4px solid red");
-							return;
-						}else{
-							$plus_icon = "&nbsp;&nbsp;&nbsp;<img src='/admin/assets/img/icon_plus.png' class='vimg cursor' onClick=\"vboard_it('attach_add')\">";
-							$minus_icon = "&nbsp;&nbsp;<img src='/admin/assets/img/icon_minus.png' class='vimg cursor' onClick=\"board_it('attach_remove', '"+ $index +"')\">";
-			
-							$content = "<div class='marginT10 attach' id='attach_"+ $index +"'><input type='file' name='upload[]' style='width:450px' />";
-							$content+= $plus_icon + $minus_icon + "<br></div>";
-			
-							$("#attach").append($content);
-						}
-			
-					}else if($mode == "attach_del"){
-						var $this_id = "file_" + $param;
-							$number = $content = $plus_icon = $minus_icon = $class = "";
-			
-						answer = confirm("삭제하시겠습니까?");
-			
-						$.post("board_proc.php", {mode : $mode, seq : $param}, function(data){
-							if(data == 0){
-								alert("오류가 발생하였습니다");
-								return;
-							}else{
-								$("#attach > div").each(function(i){
-									if( $this_id == $(this).attr("id") )	$number = i;
-								});
-			
-								$index++;
-			
-								$plus_icon = "&nbsp;&nbsp;&nbsp;<img src='/admin/assets/img/icon_plus.png' class='vimg cursor' onClick=\"vboard_it('attach_add')\">";
-								$minus_icon = "&nbsp;&nbsp;<img src='/admin/assets/img/icon_minus.png' class='vimg cursor' onClick=\"board_it('attach_remove', '"+ $index +"')\">";
-			
-								$class = ($number == 0) ? "" : "marginT10";
-								$minus_icon = ($number == 0) ? "" : $minus_icon;
-			
-								$content = "<div class='"+ $class +" attach' id='attach_"+ $index +"'><input type='file' name='upload[]' style='width:450px' />";
-								$content+= $plus_icon + $minus_icon + "<br></div>";
-			
-								$("#" + $this_id).remove();
-								$("#attach").append($content);
-							}
-						});
-					}
-				}
 			</script>
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->
@@ -336,58 +223,6 @@ $(function(){
     </div>
 </div><!-- wrap 끝 -->
 
-<script type="text/javascript">
-	$(function(){
-		var $current_page = (window.location.pathname),
-			$current_form_page = $current_page.replace("_list", "_form"),
-			$Scod = "BRD01",
-			$Stpe = "SD01",
-			$admin = "danielclinic",
-			$pattern = /Scod=BRD01/;
-
-		$(".left_menu > dl > dd > a").each(function(){
-
-			var $list = $(this).attr("href"),
-				$form = $list.replace("_list", "_form");
-
-			if( ($current_page == $list) || ($current_page == $form) ){
-				$(this).addClass("on").parents("dl").each(function(){
-					$(this).children("dd").show();
-				}).children("dt").children("a").addClass("on");
-
-				var $menutext = $(this).parents("dl").children("dt").children("a").text();
-				var $subtext = $(this).text();
-
-				$(".naviText_area>h1").html( $(this).text());
-				if($admin=="theweb" && $Stpe!=""){
-					$(".naviText_area>h1").append( "("+$Stpe+")" );
-				}
-				$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-				$(".navi_area li:eq(2)").html( $(this).text() );
-			}else if( $current_page == "/admin/login/mypage.html" ){
-				$(".naviText_area>h1").html("정보수정");
-				$(".navi_area li:eq(1)").html("정보수정");
-			}else{
-				if( $Scod && ($pattern.test($list)) ){
-					$(this).addClass("on").parents("dl").each(function(){
-						$(this).children("dd").show();
-					}).children("dt").children("a").addClass("on");
-
-					var $menutext = $(this).parents("dl").children("dt").children("a").text();
-					var $subtext = $(this).text();
-
-					$(".naviText_area>h1").html( $(this).text());
-					if($admin=="theweb" && $Stpe!=""){
-						$(".naviText_area>h1").append( "("+$Stpe+")" );
-					}
-					$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-					$(".navi_area li:eq(2)").html( $(this).text() );
-				}
-			}
-			return;
-		});
-	});
-</script>
 
 </body>
 </html>

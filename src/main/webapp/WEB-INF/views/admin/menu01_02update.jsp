@@ -203,7 +203,7 @@ $(function(){
 								<tr class="cont">
 									<td class="title">첨부파일</td>
 									<td id="attach">
-										<input type="hidden" id="imgBeforeChange" name="imgBeforeChange"value="x">
+										<input type="hidden" id="imgBeforeChange" name="imgBeforeChange" value="x">
 										<input type="hidden" id="imgAfterChange" name="imgAfterChange"value="x">
 										<!-- 시술 전 사진 -->
 										<c:choose>

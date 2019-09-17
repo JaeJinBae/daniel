@@ -478,7 +478,7 @@ public class AdminController {
 		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
 		vo.setTitle(mtfReq.getParameter("title"));
 		vo.setContent(mtfReq.getParameter("content"));
-		vo.setUse_state(mtfReq.getParameter("use_state"));
+		vo.setUse_state("o");
 		
 		//이미지 업로드
 		String innerUploadPath = "resources/uploadRealStory/";
@@ -514,10 +514,87 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_03update", method = RequestMethod.GET)
-	public String menu01_03update(Model model) {
+	public String menu01_03update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
 		logger.info("menu01_03update GET");
 		
+		RealStoryVO vo = rsService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rsService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "admin/menu01_03update";
+	}
+	
+	@RequestMapping(value = "/menu01_03update", method = RequestMethod.POST)
+	public String menu01_03updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu01_03update POST");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadRealStory/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			try {
+				//mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		
+		String thumbState = mtfReq.getParameter("thumbState");
+		
+		
+		RealStoryVO vo = new RealStoryVO();
+		RealStoryVO prevVO = rsService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		if(thumbState.equals("o")){
+			vo.setThumb_origin(fileName);
+			vo.setThumb_stored(storedFileName);
+		}else{
+			vo.setThumb_origin(prevVO.getThumb_origin());
+			vo.setThumb_stored(prevVO.getThumb_stored());
+		}
+		
+		rsService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(rsService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu01_03update";
 	}
 	
 	@RequestMapping(value = "/menu01_04", method = RequestMethod.GET)
