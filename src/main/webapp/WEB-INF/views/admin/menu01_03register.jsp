@@ -24,9 +24,51 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
-	$(function(){
-		$.ajaxSetup({cache:false});
-	})
+	var ndate = new Date();
+	var year = ndate.getFullYear();
+	var month = ndate.getMonth()+1;
+	var date = ndate.getDate();
+	
+	month = (month > 10) ? month+"":"0"+month;
+	date = (date > 10) ? date+"":"0"+date;
+	
+	$("#regdate").val(year+"-"+month+"-"+date);
+	
+	$("#regdate").datepicker({
+		changeMonth: true, 
+		changeYear: true,
+		dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+		monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dateFormat: "yy-mm-dd"
+    });
+	
+	//예외처리
+	$("#form1").submit(function(){
+		var clinic_type = $(".search_sel").val();
+		var writer = $(".write_table tr td > input[name='writer']").val();
+		var regdate = $(".write_table tr td > input[name='regdate']").val();
+		var cnt = $(".write_table tr td > input[name='cnt']").val();
+		var title = $(".write_table tr td > input[name='title']").val();
+		var content = $(".write_table tr td > textarea[name='content']").val();
+		var b_img = $(".write_table tr td > div > input[name='img_before']").val();
+		var a_img = $(".write_table tr td > div > input[name='img_after']").val();
+		
+		
+		console.log(clinic_type+"\n"+writer+"\n"+regdate+"\n"+cnt+"\n"+title+"\n"+content+"\n"+b_img+"\n"+a_img);
+		
+		
+		if($("input[name='writer']").val()==""){
+			alert("작성자를 입력해주세요.");
+			return false;
+		}
+		if($("input[name='title']").val()==""){
+			alert("제목을 입력해주세요.");
+			return false;
+		}
+		//return false;
+	});
 });
 </script>
 </head>
@@ -52,249 +94,72 @@ $(function(){
 				</ul>
 			</div>
 			
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin/cropper.css">
-			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.cropper.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js" type="text/javascript"></script>
 			
 			<div class="main_bottom_area">
-				<div class="write_area">
-					<div class="write_box">
-			
-						<form name="board" id="board" method="post" enctype="multipart/form-data" action="board_proc.php">
-							<input type="hidden" name="data_array" value="Y">
-							<input type="hidden" name="mode" value="insert">
-							<input type="hidden" name="seq" value="">
-							<input type="hidden" name="search" value="">
-							<input type="hidden" name="select_key" value="">
-							<input type="hidden" name="input_key" value="">
-							<input type="hidden" name="page" value="1">
-							<input type="hidden" name="pseq" value="">
-							<input type="hidden" name="Scod" value="BRD21">
-							<input type="hidden" name="radio_key" value="">
-							<input type="hidden" name="Sfle" value="1">
-			
+				<form name="board" id="board" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu01_03register">
+					<div class="write_area">
+						<div class="write_box">
 							<table class="write_table" cellpadding="0">
 								<colgroup>
 									<col width="11%">
 									<col width="*">
 								</colgroup>
 			
-								
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
-										<input type="text" class="w_form_s" name="m_name" value="다니엘성형외과" valid="required" element-name="작성자">
+										<input type="text" class="w_form_s" name="writer" value="다니엘성형외과">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성일</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_regdate" value="" readonly="">
-										<button type="button" class="btn_black btn_small" onclick="jCal('b_regdate')">달력</button>
+										<input type="text" id="regdate" class="w_form_s" name="regdate" value="" autocomplete="off">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">조회수</td>
 									<td>
-										<input type="text" class="w_form_s" name="b_readcnt" value="" valid="none,number" element-name="조회수">
+										<input type="text" class="w_form_s" name="cnt" value="0">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">제목</td>
 									<td>
-										<input type="text" class="w_form_l" name="b_title" value="" onkeypress="fnChkRemark(this, '120')" onkeyup="fnChkRemark(this, '120')" valid="required" element-name="제목">
+										<input type="text" class="w_form_l" name="title" value="">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">내용</td>
 									<td>
-										<textarea id="b_content" name="b_content" valid="editor-b_content" element-name="내용" style="visibility: hidden; display: none;"></textarea>
+										<textarea id="b_content" name="content"></textarea>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">첨부파일</td>
-									<td id="attach"><div><input type="file" name="upload[0]"></div><br><strong></strong></td>
-								</tr>
-								<tr class="cont" id="tr_crop_image" style="display:none">
-									<td colspan="2">
-										<div class="edit-set">
-											<p class="btn-set">
-												<button type="button" class="btn_gray btn_small" onclick="vboard_it('reset')">초기화</button>
-												<!-- <button type="button" class="btn_gray btn_small" onClick="vboard_it('rotate', 'plus')">회전+</button>
-												<button type="button" class="btn_gray btn_small" onClick="vboard_it('rotate', 'minus')">회전-</button> -->
-												<button type="button" class="btn_black btn_small" onclick="vboard_it('submit')">적용</button>
-												<button type="button" class="btn_gray btn_small" onclick="vboard_it('close')">닫기</button>
-											</p>
-											<p class="resizing">
-												가로크기 : <span id="n_width">0</span> * 세로크기 : <span id="n_height">0</span>
-											</p>
-										</div>
-										<div id="crop_image"></div>
-									</td>
+									<td id="attach"><div><input type="file" name="thumb"></div><br><strong></strong></td>
 								</tr>
 							</table>
-						</form>
-					</div>
-			
-					<br><div id="comment"><!-- 댓글 --></div><br>
-			
-					<div class="btn_area">
-						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="">리스트</button>
-						</p>
-			
-						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="">등록</button>
-							<button type="button" class="btn_gray" onclick="">취소</button>
-						</p>
-					</div>
-			
-				</div>
-			</div>
-			<!-- main_bottom_area -->
-			
-			<form id="board_crop" name="board_crop" method="post">
-				<input type="hidden" id="seq" name="seq">
-				<input type="hidden" id="dataX" name="dataX">
-				<input type="hidden" id="dataY" name="dataY">
-				<input type="hidden" id="dataWidth" name="dataWidth">
-				<input type="hidden" id="dataHeight" name="dataHeight">
-				<input type="hidden" id="dataRotate" name="dataRotate">
-				<input type="hidden" id="dataScaleX" name="dataScaleX">
-				<input type="hidden" id="dataScaleY" name="dataScaleY">
-				<input type="hidden" name="mode" value="crop_image">
-			</form>
+						</div>
+						
+						<div class="btn_area">
+							<p class="btn_left">
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_03'">리스트</button>
+							</p>
+							<p class="btn_right">
+								<input type="submit" class="btn_black" value="등록">&nbsp;
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_03register'">취소</button>
+							</p>
+						</div>
+					</div><!-- write_area end -->
+				</form>
+			</div><!-- main_bottom_area end -->
 			
 			<script type="text/javascript">
 				$(function(){
-					CKEDITOR.replace('b_content', {width:'100%', height:'300px'});
-			
-					var $Scmt = "N",
-						$mode = "insert",
-						$reload = "";
-			
-					if( ($Scmt == "Y") && ($mode == "modify") )	vboard_it('comment', 'Scod=BRD21&b_seq=');
-					if($reload)		board_it('image_modify', $reload);
+					CKEDITOR.replace('b_content', {width:'100%', height:'500px'});
 				});
-			
-				var $index = $(".attach").size();
-			
-				function vboard_it($mode, $param){
-					if($mode == "comment"){
-						$param = ($param == undefined) ? "" : $param;
-			
-						$("#comment").load("board_comment.html?"+$param);
-			
-					}else if($mode == "crop"){
-						$("#crop_image > img").cropper({
-							crop: function(e) {
-								$("#dataX").val(Math.round(e.x));
-								$("#dataY").val(Math.round(e.y));
-								$("#dataHeight").val(Math.round(e.height));
-								$("#dataWidth").val(Math.round(e.width));
-								$("#dataRotate").val(e.rotate);
-								$("#dataScaleX").val(e.scaleX);
-								$("#dataScaleY").val(e.scaleY);
-								$("#n_width").html(Math.round(e.width));
-								$("#n_height").html(Math.round(e.height));
-							},
-			
-							autoCropArea : 1.0
-						});
-			
-						vboard_it('crop_init');
-						vboard_it('scroll_down');
-			
-					}else if($mode == "crop_init"){
-						$("#crop_image > img").cropper("setData", {'width' : 353,'height' : 183});
-			
-					}else if($mode == "scroll_down"){
-						var $h = $(window).height();
-			
-						$('html, body').animate({scrollTop : $h}, 'slow');
-			
-					}else if($mode == "reset"){
-						$("#crop_image > img").cropper("reset");
-			
-						vboard_it('crop_init');
-			
-					}else if($mode == "rotate"){
-						if($param == "plus")	$("#crop_image > img").cropper("rotate", 45);
-						else					$("#crop_image > img").cropper("rotate", -45);
-			
-					}else if($mode == "submit"){
-						$.post("board_proc.php", $("#board_crop").serialize(), function(data){
-							if(data == 0){
-								alert("오류가 발생하였습니다");
-								return;
-							}else{
-								var answer = confirm("정상적으로 변경되었습니다\n\n이미지를 다시 불러오시겠습니까?");
-			
-								if(answer){
-									$param = (window.location.pathname) + (window.location.search) + "&reload=" + document.board_crop.seq.value;
-			
-									location.href = $param;
-								}
-							}
-						});
-			
-					}else if($mode == "close"){
-						document.board_crop.reset();
-						$("#tr_crop_image").hide();
-			
-					}else if($mode == "attach_add"){
-						var $total = "1",
-							$count = $(".attach").size(),
-							$content = $plus_icon = $minus_icon = "";
-			
-						$index++;
-			
-						if($count >= $total){
-							alert("더이상 추가할 수 없습니다");
-							$(".attach").css("4px solid red");
-							return;
-						}else{
-							$plus_icon = "&nbsp;&nbsp;&nbsp;<img src='/admin/assets/img/icon_plus.png' class='vimg cursor' onClick=\"vboard_it('attach_add')\">";
-							$minus_icon = "&nbsp;&nbsp;<img src='/admin/assets/img/icon_minus.png' class='vimg cursor' onClick=\"board_it('attach_remove', '"+ $index +"')\">";
-			
-							$content = "<div class='marginT10 attach' id='attach_"+ $index +"'><input type='file' name='upload[]' style='width:450px' />";
-							$content+= $plus_icon + $minus_icon + "<br></div>";
-			
-							$("#attach").append($content);
-						}
-			
-					}else if($mode == "attach_del"){
-						var $this_id = "file_" + $param;
-							$number = $content = $plus_icon = $minus_icon = $class = "";
-			
-						answer = confirm("삭제하시겠습니까?");
-			
-						$.post("board_proc.php", {mode : $mode, seq : $param}, function(data){
-							if(data == 0){
-								alert("오류가 발생하였습니다");
-								return;
-							}else{
-								$("#attach > div").each(function(i){
-									if( $this_id == $(this).attr("id") )	$number = i;
-								});
-			
-								$index++;
-			
-								$plus_icon = "&nbsp;&nbsp;&nbsp;<img src='/admin/assets/img/icon_plus.png' class='vimg cursor' onClick=\"vboard_it('attach_add')\">";
-								$minus_icon = "&nbsp;&nbsp;<img src='/admin/assets/img/icon_minus.png' class='vimg cursor' onClick=\"board_it('attach_remove', '"+ $index +"')\">";
-			
-								$class = ($number == 0) ? "" : "marginT10";
-								$minus_icon = ($number == 0) ? "" : $minus_icon;
-			
-								$content = "<div class='"+ $class +" attach' id='attach_"+ $index +"'><input type='file' name='upload[]' style='width:450px' />";
-								$content+= $plus_icon + $minus_icon + "<br></div>";
-			
-								$("#" + $this_id).remove();
-								$("#attach").append($content);
-							}
-						});
-					}
-				}
 			</script>
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->

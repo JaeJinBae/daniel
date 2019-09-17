@@ -77,7 +77,7 @@ $(function(){
 							</form>
 						</div><!-- board_top 끝 -->
 			
-						<form name="board" id="board" method="post" action="board_proc.php">
+						<form name="board" id="board">
 							<input type="hidden" name="mode" value="delete">
 							<input type="hidden" name="page" value="1">
 							<input type="hidden" name="search" value="">
@@ -143,7 +143,7 @@ $(function(){
 								</c:if>
 								<c:choose>
 									<c:when test="${fn:length(list) ==0 }">
-										<tr><td colspan="8">등록된 게시물이 없습니다.</td></tr>
+										<tr><td colspan="9">등록된 게시물이 없습니다.</td></tr>
 									</c:when>
 									<c:otherwise>
 										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
@@ -205,7 +205,7 @@ $(function(){
 						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
 					</div>	<!-- 페이징 끝 -->
 				</div>
-			</div>
+			</div><!-- main_bottom_area 끝 -->
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->

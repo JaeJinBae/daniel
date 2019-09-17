@@ -71,9 +71,9 @@ $(function(){
 									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
 								</div>
 							</form>
-						</div>
+						</div><!-- board_top 끝 -->
 			
-						<form name="board" id="board" method="post" action="board_proc.php">
+						<form name="board" id="board">
 							<input type="hidden" name="mode" value="delete">
 							<input type="hidden" name="page" value="1">
 							<input type="hidden" name="search" value="">
@@ -106,7 +106,7 @@ $(function(){
 									<th>조회</th>
 								</tr>
 			
-								<tr class="cont">
+								<%-- <tr class="cont">
 									<td><input type="checkbox" name="seq_list[]" value="2064"></td>
 									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2064" onclick="vboard_it('delflag', '2064')"></td>
                                     <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2064" onclick="vboard_it('is_main', '2064')"></td>
@@ -122,147 +122,71 @@ $(function(){
 									<td>2019-04-02</td>
 									<td><i class="ico file">첨부파일</i></td>
 									<td>71</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2056"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2056" onclick="vboard_it('delflag', '2056')"></td>
-                                    <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2056" onclick="vboard_it('is_main', '2056')"></td>
-									<td>9</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2056&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 피부과 의사의 시간은 거꾸로 간다?
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2019-03-14</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>88</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2023"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2023" onclick="vboard_it('delflag', '2023')"></td>
-                                    <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2023" onclick="vboard_it('is_main', '2023')"></td>
-									<td>8</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2023&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 다니엘 리얼스토리 - 쌍꺼풀 재수술
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2019-03-11</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>130</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="1978"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_1978" onclick="vboard_it('delflag', '1978')"></td>
-                                    <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_1978" onclick="vboard_it('is_main', '1978')"></td>
-									<td>7</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=1978&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 다크서클 지방재배치
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2018-09-19</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>131</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="1977"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_1977" onclick="vboard_it('delflag', '1977')"></td>
-                                    <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_1977" onclick="vboard_it('is_main', '1977')"></td>
-									<td>6</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=1977&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 쌍꺼풀 풀림 재수술
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2018-09-19</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>150</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="1976"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_1976" onclick="vboard_it('delflag', '1976')"></td>
-                                    <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_1976" onclick="vboard_it('is_main', '1976')"></td>
-									<td>5</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=1976&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 Real Story - 소세지쌍꺼풀 재수술
-											</p>
-										</a>
-									</td>
-									<td>다니엘성형외과</td>
-									<td>2018-09-18</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>158</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="1940"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_1940" onclick="vboard_it('delflag', '1940')"></td>
-                                    <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_1940" onclick="vboard_it('is_main', '1940')"></td>
-									<td>4</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=1940&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 다니엘 REAL STORY - 여드름
-											</p>
-										</a>
-									</td>
-									<td>최고관리자</td>
-									<td>2018-04-10</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>336</td>
-								</tr>
+								</tr> --%>
+								<c:choose>
+									<c:when test="${fn:length(list) ==0 }">
+										<tr><td colspan="9">등록된 게시물이 없습니다.</td></tr>
+									</c:when>
+									<c:otherwise>
+										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+									        <c:forEach var="item" items="${list}">
+												<tr class="cont">
+													<td><input type="checkbox" name="" value="${item.no}"></td>
+													<c:choose>
+														<c:when test="${item.use_state == 'o'}">
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
+														</c:when>
+														<c:otherwise>
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+														</c:otherwise>
+													</c:choose>
+													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+													<td><i class="ico notice">${num}</i></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu01_03update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
+													<td>${item.writer}</td>
+													<td>${item.regdate}</td>
+													<td></td>
+													<td>${item.cnt}</td>
+												</tr>
+												<c:set var="num" value="${num-1}"></c:set>	
+											</c:forEach>
+									</c:otherwise>
+								</c:choose>
 							</table>
 						</form>
 					</div>
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="board_it('delete')">선택삭제</button>
-							<button type="button" class="btn_gray" onclick="board_it('tap_change', 'BRD21')">게시물이동</button>
+							<button type="button" class="btn_gray">선택삭제</button>
+							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01register'">등록</button>
 						</p>
 					</div>
+					<!-- 페이징 시작 -->
 					<div class="board_paging no_print">
-						<a href="javascript:;" class="direction">&lt;&lt;</a>
-						<a href="javascript:;" class="direction">&lt;</a>
-						<a href="javascript:;" class="on">1</a>
-						<a href="">2</a>
-						<a href="">3</a>
-						<a href="">4</a>
-						<a href="">5</a>
-						<a href="">6</a>
-						<a href="">7</a>
-						<a href="">8</a>
-						<a href="">9</a>
-						<a href="">10</a>
-						<a href="" class="direction">&gt;</a>
-						<a href="" class="direction">&gt;&gt;</a>
-					</div>
+						<a href="${pageMaker.makeSearch(1)}" class="direction">&lt;&lt;</a>
+						<c:if test="${!pageMaker.prev}"><!-- 이전페이지가 존재하지 않는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&lt;</a>
+						</c:if>
+						<c:if test="${pageMaker.prev}"><!-- 이전페이지가 존재하는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}" class="direction">&lt;</a>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+						</c:forEach>
+						<c:if test="${pageMaker.next}"><!-- 뒤에페이지가 존재하는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}" class="direction">&gt;</a>
+						</c:if>
+						<c:if test="${!pageMaker.next}"><!-- 뒤에 페이지가 존재하지 않는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&gt;</a>
+						</c:if>
+						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
+					</div>	<!-- 페이징 끝 -->
 				</div>
-			</div>
-			<!-- main_bottom_area end -->
+			</div><!-- main_bottom_area end -->
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->

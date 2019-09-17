@@ -310,7 +310,7 @@ public class AdminController {
 		List<String> imgNameList = new ArrayList<String>();
 		
 		//이미지 업로드
-		String innerUploadPath = "resources/img/beforeAfter/";
+		String innerUploadPath = "resources/uploadBeforeAfter/";
 		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
 		String fileName = "";
 		String storedFileName = "";
@@ -464,6 +464,53 @@ public class AdminController {
 		logger.info("menu01_03register GET");
 		
 		return "admin/menu01_03register";
+	}
+	
+	@RequestMapping(value = "/menu01_03register", method = RequestMethod.POST)
+	public String menu01_03registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu01_03register POST");
+		
+		RealStoryVO vo = new RealStoryVO();
+		
+		vo.setNo(0);
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadRealStory/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			vo.setThumb_origin(fileName);
+			vo.setThumb_stored(storedFileName);
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		
+		rsService.insert(vo);
+		return "redirect:/admin/menu01_03";
 	}
 	
 	@RequestMapping(value = "/menu01_03update", method = RequestMethod.GET)
