@@ -34,9 +34,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NoticeService;
+import com.webaid.service.RealStoryService;
 import com.webaid.util.FileDelete;
 
 /**
@@ -53,6 +55,9 @@ public class AdminController {
 	
 	@Autowired
 	private BeforeAfterService baService;
+	
+	@Autowired
+	private RealStoryService rsService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -437,8 +442,19 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_03", method = RequestMethod.GET)
-	public String menu01_03(Model model) {
+	public String menu01_03(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu01_03 GET");
+		
+		List<RealStoryVO> list = rsService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rsService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(rsService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "admin/menu01_03";
 	}

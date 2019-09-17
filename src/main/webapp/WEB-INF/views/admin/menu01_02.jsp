@@ -118,7 +118,7 @@ $(function(){
 												<td><a href="${pageContext.request.contextPath}/admin/menu01_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"><b>${item.clinic_type}</b> ${item.title}</p></a></td>
 												<td>${item.writer}</td>
 												<td>${item.regdate}</td>
-												<td></td> 
+												<td>첨부파일</td> 
 												<td>${item.cnt}</td>
 											</tr>
 											<c:set var="num" value="${num-1}"></c:set>	
