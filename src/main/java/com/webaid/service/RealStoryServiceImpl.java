@@ -14,7 +14,7 @@ public class RealStoryServiceImpl implements RealStoryService {
 
 	@Autowired
 	private RealStoryDao dao;
-	
+
 	@Override
 	public List<RealStoryVO> selectAll() {
 		return dao.selectAll();
@@ -43,6 +43,11 @@ public class RealStoryServiceImpl implements RealStoryService {
 	@Override
 	public void update(RealStoryVO vo) {
 		dao.update(vo);
+	}
+
+	@Override
+	public void updateThumb(RealStoryVO vo) {
+		dao.updateThumb(vo);
 	}
 
 	@Override

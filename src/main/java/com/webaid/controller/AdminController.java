@@ -597,6 +597,48 @@ public class AdminController {
 		return "redirect:/admin/menu01_03update";
 	}
 	
+	@RequestMapping(value = "/menu01_03uploadImgDelete", method = RequestMethod.POST)
+	public ResponseEntity<String> menu01_03uploadImgDelete(HttpServletRequest req, @RequestBody Map<String, String> info) {
+		logger.info("menu01_03update POST");
+		ResponseEntity<String> entity = null;
+		
+		int no = Integer.parseInt(info.get("no"));
+		
+		String innerUploadPath = "resources/uploadRealStory/";
+		String path = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		System.out.println(path);
+		RealStoryVO prevVO = rsService.selectOne(no);
+		FileDelete fd = new FileDelete();
+		
+		RealStoryVO vo = new RealStoryVO();
+		vo.setNo(no);
+		
+		try {
+			
+			fd.fileDelete(path, prevVO.getThumb_stored());
+			
+			vo.setThumb_origin("");
+			vo.setThumb_stored("");
+			rsService.updateThumb(vo);
+			
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			e.printStackTrace();
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/menu01_03delete/{no}", method=RequestMethod.GET)
+	public String menu01_03delete(@PathVariable("no") int no){
+		logger.info("realStory delete");
+		
+		rsService.delete(no);
+		
+		return "redirect:/admin/menu01_03";
+	}
+	
 	@RequestMapping(value = "/menu01_04", method = RequestMethod.GET)
 	public String menu01_04(Model model) {
 		logger.info("menu01_04 GET");

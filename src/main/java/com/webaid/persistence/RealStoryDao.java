@@ -12,6 +12,7 @@ public interface RealStoryDao {
 	public RealStoryVO selectAfter(int no);
 	public void insert(RealStoryVO vo);
 	public void update(RealStoryVO vo);
+	public void updateThumb(RealStoryVO vo);
 	public void updateCnt(int no);
 	public void updateUseState(RealStoryVO vo);
 	public void delete(int no);

@@ -134,7 +134,7 @@ $(function(){
 			<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js" type="text/javascript"></script>
 			
 			<div class="main_bottom_area">
-				<form name="board" id="board" method="post" enctype="multipart/form-data" action="board_proc.php">
+				<form name="board" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu01_03update${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="${item.no}">
 					<input type="hidden" name="use_state" value="${item.use_state}">
 					<div class="write_area">
@@ -186,7 +186,7 @@ $(function(){
 											<c:otherwise>
 												<div>
 													<a href="">${item.thumb_origin}</a>
-													<img id="img_b" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+													<img id="thumb" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 													<input type="hidden" name="thumb" value="${item.thumb_origin}">
 												</div>
 											</c:otherwise>

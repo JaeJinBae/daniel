@@ -25,7 +25,11 @@
 	</insert>
 	
 	<update id="update">
-		update realstory set writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, thumb_origin=#{thumb_origin}, thumb_stored=#{tumb_stored} where no=#{no}
+		update realstory set writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, thumb_origin=#{thumb_origin}, thumb_stored=#{thumb_stored} where no=#{no}
+	</update>
+	
+	<update id="updateThumb">
+		update realstory set thumb_origin=#{thumb_origin}, thumb_stored=#{thumb_stored} where no=#{no}
 	</update>
 	
 	<update id="updateCnt">

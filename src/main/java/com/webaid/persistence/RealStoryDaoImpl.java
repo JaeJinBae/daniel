@@ -46,7 +46,10 @@ public class RealStoryDaoImpl implements RealStoryDao {
 	public void update(RealStoryVO vo) {
 		session.update(namespace+".update", vo);
 	}
-
+	@Override
+	public void updateThumb(RealStoryVO vo) {
+		session.update(namespace+".updateThumb", vo);
+	}
 	@Override
 	public void updateCnt(int no) {
 		session.update(namespace+".updateCnt", no);
@@ -81,5 +84,7 @@ public class RealStoryDaoImpl implements RealStoryDao {
 	public int listSearchCountAll(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace+".listSearchCountAll", cri);
 	}
+
+	
 
 }
