@@ -161,54 +161,6 @@ $(function(){
 				</div>
 			</div>
 			
-			
-			<script type="text/javascript">
-				$(function(){
-					$("#selectall").click(function(){
-						var checekd = $(this).attr("checked");
-			
-						$("#board input:checkbox").each(function(){
-							var subchecked = $(this).attr("checked");
-							if(subchecked != checekd){
-								$(this).click();
-							}
-						});
-					});
-			
-					$("input[name=radio_key]").on("change", function(){
-						var $val = ( $(this).val() == "" ) ? "N" : "Y",
-							$param = "select_key=&input_key=&Scod=BRD20&search="+ $val +"&radio_key=" + $(this).val();
-			
-						location.href = (window.location.pathname) + "?" + $param;
-					});
-				});
-			
-				function vboard_it($mode, $param){
-					if($mode == "delflag"){
-						$.post("board_proc.php", {mode : $mode, seq :$param}, function(data){
-							if(data == 0){
-								alert("오류가 발생하였습니다");
-							}else{
-								var $img = (data == "Y") ? "/admin/assets/img/ck_img_on.png" : "/admin/assets/img/ck_img_none.png";
-			
-								$("#delflag_"+$param).attr("src", $img);
-							}
-						});
-					}else if($mode == "is_main"){
-			            $.post("board_proc.php", {mode : $mode, seq :$param}, function(data){
-			                if(data == 0){
-			                    alert("오류가 발생하였습니다");
-			                }else{
-			                    var $img = (data == "Y") ? "/admin/assets/img/ck_img_on.png" : "/admin/assets/img/ck_img_none.png";
-			
-			                    $("#ismain_"+$param).attr("src", $img);
-			                }
-			            });
-			        }
-			
-				}
-			</script>
-			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->
 
@@ -216,58 +168,6 @@ $(function(){
         <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
-<script type="text/javascript">
-	$(function(){
-		var $current_page = (window.location.pathname),
-			$current_form_page = $current_page.replace("_list", "_form"),
-			$Scod = "BRD01",
-			$Stpe = "SD01",
-			$admin = "danielclinic",
-			$pattern = /Scod=BRD01/;
-
-		$(".left_menu > dl > dd > a").each(function(){
-
-			var $list = $(this).attr("href"),
-				$form = $list.replace("_list", "_form");
-
-			if( ($current_page == $list) || ($current_page == $form) ){
-				$(this).addClass("on").parents("dl").each(function(){
-					$(this).children("dd").show();
-				}).children("dt").children("a").addClass("on");
-
-				var $menutext = $(this).parents("dl").children("dt").children("a").text();
-				var $subtext = $(this).text();
-
-				$(".naviText_area>h1").html( $(this).text());
-				if($admin=="theweb" && $Stpe!=""){
-					$(".naviText_area>h1").append( "("+$Stpe+")" );
-				}
-				$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-				$(".navi_area li:eq(2)").html( $(this).text() );
-			}else if( $current_page == "/admin/login/mypage.html" ){
-				$(".naviText_area>h1").html("정보수정");
-				$(".navi_area li:eq(1)").html("정보수정");
-			}else{
-				if( $Scod && ($pattern.test($list)) ){
-					$(this).addClass("on").parents("dl").each(function(){
-						$(this).children("dd").show();
-					}).children("dt").children("a").addClass("on");
-
-					var $menutext = $(this).parents("dl").children("dt").children("a").text();
-					var $subtext = $(this).text();
-
-					$(".naviText_area>h1").html( $(this).text());
-					if($admin=="theweb" && $Stpe!=""){
-						$(".naviText_area>h1").append( "("+$Stpe+")" );
-					}
-					$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-					$(".navi_area li:eq(2)").html( $(this).text() );
-				}
-			}
-			return;
-		});
-	});
-</script>
 
 </body>
 </html>

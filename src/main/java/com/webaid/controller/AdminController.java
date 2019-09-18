@@ -32,11 +32,13 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.BeforeAfterVO;
+import com.webaid.domain.CautionVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.BeforeAfterService;
+import com.webaid.service.CautionService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
 import com.webaid.util.FileDelete;
@@ -58,6 +60,9 @@ public class AdminController {
 	
 	@Autowired
 	private RealStoryService rsService;
+	
+	@Autowired
+	private CautionService cService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -640,9 +645,19 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_04", method = RequestMethod.GET)
-	public String menu01_04(Model model) {
+	public String menu01_04(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu01_04 GET");
 		
+		List<CautionVO> list = cService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(cService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "admin/menu01_04";
 	}
 	
@@ -653,11 +668,178 @@ public class AdminController {
 		return "admin/menu01_04register";
 	}
 	
+	@RequestMapping(value = "/menu01_04register", method = RequestMethod.POST)
+	public String menu01_04registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu01_04register POST");
+		
+		CautionVO vo = new CautionVO();
+		
+		vo.setNo(0);
+		vo.setClinic_type(mtfReq.getParameter("clinic_type"));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state("o");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadCaution/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			vo.setThumb_origin(fileName);
+			vo.setThumb_stored(storedFileName);
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		
+		cService.insert(vo);
+		return "redirect:/admin/menu01_04";
+	}
+	
 	@RequestMapping(value = "/menu01_04update", method = RequestMethod.GET)
-	public String menu01_04update(Model model) {
+	public String menu01_04update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
 		logger.info("menu01_04update GET");
 		
+		CautionVO vo = cService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		return "admin/menu01_04update";
+	}
+	
+	@RequestMapping(value = "/menu01_04update", method = RequestMethod.POST)
+	public String menu01_04updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu01_04update POST");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadCaution/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			try {
+				//mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		
+		String thumbState = mtfReq.getParameter("thumbState");
+		
+		
+		CautionVO vo = new CautionVO();
+		CautionVO prevVO = cService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setClinic_type(mtfReq.getParameter("clinic_type"));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		if(thumbState.equals("o")){
+			vo.setThumb_origin(fileName);
+			vo.setThumb_stored(storedFileName);
+		}else{
+			vo.setThumb_origin(prevVO.getThumb_origin());
+			vo.setThumb_stored(prevVO.getThumb_stored());
+		}
+		
+		cService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(cService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu01_04update";
+	}
+	
+	@RequestMapping(value = "/menu01_04uploadImgDelete", method = RequestMethod.POST)
+	public ResponseEntity<String> menu04_03uploadImgDelete(HttpServletRequest req, @RequestBody Map<String, String> info) {
+		logger.info("menu01_04update POST");
+		ResponseEntity<String> entity = null;
+		
+		int no = Integer.parseInt(info.get("no"));
+		
+		String innerUploadPath = "resources/uploadCaution/";
+		String path = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		System.out.println(path);
+		CautionVO prevVO = cService.selectOne(no);
+		FileDelete fd = new FileDelete();
+		
+		CautionVO vo = new CautionVO();
+		vo.setNo(no);
+		
+		try {
+			
+			fd.fileDelete(path, prevVO.getThumb_stored());
+			
+			vo.setThumb_origin("");
+			vo.setThumb_stored("");
+			cService.updateThumb(vo);
+			
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			e.printStackTrace();
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/menu01_04delete/{no}", method=RequestMethod.GET)
+	public String menu01_04delete(@PathVariable("no") int no){
+		logger.info("caution delete");
+		
+		cService.delete(no);
+		
+		return "redirect:/admin/menu01_04";
 	}
 	
 	@RequestMapping(value = "/menu01_05", method = RequestMethod.GET)

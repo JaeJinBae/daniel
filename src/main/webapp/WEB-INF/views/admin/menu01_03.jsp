@@ -73,16 +73,8 @@ $(function(){
 							</form>
 						</div><!-- board_top 끝 -->
 			
-						<form name="board" id="board">
-							<input type="hidden" name="mode" value="delete">
-							<input type="hidden" name="page" value="1">
-							<input type="hidden" name="search" value="">
-							<input type="hidden" name="select_key" value="">
-							<input type="hidden" name="input_key" value="">
-							<input type="hidden" name="Scod" value="BRD21">
-							<input type="hidden" name="radio_key" value="">
-			
-							<table class="list_table" cellpadding="0">
+						<form name="board" id="board">			
+							<table class="list_table">
 								<colgroup>
 									<col width="3%">
 									<col width="5%">
@@ -105,24 +97,6 @@ $(function(){
 									<th>파일</th>
 									<th>조회</th>
 								</tr>
-			
-								<%-- <tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2064"></td>
-									<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2064" onclick="vboard_it('delflag', '2064')"></td>
-                                    <td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2064" onclick="vboard_it('is_main', '2064')"></td>
-									<td>10</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2064&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD21&amp;sort=b_regdate DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 리얼스토리 드림패키지 고객인터뷰 허지영
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2019-04-02</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>71</td>
-								</tr> --%>
 								<c:choose>
 									<c:when test="${fn:length(list) ==0 }">
 										<tr><td colspan="9">등록된 게시물이 없습니다.</td></tr>
@@ -195,58 +169,6 @@ $(function(){
         <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
-<script type="text/javascript">
-	$(function(){
-		var $current_page = (window.location.pathname),
-			$current_form_page = $current_page.replace("_list", "_form"),
-			$Scod = "BRD01",
-			$Stpe = "SD01",
-			$admin = "danielclinic",
-			$pattern = /Scod=BRD01/;
-
-		$(".left_menu > dl > dd > a").each(function(){
-
-			var $list = $(this).attr("href"),
-				$form = $list.replace("_list", "_form");
-
-			if( ($current_page == $list) || ($current_page == $form) ){
-				$(this).addClass("on").parents("dl").each(function(){
-					$(this).children("dd").show();
-				}).children("dt").children("a").addClass("on");
-
-				var $menutext = $(this).parents("dl").children("dt").children("a").text();
-				var $subtext = $(this).text();
-
-				$(".naviText_area>h1").html( $(this).text());
-				if($admin=="theweb" && $Stpe!=""){
-					$(".naviText_area>h1").append( "("+$Stpe+")" );
-				}
-				$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-				$(".navi_area li:eq(2)").html( $(this).text() );
-			}else if( $current_page == "/admin/login/mypage.html" ){
-				$(".naviText_area>h1").html("정보수정");
-				$(".navi_area li:eq(1)").html("정보수정");
-			}else{
-				if( $Scod && ($pattern.test($list)) ){
-					$(this).addClass("on").parents("dl").each(function(){
-						$(this).children("dd").show();
-					}).children("dt").children("a").addClass("on");
-
-					var $menutext = $(this).parents("dl").children("dt").children("a").text();
-					var $subtext = $(this).text();
-
-					$(".naviText_area>h1").html( $(this).text());
-					if($admin=="theweb" && $Stpe!=""){
-						$(".naviText_area>h1").append( "("+$Stpe+")" );
-					}
-					$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-					$(".navi_area li:eq(2)").html( $(this).text() );
-				}
-			}
-			return;
-		});
-	});
-</script>
 
 </body>
 </html>

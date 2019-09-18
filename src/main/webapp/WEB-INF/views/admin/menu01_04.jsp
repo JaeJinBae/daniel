@@ -56,27 +56,25 @@ $(function(){
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top">
-							<div class="top-left"><input type="radio" name="radio_key" id="radio_key1" value="" checked="checked"> <label for="radio_key1"><i></i>전체</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key2" value="동안·탄력 클리닉"> <label for="radio_key2"><i></i>동안·탄력 클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key3" value="레이저클리닉"> <label for="radio_key3"><i></i>레이저클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key4" value="흉터클리닉"> <label for="radio_key4"><i></i>흉터클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key5" value="눈·코 성형"> <label for="radio_key5"><i></i>눈·코 성형</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key6" value="프리미엄 쁘띠클리닉"> <label for="radio_key6"><i></i>프리미엄 쁘띠클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key7" value="체형클리닉"> <label for="radio_key7"><i></i>체형클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key8" value="두피클리닉"> <label for="radio_key8"><i></i>두피클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+							<div class="top-left"></div>
 			
 							<form name="search" method="post" action="" onsubmit="return search_it(this)">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
-									<select name="select_key" id="select_key" class="search_sel"><option value="m_id|m_name|b_content">전체</option><option value="m_id">아이디</option><option value="m_name">이름</option><option value="b_content">내용</option></select>						<input type="text" name="input_key" class="search_t_box" value="">
+									<select name="select_key" id="select_key" class="search_sel">
+										<option value="m_id|m_name|b_content">전체</option>
+										<option value="m_id">아이디</option>
+										<option value="m_name">이름</option>
+										<option value="b_content">내용</option>
+									</select>
+									<input type="text" name="input_key" class="search_t_box" value="">
 									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
-														</div>
+								</div>
 							</form>
-						</div>
+						</div><!-- board_top 끝 -->
 			
-						<form name="board" id="board" method="post" action="board_proc.php">
-							<input type="hidden" name="mode" value="delete">
-							<input type="hidden" name="page" value="1">
-							<input type="hidden" name="search" value="">
-							<input type="hidden" name="select_key" value="">
-							<input type="hidden" name="input_key" value="">
-							<input type="hidden" name="Scod" value="BRD05">
-							<input type="hidden" name="radio_key" value="">
-			
-							<table class="list_table" cellpadding="0">
+						<form name="board" id="board">			
+							<table class="list_table">
 								<colgroup>
 									<col width="3%">
 									<col width="5%">
@@ -99,147 +97,70 @@ $(function(){
 									<th>파일</th>
 									<th>조회</th>
 								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2006"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2006" onclick="vboard_it('delflag', '2006')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2006" onclick="vboard_it('is_main', '2006')"></td>
-									<td>12</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2006&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												<b>[동안·탄력 클리닉]</b> 리프팅레이저
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2018-10-11</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>143</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2005"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2005" onclick="vboard_it('delflag', '2005')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2005" onclick="vboard_it('is_main', '2005')"></td>
-									<td>11</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2005&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												<b>[동안·탄력 클리닉]</b> 안면거상/이마내시경거상술
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2018-10-10</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>171</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2004"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2004" onclick="vboard_it('delflag', '2004')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2004" onclick="vboard_it('is_main', '2004')"></td>
-									<td>10</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2004&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												<b>[동안·탄력 클리닉]</b> 실리프팅
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2018-10-10</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>145</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2003"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2003" onclick="vboard_it('delflag', '2003')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2003" onclick="vboard_it('is_main', '2003')"></td>
-									<td>9</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2003&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												<b>[동안·탄력 클리닉]</b> 광채지방이식
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2018-10-09</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>151</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2002"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2002" onclick="vboard_it('delflag', '2002')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2002" onclick="vboard_it('is_main', '2002')"></td>
-									<td>8</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2002&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												<b>[동안·탄력 클리닉]</b> 상안검/하안검
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2018-10-08</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>133</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2001"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2001" onclick="vboard_it('delflag', '2001')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2001" onclick="vboard_it('is_main', '2001')"></td>
-									<td>7</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2001&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">	
-												<b>[레이저클리닉]</b> 색소레이저
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2018-10-02</td>
-									<td><i class="ico file">첨부파일</i></td>
-									<td>172</td>
-								</tr>	
+								<c:choose>
+									<c:when test="${fn:length(list) ==0 }">
+										<tr><td colspan="9">등록된 게시물이 없습니다.</td></tr>
+									</c:when>
+									<c:otherwise>
+										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+									        <c:forEach var="item" items="${list}">
+												<tr class="cont">
+													<td><input type="checkbox" name="" value="${item.no}"></td>
+													<c:choose>
+														<c:when test="${item.use_state == 'o'}">
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
+														</c:when>
+														<c:otherwise>
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+														</c:otherwise>
+													</c:choose>
+													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+													<td><i class="ico notice">${num}</i></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu01_04update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"><b>${item.clinic_type}</b> ${item.title}</p></a></td>
+													<td>${item.writer}</td>
+													<td>${item.regdate}</td>
+													<td></td>
+													<td>${item.cnt}</td>
+												</tr>
+												<c:set var="num" value="${num-1}"></c:set>	
+											</c:forEach>
+									</c:otherwise>
+								</c:choose>
 							</table>
 						</form>
 					</div>
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="board_it('delete')">선택삭제</button>
-							<button type="button" class="btn_gray" onclick="board_it('tap_change', 'BRD05')">게시물이동</button>
+							<button type="button" class="btn_gray">선택삭제</button>
+							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="board_it('insert_form', 'select_key=&amp;input_key=&amp;search=&amp;Scod=BRD05&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1')">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_04register'">등록</button>
 						</p>
 					</div>
-			
+					<!-- 페이징 시작 -->
 					<div class="board_paging no_print">
-						<a href="javascript:;" class="direction">&lt;&lt;</a>
-						<a href="javascript:;" class="direction">&lt;</a>
-						<a href="javascript:;" class="on">1</a>
-						<a href="">2</a>
-						<a href="">3</a>
-						<a href="">4</a>
-						<a href="">5</a>
-						<a href="">6</a>
-						<a href="">7</a>
-						<a href="">8</a>
-						<a href="">9</a>
-						<a href="">10</a>
-						<a href="" class="direction">&gt;</a>
-						<a href="" class="direction">&gt;&gt;</a>
-					</div>
-						
+						<a href="${pageMaker.makeSearch(1)}" class="direction">&lt;&lt;</a>
+						<c:if test="${!pageMaker.prev}"><!-- 이전페이지가 존재하지 않는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&lt;</a>
+						</c:if>
+						<c:if test="${pageMaker.prev}"><!-- 이전페이지가 존재하는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}" class="direction">&lt;</a>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+						</c:forEach>
+						<c:if test="${pageMaker.next}"><!-- 뒤에페이지가 존재하는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}" class="direction">&gt;</a>
+						</c:if>
+						<c:if test="${!pageMaker.next}"><!-- 뒤에 페이지가 존재하지 않는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&gt;</a>
+						</c:if>
+						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
+					</div>	<!-- 페이징 끝 -->
 				</div>
-			</div>
-			<!-- main_bottom_area end -->
+			</div><!-- main_bottom_area end -->
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->

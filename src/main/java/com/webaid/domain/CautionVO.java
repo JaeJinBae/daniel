@@ -9,7 +9,8 @@ public class CautionVO {
 	private String title;
 	private String content;
 	private String use_state;
-	private String thumb;
+	private String thumb_origin;
+	private String thumb_stored;
 
 	public CautionVO() {
 		super();
@@ -79,19 +80,27 @@ public class CautionVO {
 		this.use_state = use_state;
 	}
 
-	public String getThumb() {
-		return thumb;
+	public String getThumb_origin() {
+		return thumb_origin;
 	}
 
-	public void setThumb(String thumb) {
-		this.thumb = thumb;
+	public void setThumb_origin(String thumb_origin) {
+		this.thumb_origin = thumb_origin;
+	}
+
+	public String getThumb_stored() {
+		return thumb_stored;
+	}
+
+	public void setThumb_stored(String thumb_stored) {
+		this.thumb_stored = thumb_stored;
 	}
 
 	@Override
 	public String toString() {
 		return "CautionVO [no=" + no + ", clinic_type=" + clinic_type + ", writer=" + writer + ", regdate=" + regdate
-				+ ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state + ", thumb="
-				+ thumb + "]";
+				+ ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state
+				+ ", thumb_origin=" + thumb_origin + ", thumb_stored=" + thumb_stored + "]";
 	}
 
 }
