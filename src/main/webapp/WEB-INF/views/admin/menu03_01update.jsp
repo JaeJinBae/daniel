@@ -167,7 +167,7 @@ $(function(){
 								<tr class="cont">
 									<td class="title">출력유무</td>
 									<td>
-										<select name="delflag" id="delflag" class="search_sel">
+										<select name="use_state" id="delflag" class="search_sel">
 											<option value="o">출력함</option>
 											<option value="x">출력안함</option>
 										</select>

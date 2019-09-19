@@ -33,6 +33,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.CautionVO;
+import com.webaid.domain.ClinicResListVO;
 import com.webaid.domain.EventVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
@@ -41,6 +42,7 @@ import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
+import com.webaid.service.ClinicResListService;
 import com.webaid.service.EventService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
@@ -73,6 +75,9 @@ public class AdminController {
 	
 	@Autowired
 	private EventService eService;
+	
+	@Autowired
+	private ClinicResListService crlService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -939,18 +944,83 @@ public class AdminController {
 		return "redirect:/admin/menu01_05update";
 	}
 	
+	@RequestMapping(value="/menu01_05delete/{no}", method=RequestMethod.GET)
+	public String menu01_05delete(@PathVariable("no") int no){
+		logger.info("review delete");
+		
+		rService.delete(no);
+		
+		return "redirect:/admin/menu01_05";
+	}
+	
 	@RequestMapping(value = "/menu02_01", method = RequestMethod.GET)
-	public String menu02_01(Model model) {
+	public String menu02_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu02_01 GET");
 		
+		List<ClinicResListVO> list = crlService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(crlService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(crlService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "admin/menu02_01";
 	}
 	
 	@RequestMapping(value = "/menu02_01update", method = RequestMethod.GET)
-	public String menu02_01update(Model model) {
+	public String menu02_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
 		logger.info("menu02_01update GET");
 		
+		ClinicResListVO vo = crlService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(crlService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		return "admin/menu02_01update";
+	}
+	
+	@RequestMapping(value = "/menu02_01update", method = RequestMethod.POST)
+	public String menu02_01updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu02_01update POST");
+		
+		ClinicResListVO vo = new ClinicResListVO();
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setCounseling(mtfReq.getParameter("counseling"));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setEmail(mtfReq.getParameter("email"));
+		vo.setMemo(mtfReq.getParameter("memo"));
+		vo.setRes_state("res_state");
+		
+		crlService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(crlService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu02_01update";
+	}
+	
+	@RequestMapping(value="/menu02_01delete/{no}", method=RequestMethod.GET)
+	public String menu02_01delete(@PathVariable("no") int no){
+		logger.info("clinicResList delete");
+		
+		crlService.delete(no);
+		
+		return "redirect:/admin/menu02_01";
 	}
 	
 	@RequestMapping(value = "/menu03_01", method = RequestMethod.GET)
@@ -1106,4 +1176,12 @@ public class AdminController {
 		return "redirect:/admin/menu03_01update";
 	}
 	
+	@RequestMapping(value="/menu03_01delete/{no}", method=RequestMethod.GET)
+	public String menu03_01delete(@PathVariable("no") int no){
+		logger.info("event delete");
+		
+		eService.delete(no);
+		
+		return "redirect:/admin/menu03_01";
+	}
 }

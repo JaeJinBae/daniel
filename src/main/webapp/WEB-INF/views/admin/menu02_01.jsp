@@ -56,33 +56,38 @@ $(function(){
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top">
-							<form name="search" method="post" action="" onsubmit="return search_it(this)">
+							<form name="search" method="post" action="">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 			
 									정렬순서 : 
-									<select name="select_order" id="select_order" class="search_sel"><option value="seq" selected="">기본 정렬</option><option value="r_date">예약일 정렬</option></select>						&nbsp;&nbsp;&nbsp;
+									<select name="select_order" id="select_order" class="search_sel">
+										<option value="seq" selected="">기본 정렬</option>
+										<option value="r_date">예약일 정렬</option>
+									</select>&nbsp;&nbsp;&nbsp;
 			
 									예약일 : 
-									<input type="text" id="start_date" name="start_date" class="search_t_box" value="" readonly="" onclick="jCal('start_date')">
-									<input type="text" id="end_date" name="end_date" class="search_t_box" value="" readonly="" onclick="jCal('end_date')">
+									<input type="text" id="start_date" name="start_date" class="search_t_box" value="">
+									<input type="text" id="end_date" name="end_date" class="search_t_box" value="">
 									&nbsp;&nbsp;&nbsp;
 			
-									<select name="select_key" id="select_key" class="search_sel"><option value="r_name|r_phone|r_kind|r_state|r_content">전체</option><option value="r_name">이름</option><option value="r_phone">전화번호</option><option value="r_kind">상담분야</option><option value="r_state">처리상태</option><option value="r_content">문의내용</option><option value="r_memo">메모</option></select>						<input type="text" name="input_key" class="search_t_box" value="">
+									<select name="select_key" id="select_key" class="search_sel">
+										<option value="r_name|r_phone|r_kind|r_state|r_content">전체</option>
+										<option value="r_name">이름</option>
+										<option value="r_phone">전화번호</option>
+										<option value="r_kind">상담분야</option>
+										<option value="r_state">처리상태</option>
+										<option value="r_content">문의내용</option>
+										<option value="r_memo">메모</option>
+									</select>						
+									<input type="text" name="input_key" class="search_t_box" value="">
 									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
 								</div>
 							</form>
 						</div>
 			
-						<form name="reserve" id="reserve" method="post" action="reserve_proc.php">
-							<input type="hidden" name="mode" value="delete">
-							<input type="hidden" name="page" value="1">
-							<input type="hidden" name="search" value="">
-							<input type="hidden" name="select_key" value="">
-							<input type="hidden" name="input_key" value="">
-							<input type="hidden" name="total" value="147">
-			
-							<table class="list_table" cellpadding="0">
+						<form name="reserve" id="reserve" method="post" action="">
+							<table class="list_table">
 								<colgroup>
 									<col width="4%">
 									<col width="4%">
@@ -107,181 +112,66 @@ $(function(){
 									<th>예약상태</th>
 									<th>등록일</th>
 								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="391"></td>
-									<td>147</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=391&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">한예나</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=391&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">01086618767</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=391&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">X</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=391&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">스킨케어 &gt; 트러블·모공 디톡스·아쿠아필 <strong>[50,000원]</strong><br></a></td>
-									<td>2019-09-11 17:30</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=391&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">50,000</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=391&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">예약완료</a></td>
-									<td>2019-09-05</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="390"></td>
-									<td>146</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=390&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">양다원</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=390&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">01066689198</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=390&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">상담요망</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=390&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">윤곽성형주사 &gt; 윤곽주사 &gt; 윤곽주사 1cc <strong>[10,000원]</strong><br></a></td>
-									<td>2019-09-06 12:30</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=390&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">10,000</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=390&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">예약완료</a></td>
-									<td>2019-09-03</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="389"></td>
-									<td>145</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=389&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">양다원</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=389&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">01066689198</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=389&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">상담요망</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=389&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">윤곽성형주사 &gt; 윤곽주사 &gt; 윤곽주사 1cc <strong>[10,000원]</strong><br></a></td>
-									<td>2019-09-06 12:30</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=389&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">10,000</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=389&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">예약완료</a></td>
-									<td>2019-09-03</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="388"></td>
-									<td>144</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=388&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">황정희</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=388&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">01077402685</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=388&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">상담요망</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=388&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">필러 &gt; 리터치 2주내 0.5cc 미만 &gt; 윤곽주사 1cc <strong>[30,000원]</strong><br>성형보톡스 &gt; 사각턱 &gt; 사각턱 64u 정량 <strong>[60,000원]</strong><br>필러 &gt; 코필러 1cc 이내 &gt; 사각턱 64u 정량 <strong>[90,000원]</strong><br>필러 &gt; 턱필러 1cc 이내 &gt; 사각턱 64u 정량 <strong>[90,000원]</strong><br></a></td>
-									<td>2019-09-05 10:30</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=388&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">270,000</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=388&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">예약완료</a></td>
-									<td>2019-09-03</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="387"></td>
-									<td>143</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=387&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">하영희</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=387&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">01051616154</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=387&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">상담요망</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=387&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">비만프로그램 &gt; 팻다운아르기닌 &gt; 팻다운아르기닌4회 <strong>[280,000원]</strong><br></a></td>
-									<td>2019-09-04 11:30</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=387&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">280,000</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=387&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">예약완료</a></td>
-									<td>2019-09-02</td>
-								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="386"></td>
-									<td>142</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=386&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">하영희</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=386&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">01051616154</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=386&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">상담요망</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=386&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">비만프로그램 &gt; 팻다운아르기닌 &gt; 팻다운아르기닌4회 <strong>[280,000원]</strong><br></a></td>
-									<td>2019-09-04 11:30</td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=386&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">280,000</a></td>
-									<td><a href="reserve_form.html?mode=modify&amp;seq=386&amp;select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;page=1">예약완료</a></td>
-									<td>2019-09-02</td>
-								</tr>
+								
+								<c:choose>
+									<c:when test="${fn:length(list) ==0 }">
+										<tr><td colspan="10">등록된 게시물이 없습니다.</td></tr>
+									</c:when>
+									<c:otherwise>
+										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+									        <c:forEach var="item" items="${list}">
+												<tr class="cont">
+													<td><input type="checkbox" name="" value="${item.no}"></td>
+													<td>${num}</td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.name}</a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.counseling}</a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.clinic_list}</a></td>
+													<td>${item.res_date} ${item.res_time}</td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.price}</a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.res_state}</a></td>
+													<td>${item.regdate}</td>
+												</tr>
+												<c:set var="num" value="${num-1}"></c:set>	
+											</c:forEach>
+									</c:otherwise>
+								</c:choose>
 							</table>
 						</form>
 					</div>
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="reserve_it('excel_all')">전체 Excel저장</button>
-							<button type="button" class="btn_gray" onclick="reserve_it('excel', 'select_key=&amp;input_key=&amp;search=&amp;start_date=&amp;end_date=&amp;select_order=&amp;olds=0&amp;line=15')">Excel저장</button>
-							<button type="button" class="btn_gray" onclick="reserve_it('delete')">선택삭제</button>
+							<button type="button" class="btn_gray" onclick="">전체 Excel저장</button>
+							<button type="button" class="btn_gray" onclick="">Excel저장</button>
+							<button type="button" class="btn_gray" onclick="">선택삭제</button>
 						</p>
 						<p class="btn_right">
-							<!--<button type="button" class="btn_black" onClick="reserve_it('insert_form', 'select_key=&input_key=&search=&start_date=&end_date=&select_order=&page=1')" >등록</button>-->
 						</p>
 					</div>
 			
+					<!-- 페이징 시작 -->
 					<div class="board_paging no_print">
-						<a href="javascript:;" class="direction">&lt;&lt;</a>
-						<a href="javascript:;" class="direction">&lt;</a>
-						<a href="javascript:;" class="on">1</a>
-						<a href="">2</a>
-						<a href="">3</a>
-						<a href="">4</a>
-						<a href="">5</a>
-						<a href="">6</a>
-						<a href="">7</a>
-						<a href="">8</a>
-						<a href="">9</a>
-						<a href="">10</a>
-						<a href="" class="direction">&gt;</a>
-						<a href="" class="direction">&gt;&gt;</a>
-					</div>
+						<a href="${pageMaker.makeSearch(1)}" class="direction">&lt;&lt;</a>
+						<c:if test="${!pageMaker.prev}"><!-- 이전페이지가 존재하지 않는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&lt;</a>
+						</c:if>
+						<c:if test="${pageMaker.prev}"><!-- 이전페이지가 존재하는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}" class="direction">&lt;</a>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+						</c:forEach>
+						<c:if test="${pageMaker.next}"><!-- 뒤에페이지가 존재하는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}" class="direction">&gt;</a>
+						</c:if>
+						<c:if test="${!pageMaker.next}"><!-- 뒤에 페이지가 존재하지 않는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&gt;</a>
+						</c:if>
+						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
+					</div>	<!-- 페이징 끝 -->
 				</div>
-			</div>
-			<!-- main_bottom_area end -->
-			
-			<script type="text/javascript">
-				$(function(){
-					$("#selectall").click(function(){
-						var checekd = $(this).attr("checked");
-			
-						$("#reserve input:checkbox").each(function(){
-							var subchecked = $(this).attr("checked");
-							if(subchecked != checekd){
-								$(this).click();
-							}
-						});
-					});
-				});
-			
-				function tooltip_it($seq){
-					if(!$seq)		return;
-					var $JSON = {},
-						$Obj = "tooltip_" + $seq;
-			
-					$.post("reserve_proc.php", {mode : "referer", seq : $seq}, function(data){
-						$JSON = $.parseJSON(data);
-					}).done(function(){
-						$("#AjaxToolTip").remove();
-						$("#Mask").after("<div id='AjaxToolTip' style='position:absolute;top:0;left:0;display:none;'></div>");
-			
-						tooltip_load($Obj, $JSON);
-					});
-				}
-			
-				function tooltip_load($Obj, $datas){
-					var $content = "",
-						$link = ($datas.REFERER == "직접입력 또는 즐겨찾기") ? "javascript:;" : $datas.REFERER,
-						$target = ($datas.REFERER == "직접입력 또는 즐겨찾기") ? "" : "target='_blank'",
-			
-					$content = "<div class='spc-bbl' id='"+$Obj+"_tip'>";
-						$content+= "<p><em>"+ $datas.IP +"</em> [<span><em>"+ $datas.DEVICE +"</em></span>]</p>";
-						$content+= "<p><a href='"+ $link +"' "+ $target +">"+ $datas.REFERER +"</a></p>";
-						$content+= "<button class='close-bbl cursor' onClick=\"tooltip_close()\">×</button>";
-					$content+= "</div>";
-			
-					$("#AjaxToolTip").html($content).css({
-						"position" : "absolute",
-						"z-index" : -1
-					}).show();
-			
-					setTimeout(function(){
-						tooltip_position($Obj);
-					}, 300);
-				}
-			
-				function tooltip_position($Obj){
-					var Obj_H = jChk_Position($Obj),
-						Layer_H = $("#" + $Obj + "_tip").height(),
-						Layer_W = $("#" + $Obj + "_tip").width() / 2;
-			
-					$("#AjaxToolTip").css({
-						"position" : "absolute",
-						"z-index" : 90000,
-						"top" : (Obj_H.User_TOP - Layer_H - 30) + "px",
-						"left" : (Obj_H.User_LEFT - Layer_W - 45) + "px",
-						"background" : "#fff"
-					}).show();
-				}
-			
-				function tooltip_close(){
-					$("#AjaxToolTip").remove();
-				}
-			</script>
+			</div><!-- main_bottom_area end -->
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->
@@ -290,58 +180,6 @@ $(function(){
         <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
-<script type="text/javascript">
-	$(function(){
-		var $current_page = (window.location.pathname),
-			$current_form_page = $current_page.replace("_list", "_form"),
-			$Scod = "BRD01",
-			$Stpe = "SD01",
-			$admin = "danielclinic",
-			$pattern = /Scod=BRD01/;
-
-		$(".left_menu > dl > dd > a").each(function(){
-
-			var $list = $(this).attr("href"),
-				$form = $list.replace("_list", "_form");
-
-			if( ($current_page == $list) || ($current_page == $form) ){
-				$(this).addClass("on").parents("dl").each(function(){
-					$(this).children("dd").show();
-				}).children("dt").children("a").addClass("on");
-
-				var $menutext = $(this).parents("dl").children("dt").children("a").text();
-				var $subtext = $(this).text();
-
-				$(".naviText_area>h1").html( $(this).text());
-				if($admin=="theweb" && $Stpe!=""){
-					$(".naviText_area>h1").append( "("+$Stpe+")" );
-				}
-				$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-				$(".navi_area li:eq(2)").html( $(this).text() );
-			}else if( $current_page == "/admin/login/mypage.html" ){
-				$(".naviText_area>h1").html("정보수정");
-				$(".navi_area li:eq(1)").html("정보수정");
-			}else{
-				if( $Scod && ($pattern.test($list)) ){
-					$(this).addClass("on").parents("dl").each(function(){
-						$(this).children("dd").show();
-					}).children("dt").children("a").addClass("on");
-
-					var $menutext = $(this).parents("dl").children("dt").children("a").text();
-					var $subtext = $(this).text();
-
-					$(".naviText_area>h1").html( $(this).text());
-					if($admin=="theweb" && $Stpe!=""){
-						$(".naviText_area>h1").append( "("+$Stpe+")" );
-					}
-					$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-					$(".navi_area li:eq(2)").html( $(this).text() );
-				}
-			}
-			return;
-		});
-	});
-</script>
 
 </body>
 </html>
