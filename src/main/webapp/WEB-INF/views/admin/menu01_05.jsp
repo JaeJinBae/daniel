@@ -124,7 +124,7 @@ $(function(){
 												<c:set var="num" value="${num-1}"></c:set>	
 											</c:forEach>
 									</c:otherwise>
-								</c:choose>	
+								</c:choose>
 							</table>
 						</form>
 					</div>

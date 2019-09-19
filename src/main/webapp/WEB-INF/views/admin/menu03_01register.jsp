@@ -16,7 +16,8 @@
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <!-- ************************************************************************************************* -->
-
+<!-- jQuery UI CSS파일 -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
@@ -24,9 +25,53 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
-	$(function(){
-		$.ajaxSetup({cache:false});
-	})
+	var ndate = new Date();
+	var year = ndate.getFullYear();
+	var month = ndate.getMonth()+1;
+	var date = ndate.getDate();
+	
+	month = (month > 10) ? month+"":"0"+month;
+	date = (date > 10) ? date+"":"0"+date;
+	
+	$("#regdate").val(year+"-"+month+"-"+date);
+	
+	$("#start_date").datepicker({
+		changeMonth: true, 
+		changeYear: true,
+		dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+		monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dateFormat: "yy-mm-dd"
+    });
+	
+	$("#end_date").datepicker({
+		changeMonth: true, 
+		changeYear: true,
+		dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+		monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dateFormat: "yy-mm-dd"
+    });
+	
+	//예외처리
+	$("#form1").submit(function(){
+		var regdate = $(".write_table tr td > input[name='regdate']").val();
+		var title = $(".write_table tr td > input[name='title']").val();
+		var content = $(".write_table tr td > textarea[name='content']").val();
+		var thumb = $(".write_table tr td > div > input[name='thumb']").val();
+		console.log(regdate+"\n"+cnt+"\n"+title+"\n"+content+"\n"+thumb);
+		if($("input[name='writer']").val()==""){
+			alert("작성자를 입력해주세요.");
+			return false;
+		}
+		if($("input[name='title']").val()==""){
+			alert("제목을 입력해주세요.");
+			return false;
+		}
+		//return false;
+	});
 });
 </script>
 </head>
@@ -55,68 +100,60 @@ $(function(){
 			<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js" type="text/javascript"></script>
 			
 			<div class="main_bottom_area">
-				<div class="write_area">
-					<div class="write_box">
-			
-						<form name="eventlist" id="eventlist" method="post" enctype="multipart/form-data" action="event_proc.php">
-							<input type="hidden" name="data_array" value="Y">
-							<input type="hidden" name="mode" value="insert">
-							<input type="hidden" name="seq" value="">
-							<input type="hidden" name="search" value="">
-							<input type="hidden" name="select_key" value="">
-							<input type="hidden" name="input_key" value="">
-							<input type="hidden" name="page" value="1">
-							<input type="hidden" name="m_seq" value="">
-			
-							<table class="write_table" cellpadding="0">
+				<form name="eventlist" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu03_01register">
+					<input type="hidden" id="regdate" name="regdate" value="">
+					<div class="write_area">
+						<div class="write_box">
+							<table class="write_table">
 								<colgroup>
 									<col width="11%">
 									<col width="*">
 								</colgroup>
 								<tr class="cont">
 									<td class="title">제목</td>
-									<td><input type="text" class="w_form_m" name="title" id="title" value="" valid="required" element-name="제목"></td>
+									<td><input type="text" class="w_form_m" name="title" id="title" value=""></td>
 								</tr>
 								<tr class="cont">
 									<td class="title">이벤트 기간</td>
 			                        <td>
-			                            <input type="text" class="w_form_s" name="start_date" id="start_date" readonly="" onclick="jCal('start_date')" value="" valid="required" element-name="시작일자">~
-			                            <input type="text" class="w_form_s" name="end_date" id="end_date" readonly="" onclick="jCal('end_date', {Compare:'start_date'})" value="" valid="required" element-name="종료일자">
+			                            <input type="text" class="w_form_s" name="start_date" id="start_date" value="" autocomplete="off">~
+			                            <input type="text" class="w_form_s" name="end_date" id="end_date" value="" autocomplete="off">
 			                        </td>
 								</tr>
 								<tr class="cont">
 									<td class="title">내용</td>
-									<td><textarea id="content" name="content" valid="editor-content" element-name="내용" style="visibility: hidden; display: none;"></textarea></td>
+									<td><textarea id="content" name="content"></textarea></td>
 								</tr>
 								<tr class="cont">
 									<td class="title">출력유무</td>
-									<td><select name="delflag" id="delflag" class="search_sel"><option value="Y">출력함</option><option value="N">출력안함</option></select></td>
+									<td>
+										<select name="use_state" id="delflag" class="search_sel">
+											<option value="o">출력함</option>
+											<option value="x">출력안함</option>
+										</select>
+									</td>
 								</tr>
 								
 								<tr class="cont">
 									<td class="title">목록 썸네일 이미지</td>
-									<td><div><input type="file" name="upload[]" style="width:450px"><br></div>
-									</td>
+									<td id="attach"><div><input type="file" name="thumb"></div></td>
 								</tr>
 										
 							</table>
-						</form>
+						</div>
+				
+						<div class="btn_area">
+							<p class="btn_left">
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu03_01'">리스트</button>
+							</p>
+							<p class="btn_right">
+								<input type="submit" class="btn_black" value="등록">&nbsp;
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu03_01register'">취소</button>
+							</p>
+						</div>
+				
 					</div>
-			
-					<div class="btn_area">
-						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="eventlist_it('list', 'select_key=&amp;input_key=&amp;search=&amp;page=1')">리스트</button>
-						</p>
-			
-						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="eventlist_it('submit')">등록</button>
-			
-							
-							<button type="button" class="btn_gray" onclick="eventlist_it('reset', 'select_key=&amp;input_key=&amp;search=&amp;page=1')">취소</button>
-						</p>
-					</div>
-			
-				</div>
+				</form>
 			</div>
 			<!-- main_bottom_area end -->
 			<script>
@@ -131,58 +168,6 @@ $(function(){
         <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
-<script type="text/javascript">
-	$(function(){
-		var $current_page = (window.location.pathname),
-			$current_form_page = $current_page.replace("_list", "_form"),
-			$Scod = "BRD01",
-			$Stpe = "SD01",
-			$admin = "danielclinic",
-			$pattern = /Scod=BRD01/;
-
-		$(".left_menu > dl > dd > a").each(function(){
-
-			var $list = $(this).attr("href"),
-				$form = $list.replace("_list", "_form");
-
-			if( ($current_page == $list) || ($current_page == $form) ){
-				$(this).addClass("on").parents("dl").each(function(){
-					$(this).children("dd").show();
-				}).children("dt").children("a").addClass("on");
-
-				var $menutext = $(this).parents("dl").children("dt").children("a").text();
-				var $subtext = $(this).text();
-
-				$(".naviText_area>h1").html( $(this).text());
-				if($admin=="theweb" && $Stpe!=""){
-					$(".naviText_area>h1").append( "("+$Stpe+")" );
-				}
-				$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-				$(".navi_area li:eq(2)").html( $(this).text() );
-			}else if( $current_page == "/admin/login/mypage.html" ){
-				$(".naviText_area>h1").html("정보수정");
-				$(".navi_area li:eq(1)").html("정보수정");
-			}else{
-				if( $Scod && ($pattern.test($list)) ){
-					$(this).addClass("on").parents("dl").each(function(){
-						$(this).children("dd").show();
-					}).children("dt").children("a").addClass("on");
-
-					var $menutext = $(this).parents("dl").children("dt").children("a").text();
-					var $subtext = $(this).text();
-
-					$(".naviText_area>h1").html( $(this).text());
-					if($admin=="theweb" && $Stpe!=""){
-						$(".naviText_area>h1").append( "("+$Stpe+")" );
-					}
-					$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-					$(".navi_area li:eq(2)").html( $(this).text() );
-				}
-			}
-			return;
-		});
-	});
-</script>
 
 </body>
 </html>

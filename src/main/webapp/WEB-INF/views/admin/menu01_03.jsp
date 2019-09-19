@@ -24,9 +24,6 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
-	$(function(){
-		$.ajaxSetup({cache:false});
-	})
 });
 </script>
 </head>

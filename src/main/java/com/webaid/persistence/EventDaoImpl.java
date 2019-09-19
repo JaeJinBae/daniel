@@ -29,7 +29,7 @@ public class EventDaoImpl implements EventDao {
 
 	@Override
 	public void insert(EventVO vo) {
-		session.insert(namespace+".insert");
+		session.insert(namespace+".insert", vo);
 	}
 
 	@Override

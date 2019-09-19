@@ -23,6 +23,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
+<script>
 $(function(){
 	var ndate = new Date();
 	var year = ndate.getFullYear();
@@ -46,19 +47,6 @@ $(function(){
 	
 	//예외처리
 	$("#form1").submit(function(){
-		var clinic_type = $(".search_sel").val();
-		var writer = $(".write_table tr td > input[name='writer']").val();
-		var regdate = $(".write_table tr td > input[name='regdate']").val();
-		var cnt = $(".write_table tr td > input[name='cnt']").val();
-		var title = $(".write_table tr td > input[name='title']").val();
-		var content = $(".write_table tr td > textarea[name='content']").val();
-		var b_img = $(".write_table tr td > div > input[name='img_before']").val();
-		var a_img = $(".write_table tr td > div > input[name='img_after']").val();
-		
-		
-		console.log(clinic_type+"\n"+writer+"\n"+regdate+"\n"+cnt+"\n"+title+"\n"+content+"\n"+b_img+"\n"+a_img);
-		
-		
 		if($("input[name='writer']").val()==""){
 			alert("작성자를 입력해주세요.");
 			return false;

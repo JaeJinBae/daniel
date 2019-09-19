@@ -17,7 +17,7 @@
 	</insert>
 	
 	<update id="update">
-		update event set title=#{title}, #{start_date}, #{end_date}, content=#{content}, #{use_state}, thumb_origin=#{thumb_origin}, thumb_stored=#{thumb_stored} where no=#{no}
+		update event set title=#{title}, start_date=#{start_date}, end_date=#{end_date}, content=#{content}, use_state=#{use_state}, thumb_origin=#{thumb_origin}, thumb_stored=#{thumb_stored} where no=#{no}
 	</update>
 	
 	<update id="updateThumb">
