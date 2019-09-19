@@ -36,11 +36,13 @@ import com.webaid.domain.CautionVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.RealStoryVO;
+import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
+import com.webaid.service.ReviewService;
 import com.webaid.util.FileDelete;
 
 /**
@@ -63,6 +65,9 @@ public class AdminController {
 	
 	@Autowired
 	private CautionService cService;
+	
+	@Autowired
+	private ReviewService rService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -843,8 +848,19 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_05", method = RequestMethod.GET)
-	public String menu01_05(Model model) {
+	public String menu01_05(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu01_05 GET");
+		
+		List<ReviewVO> list = rService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(rService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "admin/menu01_05";
 	}
@@ -856,11 +872,66 @@ public class AdminController {
 		return "admin/menu01_05register";
 	}
 	
+	@RequestMapping(value = "/menu01_05register", method = RequestMethod.POST)
+	public String menu01_05registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu01_05register POST");
+		
+		ReviewVO vo = new ReviewVO();
+		
+		vo.setNo(0);
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state("o");
+		
+		rService.insert(vo);
+		return "redirect:/admin/menu01_05";
+	}
+	
 	@RequestMapping(value = "/menu01_05update", method = RequestMethod.GET)
-	public String menu01_05update(Model model) {
+	public String menu01_05update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
 		logger.info("menu01_05update GET");
 		
+		ReviewVO vo = rService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		return "admin/menu01_05update";
+	}
+	
+	@RequestMapping(value = "/menu01_05update", method = RequestMethod.POST)
+	public String menu01_05updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu01_05update POST");
+		
+		ReviewVO vo = new ReviewVO();
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		rService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(rService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu01_05update";
 	}
 	
 	@RequestMapping(value = "/menu02_01", method = RequestMethod.GET)

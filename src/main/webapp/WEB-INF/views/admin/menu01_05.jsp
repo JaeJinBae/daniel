@@ -24,9 +24,7 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
-	$(function(){
-		$.ajaxSetup({cache:false});
-	})
+	
 });
 </script>
 </head>
@@ -61,22 +59,21 @@ $(function(){
 							<form name="search" method="post" action="" onsubmit="return search_it(this)">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
-									<select name="select_key" id="select_key" class="search_sel"><option value="m_id|m_name|b_content">전체</option><option value="m_id">아이디</option><option value="m_name">이름</option><option value="b_content">내용</option></select>						<input type="text" name="input_key" class="search_t_box" value="">
+									<select name="select_key" id="select_key" class="search_sel">
+										<option value="m_id|m_name|b_content">전체</option>
+										<option value="m_id">아이디</option>
+										<option value="m_name">이름</option>
+										<option value="b_content">내용</option>
+									</select>
+									<input type="text" name="input_key" class="search_t_box" value="">
 									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
 								</div>
 							</form>
 						</div>
 			
-						<form name="board" id="board" method="post" action="board_proc.php">
-							<input type="hidden" name="mode" value="delete">
-							<input type="hidden" name="page" value="1">
-							<input type="hidden" name="search" value="">
-							<input type="hidden" name="select_key" value="">
-							<input type="hidden" name="input_key" value="">
-							<input type="hidden" name="Scod" value="BRD22">
-							<input type="hidden" name="radio_key" value="">
+						<form name="board" id="board" method="post" action="">
 			
-							<table class="list_table" cellpadding="0">
+							<table class="list_table">
 								<colgroup>
 									<col width="3%">
 									<col width="5%">
@@ -88,7 +85,7 @@ $(function(){
 									<col width="5%">
 									<col width="5%">
 								</colgroup>
-								<tbody><tr class="cont">
+								<tr class="cont">
 									<th><input type="checkbox" id="selectall"></th>
 									<th>사용유무</th>
 			                        <th>메인노출유무</th>
@@ -99,130 +96,71 @@ $(function(){
 									<th>파일</th>
 									<th>조회</th>
 								</tr>
-			
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2102"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2102" onclick="vboard_it('delflag', '2102')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2102" onclick="vboard_it('is_main', '2102')"></td>
-									<td>23</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2102&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD22&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 [자필후기] 여드름과 여드름흉터, 주근깨 치료 후...
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2019-07-15</td>
-									<td></td>
-									<td>22</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2101"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2101" onclick="vboard_it('delflag', '2101')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2101" onclick="vboard_it('is_main', '2101')"></td>
-									<td>22</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2101&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD22&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 [자필후기] 눈밑기미와 피부 흉터치료 후기입니다.
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2019-07-15</td>
-									<td></td>
-									<td>15</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2093"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2093" onclick="vboard_it('delflag', '2093')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2093" onclick="vboard_it('is_main', '2093')"></td>
-									<td>21</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2093&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD22&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 [자필후기] 색소(잡티) 치료 후기입니다.
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2019-06-11</td>
-									<td></td>
-									<td>40</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2092"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2092" onclick="vboard_it('delflag', '2092')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2092" onclick="vboard_it('is_main', '2092')"></td>
-									<td>20</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2092&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD22&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 [자필후기] 동안/탄력 레이저 시술 후기입니다.
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2019-06-11</td>
-									<td></td>
-									<td>42</td>
-								</tr>
-							
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="2091"></td>
-									<td><img src="/admin/assets/img/ck_img_on.png" class="cursor vimg" id="delflag_2091" onclick="vboard_it('delflag', '2091')"></td>
-                                       <td><img src="/admin/assets/img/ck_img_none.png" class="cursor vimg" id="ismain_2091" onclick="vboard_it('is_main', '2091')"></td>
-									<td>19</td>
-									<td>
-										<a href="board_form.html?mode=modify&amp;seq=2091&amp;select_key=&amp;input_key=&amp;search=&amp;Scod=BRD22&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;radio_key=&amp;page=1">
-											<p class="title">
-												 [자필후기] 색소(오타모반, 기미) 치료 후기입니다.
-											</p>
-										</a>
-									</td>
-									<td>theweb</td>
-									<td>2019-06-11</td>
-									<td></td>
-									<td>30</td>
-								</tr>
-											
+								<c:choose>
+									<c:when test="${fn:length(list) ==0 }">
+										<tr><td colspan="9">등록된 게시물이 없습니다.</td></tr>
+									</c:when>
+									<c:otherwise>
+										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+									        <c:forEach var="item" items="${list}">
+												<tr class="cont">
+													<td><input type="checkbox" name="" value="${item.no}"></td>
+													<c:choose>
+														<c:when test="${item.use_state == 'o'}">
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
+														</c:when>
+														<c:otherwise>
+															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+														</c:otherwise>
+													</c:choose>
+													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+													<td><i class="ico notice">${num}</i></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu01_05update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"><b></b> ${item.title}</p></a></td>
+													<td>${item.writer}</td>
+													<td>${item.regdate}</td>
+													<td></td>
+													<td>${item.cnt}</td>
+												</tr>
+												<c:set var="num" value="${num-1}"></c:set>	
+											</c:forEach>
+									</c:otherwise>
+								</c:choose>	
 							</table>
 						</form>
 					</div>
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="board_it('delete')">선택삭제</button>
-							<button type="button" class="btn_gray" onclick="board_it('tap_change', 'BRD22')">게시물이동</button>
+							<button type="button" class="btn_gray">선택삭제</button>
+							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_05register'">등록</button>
 						</p>
 					</div>
 					
+					<!-- 페이징 시작 -->
 					<div class="board_paging no_print">
-						<a href="javascript:;" class="direction">&lt;&lt;</a>
-						<a href="javascript:;" class="direction">&lt;</a>
-						<a href="javascript:;" class="on">1</a>
-						<a href="">2</a>
-						<a href="">3</a>
-						<a href="">4</a>
-						<a href="">5</a>
-						<a href="">6</a>
-						<a href="">7</a>
-						<a href="">8</a>
-						<a href="">9</a>
-						<a href="">10</a>
-						<a href="" class="direction">&gt;</a>
-						<a href="" class="direction">&gt;&gt;</a>
-					</div>
+						<a href="${pageMaker.makeSearch(1)}" class="direction">&lt;&lt;</a>
+						<c:if test="${!pageMaker.prev}"><!-- 이전페이지가 존재하지 않는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&lt;</a>
+						</c:if>
+						<c:if test="${pageMaker.prev}"><!-- 이전페이지가 존재하는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}" class="direction">&lt;</a>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+						</c:forEach>
+						<c:if test="${pageMaker.next}"><!-- 뒤에페이지가 존재하는경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}" class="direction">&gt;</a>
+						</c:if>
+						<c:if test="${!pageMaker.next}"><!-- 뒤에 페이지가 존재하지 않는 경우 -->
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&gt;</a>
+						</c:if>
+						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
+					</div>	<!-- 페이징 끝 -->
 				</div>
-			</div>
-			<!-- main_bottom_area end -->
+			</div><!-- main_bottom_area end -->
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->
@@ -231,58 +169,6 @@ $(function(){
         <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
-<script type="text/javascript">
-	$(function(){
-		var $current_page = (window.location.pathname),
-			$current_form_page = $current_page.replace("_list", "_form"),
-			$Scod = "BRD01",
-			$Stpe = "SD01",
-			$admin = "danielclinic",
-			$pattern = /Scod=BRD01/;
-
-		$(".left_menu > dl > dd > a").each(function(){
-
-			var $list = $(this).attr("href"),
-				$form = $list.replace("_list", "_form");
-
-			if( ($current_page == $list) || ($current_page == $form) ){
-				$(this).addClass("on").parents("dl").each(function(){
-					$(this).children("dd").show();
-				}).children("dt").children("a").addClass("on");
-
-				var $menutext = $(this).parents("dl").children("dt").children("a").text();
-				var $subtext = $(this).text();
-
-				$(".naviText_area>h1").html( $(this).text());
-				if($admin=="theweb" && $Stpe!=""){
-					$(".naviText_area>h1").append( "("+$Stpe+")" );
-				}
-				$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-				$(".navi_area li:eq(2)").html( $(this).text() );
-			}else if( $current_page == "/admin/login/mypage.html" ){
-				$(".naviText_area>h1").html("정보수정");
-				$(".navi_area li:eq(1)").html("정보수정");
-			}else{
-				if( $Scod && ($pattern.test($list)) ){
-					$(this).addClass("on").parents("dl").each(function(){
-						$(this).children("dd").show();
-					}).children("dt").children("a").addClass("on");
-
-					var $menutext = $(this).parents("dl").children("dt").children("a").text();
-					var $subtext = $(this).text();
-
-					$(".naviText_area>h1").html( $(this).text());
-					if($admin=="theweb" && $Stpe!=""){
-						$(".naviText_area>h1").append( "("+$Stpe+")" );
-					}
-					$(".navi_area li:eq(1)").html( $(this).parents("dl").children("dt").children("a").text() + "&nbsp;&gt;&nbsp;" );
-					$(".navi_area li:eq(2)").html( $(this).text() );
-				}
-			}
-			return;
-		});
-	});
-</script>
 
 </body>
 </html>

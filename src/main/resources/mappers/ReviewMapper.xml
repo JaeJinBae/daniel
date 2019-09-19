@@ -45,7 +45,7 @@
 	</select>
 	
 	<select id="listSearchAll" resultType="ReviewVO">
-		select * from review where n>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from review where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<sql id="search">
@@ -65,7 +65,7 @@
 	</select>
 	
 	<select id="listSearchCountAll" resultType="int">
-		select count(no) from review where n>0 <include refid="search"></include>
+		select count(no) from review where no>0 <include refid="search"></include>
 	</select>
 	
 </mapper>
