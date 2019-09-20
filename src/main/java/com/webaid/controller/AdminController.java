@@ -33,6 +33,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.CautionVO;
+import com.webaid.domain.ClinicListVO;
 import com.webaid.domain.ClinicResListVO;
 import com.webaid.domain.EventVO;
 import com.webaid.domain.NoticeVO;
@@ -42,6 +43,7 @@ import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
+import com.webaid.service.ClinicListService;
 import com.webaid.service.ClinicResListService;
 import com.webaid.service.EventService;
 import com.webaid.service.NoticeService;
@@ -78,6 +80,9 @@ public class AdminController {
 	
 	@Autowired
 	private ClinicResListService crlService;
+	
+	@Autowired
+	private ClinicListService clService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -998,7 +1003,7 @@ public class AdminController {
 		vo.setPhone(mtfReq.getParameter("phone"));
 		vo.setEmail(mtfReq.getParameter("email"));
 		vo.setMemo(mtfReq.getParameter("memo"));
-		vo.setRes_state("res_state");
+		vo.setRes_state(mtfReq.getParameter("res_state"));
 		
 		crlService.update(vo);
 		
@@ -1021,6 +1026,42 @@ public class AdminController {
 		crlService.delete(no);
 		
 		return "redirect:/admin/menu02_01";
+	}
+	
+	@RequestMapping(value = "/menu02_02", method = RequestMethod.GET)
+	public String menu02_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu02_02 GET");
+		
+		List<ClinicListVO> list = clService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(clService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(clService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu02_02";
+	}
+	
+	@RequestMapping(value = "/menu02_02register", method = RequestMethod.POST)
+	public String menu02_02registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu02_02register POST");
+		
+		ClinicListVO vo = new ClinicListVO();
+		
+		vo.setNo(0);
+		vo.setC1(mtfReq.getParameter("c1"));
+		vo.setC2(mtfReq.getParameter("c2"));
+		vo.setC3(mtfReq.getParameter("c3"));
+		vo.setC4(mtfReq.getParameter("c4"));
+		vo.setC_depth(Integer.parseInt(mtfReq.getParameter("c_depth")));
+		vo.setPrice(Integer.parseInt(mtfReq.getParameter("price")));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		clService.insert(vo);
+		return "redirect:/admin/menu02_02";
 	}
 	
 	@RequestMapping(value = "/menu03_01", method = RequestMethod.GET)

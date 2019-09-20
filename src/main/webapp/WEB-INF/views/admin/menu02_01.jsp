@@ -125,11 +125,25 @@ $(function(){
 													<td>${num}</td>
 													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.name}</a></td>
 													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.counseling}</a></td>
+													<td>
+														<a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+															<c:choose>
+																<c:when test="${item.counseling == 'o'}">상담요망</c:when>
+																<c:otherwise>x</c:otherwise>
+															</c:choose>
+														</a>
+													</td>
 													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.clinic_list}</a></td>
 													<td>${item.res_date} ${item.res_time}</td>
 													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.price}</a></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.res_state}</a></td>
+													<td>
+														<a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+															<c:choose>
+																<c:when test="${item.res_state == 'o'}">예약완료</c:when>
+																<c:otherwise>예약취소</c:otherwise>
+															</c:choose>
+														</a>
+													</td>
 													<td>${item.regdate}</td>
 												</tr>
 												<c:set var="num" value="${num-1}"></c:set>	

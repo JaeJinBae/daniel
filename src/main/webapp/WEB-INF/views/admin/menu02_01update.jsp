@@ -27,6 +27,14 @@ $(function(){
 	var counseling = "${item.counseling}";
 	$("#r_counsel > option[value='"+counseling+"']").prop("selected", true);
 	
+	var res_state = "${item.res_state}";
+	if(res_state == "o"){
+		$("#r_state > option[value='o']").prop("selected", true);
+	}else{
+		$("#r_state > option[value='x']").prop("selected", true);
+	}
+	
+	
 	$("#delBtn").click(function(){
 		var no = $("input[name='no']").val();
 		
