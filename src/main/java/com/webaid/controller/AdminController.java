@@ -1064,6 +1064,26 @@ public class AdminController {
 		return "redirect:/admin/menu02_02";
 	}
 	
+	@RequestMapping(value = "/menu02_02update", method = RequestMethod.POST)
+	public String menu02_02updatePOST(MultipartHttpServletRequest mtfReq, RedirectAttributes rtts) throws Exception {
+		logger.info("menu02_02update POST");
+		
+		ClinicListVO vo = new ClinicListVO();
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setC1(mtfReq.getParameter("c1"));
+		vo.setC2(mtfReq.getParameter("c2"));
+		vo.setC3(mtfReq.getParameter("c3"));
+		vo.setC4(mtfReq.getParameter("c4"));
+		vo.setC_depth(Integer.parseInt(mtfReq.getParameter("c_depth")));
+		vo.setPrice(Integer.parseInt(mtfReq.getParameter("price")));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		clService.update(vo);
+		
+		return "redirect:/admin/menu02_02";
+	}
+	
 	@RequestMapping(value = "/menu03_01", method = RequestMethod.GET)
 	public String menu03_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu03_01 GET");

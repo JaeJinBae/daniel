@@ -90,6 +90,8 @@
 $(function(){
 	$.ajaxSetup({cache:false});
 	
+	$("input").attr("autocomplete", "off");
+	
 	$("#upadd_top_tab_wrap > ul > li").eq(0).addClass("active_upadd_top_tab");
 	
 	$("#upadd_top_tab_wrap > ul > li").click(function(){
@@ -127,20 +129,23 @@ $(function(){
 	});
 	
 	$(".sel_chk_box").click(function(){
+		var no = $(this).val();
 		var c1 = $(this).parent().find("input[name='c1']").val();
 		var c2 = $(this).parent().find("input[name='c2']").val();
 		var c3 = $(this).parent().find("input[name='c3']").val();
 		var c4 = $(this).parent().find("input[name='c4']").val();
-		
+		var c_depth = $(this).parent().find("input[name='c_depth']").val();
+		var price = $(this).parent().find("input[name='price']").val();
+		var use_state = $(this).parent().find("input[name='use_state']").val();
 		
 		$("#formUpdate > div > table tr > td > input[name='no']").val(no);
 		$("#formUpdate > div > table tr > td > input[name='c1']").val(c1);
 		$("#formUpdate > div > table tr > td > input[name='c2']").val(c2);
 		$("#formUpdate > div > table tr > td > input[name='c3']").val(c3);
 		$("#formUpdate > div > table tr > td > input[name='c4']").val(c4);
-		$("#formUpdate > div > table tr > td > input[name='c_depth']").val();
-		$("#formUpdate > div > table tr > td > input[name='']").val();
-		$("#formUpdate > div > table tr > td > input[name='']").val();
+		$("#formUpdate > div > table tr > td > input[name='c_depth']").val(c_depth);
+		$("#formUpdate > div > table tr > td > input[name='price']").val(price);
+		$("#formUpdate > div > table tr > td > label > input[value='"+use_state+"']").prop("checked", "checked");
 	});
 });
 </script>
@@ -174,7 +179,7 @@ $(function(){
 							<li>시술추가</li>
 						</ul>
 					</div><!-- 수정, 추가 선택 버튼 끝 -->
-					<form id="formUpdate" class="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu02_02udpate">
+					<form id="formUpdate" class="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu02_02update">
 						<div class="formTableWrap"><!-- 내용입력 시작 -->
 							<table>
 								<tr>
@@ -203,8 +208,8 @@ $(function(){
 						</div><!-- 내용입력 끝 -->
 						<div class="upAddformTableBtnWrap"><!-- 수정, 삭제, 추가 버튼 시작 -->
 							<input type="submit" value="정보 수정">
-							<button>정보 삭제</button>
-							<button>취소</button>
+							<button type="button">정보 삭제</button>
+							<button type="button" onClick="location.href='${pageContext.request.contextPath}/admin/menu02_02'">취소</button>
 						</div><!-- 수정, 삭제, 추가 버튼 끝 -->
 					</form>
 					<form id="formRegister" class="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu02_02register">
