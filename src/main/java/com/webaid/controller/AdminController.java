@@ -36,6 +36,7 @@ import com.webaid.domain.CautionVO;
 import com.webaid.domain.ClinicListVO;
 import com.webaid.domain.ClinicResListVO;
 import com.webaid.domain.EventVO;
+import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.RealStoryVO;
@@ -46,6 +47,7 @@ import com.webaid.service.CautionService;
 import com.webaid.service.ClinicListService;
 import com.webaid.service.ClinicResListService;
 import com.webaid.service.EventService;
+import com.webaid.service.HospitalTimeService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
@@ -83,6 +85,9 @@ public class AdminController {
 	
 	@Autowired
 	private ClinicListService clService;
+	
+	@Autowired
+	private HospitalTimeService htService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -1080,6 +1085,27 @@ public class AdminController {
 		vo.setUse_state(mtfReq.getParameter("use_state"));
 		
 		clService.update(vo);
+		
+		return "redirect:/admin/menu02_02";
+	}
+	
+	@RequestMapping(value = "/menu02_03", method = RequestMethod.GET)
+	public String menu02_03(Model model) throws Exception {
+		logger.info("menu02_03");
+		
+		List<HospitalTimeVO> list = htService.selectAll();
+		
+		model.addAttribute("list", list);
+		return "admin/menu02_03";
+	}
+	
+	@RequestMapping(value = "/menu02_03update", method = RequestMethod.POST)
+	public String menu02_03updatePOST(MultipartHttpServletRequest mtfReq, RedirectAttributes rtts) throws Exception {
+		logger.info("menu02_03update POST");
+		
+		HospitalTimeVO vo = new HospitalTimeVO();
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
 		
 		return "redirect:/admin/menu02_02";
 	}
