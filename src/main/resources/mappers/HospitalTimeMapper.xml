@@ -16,7 +16,7 @@
 	</insert>
 	
 	<update id="update">
-		update hospital_time set h_date=#{h_date}, start_time=#{start_time}, end_time=#{end_time} where no=#{no}
+		update hospital_time set start_time=#{start_time}, end_time=#{end_time} where no=#{no}
 	</update>
 	
 	<delete id="delete">

@@ -1095,7 +1095,31 @@ public class AdminController {
 		
 		List<HospitalTimeVO> list = htService.selectAll();
 		
-		model.addAttribute("list", list);
+		int mon_start = list.get(0).getStart_time();
+		int mon_end = list.get(0).getEnd_time();
+		int tue_start = list.get(1).getStart_time();
+		int tue_end = list.get(1).getEnd_time();
+		int wed_start = list.get(2).getStart_time();
+		int wed_end = list.get(2).getEnd_time();
+		int thu_start = list.get(3).getStart_time();
+		int thu_end = list.get(3).getEnd_time();
+		int fri_start = list.get(4).getStart_time();
+		int fri_end = list.get(4).getEnd_time();
+		int sat_start = list.get(5).getStart_time();
+		int sat_end = list.get(5).getEnd_time();
+		
+		model.addAttribute("mon_s", mon_start);
+		model.addAttribute("mon_e", mon_end);
+		model.addAttribute("tue_s", tue_start);
+		model.addAttribute("tue_e", tue_end);
+		model.addAttribute("wed_s", wed_start);
+		model.addAttribute("wed_e", wed_end);
+		model.addAttribute("thu_s", thu_start);
+		model.addAttribute("thu_e", thu_end);
+		model.addAttribute("fri_s", fri_start);
+		model.addAttribute("fri_e", fri_end);
+		model.addAttribute("sat_s", sat_start);
+		model.addAttribute("sat_e", sat_end);
 		return "admin/menu02_03";
 	}
 	
@@ -1103,11 +1127,47 @@ public class AdminController {
 	public String menu02_03updatePOST(MultipartHttpServletRequest mtfReq, RedirectAttributes rtts) throws Exception {
 		logger.info("menu02_03update POST");
 		
-		HospitalTimeVO vo = new HospitalTimeVO();
+		int mon_start = (Integer.parseInt(mtfReq.getParameter("mon_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("mon_start_minute"));
+		int mon_end = (Integer.parseInt(mtfReq.getParameter("mon_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("mon_end_minute"));
+		int tue_start = (Integer.parseInt(mtfReq.getParameter("tue_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("tue_start_minute"));
+		int tue_end = (Integer.parseInt(mtfReq.getParameter("tue_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("tue_end_minute"));
+		int wed_start = (Integer.parseInt(mtfReq.getParameter("wed_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("wed_start_minute"));
+		int wed_end = (Integer.parseInt(mtfReq.getParameter("wed_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("wed_end_minute"));
+		int thu_start = (Integer.parseInt(mtfReq.getParameter("thu_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("thu_start_minute"));
+		int thu_end = (Integer.parseInt(mtfReq.getParameter("thu_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("thu_end_minute"));
+		int fri_start =( Integer.parseInt(mtfReq.getParameter("fri_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("fri_start_minute"));
+		int fri_end = (Integer.parseInt(mtfReq.getParameter("fri_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("fri_end_minute"));
+		int sat_start = (Integer.parseInt(mtfReq.getParameter("sat_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("sat_start_minute"));
+		int sat_end = (Integer.parseInt(mtfReq.getParameter("sat_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("sat_end_minute"));
 		
-		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		List<Integer> timeList = new ArrayList<Integer>();
+		timeList.add(mon_start);
+		timeList.add(mon_end);
+		timeList.add(tue_start);
+		timeList.add(tue_end);
+		timeList.add(wed_start);
+		timeList.add(wed_end);
+		timeList.add(thu_start);
+		timeList.add(thu_end);
+		timeList.add(fri_start);
+		timeList.add(fri_end);
+		timeList.add(sat_start);
+		timeList.add(sat_end);
 		
-		return "redirect:/admin/menu02_02";
+		int k= 0;
+		
+		for(int i=1; i<7; i++){
+			HospitalTimeVO vo = new HospitalTimeVO();
+			vo.setNo(i);
+			vo.setStart_time(timeList.get(k));
+			k++;
+			vo.setEnd_time(timeList.get(k));
+			k++;
+			htService.update(vo);
+			System.out.println(vo);
+		}
+		
+		return "redirect:/admin/menu02_03";
 	}
 	
 	@RequestMapping(value = "/menu03_01", method = RequestMethod.GET)

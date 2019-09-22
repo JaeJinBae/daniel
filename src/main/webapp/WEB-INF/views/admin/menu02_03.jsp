@@ -88,8 +88,79 @@
 </style>
 <script>
 $(function(){
+	var mon_s = Number("${mon_s}");
+	var mon_s_h = parseInt(mon_s/60);
+	var mon_s_m = mon_s%60;
+	var mon_e = Number("${mon_e}");
+	var mon_e_h = parseInt(mon_e/60);
+	var mon_e_m = mon_e%60;
 	
-});
+	var tue_s = Number("${tue_s}");
+	var tue_s_h = parseInt(tue_s/60);
+	var tue_s_m = tue_s%60;
+	var tue_e = Number("${tue_e}");
+	var tue_e_h = parseInt(tue_e/60);
+	var tue_e_m = tue_e%60;
+	
+	var wed_s = Number("${wed_s}");
+	var wed_s_h = parseInt(wed_s/60);
+	var wed_s_m = wed_s%60;
+	var wed_e = Number("${wed_e}");
+	var wed_e_h = parseInt(wed_e/60);
+	var wed_e_m = wed_e%60;
+	
+	var thu_s = Number("${thu_s}");
+	var thu_s_h = parseInt(thu_s/60);
+	var thu_s_m = thu_s%60;
+	var thu_e = Number("${thu_e}");
+	var thu_e_h = parseInt(thu_e/60);
+	var thu_e_m = thu_e%60;
+	
+	var fri_s = Number("${fri_s}");
+	var fri_s_h = parseInt(fri_s/60);
+	var fri_s_m = fri_s%60;
+	var fri_e = Number("${fri_e}");
+	var fri_e_h = parseInt(fri_e/60);
+	var fri_e_m = fri_e%60;
+	
+	var sat_s = Number("${sat_s}");
+	var sat_s_h = parseInt(sat_s/60);
+	var sat_s_m = sat_s%60;
+	var sat_e = Number("${sat_e}");
+	var sat_e_h = parseInt(sat_e/60);
+	var sat_e_m = sat_e%60;
+	
+	$("select[name='mon_start_hour'] > option[value='"+mon_s_h+"']").prop("selected", true);
+	$("select[name='mon_start_minute'] > option[value='"+mon_s_m+"']").prop("selected", true);
+	$("select[name='mon_end_hour'] > option[value='"+mon_e_h+"']").prop("selected", true);
+	$("select[name='mon_end_minute'] > option[value='"+mon_e_m+"']").prop("selected", true);
+	
+	$("select[name='tue_start_hour'] > option[value='"+tue_s_h+"']").prop("selected", true);
+	$("select[name='tue_start_minute'] > option[value='"+tue_s_m+"']").prop("selected", true);
+	$("select[name='tue_end_hour'] > option[value='"+tue_e_h+"']").prop("selected", true);
+	$("select[name='tue_end_minute'] > option[value='"+tue_e_m+"']").prop("selected", true);
+	
+	$("select[name='wed_start_hour'] > option[value='"+wed_s_h+"']").prop("selected", true);
+	$("select[name='wed_start_minute'] > option[value='"+wed_s_m+"']").prop("selected", true);
+	$("select[name='wed_end_hour'] > option[value='"+wed_e_h+"']").prop("selected", true);
+	$("select[name='wed_end_minute'] > option[value='"+wed_e_m+"']").prop("selected", true);
+	
+	$("select[name='thu_start_hour'] > option[value='"+thu_s_h+"']").prop("selected", true);
+	$("select[name='thu_start_minute'] > option[value='"+thu_s_m+"']").prop("selected", true);
+	$("select[name='thu_end_hour'] > option[value='"+thu_e_h+"']").prop("selected", true);
+	$("select[name='thu_end_minute'] > option[value='"+thu_e_m+"']").prop("selected", true);
+	
+	$("select[name='fri_start_hour'] > option[value='"+fri_s_h+"']").prop("selected", true);
+	$("select[name='fri_start_minute'] > option[value='"+fri_s_m+"']").prop("selected", true);
+	$("select[name='fri_end_hour'] > option[value='"+fri_e_h+"']").prop("selected", true);
+	$("select[name='fri_end_minute'] > option[value='"+fri_e_m+"']").prop("selected", true);
+	
+	$("select[name='sat_start_hour'] > option[value='"+sat_s_h+"']").prop("selected", true);
+	$("select[name='sat_start_minute'] > option[value='"+sat_s_m+"']").prop("selected", true);
+	$("select[name='sat_end_hour'] > option[value='"+sat_e_h+"']").prop("selected", true);
+	$("select[name='sat_end_minute'] > option[value='"+sat_e_m+"']").prop("selected", true);
+	
+}); 
 </script>
 
 </head>
@@ -114,369 +185,371 @@ $(function(){
 			</div>
 			
 			<div class="main_bottom_area">
-				<table class="write_table">
-					<colgroup>
-						<col width="11%">
-						<col width="*">
-					</colgroup>
-					<tr class="cont">
-						<td class="title">월요일 진료시간</td>
-						<td>
-							<select name="start_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="start_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-							&nbsp;~&nbsp;
-							<select name="end_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="end_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-						</td>
-					</tr>
-					<tr class="cont">
-						<td class="title">화요일 진료시간</td>
-						<td>
-							<select name="start_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="start_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-							&nbsp;~&nbsp;
-							<select name="end_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="end_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-						</td>
-					</tr>
-					<tr class="cont">
-						<td class="title">수요일 진료시간</td>
-						<td>
-							<select name="start_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="start_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-							&nbsp;~&nbsp;
-							<select name="end_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="end_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-						</td>
-					</tr>
-					<tr class="cont">
-						<td class="title">목요일 진료시간</td>
-						<td>
-							<select name="start_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="start_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-							&nbsp;~&nbsp;
-							<select name="end_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="end_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-						</td>
-					</tr>
-					<tr class="cont">
-						<td class="title">금요일 진료시간</td>
-						<td>
-							<select name="start_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="start_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-							&nbsp;~&nbsp;
-							<select name="end_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="end_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-						</td>
-					</tr>
-					<tr class="cont">
-						<td class="title">토요일 진료시간</td>
-						<td>
-							<select name="start_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="start_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-							&nbsp;~&nbsp;
-							<select name="end_hour">
-								<option value="8">8시</option>
-								<option value="9">9시</option>
-								<option value="10">10시</option>
-								<option value="11">11시</option>
-								<option value="12">12시</option>
-								<option value="13">13시</option>
-								<option value="14">14시</option>
-								<option value="15">15시</option>
-								<option value="16">16시</option>
-								<option value="17">17시</option>
-								<option value="18">18시</option>
-								<option value="19">19시</option>
-								<option value="20">20시</option>
-								<option value="21">21시</option>
-								<option value="22">22시</option>
-								<option value="23">23시</option>
-							</select>&nbsp;:&nbsp;
-							<select name="end_minute">
-								<option value="0">00분</option>
-								<option value="10">10분</option>
-								<option value="20">20분</option>
-								<option value="30">30분</option>
-								<option value="40">40분</option>
-								<option value="50">50분</option>
-							</select>
-						</td>
-					</tr>
-				</table>
-				<div class="btn_area">
-					<p class="btn_left">
-						<button type="button" class="btn_gray">리스트</button>
-					</p>
-					<p class="btn_right">
-						<button type="button" class="btn_black">수정</button>
-						<button type="button" class="btn_gray">취소</button>
-					</p>
-				</div>
+				<form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu02_03update">
+					<table class="write_table">
+						<colgroup>
+							<col width="11%">
+							<col width="*">
+						</colgroup>
+						<tr class="cont">
+							<td class="title">월요일 진료시간</td>
+							<td>
+								<select name="mon_start_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="mon_start_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+								&nbsp;~&nbsp;
+								<select name="mon_end_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="mon_end_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="cont">
+							<td class="title">화요일 진료시간</td>
+							<td>
+								<select name="tue_start_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="tue_start_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+								&nbsp;~&nbsp;
+								<select name="tue_end_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="tue_end_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="cont">
+							<td class="title">수요일 진료시간</td>
+							<td>
+								<select name="wed_start_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="wed_start_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+								&nbsp;~&nbsp;
+								<select name="wed_end_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="wed_end_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="cont">
+							<td class="title">목요일 진료시간</td>
+							<td>
+								<select name="thu_start_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="thu_start_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+								&nbsp;~&nbsp;
+								<select name="thu_end_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="thu_end_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="cont">
+							<td class="title">금요일 진료시간</td>
+							<td>
+								<select name="fri_start_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="fri_start_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+								&nbsp;~&nbsp;
+								<select name="fri_end_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="fri_end_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="cont">
+							<td class="title">토요일 진료시간</td>
+							<td>
+								<select name="sat_start_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="sat_start_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+								&nbsp;~&nbsp;
+								<select name="sat_end_hour">
+									<option value="8">8시</option>
+									<option value="9">9시</option>
+									<option value="10">10시</option>
+									<option value="11">11시</option>
+									<option value="12">12시</option>
+									<option value="13">13시</option>
+									<option value="14">14시</option>
+									<option value="15">15시</option>
+									<option value="16">16시</option>
+									<option value="17">17시</option>
+									<option value="18">18시</option>
+									<option value="19">19시</option>
+									<option value="20">20시</option>
+									<option value="21">21시</option>
+									<option value="22">22시</option>
+									<option value="23">23시</option>
+								</select>&nbsp;:&nbsp;
+								<select name="sat_end_minute">
+									<option value="0">00분</option>
+									<option value="10">10분</option>
+									<option value="20">20분</option>
+									<option value="30">30분</option>
+									<option value="40">40분</option>
+									<option value="50">50분</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<div class="btn_area">
+						<p class="btn_left">
+							<button type="button" class="btn_gray">리스트</button>
+						</p>
+						<p class="btn_right">
+							<input type="submit" value="수정" class="btn_black">
+							<button type="button" class="btn_gray">취소</button>
+						</p>
+					</div>
+				</form>
 			</div><!-- main_bottom_area end -->
 			
 		</div><!-- admin_right 끝 -->
