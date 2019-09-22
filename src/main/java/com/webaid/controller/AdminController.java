@@ -36,6 +36,7 @@ import com.webaid.domain.CautionVO;
 import com.webaid.domain.ClinicListVO;
 import com.webaid.domain.ClinicResListVO;
 import com.webaid.domain.EventVO;
+import com.webaid.domain.HospitalOffVO;
 import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
@@ -47,6 +48,7 @@ import com.webaid.service.CautionService;
 import com.webaid.service.ClinicListService;
 import com.webaid.service.ClinicResListService;
 import com.webaid.service.EventService;
+import com.webaid.service.HospitalOffService;
 import com.webaid.service.HospitalTimeService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
@@ -88,6 +90,9 @@ public class AdminController {
 	
 	@Autowired
 	private HospitalTimeService htService;
+	
+	@Autowired
+	private HospitalOffService hoService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -1168,6 +1173,46 @@ public class AdminController {
 		}
 		
 		return "redirect:/admin/menu02_03";
+	}
+	
+	@RequestMapping(value = "/menu02_04", method = RequestMethod.GET)
+	public String menu02_04(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu02_04 GET");
+		
+		List<HospitalOffVO> list = hoService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(hoService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(hoService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu02_04";
+	}
+	
+	@RequestMapping(value = "/menu02_04register", method = RequestMethod.GET)
+	public String menu02_04register() throws Exception {
+		logger.info("menu02_04register GET");
+		
+		
+		return "admin/menu02_04register";
+	}
+	
+	@RequestMapping(value = "/menu02_04register", method = RequestMethod.POST)
+	public String menu02_04registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu02_04register POST");
+		
+		HospitalOffVO vo = new HospitalOffVO();
+		
+		vo.setNo(0);
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setOff_date(mtfReq.getParameter("off_date"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		hoService.insert(vo);
+		return "redirect:/admin/menu02_04";
 	}
 	
 	@RequestMapping(value = "/menu03_01", method = RequestMethod.GET)

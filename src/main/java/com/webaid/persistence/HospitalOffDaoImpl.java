@@ -23,13 +23,13 @@ public class HospitalOffDaoImpl implements HospitalOffDao{
 	}
 
 	@Override
-	public List<HospitalOffVO> listSearch(HospitalOffVO vo) {
-		return session.selectList(namespace+".listSearch", vo);
+	public List<HospitalOffVO> listSearch(SearchCriteria cri) {
+		return session.selectList(namespace+".listSearch", cri);
 	}
 
 	@Override
-	public List<HospitalOffVO> listSearchAll(HospitalOffVO vo) {
-		return session.selectList(namespace+".listSearchAll", vo);
+	public List<HospitalOffVO> listSearchAll(SearchCriteria cri) {
+		return session.selectList(namespace+".listSearchAll", cri);
 	}
 
 	@Override

@@ -7,8 +7,8 @@ import com.webaid.domain.SearchCriteria;
 
 public interface HospitalOffDao {
 	public HospitalOffVO selectOne(int no);
-	public List<HospitalOffVO> listSearch(HospitalOffVO vo);
-	public List<HospitalOffVO> listSearchAll(HospitalOffVO vo);
+	public List<HospitalOffVO> listSearch(SearchCriteria cri);
+	public List<HospitalOffVO> listSearchAll(SearchCriteria cri);
 	public int listSearchCount(SearchCriteria cri);
 	public int listSearchCountAll(SearchCriteria cri);
 	public void insert(HospitalOffVO vo);

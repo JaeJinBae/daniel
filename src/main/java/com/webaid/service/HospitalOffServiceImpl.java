@@ -21,13 +21,13 @@ public class HospitalOffServiceImpl implements HospitalOffService {
 	}
 
 	@Override
-	public List<HospitalOffVO> listSearch(HospitalOffVO vo) {
-		return dao.listSearch(vo);
+	public List<HospitalOffVO> listSearch(SearchCriteria cri) {
+		return dao.listSearch(cri);
 	}
 
 	@Override
-	public List<HospitalOffVO> listSearchAll(HospitalOffVO vo) {
-		return dao.listSearchAll(vo);
+	public List<HospitalOffVO> listSearchAll(SearchCriteria cri) {
+		return dao.listSearchAll(cri);
 	}
 
 	@Override
