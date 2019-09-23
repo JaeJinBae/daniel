@@ -1528,6 +1528,17 @@ public class AdminController {
 		return entity;
 	}
 	
+	@RequestMapping(value = "/menu04_02delete/{no}", method = RequestMethod.GET)
+	public ResponseEntity<String> menu04_02delete(@PathVariable("no") int no) throws Exception {
+		logger.info("menu04_02 GET");
+		ResponseEntity<String> entity = null;
+		
+		uService.delete(no);
+		
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		return entity;
+	}
+	
 	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)
 	public String menu05_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu05_01 GET");

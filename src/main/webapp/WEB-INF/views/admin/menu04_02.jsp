@@ -42,7 +42,27 @@ $(function(){
 			});
 		});
 		location.href="${pageContext.request.contextPath}/admin/menu04_02";
-	}); 
+	});
+	
+$("#btn_delete").click(function(){
+		
+		$(".sel_chkbox:checked").each(function(){
+			$.ajax({
+				url:"${pageContext.request.contextPath}/admin/menu04_02delete/"+$(this).val(),
+				type:"get",
+				contentType : "application/json; charset=UTF-8",
+				dataType:"text",
+				async:false,
+				success:function(json){
+					console.log(json);
+				},
+				error:function(request,status,error){
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				}
+			});
+		});
+		location.href="${pageContext.request.contextPath}/admin/menu04_02";
+	});
 });
 </script>
 </head>
