@@ -24,6 +24,10 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+function delete_user(no){
+	
+}
+
 function addr_func(){
 	new daum.Postcode({
         oncomplete: function(data) {
@@ -78,6 +82,10 @@ $(function(){
 		if($("#idchkval").val() == "x"){
 			alert("아이디 중복확인을 진행하세요.");
 			return false;
+		}
+		
+		if($("#pw").val().length > 1){
+			$("#pw_change").val("o");
 		}
 		
 		var phone1 = $("#phone1").val();
@@ -145,7 +153,7 @@ $(function(){
 								</tr>
 								<tr class="cont">
 									<td class="title">비밀번호</td>
-									<td><input type="password" class="w_form_m" name="pw" id="pw"><input type="hidden" name="pw_change" value="x"></td>
+									<td><input type="password" class="w_form_m" name="pw" id="pw"><input type="hidden" name="pw_change" id="pw_change" value="x"></td>
 								</tr>
 								<tr class="cont">
 									<td class="title">휴대전화</td>
@@ -224,9 +232,12 @@ $(function(){
 							<p class="btn_left">
 								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01'">리스트</button>
 							</p>
+				
 							<p class="btn_right">
 								<input type="submit" class="btn_black" value="수정">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01update">취소</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01withdraw/${item.no}/o'">탈퇴</button>
+								<button type="button" class="btn_red" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01delete/${item.no}'">삭제</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01'">취소</button>
 							</p>
 						</div>
 				

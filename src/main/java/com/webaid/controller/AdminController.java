@@ -1452,17 +1452,18 @@ public class AdminController {
 		logger.info("menu04_01update POST");
 		
 		UserVO vo = new UserVO();
-		
+		UserVO prevVO = uService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
 		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
 		vo.setName(mtfReq.getParameter("name"));
 		if(mtfReq.getParameter("pw_change").equals("o")){
 			vo.setPw(mtfReq.getParameter("pw"));
+		}else{
+			vo.setPw(prevVO.getPw());
 		}
 		vo.setPhone(mtfReq.getParameter("phone"));
 		vo.setBirth(mtfReq.getParameter("birth"));
 		vo.setGender(mtfReq.getParameter("gender"));
 		vo.setEmail(mtfReq.getParameter("email"));
-		
 		
 		uService.update(vo);
 		
@@ -1478,13 +1479,53 @@ public class AdminController {
 		return "redirect:/admin/menu04_01update";
 	}
 	
+	@RequestMapping(value = "/menu04_01withdraw/{no}/{withdraw}", method = RequestMethod.GET)
+	public String menu04_01withdraw(@PathVariable("no") int no, @PathVariable("withdraw") String withdraw) throws Exception {
+		logger.info("menu04_01 GET");
+		UserVO vo = new UserVO();
+		vo.setNo(no);
+		vo.setWithdraw(withdraw);
+		uService.updateWithdraw(vo);
+		
+		return "redirect:/admin/menu04_01";
+	}
+	
+	@RequestMapping(value = "/menu04_01delete/{no}", method = RequestMethod.GET)
+	public String menu04_01delete(@PathVariable("no") int no) throws Exception {
+		logger.info("menu04_01 GET");
+
+		uService.delete(no);
+		
+		return "redirect:/admin/menu04_01";
+	}
 	
 	@RequestMapping(value = "/menu04_02", method = RequestMethod.GET)
 	public String menu04_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu04_02 GET");
 		
+		List<UserVO> list = uService.listSearchWithdrawAll(cri);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(uService.listSearchWithdrawCountAll(cri));
+		pageMaker.setFinalPage(uService.listSearchWithdrawCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "admin/menu04_02";
+	}
+	
+	@RequestMapping(value = "/menu04_02withdraw/{no}/{withdraw}", method = RequestMethod.GET)
+	public ResponseEntity<String> menu04_02withdraw(@PathVariable("no") int no, @PathVariable("withdraw") String withdraw) throws Exception {
+		logger.info("menu04_02 GET");
+		ResponseEntity<String> entity = null;
+		UserVO vo = new UserVO();
+		vo.setNo(no);
+		vo.setWithdraw(withdraw);
+		uService.updateWithdraw(vo);
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		return entity;
 	}
 	
 	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)

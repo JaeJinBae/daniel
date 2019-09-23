@@ -10,8 +10,11 @@ public interface UserDao {
 	public UserVO selectById(String id);
 	public void insert(UserVO vo);
 	public void update(UserVO vo);
+	public void updateWithdraw(UserVO vo);
 	public void updateLoginCnt(int no);
 	public void delete(int no);
 	public List<UserVO> listSearchAll(SearchCriteria cri);
+	public List<UserVO> listSearchWithdrawAll(SearchCriteria cri);
 	public int listSearchCountAll(SearchCriteria cri);
+	public int listSearchWithdrawCountAll(SearchCriteria cri);
 }

@@ -38,6 +38,11 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	public void updateWithdraw(UserVO vo) {
+		session.update(namespace + ".updateWithdraw", vo);
+	}
+
+	@Override
 	public void updateLoginCnt(int no) {
 		session.update(namespace + ".updateLoginCnt", no);
 	}
@@ -53,8 +58,18 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	public List<UserVO> listSearchWithdrawAll(SearchCriteria cri) {
+		return session.selectList(namespace+".listSearchWithdrawAll", cri);
+	}
+
+	@Override
 	public int listSearchCountAll(SearchCriteria cri) {
 		return session.selectOne(namespace + ".listSearchCountAll", cri);
+	}
+
+	@Override
+	public int listSearchWithdrawCountAll(SearchCriteria cri) {
+		return session.selectOne(namespace+".listSearchWithdrawCountAll", cri);
 	}
 
 }

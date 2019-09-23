@@ -192,8 +192,8 @@ $(function(){
 								<tr class="cont">
 									<td class="title">성별</td>
 									<td>
-										<label><i></i><input type="radio" name="gender" class="gender" value="M">남</label>&nbsp;&nbsp;&nbsp;
-										<label><i></i><input type="radio" name="gender" class="gender" value="F">여</label>&nbsp;&nbsp;&nbsp;
+										<label><i></i><input type="radio" name="gender" class="gender" value="m">남</label>&nbsp;&nbsp;&nbsp;
+										<label><i></i><input type="radio" name="gender" class="gender" value="f">여</label>&nbsp;&nbsp;&nbsp;
 									</td>
 								</tr>
 								<tr class="cont">

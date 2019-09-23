@@ -13,6 +13,7 @@ public class UserVO {
 	private String email;
 	private String regdate;
 	private int login_cnt;
+	private String withdraw;
 
 	public UserVO() {
 		super();
@@ -113,12 +114,20 @@ public class UserVO {
 	public void setLogin_cnt(int login_cnt) {
 		this.login_cnt = login_cnt;
 	}
+	
+	public String getWithdraw() {
+		return withdraw;
+	}
+
+	public void setWithdraw(String withdraw) {
+		this.withdraw = withdraw;
+	}
 
 	@Override
 	public String toString() {
 		return "UserVO [no=" + no + ", id=" + id + ", name=" + name + ", lv=" + lv + ", pw=" + pw + ", phone=" + phone
 				+ ", birth=" + birth + ", gender=" + gender + ", addr=" + addr + ", email=" + email + ", regdate="
-				+ regdate + ", login_cnt=" + login_cnt + "]";
+				+ regdate + ", login_cnt=" + login_cnt + ", withdraw=" + withdraw + "]";
 	}
 
 }

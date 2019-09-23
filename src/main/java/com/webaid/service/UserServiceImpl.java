@@ -36,6 +36,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public void updateWithdraw(UserVO vo) {
+		dao.updateWithdraw(vo);
+	}
+
+	@Override
 	public void updateLoginCnt(int no) {
 		dao.updateLoginCnt(no);
 	}
@@ -51,8 +56,18 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public List<UserVO> listSearchWithdrawAll(SearchCriteria cri) {
+		return dao.listSearchWithdrawAll(cri);
+	}
+
+	@Override
 	public int listSearchCountAll(SearchCriteria cri) {
 		return dao.listSearchCountAll(cri);
+	}
+
+	@Override
+	public int listSearchWithdrawCountAll(SearchCriteria cri) {
+		return dao.listSearchWithdrawCountAll(cri);
 	}
 
 }

@@ -13,11 +13,15 @@
 	</select>
 	
 	<insert id="insert">
-		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{addr}, #{email}, #{regdate}, #{login_cnt})
+		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{addr}, #{email}, #{regdate}, #{login_cnt}, 'x')
 	</insert>
 	
 	<update id="update">
 		update user set name=#{name}, pw=#{pw}, phone=#{phone}, birth=#{birth}, gender=#{gender}, email=#{email} where no=#{no}
+	</update>
+	
+	<update id="updateWithdraw">
+		update user set withdraw=#{withdraw} where no=#{no}
 	</update>
 	
 	<update id="updateLoginCnt">
@@ -29,7 +33,11 @@
 	</delete>
 	
 	<select id="listSearchAll" resultType="UserVO">
-		select * from user where no>0 <include refid="search"></include> order by no desc limit #{pageStart},#{perPageNum}
+		select * from user where withdraw='x' <include refid="search"></include> order by no desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<select id="listSearchWithdrawAll" resultType="UserVO">
+		select * from user where withdraw='o' <include refid="search"></include> order by no desc limit #{pageStart},#{perPageNum}
 	</select>
 	
 	<sql id="search">
@@ -45,7 +53,11 @@
 	</sql>
 
 	<select id="listSearchCountAll" resultType="int">
-		select count(no) from user where no>0 <include refid="search"></include>
+		select count(no) from user where withdraw='x' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchWithdrawCountAll" resultType="int">
+		select count(no) from user where withdraw='o' <include refid="search"></include>
 	</select>
 	
 </mapper>
