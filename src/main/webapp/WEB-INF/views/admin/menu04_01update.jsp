@@ -24,28 +24,6 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-function id_chk(id){
-	$.ajax({
-		url:"${pageContext.request.contextPath}/id_duplicate_chk/"+id,
-		type:"get",
-		contentType : "application/json; charset=UTF-8",
-		dataType:"text",
-		async:false,
-		success:function(json){
-			if(json == "empty"){
-				alert("사용가능한 아이디입니다.");
-				$("#idchkval").val("o");
-			}else if(json == "exist"){
-				alert("이미 사용중인 아이디입니다.");
-				$("#idchkval").val("x");
-			}
-		},
-		error:function(request,status,error){
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		}
-	});
-}
-
 function addr_func(){
 	new daum.Postcode({
         oncomplete: function(data) {
@@ -72,9 +50,23 @@ function addr_func(){
     }).open();
 }
 $(function(){
+	var phoneList = "${item.phone}".split("-");
+	$("#phone1 > option[value='"+phoneList[0]+"']").prop("selected", true);
+	$("#phone2").val(phoneList[1]);
+	$("#phone3").val(phoneList[2]);
+	
+	var sex = "${item.gender}";
+	$(".gender[value='"+sex+"']").prop("checked", true);
+	
+	var getMail = "${item.email}".split("@");
+	$("#email1").val(getMail[0]);
+	$("#email2").val(getMail[1]);
+	$("#mailcode > option[value='"+getMail[1]+"']").prop("selected", true);
+	
 	$("#id_duplicate_chk_btn").click(function(){
 		var id=$("#id").val();
 		id_chk(id);
+		
 	});
 	
 	$("#mailcode").change(function(){
@@ -98,16 +90,6 @@ $(function(){
 		var email2 = $("#email2").val();
 		var email = email1+"@"+email2; 
 		$("#email").val(email);
-		
-		var ndate = new Date();
-		var year = ndate.getFullYear();
-		var month = ndate.getMonth()+1;
-		var date = ndate.getDate();
-		
-		month = (month > 10) ? month+"":"0"+month;
-		date = (date > 10) ? date+"":"0"+date;
-		
-		$("#regdate").val(year+"-"+month+"-"+date);
 	});
 });
 </script>
@@ -135,7 +117,8 @@ $(function(){
 			</div>
 			
 			<div class="main_bottom_area">
-				<form name="member" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu04_01register">
+				<form name="member" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu04_01update${pageMaker.makeSearch(pageMaker.cri.page)}">
+					<input type="hidden" name="no" value="${item.no}">
 					<input type="hidden" name="regdate" id="regdate">
 					<div class="write_area">
 						<div class="write_box">
@@ -147,14 +130,12 @@ $(function(){
 								<tr class="cont">
 									<td class="title">아이디</td>
 									<td>
-										<input type="text" class="w_form_m" name="id" id="id" value="">
-										<input type="hidden" id="idchkval" value="x">
-										<button type="button" id="id_duplicate_chk_btn">중복확인</button>
+										<input type="text" class="w_form_m" name="id" id="id" value="${item.id}">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">사용자명</td>
-									<td><input type="text" class="w_form_m" name="name" id="name" value=""></td>
+									<td><input type="text" class="w_form_m" name="name" id="name" value="${item.name}"></td>
 								</tr>
 								<tr class="cont">
 									<td class="title">등급</td>
@@ -164,7 +145,7 @@ $(function(){
 								</tr>
 								<tr class="cont">
 									<td class="title">비밀번호</td>
-									<td><input type="password" class="w_form_m" name="pw" id="pw"></td>
+									<td><input type="password" class="w_form_m" name="pw" id="pw"><input type="hidden" name="pw_change" value="x"></td>
 								</tr>
 								<tr class="cont">
 									<td class="title">휴대전화</td>
@@ -185,15 +166,15 @@ $(function(){
 								<tr class="cont">
 									<td class="title">생년월일</td>
 									<td>
-										<input type="text" class="w_form_s" id="birth" name="birth" value=""> (YYYY-MM-DD)
+										<input type="text" class="w_form_s" id="birth" name="birth" value="${item.birth}"> (YYYY-MM-DD)
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">성별</td>
 									<td>
-										<label><i></i><input type="radio" name="gender" class="gender" value="M">남</label>&nbsp;&nbsp;&nbsp;
-										<label><i></i><input type="radio" name="gender" class="gender" value="F">여</label>&nbsp;&nbsp;&nbsp;
+										<label><i></i><input type="radio" name="gender" class="gender" value="m">남</label>&nbsp;&nbsp;&nbsp;
+										<label><i></i><input type="radio" name="gender" class="gender" value="f">여</label>&nbsp;&nbsp;&nbsp;
 									</td>
 								</tr>
 								<tr class="cont">
@@ -244,8 +225,8 @@ $(function(){
 								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01'">리스트</button>
 							</p>
 							<p class="btn_right">
-								<input type="submit" class="btn_black" value="등록">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01register'">취소</button>
+								<input type="submit" class="btn_black" value="수정">
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01update">취소</button>
 							</p>
 						</div>
 				

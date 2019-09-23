@@ -1431,6 +1431,53 @@ public class AdminController {
 		return "redirect:/admin/menu04_01";
 	}
 	
+	@RequestMapping(value = "/menu04_01update", method = RequestMethod.GET)
+	public String menu04_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu04_01update GET");
+		
+		UserVO vo = uService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(uService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu04_01update";
+	}
+	
+	@RequestMapping(value = "/menu04_01update", method = RequestMethod.POST)
+	public String menu04_01updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu04_01update POST");
+		
+		UserVO vo = new UserVO();
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setName(mtfReq.getParameter("name"));
+		if(mtfReq.getParameter("pw_change").equals("o")){
+			vo.setPw(mtfReq.getParameter("pw"));
+		}
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setBirth(mtfReq.getParameter("birth"));
+		vo.setGender(mtfReq.getParameter("gender"));
+		vo.setEmail(mtfReq.getParameter("email"));
+		
+		
+		uService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(uService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu04_01update";
+	}
+	
 	
 	@RequestMapping(value = "/menu04_02", method = RequestMethod.GET)
 	public String menu04_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {

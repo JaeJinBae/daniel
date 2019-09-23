@@ -17,7 +17,7 @@
 	</insert>
 	
 	<update id="update">
-		update user set name=#{name}, pw=#{pw}, phone=#{phone}, birth=#{birth}, gender=#{gender}, addr=#{addr} where no=#{no}
+		update user set name=#{name}, pw=#{pw}, phone=#{phone}, birth=#{birth}, gender=#{gender}, email=#{email} where no=#{no}
 	</update>
 	
 	<update id="updateLoginCnt">
