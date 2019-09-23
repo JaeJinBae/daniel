@@ -90,16 +90,6 @@ $(function(){
 									<th>접속</th>
 									<th>가입일</th>
 								</tr>
-								<tr class="cont">
-									<td><input type="checkbox" name="seq_list[]" value="3701"></td>
-									<td>1177</td>
-									<td><a href=""><p class="title">bjj7425</p></a></td>
-									<td>배재진</td>
-									<td>010-2837-7425</td>
-									<td></td>
-									<td>0</td>
-									<td>2019-09-23</td>
-								</tr>
 								<c:choose>
 									<c:when test="${fn:length(list) ==0 }">
 										<tr><td colspan="8">등록된 게시물이 없습니다.</td></tr>
@@ -109,21 +99,13 @@ $(function(){
 									        <c:forEach var="item" items="${list}">
 												<tr class="cont">
 													<td><input type="checkbox" name="" value="${item.no}"></td>
-													<c:choose>
-														<c:when test="${item.use_state == 'o'}">
-															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
-														</c:when>
-														<c:otherwise>
-															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
-														</c:otherwise>
-													</c:choose>
-													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
 													<td><i class="ico notice">${num}</i></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu01_04update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"><b>${item.clinic_type}</b> ${item.title}</p></a></td>
-													<td>${item.writer}</td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu04_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title">${item.id}</p></a></td>
+													<td>${item.name}</td>
+													<td>${item.phone}</td>
+													<td>${item.email}</td>
+													<td>${item.login_cnt}</td>
 													<td>${item.regdate}</td>
-													<td></td>
-													<td>${item.cnt}</td>
 												</tr>
 												<c:set var="num" value="${num-1}"></c:set>	
 											</c:forEach>

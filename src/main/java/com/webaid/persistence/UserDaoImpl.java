@@ -16,40 +16,45 @@ public class UserDaoImpl implements UserDao {
 
 	@Autowired
 	private SqlSession session;
-	
+
 	@Override
 	public UserVO selectOne(int no) {
-		return session.selectOne(namespace+".selectOne", no);
+		return session.selectOne(namespace + ".selectOne", no);
+	}
+
+	@Override
+	public UserVO selectById(String id) {
+		return session.selectOne(namespace + ".selectById", id);
 	}
 
 	@Override
 	public void insert(UserVO vo) {
-		session.insert(namespace+".insert", vo);
+		session.insert(namespace + ".insert", vo);
 	}
 
 	@Override
 	public void update(UserVO vo) {
-		session.update(namespace+".update", vo);
+		session.update(namespace + ".update", vo);
 	}
 
 	@Override
 	public void updateLoginCnt(int no) {
-		session.update(namespace+".updateLoginCnt", no);
+		session.update(namespace + ".updateLoginCnt", no);
 	}
 
 	@Override
 	public void delete(int no) {
-		session.delete(namespace+".delete", no);
+		session.delete(namespace + ".delete", no);
 	}
 
 	@Override
 	public List<UserVO> listSearchAll(SearchCriteria cri) {
-		return session.selectList(namespace+".listSearchAll", cri);
+		return session.selectList(namespace + ".listSearchAll", cri);
 	}
 
 	@Override
 	public int listSearchCountAll(SearchCriteria cri) {
-		return session.selectOne(namespace+".listSearchCountAll", cri);
+		return session.selectOne(namespace + ".listSearchCountAll", cri);
 	}
 
 }

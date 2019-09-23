@@ -1400,6 +1400,38 @@ public class AdminController {
 		return "admin/menu04_01";
 	}
 	
+	@RequestMapping(value = "/menu04_01register", method = RequestMethod.GET)
+	public String menu04_01register() throws Exception {
+		logger.info("menu04_01register GET");
+		
+		
+		return "admin/menu04_01register";
+	}
+	
+	@RequestMapping(value = "/menu04_01register", method = RequestMethod.POST)
+	public String menu04_01registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu04_01register POST");
+		
+		UserVO vo = new UserVO();
+		
+		vo.setNo(0);
+		vo.setId(mtfReq.getParameter("id"));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setLv(mtfReq.getParameter("lv"));
+		vo.setPw(mtfReq.getParameter("pw"));
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setBirth(mtfReq.getParameter("birth"));
+		vo.setGender(mtfReq.getParameter("gender"));
+		vo.setAddr("");
+		vo.setEmail(mtfReq.getParameter("email"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setLogin_cnt(1);
+		
+		uService.insert(vo);
+		return "redirect:/admin/menu04_01";
+	}
+	
+	
 	@RequestMapping(value = "/menu04_02", method = RequestMethod.GET)
 	public String menu04_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu04_02 GET");

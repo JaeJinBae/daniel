@@ -33,22 +33,22 @@ $(function(){
 	</dl>
 	<dl>
 		<dt><a href="javascript:;">회원관리</a></dt>
-		<dd><a href="${pageContext.request.contextPath}/admin/menu03_01">가입회원</a></dd>
-		<dd><a href="${pageContext.request.contextPath}/admin/menu03_02">탈퇴회원</a></dd>
-		<dd><a href="${pageContext.request.contextPath}/admin/menu03_03">SNS로그인 로그</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu04_01">가입회원</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu04_02">탈퇴회원</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu04_03">SNS로그인 로그</a></dd>
 	</dl>
 	<dl>
 		<dt><a href="javascript:;">상담관리</a></dt>
-		<dd><a href="${pageContext.request.contextPath}/admin/menu04_01">상담관리</a></dd>
-		<dd><a href="${pageContext.request.contextPath}/admin/menu04_02">빠른상담</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu05_01">상담관리</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu05_02">빠른상담</a></dd>
 	</dl>
 	<dl>
 		<dt><a href="javascript:;">기타관리</a></dt>
-		<dd><a href="${pageContext.request.contextPath}/admin/menu05_01">팝업관리</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu06_01">팝업관리</a></dd>
 	</dl>
 	<dl>
 		<dt><a href="javascript:;">마케팅분석</a></dt>
-		<dd><a href="${pageContext.request.contextPath}/admin/menu06_01">트래픽분석</a></dd>
-		<dd><a href="${pageContext.request.contextPath}/admin/menu06_02">유입경로</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu07_01">트래픽분석</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu07_02">유입경로</a></dd>
 	</dl>
 </div>

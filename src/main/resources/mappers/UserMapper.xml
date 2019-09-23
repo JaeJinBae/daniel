@@ -8,6 +8,10 @@
 		select * from user where no=#{no}
 	</select>
 	
+	<select id="selectById" resultType="UserVO">
+		select * from user where id=#{id}
+	</select>
+	
 	<insert id="insert">
 		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{addr}, #{email}, #{regdate}, #{login_cnt})
 	</insert>

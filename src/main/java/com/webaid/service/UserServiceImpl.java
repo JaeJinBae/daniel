@@ -14,10 +14,15 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDao dao;
-	
+
 	@Override
 	public UserVO selectOne(int no) {
 		return dao.selectOne(no);
+	}
+
+	@Override
+	public UserVO selectById(String id) {
+		return dao.selectById(id);
 	}
 
 	@Override

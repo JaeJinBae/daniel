@@ -7,18 +7,25 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.UserVO;
 import com.webaid.service.NoticeService;
+import com.webaid.service.UserService;
 
 /**
  * Handles requests for the application home page.
@@ -30,6 +37,22 @@ public class HomeController {
 	
 	@Autowired
 	private NoticeService nService;
+	
+	@Autowired
+	private UserService uService;
+	
+	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.GET)
+	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
+		ResponseEntity<String> entity = null;
+		
+		UserVO vo = uService.selectById(id);
+		if(vo == null){
+			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>("exist", HttpStatus.OK);
+		}
+		return entity;
+	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {

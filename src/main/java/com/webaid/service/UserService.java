@@ -7,6 +7,7 @@ import com.webaid.domain.UserVO;
 
 public interface UserService {
 	public UserVO selectOne(int no);
+	public UserVO selectById(String id);
 	public void insert(UserVO vo);
 	public void update(UserVO vo);
 	public void updateLoginCnt(int no);
