@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webaid.mappers.UserMapper">
+	
+	<select id="selectOne" resultType="UserVO">
+		select * from user where no=#{no}
+	</select>
+	
+	<insert id="insert">
+		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{addr}, #{email}, #{regdate}, #{login_cnt})
+	</insert>
+	
+	<update id="update">
+		update user set name=#{name}, pw=#{pw}, phone=#{phone}, birth=#{birth}, gender=#{gender}, addr=#{addr} where no=#{no}
+	</update>
+	
+	<update id="updateLoginCnt">
+		update user set login_cnt=login_cnt+1 where no=#{no}
+	</update>
+	
+	<delete id="delete">
+		delete from user where no=#{no}
+	</delete>
+	
+	<select id="listSearchAll" resultType="UserVO">
+		select * from user where no>0 <include refid="search"></include> order by no desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<sql id="search">
+		<if test="searchType=='c'.toString()">
+			and content like concat('%',#{keyword},'%')
+		</if>
+		<if test="searchType=='t'.toString()">
+			and title like concat('%',#{keyword},'%') 
+		</if>
+		<if test="searchType=='no'.toString()">
+			and no=#{keyword}
+		</if>
+	</sql>
+
+	<select id="listSearchCountAll" resultType="int">
+		select count(no) from user where no>0 <include refid="search"></include>
+	</select>
+	
+</mapper>

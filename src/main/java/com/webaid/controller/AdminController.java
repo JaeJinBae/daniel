@@ -43,6 +43,7 @@ import com.webaid.domain.PageMaker;
 import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.UserVO;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
 import com.webaid.service.ClinicListService;
@@ -53,6 +54,7 @@ import com.webaid.service.HospitalTimeService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
+import com.webaid.service.UserService;
 import com.webaid.util.FileDelete;
 
 /**
@@ -93,6 +95,9 @@ public class AdminController {
 	
 	@Autowired
 	private HospitalOffService hoService;
+	
+	@Autowired
+	private UserService uService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -1375,5 +1380,47 @@ public class AdminController {
 		eService.delete(no);
 		
 		return "redirect:/admin/menu03_01";
+	}
+	
+	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
+	public String menu04_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu04_01 GET");
+		
+		List<UserVO> list = uService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(uService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(uService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu04_01";
+	}
+	
+	@RequestMapping(value = "/menu04_02", method = RequestMethod.GET)
+	public String menu04_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu04_02 GET");
+		
+		
+		return "admin/menu04_02";
+	}
+	
+	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)
+	public String menu05_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu05_01 GET");
+		
+		
+		return "admin/menu05_01";
+	}
+	
+	@RequestMapping(value = "/menu05_02", method = RequestMethod.GET)
+	public String menu05_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu05_02 GET");
+		
+		
+		return "admin/menu05_02";
 	}
 }
