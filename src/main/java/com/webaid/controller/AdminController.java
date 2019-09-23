@@ -31,6 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.CautionVO;
 import com.webaid.domain.ClinicListVO;
@@ -44,6 +45,7 @@ import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.UserVO;
+import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
 import com.webaid.service.ClinicListService;
@@ -98,6 +100,9 @@ public class AdminController {
 	
 	@Autowired
 	private UserService uService;
+	
+	@Autowired
+	private AdviceService aService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -1516,6 +1521,22 @@ public class AdminController {
 		return "admin/menu04_02";
 	}
 	
+	@RequestMapping(value = "/menu04_02read", method = RequestMethod.GET)
+	public String menu04_02read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu04_02read GET");
+		
+		UserVO vo = uService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(uService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu04_02read";
+	}
+	
 	@RequestMapping(value = "/menu04_02withdraw/{no}/{withdraw}", method = RequestMethod.GET)
 	public ResponseEntity<String> menu04_02withdraw(@PathVariable("no") int no, @PathVariable("withdraw") String withdraw) throws Exception {
 		logger.info("menu04_02 GET");
@@ -1542,7 +1563,17 @@ public class AdminController {
 	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)
 	public String menu05_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu05_01 GET");
+
+		List<AdviceVO> list = aService.listSearch(cri);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		pageMaker.setFinalPage(aService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "admin/menu05_01";
 	}

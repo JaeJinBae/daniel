@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webaid.mappers.AdviceMapper">
+	
+	<select id="selectOne" resultType="AdviceVO">
+		select * from advice where no=#{no}
+	</select>
+	
+	<insert id="insert">
+		insert into advice values(0, #{name}, #{phone}, #{regdate}, #{email}, #{state}, #{secret}, #{pw}, #{title}, #{content}, #{reply}, #{memo}, #{ip}, #{access_url}, #{reply_date}, #{upload_origin}, #{upload_stored}, #{quick_state})
+	</insert>
+	
+	<update id="update">
+		update advice set name=#{name}, phone=#{phone}, email=#{email}, state=#{state}, secret=#{secret}, pw=#{pw}, title=#{title}, content=#{content}, reply=#{reply}, memo=#{memo}, upload_origin=#{upload_origin}, upload_stored=#{upload_stored}, quick_state=#{quick_state} where no=#{no}
+	</update>
+	
+	<update id="updateUpload">
+		update advice set upload_origin=#{upload_origin}, upload_stored=#{upload_stored} where no=#{no}
+	</update>
+	
+	<delete id="delete">
+		delete from advice where no=#{no}
+	</delete>
+	
+	<select id="listSearch" resultType="AdviceVO">
+		select * from advice where quick_state='x' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<select id="listSearchQuick" resultType="AdviceVO">
+		select * from advice where quick_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<sql id="search">
+		<if test="searchType=='c'.toString()">
+			and content like concat('%',#{keyword},'%')
+		</if>
+		<if test="searchType=='t'.toString()">
+			and title like concat('%',#{keyword},'%') 
+		</if>
+		<if test="searchType=='no'.toString()">
+			and no=#{keyword}
+		</if>
+	</sql>
+	
+	<select id="listSearchCount" resultType="int">
+		select count(no) from advice where quick_state='x' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchQuickCount" resultType="int">
+		select count(no) from advice where quick_state='o' <include refid="search"></include>
+	</select>
+	
+</mapper>

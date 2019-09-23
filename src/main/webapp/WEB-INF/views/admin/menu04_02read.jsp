@@ -89,98 +89,78 @@ $("#btn_delete").click(function(){
 			</div>
 			
 			<div class="main_bottom_area">
-				<div class="list_area">
-					<div class="list_box">
-						<div class="board_top">
-							<form name="search" method="post" action="" onsubmit="return search_it(this)">
-								<div class="search_area">
-									<input type="hidden" name="search" value="Y">
-									<select name="select_key" id="select_key" class="search_sel">
-										<option value="m_id|m_name">전체</option>
-										<option value="m_id">아이디</option>
-										<option value="m_name">이름</option>
-									</select>						
-									<input type="text" name="input_key" class="search_t_box" value="">
-									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
-								</div>
-							</form>
-						</div>
+				<div class="write_area">
+					<div class="write_box">
 			
-						<form name="member" id="member" method="post" action="">
-							<table class="list_table">
+						<form name="withdrawal" id="withdrawal" method="post" action="withdrawal_proc.php">
+			
+							<table class="write_table">
 								<colgroup>
-									<col width="5%">
-									<col width="7%">
+									<col width="11%">
 									<col width="*">
-									<col width="10%">
-									<col width="10%">
-									<col width="15%">
-									<col width="7%">
-									<col width="8%">
 								</colgroup>
 								<tr class="cont">
-									<th class="no_print"><input type="checkbox" id="selectall"></th>
-									<th>번호</th>
-									<th>아이디</th>
-									<th>이름</th>
-									<th>연락처</th>
-									<th>이메일</th>
-									<th>접속</th>
-									<th>가입일</th>
+									<td class="title">아이디</td>
+									<td>${item.id}</td>
 								</tr>
-								<c:choose>
-									<c:when test="${fn:length(list) ==0 }">
-										<tr><td colspan="8">등록된 게시물이 없습니다.</td></tr>
-									</c:when>
-									<c:otherwise>
-										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
-									        <c:forEach var="item" items="${list}">
-												<tr class="cont">
-													<td><input type="checkbox" class="sel_chkbox" name="" value="${item.no}"></td>
-													<td><i class="ico notice">${num}</i></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu04_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title">${item.id}</p></a></td>
-													<td>${item.name}</td>
-													<td>${item.phone}</td>
-													<td>${item.email}</td>
-													<td>${item.login_cnt}</td>
-													<td>${item.regdate}</td>
-												</tr>
-												<c:set var="num" value="${num-1}"></c:set>	
-											</c:forEach>
-									</c:otherwise>
-								</c:choose>
+								<tr class="cont">
+									<td class="title">사용자명</td>
+									<td>${item.name}</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">등급</td>
+									<td>일반회원</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">휴대전화</td>
+									<td>${item.phone}</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">생년월일</td>
+									<td>${item.birth}</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">성별</td>
+									<td>
+										<c:if test="${item.gender == 'm'}">
+											남
+										</c:if>
+										<c:if test="${item.gender == 'f'}">
+											여
+										</c:if>
+									</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">주소</td>
+									<td>${item.addr}</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">이메일</td>
+									<td>${item.email}</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">탈퇴일</td>
+									<td></td>
+								</tr>
+								<tr class="cont">
+									<td class="title">탈퇴사유</td>
+									<td></td>
+								</tr>
 							</table>
 						</form>
 					</div>
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<button type="button" class="btn_gray" onclick="">전체회원 Excel저장</button>
-							<button type="button" class="btn_gray" onclick="">Excel저장</button>
-							<button type="button" class="btn_gray" id="btn_withdraw">탈퇴취소</button>
-							<button type="button" class="btn_gray" id="btn_delete">선택삭제</button>
+							<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_02'">리스트</button>
+						</p>
+			
+						<p class="btn_right">
+							<button type="button" class="btn_red" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01delete/${item.no}'">삭제</button>&nbsp;
+							<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01withdraw/${item.no}/x'">탈퇴취소</button> 
 						</p>
 					</div>
 			
-					<div class="board_paging no_print">
-						<a href="${pageMaker.makeSearch(1)}" class="direction">&lt;&lt;</a>
-						<c:if test="${!pageMaker.prev}"><!-- 이전페이지가 존재하지 않는경우 -->
-							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&lt;</a>
-						</c:if>
-						<c:if test="${pageMaker.prev}"><!-- 이전페이지가 존재하는 경우 -->
-							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}" class="direction">&lt;</a>
-						</c:if>
-						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
-						</c:forEach>
-						<c:if test="${pageMaker.next}"><!-- 뒤에페이지가 존재하는경우 -->
-							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}" class="direction">&gt;</a>
-						</c:if>
-						<c:if test="${!pageMaker.next}"><!-- 뒤에 페이지가 존재하지 않는 경우 -->
-							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&gt;</a>
-						</c:if>
-						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
-					</div>
 				</div>
 			</div>
 			
