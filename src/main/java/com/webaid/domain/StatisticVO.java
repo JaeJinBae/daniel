@@ -2,9 +2,14 @@ package com.webaid.domain;
 
 public class StatisticVO {
 	private int no;
-	private String url;
-	private String device;
-	private String connectdate;
+	private int year;
+	private int month;
+	private int date;
+	private String dayofweek;
+	private int hour;
+	private int minute;
+	private String browser;
+	private String os;
 
 	public StatisticVO() {
 		super();
@@ -18,33 +23,74 @@ public class StatisticVO {
 		this.no = no;
 	}
 
-	public String getUrl() {
-		return url;
+	public int getYear() {
+		return year;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setYear(int year) {
+		this.year = year;
 	}
 
-	public String getDevice() {
-		return device;
+	public int getMonth() {
+		return month;
 	}
 
-	public void setDevice(String device) {
-		this.device = device;
+	public void setMonth(int month) {
+		this.month = month;
 	}
 
-	public String getConnectdate() {
-		return connectdate;
+	public int getDate() {
+		return date;
 	}
 
-	public void setConnectdate(String connectdate) {
-		this.connectdate = connectdate;
+	public void setDate(int date) {
+		this.date = date;
+	}
+
+	public String getDayofweek() {
+		return dayofweek;
+	}
+
+	public void setDayofweek(String dayofweek) {
+		this.dayofweek = dayofweek;
+	}
+
+	public int getHour() {
+		return hour;
+	}
+
+	public void setHour(int hour) {
+		this.hour = hour;
+	}
+
+	public int getMinute() {
+		return minute;
+	}
+
+	public void setMinute(int minute) {
+		this.minute = minute;
+	}
+
+	public String getBrowser() {
+		return browser;
+	}
+
+	public void setBrowser(String browser) {
+		this.browser = browser;
+	}
+
+	public String getOs() {
+		return os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
 	}
 
 	@Override
 	public String toString() {
-		return "StatisticVO [no=" + no + ", url=" + url + ", device=" + device + ", connectdate=" + connectdate + "]";
+		return "StatisticVO [no=" + no + ", year=" + year + ", month=" + month + ", date=" + date + ", dayofweek="
+				+ dayofweek + ", hour=" + hour + ", minute=" + minute + ", browser=" + browser + ", os=" + os + "]";
 	}
 
 }
