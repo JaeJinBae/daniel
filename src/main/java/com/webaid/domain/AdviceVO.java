@@ -16,7 +16,7 @@ public class AdviceVO {
 	private String ip;
 	private String access_url;
 	private String reply_date;
-	private String upload_orgin;
+	private String upload_origin;
 	private String upload_stored;
 	private String quick_state;
 
@@ -144,12 +144,12 @@ public class AdviceVO {
 		this.reply_date = reply_date;
 	}
 
-	public String getUpload_orgin() {
-		return upload_orgin;
+	public String getUpload_origin() {
+		return upload_origin;
 	}
 
-	public void setUpload_orgin(String upload_orgin) {
-		this.upload_orgin = upload_orgin;
+	public void setUpload_origin(String upload_orgin) {
+		this.upload_origin = upload_orgin;
 	}
 
 	public String getUpload_stored() {
@@ -173,7 +173,7 @@ public class AdviceVO {
 		return "AdviceVO [no=" + no + ", name=" + name + ", phone=" + phone + ", regdate=" + regdate + ", email="
 				+ email + ", state=" + state + ", secret=" + secret + ", pw=" + pw + ", title=" + title + ", content="
 				+ content + ", reply=" + reply + ", memo=" + memo + ", ip=" + ip + ", access_url=" + access_url
-				+ ", reply_date=" + reply_date + ", upload_orgin=" + upload_orgin + ", upload_stored=" + upload_stored
+				+ ", reply_date=" + reply_date + ", upload_origin=" + upload_origin + ", upload_stored=" + upload_stored
 				+ ", quick_state=" + quick_state + "]";
 	}
 
