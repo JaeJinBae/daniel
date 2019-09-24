@@ -77,17 +77,17 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>상담관리</h1>
+				<h1>빠른상담</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>상담관리&nbsp;&gt;&nbsp;</li>
-					<li>상담관리</li>
+					<li>빠른상담</li>
 				</ul>
 			</div>
 			
 			<div class="main_bottom_area">
-				<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu05_01register">
+				<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu05_02register">
 					<input type="hidden" name="regdate" value="" id="regdate">
 					<input type="hidden" name="reply_date" value="" id="reply_date">
 					<input type="hidden" name="ip" id="ip">
@@ -203,12 +203,12 @@ $(function(){
 				
 						<div class="btn_area">
 							<p class="btn_left">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_01'">리스트</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_02'">리스트</button>
 							</p>
 				
 							<p class="btn_right">
 								<input type="submit" class="btn_black" value="등록">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_01register'">취소</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_02register'">취소</button>
 							</p>
 						</div>
 					</div>

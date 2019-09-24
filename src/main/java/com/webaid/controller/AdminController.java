@@ -1731,7 +1731,7 @@ public class AdminController {
 	public String menu05_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu05_02 GET");
 
-		List<AdviceVO> list = aService.listSearch(cri);
+		List<AdviceVO> list = aService.listSearchQuick(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);

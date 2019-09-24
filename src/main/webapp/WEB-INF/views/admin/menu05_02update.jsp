@@ -70,19 +70,19 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>상담관리</h1>
+				<h1>빠른상담</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>상담관리&nbsp;&gt;&nbsp;</li>
-					<li>상담관리</li>
+					<li>빠른상담</li>
 				</ul>
 			</div>
 			
 			<div class="main_bottom_area">
-				<form name="inquire" id="inquire" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu05_01update${pageMaker.makeSearch(pageMaker.cri.page)}">
+				<form name="inquire" id="inquire" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu05_02update${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="${item.no}">
-					<div class=""><h2 style="font-size:20px;">온라인 상담관리</h2></div>
+					<div class=""><h2 style="font-size:20px;">온라인 빠른상담</h2></div>
 					<div class="write_area">
 						<div class="write_box">
 							
@@ -208,7 +208,7 @@ $(function(){
 				
 						<div class="btn_area">
 							<p class="btn_left">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_01'">리스트</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_02'">리스트</button>
 							</p>
 				
 							<p class="btn_right">

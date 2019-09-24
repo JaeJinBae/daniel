@@ -79,12 +79,12 @@ $("#btn_delete").click(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>상담관리</h1>
+				<h1>빠른상담</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>상담관리&nbsp;&gt;&nbsp;</li>
-					<li>상담관리</li>
+					<li>빠른상담</li>
 				</ul>
 			</div>
 			
@@ -170,7 +170,7 @@ $("#btn_delete").click(function(){
 							<button type="button" class="btn_gray" onclick="">선택삭제</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_02register'">등록</button>
+							<%-- <button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_02register'">등록</button> --%>
 						</p>
 					</div>
 			
