@@ -29,7 +29,7 @@ public class AdviceDaoImpl implements AdviceDao {
 
 	@Override
 	public void update(AdviceVO vo) {
-		session.update(namespace+"update", vo);
+		session.update(namespace+".update", vo);
 	}
 
 	@Override

@@ -13,7 +13,7 @@
 	</insert>
 	
 	<update id="update">
-		update advice set name=#{name}, phone=#{phone}, email=#{email}, state=#{state}, secret=#{secret}, pw=#{pw}, title=#{title}, content=#{content}, reply=#{reply}, memo=#{memo}, upload_origin=#{upload_origin}, upload_stored=#{upload_stored}, quick_state=#{quick_state} where no=#{no}
+		update advice set name=#{name}, phone=#{phone}, email=#{email}, state=#{state}, secret=#{secret}, title=#{title}, content=#{content}, reply=#{reply}, reply_date=#{reply_date}, memo=#{memo}, upload_origin=#{upload_origin}, upload_stored=#{upload_stored} where no=#{no}
 	</update>
 	
 	<update id="updateUpload">

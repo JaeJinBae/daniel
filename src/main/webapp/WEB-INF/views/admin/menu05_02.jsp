@@ -146,12 +146,12 @@ $("#btn_delete").click(function(){
 													<td><input type="checkbox" name="seq_list[]" value="${item.no}"></td>
 													<td>${num}</td>
 													<td>
-														<a href="${pageContext.request.contextPath}/admin/menu05_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.name}</a>
+														<a href="${pageContext.request.contextPath}/admin/menu05_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.name}</a>
 														<img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" class="vimg" alt="비밀글아이콘">
 													</td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu05_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu05_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
 													<td>${item.regdate}</td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu05_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.state}</a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu05_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.state}</a></td>
 													<td><a href="javascript:;" id="tooltip_2474" onclick="tooltip_it('2474')">보기</a></td>
 													<td>${item.reply_date}</td>
 												</tr>
@@ -170,7 +170,7 @@ $("#btn_delete").click(function(){
 							<button type="button" class="btn_gray" onclick="">선택삭제</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_01register'">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_02register'">등록</button>
 						</p>
 					</div>
 			
