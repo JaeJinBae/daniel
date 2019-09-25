@@ -53,6 +53,7 @@ $(function(){
 		var email2 = $("#email2").val();
 		var email = email1+"@"+email2; 
 		$("#email").val(email);
+
 	});
 });
 </script>
@@ -80,7 +81,7 @@ $(function(){
 			</div>
 			
 			<div class="main_bottom_area">
-				<form name="inquire" id="inquire" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu05_01update${pageMaker.makeSearch(pageMaker.cri.page)}">
+				<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu05_01update${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="${item.no}">
 					<div class=""><h2 style="font-size:20px;">온라인 상담관리</h2></div>
 					<div class="write_area">

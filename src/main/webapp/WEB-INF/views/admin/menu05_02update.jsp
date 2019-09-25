@@ -80,7 +80,7 @@ $(function(){
 			</div>
 			
 			<div class="main_bottom_area">
-				<form name="inquire" id="inquire" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu05_02update${pageMaker.makeSearch(pageMaker.cri.page)}">
+				<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu05_02update${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="${item.no}">
 					<div class=""><h2 style="font-size:20px;">온라인 빠른상담</h2></div>
 					<div class="write_area">
