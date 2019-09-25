@@ -153,7 +153,7 @@ $(function(){
 								</tr>
 								<c:choose>
 									<c:when test="${fn:length(list) ==0 }">
-										<tr><td colspan="4">등록된 게시물이 없습니다.</td></tr>
+										<tr><td colspan="4">미답변 게시물이 없습니다.</td></tr>
 									</c:when>
 									<c:otherwise>
 										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>

@@ -10,7 +10,7 @@
 		</li>
 		<li>
 			<p>
-				<a href="/" target="_blank">
+				<a href="${pageContext.request.contextPath}/" target="_blank">
 					<img src="${pageContext.request.contextPath}/resources/img/admin/top_icon_home.png" alt="home">
 					<span class="txt_666_n">Home</span>
 				</a>
