@@ -58,6 +58,7 @@ $(function(){
 				google.setOnLoadCallback(drawChart);
 			
 				function drawChart() {
+					
 					var data = google.visualization.arrayToDataTable([["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"],["Chrome",41],["Gecko",19],["Mozilla",2],["MSIE 10.0",1],["MSIE 11",9],["MSIE 8",3],["MSIE 9",5],["Robot",2],["unknown",5]]),
 						options = {
 							title : '브라우져별통계',
@@ -84,9 +85,9 @@ $(function(){
 						<div class="b01 board_layout">
 							<div class="board_top">
 								<h2>온라인상담</h2>
-								<a href="javascript:;" class="more_btn" onclick="location.href='/admin/inquire/inquire_list.html'">더보기 &gt;</a>
+								<a href="javascript:;" class="more_btn" onclick="">더보기 &gt;</a>
 							</div>
-							<table class="main_board" cellpadding="0">
+							<table class="main_board">
 								<colgroup>
 									<col width="18%">
 									<col width="*">
@@ -146,7 +147,7 @@ $(function(){
 					<div class="log_layout">
 						<div class="log_top">
 							<h2>2019년 09월 05일 - 브라우저별 접속 통계</h2>
-							<a href="javascript:;" class="more_btn" onclick="location.href='/admin/analytics/analytics_traffic_list.html?select_key=browser'">더보기 &gt;</a>
+							<a href="javascript:;" class="more_btn" onclick="">더보기 &gt;</a>
 						</div>
 						<div class="log1" id="log1"></div>
 					</div>

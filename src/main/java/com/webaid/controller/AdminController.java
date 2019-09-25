@@ -56,6 +56,7 @@ import com.webaid.service.HospitalTimeService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
+import com.webaid.service.StatisticService;
 import com.webaid.service.UserService;
 import com.webaid.util.FileDelete;
 
@@ -103,6 +104,9 @@ public class AdminController {
 	
 	@Autowired
 	private AdviceService aService;
+	
+	@Autowired
+	private StatisticService sService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {
@@ -1892,5 +1896,30 @@ public class AdminController {
 
 		rtts.addAttribute("page", page);
 		return "redirect:/admin/menu05_02update";
+	}
+	
+	@RequestMapping(value = "/menu07_01", method = RequestMethod.GET)
+	public String menu07_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu07_01 GET");
+		
+		return "admin/menu07_01";
+	}
+	
+	@RequestMapping(value = "/menu07_02", method = RequestMethod.GET)
+	public String menu07_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu07_02 GET");
+		
+		List<AdviceVO> list = aService.listSearchQuick(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchQuickCount(cri));
+		pageMaker.setFinalPage(aService.listSearchQuickCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu07_02";
 	}
 }

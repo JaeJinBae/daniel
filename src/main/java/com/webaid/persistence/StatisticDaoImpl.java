@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.StatisticSelectDateVO;
 import com.webaid.domain.StatisticVO;
 
 @Repository
@@ -18,33 +19,18 @@ public class StatisticDaoImpl implements StatisticDao {
 	private SqlSession session;
 
 	@Override
-	public int selectTotalCount() {
-		return session.selectOne(namespace + ".selectTotalCount");
+	public List<StatisticVO> selectByDate(StatisticSelectDateVO vo) {
+		return session.selectList(namespace + ".selectByDate", vo);
 	}
 
 	@Override
-	public int selectCountDate(String connectdate) {
-		return session.selectOne(namespace + ".selectCountDate", connectdate);
-	}
-
-	@Override
-	public int selectCountDevice(StatisticVO vo) {
-		return session.selectOne(namespace + ".selectCountDevice", vo);
-	}
-
-	@Override
-	public List<StatisticVO> selectByDate(SearchCriteria cri) {
-		return session.selectList(namespace + ".selectByDate", cri);
+	public List<StatisticVO> listSearch(SearchCriteria cri) {
+		return session.selectList(namespace + ".listSearch", cri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria cri) {
 		return session.selectOne(namespace + ".listSearchCount", cri);
-	}
-
-	@Override
-	public void insert(StatisticVO vo) {
-		session.insert(namespace + ".insert", vo);
 	}
 
 }

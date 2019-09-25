@@ -2,14 +2,13 @@ package com.webaid.domain;
 
 public class StatisticVO {
 	private int no;
-	private int year;
-	private int month;
-	private int date;
+	private String date;
 	private String dayofweek;
 	private int hour;
 	private int minute;
 	private String browser;
 	private String os;
+	private String prev_url;
 
 	public StatisticVO() {
 		super();
@@ -23,27 +22,11 @@ public class StatisticVO {
 		this.no = no;
 	}
 
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
-	}
-
-	public int getMonth() {
-		return month;
-	}
-
-	public void setMonth(int month) {
-		this.month = month;
-	}
-
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -87,10 +70,18 @@ public class StatisticVO {
 		this.os = os;
 	}
 
+	public String getPrev_url() {
+		return prev_url;
+	}
+
+	public void setPrev_url(String prev_url) {
+		this.prev_url = prev_url;
+	}
+
 	@Override
 	public String toString() {
-		return "StatisticVO [no=" + no + ", year=" + year + ", month=" + month + ", date=" + date + ", dayofweek="
-				+ dayofweek + ", hour=" + hour + ", minute=" + minute + ", browser=" + browser + ", os=" + os + "]";
+		return "StatisticVO [no=" + no + ", date=" + date + ", dayofweek=" + dayofweek + ", hour=" + hour + ", minute="
+				+ minute + ", browser=" + browser + ", os=" + os + ", prev_url=" + prev_url + "]";
 	}
 
 }
