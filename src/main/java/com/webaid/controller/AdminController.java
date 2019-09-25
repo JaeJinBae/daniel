@@ -2222,7 +2222,39 @@ public class AdminController {
 			
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("os")){
+			List<String> osList = new ArrayList<>();
+			osList.add("Linux");
+			osList.add("MAC");
+			osList.add("Mozilla");
+			osList.add("Robot");
+			osList.add("unknown");
+			osList.add("Windows7");
+			osList.add("Windows8");
+			osList.add("Windows Vista");
+			osList.add("Windows XP");
+			osList.add("Windows10");
+			osList.add("Windows11");
 			
+			TreeMap<String, Integer> tm = new TreeMap<String, Integer>();
+			
+			for(int i=0; i<osList.size(); i++){
+				tm.put(osList.get(i), 0);
+			}
+
+			for(int i=0; i<list.size(); i++){
+
+				tm.put(list.get(i).getOs(), (tm.get(list.get(i).getOs())+1));
+			}
+			
+			List<String> tempList = null;
+			for(int i=0;i<osList.size();i++){
+				tempList = new ArrayList<>();
+				tempList.add(osList.get(i));
+				tempList.add(tm.get(osList.get(i))+"");
+				totalList.add(tempList);
+			}
+			
+			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}
 		
 		return entity;

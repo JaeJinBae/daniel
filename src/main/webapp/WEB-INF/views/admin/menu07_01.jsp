@@ -174,9 +174,20 @@ function draw_browser_chart(info){
 }
 
 function draw_os_chart(info){
-	var data = google.visualization.arrayToDataTable([["OS\ud1b5\uacc4","\uc811\uc18d\uc790"],["Linux",46],
+	var res_arr = [["OS\ud1b5\uacc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	/* [["OS\ud1b5\uacc4","\uc811\uc18d\uc790"],["Linux",46],
 													["MAC",29],["Mozilla",8], ["Robot",3],["unknown",7],["Windows 7",14],
-													["Windows 8",2], ["Windows Vista",1],["Windows XP",4]]);
+													["Windows 8",2], ["Windows Vista",1],["Windows XP",4]] */
 	var options = {
 		  title: 'OS별통계'
 	};
