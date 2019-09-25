@@ -42,7 +42,6 @@ google.load("visualization", "1", {packages:["corechart"]});
 function drawChart(){
 	var arr = [["\ub144\ubcc4","\uc811\uc18d\uc790"], ["2018", 123],["2019", 4322]];
 	
-	/*["\ub144\ubcc4","\uc811\uc18d\uc790"], ["2018",31411],["2019",49826] */
 	var data = google.visualization.arrayToDataTable(arr);
 	var options = {
 		  title: '년별별통계'
@@ -74,18 +73,14 @@ function draw_time_chart(info){
 function draw_date_chart(info){
 	var res_arr = [["\uc77c\uc790\ubcc4","\uc811\uc18d\uc790"]];
 	var temp_arr = [];
-	console.log(info);
+
 	for(var i=0;i<$(info).size();i++){
 		temp_arr.push(info[i][0]);
 		temp_arr.push(Number(info[i][1]));
 		res_arr.push(temp_arr);
 		temp_arr=[];
 	}
-	/* var data = google.visualization.arrayToDataTable([["\uc77c\uc790\ubcc4","\uc811\uc18d\uc790"],["2019-09-01",140],["2019-09-02",268],["2019-09-03",177],["2019-09-04",159],
-													["2019-09-05",161],["2019-09-06",161],["2019-09-07",147],["2019-09-08",117],["2019-09-09",246],["2019-09-10",156],
-													["2019-09-11",138],["2019-09-12",128],["2019-09-13",104],["2019-09-14",104],["2019-09-15",104],["2019-09-16",208],
-													["2019-09-17",192],["2019-09-18",169],["2019-09-19",184],["2019-09-20",193],["2019-09-21",138],["2019-09-22",119],
-													["2019-09-23",204],["2019-09-24",172],["2019-09-25",112]]); */
+	
 	var data = google.visualization.arrayToDataTable(res_arr);
 	var options = {
 		  title: '날짜별통계'
@@ -95,8 +90,18 @@ function draw_date_chart(info){
 	chart.draw(data, options);
 }
 function draw_dayofweek_chart(info){
-	var data = google.visualization.arrayToDataTable([["\uc694\uc77c","\uc811\uc18d\uc790"],["\uc77c",480],["\uc6d4",926],["\ud654",697],
-													["\uc218",580],["\ubaa9",473], ["\uae08",458],["\ud1a0",389]]);
+	var res_arr = [["\uc694\uc77c","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	/* [["\uc694\uc77c","\uc811\uc18d\uc790"],["\uc77c",480],["\uc6d4",926],["\ud654",697],
+													["\uc218",580],["\ubaa9",473], ["\uae08",458],["\ud1a0",389]] */
+	var data = google.visualization.arrayToDataTable(res_arr);
 	var options = {
 		  title: '요일별통계'
 	};

@@ -2074,10 +2074,33 @@ public class AdminController {
 				tempList.add(tm.get(dateList.get(i))+"");
 				totalList.add(tempList);
 			}
-			System.out.println(totalList);
+			
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("dayofweek")){
+			List<String> dowList = new ArrayList<>();
+			dowList.add("월");
+			dowList.add("화");
+			dowList.add("수");
+			dowList.add("목");
+			dowList.add("금");
+			dowList.add("토");
+			dowList.add("일");
 			
+			TreeMap<String, Integer> tm = new TreeMap<String, Integer>();
+			tm.put("월", 0);tm.put("화", 0);tm.put("수", 0);tm.put("목", 0);tm.put("금", 0);tm.put("토", 0);tm.put("일", 0);
+			for(int i=0;i<list.size();i++){
+				tm.put(list.get(i).getDayofweek(), (tm.get(list.get(i).getDayofweek())+1));
+			}
+			
+			List<String> tempList = null;
+			for(int i=0;i<dowList.size();i++){
+				tempList = new ArrayList<>();
+				tempList.add(dowList.get(i));
+				tempList.add(tm.get(dowList.get(i))+"");
+				totalList.add(tempList);
+			}
+			
+			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("month")){
 			
 		}else if(type.equals("year")){
