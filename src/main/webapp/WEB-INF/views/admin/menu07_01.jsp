@@ -151,9 +151,20 @@ function draw_year_chart(info){
 }
 
 function draw_browser_chart(info){
-	var data = google.visualization.arrayToDataTable([["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"],
+	var res_arr = [["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	/* [["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"],
 													["Chrome",54], ["FireFox",3],["Gecko",29],["Mozilla",2],["MSIE 10.0",2],
-													["MSIE 11",11], ["MSIE 8",2],["MSIE 9",3],["Robot",1],["unknown",7]]);
+													["MSIE 11",11], ["MSIE 8",2],["MSIE 9",3],["Robot",1],["unknown",7]] */
 	var options = {
 		  title: '브라우저별통계'
 	};

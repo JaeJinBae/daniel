@@ -2161,7 +2161,7 @@ public class AdminController {
 			int ey = Integer.parseInt(e_date_txt_arr[0]);
 			int resVal = ey-sy;
 			List<String> yearList = new ArrayList<>();
-			//yearList.add(sy+"");
+
 			for(int i=0; i<(resVal+1); i++){
 				yearList.add((sy+i)+"");
 			}
@@ -2170,7 +2170,7 @@ public class AdminController {
 			for(int i=0; i<yearList.size(); i++){
 				tm.put(yearList.get(i), 0);
 			}
-			System.out.println(tm);
+			
 			String[] ym_split_arr = null;
 			String y = "";
 			for(int i=0; i<list.size(); i++){
@@ -2189,7 +2189,38 @@ public class AdminController {
 			
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("browser")){
+			List<String> browserList = new ArrayList<>();
+			browserList.add("Chrome");
+			browserList.add("FireFox");
+			browserList.add("Gecko");
+			browserList.add("Mozilla");
+			browserList.add("MSIE10");
+			browserList.add("MSIE11");
+			browserList.add("MSIE8");
+			browserList.add("MSIE9");
+			browserList.add("Robot");
+			browserList.add("unknown");
 			
+			TreeMap<String, Integer> tm = new TreeMap<String, Integer>();
+			
+			for(int i=0; i<browserList.size(); i++){
+				tm.put(browserList.get(i), 0);
+			}
+
+			for(int i=0; i<list.size(); i++){
+
+				tm.put(list.get(i).getBrowser(), (tm.get(list.get(i).getBrowser())+1));
+			}
+			
+			List<String> tempList = null;
+			for(int i=0;i<browserList.size();i++){
+				tempList = new ArrayList<>();
+				tempList.add(browserList.get(i));
+				tempList.add(tm.get(browserList.get(i))+"");
+				totalList.add(tempList);
+			}
+			
+			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("os")){
 			
 		}
