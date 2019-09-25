@@ -1913,24 +1913,6 @@ public class AdminController {
 		return "admin/menu07_01";
 	}
 	
-	@RequestMapping(value = "/menu07_02", method = RequestMethod.GET)
-	public String menu07_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		logger.info("menu07_02 GET");
-		
-		List<AdviceVO> list = aService.listSearchQuick(cri);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(aService.listSearchQuickCount(cri));
-		pageMaker.setFinalPage(aService.listSearchQuickCount(cri));
-		
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
-		
-		return "admin/menu07_02";
-	}
-	
 	@RequestMapping(value="/menu07_01InfoGet/{type}/{s_date}/{e_date}", method=RequestMethod.GET)
 	public ResponseEntity<List<List<String>>> menu07_01InfoGet(@PathVariable("type") String type, @PathVariable("s_date") String s_date, @PathVariable("e_date") String e_date) throws ParseException{
 		ResponseEntity<List<List<String>>> entity = null;
@@ -2258,5 +2240,23 @@ public class AdminController {
 		}
 		
 		return entity;
+	}
+
+	@RequestMapping(value = "/menu07_02", method = RequestMethod.GET)
+	public String menu07_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu07_02 GET");
+		
+		List<StatisticVO> list = sService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(sService.listSearchCount(cri));
+		pageMaker.setFinalPage(sService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu07_02";
 	}
 }
