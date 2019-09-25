@@ -4,11 +4,17 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -44,6 +50,8 @@ import com.webaid.domain.PageMaker;
 import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.StatisticSelectDateVO;
+import com.webaid.domain.StatisticVO;
 import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
@@ -1921,5 +1929,167 @@ public class AdminController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "admin/menu07_02";
+	}
+	
+	@RequestMapping(value="/menu07_01InfoGet/{type}/{s_date}/{e_date}", method=RequestMethod.GET)
+	public ResponseEntity<List<List<String>>> menu07_01InfoGet(@PathVariable("type") String type, @PathVariable("s_date") String s_date, @PathVariable("e_date") String e_date) throws ParseException{
+		ResponseEntity<List<List<String>>> entity = null;
+		
+		StatisticSelectDateVO ssdVO = new StatisticSelectDateVO();
+		ssdVO.setS_date(s_date);
+		ssdVO.setE_date(e_date);
+		List<StatisticVO> list = sService.selectByDate(ssdVO);
+		List<List<String>> totalList = new ArrayList<List<String>>();
+		if(type.equals("time")){
+			int t_00=0;int t_01=0;int t_02=0;int t_03=0;int t_04=0;int t_05=0;int t_06=0;int t_07=0;int t_08=0;int t_09=0;int t_10=0;
+			int t_11=0;int t_12=0;int t_13=0;int t_14=0;int t_15=0;int t_16=0;int t_17=0;int t_18=0;int t_19=0;int t_20=0;int t_21=0;int t_22=0;int t_23=0;
+			for(int i=0; i<list.size();i++){
+				if(list.get(i).getHour()==0){
+					t_00++;
+				}else if(list.get(i).getHour()==1){
+					t_01++;
+				}else if(list.get(i).getHour()==2){
+					t_02++;
+				}else if(list.get(i).getHour()==3){
+					t_03++;
+				}else if(list.get(i).getHour()==4){
+					t_04++;
+				}else if(list.get(i).getHour()==5){
+					t_05++;
+				}else if(list.get(i).getHour()==6){
+					t_06++;
+				}else if(list.get(i).getHour()==7){
+					t_07++;
+				}else if(list.get(i).getHour()==8){
+					t_08++;
+				}else if(list.get(i).getHour()==9){
+					t_09++;
+				}else if(list.get(i).getHour()==10){
+					t_10++;
+				}else if(list.get(i).getHour()==11){
+					t_11++;
+				}else if(list.get(i).getHour()==12){
+					t_12++;
+				}else if(list.get(i).getHour()==13){
+					t_13++;
+				}else if(list.get(i).getHour()==14){
+					t_14++;
+				}else if(list.get(i).getHour()==15){
+					t_15++;
+				}else if(list.get(i).getHour()==16){
+					t_16++;
+				}else if(list.get(i).getHour()==17){
+					t_17++;
+				}else if(list.get(i).getHour()==18){
+					t_18++;
+				}else if(list.get(i).getHour()==19){
+					t_19++;
+				}else if(list.get(i).getHour()==20){
+					t_20++;
+				}else if(list.get(i).getHour()==21){
+					t_21++;
+				}else if(list.get(i).getHour()==22){
+					t_22++;
+				}else if(list.get(i).getHour()==23){
+					t_23++;
+				}
+			}
+			
+			List<String> part_list00 = new ArrayList<>();part_list00.add("00");part_list00.add(t_00+"");
+			List<String> part_list01 = new ArrayList<>();part_list01.add("01");part_list01.add(t_01+"");
+			List<String> part_list02 = new ArrayList<>();part_list02.add("02");part_list02.add(t_02+"");
+			List<String> part_list03 = new ArrayList<>();part_list03.add("03");part_list03.add(t_03+"");
+			List<String> part_list04 = new ArrayList<>();part_list04.add("04");part_list04.add(t_04+"");
+			List<String> part_list05 = new ArrayList<>();part_list05.add("05");part_list05.add(t_05+"");
+			List<String> part_list06 = new ArrayList<>();part_list06.add("06");part_list06.add(t_06+"");
+			List<String> part_list07 = new ArrayList<>();part_list07.add("07");part_list07.add(t_07+"");
+			List<String> part_list08 = new ArrayList<>();part_list08.add("08");part_list08.add(t_08+"");
+			List<String> part_list09 = new ArrayList<>();part_list09.add("09");part_list09.add(t_09+"");
+			List<String> part_list10 = new ArrayList<>();part_list10.add("10");part_list10.add(t_10+"");
+			List<String> part_list11 = new ArrayList<>();part_list11.add("11");part_list11.add(t_11+"");
+			List<String> part_list12 = new ArrayList<>();part_list12.add("12");part_list12.add(t_12+"");
+			List<String> part_list13 = new ArrayList<>();part_list13.add("13");part_list13.add(t_13+"");
+			List<String> part_list14 = new ArrayList<>();part_list14.add("14");part_list14.add(t_14+"");
+			List<String> part_list15 = new ArrayList<>();part_list15.add("15");part_list15.add(t_15+"");
+			List<String> part_list16 = new ArrayList<>();part_list16.add("16");part_list16.add(t_16+"");
+			List<String> part_list17 = new ArrayList<>();part_list17.add("17");part_list17.add(t_17+"");
+			List<String> part_list18 = new ArrayList<>();part_list18.add("18");part_list18.add(t_18+"");
+			List<String> part_list19 = new ArrayList<>();part_list19.add("19");part_list19.add(t_19+"");
+			List<String> part_list20 = new ArrayList<>();part_list20.add("20");part_list20.add(t_20+"");
+			List<String> part_list21 = new ArrayList<>();part_list21.add("21");part_list21.add(t_21+"");
+			List<String> part_list22 = new ArrayList<>();part_list22.add("22");part_list22.add(t_22+"");
+			List<String> part_list23 = new ArrayList<>();part_list23.add("23");part_list23.add(t_23+"");
+			totalList.add(part_list00);totalList.add(part_list01);totalList.add(part_list02);
+			totalList.add(part_list03);totalList.add(part_list04);totalList.add(part_list05);
+			totalList.add(part_list06);totalList.add(part_list07);totalList.add(part_list08);
+			totalList.add(part_list09);totalList.add(part_list10);totalList.add(part_list11);
+			totalList.add(part_list12);totalList.add(part_list13);totalList.add(part_list14);
+			totalList.add(part_list15);totalList.add(part_list16);totalList.add(part_list17);
+			totalList.add(part_list18);totalList.add(part_list19);totalList.add(part_list20);
+			totalList.add(part_list21);totalList.add(part_list22);totalList.add(part_list23);
+			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
+		}else if(type.equals("date")){
+			List<String> dateList = new ArrayList<>();
+			HashMap<String, Integer> map = new HashMap<>();
+			
+			String s1=s_date;
+			String s2=e_date;
+
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+			//Date타입으로 변경
+			Date d1 = df.parse( s1 );
+			Date d2 = df.parse( s2 );
+
+			Calendar c1 = Calendar.getInstance();
+			Calendar c2 = Calendar.getInstance();
+
+			//Calendar 타입으로 변경 add()메소드로 1일씩 추가해 주기위해 변경
+			c1.setTime( d1 );
+			c2.setTime( d2 );
+			
+			Date d3 = null;
+			//시작날짜와 끝 날짜를 비교해, 시작날짜가 작거나 같은 경우 출력
+			while( c1.compareTo( c2 ) !=1 ){
+				d3 = new Date(c1.getTimeInMillis());
+				
+				//출력
+				dateList.add(df.format(d3));
+				map.put(df.format(d3), 0);
+	
+				//시작날짜 + 1 일
+				c1.add(Calendar.DATE, 1);
+			}
+			
+			TreeMap<String, Integer> tm = new TreeMap<String, Integer>(map);
+			Iterator<String> iterKey = tm.keySet().iterator();
+			
+			for(int i=0;i<list.size();i++){
+				tm.put(list.get(i).getDate(), (tm.get(list.get(i).getDate())+1));
+			}
+			List<String> tempList = null;
+			for(int i=0;i<dateList.size();i++){
+				tempList = new ArrayList<>();
+				tempList.add(dateList.get(i));
+				tempList.add(tm.get(dateList.get(i))+"");
+				totalList.add(tempList);
+			}
+			System.out.println(totalList);
+			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
+		}else if(type.equals("dayofweek")){
+			
+		}else if(type.equals("month")){
+			
+		}else if(type.equals("year")){
+			
+		}else if(type.equals("year")){
+			
+		}else if(type.equals("browser")){
+			
+		}else if(type.equals("os")){
+			
+		}
+		
+		return entity;
 	}
 }

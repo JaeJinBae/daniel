@@ -37,10 +37,13 @@
 </style>
 <script>
 google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawChart);
+
 
 function drawChart(){
-	var data = google.visualization.arrayToDataTable([["\ub144\ubcc4","\uc811\uc18d\uc790"],["2018",31411],["2019",49826]]);
+	var arr = [["\ub144\ubcc4","\uc811\uc18d\uc790"], ["2018", 123],["2019", 4322]];
+	
+	/*["\ub144\ubcc4","\uc811\uc18d\uc790"], ["2018",31411],["2019",49826] */
+	var data = google.visualization.arrayToDataTable(arr);
 	var options = {
 		  title: '년별별통계'
 	};
@@ -49,10 +52,17 @@ function drawChart(){
 	chart.draw(data, options);
 }
 
-function draw_time_chart(){
-	var data = google.visualization.arrayToDataTable([["\uc2dc","\uc811\uc18d\uc790"],["00",5],["01",6],["02",6],["03",3], ["04",0],["05",1],
-													["06",4], ["07",7],["08",5],["09",10],["10",8],["11",11],["12",7],["13",9],["14",9],
-													["15",10],["16",11],["17",0],["18",0],["19",0],["20",0],["21",0],["22",0],["23",0]]);
+function draw_time_chart(info){
+	var res_arr = [["\uc2dc","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	for(var i=0;i<24;i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
 	var options = {
 		  title: '시간별통계'
 	};
@@ -61,12 +71,22 @@ function draw_time_chart(){
 	chart.draw(data, options);
 }
 
-function draw_date_chart(){
-	var data = google.visualization.arrayToDataTable([["\uc77c\uc790\ubcc4","\uc811\uc18d\uc790"],["2019-09-01",140],["2019-09-02",268],["2019-09-03",177],["2019-09-04",159],
+function draw_date_chart(info){
+	var res_arr = [["\uc77c\uc790\ubcc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	console.log(info);
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	/* var data = google.visualization.arrayToDataTable([["\uc77c\uc790\ubcc4","\uc811\uc18d\uc790"],["2019-09-01",140],["2019-09-02",268],["2019-09-03",177],["2019-09-04",159],
 													["2019-09-05",161],["2019-09-06",161],["2019-09-07",147],["2019-09-08",117],["2019-09-09",246],["2019-09-10",156],
 													["2019-09-11",138],["2019-09-12",128],["2019-09-13",104],["2019-09-14",104],["2019-09-15",104],["2019-09-16",208],
 													["2019-09-17",192],["2019-09-18",169],["2019-09-19",184],["2019-09-20",193],["2019-09-21",138],["2019-09-22",119],
-													["2019-09-23",204],["2019-09-24",172],["2019-09-25",112]]);
+													["2019-09-23",204],["2019-09-24",172],["2019-09-25",112]]); */
+	var data = google.visualization.arrayToDataTable(res_arr);
 	var options = {
 		  title: '날짜별통계'
 	};
@@ -74,7 +94,7 @@ function draw_date_chart(){
 	
 	chart.draw(data, options);
 }
-function draw_dayofweek_chart(){
+function draw_dayofweek_chart(info){
 	var data = google.visualization.arrayToDataTable([["\uc694\uc77c","\uc811\uc18d\uc790"],["\uc77c",480],["\uc6d4",926],["\ud654",697],
 													["\uc218",580],["\ubaa9",473], ["\uae08",458],["\ud1a0",389]]);
 	var options = {
@@ -84,7 +104,7 @@ function draw_dayofweek_chart(){
 	
 	chart.draw(data, options);
 }
-function draw_month_chart(){
+function draw_month_chart(info){
 	var data = google.visualization.arrayToDataTable([["\uc6d4\ubcc4","\uc811\uc18d\uc790"],["2018-06",4],["2018-07",3447],
 													["2018-08",5920],["2018-09",5221],["2018-10",5508],["2018-11",5870],["2018-12",5441]]);
 	var options = {
@@ -94,7 +114,7 @@ function draw_month_chart(){
 	
 	chart.draw(data, options);
 }
-function draw_year_chart(){
+function draw_year_chart(info){
 	var data = google.visualization.arrayToDataTable([["\ub144\ubcc4","\uc811\uc18d\uc790"],["2018",31411],["2019",49834]]);
 	var options = {
 		  title: '년도별통계'
@@ -104,7 +124,7 @@ function draw_year_chart(){
 	chart.draw(data, options);
 }
 
-function draw_browser_chart(){
+function draw_browser_chart(info){
 	var data = google.visualization.arrayToDataTable([["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"],
 													["Chrome",54], ["FireFox",3],["Gecko",29],["Mozilla",2],["MSIE 10.0",2],
 													["MSIE 11",11], ["MSIE 8",2],["MSIE 9",3],["Robot",1],["unknown",7]]);
@@ -116,7 +136,7 @@ function draw_browser_chart(){
 	chart.draw(data, options);
 }
 
-function draw_os_chart(){
+function draw_os_chart(info){
 	var data = google.visualization.arrayToDataTable([["OS\ud1b5\uacc4","\uc811\uc18d\uc790"],["Linux",46],
 													["MAC",29],["Mozilla",8], ["Robot",3],["unknown",7],["Windows 7",14],
 													["Windows 8",2], ["Windows Vista",1],["Windows XP",4]]);
@@ -127,7 +147,40 @@ function draw_os_chart(){
 	
 	chart.draw(data, options);
 }
+
+function sttGet(type, d1, d2){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/menu07_01InfoGet/"+type+"/"+d1+"/"+d2,
+		type:"get",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"json",
+		async:false,
+		success:function(json){
+			//console.log(json);
+			if(type == "time"){
+				draw_time_chart(json);
+			}else if(type == "date"){
+				draw_date_chart(json);
+			}else if(type == "dayofweek"){
+				draw_dayofweek_chart(json);
+			}else if(type == "month"){
+				draw_month_chart(json);
+			}else if(type == "year"){
+				draw_year_chart(json);
+			}else if(type == "browser"){
+				draw_browser_chart(json);
+			}else if(type == "os"){
+				draw_os_chart(json);
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+};
+
 $(function(){
+	google.setOnLoadCallback(drawChart);
 	$(".search_t_box100").datepicker({
 		changeMonth: true, 
 		changeYear: true,
@@ -137,11 +190,63 @@ $(function(){
 		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		dateFormat: "yy-mm-dd"
     });
+	
+	var ndate = new Date();
+	var year = ndate.getFullYear();
+	var month = ndate.getMonth()+1;
+	var date = ndate.getDate();
+	$("#start_monthy_key > option[value='"+year+"']").prop("selected", true);
+	$("#end_monthy_key > option[value='"+year+"']").prop("selected", true);
+	$("#start_monthm_key > option[value='1']").prop("selected", true);
+	$("#end_monthm_key > option[value='12']").prop("selected", true);
+	
+	$("#start_year_key > option[value='"+year+"']").prop("selected", true);
+	$("#end_year_key > option[value='"+year+"']").prop("selected", true);
+	
+	month = (month > 10) ? month+"":"0"+month;
+	date = (date > 10) ? date+"":"0"+date;
+	
+	$(".search_t_box100").val(year+"-"+month+"-"+date);
 	 
 	$("#select_key").change(function(){
 		var sel_type = $(this).val();
 		$(".search_span").css("display", "none");
 		$("#"+sel_type+"_span").css("display", "inline-block");
+	});
+	
+	$(".search_btn").click(function(){
+		var searchType = $("#select_key").val();
+		var s_d = "";
+		var e_d = "";
+		if(searchType == "time"){
+			s_d = $("#start_time_key").val();
+			e_d = $("#end_time_key").val();
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "date"){
+			s_d = $("#start_day_key").val();
+			e_d = $("#end_day_key").val();
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "dayofweek"){
+			s_d = $("#start_weekend_key").val();
+			e_d = $("#end_weekend_key").val();
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "month"){
+			s_d = $("#start_monthy_key").val()+"-"+$("#start_monthm_key").val()+"-01";
+			e_d = $("#end_monthy_key").val()+"-"+$("#end_monthm_key").val()+"-31";
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "year"){
+			s_d = $("#start_year_key").val()+"-01-01";
+			e_d = $("#end_year_key").val()+"-12-31";
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "browser"){
+			s_d = $("#start_browser_key").val();
+			e_d = $("#end_browser_key").val();
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "os"){
+			s_d = $("#start_os_key").val();
+			e_d = $("#end_os_key").val();
+			sttGet(searchType, s_d, e_d);
+		}
 	});
 });
 </script>
@@ -172,14 +277,12 @@ $(function(){
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top" style="margin-right:100px">
-							<form name="search" method="post" action="" onsubmit="">
-			
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key" class="search_sel">
 										<option value="time">시간별통계</option>
-										<option value="day">일자별통계</option>
-										<option value="weekend">요일별통계</option>
+										<option value="date">일자별통계</option>
+										<option value="dayofweek">요일별통계</option>
 										<option value="month">월별통계</option>
 										<option value="year">년별통계</option>
 										<option value="browser">브라우져별통계</option>
@@ -192,13 +295,13 @@ $(function(){
 									</span>
 			
 									<!-- 일자별통계 -->
-									<span id="day_span" class="search_span">
+									<span id="date_span" class="search_span">
 										<input type="text" name="start_day_key" id="start_day_key" class="search_t_box100" value="" autocomplete="off">~
 										<input type="text" name="end_day_key" id="end_day_key" class="search_t_box100" value="" autocomplete="off">
 									</span>
 			
 									<!-- 요일별통계 -->
-									<span id="weekend_span" class="search_span">
+									<span id="dayofweek_span" class="search_span">
 										<input type="text" name="start_weekend_key" id="start_weekend_key" class="search_t_box100" value="" autocomplete="off">~
 										<input type="text" name="end_weekend_key" id="end_weekend_key" class="search_t_box100" value="" autocomplete="off">
 									</span>
@@ -210,17 +313,38 @@ $(function(){
 											<option value="2017">2017</option>
 											<option value="2018">2018</option>
 											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+											<option value="2031">2031</option>
+											<option value="2032">2032</option>
+											<option value="2033">2033</option>
+											<option value="2034">2034</option>
+											<option value="2035">2035</option>
+											<option value="2036">2036</option>
+											<option value="2037">2037</option>
+											<option value="2038">2038</option>
+											<option value="2039">2039</option>
+											<option value="2040">2040</option>
 										</select>
 										<select name="start_monthm_key" id="start_monthm_key" class="search_sel_70">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
+											<option value="01">1</option>
+											<option value="02">2</option>
+											<option value="03">3</option>
+											<option value="04">4</option>
+											<option value="05">5</option>
+											<option value="06">6</option>
+											<option value="07">7</option>
+											<option value="08">8</option>
+											<option value="09">9</option>
 											<option value="10">10</option>
 											<option value="11">11</option>
 											<option value="12">12</option>
@@ -230,17 +354,38 @@ $(function(){
 											<option value="2017">2017</option>
 											<option value="2018">2018</option>
 											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+											<option value="2031">2031</option>
+											<option value="2032">2032</option>
+											<option value="2033">2033</option>
+											<option value="2034">2034</option>
+											<option value="2035">2035</option>
+											<option value="2036">2036</option>
+											<option value="2037">2037</option>
+											<option value="2038">2038</option>
+											<option value="2039">2039</option>
+											<option value="2040">2040</option>
 										</select>							
 										<select name="end_monthm_key" id="end_monthm_key" class="search_sel_70">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
+											<option value="01">1</option>
+											<option value="02">2</option>
+											<option value="03">3</option>
+											<option value="04">4</option>
+											<option value="05">5</option>
+											<option value="06">6</option>
+											<option value="07">7</option>
+											<option value="08">8</option>
+											<option value="09">9</option>
 											<option value="10">10</option>
 											<option value="11">11</option>
 											<option value="12">12</option>
@@ -254,12 +399,54 @@ $(function(){
 											<option value="2017">2017</option>
 											<option value="2018">2018</option>
 											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+											<option value="2031">2031</option>
+											<option value="2032">2032</option>
+											<option value="2033">2033</option>
+											<option value="2034">2034</option>
+											<option value="2035">2035</option>
+											<option value="2036">2036</option>
+											<option value="2037">2037</option>
+											<option value="2038">2038</option>
+											<option value="2039">2039</option>
+											<option value="2040">2040</option>
 										</select>							~
 										<select name="end_year_key" id="end_year_key" class="search_sel">
 											<option value="2016">2016</option>
 											<option value="2017">2017</option>
 											<option value="2018">2018</option>
 											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+											<option value="2031">2031</option>
+											<option value="2032">2032</option>
+											<option value="2033">2033</option>
+											<option value="2034">2034</option>
+											<option value="2035">2035</option>
+											<option value="2036">2036</option>
+											<option value="2037">2037</option>
+											<option value="2038">2038</option>
+											<option value="2039">2039</option>
+											<option value="2040">2040</option>
 										</select>
 									</span>
 			
@@ -275,9 +462,8 @@ $(function(){
 										<input type="text" name="end_os_key" id="end_os_key" class="search_t_box100" value="" autocomplete="off">
 									</span>
 			
-									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
+									<button type="button" name="submit_btn" class="search_btn cursor">검색</button>
 								</div>
-							</form>
 						</div><br>
 			
 						<div id="chart_div" style="width:100%; height:600px;"></div>
