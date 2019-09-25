@@ -22,11 +22,88 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
+<script src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;packages=corechart" type="text/javascript"></script>
+<link href="https://www.google.com/uds/api/visualization/1.0/36558b280aac4fa99ed8215e60015cff/ui+ko.css" type="text/css" rel="stylesheet">
+<script src="https://www.google.com/uds/api/visualization/1.0/36558b280aac4fa99ed8215e60015cff/format+ko,default+ko,ui+ko,corechart+ko.I.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script>
+function draw_browser_chart(info){
+	var res_arr = [["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	/* [["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"],
+													["Chrome",54], ["FireFox",3],["Gecko",29],["Mozilla",2],["MSIE 10.0",2],
+													["MSIE 11",11], ["MSIE 8",2],["MSIE 9",3],["Robot",1],["unknown",7]] */
+	var options = {
+		  title: '브라우저별통계'
+	};
+	var chart = new google.visualization.PieChart(document.getElementById('log1'));
+	
+	chart.draw(data, options);
+}
+
+function draw_time_chart(info){
+	var res_arr = [["\uc2dc","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	for(var i=0;i<24;i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	var options = {
+		  title: '시간별통계'
+	};
+	var chart = new google.visualization.ColumnChart(document.getElementById('log2'));
+	
+	chart.draw(data, options);
+}
+
+function sttGet(type, d1, d2){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/menu07_01InfoGet/"+type+"/"+d1+"/"+d2,
+		type:"get",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"json",
+		async:false,
+		success:function(json){
+			//console.log(json);
+			if(type == "time"){
+				draw_time_chart(json);
+			}else if(type == "browser"){
+				draw_browser_chart(json);
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+};
+google.load("visualization", "1", {packages:["corechart"]});
 $(function(){
-	$(function(){
-		$.ajaxSetup({cache:false});
-	})
+	
+	google.setOnLoadCallback(draw_browser_chart);
+	google.setOnLoadCallback(draw_time_chart);
+
+	var ndate = new Date();
+	var year = ndate.getFullYear();
+	var month = ndate.getMonth()+1;
+	var date = ndate.getDate();
+	month = (month > 10) ? month+"":"0"+month;
+	date = (date > 10) ? date+"":"0"+date;
+	sttGet("time", year+"-"+month+"-"+date, year+"-"+month+"-"+date);
+	$("#chart1 > span").text(year+"년 "+month+"월 "+date+"일 ");
+	$("#chart2 > span").text(year+"년 "+month+"월 "+date+"일 ");
 });
 </script>
 </head>
@@ -51,41 +128,14 @@ $(function(){
 					<li></li>
 				</ul>
 			</div>
-
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-			<script type="text/javascript">
-				google.load("visualization", "1", {packages:["corechart"]});
-				google.setOnLoadCallback(drawChart);
 			
-				function drawChart() {
-					
-					var data = google.visualization.arrayToDataTable([["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"],["Chrome",41],["Gecko",19],["Mozilla",2],["MSIE 10.0",1],["MSIE 11",9],["MSIE 8",3],["MSIE 9",5],["Robot",2],["unknown",5]]),
-						options = {
-							title : '브라우져별통계',
-							height : 350
-						},
-						chart = new google.visualization.PieChart(document.getElementById('log1'));
-					chart.draw(data, options);
-			
-					var data2 = google.visualization.arrayToDataTable([["\uc2dc","\uc811\uc18d\uc790"],["00",16],["01",5],["02",7],["03",4],["04",3],["05",3],["06",1],["07",7],["08",4],["09",5],["10",12],["11",7],["12",11],["13",2],["14",0],["15",0],["16",0],["17",0],["18",0],["19",0],["20",0],["21",0],["22",0],["23",0]]),
-						options2 = {
-							title : '시간별통계',
-							hAxis: {title: '시간', titleTextStyle: {color: 'red'}},
-							height : 350
-						},
-						chart = new google.visualization.ColumnChart(document.getElementById('log2'));
-					chart.draw(data2, options2);
-				}
-			</script><script src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;packages=corechart" type="text/javascript"></script>
-			<link href="https://www.google.com/uds/api/visualization/1.0/36558b280aac4fa99ed8215e60015cff/ui+ko.css" type="text/css" rel="stylesheet">
-			<script src="https://www.google.com/uds/api/visualization/1.0/36558b280aac4fa99ed8215e60015cff/format+ko,default+ko,ui+ko,corechart+ko.I.js" type="text/javascript"></script>
 			<div class="main_bottom_area">
 				<div class="board_area">
 					<div class="bdr-wrap">
 						<div class="b01 board_layout">
 							<div class="board_top">
 								<h2>온라인상담</h2>
-								<a href="javascript:;" class="more_btn" onclick="">더보기 &gt;</a>
+								<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/admin05_01'">더보기 &gt;</a>
 							</div>
 							<table class="main_board">
 								<colgroup>
@@ -101,42 +151,32 @@ $(function(){
 									<th>등록일</th>
 									<th>답변상태</th>
 								</tr>
-								<tr>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2504&amp;cate=">배은진</a></td>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2504&amp;cate=">상담완료</a></td>
-									<td class="b_id">2019-09-05</td>
-									<td class="b_id">답변</td>
-								</tr>
-								<tr>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2502&amp;cate=">주진주</a></td>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2502&amp;cate=">상담완료</a></td>
-									<td class="b_id">2019-09-05</td>
-									<td class="b_id">답변</td>
-								</tr>
-								<tr>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2501&amp;cate=">-</a></td>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2501&amp;cate=">상담완료</a></td>
-									<td class="b_id">2019-09-03</td>
-									<td class="b_id">답변</td>
-								</tr>
-								<tr>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2500&amp;cate=">배수연</a></td>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2500&amp;cate=">상담완료</a></td>
-									<td class="b_id">2019-09-03</td>
-									<td class="b_id">답변</td>
-								</tr>
-								<tr>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2499&amp;cate=">제미현</a></td>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2499&amp;cate=">상담완료</a></td>
-									<td class="b_id">2019-09-03</td>
-									<td class="b_id">답변</td>
-								</tr>
-								<tr>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2498&amp;cate=">고수린</a></td>
-									<td class="b_id"><a href="/admin/inquire/inquire_form.html?mode=modify&amp;seq=2498&amp;cate=">상담완료</a></td>
-									<td class="b_id">2019-09-02</td>
-									<td class="b_id">답변</td>
-								</tr>					
+								<c:choose>
+									<c:when test="${fn:length(list) ==0 }">
+										<tr><td colspan="4">등록된 게시물이 없습니다.</td></tr>
+									</c:when>
+									<c:otherwise>
+										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+									        <c:forEach var="item" items="${list}">
+												<tr class="cont">
+													<c:if test="${item.quick_state == 'x'}">
+														<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu05_01update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.name}</a></td>
+														<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu05_01update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.state}</a></td>
+													</c:if>
+													<c:if test="${item.quick_state == 'o'}">
+														<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu05_02update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.name}</a></td>
+														<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu05_02update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.state}</a></td>
+													</c:if>
+													<td class="b_id">${item.regdate}</td>
+													<td class="b_id">
+														<c:if test="${item.reply ==''}">미답변</c:if>
+														<c:if test="${item.reply !=''}">답변</c:if>
+													</td>
+												</tr>
+												<c:set var="num" value="${num-1}"></c:set>	
+											</c:forEach>
+									</c:otherwise>
+								</c:choose>
 							</table>
 						</div>
 					</div>
@@ -146,16 +186,16 @@ $(function(){
 				<div class="log_area">
 					<div class="log_layout">
 						<div class="log_top">
-							<h2>2019년 09월 05일 - 브라우저별 접속 통계</h2>
-							<a href="javascript:;" class="more_btn" onclick="">더보기 &gt;</a>
+							<h2 id="chart1"><span></span> - 브라우저별 접속 통계</h2>
+							<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu07_01'">더보기 &gt;</a>
 						</div>
 						<div class="log1" id="log1"></div>
 					</div>
 					
 					<div class="log_layout second">
 						<div class="log_top">
-							<h2>2019년 09월 05일 - 시간별 접속 통계</h2>
-							<a href="javascript:;" class="more_btn" onclick="location.href='/admin/analytics/analytics_traffic_list.html?select_key=time'">더보기 &gt;</a>
+							<h2 id="chart1"><span></span> - 시간별 접속 통계</h2>
+							<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu07_01'">더보기 &gt;</a>
 						</div>
 						<div class="log2" id="log2"></div>
 					</div>	

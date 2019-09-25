@@ -133,7 +133,9 @@ public class AdminController {
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(Model model) {
 		logger.info("main GET");
+		List<AdviceVO> list = aService.selectNonComplete();
 		
+		model.addAttribute("list", list);
 		return "admin/main";
 	}
 	

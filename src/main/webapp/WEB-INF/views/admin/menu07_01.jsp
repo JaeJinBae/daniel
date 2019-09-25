@@ -38,19 +38,6 @@
 <script>
 google.load("visualization", "1", {packages:["corechart"]});
 
-
-function drawChart(){
-	var arr = [["\ub144\ubcc4","\uc811\uc18d\uc790"], ["2018", 123],["2019", 4322]];
-	
-	var data = google.visualization.arrayToDataTable(arr);
-	var options = {
-		  title: '년별별통계'
-	};
-	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-	
-	chart.draw(data, options);
-}
-
 function draw_time_chart(info){
 	var res_arr = [["\uc2dc","\uc811\uc18d\uc790"]];
 	var temp_arr = [];
@@ -228,7 +215,8 @@ function sttGet(type, d1, d2){
 };
 
 $(function(){
-	google.setOnLoadCallback(drawChart);
+	google.setOnLoadCallback(draw_time_chart);
+	
 	$(".search_t_box100").datepicker({
 		changeMonth: true, 
 		changeYear: true,
@@ -255,7 +243,9 @@ $(function(){
 	date = (date > 10) ? date+"":"0"+date;
 	
 	$(".search_t_box100").val(year+"-"+month+"-"+date);
-	 
+	
+	sttGet("time", year+"-"+month+"-"+date, year+"-"+month+"-"+date);
+	
 	$("#select_key").change(function(){
 		var sel_type = $(this).val();
 		$(".search_span").css("display", "none");

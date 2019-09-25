@@ -8,6 +8,10 @@
 		select * from advice where no=#{no}
 	</select>
 	
+	<select id="selectNonComplete" resultType="AdviceVO">
+		select * from advice where state!='상담완료' order by no desc
+	</select>
+	
 	<insert id="insert">
 		insert into advice values(0, #{name}, #{phone}, #{regdate}, #{email}, #{state}, #{secret}, #{pw}, #{title}, #{content}, #{reply}, #{memo}, #{ip}, #{access_url}, #{reply_date}, #{upload_origin}, #{upload_stored}, #{quick_state})
 	</insert>

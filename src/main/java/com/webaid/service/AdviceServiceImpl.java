@@ -14,10 +14,15 @@ public class AdviceServiceImpl implements AdviceService {
 
 	@Autowired
 	private AdviceDao dao;
-	
+
 	@Override
 	public AdviceVO selectOne(int no) {
 		return dao.selectOne(no);
+	}
+
+	@Override
+	public List<AdviceVO> selectNonComplete() {
+		return dao.selectNonComplete();
 	}
 
 	@Override
