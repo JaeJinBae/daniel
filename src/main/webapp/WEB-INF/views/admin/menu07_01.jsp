@@ -110,8 +110,18 @@ function draw_dayofweek_chart(info){
 	chart.draw(data, options);
 }
 function draw_month_chart(info){
-	var data = google.visualization.arrayToDataTable([["\uc6d4\ubcc4","\uc811\uc18d\uc790"],["2018-06",4],["2018-07",3447],
-													["2018-08",5920],["2018-09",5221],["2018-10",5508],["2018-11",5870],["2018-12",5441]]);
+	var res_arr = [["\uc6d4\ubcc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	/* [["\uc6d4\ubcc4","\uc811\uc18d\uc790"],["2018-06",4],["2018-07",3447],
+													["2018-08",5920],["2018-09",5221],["2018-10",5508],["2018-11",5870],["2018-12",5441]] */
+	var data = google.visualization.arrayToDataTable(res_arr);
 	var options = {
 		  title: '월별통계'
 	};
@@ -120,7 +130,18 @@ function draw_month_chart(info){
 	chart.draw(data, options);
 }
 function draw_year_chart(info){
-	var data = google.visualization.arrayToDataTable([["\ub144\ubcc4","\uc811\uc18d\uc790"],["2018",31411],["2019",49834]]);
+	var res_arr = [["\ub144\ubcc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	/* [["\ub144\ubcc4","\uc811\uc18d\uc790"],["2018",31411],["2019",49834]] */
 	var options = {
 		  title: '년도별통계'
 	};
