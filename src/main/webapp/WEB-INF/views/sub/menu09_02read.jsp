@@ -560,54 +560,56 @@ $(function(){
 			<div class="inner">
 				<!-- privacy -->
 				<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false">
-				<input type="hidden" name="fparam" value="">
-				<input type="hidden" name="distinction" value="proc">
-				<input type="hidden" name="backpage" value="/html/index.html">
-				<input type="hidden" name="file_cnt" value="1">
-				
-				<table class="board-counsel-view">
-					<caption>상담게시판 상세</caption>
-					<colgroup>
-						<col style="width: 120px;">
-						<col>
-						<col style="width: 140px;">
-						<col style="width: 140px;">
-						<col style="width: 140px;">
-					</colgroup>
-					<thead>
+					<input type="hidden" name="fparam" value="">
+					<input type="hidden" name="distinction" value="proc">
+					<input type="hidden" name="backpage" value="/html/index.html">
+					<input type="hidden" name="file_cnt" value="1">
+					
+					<table class="board-counsel-view">
+						<caption>상담게시판 상세</caption>
+						<colgroup>
+							<col style="width: 120px;">
+							<col>
+							<col style="width: 140px;">
+							<col style="width: 140px;">
+							<col style="width: 140px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>제목</th>
+								<th>답변여부</th>
+								<th>작성자</th>
+								<th>작성일</th>
+							</tr>
+						</thead>
+						
 						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>답변여부</th>
-							<th>작성자</th>
-							<th>작성일</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>2497</td>
+							<td>${item.no}</td>
 							<td class="subject" data-state="비공개">
-								<p>이중턱 지흡 문의</p>
+								<p>${item.title}</p>
 							</td>
-							<td>
-								<i class="state ready">답변대기</i>
-							</td>
-							<td>
-											</td>
-							<td>
-								2019-09-02			</td>
+							<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>
+							<c:if test="${item.state != '상담완료'}"><td><i class="state ready">답변대기</i></td></c:if>
+							<td>${item.name}</td>
+							<td>${item.regdate}</td>
 						</tr>
-					</tbody>
-				</table>
-				
-				<!-- 게시글 상세 내용 -->
-				<div class="board-counsel-content">
-					안녕하세요 ^^<br>
-				이중턱 지방흡입을 알아보고 있는데요..<br>
-				가격과 시술 시간 문의 드립니다.</div>
-				<!-- // 게시글 상세 내용 -->
-				<!-- reply -->
-				<!-- reply end -->
+						
+					</table>
+					
+					<!-- 게시글 상세 내용 -->
+					<div class="board-counsel-content">
+						${item.content}
+					</div>
+					<!-- // 게시글 상세 내용 -->
+					
+					<c:if test="${item.state == '상담완료'}">
+						<div class="board-counsel-reply">
+							<div class="reply-title"><i>답변</i> 온라인상담에 대한 답변입니다.</div>
+							<div class="reply-txt">${item.reply}</div>
+						</div>
+					</c:if>
+					
 				</form>
 			</div>
 				
@@ -615,10 +617,10 @@ $(function(){
 				<div class="inner">
 					<ul>
 						<li class="fl">
-							<a href="/528/?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1" class="btn btn-view-list">목록으로</a>
+							<a href="${pageContext.request.contextPath}/menu09_02" class="btn btn-view-list">목록으로</a>
 						</li>
 						<li class="fr">
-							<a href="javascript:inquire_it('delete', 'pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;mode=delete&amp;distinction=proc&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2497')" class="btn btn-del">삭제</a>&nbsp;<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;mode=modify&amp;distinction=modify&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2497" class="btn btn-update">수정</a>&nbsp;			</li>
+							<a href="" class="btn btn-del">삭제</a>&nbsp;<a href="" class="btn btn-update">수정</a></li>
 					</ul>		
 				</div>
 			</div>

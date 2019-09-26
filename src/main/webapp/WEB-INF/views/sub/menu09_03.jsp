@@ -482,23 +482,6 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
-function selectByType(type){
-	var info = {type:type};
-	$.ajax({
-		url:"${pageContext.request.contextPath}/menu09_03selectByType",
-		type:"get",
-		data:JSON.stringify(info),
-		contentType : "application/json; charset=UTF-8",
-		dataType:"text",
-		async:false,
-		success:function(json){
-			console.log(json);
-		},
-		error:function(request,status,error){
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		}
-	});
-}
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(3)").addClass("active");
@@ -635,15 +618,6 @@ $(function(){
 			</div>
 			<div class="before-after-thumb">
 				<ul class="inner">
-					<%-- <li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2104&amp;link=0|||2104')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190715_7C8EA2990FE50BBE.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190715_F1E9F4FDA390D145.png&quot;);" id="thum_2104">
-							<i>After</i>
-						</span>
-						<p> 하안검 절개</p>
-					</li> --%>
 					<c:choose>
 					    <c:when test="${fn:length(list) == 0}">
 				        	<li style="text-align:center;">등록된 게시물이 없습니다.</li>

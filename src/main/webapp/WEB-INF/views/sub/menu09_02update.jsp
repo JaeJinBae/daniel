@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.layout.css"><!-- @6 공통 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.sub.css"><!-- @ 메인페이지 스타일-->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.board.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.css"><!-- 파일첨부 스타일 -->
 <!-- ********************************************플러그인********************************************* -->
 <script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AP4T42369817671&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1566887341954"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
@@ -32,6 +33,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.modernizr.js"></script><!-- #8 플러그인 modernizr -->
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.sub.js"></script><!-- # 메인페이지 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.js"></script><!-- 파일첨부 플러그인 -->
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.calendar.js"></script><!-- # 필수 함수 -->
@@ -42,6 +44,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.layer.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.common.js"></script><!-- # 공통 함수 -->
+<script type="text/javascript" src="http://jsgetip.appspot.com"></script>
 <style type="text/css">
 svg:not (:root ).svg-inline--fa {
 	overflow: visible
@@ -485,6 +488,32 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(2)").addClass("active");
+	
+	var p_all= $("#phone").val().split("-");
+	$("#phone1 > option[value='"+p_all[0]+"']").prop("selected", true);
+	$("#phone2").val(p_all[1]);
+	$("#phone3").val(p_all[2]);
+	
+	$("#form1").submit(function(){
+		var ndate = new Date();
+		var year = ndate.getFullYear();
+		var month = ndate.getMonth()+1;
+		var date = ndate.getDate();
+		
+		month = (month > 10) ? month+"":"0"+month;
+		date = (date > 10) ? date+"":"0"+date;
+		
+		$("#regdate").val(year+"-"+month+"-"+date);
+		
+		var phone1 = $("#phone1").val();
+		var phone2 = $("#phone2").val();
+		var phone3 = $("#phone3").val();
+		$("#phone").val(phone1+"-"+phone2+"-"+phone3);
+		
+		$("#ip").val(ip());
+		var oldURL = document.referrer;
+		$("#access_url").val(oldURL);
+	});
 });
 </script>
 </head>
@@ -498,7 +527,13 @@ $(function(){
 	<!-- SkipNavigation 시작 -->
 	<div id="skipnavigation">
 		<ul>
-			<li><a href="#sub-container">본문 바로가기 <svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path></svg><!-- <i class="fas fa-arrow-circle-right"></i> --></a></li>
+			<li>
+				<a href="#sub-container">본문 바로가기 
+					<svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path>
+					</svg><!-- <i class="fas fa-arrow-circle-right"></i> -->
+				</a>
+			</li>
 		</ul>
 	</div>
 	<!-- SkipNavigation 끝 -->	
@@ -557,91 +592,145 @@ $(function(){
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			
-			<div class="inner">
-				<!-- privacy -->
-				<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false">
-				<input type="hidden" name="fparam" value="">
-				<input type="hidden" name="distinction" value="proc">
-				<input type="hidden" name="backpage" value="/html/index.html">
-				<input type="hidden" name="file_cnt" value="1">
-				
-				<table class="board-counsel-view">
-					<caption>상담게시판 상세</caption>
-					<colgroup>
-						<col style="width: 120px;">
-						<col>
-						<col style="width: 140px;">
-						<col style="width: 140px;">
-						<col style="width: 140px;">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>답변여부</th>
-							<th>작성자</th>
-							<th>작성일</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>2474</td>
-							<td class="subject" data-state="비공개">
-								<p>얼굴 윤곽 주사</p>
-							</td>
-							<td>
-								<i class="state com">답변완료</i>
-							</td>
-							<td>
-								김대명			</td>
-							<td>
-								2019-08-19			</td>
-						</tr>
-					</tbody>
-				</table>
-				
-				<!-- 게시글 상세 내용 -->
-				<div class="board-counsel-content">
-					26살 남자입니다. 이번에 첨으로 얼굴 윤곽 주사를 맞아 보려하는데, 1.비용이 얼마나 들까요?   2.몇회정도 받아야 효과가 나타나고, <br>
-				3.보통 맞으면 지속기간이 얼마나 가나요?  4. 결제방식은 신용카드도 가능하나요?</div>
-				<!-- // 게시글 상세 내용 -->
-				<!-- reply -->
-				
-				
-							<div class="board-counsel-reply">
-								<div class="reply-title">
-									<i>답변</i> 온라인상담에 대한 답변입니다.
-								</div>
-								<div class="reply-txt">
-									반갑습니다 김대명님, 선한이웃 다니엘입니다^^<br>
-				볼이나 이중턱쪽으로 고민이셔서 윤곽주사 문의주셨나요?<br>
-				윤곽주사같은경우에 1회하시는데 최대 5cc용량으로 5500원이구요 <br>
-				1회보다는 일주일간격으로 3회정도 시술해주시면 처음보다는 윤곽이 줄은게 보이실겁니다^^ <br>
-				유지기간은 살이 찌지 안고 관리해주시면 크게 원래되로변화는 없으시구요 결제는 현금 카드 가능합니다~ <br>
-				시술 후 약물때문에 많이 부어 보이실텐데 주무시기전에 마사지 조금 해주시면 좋으시구요 다음날되면 괜찮아지시고 <br>
-				주사바늘 들어가신부위로 혹여 멍이들수있습니다^^<br>
-				시술하실것같으시면 미리 예약해주시고 방문해주시는게좋으시구요<br>
-				더궁금하신 사항있으시면 전화주세요! <br>
-				오늘 오후 마무리 잘하시고 즐거운 하루보내세요~
-								</div>
-								
-							</div>
-				
-						<!-- reply end -->
-				</form>
-			</div>
-				
-			<div class="btn-group">
-				<div class="inner">
-					<ul>
-						<li class="fl">
-							<a href="/528/?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1" class="btn btn-view-list">목록으로</a>
-						</li>
-						<li class="fr">
-							<a href="javascript:inquire_it('delete', 'pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;mode=delete&amp;distinction=proc&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2497')" class="btn btn-del">삭제</a>&nbsp;<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;mode=modify&amp;distinction=modify&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2497" class="btn btn-update">수정</a>&nbsp;			</li>
-					</ul>		
+			<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/menu09_02register">
+				<input type="hidden" name="no" id="no" value="${item.no}">
+				<input type="hidden" name="secret" id="secret" value="${item.secret}">
+				<input type="hidden" name="regdate" id="regdate" value="${item.regdate}">
+				<input type="hidden" name="ip" id="ip" value="${item.ip}">
+				<input type="hidden" name="access_url" id="access_url" value="${item.access_url}">
+				<input type="hidden" name="phone" id="phone" value="${item.phone}">
+				<!-- 게시판 타이틀 시작 -->
+				<div class="board-titl">
+					<h5>온라인 상담</h5>
 				</div>
-			</div>
+				<!-- 게시판 타이틀 끝 -->
+				
+				<div class="inner">
+					<table class="board-cousel-form">
+						<caption>상담 게시판 상세</caption>
+						<tbody>
+							
+						<tr>
+							<th scope="row">이름</th>
+							<td><input type="text" name="name" id="name" class="default" value="${item.name}"></td>
+						</tr>
+						<tr>
+							<th>제목</th>
+							<td>
+								<input type="text" name="title" id="title" maxlength="200" value="${item.title}">
+							</td>
+						</tr>
+						<tr>
+							<th>연락처</th>
+							<td>
+								<select name="phone1" id="phone1" class="small">
+									<option value="010">010</option>
+									<option value="011">011</option>
+									<option value="016">016</option>
+									<option value="017">017</option>
+									<option value="018">018</option>
+									<option value="019">019</option>
+								</select> -
+								<input type="text" name="phone2" id="phone2" maxlength="4" value="" class="small" autocomplete="off"> -
+								<input type="text" name="phone3" id="phone3" maxlength="4" value="" class="small" autocomplete="off">
+								* 연락처를 남겨주시면 답변 후 문자메시지를 발송해드립니다.
+							</td>
+						</tr>
+						<tr>
+							<th>내용</th>
+							<td>
+								<textarea name="content" id="content">${item.content}</textarea>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="file_cnt">첨부파일</label></th>
+							<td>
+								<input type="hidden" id="uploadState" name="uploadState" value="x">
+								<c:choose>
+									<c:when test="${item.upload_origin == ''}">
+										<div class="form-file">
+											<div>
+												<input type="file" name="upload" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
+												<br>
+											</div>	
+										</div>
+										<script>
+											$('.form-file input[type="file"]').jfilestyle({
+												//placeholder: '사진첨부',
+												text : '파일첨부'
+											})
+										</script>
+									</c:when>
+									<c:otherwise>
+										<div class="form-file">
+											<div id="file_1145">
+												<a href="javascript:;" onclick="inquire_it('download', '1145')">20190412_111116.jpg</a>
+												<img id="thumb" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+												<br>
+											</div>
+										</div>
+									</c:otherwise>
+								</c:choose>
+								
+								
+							</td>
+						</tr>
+					</table>
+				
+					<div class="private-agree">
+						<textarea name="b_mem_personal" id="b_mem_personal" cols="124" rows="10" class="full" readonly="readonly">개인정보의 수집범위
+				
+							다니엘성형외과의원은(는) 별도의 회원가입 절차 없이 대부분의 콘텐츠에 자유롭게 접근할 수 있습니다. 다니엘성형외과의원의 회원제 서비스를 이용하시고자 할 경우 다음의 정보를 입력해주셔야 하며 선택항목을 입력하시지 않았다 하여 서비스 이용에 제한은 없습니다.
+							
+							1) 회원 가입시 수집하는 개인정보의 범위
+							- 필수항목 : 희망 ID, 비밀번호, 이름, 닉네임
+							- 선택항목 : 이메일주소, 이메일 수신 여부, SMS 수신여부, 정보공개여부, 휴대폰번호
+							
+							개인정보의 수집 및 이용 목적
+							① 다니엘성형외과의원은(는) 회원님께 최대한으로 최적화되고 맞춤화된 서비스를 제공하기 위하여 다음과 같은 목적으로 개인정보를 수집하고 있습니다.
+							- 이름, 아이디, 비밀번호, 닉네임 : 회원제 서비스 이용에 따른 본인 식별 절차에 이용
+							- 이메일주소, 이메일 수신여부, SMS 수신여부, 휴대폰 번호: 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보, 새로운 서비스/신상품이나 이벤트 정보의 안내
+							- 주소: 경품과 쇼핑 물품 배송에 대한 정확한 배송지의 확보
+							- 그 외 선택항목 : 개인맞춤 서비스를 제공하기 위한 자료
+							② 단, 이용자의 기본적 인권 침해의 우려가 있는 민감한 개인정보(인종 및 민족, 사상 및 신조, 출신지 및 본적지, 정치적 성향 및 범죄기록, 건강상태 및 성생활 등)는 수집하지 않습니다.
+							개인정보의 보유기간 및 이용기간
+							① 귀하의 개인정보는 다음과 같이 개인정보의 수집목적 또는 제공받은 목적이 달성되면 파기됩니다. 단, 상법 등 관련법령의 규정에 의하여 다음과 같이 거래 관련 권리 의무 관계의 확인 등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간 보유합니다.
+							- 회원가입정보의 경우, 회원가입을 탈퇴하거나 회원에서 제명된 경우 등 일정한 사전에 보유목적, 기간 및 보유하는 개인정보 항목을 명시하여 동의를 구합니다.
+							- 계약 또는 청약철회 등에 관한 기록 : 5년
+							- 대금결제 및 재화등의 공급에 관한 기록 : 5년
+							- 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년
+							② 귀하의 동의를 받아 보유하고 있는 거래정보 등을 귀하께서 열람을 요구하는 경우 다니엘성형외과의원은(는) 지체없이 그 열람,확인 할 수 있도록 조치합니다 
+							필수 개인정보 수집을 동의하지 않는 경우
+							① 귀하의 개인정보 수집을 거부할 수 있는 권리가 있으며 이 경우 당사의 회원전용 서비스 또는 고객 문의사항에 대한 답변이 필수인 코너를 이용하는데 있어 회원 가입 또는 게시물 등록이 불가능 할 수 있습니다.
+							② 필수 정보가 아닌 선택 정보의 경우 개인정보 수집에 동의하지 않을 수 있으며 서비스 이용에 제한은 없습니다.
+						</textarea>
+						<p>
+							<input type="checkbox" id="agree" name="agree" value="Y" checked="checked">
+							<label for="agree">개인정보취급방침에 동의합니다.</label>
+						</p>
+					</div><!-- private-agree end -->
+					
+				
+					<!-- 게시판 버튼 시작 -->
+					<div class="btn-group">
+						<div class="inner">
+							<ul>
+								<li class="fl">
+									<a href="" class="btn btn-view-list">목록으로</a>
+								</li>
+								<li class="fr">
+									<input type="submit" class="btn btn-submit" style="width:100px;height:36px;line-height:36px;cursor:pointer;" value="확인">
+									<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/menu09_02register'">취소</button>
+								</li>
+							</ul>
+						</div>
+					</div><!-- btn-group end -->
+					<!-- 게시판 버튼 끝 -->
+				
+					<script type="text/javascript" src="/lib/js/board.js"></script>
+				
+				</div><!-- inner end -->
+			</form>
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	

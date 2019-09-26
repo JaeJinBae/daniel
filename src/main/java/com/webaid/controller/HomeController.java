@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
@@ -524,39 +525,111 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu09_02read", method = RequestMethod.GET)
-	public String menu09_02read(Model model) {
+	public String menu09_02read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) {
 		logger.info("menu09_02read GET");
 		
-		return "sub/menu09_02read";
-	} 
-	
-	@RequestMapping(value = "/menu09_02read2", method = RequestMethod.GET)
-	public String menu09_02read2(Model model) {
-		logger.info("menu09_02read2 GET");
+		AdviceVO vo = aService.selectOne(no);
 		
-		return "sub/menu09_02read2";
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/menu09_02read";
+	}
+	
+	@RequestMapping(value = "/menu09_02update", method = RequestMethod.GET)
+	public String menu05_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu09_02update GET");
+		
+		AdviceVO vo = aService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu09_02update";
+	}
+	
+	@RequestMapping(value = "/menu09_02update", method = RequestMethod.POST)
+	public String menu09_02updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu09_02update POST");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadAdvice/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			try {
+				//mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		
+		String uploadState = mtfReq.getParameter("uploadState");
+		
+		
+		AdviceVO vo = new AdviceVO();
+		AdviceVO prevVO = aService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setEmail(mtfReq.getParameter("email"));
+		vo.setState(mtfReq.getParameter("state"));
+		vo.setSecret(mtfReq.getParameter("secret"));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setReply(mtfReq.getParameter("reply"));
+		vo.setReply_date(mtfReq.getParameter("reply_date"));
+		vo.setMemo(mtfReq.getParameter("memo"));
+		
+		if(uploadState.equals("o")){
+			vo.setUpload_origin(fileName);
+			vo.setUpload_stored(storedFileName);
+		}else{
+			vo.setUpload_origin(prevVO.getUpload_origin());
+			vo.setUpload_stored(prevVO.getUpload_stored());
+		}
+		
+		aService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu09_02update";
 	}
 	
 	@RequestMapping(value = "/menu09_03", method = RequestMethod.GET)
 	public String menu09_03(@ModelAttribute("cri") SearchCriteria9 cri, Model model) throws Exception {
-		logger.info("menu09_03 GET");
-		
-		List<BeforeAfterVO> list = baService.listSearch9(cri);
-		
-		PageMakerWith9 pageMaker = new PageMakerWith9();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(baService.listSearchCount9(cri));
-		pageMaker.setFinalPage(baService.listSearchCount9(cri));
-		
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
-		
-		return "sub/menu09_03";
-	}
-	
-	@RequestMapping(value = "/menu09_03selectByType", method = RequestMethod.GET)
-	public String menu09_03selectByType(@ModelAttribute("cri") SearchCriteria9 cri, @RequestBody Map<String, String> info, Model model) throws Exception {
 		logger.info("menu09_03 GET");
 		
 		List<BeforeAfterVO> list = baService.listSearch9(cri);
