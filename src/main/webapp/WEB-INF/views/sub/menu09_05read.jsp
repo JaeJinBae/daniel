@@ -623,7 +623,7 @@ $(function(){
 					<a href="${pageContext.request.contextPath}/menu09_05" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
-			<!-- 게시판 버튼 끝 -->
+			<!-- 게시판 버튼 끝 --> 
 			
 			<form name="board" method="post" action="/html/board/board_proc.php">
 				<input type="hidden" name="fparam">
