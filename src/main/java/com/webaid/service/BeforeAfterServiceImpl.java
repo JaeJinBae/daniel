@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria9;
 import com.webaid.persistence.BeforeAfterDao;
 
 @Service
@@ -66,6 +67,11 @@ public class BeforeAfterServiceImpl implements BeforeAfterService {
 	}
 
 	@Override
+	public List<BeforeAfterVO> listSearch9(SearchCriteria9 cri) throws Exception {
+		return dao.listSearch9(cri);
+	}
+
+	@Override
 	public List<BeforeAfterVO> listSearchAll(SearchCriteria cri) throws Exception {
 		return dao.listSearchAll(cri);
 	}
@@ -73,6 +79,11 @@ public class BeforeAfterServiceImpl implements BeforeAfterService {
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
+	}
+
+	@Override
+	public int listSearchCount9(SearchCriteria9 cri) throws Exception {
+		return dao.listSearchCount9(cri);
 	}
 
 	@Override

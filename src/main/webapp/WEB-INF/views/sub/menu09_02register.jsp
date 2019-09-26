@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.layout.css"><!-- @6 공통 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.sub.css"><!-- @ 메인페이지 스타일-->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.board.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.css"><!-- 파일첨부 스타일 -->
 <!-- ********************************************플러그인********************************************* -->
 <script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AP4T42369817671&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1566887341954"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
@@ -32,6 +33,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.modernizr.js"></script><!-- #8 플러그인 modernizr -->
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.sub.js"></script><!-- # 메인페이지 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.js"></script><!-- 파일첨부 플러그인 -->
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.calendar.js"></script><!-- # 필수 함수 -->
@@ -42,6 +44,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.layer.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.common.js"></script><!-- # 공통 함수 -->
+<script type="text/javascript" src="http://jsgetip.appspot.com"></script>
 <style type="text/css">
 svg:not (:root ).svg-inline--fa {
 	overflow: visible
@@ -485,6 +488,27 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(2)").addClass("active");
+	
+	$("#form1").submit(function(){
+		var ndate = new Date();
+		var year = ndate.getFullYear();
+		var month = ndate.getMonth()+1;
+		var date = ndate.getDate();
+		
+		month = (month > 10) ? month+"":"0"+month;
+		date = (date > 10) ? date+"":"0"+date;
+		
+		$("#regdate").val(year+"-"+month+"-"+date);
+		
+		var phone1 = $("#phone1").val();
+		var phone2 = $("#phone2").val();
+		var phone3 = $("#phone3").val();
+		$("#phone").val(phone1+"-"+phone2+"-"+phone3);
+		
+		$("#ip").val(ip());
+		var oldURL = document.referrer;
+		$("#access_url").val(oldURL);
+	});
 });
 </script>
 </head>
@@ -498,7 +522,13 @@ $(function(){
 	<!-- SkipNavigation 시작 -->
 	<div id="skipnavigation">
 		<ul>
-			<li><a href="#sub-container">본문 바로가기 <svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path></svg><!-- <i class="fas fa-arrow-circle-right"></i> --></a></li>
+			<li>
+				<a href="#sub-container">본문 바로가기 
+					<svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path>
+					</svg><!-- <i class="fas fa-arrow-circle-right"></i> -->
+				</a>
+			</li>
 		</ul>
 	</div>
 	<!-- SkipNavigation 끝 -->	
@@ -557,8 +587,12 @@ $(function(){
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			
-			<form name="inquire" id="inquire" method="post" enctype="multipart/form-data" action="">
-				<input type="hidden" name="secret" id="secret" value="Y">
+			<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/menu09_02register">
+				<input type="hidden" name="secret" id="secret" value="o">
+				<input type="hidden" name="regdate" id="regdate">
+				<input type="hidden" name="ip" id="ip">
+				<input type="hidden" name="access_url" id="access_url">
+				<input type="hidden" name="phone" id="phone">
 				<!-- 게시판 타이틀 시작 -->
 				<div class="board-titl">
 					<h5>온라인 상담</h5>
@@ -611,14 +645,9 @@ $(function(){
 							<td>
 								<div class="form-file">
 									<div>
-										<input type="file" name="upload[]" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
-										<div class="jfilestyle jfilestyle-corner  jfilestyle-theme-default">
-											<div name="filedrag" style="position: absolute; width: 100%; height: 35px; z-index: -1;"></div>
-											<input type="text" style="width:150px" placeholder="" disabled="">
-											<span class="focus-jfilestyle" tabindex="0"><label for="jfilestyle-0"><span>파일첨부</span></label></span>
-										</div>
+										<input type="file" name="upload" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
 										<br>
-									</div>
+									</div>	
 								</div>
 								<script>
 									$('.form-file input[type="file"]').jfilestyle({
@@ -672,8 +701,8 @@ $(function(){
 									<a href="" class="btn btn-view-list">목록으로</a>
 								</li>
 								<li class="fr">
-									<input type="submit" class="btn btn-submit" value="확인">
-									<button type="button" class="btn btn-cancel" onclick="location.href='${pageCopntext.request.contextPath}/menu09_02register'">취소</button>
+									<input type="submit" class="btn btn-submit" style="width:100px;height:36px;line-height:36px;cursor:pointer;" value="확인">
+									<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/menu09_02register'">취소</button>
 								</li>
 							</ul>
 						</div>

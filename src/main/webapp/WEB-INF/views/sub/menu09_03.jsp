@@ -482,9 +482,57 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
+function selectByType(type){
+	var info = {type:type};
+	$.ajax({
+		url:"${pageContext.request.contextPath}/menu09_03selectByType",
+		type:"get",
+		data:JSON.stringify(info),
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		async:false,
+		success:function(json){
+			console.log(json);
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(3)").addClass("active");
+	
+	$(".board-kinds > ul > li > a").click(function(e){
+		e.preventDefault();
+		var k=$(this).find("input").val();
+		var keyword = encodeURIComponent(k);
+		var url1 = $(this).prop("href");
+		location.href=url1+keyword;
+		
+	});
+	
+	var kw = $("#kw").val();
+	$(".board-kinds > ul > li > a > input[value='"+kw+"']").parent().parent().addClass("active");
+	
+	//초기화면
+	var before_img_url = $(".before-after-thumb > ul > .item:nth-child(1) > .before").css("background-image");
+	var after_img_url = $(".before-after-thumb > ul > .item:nth-child(1) > .after").css("background-image");
+	var item_title = $(".before-after-thumb > ul > .item:nth-child(1) > p").text();
+
+	$(".before-after > ul > li > .before").css("background-image", before_img_url);
+	$(".before-after > ul > li > .after").css("background-image", after_img_url);
+	$(".before-after > ul > li > p").text(item_title);
+	
+	//thumb 클릭했을 때 
+	$(".before-after-thumb > ul > .item").click(function(){
+		before_img_url = $(this).find(".before").css("background-image");
+		after_img_url = $(this).find(".after").css("background-image");
+		item_title = $(this).find("p").text();
+		$(".before-after > ul > li > .before").css("background-image", before_img_url);
+		$(".before-after > ul > li > .after").css("background-image", after_img_url);
+		$(".before-after > ul > li > p").text(item_title);
+	});
 });
 </script>
 </head>
@@ -558,47 +606,27 @@ $(function(){
 			<!-- 게시판 타이틀 끝 -->
 			
 			<div class="board-kinds">
+				<input type="hidden" id="kw" value="${pageMaker.cri.keyword}">
 				<ul class="inner">
-					<li class="active">
-						<a href="?pCode=529">
-							전체
-						</a>
-					</li>
-			
-					<li>
-						<a href="?pCode=529&amp;btap=동안·탄력 클리닉">동안·탄력 클리닉</a>
-					</li>
-					<li>
-						<a href="?pCode=529&amp;btap=레이저클리닉">레이저클리닉</a>
-					</li>
-					<li>
-						<a href="?pCode=529&amp;btap=흉터클리닉">흉터클리닉</a>
-					</li>
-					<li>
-						<a href="?pCode=529&amp;btap=눈·코 성형">눈·코 성형</a>
-					</li>
-					<li>
-						<a href="?pCode=529&amp;btap=프리미엄 쁘띠클리닉">프리미엄 쁘띠클리닉</a>
-					</li>
-					<li>
-						<a href="?pCode=529&amp;btap=체형클리닉">체형클리닉</a>
-					</li>
-					<li>
-						<a href="?pCode=529&amp;btap=두피클리닉">두피클리닉</a>
-					</li>
+					<li><a href="${pageContext.request.contextPath}/menu09_03?page=1&amp;perPageNum=9&amp;searchType&amp;keyword">전체<input type="hidden" value=""></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_03?page=1&amp;perPageNum=9&amp;searchType=c&amp;keyword=">동안·탄력 클리닉<input type="hidden" value="동안·탄력 클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_03?page=1&amp;perPageNum=9&amp;searchType=c&amp;keyword=">레이저클리닉<input type="hidden" value="레이저클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_03?page=1&amp;perPageNum=9&amp;searchType=c&amp;keyword=">흉터클리닉<input type="hidden" value="흉터클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_03?page=1&amp;perPageNum=9&amp;searchType=c&amp;keyword=">눈·코 성형<input type="hidden" value="눈·코 성형"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_03?page=1&amp;perPageNum=9&amp;searchType=c&amp;keyword=">프리미엄 쁘띠클리닉<input type="hidden" value="프리미엄 쁘띠클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_03?page=1&amp;perPageNum=9&amp;searchType=c&amp;keyword=">체형클리닉<input type="hidden" value="체형클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_03?page=1&amp;perPageNum=9&amp;searchType=c&amp;keyword=">두피클리닉<input type="hidden" value="두피클리닉"></a></li>
 				</ul>
 			</div>
-			
-			
-			
+
 			<div class="before-after">
 				<ul class="inner">
-					<input type="hidden" name="top_vis" value="2104">
+					<!-- <input type="hidden" name="top_vis" value="2104"> -->
 					<li class="item">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190715_7C8EA2990FE50BBE.png&quot;);">
+						<span class="before">
 							<i>Before</i>
 						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190715_F1E9F4FDA390D145.png&quot;);">
+						<span class="after">
 							<i>After</i>
 						</span>
 						<p> 하안검 절개</p>
@@ -607,7 +635,7 @@ $(function(){
 			</div>
 			<div class="before-after-thumb">
 				<ul class="inner">
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2104&amp;link=0|||2104')">
+					<%-- <li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2104&amp;link=0|||2104')">
 						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190715_7C8EA2990FE50BBE.png&quot;);">
 							<i>Before</i>
 						</span>
@@ -615,107 +643,54 @@ $(function(){
 							<i>After</i>
 						</span>
 						<p> 하안검 절개</p>
-					</li>
-				
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2103&amp;link=0|||2103')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190715_8A647BEC990F0686.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190715_903A16D4E7F9CF40.png&quot;);" id="thum_2103">
-							<i>After</i>
-						</span>
-						<p> 화이트닝 복합레이저 5회</p>
-					</li>
-				
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2097&amp;link=0|||2097')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190612_C88ACA6BC890C9FF.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190612_3DA8BF7EFF5D859B.png&quot;);" id="thum_2097">
-							<i>After</i>
-						</span>
-						<p> 이마거상+하안검+눈매교정</p>
-					</li>
-				
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2096&amp;link=0|||2096')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190612_D51E584B0A143BFA.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190612_7F82445A9A782A11.png&quot;);" id="thum_2096">
-							<i>After</i>
-						</span>
-						<p> 안면거상술</p>
-					</li>
-				
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2095&amp;link=0|||2095')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190612_6639C2E3FAE4247D.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190612_EEE4E0A6C7AFFCE0.png&quot;);" id="thum_2095">
-							<i>After</i>
-						</span>
-						<p> 콧볼축소</p>
-					</li>
-				
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2086&amp;link=0|||2086')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190510_52726F616980731C.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190510_E902BF5D2EB15570.png&quot;);" id="thum_2086">
-							<i>After</i>
-						</span>
-						<p> 하안검</p>
-					</li>
-				
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2085&amp;link=0|||2085')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190510_977A10AEF79943AB.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190510_933A2A90ACCED349.png&quot;);" id="thum_2085">
-							<i>After</i>
-						</span>
-						<p> 홍조,기미,잡티(드림패키지)</p>
-					</li>
-				
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2084&amp;link=0|||2084')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190510_81832C9E22241D8E.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190510_41F0C915186F5140.png&quot;);" id="thum_2084">
-							<i>After</i>
-						</span>
-						<p> 부분절개 눈매교정 재수술+앞트임+뒤트임</p>
-					</li>
-				
-					<li class="item" onclick="board_it('main_vis', 'mode=visual&amp;Scod=BRD20&amp;seq=2083&amp;link=0|||2083')">
-						<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190510_606C12A9F4C6B0B1.png&quot;);">
-							<i>Before</i>
-						</span>
-						<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/filedata/board/BRD20/20190510_CCD8209522938403.png&quot;);" id="thum_2083">
-							<i>After</i>
-						</span>
-						<p> 하안검 부분절개</p>
-					</li>
-				
+					</li> --%>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<li style="text-align:center;">등록된 게시물이 없습니다.</li>
+					    </c:when>
+					    <c:otherwise>
+					        <c:forEach var="item" items="${list}">
+								<li class="item">
+									<span class="before" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/uploadBeforeAfter/${item.img_before_stored}&quot;);">
+										<i>Before</i>
+									</span>
+									<span class="after" style="background-image: url(&quot;${pageContext.request.contextPath}/resources/uploadBeforeAfter/${item.img_after_stored}&quot;);" id="thum_2083">
+										<i>After</i>
+									</span>
+									<p> ${item.title}</p>
+								</li>
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</ul>
 			</div>
 				
 			<!-- 페이징 시작 -->
 			<div id="board-pagenation">
 				<div class="inner">
-					<a href="javascript:;">
-						<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> -->
-					</a>
-					<a href="javascript:;" class="on">1</a>
-					<a href="?select_key=&amp;input_key=&amp;Scod=BRD20&amp;pCode=529&amp;btap=&amp;page=2 ">2</a>
-					<a href="?select_key=&amp;input_key=&amp;Scod=BRD20&amp;pCode=529&amp;btap=&amp;page=3 ">3</a>
-					<a href="?select_key=&amp;input_key=&amp;Scod=BRD20&amp;pCode=529&amp;btap=&amp;page=4 ">4</a>
-					<a href="?select_key=&amp;input_key=&amp;Scod=BRD20&amp;pCode=529&amp;btap=&amp;page=5 ">5</a>
-					<a href="?select_key=&amp;input_key=&amp;Scod=BRD20&amp;pCode=529&amp;btap=&amp;page=6 ">
-						<svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?select_key=&amp;input_key=&amp;Scod=BRD20&amp;pCode=529&amp;btap=&amp;page=12 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
-					</a>
+				<a href="${pageMaker.makeSearch(1)}">
+					<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
+				</a>
+				<c:if test="${pageMaker.prev}">
+					<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+				</c:if>
+				<c:if test="${!pageMaker.prev}">
+					<a href="${pageMaker.makeSearch(pageMaker.cri.page) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+				</c:if>
+				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+					<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+				</c:forEach>
+				<c:if test="${pageMaker.next}">
+					<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+				</c:if>
+				<c:if test="${!pageMaker.next}">
+					<a href="${pageMaker.makeSearch(pageMaker.cri.page)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+				</c:if>
+				<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}">
+					<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
+				</a>
 				</div>
-			</div><!-- 페이징 끝 -->
+			</div>	<!-- 페이징 끝 -->
 			
 			<script>
 			// 썸네일 리스트 클릭했을경우 큰 사진으로 이동

@@ -44,13 +44,17 @@
 		select * from before_after where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
+	<select id="listSearch9" resultType="BeforeAfterVO">
+		select * from before_after where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+	</select>
+	
 	<select id="listSearchAll" resultType="BeforeAfterVO">
 		select * from before_after where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<sql id="search">
 		<if test="searchType=='c'.toString()">
-			and content like concat('%',#{keyword},'%')
+			and clinic_type like concat('%',#{keyword},'%')
 		</if>
 		<if test="searchType=='t'.toString()">
 			and title like concat('%',#{keyword},'%') 
@@ -61,6 +65,10 @@
 	</sql>
 	
 	<select id="listSearchCount" resultType="int">
+		select count(no) from before_after where use_state='o' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchCount9" resultType="int">
 		select count(no) from before_after where use_state='o' <include refid="search"></include>
 	</select>
 	

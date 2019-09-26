@@ -1,6 +1,9 @@
 package com.webaid.controller;
 
+import java.io.File;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,15 +18,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.webaid.domain.AdviceVO;
+import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.PageMakerWith9;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria9;
 import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
+import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.UserService;
 
@@ -43,6 +53,9 @@ public class HomeController {
 	
 	@Autowired
 	private AdviceService aService;
+	
+	@Autowired
+	private BeforeAfterService baService;
 	
 	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.GET)
 	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
@@ -440,6 +453,69 @@ public class HomeController {
 		return "sub/menu09_02";
 	}
 	
+	@RequestMapping(value = "/menu09_02register", method = RequestMethod.GET)
+	public String menu09_02register(Model model) {
+		logger.info("menu09_02register GET");
+		
+		return "sub/menu09_02register";
+	}
+	
+	@RequestMapping(value = "/menu09_02register", method = RequestMethod.POST)
+	public String menu09_02registerPost(MultipartHttpServletRequest mtfReq, Model model) {
+		logger.info("menu09_02register POST");
+		
+		AdviceVO vo = new AdviceVO();
+		
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setEmail("");
+		vo.setState(mtfReq.getParameter("상담예정"));
+		vo.setSecret(mtfReq.getParameter("secret"));
+		vo.setPw(mtfReq.getParameter("pw"));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setReply("");
+		vo.setMemo("");
+		vo.setIp(mtfReq.getParameter("ip"));
+		vo.setAccess_url(mtfReq.getParameter("access_url"));
+		vo.setReply_date("");
+		vo.setQuick_state("x");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadAdvice/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			vo.setUpload_origin(fileName);
+			vo.setUpload_stored(storedFileName);
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		
+		aService.insert(vo);
+		
+		return "redirect:/menu09_02";
+	}
+	
 	@RequestMapping(value = "/menu09_02pwChk", method = RequestMethod.GET)
 	public String menu09_02pwChk(Model model) {
 		logger.info("menu09_02pwChk GET");
@@ -452,7 +528,7 @@ public class HomeController {
 		logger.info("menu09_02read GET");
 		
 		return "sub/menu09_02read";
-	}
+	} 
 	
 	@RequestMapping(value = "/menu09_02read2", method = RequestMethod.GET)
 	public String menu09_02read2(Model model) {
@@ -462,8 +538,37 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu09_03", method = RequestMethod.GET)
-	public String menu09_03(Model model) {
+	public String menu09_03(@ModelAttribute("cri") SearchCriteria9 cri, Model model) throws Exception {
 		logger.info("menu09_03 GET");
+		
+		List<BeforeAfterVO> list = baService.listSearch9(cri);
+		
+		PageMakerWith9 pageMaker = new PageMakerWith9();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(baService.listSearchCount9(cri));
+		pageMaker.setFinalPage(baService.listSearchCount9(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/menu09_03";
+	}
+	
+	@RequestMapping(value = "/menu09_03selectByType", method = RequestMethod.GET)
+	public String menu09_03selectByType(@ModelAttribute("cri") SearchCriteria9 cri, @RequestBody Map<String, String> info, Model model) throws Exception {
+		logger.info("menu09_03 GET");
+		
+		List<BeforeAfterVO> list = baService.listSearch9(cri);
+		
+		PageMakerWith9 pageMaker = new PageMakerWith9();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(baService.listSearchCount9(cri));
+		pageMaker.setFinalPage(baService.listSearchCount9(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu09_03";
 	}

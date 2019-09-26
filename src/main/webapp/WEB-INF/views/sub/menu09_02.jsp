@@ -605,7 +605,7 @@ $(function(){
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group">
 				<div class="inner">
-					<a href="location.href='${pageContext.request.contextPath}/menu09_02register'" class="btn btn-list">글쓰기</a>
+					<a href="${pageContext.request.contextPath}/menu09_02register" class="btn btn-list">글쓰기</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->
