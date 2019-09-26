@@ -488,7 +488,7 @@ keyframes fa-spin { 0%{
 function deleteUploadImg(no, type){
 	var info = {no:no, type:type};
 	$.ajax({
-		url:"${pageContext.request.contextPath}/admin/menu09_02uploadImgDelete",
+		url:"${pageContext.request.contextPath}/menu09_02uploadImgDelete",
 		type:"post",
 		data:JSON.stringify(info),
 		contentType : "application/json; charset=UTF-8",
@@ -628,7 +628,7 @@ $(function(){
 						</tr>
 						<tr>
 							<th>제목</th>
-							<td><input type="text" name="title" id="title" maxlength="200" value="${item.title}"></td>
+							<td><input type="text" name="title" id="title" maxlength="200" element-name="제목" value="${item.title}"></td>
 						</tr>
 						<tr>
 							<th>연락처</th>

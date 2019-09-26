@@ -558,108 +558,55 @@ $(function(){
 			
 			<div class="board-counsel-list">
 				<ul class="full">
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2474&amp;nextmode=view">
-							<b><!---->얼굴 윤곽 주사</b>
-							<i class="name">김대명</i><span class="line">|</span><i class="date">2019-08-19</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2260&amp;nextmode=view">
-							<b><!---->짝눈교정은 어떻게하나요?</b>
-							<i class="name">김주희</i><span class="line">|</span><i class="date">2019-04-12</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2259&amp;nextmode=view">
-							<b><!---->주근깨 제거비용이 알고싶습니다</b>
-							<i class="name">다니엘</i><span class="line">|</span><i class="date">2019-04-09</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2258&amp;nextmode=view">
-							<b><!---->앞트임 흉터 ,쌍꺼풀 절개 흉터 레이저</b>
-							<i class="name">다니엘</i><span class="line">|</span><i class="date">2019-04-09</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2257&amp;nextmode=view">
-							<b><!---->흉터제거</b>
-							<i class="name">.다니엘</i><span class="line">|</span><i class="date">2019-04-07</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2256&amp;nextmode=view">
-							<b><!---->인중제모가격문의</b>
-							<i class="name">이해원</i><span class="line">|</span><i class="date">2019-04-04</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2255&amp;nextmode=view">
-							<b><!---->얼굴 윤곽</b>
-							<i class="name">다니엘</i><span class="line">|</span><i class="date">2019-03-29</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2254&amp;nextmode=view">
-							<b><!---->눈밑지방제거</b>
-							<i class="name">박수진</i><span class="line">|</span><i class="date">2019-03-29</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2253&amp;nextmode=view">
-							<b><!---->제모 비용문의</b>
-							<i class="name">다니엘</i><span class="line">|</span><i class="date">2019-03-27</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
-				
-					<li>
-						<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;distinction=password&amp;mode=password&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;seq=2252&amp;nextmode=view">
-							<b><!---->얼굴 필러</b>
-							<i class="name">다니엘</i><span class="line">|</span><i class="date">2019-03-27</i><span class="line">|</span><i class="date">비공개</i>
-						</a>
-						<div class="answer"><i class="state com">답변완료</i></div>
-					</li>
+					
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<li style="text-align: center;">등록된 게시물이 없습니다.</li>
+					    </c:when>
+					    <c:otherwise>
+					    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+					        <c:forEach var="item" items="${list}">
+								<li>
+									<a href="${pageContext.request.contextPath}/m/menu09_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+										<b><!---->${item.title}</b>
+										<i class="name">${item.name}</i><span class="line">|</span><i class="date">${item.regdate}</i><span class="line">|</span><i class="date">비공개</i>
+									</a>
+									<div class="answer">
+										<c:if test="${item.state == '상담완료'}"><i class="state com">답변완료</i></c:if>
+										<c:if test="${item.state != '상담완료'}"><i class="state ready">답변대기</i></c:if>
+									</div>
+								</li>
+								<c:set var="num" value="${num-1}"></c:set>	
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
+					
 				</ul>
 			</div>
 			
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group">
 				<div class="inner">
-					<a href="?pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;mode=insert&amp;distinction=insert&amp;perm=Y&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1" class="btn btn-list">글쓰기</a>
+					<a href="${pageContext.request.contextPath}/m/menu09_02register" class="btn btn-list">글쓰기</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->
 			
 			
+			<!-- 페이징 시작 -->
 			<div id="board-pagenation">
 				<div class="inner">
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a>
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
-					<a href="javascript:;" class="on">1</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=2 ">2</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=3 ">3</a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=4 "><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
-					<a href="?pCode=528&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=113 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+					<c:if test="${pageMaker.prev}">
+						<a href="${pageMaker.makeSearch(pageMaker.startPage-1) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+					</c:if>
+					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+						<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+					</c:forEach>
+					<c:if test="${pageMaker.next}">
+						<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+					</c:if>
 				</div>
-			</div>
+			</div>	<!-- 페이징 끝 -->
 			
 		</section>
 	

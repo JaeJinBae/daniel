@@ -35,6 +35,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.modernizr.js"></script><!-- #8 플러그인 modernizr -->
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/m/jquery.main.js"></script><!-- # 메인페이지 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.js"></script><!-- 파일첨부 플러그인 -->
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.calendar.js"></script><!-- # 필수 함수 -->
@@ -490,8 +491,44 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
+function deleteUploadImg(no, type){
+	var info = {no:no, type:type};
+	$.ajax({
+		url:"${pageContext.request.contextPath}/m/menu09_02uploadImgDelete",
+		type:"post",
+		data:JSON.stringify(info),
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		async:false,
+		success:function(json){
+			console.log(json);
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
 $(function(){
+	var p_all= $("#phone").val().split("-");
+	$("#phone1 > option[value='"+p_all[0]+"']").prop("selected", true);
+	$("#phone2").val(p_all[1]);
+	$("#phone3").val(p_all[2]);
 	
+	$("#form1").submit(function(){
+		var phone1 = $("#phone1").val();
+		var phone2 = $("#phone2").val();
+		var phone3 = $("#phone3").val();
+		$("#phone").val(phone1+"-"+phone2+"-"+phone3);
+		
+	});
+	
+	$("#thumb").click(function(){
+		var no = $("#form1 > input[name='no']").val();
+		deleteUploadImg(no, "before");
+		$(this).parent().html("<input type='file' name='thumb'>");
+		$("#thumbState").val("o");
+	});
 });
 </script>
 </head>
@@ -542,69 +579,133 @@ $(function(){
 			</div>
 			<!-- 서브 비주얼영역 끝 -->
 			
-			<!-- 타이틀 시작 -->
-			<div class="board-title">
-				<h5>온라인 상담</h5>
-			</div>
-			<!-- 타이틀 끝 -->
-			
-			<div class="board-counsel-view">
-				<ul class="full">
-					<!-- privacy -->
-					<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false">
-						<input type="hidden" name="fparam" value="">
-						<input type="hidden" name="distinction" value="proc">
-						<input type="hidden" name="backpage" value="/m/index.html">
-						<input type="hidden" name="file_cnt" value="1">
+			<form name="inquire" id="form1" method="post" action="${pageContext.request.contextPath}/m/menu09_02update${pageMaker.makeSearch(pageMaker.cri.page)}" enctype="multipart/form-data">
+				<input type="hidden" name="no" id="no" value="${item.no}">
+				<input type="hidden" name="secret" id="secret" value="${item.secret}">
+				<input type="hidden" name="regdate" id="regdate" value="${item.regdate}">
+				<input type="hidden" name="ip" id="ip" value="${item.ip}">
+				<input type="hidden" name="access_url" id="access_url" value="${item.access_url}">
+				<input type="hidden" name="phone" id="phone" value="${item.phone}">
+				<!-- 타이틀 시작 -->
+				<div class="board-title">
+					<h5>온라인 상담</h5>
+				</div>
+				<!-- 타이틀 끝 -->
 				
-						<li>
-							<div class="title">${item.title}</div>
-							<p class="info">
-								<i class="name">${item.name}</i><span class="line">|</span><i class="date">${item.regdate}</i><span class="line">|</span><i class="date">비공개</i>
-								<span class="answer">
-									<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>
-									<c:if test="${item.state != '상담완료'}"><td><i class="state ready">답변대기</i></td></c:if>
-								</span>
-							</p>
-						</li>
-							
-						<!-- 게시글 상세 내용 -->
-						<li class="board-counsel-content">
-							${item.content}
-						</li>
-					<!-- // 게시글 상세 내용 -->
-					</form>
-				</ul>
-			</div>
-			
-			<div class="full">
-				<c:if test="${item.state == '상담완료'}">
-					<div class="board-counsel-reply">
-						<div class="reply-title">
-							<i>답변</i> 온라인상담에 대한 답변입니다.
-						</div>
-						<div class="reply-txt">
-							${item.reply}
+				<div class="inner">
+					<table class="board-cousel-form">
+						<caption>상담 게시판 상세</caption>							
+						<tr>
+							<th scope="row">이름</th>
+							<td><input type="text" name="name" id="name" class="default" value="${item.name}"></td>
+						</tr>
+						<tr>
+							<th>제목</th>
+							<td>
+								<input type="text" name="title" id="title" maxlength="200" element-name="제목" value="${item.title}">
+							</td>
+						</tr>
+						
+						<tr>
+							<th>연락처</th>
+							<td>
+								<select name="phone1" id="phone1" class="small">
+									<option value="010">010</option>
+									<option value="011">011</option>
+									<option value="016">016</option>
+									<option value="017">017</option>
+									<option value="018">018</option>
+									<option value="019">019</option>
+								</select> -
+								<input type="text" name="phone2" id="phone2" element-name="연락처" maxlength="4" value="" autocomplete="off"> -
+								<input type="text" name="phone3" id="phone3" element-name="연락처" maxlength="4" value="" autocomplete="off"><br><br>
+								* 연락처를 남겨주시면 답변 후 문자메시지를 발송해드립니다.
+							</td>
+						</tr>
+						<tr>
+							<th>내용</th>
+							<td>
+								<textarea name="content" id="content">${item.content}</textarea>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="file_cnt">첨부파일</label></th>
+							<td>
+								<input type="hidden" id="uploadState" name="uploadState" value="x">
+								<c:choose>
+									<c:when test="${item.upload_origin == ''}">
+										<div class="form-file">
+											<div>
+												<input type="file" name="upload" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
+												<br>
+											</div>	
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div class="form-file">
+											<div id="file_1145">
+												<a href="javascript:;" onclick="">${item.upload_origin}</a>
+												<img id="thumb" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+												<br>
+											</div>
+										</div>
+									</c:otherwise>
+								</c:choose>
+								<script>
+									$('.form-file input[type="file"]').jfilestyle({
+										//placeholder: '사진첨부',
+										text : '파일첨부'
+									})
+								</script>
+							</td>
+						</tr>						
+					</table>
+				
+					<div class="private-agree">
+						<textarea name="b_mem_personal" id="b_mem_personal" cols="124" rows="10" class="full" element-name="개인정보수집동의" readonly="">
+							개인정보의 수집범위
+							다니엘성형외과의원은(는) 별도의 회원가입 절차 없이 대부분의 콘텐츠에 자유롭게 접근할 수 있습니다. 다니엘성형외과의원의 회원제 서비스를 이용하시고자 할 경우 다음의 정보를 입력해주셔야 하며 선택항목을 입력하시지 않았다 하여 서비스 이용에 제한은 없습니다.
+							1) 회원 가입시 수집하는 개인정보의 범위
+							- 필수항목 : 희망 ID, 비밀번호, 이름, 닉네임
+							- 선택항목 : 이메일주소, 이메일 수신 여부, SMS 수신여부, 정보공개여부, 휴대폰번호
+							개인정보의 수집 및 이용 목적
+							① 다니엘성형외과의원은(는) 회원님께 최대한으로 최적화되고 맞춤화된 서비스를 제공하기 위하여 다음과 같은 목적으로 개인정보를 수집하고 있습니다.
+							- 이름, 아이디, 비밀번호, 닉네임 : 회원제 서비스 이용에 따른 본인 식별 절차에 이용
+							- 이메일주소, 이메일 수신여부, SMS 수신여부, 휴대폰 번호: 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보, 새로운 서비스/신상품이나 이벤트 정보의 안내
+							- 주소: 경품과 쇼핑 물품 배송에 대한 정확한 배송지의 확보
+							- 그 외 선택항목 : 개인맞춤 서비스를 제공하기 위한 자료
+							② 단, 이용자의 기본적 인권 침해의 우려가 있는 민감한 개인정보(인종 및 민족, 사상 및 신조, 출신지 및 본적지, 정치적 성향 및 범죄기록, 건강상태 및 성생활 등)는 수집하지 않습니다.
+							개인정보의 보유기간 및 이용기간
+							① 귀하의 개인정보는 다음과 같이 개인정보의 수집목적 또는 제공받은 목적이 달성되면 파기됩니다. 단, 상법 등 관련법령의 규정에 의하여 다음과 같이 거래 관련 권리 의무 관계의 확인 등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간 보유합니다.
+							- 회원가입정보의 경우, 회원가입을 탈퇴하거나 회원에서 제명된 경우 등 일정한 사전에 보유목적, 기간 및 보유하는 개인정보 항목을 명시하여 동의를 구합니다.
+							- 계약 또는 청약철회 등에 관한 기록 : 5년
+							- 대금결제 및 재화등의 공급에 관한 기록 : 5년
+							- 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년
+							② 귀하의 동의를 받아 보유하고 있는 거래정보 등을 귀하께서 열람을 요구하는 경우 다니엘성형외과의원은(는) 지체없이 그 열람,확인 할 수 있도록 조치합니다 
+							필수 개인정보 수집을 동의하지 않는 경우
+							① 귀하의 개인정보 수집을 거부할 수 있는 권리가 있으며 이 경우 당사의 회원전용 서비스 또는 고객 문의사항에 대한 답변이 필수인 코너를 이용하는데 있어 회원 가입 또는 게시물 등록이 불가능 할 수 있습니다.
+							② 필수 정보가 아닌 선택 정보의 경우 개인정보 수집에 동의하지 않을 수 있으며 서비스 이용에 제한은 없습니다.
+						</textarea>
+						<p>
+							<input type="checkbox" id="agree" name="agree" value="Y" checked="checked">
+							<label for="agree">개인정보취급방침에 동의합니다.</label>
+						</p>
+					</div>
+					
+				
+					<!-- 게시판 버튼 시작 -->
+					<div class="btn-group-center">
+						<div class="inner">
+							<input type="submit" class="btn btn-submit" style="width:100px;height:36px;line-height:36px;cursor:pointer;" value="글쓰기">
+							<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/m/menu09_02'">취소</button>	
 						</div>
 					</div>
-				</c:if>
-			</div>
-			
-			<!-- 게시판 버튼 시작 -->
-			<div class="btn-group">
-				<div class="inner">
-					<ul>
-						<li class="fl">
-							<a href="${pageContext.request.contextPath}/m/menu09_02" class="btn btn-view-list">목록으로</a>
-						</li>
-						<li class="fr">
-							<a href="${pageContext.request.contextPath}/m/menu09_02delete${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-del">삭제</a>&nbsp;
-							<a href="${pageContext.request.contextPath}/m/menu09_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-update">수정</a>&nbsp;
-						</li>
-					</ul>		
+					<!-- 게시판 버튼 끝 -->
+				
+					<script type="text/javascript" src="/lib/js/board.js"></script>
+				
 				</div>
-			</div>
-			<!-- 게시판 버튼 끝 -->
+			</form>
 			
 		</section>
 	
