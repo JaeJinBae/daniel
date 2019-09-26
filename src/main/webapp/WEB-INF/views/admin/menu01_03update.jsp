@@ -44,7 +44,7 @@ function deleteUploadImg(no, type){
 
 $(function(){
 	
-	var ndate = new Date();
+	/* var ndate = new Date();
 	var year = ndate.getFullYear();
 	var month = ndate.getMonth()+1;
 	var date = ndate.getDate();
@@ -52,7 +52,7 @@ $(function(){
 	month = (month > 10) ? month+"":"0"+month;
 	date = (date > 10) ? date+"":"0"+date;
 	
-	$("#regdate").val(year+"-"+month+"-"+date);
+	$("#regdate").val(year+"-"+month+"-"+date); */
 	
 	$("#regdate").datepicker({
 		changeMonth: true, 

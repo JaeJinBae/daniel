@@ -485,6 +485,24 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
+function deleteUploadImg(no, type){
+	var info = {no:no, type:type};
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/menu09_02uploadImgDelete",
+		type:"post",
+		data:JSON.stringify(info),
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		async:false,
+		success:function(json){
+			console.log(json);
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(2)").addClass("active");
@@ -495,24 +513,18 @@ $(function(){
 	$("#phone3").val(p_all[2]);
 	
 	$("#form1").submit(function(){
-		var ndate = new Date();
-		var year = ndate.getFullYear();
-		var month = ndate.getMonth()+1;
-		var date = ndate.getDate();
-		
-		month = (month > 10) ? month+"":"0"+month;
-		date = (date > 10) ? date+"":"0"+date;
-		
-		$("#regdate").val(year+"-"+month+"-"+date);
-		
 		var phone1 = $("#phone1").val();
 		var phone2 = $("#phone2").val();
 		var phone3 = $("#phone3").val();
 		$("#phone").val(phone1+"-"+phone2+"-"+phone3);
 		
-		$("#ip").val(ip());
-		var oldURL = document.referrer;
-		$("#access_url").val(oldURL);
+	});
+	
+	$("#thumb").click(function(){
+		var no = $("#form1 > input[name='no']").val();
+		deleteUploadImg(no, "before");
+		$(this).parent().html("<input type='file' name='thumb'>");
+		$("#thumbState").val("o");
 	});
 });
 </script>
@@ -592,7 +604,7 @@ $(function(){
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			
-			<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/menu09_02register">
+			<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/menu09_02update${pageMaker.makeSearch(pageMaker.cri.page)}">
 				<input type="hidden" name="no" id="no" value="${item.no}">
 				<input type="hidden" name="secret" id="secret" value="${item.secret}">
 				<input type="hidden" name="regdate" id="regdate" value="${item.regdate}">
@@ -616,9 +628,7 @@ $(function(){
 						</tr>
 						<tr>
 							<th>제목</th>
-							<td>
-								<input type="text" name="title" id="title" maxlength="200" value="${item.title}">
-							</td>
+							<td><input type="text" name="title" id="title" maxlength="200" value="${item.title}"></td>
 						</tr>
 						<tr>
 							<th>연락처</th>
@@ -654,24 +664,23 @@ $(function(){
 												<br>
 											</div>	
 										</div>
-										<script>
-											$('.form-file input[type="file"]').jfilestyle({
-												//placeholder: '사진첨부',
-												text : '파일첨부'
-											})
-										</script>
+										
 									</c:when>
 									<c:otherwise>
 										<div class="form-file">
 											<div id="file_1145">
-												<a href="javascript:;" onclick="inquire_it('download', '1145')">20190412_111116.jpg</a>
+												<a href="javascript:;" onclick="">${item.upload_origin}</a>
 												<img id="thumb" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 												<br>
 											</div>
 										</div>
 									</c:otherwise>
 								</c:choose>
-								
+								<script>
+									$('.form-file input[type="file"]').jfilestyle({
+										text : '파일첨부'
+									})
+								</script>
 								
 							</td>
 						</tr>
@@ -716,11 +725,11 @@ $(function(){
 						<div class="inner">
 							<ul>
 								<li class="fl">
-									<a href="" class="btn btn-view-list">목록으로</a>
+									<a href="${pageContext.request.contextPath}/menu09_02" class="btn btn-view-list">목록으로</a>
 								</li>
 								<li class="fr">
 									<input type="submit" class="btn btn-submit" style="width:100px;height:36px;line-height:36px;cursor:pointer;" value="확인">
-									<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/menu09_02register'">취소</button>
+									<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/menu09_02'">취소</button>
 								</li>
 							</ul>
 						</div>

@@ -485,6 +485,8 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(2)").addClass("active");
+	
+	
 });
 </script>
 </head>
@@ -620,7 +622,8 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_02" class="btn btn-view-list">목록으로</a>
 						</li>
 						<li class="fr">
-							<a href="" class="btn btn-del">삭제</a>&nbsp;<a href="" class="btn btn-update">수정</a></li>
+							<a href="${pageContext.request.contextPath}/menu09_02delete${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-del">삭제</a>&nbsp;
+							<a href="${pageContext.request.contextPath}/menu09_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-update">수정</a></li>
 					</ul>		
 				</div>
 			</div>

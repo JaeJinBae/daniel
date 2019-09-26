@@ -698,7 +698,7 @@ $(function(){
 						<div class="inner">
 							<ul>
 								<li class="fl">
-									<a href="" class="btn btn-view-list">목록으로</a>
+									<a href="${pageContext.request.contextPath}/menu09_02" class="btn btn-view-list">목록으로</a>
 								</li>
 								<li class="fr">
 									<input type="submit" class="btn btn-submit" style="width:100px;height:36px;line-height:36px;cursor:pointer;" value="확인">

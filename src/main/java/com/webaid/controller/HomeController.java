@@ -30,6 +30,7 @@ import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.PageMakerWith9;
+import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.SearchCriteria9;
 import com.webaid.domain.UserVO;
@@ -37,6 +38,7 @@ import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.UserService;
+import com.webaid.util.FileDelete;
 
 /**
  * Handles requests for the application home page.
@@ -471,7 +473,7 @@ public class HomeController {
 		vo.setPhone(mtfReq.getParameter("phone"));
 		vo.setRegdate(mtfReq.getParameter("regdate"));
 		vo.setEmail("");
-		vo.setState(mtfReq.getParameter("상담예정"));
+		vo.setState("상담예정");
 		vo.setSecret(mtfReq.getParameter("secret"));
 		vo.setPw(mtfReq.getParameter("pw"));
 		vo.setTitle(mtfReq.getParameter("title"));
@@ -554,7 +556,7 @@ public class HomeController {
 
 		model.addAttribute("item", vo);
 		model.addAttribute("pageMaker", pageMaker);
-		return "admin/menu09_02update";
+		return "sub/menu09_02update";
 	}
 	
 	@RequestMapping(value = "/menu09_02update", method = RequestMethod.POST)
@@ -594,17 +596,17 @@ public class HomeController {
 		AdviceVO vo = new AdviceVO();
 		AdviceVO prevVO = aService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
 		
-		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setNo(prevVO.getNo());
 		vo.setName(mtfReq.getParameter("name"));
 		vo.setPhone(mtfReq.getParameter("phone"));
-		vo.setEmail(mtfReq.getParameter("email"));
-		vo.setState(mtfReq.getParameter("state"));
-		vo.setSecret(mtfReq.getParameter("secret"));
+		vo.setEmail(prevVO.getEmail());
+		vo.setState(prevVO.getState());
+		vo.setSecret(prevVO.getSecret());
 		vo.setTitle(mtfReq.getParameter("title"));
 		vo.setContent(mtfReq.getParameter("content"));
-		vo.setReply(mtfReq.getParameter("reply"));
-		vo.setReply_date(mtfReq.getParameter("reply_date"));
-		vo.setMemo(mtfReq.getParameter("memo"));
+		vo.setReply(prevVO.getReply());
+		vo.setReply_date(prevVO.getReply_date());
+		vo.setMemo(prevVO.getMemo());
 		
 		if(uploadState.equals("o")){
 			vo.setUpload_origin(fileName);
@@ -625,7 +627,40 @@ public class HomeController {
 		pageMaker.setTotalCount(aService.listSearchCount(cri));
 
 		rtts.addAttribute("page", page);
-		return "redirect:/admin/menu09_02update";
+		return "redirect:/menu09_02";
+	}
+	
+	@RequestMapping(value = "/menu09_02uploadImgDelete", method = RequestMethod.POST)
+	public ResponseEntity<String> menu09_02uploadImgDelete(HttpServletRequest req, @RequestBody Map<String, String> info) {
+		logger.info("menu09_02update POST");
+		ResponseEntity<String> entity = null;
+		
+		int no = Integer.parseInt(info.get("no"));
+		
+		String innerUploadPath = "resources/uploadAdvice/";
+		String path = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		System.out.println(path);
+		AdviceVO prevVO = aService.selectOne(no);
+		FileDelete fd = new FileDelete();
+		
+		AdviceVO vo = new AdviceVO();
+		vo.setNo(no);
+		
+		try {
+			
+			fd.fileDelete(path, prevVO.getUpload_stored());
+			
+			vo.setUpload_origin("");
+			vo.setUpload_stored("");
+			aService.updateUpload(vo);
+			
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			e.printStackTrace();
+		}
+		
+		return entity;
 	}
 	
 	@RequestMapping(value = "/menu09_03", method = RequestMethod.GET)
