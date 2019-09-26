@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria8;
 import com.webaid.persistence.RealStoryDao;
 
 @Service
@@ -71,6 +72,11 @@ public class RealStoryServiceImpl implements RealStoryService {
 	}
 
 	@Override
+	public List<RealStoryVO> listSearch8(SearchCriteria8 cri) throws Exception {
+		return dao.listSearch8(cri);
+	}
+
+	@Override
 	public List<RealStoryVO> listSearchAll(SearchCriteria cri) throws Exception {
 		return dao.listSearchAll(cri);
 	}
@@ -78,6 +84,11 @@ public class RealStoryServiceImpl implements RealStoryService {
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
+	}
+
+	@Override
+	public int listSearchCount8(SearchCriteria8 cri) throws Exception {
+		return dao.listSearchCount8(cri);
 	}
 
 	@Override

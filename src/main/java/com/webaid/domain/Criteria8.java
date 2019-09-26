@@ -1,13 +1,13 @@
 package com.webaid.domain;
 
-public class Criteria9 {
+public class Criteria8 {
 	private int page;// 현재 선택한 page번호
 	private int perPageNum;// 한 페이지에 표시될 게시물 갯수
 
-	public Criteria9() {
+	public Criteria8() {
 		super();
 		this.page = 1;
-		this.perPageNum = 8;
+		this.perPageNum = 9;
 	}
 
 	public int getPage() {

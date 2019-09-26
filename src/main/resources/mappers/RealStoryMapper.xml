@@ -48,6 +48,10 @@
 		select * from realstory where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
 	</select>
 	
+	<select id="listSearch8" resultType="RealStoryVO">
+		select * from realstory where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
+	</select>
+	
 	<select id="listSearchAll" resultType="RealStoryVO">
 		select * from realstory where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
 	</select>
@@ -65,6 +69,10 @@
 	</sql>
 	
 	<select id="listSearchCount" resultType="int">
+		select count(no) from realstory where use_state='o' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchCount8" resultType="int">
 		select count(no) from realstory where use_state='o' <include refid="search"></include>
 	</select>
 	
