@@ -575,18 +575,17 @@ $(function(){
 							<th>조회수</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>2102</td>
-							<td class="subject"> [자필후기] 여드름과 여드름흉터, 주근깨 치료 후기입니다.</td>
-							<td>2019-07-15</td>
-							<td>17</td>
-						</tr>
-						<tr>
-							<td colspan="4" class="con">
-								<div style="text-align: center;"><img alt="" src="/filedata/ckeditor/20190715_DA347AA472B0F61F.jpg"></div>				</td>
-						</tr>
-					</tbody>
+					<tr>
+						<td>${item.no}</td>
+						<td class="subject"> ${item.title}</td>
+						<td>${item.regdate}</td>
+						<td>${item.cnt}</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="con">
+							${item.content}
+						</td>
+					</tr>
 				</table>
 				<!-- 공지사항 게시판 뷰 끝 -->
 			</div>
@@ -594,16 +593,34 @@ $(function(){
 			<div class="prev-next-list">
 				<ul class="inner">
 					<li>
-						<span>이전글</span><a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;seq=2101"> [자필후기] 눈밑기미와 피부 흉터치료 후기입니다.</a>
+						<span>이전글</span>
+						<c:choose>
+							<c:when test="${beforeItem.no eq null}">
+								이전글이 없습니다.
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu09_05read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+							</c:otherwise>
+						</c:choose>
 					</li>
-					<li><span>다음글</span><a href="javascript:alert('다음글이 없습니다');">다음글이 없습니다</a></li>
+					<li>
+						<span>다음글</span>
+						<c:choose>
+							<c:when test="${afterItem.no eq null}">
+								존재하지 않습니다.
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu09_05read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 			</div>
 			
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group">
 				<div class="inner">
-					<a href="/696/?pCode=696&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/menu09_05" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->

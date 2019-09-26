@@ -559,7 +559,6 @@ $(function(){
 			
 			<div class="board-gallery">
 				<ul class="inner">
-					
 					<c:choose>
 					    <c:when test="${fn:length(list) == 0}">
 				        	<li style="text-align:center;">등록된 게시물이 없습니다.</li>

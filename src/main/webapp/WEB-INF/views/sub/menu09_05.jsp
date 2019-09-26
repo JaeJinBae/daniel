@@ -575,97 +575,52 @@ $(function(){
 							<th>조회수</th>
 						</tr>
 					</thead>
-					<tr>
-						<td class="">23</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2102"> [자필후기] 여드름과 여드름흉터, 주근깨 치료 후기입니다.</a>
-						</td>
-						<td class="date">2019-07-15</td>
-						<td class="hit">17</td>
-					</tr>
-					<tr>
-						<td class="">22</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2101"> [자필후기] 눈밑기미와 피부 흉터치료 후기입니다.</a>
-						</td>
-						<td class="date">2019-07-15</td>
-						<td class="hit">14</td>
-					</tr>
-					<tr>
-						<td class="">21</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2093"> [자필후기] 색소(잡티) 치료 후기입니다.</a>
-						</td>
-						<td class="date">2019-06-11</td>
-						<td class="hit">39</td>
-					</tr>
-					<tr>
-						<td class="">20</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2092"> [자필후기] 동안/탄력 레이저 시술 후기입니다.</a>
-						</td>
-						<td class="date">2019-06-11</td>
-						<td class="hit">41</td>
-					</tr>
-					<tr>
-						<td class="">19</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2091"> [자필후기] 색소(오타모반, 기미) 치료 후기입니다.</a>
-						</td>
-						<td class="date">2019-06-11</td>
-						<td class="hit">30</td>
-					</tr>
-					<tr>
-						<td class="">18</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2090"> [자필후기] 피부트러블, 여드름흉터 치료 후기입니다.</a>
-						</td>
-						<td class="date">2019-06-11</td>
-						<td class="hit">45</td>
-					</tr>
-					<tr>
-						<td class="">17</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2067"> [자필후기] 코필러 시술 후기입니다.</a>	
-						</td>
-						<td class="date">2019-04-03</td>
-						<td class="hit">147</td>
-					</tr>
-					<tr>
-						<td class="">16</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2066"> [자필후기] 기미치료후기입니다.</a>	
-						</td>
-						<td class="date">2019-04-03</td>
-						<td class="hit">118</td>
-					</tr>
-					<tr>
-						<td class="">15</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2065"> [자필후기]  주근깨 치료 후기입니다.</a>	
-						</td>
-						<td class="date">2019-04-03</td>
-						<td class="hit">80</td>
-					</tr>
-					<tr>
-						<td class="">14</td>
-						<td class="subject">
-							<a href="?pCode=696&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=1&amp;seq=2054"> [자필후기] 악성기미 치료후기입니다.</a>
-						</td>
-						<td class="date">2019-03-08</td>
-						<td class="hit">99</td>
-					</tr>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<tr>
+				        		<td colspan="4" style="text-align: center;">등록된 게시물이 없습니다.</td>
+				        	</tr>
+					    </c:when>
+					    <c:otherwise>
+					        <c:forEach var="item" items="${list}">
+								<tr>
+									<td class="">${item.no}</td>
+									<td class="subject">
+										<a href="${pageContext.request.contextPath}/menu09_05read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
+									</td>
+									<td class="date">${item.regdate}</td>
+									<td class="hit">${item.cnt}</td>
+								</tr>
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</table>
 				<!-- 공지사항 게시판 끝 -->
 				
 				<!-- 페이징 시작 -->
 				<div id="board-pagenation">
 					<div class="inner">
-						<a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
-						<a href="javascript:;" class="on">1</a>
-						<a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=2 ">2</a>
-						<a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=3 ">3</a>
-						<a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=3 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+					<a href="${pageMaker.makeSearch(1)}">
+						<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
+					</a>
+					<c:if test="${pageMaker.prev}">
+						<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+					</c:if>
+					<c:if test="${!pageMaker.prev}">
+						<a href="${pageMaker.makeSearch(pageMaker.cri.page) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+					</c:if>
+					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+						<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+					</c:forEach>
+					<c:if test="${pageMaker.next}">
+						<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+					</c:if>
+					<c:if test="${!pageMaker.next}">
+						<a href="${pageMaker.makeSearch(pageMaker.cri.page)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+					</c:if>
+					<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}">
+						<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
+					</a>
 					</div>
 				</div>	<!-- 페이징 끝 -->
 				

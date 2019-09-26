@@ -32,6 +32,7 @@ import com.webaid.domain.PageMaker;
 import com.webaid.domain.PageMakerWith8;
 import com.webaid.domain.PageMakerWith9;
 import com.webaid.domain.RealStoryVO;
+import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.SearchCriteria8;
 import com.webaid.domain.SearchCriteria9;
@@ -40,6 +41,7 @@ import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
+import com.webaid.service.ReviewService;
 import com.webaid.service.UserService;
 import com.webaid.util.FileDelete;
 
@@ -65,6 +67,9 @@ public class HomeController {
 	
 	@Autowired
 	private RealStoryService rsService;
+	
+	@Autowired
+	private ReviewService rService;
 	
 	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.GET)
 	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
@@ -724,15 +729,38 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu09_05", method = RequestMethod.GET)
-	public String menu09_05(Model model) {
+	public String menu09_05(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu09_05 GET");
+		List<ReviewVO> list = rService.listSearch(cri);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCount(cri));
+		pageMaker.setFinalPage(rService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu09_05";
 	}
 	
 	@RequestMapping(value = "/menu09_05read", method = RequestMethod.GET)
-	public String menu09_05read(Model model) {
+	public String menu09_05read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu09_05read GET");
+		
+		ReviewVO vo = rService.selectOne(no);
+		ReviewVO beforeVO = rService.selectBefore(no);
+		ReviewVO afterVO = rService.selectAfter(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu09_05read";
 	}
