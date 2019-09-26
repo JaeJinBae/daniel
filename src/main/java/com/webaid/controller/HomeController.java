@@ -15,15 +15,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import com.webaid.domain.AdviceVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.UserVO;
+import com.webaid.service.AdviceService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.UserService;
 
@@ -40,6 +40,9 @@ public class HomeController {
 	
 	@Autowired
 	private UserService uService;
+	
+	@Autowired
+	private AdviceService aService;
 	
 	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.GET)
 	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
@@ -422,9 +425,18 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu09_02", method = RequestMethod.GET)
-	public String menu09_02(Model model) {
+	public String menu09_02(@ModelAttribute("cri") SearchCriteria cri, Model model) {
 		logger.info("menu09_02 GET");
+		List<AdviceVO> list = aService.listSearch(cri);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		pageMaker.setFinalPage(aService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu09_02";
 	}
 	
