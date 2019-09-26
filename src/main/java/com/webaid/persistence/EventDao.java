@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.webaid.domain.EventVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria12;
 
 public interface EventDao {
 	public List<EventVO> selectAll();
@@ -15,7 +16,9 @@ public interface EventDao {
 	public void updateUseState(EventVO vo);
 	public void delete(int no);
 	public List<EventVO> listSearch(SearchCriteria cri) throws Exception;
+	public List<EventVO> listSearch12(SearchCriteria12 cri) throws Exception;
 	public List<EventVO> listSearchAll(SearchCriteria cri) throws Exception;
 	public int listSearchCount(SearchCriteria cri) throws Exception;
+	public int listSearchCount12(SearchCriteria12 cri) throws Exception;
 	public int listSearchCountAll(SearchCriteria cri) throws Exception;
 }

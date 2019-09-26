@@ -27,18 +27,24 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
+import com.webaid.domain.CautionVO;
+import com.webaid.domain.EventVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.PageMakerWith12;
 import com.webaid.domain.PageMakerWith8;
 import com.webaid.domain.PageMakerWith9;
 import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria12;
 import com.webaid.domain.SearchCriteria8;
 import com.webaid.domain.SearchCriteria9;
 import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
+import com.webaid.service.CautionService;
+import com.webaid.service.EventService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
@@ -70,6 +76,12 @@ public class HomeController {
 	
 	@Autowired
 	private ReviewService rService;
+	
+	@Autowired
+	private EventService eService;
+	
+	@Autowired
+	private CautionService cService;
 	
 	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.GET)
 	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
@@ -766,15 +778,34 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu09_06", method = RequestMethod.GET)
-	public String menu09_06(Model model) {
+	public String menu09_06(@ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("menu09_06 GET");
+		List<EventVO> list = eService.listSearch12(cri);
 		
+		PageMakerWith12 pageMaker = new PageMakerWith12();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(eService.listSearchCount12(cri));
+		pageMaker.setFinalPage(eService.listSearchCount12(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu09_06";
 	}
 	
 	@RequestMapping(value = "/menu09_06read", method = RequestMethod.GET)
-	public String menu09_06read(Model model) {
+	public String menu09_06read(int no, @ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("menu09_06read GET");
+		
+		EventVO vo = eService.selectOne(no);
+		
+		PageMakerWith12 pageMaker = new PageMakerWith12();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(eService.listSearchCount12(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu09_06read";
 	}
@@ -787,16 +818,39 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu09_08", method = RequestMethod.GET)
-	public String menu09_08(Model model) {
+	public String menu09_08(@ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("menu09_08 GET");
 		
+		List<CautionVO> list = cService.listSearch12(cri);
+		
+		PageMakerWith12 pageMaker = new PageMakerWith12();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount12(cri));
+		pageMaker.setFinalPage(cService.listSearchCount12(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu09_08";
 	}
 	
 	@RequestMapping(value = "/menu09_08read", method = RequestMethod.GET)
-	public String menu09_08read(Model model) {
+	public String menu09_08read(int no, @ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("menu09_08read GET");
 		
+		CautionVO vo = cService.selectOne(no);
+		CautionVO beforeVO = cService.selectBefore(no);
+		CautionVO afterVO = cService.selectAfter(no);
+		
+		PageMakerWith12 pageMaker = new PageMakerWith12();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount12(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu09_08read";
 	}
 }

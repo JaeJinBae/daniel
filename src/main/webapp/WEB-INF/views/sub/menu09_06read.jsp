@@ -561,25 +561,37 @@ $(function(){
 			<div class="daniel-event-view">
 				<div class="inner">
 					<table>
-						<tbody>
 						<tr>
 							<th>이벤트</th>
 							<th>진행여부</th>
 						</tr>
 						<tr>
 							<td align="left" valign="middle">
-								<h6 class="tit">가을, 다니엘이 추천하는 상품</h6>
-								<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-09-02 ~ 2019-11-30</p>
+								<h6 class="tit">${item.title}</h6>
+								<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">${item.start_date} ~ ${item.end_date}</p>
 							</td>
 							<td align="center" valign="middle" width="200px">
-								<i data-sec="진행중">진행중</i>
+								<jsp:useBean id="now" class="java.util.Date" />
+								<fmt:parseDate value="${item.start_date}" pattern="yyyy-MM-dd" var="startDate" />
+								<fmt:parseDate value="${item.end_date}" pattern="yyyy-MM-dd" var="endDate" />
+								<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate" /><%-- 오늘날짜 --%>
+								<fmt:formatDate value="${startDate}" pattern="yyyy-MM-dd" var="openDate"/><%-- 시작날짜 --%>
+								<fmt:formatDate value="${endDate}" pattern="yyyy-MM-dd" var="closeDate"/><%-- 마감날짜 --%>
+								<c:choose>
+									<c:when test="${openDate <= nowDate && closeDate >= nowDate}">
+										<i data-sec="진행중">진행중</i>
+									</c:when>
+									<c:otherwise>
+										<i data-sec="종료">종료</i>
+									</c:otherwise>
+								</c:choose>
 							</td>
 						</tr>
 						<tr>
 							<td align="left" valign="middle" class="con" colspan="2">
-							<div style="text-align: center;"><img alt="" src="${pageContext.request.contextPath}/resources/filedata/ckeditor/20190901_DFB87345549B248F.jpg" style="width: 1170px;"><img alt="" src="/filedata/ckeditor/20190901_E4080B56E5011FD9.jpg" style="width: 1170px;"><img alt="" src="/filedata/ckeditor/20190901_8AD97BF5199BEFA2.jpg" style="width: 1170px;"><img alt="" src="/filedata/ckeditor/20190901_B8F883C6DE825083.jpg" style="width: 1170px;" usemap="#imgmap"><map id="imgmap" name="imgmap"><area alt="드림패키지 자세히보기" coords="748,1247,1075,1322" href="http://www.danielps.co.kr/511/?pCode=511" shape="rect" target="" title=""> <area alt="프리미엄토닝 자세히보기" coords="751,1526,1073,1600" href="http://www.danielps.co.kr/685/?pCode=685" shape="rect" target="" title=""></map><img alt="" src="/filedata/ckeditor/20190901_CF817D9320ABA000.jpg" style="width: 1170px;"><a href="http://www.danielps.co.kr/705/?pCode=705"><img alt="" src="/filedata/ckeditor/20190902_DEED6F37018FB5EB.jpg" style="width: 1170px; height: 615px;"></a><img alt="" src="/filedata/ckeditor/20190901_F1C23BF9DFC091DF.jpg" style="width: 1170px;"></div>				</td>
-						
-						</tr></tbody>
+								${item.content}
+							</td>
+						</tr>
 					</table>
 				</div>
 				<script>
@@ -591,7 +603,7 @@ $(function(){
 				<!-- 게시판 버튼 시작 -->
 				<div class="btn-group">
 					<div class="inner">
-						<a href="?pCode=563&amp;page=1 pCode=563" class="btn btn-list">목록으로</a>
+						<a href="${pageContext.request.contextPath}/menu09_06" class="btn btn-list">목록으로</a>
 					</div>
 				</div>
 				<!-- 게시판 버튼 끝 -->

@@ -485,6 +485,17 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(8)").addClass("active");
+	
+	var kw = $("#kw").val();
+	$(".board-kinds > ul > li > a > input[value='"+kw+"']").parent().parent().addClass("active");
+	
+	$(".board-kinds > ul > li > a").click(function(e){
+		e.preventDefault();
+		var k=$(this).find("input").val();
+		var keyword = encodeURIComponent(k);
+		var url1 = $(this).prop("href");
+		location.href=url1+keyword;
+	});
 });
 </script>
 </head>
@@ -558,15 +569,16 @@ $(function(){
 			<!-- 게시판 타이틀 끝 -->
 			
 			<div class="board-kinds">
+				<input type="hidden" id="kw" value="${pageMaker.cri.keyword}">
 				<ul class="inner">
-					<li class="active"><a href="?pCode=591">전체</a></li>
-					<li><a href="?pCode=591&amp;btap=동안·탄력 클리닉">동안·탄력 클리닉</a></li>
-					<li><a href="?pCode=591&amp;btap=레이저클리닉">레이저클리닉</a></li>
-					<li><a href="?pCode=591&amp;btap=흉터클리닉">흉터클리닉</a></li>
-					<li><a href="?pCode=591&amp;btap=눈·코 성형">눈·코 성형</a></li>
-					<li><a href="?pCode=591&amp;btap=프리미엄 쁘띠클리닉">프리미엄 쁘띠클리닉</a></li>
-					<li><a href="?pCode=591&amp;btap=체형클리닉">체형클리닉</a></li>
-					<li><a href="?pCode=591&amp;btap=두피클리닉">두피클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_08?page=1&amp;perPageNum=12&amp;searchType&amp;keyword">전체<input type="hidden" value=""></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">동안·탄력 클리닉<input type="hidden" value="동안·탄력 클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">레이저클리닉<input type="hidden" value="레이저클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">흉터클리닉<input type="hidden" value="흉터클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">눈·코 성형<input type="hidden" value="눈·코 성형"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">프리미엄 쁘띠클리닉<input type="hidden" value="프리미엄 쁘띠클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">체형클리닉<input type="hidden" value="체형클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">두피클리닉<input type="hidden" value="두피클리닉"></a></li>
 				</ul>
 			</div>
 			<br><br>
@@ -591,52 +603,14 @@ $(function(){
 					</thead>
 					<tbody>
 						<tr>
-							<td>2006</td>
-							<td class="subject"> 리프팅레이저</td>
-							<td>2018-10-11</td>
-							<td>143</td>
+							<td>${item.no}</td>
+							<td class="subject"> ${item.title}</td>
+							<td>${item.regdate}</td>
+							<td>${item.cnt}</td>
 						</tr>
 						<tr>
 							<td colspan="4" class="con">
-								<div id="caoution">
-									<div class="inner">
-										
-										<div class="caoution-title">
-											다니엘성형외과
-											<p>
-												시술&amp;수술 후 <em>주의사항</em>
-											</p>
-										</div>
-							
-										<!-- 주의사항 리스트 시작 -->
-										<div class="caoution-list">
-											<span><em>리프팅레이저</em>주의사항</span>
-											<ol>
-												<li>1~2주간 욱신거림이 발생할 수 있습니다.</li>
-												<li>재생크림,썬크림은 꼭 발라주세요.</li>
-												<li>얼굴마사지나 경락은 피해주세요.</li>
-												<li>일주일간 금주,금연해주세요.</li>
-												<li>목욕,사우나,운동,수영장,격한운동은 주의하세요.</li>
-											</ol>	
-										</div>
-										<!-- 주의사항 리스트 끝 -->
-							
-							
-										<div class="caoution-info"><img src="/assets/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
-							
-										<div class="double-banner">
-											<ul>
-												<li>
-													<a href="/html/?pCode=563"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
-												</li>
-												<li>
-													<a href="/html/?pCode=521"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
-												</li>
-											</ul>
-										</div>
-							
-									</div>
-								</div>				
+								${item.content}				
 							</td>
 						</tr>
 					</tbody>
@@ -646,15 +620,35 @@ $(function(){
 			
 			<div class="prev-next-list">
 				<ul class="inner">
-					<li><span>이전글</span><a href="javascript:alert('이전글이 없습니다');">이전글이 없습니다</a></li>
-					<li><span>다음글</span><a href="?pCode=591&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD05&amp;pCode=591&amp;btap=&amp;seq=2005"><b>[동안·탄력 클리닉]</b> 안면거상/이마내시경거상술</a></li>
+					<li>
+						<span>이전글</span>
+						<c:choose>
+							<c:when test="${beforeItem.no eq null}">
+								이전글이 없습니다.
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu09_08read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
+					<li>
+						<span>다음글</span>
+						<c:choose>
+							<c:when test="${afterItem.no eq null}">
+								존재하지 않습니다.
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu09_08read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 			</div>
 			
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group">
 				<div class="inner">
-					<a href="/591/?pCode=591&amp;select_key=&amp;input_key=&amp;Scod=BRD05&amp;pCode=591&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/menu09_08" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->

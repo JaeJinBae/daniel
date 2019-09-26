@@ -560,102 +560,36 @@ $(function(){
 			<!-- 이벤트 리스트 시작 -->
 			<div class="daniel-event">
 				<ul>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190901_B1FC01146E4F1FFB.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="진행중">진행중</i>
-							<h6 class="tit">가을, 다니엘이 추천하는 상품</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-09-02 ~ 2019-11-30</p>
-							<a href="?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1 pCode=563&amp;seq=49" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190704_611DFF2291F5EF07.png) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="종료">종료</i>
-							<h6 class="tit">여름, 다니엘이 추천하는 상품</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-06-28 ~ 2019-08-31</p>
-							<a href="javascript:alert('종료된 이벤트입니다.');" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190613_04ED65B82CE96677.png) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="종료">종료</i>
-							<h6 class="tit">NEW 4세대 써마지 FLX</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-06-13 ~ 2019-07-31</p>
-							<a href="javascript:alert('종료된 이벤트입니다.');" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190530_E127C00521356383.png) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="종료">종료</i>
-							<h6 class="tit">다니엘개원5주년 기념이벤트</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-06-01 ~ 2019-06-15</p>
-							<a href="javascript:alert('종료된 이벤트입니다.');" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190426_31405B23AD4D2F38.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="종료">종료</i>
-							<h6 class="tit">코레지 도입기념 이벤트</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-04-26 ~ 2019-05-31</p>
-							<a href="javascript:alert('종료된 이벤트입니다.');" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190415_A711766CB29E24A3.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="진행중">진행중</i>
-							<h6 class="tit">#얼리버드 데이 이벤트</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-04-15 ~ 2019-11-30</p>
-							<a href="?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1 pCode=563&amp;seq=42" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190415_C21BA55F2A88AAB5.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="진행중">진행중</i>
-							<h6 class="tit">#수요일엔 업데이 이벤트</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-04-15 ~ 2019-11-30</p>
-							<a href="?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1 pCode=563&amp;seq=41" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190227_67AD09044DDF415C.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="종료">종료</i>
-							<h6 class="tit">3월 봄이벤트</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-03-01 ~ 2019-05-31</p>
-							<a href="javascript:alert('종료된 이벤트입니다.');" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190130_571A7EC2F5F10BE1.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="진행중">진행중</i>
-							<h6 class="tit">웨딩패키지</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-01-30 ~ 2019-12-31</p>
-							<a href="?pCode=563&amp;distinction=view&amp;perm=Y&amp;page=1 pCode=563&amp;seq=39" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190122_D5EF514787DCE79F.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="종료">종료</i>
-							<h6 class="tit">용카 메디라인</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-01-22 ~ 2019-02-28</p>
-							<a href="javascript:alert('종료된 이벤트입니다.');" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20190108_C5F52792A9FE2175.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="종료">종료</i>
-							<h6 class="tit">오투덤 테라피 이벤트</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-01-02 ~ 2019-01-31</p>
-							<a href="javascript:alert('종료된 이벤트입니다.');" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/filedata/event/20181129_CE8FCCC4624537B5.jpg) no-repeat center top;">
-						<div class="daniel-event-info">
-							<i data-sec="종료">종료</i>
-							<h6 class="tit">오리지날 정품슈링크</h6>
-							<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2018-12-01 ~ 2019-02-28</p>
-							<a href="javascript:alert('종료된 이벤트입니다.');" class="more" title="자세히 보기">자세히</a>
-						</div>
-					</li>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+							<li style="text-align:center;">등록된 게시물이 없습니다.</li>
+					    </c:when>
+					    <c:otherwise>
+					        <c:forEach var="item" items="${list}">
+								<li class="item" style="background:url('${pageContext.request.contextPath}/resources/uploadEvent/${item.thumb_stored}') no-repeat center top;">
+									<div class="daniel-event-info">
+										<jsp:useBean id="now" class="java.util.Date" />
+										<fmt:parseDate value="${item.start_date}" pattern="yyyy-MM-dd" var="startDate" />
+										<fmt:parseDate value="${item.end_date}" pattern="yyyy-MM-dd" var="endDate" />
+										<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate" /><%-- 오늘날짜 --%>
+										<fmt:formatDate value="${startDate}" pattern="yyyy-MM-dd" var="openDate"/><%-- 시작날짜 --%>
+										<fmt:formatDate value="${endDate}" pattern="yyyy-MM-dd" var="closeDate"/><%-- 마감날짜 --%>
+										<c:choose>
+											<c:when test="${openDate <= nowDate && closeDate >= nowDate}">
+												<i data-sec="진행중">진행중</i>
+											</c:when>
+											<c:otherwise>
+												<i data-sec="종료">종료</i>
+											</c:otherwise>
+										</c:choose>
+										<h6 class="tit">${item.title}</h6>
+										<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">${item.start_date} ~ ${item.end_date}</p>
+										<a href="${pageContext.request.contextPath}/menu09_06read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="more" title="자세히 보기">자세히</a>
+									</div>
+								</li>
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</ul>
 			</div>
 			<!-- 이벤트 리스트 끝 -->
@@ -663,13 +597,29 @@ $(function(){
 			<!-- 페이징 시작 -->
 			<div id="board-pagenation">
 				<div class="inner">
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
-					<a href="javascript:;" class="on">1</a>
-					<a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=2 ">2</a>
-					<a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=3 ">3</a>
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?select_key=&amp;input_key=&amp;Scod=BRD22&amp;pCode=696&amp;btap=&amp;page=3 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+				<a href="${pageMaker.makeSearch(1)}">
+					<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
+				</a>
+				<c:if test="${pageMaker.prev}">
+					<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+				</c:if>
+				<c:if test="${!pageMaker.prev}">
+					<a href="${pageMaker.makeSearch(pageMaker.cri.page) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+				</c:if>
+				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+					<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+				</c:forEach>
+				<c:if test="${pageMaker.next}">
+					<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+				</c:if>
+				<c:if test="${!pageMaker.next}">
+					<a href="${pageMaker.makeSearch(pageMaker.cri.page)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+				</c:if>
+				<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}">
+					<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
+				</a>
 				</div>
-			</div><!-- 페이징 끝 -->
+			</div>	<!-- 페이징 끝 -->
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	

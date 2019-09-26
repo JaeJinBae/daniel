@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.webaid.domain.EventVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria12;
 import com.webaid.persistence.EventDao;
 
 @Service
@@ -14,7 +15,7 @@ public class EventServiceImpl implements EventService {
 
 	@Autowired
 	private EventDao dao;
-	
+
 	@Override
 	public List<EventVO> selectAll() {
 		return dao.selectAll();
@@ -61,6 +62,11 @@ public class EventServiceImpl implements EventService {
 	}
 
 	@Override
+	public List<EventVO> listSearch12(SearchCriteria12 cri) throws Exception {
+		return dao.listSearch12(cri);
+	}
+
+	@Override
 	public List<EventVO> listSearchAll(SearchCriteria cri) throws Exception {
 		return dao.listSearchAll(cri);
 	}
@@ -68,6 +74,11 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
+	}
+
+	@Override
+	public int listSearchCount12(SearchCriteria12 cri) throws Exception {
+		return dao.listSearchCount12(cri);
 	}
 
 	@Override

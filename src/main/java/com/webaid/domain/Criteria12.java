@@ -1,13 +1,13 @@
 package com.webaid.domain;
 
-public class Criteria8 {
+public class Criteria12 {
 	private int page;// 현재 선택한 page번호
 	private int perPageNum;// 한 페이지에 표시될 게시물 갯수
 
-	public Criteria8() {
+	public Criteria12() {
 		super();
 		this.page = 1;
-		this.perPageNum = 8;
+		this.perPageNum = 12;
 	}
 
 	public int getPage() {
@@ -29,7 +29,7 @@ public class Criteria8 {
 
 	public void setPerPageNum(int perPageNum) {
 		if (perPageNum <= 0 || perPageNum > 100) {
-			this.perPageNum = 8;
+			this.perPageNum = 12;
 			return;
 		}
 

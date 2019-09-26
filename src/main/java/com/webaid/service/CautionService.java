@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.webaid.domain.CautionVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria12;
 
 public interface CautionService {
 	public List<CautionVO> selectAll();
@@ -17,7 +18,9 @@ public interface CautionService {
 	public void updateUseState(CautionVO vo);
 	public void delete(int no);
 	public List<CautionVO> listSearch(SearchCriteria cri) throws Exception;
+	public List<CautionVO> listSearch12(SearchCriteria12 cri) throws Exception;
 	public List<CautionVO> listSearchAll(SearchCriteria cri) throws Exception;
 	public int listSearchCount(SearchCriteria cri) throws Exception;
+	public int listSearchCount12(SearchCriteria12 cri) throws Exception;
 	public int listSearchCountAll(SearchCriteria cri) throws Exception;
 }

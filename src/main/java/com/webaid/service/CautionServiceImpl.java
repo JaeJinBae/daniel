@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.webaid.domain.CautionVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria12;
 import com.webaid.persistence.CautionDao;
 
 @Service
@@ -14,7 +15,7 @@ public class CautionServiceImpl implements CautionService {
 
 	@Autowired
 	private CautionDao dao;
-	
+
 	@Override
 	public List<CautionVO> selectAll() {
 		return dao.selectAll();
@@ -71,6 +72,11 @@ public class CautionServiceImpl implements CautionService {
 	}
 
 	@Override
+	public List<CautionVO> listSearch12(SearchCriteria12 cri) throws Exception {
+		return dao.listSearch12(cri);
+	}
+
+	@Override
 	public List<CautionVO> listSearchAll(SearchCriteria cri) throws Exception {
 		return dao.listSearchAll(cri);
 	}
@@ -78,6 +84,11 @@ public class CautionServiceImpl implements CautionService {
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
+	}
+
+	@Override
+	public int listSearchCount12(SearchCriteria12 cri) throws Exception {
+		return dao.listSearchCount12(cri);
 	}
 
 	@Override
