@@ -564,7 +564,7 @@ $(function(){
 							<!-- 시술선택 탭(relsurgery-item$$ == #surgery-item$$ 만 매칭하면 탭기능이 활성화 됩니다. 스크립트는 sub.js에 들어있습니다.) -->
 							<!-- 코드가 너무길어져서 탭내용은 1개만 넣어두었습니다. -->
 							<div class="surgery-tab">
-								<button rel="surgery-item477" class=" active  surgery-category" _parent_seq="477">필러</button>
+								<!-- <button rel="surgery-item477" class=" active  surgery-category" _parent_seq="477">필러</button>
 								<button rel="surgery-item478" class=" surgery-category" _parent_seq="478">성형바디주사</button>
 								<button rel="surgery-item479" class=" surgery-category" _parent_seq="479">윤곽성형주사</button>
 								<button rel="surgery-item623" class=" surgery-category" _parent_seq="623">미용주사</button>
@@ -572,7 +572,10 @@ $(function(){
 								<button rel="surgery-item636" class=" surgery-category" _parent_seq="636">성형보톡스</button>
 								<button rel="surgery-item653" class=" surgery-category" _parent_seq="653">땀보톡스</button>
 								<button rel="surgery-item658" class=" surgery-category" _parent_seq="658">리프팅보톡스</button>
-								<button rel="surgery-item665" class=" surgery-category" _parent_seq="665">비만프로그램</button>
+								<button rel="surgery-item665" class=" surgery-category" _parent_seq="665">비만프로그램</button> -->
+								<c:forEach var="item" items="${c1List}">
+									<button class=" surgery-category">${item}</button>
+								</c:forEach>
 							</div>
 			
 							<!-- 내용 -->

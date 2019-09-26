@@ -21,11 +21,11 @@
 	</delete>
 	
 	<select id="listSearch" resultType="ClinicListVO">
-		select * from clinic_list where use_state='o' <include refid="search"></include> order by no desc limit #{pageStart},#{perPageNum}
+		select * from clinic_list where use_state='o' <include refid="search"></include> order by no desc
 	</select>
 	
 	<select id="listSearchAll" resultType="ClinicListVO">
-		select * from clinic_list where no>0 <include refid="search"></include> order by no desc limit #{pageStart},#{perPageNum}
+		select * from clinic_list where no>0 <include refid="search"></include> order by no desc
 	</select>
 	
 	<sql id="search">
