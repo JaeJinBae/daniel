@@ -482,56 +482,55 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
-function makeCalendar(today){
-	var year = today.getFullYear();
-	var month = today.getMonth()+1;
-	var arrDow = ["일", "월", "화", "수", "목", "금", "토"];
-	var arrDow2 = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-	var arrLastDate = [31, 28, 31, 30, 31, 31, 30, 31, 30, 31, 30, 31];
-	var lastDate;
-	var str = "<caption>예약날짜 및 시간선택 달력</caption><thead><tr><th class='sun'>일</th><th class='mon'>월</th><th class='the'>화</th><th class='wed'>수</th><th class='thu'>목</th><th class='fri'>금</th><th class='sat'>토</th></tr></thead>";
-	
-	if((year%4 == 0 && year%100 != 0) || year%400 == 0){
-		arrLastDate[1] = 29;
-	}
-	
-	lastDate = arrLastDate[month-1];
-	
-	var row = Math.ceil(lastDate/7);
-	var firstDate = new Date(year, month-1, 1);
-	var theDay = firstDate.getDay();
-	var cd = year+"-"+((month>9?'':'0')+month)+"-";
-	var dNum = 1;
-	for(var i=1; i<=6; i++){ 
-		if(dNum > lastDate){
-			break;
+function getClinicList(){
+	var dt;
+	$.ajax({
+		url:"${pageContext.request.contextPath}/menu09_07getList",
+		type:"get",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"json",
+		async:false,
+		success:function(json){
+			dt = json;
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
-		str += "<tr class='calendarDateTr'>";
-		for( var k=1; k<=7; k++){
-			if(i==1 && k<=theDay||dNum>lastDate){
-				str += "<td class='"+arrDow2[k]+"'></td>";
-			}else{
-				str += "<td class='"+arrDow2[k]+" calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
-				dNum ++;
-			}
-		}
-		str += "</tr>";
-	}
-	$(".day-info").text(year+"."+((month>9?'':'0')+month));
-	$("#calendar_tbl_tag").html("");
-	$("#calendar_tbl_tag").append(str);
+	});
+	return dt;
 }
 
+function makeList(){
+	var list = getClinicList();
+	var str = "";
+	var obj = list[0];
+	var c1 = "";
+	var c2 = "";
+	var c3 = "";
+	
+	$(list).each(function(){
+		if($(this).c1 != c1){
+			c1 = $(this).c1;
+			str += "<div id='surgery-item477' class='surgery-inventory'>";
+			if($(this).c2 != c2){
+				c2 = $(this).c2;
+				if($(this).c3 ==''){
+					str += "<div class='item'><input type='heckbox' id='category480' value='480' name='category'><label for='category480'>국산 더채움 기본 1cc <em>100,000 원</em></label></div>";
+				}else{
+					str += "<div class='item'><input type='checkbox' id='category577' value='577' name='category'><button>이마 볼륨 <em>300,000 원 ~</em></button>"
+						+"<ul><li class='child'><input type='checkbox' id='category578' value='578' name='category'>	<label for='category578'>이마볼륨 3cc <em>300,000 원</em></label></li>";
+				}
+			}
+		}else{
+			
+		}
+	});
+}
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(7)").addClass("active");
 	
 	makeList();
-	var today = new Date();
-	makeCalendar(today);
-	$(document).on("click", ".month-next", function(){
-		
-	});
 });
 </script>
 </head>
@@ -633,11 +632,11 @@ $(function(){
 									<div class="item"><input type="checkbox" id="category481" value="481" _category1="477" _category1nm="필러" _category2="481" _pay="90000" _category2nm="턱필러 1cc 이내" _category3="" _category3nm="" _name="턱필러 1cc 이내" name="category"><label for="category481">턱필러 1cc 이내 <em>90,000 원</em></label></div>
 									<div class="item"><input type="checkbox" id="category482" value="482" _category1="477" _category1nm="필러" _category2="482" _pay="90000" _category2nm="코필러 1cc 이내" _category3="" _category3nm="" _name="코필러 1cc 이내" name="category"><label for="category482">코필러 1cc 이내 <em>90,000 원</em></label></div>
 									<div class="item"><input type="checkbox" id="category577" value="577" _category1="477" _category1nm="필러" _category2="577" _pay="300000" _category2nm="이마 볼륨" _category3="" _category3nm="" _name="이마 볼륨" name="category"><button>이마 볼륨 <em>300,000 원 ~</em></button>
-										<ul>
-											<li class="child">
-												<input type="checkbox" id="category578" value="578" _category1="477" _category1nm="필러" _category2="577" _category2nm="이마 볼륨" _category3="578" _category3nm="이마볼륨 3cc" _pay="300000" _name="이마볼륨 3cc" name="category">	<label for="category578">이마볼륨 3cc <em>300,000 원</em></label>
-											</li>
-										</ul>
+											<ul>
+												<li class="child">
+													<input type="checkbox" id="category578" value="578" _category1="477" _category1nm="필러" _category2="577" _category2nm="이마 볼륨" _category3="578" _category3nm="이마볼륨 3cc" _pay="300000" _name="이마볼륨 3cc" name="category">	<label for="category578">이마볼륨 3cc <em>300,000 원</em></label>
+												</li>
+											</ul>
 									</div>
 									<div class="item"><input type="checkbox" id="category581" value="581" _category1="477" _category1nm="필러" _category2="581" _pay="200000" _category2nm="팔자주름" _category3="" _category3nm="" _name="팔자주름" name="category"><button>팔자주름 <em>200,000 원 ~</em></button>
 										<ul><li class="child">	<input type="checkbox" id="category594" value="594" _category1="477" _category1nm="필러" _category2="581" _category2nm="팔자주름" _category3="594" _category3nm="팔자주름 2cc" _pay="200000" _name="팔자주름 2cc" name="category">	<label for="category594">팔자주름 2cc <em>200,000 원</em></label></li></ul>
@@ -800,8 +799,8 @@ $(function(){
 											<path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path>
 										</svg><!-- <i class="fas fa-chevron-left"></i> -->
 									</button>
-									<span class="day-info"></span>
-									<button class="month-next nextMonth">
+									<span class="day-info">2019.09</span>
+									<button class="month-next nextMonth" onclick="getCalendar('move','2019','10')">
 										<svg class="svg-inline--fa fa-chevron-right fa-w-10" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
 											<path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
 										</svg><!-- <i class="fas fa-chevron-right"></i> -->
@@ -809,8 +808,8 @@ $(function(){
 								</div>
 							</div>
 				
-							<table id="calendar_tbl_tag" class="calendar-tbl">
-								<%-- <caption>예약날짜 및 시간선택 달력</caption>
+							<table class="calendar-tbl">
+								<caption>예약날짜 및 시간선택 달력</caption>
 								<thead>
 									<tr>
 										<th class="sun">일</th>
@@ -826,44 +825,44 @@ $(function(){
 									<td class="sun closed ">
 										<button>1</button>
 									</td>
-									<td class="mon closed today calDate date_2019-09-02">
+									<td class="mon closed today calDate date_2019-09-02" onclick="onCalDate('2019-09-02');">
 										<button>2</button>
 									</td>
-									<td class="the closed calDate date_2019-09-03">
+									<td class="the closed calDate date_2019-09-03" onclick="onCalDate('2019-09-03');">
 										<button>3</button>
 									</td>
-									<td class="wed calDate date_2019-09-04">
+									<td class="wed calDate date_2019-09-04" onclick="onCalDate('2019-09-04');">
 										<button>4</button>
 									</td>
-									<td class="thu calDate date_2019-09-05">
+									<td class="thu calDate date_2019-09-05" onclick="onCalDate('2019-09-05');">
 										<button>5</button>
 									</td>
-									<td class="fri calDate date_2019-09-06">
+									<td class="fri calDate date_2019-09-06" onclick="onCalDate('2019-09-06');">
 										<button>6</button>
 									</td>
-									<td class="sat calDate date_2019-09-07">
+									<td class="sat calDate date_2019-09-07" onclick="onCalDate('2019-09-07');">
 										<button>7</button>
 									</td>
 								</tr>
 								<tr><td class="sun closed ">
 										<button>8</button>
 									</td>
-									<td class="mon calDate date_2019-09-09">
+									<td class="mon calDate date_2019-09-09" onclick="onCalDate('2019-09-09');">
 										<button>9</button>
 									</td>
-									<td class="the calDate date_2019-09-10">
+									<td class="the calDate date_2019-09-10" onclick="onCalDate('2019-09-10');">
 										<button>10</button>
 									</td>
-									<td class="wed calDate date_2019-09-11">
+									<td class="wed calDate date_2019-09-11" onclick="onCalDate('2019-09-11');">
 										<button>11</button>
 									</td>
-									<td class="thu calDate date_2019-09-12">
+									<td class="thu calDate date_2019-09-12" onclick="onCalDate('2019-09-12');">
 										<button>12</button>
 									</td>
-									<td class="fri calDate date_2019-09-13">
+									<td class="fri calDate date_2019-09-13" onclick="onCalDate('2019-09-13');">
 										<button>13</button>
 									</td>
-									<td class="sat calDate date_2019-09-14">
+									<td class="sat calDate date_2019-09-14" onclick="onCalDate('2019-09-14');">
 										<button>14</button>
 									</td>
 								</tr>
@@ -871,43 +870,43 @@ $(function(){
 									<td class="sun closed ">
 										<button>15</button>
 									</td>
-									<td class="mon calDate date_2019-09-16">
+									<td class="mon calDate date_2019-09-16" onclick="onCalDate('2019-09-16');">
 										<button>16</button>
 									</td>
-									<td class="the calDate date_2019-09-17">
+									<td class="the calDate date_2019-09-17" onclick="onCalDate('2019-09-17');">
 										<button>17</button>
 									</td>
-									<td class="wed calDate date_2019-09-18">
+									<td class="wed calDate date_2019-09-18" onclick="onCalDate('2019-09-18');">
 										<button>18</button>
 									</td>
-									<td class="thu calDate date_2019-09-19">
+									<td class="thu calDate date_2019-09-19" onclick="onCalDate('2019-09-19');">
 										<button>19</button>
 									</td>
-									<td class="fri calDate date_2019-09-20">
+									<td class="fri calDate date_2019-09-20" onclick="onCalDate('2019-09-20');">
 										<button>20</button>
 									</td>
-									<td class="sat calDate date_2019-09-21">
+									<td class="sat calDate date_2019-09-21" onclick="onCalDate('2019-09-21');">
 										<button>21</button>
 									</td>
 								</tr>
 								<tr>
 									<td class="sun closed "><button>22</button></td>
-									<td class="mon calDate date_2019-09-23">
+									<td class="mon calDate date_2019-09-23" onclick="onCalDate('2019-09-23');">
 										<button>23</button>
 									</td>
-									<td class="the calDate date_2019-09-24">
+									<td class="the calDate date_2019-09-24" onclick="onCalDate('2019-09-24');">
 										<button>24</button>
 									</td>
-									<td class="wed calDate date_2019-09-25">
+									<td class="wed calDate date_2019-09-25" onclick="onCalDate('2019-09-25');">
 										<button>25</button>
 									</td>
-									<td class="thu calDate date_2019-09-26">
+									<td class="thu calDate date_2019-09-26" onclick="onCalDate('2019-09-26');">
 										<button>26</button>
 									</td>
-									<td class="fri calDate date_2019-09-27">
+									<td class="fri calDate date_2019-09-27" onclick="onCalDate('2019-09-27');">
 										<button>27</button>
 									</td>
-									<td class="sat calDate date_2019-09-28">
+									<td class="sat calDate date_2019-09-28" onclick="onCalDate('2019-09-28');">
 										<button>28</button>
 									</td>
 								</tr>
@@ -915,25 +914,25 @@ $(function(){
 									<td class="sun closed ">
 										<button>29</button>
 									</td>
-									<td class="mon calDate date_2019-09-30">
+									<td class="mon calDate date_2019-09-30" onclick="onCalDate('2019-09-30');">
 										<button>30</button>
 									</td>
-									<td class="the closed calDate date_">
+									<td class="the closed calDate date_" onclick="onCalDate('');">
 										<button></button>
 									</td>
-									<td class="wed closed calDate date_">
+									<td class="wed closed calDate date_" onclick="onCalDate('');">
 										<button></button>
 									</td>
-									<td class="thu closed calDate date_">
+									<td class="thu closed calDate date_" onclick="onCalDate('');">
 										<button></button>
 									</td>
-									<td class="fri closed calDate date_">
+									<td class="fri closed calDate date_" onclick="onCalDate('');">
 										<button></button>
 									</td>
-									<td class="sat closed calDate date_">
+									<td class="sat closed calDate date_" onclick="onCalDate('');">
 										<button></button>
 									</td>
-								</tr> --%>
+								</tr>
 
 							</table>
 				
@@ -1523,7 +1522,7 @@ $(function(){
 					if(!$(".date_"+selDate).hasClass("closed")){
 						$(".date_"+selDate).addClass('selected');
 						$("#reserveDate").html(selDate);
-						//$(".time-picker").load("/html/reserve/_time.php?date="+selDate);
+						$(".time-picker").load("/html/reserve/_time.php?date="+selDate);
 						$("#r_date").val(selDate);
 					}else{
 						alert("홈페이지 시술예약은 당일이나, 1일전 예약 불가합니다.\n유선상으로 문의하여 주시기 바랍니다");
