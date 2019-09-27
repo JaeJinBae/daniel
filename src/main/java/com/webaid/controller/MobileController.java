@@ -26,7 +26,10 @@ import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker5;
+import com.webaid.domain.PageMakerWith8;
+import com.webaid.domain.RealStoryVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria8;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
@@ -667,16 +670,39 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value = "/menu09_04", method = RequestMethod.GET)
-	public String mMenu09_04(Model model) {
+	public String mMenu09_04(@ModelAttribute("cri") SearchCriteria8 cri, Model model) throws Exception {
 		logger.info("mMenu09_04 GET");
+		List<RealStoryVO> list = rsService.listSearch8(cri);
 		
+		PageMakerWith8 pageMaker = new PageMakerWith8();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rsService.listSearchCount8(cri));
+		pageMaker.setFinalPage(rsService.listSearchCount8(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "mobile/mMenu09_04";
 	}
 	
 	@RequestMapping(value = "/menu09_04read", method = RequestMethod.GET)
-	public String mMenu09_04read(Model model) {
+	public String mMenu09_04read(int no, @ModelAttribute("cri") SearchCriteria8 cri, Model model) throws Exception {
 		logger.info("mMenu09_04read GET");
 		
+		rsService.updateCnt(no);
+		RealStoryVO vo = rsService.selectOne(no);
+		RealStoryVO beforeVO = rsService.selectBefore(no);
+		RealStoryVO afterVO = rsService.selectAfter(no);
+		
+		PageMakerWith8 pageMaker = new PageMakerWith8();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rsService.listSearchCount8(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		return "mobile/mMenu09_04read";
 	}
 	

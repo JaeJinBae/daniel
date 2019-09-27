@@ -550,67 +550,37 @@ $(function(){
 			
 			<div class="board-gallery">
 				<ul class="inner">
-					<li class="item">
-						<a href=" " style="background-image: url('${pageContext.request.contextPath}/resources/filedata/board/BRD21/20190402_DB3412C2FA3139E1.png');">
-							<b>리얼스토리 드림패키지 고객인터뷰 허지영</b>
-						</a>
-					</li>
-					
-					<li class="item">
-						<a href=" " style="background-image: url('${pageContext.request.contextPath}/resources/filedata/board/BRD21/20190314_19D6621C5BFE4A4A.jpg');">
-							<b>피부과 의사의 시간은 거꾸로 간다?</b>
-						</a>
-					</li>
-					
-					<li class="item">
-						<a href=" " style="background-image: url('${pageContext.request.contextPath}/resources/filedata/board/BRD21/20181220_972BB6358F01E300.jpg');">
-							<b>다니엘 리얼스토리 - 쌍꺼풀 재수술</b>
-						</a>
-					</li>
-					
-					<li class="item">
-						<a href=" " style="background-image: url('${pageContext.request.contextPath}/resources/filedata/board/BRD21/20180919_F77818CD175FC6AF.png');">
-							<b>다크서클 지방재배치</b>
-						</a>
-					</li>
-					
-					<li class="item">
-						<a href=" " style="background-image: url('${pageContext.request.contextPath}/resources/filedata/board/BRD21/20180919_54ADEA55AE967F7C.png');">
-							<b>쌍꺼풀 풀림 재수술</b>
-						</a>
-					</li>
-					
-					<li class="item">
-						<a href="" style="background-image: url('${pageContext.request.contextPath}/resources/filedata/board/BRD21/20180918_CA79EE9C02B077DE.png');">
-							<b>Real Story - 소세지쌍꺼풀 재수술</b>
-						</a>
-					</li>
-					
-					<li class="item">
-						<a href=" " style="background-image: url('${pageContext.request.contextPath}/resources/filedata/board/BRD21/20180627_66B6B4B1BD2DDD5E.png');">
-							<b>다니엘 REAL STORY - 여드름</b>
-						</a>
-					</li>
-					
-					<li class="item">
-						<a href="" style="background-image: url('${pageContext.request.contextPath}/resources/filedata/board/BRD21/20180627_1E221A18528FA98B.png');">
-							<b>다니엘 다Dream 1기_정소진님 인터뷰</b>
-						</a>
-					</li>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<li style="text-align:center;">등록된 게시물이 없습니다.</li>
+					    </c:when>
+					    <c:otherwise>
+					        <c:forEach var="item" items="${list}">
+								<li class="item">
+									<a href="${pageContext.request.contextPath}/m/menu09_04read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" style="background-image: url('${pageContext.request.contextPath}/resources/uploadRealStory/${item.thumb_stored}');">
+										<b>${item.title}</b>
+									</a>
+								</li>
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</ul>
 			</div>
 			
 			<!-- 페이징 시작 -->
 			<div id="board-pagenation">
 				<div class="inner">
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a>
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
-					<a href="javascript:;" class="on">1</a>
-					<a href="?pCode=530&amp;select_key=&amp;input_key=&amp;backpage=/m/530/&amp;Scod=BRD21&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=2 ">2</a>
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
-					<a href="?pCode=530&amp;select_key=&amp;input_key=&amp;backpage=/m/530/&amp;Scod=BRD21&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+					<c:if test="${pageMaker.prev}">
+						<a href="${pageMaker.makeSearch(pageMaker.startPage-1) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+					</c:if>
+					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+						<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+					</c:forEach>
+					<c:if test="${pageMaker.next}">
+						<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+					</c:if>
 				</div>
-			</div><!-- 페이징 끝 -->
+			</div>	<!-- 페이징 끝 -->
 			
 		</section>
 	
