@@ -631,9 +631,10 @@ $(function(){
 						<tr>
 							<th><label for="file_cnt">첨부파일</label></th>
 							<td>
-								<input type="hidden" id="uploadState" name="uploadState" value="x">
+								
 								<c:choose>
 									<c:when test="${item.upload_origin == ''}">
+										<input type="hidden" id="uploadState" name="uploadState" value="o">
 										<div class="form-file">
 											<div>
 												<input type="file" name="upload" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
@@ -642,6 +643,7 @@ $(function(){
 										</div>
 									</c:when>
 									<c:otherwise>
+										<input type="hidden" id="uploadState" name="uploadState" value="x">
 										<div class="form-file">
 											<div id="file_1145">
 												<a href="javascript:;" onclick="">${item.upload_origin}</a>
@@ -696,7 +698,7 @@ $(function(){
 					<!-- 게시판 버튼 시작 -->
 					<div class="btn-group-center">
 						<div class="inner">
-							<input type="submit" class="btn btn-submit" style="width:100px;height:36px;line-height:36px;cursor:pointer;" value="글쓰기">
+							<input type="submit" class="btn btn-submit" style="width:100px;height:36px;line-height:36px;cursor:pointer;" value="확인">
 							<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/m/menu09_02'">취소</button>	
 						</div>
 					</div>

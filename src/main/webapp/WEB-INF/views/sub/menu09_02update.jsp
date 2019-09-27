@@ -655,9 +655,10 @@ $(function(){
 						<tr>
 							<th><label for="file_cnt">첨부파일</label></th>
 							<td>
-								<input type="hidden" id="uploadState" name="uploadState" value="x">
+								
 								<c:choose>
 									<c:when test="${item.upload_origin == ''}">
+										<input type="hidden" id="uploadState" name="uploadState" value="o">
 										<div class="form-file">
 											<div>
 												<input type="file" name="upload" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
@@ -667,6 +668,7 @@ $(function(){
 										
 									</c:when>
 									<c:otherwise>
+										<input type="hidden" id="uploadState" name="uploadState" value="x">
 										<div class="form-file">
 											<div id="file_1145">
 												<a href="javascript:;" onclick="">${item.upload_origin}</a>

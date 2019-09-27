@@ -23,8 +23,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
+import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NoticeVO;
-import com.webaid.domain.PageMaker;
 import com.webaid.domain.PageMaker5;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.AdviceService;
@@ -649,8 +649,19 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value = "/menu09_03", method = RequestMethod.GET)
-	public String mMenu09_03(Model model) {
+	public String mMenu09_03(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("mMenu09_03 GET");
+		
+		List<BeforeAfterVO> list = baService.listSearch(cri);
+		
+		PageMaker5 pageMaker = new PageMaker5();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(baService.listSearchCount(cri));
+		pageMaker.setFinalPage(baService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "mobile/mMenu09_03";
 	}
