@@ -24,11 +24,17 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
+import com.webaid.domain.CautionVO;
+import com.webaid.domain.EventVO;
 import com.webaid.domain.NoticeVO;
+import com.webaid.domain.PageMaker;
 import com.webaid.domain.PageMaker5;
+import com.webaid.domain.PageMakerWith12;
 import com.webaid.domain.PageMakerWith8;
 import com.webaid.domain.RealStoryVO;
+import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.SearchCriteria12;
 import com.webaid.domain.SearchCriteria8;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
@@ -686,7 +692,7 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value = "/menu09_04read", method = RequestMethod.GET)
-	public String mMenu09_04read(int no, @ModelAttribute("cri") SearchCriteria8 cri, Model model) throws Exception {
+	public String mMenu09_04read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("mMenu09_04read GET");
 		
 		rsService.updateCnt(no);
@@ -694,10 +700,10 @@ public class MobileController {
 		RealStoryVO beforeVO = rsService.selectBefore(no);
 		RealStoryVO afterVO = rsService.selectAfter(no);
 		
-		PageMakerWith8 pageMaker = new PageMakerWith8();
+		PageMaker5 pageMaker = new PageMaker5();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(rsService.listSearchCount8(cri));
+		pageMaker.setTotalCount(rsService.listSearchCount(cri));
 
 		model.addAttribute("item", vo);
 		model.addAttribute("beforeItem", beforeVO);
@@ -707,30 +713,70 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value = "/menu09_05", method = RequestMethod.GET)
-	public String mMenu09_05(Model model) {
+	public String mMenu09_05(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("mMenu09_05 GET");
+		List<ReviewVO> list = rService.listSearch(cri);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCount(cri));
+		pageMaker.setFinalPage(rService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "mobile/mMenu09_05";
 	}
 	
 	@RequestMapping(value = "/menu09_05read", method = RequestMethod.GET)
-	public String mMenu09_05read(Model model) {
+	public String mMenu09_05read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("mMenu09_05read GET");
+		rService.updateCnt(no);
+		ReviewVO vo = rService.selectOne(no);
+		ReviewVO beforeVO = rService.selectBefore(no);
+		ReviewVO afterVO = rService.selectAfter(no);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		return "mobile/mMenu09_05read";
 	}
 	
 	@RequestMapping(value = "/menu09_06", method = RequestMethod.GET)
-	public String mMenu09_06(Model model) {
+	public String mMenu09_06(@ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("mMenu09_06 GET");
+		List<EventVO> list = eService.listSearch12(cri);
 		
+		PageMakerWith12 pageMaker = new PageMakerWith12();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(eService.listSearchCount12(cri));
+		pageMaker.setFinalPage(eService.listSearchCount12(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "mobile/mMenu09_06";
 	}
 	
 	@RequestMapping(value = "/menu09_06read", method = RequestMethod.GET)
-	public String mMenu09_06read(Model model) {
+	public String mMenu09_06read(int no, @ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("mMenu09_06read GET");
 		
+		EventVO vo = eService.selectOne(no);
+		
+		PageMakerWith12 pageMaker = new PageMakerWith12();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(eService.listSearchCount12(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		return "mobile/mMenu09_06read";
 	}
 	
@@ -742,15 +788,40 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value = "/menu09_08", method = RequestMethod.GET)
-	public String mMenu09_08(Model model) {
+	public String mMenu09_08(@ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("mMenu09_08 GET");
 		
+		List<CautionVO> list = cService.listSearch12(cri);
+		
+		PageMakerWith12 pageMaker = new PageMakerWith12();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount12(cri));
+		pageMaker.setFinalPage(cService.listSearchCount12(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "mobile/mMenu09_08";
 	}
 	
 	@RequestMapping(value = "/menu09_08read", method = RequestMethod.GET)
-	public String mMenu09_08read(Model model) {
+	public String mMenu09_08read(int no, @ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("mMenu09_08read GET");
+		
+		cService.updateCnt(no);
+		CautionVO vo = cService.selectOne(no);
+		CautionVO beforeVO = cService.selectBefore(no);
+		CautionVO afterVO = cService.selectAfter(no);
+		
+		PageMakerWith12 pageMaker = new PageMakerWith12();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount12(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "mobile/mMenu09_08read";
 	}

@@ -491,7 +491,16 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
+	var kw = $("#kw").val();
+	$(".board-kinds > ul > li > a > input[value='"+kw+"']").parent().parent().addClass("active");
 	
+	$(".board-kinds > ul > li > a").click(function(e){
+		e.preventDefault();
+		var k=$(this).find("input").val();
+		var keyword = encodeURIComponent(k);
+		var url1 = $(this).prop("href");
+		location.href=url1+keyword;
+	});
 });
 </script>
 </head>
@@ -549,14 +558,14 @@ $(function(){
 			
 			<div class="board-kinds">
 				<ul class="inner">
-					<li class="active"><a href="?pCode=592">전체</a></li>
-					<li><a href="?pCode=592&amp;btap=동안·탄력 클리닉">동안·탄력 클리닉</a></li>
-					<li><a href="?pCode=592&amp;btap=레이저클리닉">레이저클리닉</a></li>
-					<li><a href="?pCode=592&amp;btap=흉터클리닉">흉터클리닉</a></li>
-					<li><a href="?pCode=592&amp;btap=눈·코 성형">눈·코 성형</a></li>
-					<li><a href="?pCode=592&amp;btap=프리미엄 쁘띠클리닉">프리미엄 쁘띠클리닉</a></li>
-					<li><a href="?pCode=592&amp;btap=체형클리닉">체형클리닉</a></li>
-					<li><a href="?pCode=592&amp;btap=두피클리닉">두피클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType&amp;keyword">전체<input type="hidden" value=""></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">동안·탄력 클리닉<input type="hidden" value="동안·탄력 클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">레이저클리닉<input type="hidden" value="레이저클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">흉터클리닉<input type="hidden" value="흉터클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">눈·코 성형<input type="hidden" value="눈·코 성형"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">프리미엄 쁘띠클리닉<input type="hidden" value="프리미엄 쁘띠클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">체형클리닉<input type="hidden" value="체형클리닉"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">두피클리닉<input type="hidden" value="두피클리닉"></a></li>
 				</ul>
 			</div>
 			

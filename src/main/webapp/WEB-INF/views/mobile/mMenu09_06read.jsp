@@ -554,23 +554,41 @@ $(function(){
 					<table>
 						<tr>
 							<td align="left" valign="middle">
-								<h6 class="tit">가을, 다니엘이 추천하는 상품</h6>
-								<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">2019-09-02 ~ 2019-11-30</p>
-								<i data-sec="진행중">진행중</i>
+								<h6 class="tit">${item.title}</h6>
+								<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">${item.start_date} ~ ${item.end_date}</p>
+								<jsp:useBean id="now" class="java.util.Date" />
+								<fmt:parseDate value="${item.start_date}" pattern="yyyy-MM-dd" var="startDate" />
+								<fmt:parseDate value="${item.end_date}" pattern="yyyy-MM-dd" var="endDate" />
+								<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate" /><%-- 오늘날짜 --%>
+								<fmt:formatDate value="${startDate}" pattern="yyyy-MM-dd" var="openDate"/><%-- 시작날짜 --%>
+								<fmt:formatDate value="${endDate}" pattern="yyyy-MM-dd" var="closeDate"/><%-- 마감날짜 --%>
+								<c:choose>
+									<c:when test="${openDate <= nowDate && closeDate >= nowDate}">
+										<i data-sec="진행중">진행중</i>
+									</c:when>
+									<c:otherwise>
+										<i data-sec="종료">종료</i>
+									</c:otherwise>
+								</c:choose>
 							</td>
 						</tr>
 						<tr>
 							<td align="left" valign="middle" class="con" colspan="2">
-								<div style="text-align: center;"><img alt="" src="${pageContext.request.contextPath}/resources/filedata/ckeditor/20190901_DFB87345549B248F.jpg" style="width: 1170px;"></div>
+								${item.content}
 							</td>						
 						</tr>
 					</table>
 				</div>
-			
+				<script>
+					$(function(){
+						$("img[usemap]").rwdImageMaps();
+					});
+					
+				</script>
 				<!-- 게시판 버튼 시작 -->
 				<div class="btn-group">
 					<div class="inner">
-						<a href="?pCode=564&amp;page=1" class="btn btn-list">목록으로</a>
+						<a href="${pageContext.request.contextPath}/m/menu09_06" class="btn btn-list">목록으로</a>
 					</div>
 				</div>
 				<!-- 게시판 버튼 끝 -->
