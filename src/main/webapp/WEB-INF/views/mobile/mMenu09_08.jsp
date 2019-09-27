@@ -557,6 +557,7 @@ $(function(){
 			<!-- 게시판 타이틀 끝 -->
 			
 			<div class="board-kinds">
+				<input type="hidden" id="kw" value="${pageMaker.cri.keyword}">
 				<ul class="inner">
 					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType&amp;keyword">전체<input type="hidden" value=""></a></li>
 					<li><a href="${pageContext.request.contextPath}/m/menu09_08?page=1&amp;perPageNum=12&amp;searchType=c&amp;keyword=">동안·탄력 클리닉<input type="hidden" value="동안·탄력 클리닉"></a></li>
@@ -571,32 +572,35 @@ $(function(){
 			
 			<div class="board-gallery">
 				<ul class="inner">
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_A9C381CF1836D4E3.jpg');"><b>리프팅레이저</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_44532CA4C63C9FA8.jpg');"><b>안면거상/이마내시경거상술</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_9DA1DF3AAA8D4C6E.jpg');"><b>실리프팅</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_17D08F56CB831BB3.jpg');"><b>광채지방이식</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_01F18FE48698C9FF.jpg');"><b>상안검/하안검</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_F626326E090FAB42.jpg');"><b>색소레이저</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_AF874F3EF1EC210E.jpg');"><b>여드름/모공 레이저</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_8F26DF037D497302.jpg');"><b>흉터클리닉</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_84C69D0231D6C3A9.jpg');"><b>코성형</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_C4D95EE3770BA6E2.jpg');"><b>눈성형</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_90419949ED5279AA.jpg');"><b>보톡스/필러</b></a></li>
-					<li class="item"><a href="${pageContext.request.contextPath}/menu09_08read" style="background-image: url('${pageContext.request.contextPath}/resources/filedata//board/BRD05/20181031_3ABB5ADCC2857D34.jpg');"><b>지방흡입</b></a></li>
+					<c:choose>
+						<c:when test="${fn:length(list) == 0}">
+				        	<li style="text-align:center;">등록된 게시물이 없습니다.</li>
+					    </c:when>
+					    <c:otherwise>
+					        <c:forEach var="item" items="${list}">
+								<li class="item">
+									<a href="${pageContext.request.contextPath}/m/menu09_08read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" style="background-image: url('${pageContext.request.contextPath}/resources/uploadCaution/${item.thumb_stored}');"><b>${item.title}</b></a>
+								</li>
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</ul>
 			</div>
 			
 			<!-- 페이징 시작 -->
 			<div id="board-pagenation">
 				<div class="inner">
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a>
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
-					<a href="javascript:;" class="on">1</a>
-					<a href="?pCode=530&amp;select_key=&amp;input_key=&amp;backpage=/m/530/&amp;Scod=BRD21&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=2 ">2</a>
-					<a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
-					<a href="?pCode=530&amp;select_key=&amp;input_key=&amp;backpage=/m/530/&amp;Scod=BRD21&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+					<c:if test="${pageMaker.prev}">
+						<a href="${pageMaker.makeSearch(pageMaker.startPage-1) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+					</c:if>
+					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+						<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+					</c:forEach>
+					<c:if test="${pageMaker.next}">
+						<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+					</c:if>
 				</div>
-			</div><!-- 페이징 끝 -->
+			</div>	<!-- 페이징 끝 -->
 			
 		</section>
 	
