@@ -833,6 +833,17 @@ public class HomeController {
 		return "sub/menu09_07";
 	}
 	
+	@RequestMapping(value = "/menu09_07getList", method = RequestMethod.GET)
+	public ResponseEntity<List<ClinicListVO>> menu09_07getList() {
+		logger.info("menu09_07getList");
+		ResponseEntity<List<ClinicListVO>> entity = null;
+		SearchCriteria cri = new SearchCriteria();
+		List<ClinicListVO> list = clService.listSearch(cri);
+		entity = new ResponseEntity<List<ClinicListVO>>(list, HttpStatus.OK);
+
+		return entity;
+	}
+	
 	@RequestMapping(value = "/menu09_08", method = RequestMethod.GET)
 	public String menu09_08(@ModelAttribute("cri") SearchCriteria12 cri, Model model) throws Exception {
 		logger.info("menu09_08 GET");

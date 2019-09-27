@@ -482,9 +482,55 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
+function getClinicList(){
+	var dt;
+	$.ajax({
+		url:"${pageContext.request.contextPath}/menu09_07getList",
+		type:"get",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"json",
+		async:false,
+		success:function(json){
+			dt = json;
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+	return dt;
+}
+
+function makeList(){
+	var list = getClinicList();
+	var str = "";
+	var obj = list[0];
+	var c1 = "";
+	var c2 = "";
+	var c3 = "";
+	
+	$(list).each(function(){
+		if($(this).c1 != c1){
+			c1 = $(this).c1;
+			str += "<div id='surgery-item477' class='surgery-inventory'>";
+			if($(this).c2 != c2){
+				c2 = $(this).c2;
+				if($(this).c3 ==''){
+					str += "<div class='item'><input type='heckbox' id='category480' value='480' name='category'><label for='category480'>국산 더채움 기본 1cc <em>100,000 원</em></label></div>";
+				}else{
+					str += "<div class='item'><input type='checkbox' id='category577' value='577' name='category'><button>이마 볼륨 <em>300,000 원 ~</em></button>"
+						+"<ul><li class='child'><input type='checkbox' id='category578' value='578' name='category'>	<label for='category578'>이마볼륨 3cc <em>300,000 원</em></label></li>";
+				}
+			}
+		}else{
+			
+		}
+	});
+}
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(7)").addClass("active");
+	
+	makeList();
 });
 </script>
 </head>
@@ -574,19 +620,25 @@ $(function(){
 								<button rel="surgery-item658" class=" surgery-category" _parent_seq="658">리프팅보톡스</button>
 								<button rel="surgery-item665" class=" surgery-category" _parent_seq="665">비만프로그램</button> -->
 								<c:forEach var="item" items="${c1List}">
-									<button class=" surgery-category">${item}</button>
+									<button rel="surgery-item477" class=" surgery-category">${item}</button>
 								</c:forEach>
 							</div>
 			
 							<!-- 내용 -->
 							<div class="surgery-option">
+								
+								
 								<div id="surgery-item477" class="surgery-inventory" style=" display:block ">
 									<div class="item"><input type="checkbox" id="category480" value="480" _category1="477" _category1nm="필러" _category2="480" _pay="100000" _category2nm="국산 더채움 기본 1cc" _category3="" _category3nm="" _name="국산 더채움 기본 1cc" name="category"><label for="category480">국산 더채움 기본 1cc <em>100,000 원</em></label></div>
 									<div class="item"><input type="checkbox" id="category677" value="677" _category1="477" _category1nm="필러" _category2="677" _pay="280000" _category2nm="수입 레스틸렌 1cc" _category3="" _category3nm="" _name="수입 레스틸렌 1cc" name="category"><label for="category677">수입 레스틸렌 1cc <em>280,000 원</em></label></div>
 									<div class="item"><input type="checkbox" id="category481" value="481" _category1="477" _category1nm="필러" _category2="481" _pay="90000" _category2nm="턱필러 1cc 이내" _category3="" _category3nm="" _name="턱필러 1cc 이내" name="category"><label for="category481">턱필러 1cc 이내 <em>90,000 원</em></label></div>
 									<div class="item"><input type="checkbox" id="category482" value="482" _category1="477" _category1nm="필러" _category2="482" _pay="90000" _category2nm="코필러 1cc 이내" _category3="" _category3nm="" _name="코필러 1cc 이내" name="category"><label for="category482">코필러 1cc 이내 <em>90,000 원</em></label></div>
 									<div class="item"><input type="checkbox" id="category577" value="577" _category1="477" _category1nm="필러" _category2="577" _pay="300000" _category2nm="이마 볼륨" _category3="" _category3nm="" _name="이마 볼륨" name="category"><button>이마 볼륨 <em>300,000 원 ~</em></button>
-											<ul><li class="child">	<input type="checkbox" id="category578" value="578" _category1="477" _category1nm="필러" _category2="577" _category2nm="이마 볼륨" _category3="578" _category3nm="이마볼륨 3cc" _pay="300000" _name="이마볼륨 3cc" name="category">	<label for="category578">이마볼륨 3cc <em>300,000 원</em></label></li></ul>
+											<ul>
+												<li class="child">
+													<input type="checkbox" id="category578" value="578" _category1="477" _category1nm="필러" _category2="577" _category2nm="이마 볼륨" _category3="578" _category3nm="이마볼륨 3cc" _pay="300000" _name="이마볼륨 3cc" name="category">	<label for="category578">이마볼륨 3cc <em>300,000 원</em></label>
+												</li>
+											</ul>
 									</div>
 									<div class="item"><input type="checkbox" id="category581" value="581" _category1="477" _category1nm="필러" _category2="581" _pay="200000" _category2nm="팔자주름" _category3="" _category3nm="" _name="팔자주름" name="category"><button>팔자주름 <em>200,000 원 ~</em></button>
 										<ul><li class="child">	<input type="checkbox" id="category594" value="594" _category1="477" _category1nm="필러" _category2="581" _category2nm="팔자주름" _category3="594" _category3nm="팔자주름 2cc" _pay="200000" _name="팔자주름 2cc" name="category">	<label for="category594">팔자주름 2cc <em>200,000 원</em></label></li></ul>
@@ -728,7 +780,7 @@ $(function(){
 										</ul>
 									</div>
 								</div>
-							</div>
+							</div><!-- surgery-option 끝 -->
 						</div>
 					</div>
 					<!-- 시술선택 끝 -->
