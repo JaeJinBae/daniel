@@ -1,8 +1,6 @@
 package com.webaid.controller;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +30,7 @@ import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.CautionVO;
 import com.webaid.domain.ClinicListVO;
 import com.webaid.domain.EventVO;
+import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.PageMakerWith12;
@@ -49,6 +48,7 @@ import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
 import com.webaid.service.ClinicListService;
 import com.webaid.service.EventService;
+import com.webaid.service.HospitalTimeService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
@@ -89,6 +89,9 @@ public class HomeController {
 	
 	@Autowired
 	private ClinicListService clService;
+	
+	@Autowired
+	private HospitalTimeService htService;
 	
 	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.GET)
 	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
@@ -820,7 +823,7 @@ public class HomeController {
 	@RequestMapping(value = "/menu09_07", method = RequestMethod.GET)
 	public String menu09_07(@ModelAttribute("cri") SearchCriteria cri, Model model) {
 		logger.info("menu09_07 GET");
-		List<ClinicListVO> list = clService.listSearch(cri);
+		/*List<ClinicListVO> list = clService.listSearch(cri);
 		List<String> arr1 = new ArrayList<>();
 		for(int i=0; i<list.size(); i++){
 			arr1.add(list.get(i).getC1());
@@ -829,8 +832,17 @@ public class HomeController {
 		List<String> c1List=new ArrayList<String>(arr2);
 		System.out.println(c1List);
 		model.addAttribute("c1List", c1List);
-		model.addAttribute("list", list);
+		model.addAttribute("list", list);*/
 		return "sub/menu09_07";
+	}
+	
+	@RequestMapping(value="/menu09_07timeGet", method=RequestMethod.GET)
+	public ResponseEntity<List<HospitalTimeVO>> menu09_07timeGet(){
+		ResponseEntity<List<HospitalTimeVO>> entity = null;
+		List<HospitalTimeVO> list = htService.selectAll();
+		
+		entity = new ResponseEntity<List<HospitalTimeVO>>(list, HttpStatus.OK);
+		return entity;
 	}
 	
 	@RequestMapping(value = "/menu09_07getList", method = RequestMethod.GET)

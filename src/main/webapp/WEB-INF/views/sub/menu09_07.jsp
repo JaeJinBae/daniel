@@ -482,6 +482,89 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
+function getTimeByDay(){
+	var dt;
+	$.ajax({
+		url:"${pageContext.request.contextPath}/menu09_07timeGet",
+		type:"get",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"json",
+		async:false,
+		success:function(json){
+			dt = json;
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+	return dt;
+}
+function drawTimePicker(){
+	var timeList = getTimeByDay();
+	var monTimeList = new Array;
+	var tueTimeList = new Array;
+	var wedTimeList = new Array;
+	var thuTimeList = new Array;
+	var friTimeList = new Array;
+	var satTimeList = new Array;
+	var s_time = 0;
+	var e_time = 0;
+	var str = "";
+	
+	$(timeList).each(function(){
+		
+		s_time = this.start_time;
+		e_time = this.end_time;
+ 
+		if(this.h_date == "mon"){
+			monTimeList.push(s_time);
+			while(s_time != e_time){
+				s_time += 30;
+				monTimeList.push(s_time);
+			}
+			monTimeList.push(e_time);
+		}else if(this.h_date == "tue"){
+			tueTimeList.push(s_time);
+			while(s_time != e_time){
+				s_time += 30;
+				tueTimeList.push(s_time);
+			}
+			tueTimeList.push(e_time);
+		}else if(this.h_date == "wed"){
+			wedTimeList.push(s_time);
+			while(s_time != e_time){
+				s_time += 30;
+				wedTimeList.push(s_time);
+			}
+			wedTimeList.push(e_time);
+		}else if(this.h_date == "thu"){
+			thuTimeList.push(s_time);
+			while(s_time != e_time){
+				s_time += 30;
+				thuTimeList.push(s_time);
+			}
+			thuTimeList.push(e_time);
+		}else if(this.h_date == "fri"){
+			friTimeList.push(s_time);
+			while(s_time != e_time){
+				s_time += 30;
+				friTimeList.push(s_time);
+			}
+			friTimeList.push(e_time);
+		}else if(this.h_date == "sat"){
+			satTimeList.push(s_time);
+			while(s_time != e_time){
+				s_time += 30;
+				satTimeList.push(s_time);
+			}
+			satTimeList.push(e_time);
+		}
+		
+	});
+	$(timeList).each(function(){
+		str += "<div class='listOfDow mon-list'>"; 
+	});
+}
 function makeCalendar(today){
 	var year = today.getFullYear();
 	var month = today.getMonth()+1;
@@ -518,6 +601,7 @@ function makeCalendar(today){
 		str += "</tr>";
 	}
 	$(".day-info").text(year+"."+((month>9?'':'0')+month));
+	$("#selectDate").val(year+"-"+((month>9?'':'0')+month)+"-01");
 	$("#calendar_tbl_tag").html("");
 	$("#calendar_tbl_tag").append(str);
 }
@@ -526,12 +610,24 @@ $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(7)").addClass("active");
 	
-	makeList();
 	var today = new Date();
 	makeCalendar(today);
+	drawTimePicker();
+	
 	$(document).on("click", ".month-next", function(){
-		
+		var selectDate = $("#selectDate").val();
+		var nextMonth = new Date(selectDate);
+		nextMonth.setMonth(nextMonth.getMonth()+1);
+		makeCalendar(nextMonth);
 	});
+	
+	$(document).on("click", ".month-prev", function(){
+		var selectDate = $("#selectDate").val();
+		var prevMonth = new Date(selectDate);
+		prevMonth.setMonth(prevMonth.getMonth()-1);
+		makeCalendar(prevMonth);
+	});
+	
 });
 </script>
 </head>
@@ -801,6 +897,7 @@ $(function(){
 										</svg><!-- <i class="fas fa-chevron-left"></i> -->
 									</button>
 									<span class="day-info"></span>
+									<input type="hidden" id="selectDate" value="selectDate">
 									<button class="month-next nextMonth">
 										<svg class="svg-inline--fa fa-chevron-right fa-w-10" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
 											<path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
@@ -810,130 +907,6 @@ $(function(){
 							</div>
 				
 							<table id="calendar_tbl_tag" class="calendar-tbl">
-								<%-- <caption>예약날짜 및 시간선택 달력</caption>
-								<thead>
-									<tr>
-										<th class="sun">일</th>
-										<th class="mon">월</th>
-										<th class="the">화</th>
-										<th class="wed">수</th>
-										<th class="thu">목</th>
-										<th class="fri">금</th>
-										<th class="sat">토</th>
-									</tr>
-								</thead>
-								<tr>
-									<td class="sun closed ">
-										<button>1</button>
-									</td>
-									<td class="mon closed today calDate date_2019-09-02">
-										<button>2</button>
-									</td>
-									<td class="the closed calDate date_2019-09-03">
-										<button>3</button>
-									</td>
-									<td class="wed calDate date_2019-09-04">
-										<button>4</button>
-									</td>
-									<td class="thu calDate date_2019-09-05">
-										<button>5</button>
-									</td>
-									<td class="fri calDate date_2019-09-06">
-										<button>6</button>
-									</td>
-									<td class="sat calDate date_2019-09-07">
-										<button>7</button>
-									</td>
-								</tr>
-								<tr><td class="sun closed ">
-										<button>8</button>
-									</td>
-									<td class="mon calDate date_2019-09-09">
-										<button>9</button>
-									</td>
-									<td class="the calDate date_2019-09-10">
-										<button>10</button>
-									</td>
-									<td class="wed calDate date_2019-09-11">
-										<button>11</button>
-									</td>
-									<td class="thu calDate date_2019-09-12">
-										<button>12</button>
-									</td>
-									<td class="fri calDate date_2019-09-13">
-										<button>13</button>
-									</td>
-									<td class="sat calDate date_2019-09-14">
-										<button>14</button>
-									</td>
-								</tr>
-								<tr>
-									<td class="sun closed ">
-										<button>15</button>
-									</td>
-									<td class="mon calDate date_2019-09-16">
-										<button>16</button>
-									</td>
-									<td class="the calDate date_2019-09-17">
-										<button>17</button>
-									</td>
-									<td class="wed calDate date_2019-09-18">
-										<button>18</button>
-									</td>
-									<td class="thu calDate date_2019-09-19">
-										<button>19</button>
-									</td>
-									<td class="fri calDate date_2019-09-20">
-										<button>20</button>
-									</td>
-									<td class="sat calDate date_2019-09-21">
-										<button>21</button>
-									</td>
-								</tr>
-								<tr>
-									<td class="sun closed "><button>22</button></td>
-									<td class="mon calDate date_2019-09-23">
-										<button>23</button>
-									</td>
-									<td class="the calDate date_2019-09-24">
-										<button>24</button>
-									</td>
-									<td class="wed calDate date_2019-09-25">
-										<button>25</button>
-									</td>
-									<td class="thu calDate date_2019-09-26">
-										<button>26</button>
-									</td>
-									<td class="fri calDate date_2019-09-27">
-										<button>27</button>
-									</td>
-									<td class="sat calDate date_2019-09-28">
-										<button>28</button>
-									</td>
-								</tr>
-								<tr>
-									<td class="sun closed ">
-										<button>29</button>
-									</td>
-									<td class="mon calDate date_2019-09-30">
-										<button>30</button>
-									</td>
-									<td class="the closed calDate date_">
-										<button></button>
-									</td>
-									<td class="wed closed calDate date_">
-										<button></button>
-									</td>
-									<td class="thu closed calDate date_">
-										<button></button>
-									</td>
-									<td class="fri closed calDate date_">
-										<button></button>
-									</td>
-									<td class="sat closed calDate date_">
-										<button></button>
-									</td>
-								</tr> --%>
 
 							</table>
 				
@@ -1084,7 +1057,13 @@ $(function(){
 						</div>
 			
 						<!-- 시간선택(선택:selected, 진료불가능시간:closed) -->
-						<div class="time-picker"></div>
+						<div class="time-picker">
+							<div id="mon-time">
+								<div class="time "><input type="radio" id="r_time_code1" name="r_time_code" value="RE03"><label for="r_time_code1" onclick="onCalTime(&quot;&quot;,&quot;RE03&quot;, &quot;10:00&quot;);">10:00</label></div><div class="time "><input type="radio" id="r_time_code3" name="r_time_code" value="RE04"><label for="r_time_code3" onclick="onCalTime(&quot;&quot;,&quot;RE04&quot;, &quot;10:30&quot;);">10:30</label></div><div class="time "><input type="radio" id="r_time_code7" name="r_time_code" value="RE05"><label for="r_time_code7" onclick="onCalTime(&quot;&quot;,&quot;RE05&quot;, &quot;11:00&quot;);">11:00</label></div><div class="time "><input type="radio" id="r_time_code15" name="r_time_code" value="RE06"><label for="r_time_code15" onclick="onCalTime(&quot;&quot;,&quot;RE06&quot;, &quot;11:30&quot;);">11:30</label></div><div class="time "><input type="radio" id="r_time_code31" name="r_time_code" value="RE07"><label for="r_time_code31" onclick="onCalTime(&quot;&quot;,&quot;RE07&quot;, &quot;12:00&quot;);">12:00</label></div><div class="time "><input type="radio" id="r_time_code63" name="r_time_code" value="RE08"><label for="r_time_code63" onclick="onCalTime(&quot;&quot;,&quot;RE08&quot;, &quot;12:30&quot;);">12:30</label></div><div class="time "><input type="radio" id="r_time_code127" name="r_time_code" value="RE12"><label for="r_time_code127" onclick="onCalTime(&quot;&quot;,&quot;RE12&quot;, &quot;14:30&quot;);">14:30</label></div><div class="time "><input type="radio" id="r_time_code255" name="r_time_code" value="RE13"><label for="r_time_code255" onclick="onCalTime(&quot;&quot;,&quot;RE13&quot;, &quot;15:00&quot;);">15:00</label></div><div class="time "><input type="radio" id="r_time_code511" name="r_time_code" value="RE14"><label for="r_time_code511" onclick="onCalTime(&quot;&quot;,&quot;RE14&quot;, &quot;15:30&quot;);">15:30</label></div><div class="time "><input type="radio" id="r_time_code1023" name="r_time_code" value="RE15"><label for="r_time_code1023" onclick="onCalTime(&quot;&quot;,&quot;RE15&quot;, &quot;16:00&quot;);">16:00</label></div><div class="time "><input type="radio" id="r_time_code2047" name="r_time_code" value="RE16"><label for="r_time_code2047" onclick="onCalTime(&quot;&quot;,&quot;RE16&quot;, &quot;16:30&quot;);">16:30</label></div><div class="time "><input type="radio" id="r_time_code4095" name="r_time_code" value="RE17"><label for="r_time_code4095" onclick="onCalTime(&quot;&quot;,&quot;RE17&quot;, &quot;17:00&quot;);">17:00</label></div><div class="time "><input type="radio" id="r_time_code8191" name="r_time_code" value="RE18"><label for="r_time_code8191" onclick="onCalTime(&quot;&quot;,&quot;RE18&quot;, &quot;17:30&quot;);">17:30</label></div><div class="time "><input type="radio" id="r_time_code16383" name="r_time_code" value="RE19"><label for="r_time_code16383" onclick="onCalTime(&quot;&quot;,&quot;RE19&quot;, &quot;18:00&quot;);">18:00</label></div><div class="time "><input type="radio" id="r_time_code32767" name="r_time_code" value="RE20"><label for="r_time_code32767" onclick="onCalTime(&quot;&quot;,&quot;RE20&quot;, &quot;18:30&quot;);">18:30</label></div>
+							</div>
+							
+				
+						</div>
 					</div>
 					<!-- 예약날짜 및 시간선택 끝 -->
 				</div>
@@ -1248,7 +1227,7 @@ $(function(){
 			
 				$(function(){
 			
-					$("#getCalendar").load("/html/reserve/_calendar.php");
+					//$("#getCalendar").load("/html/reserve/_calendar.php");
 			
 					//$(".time-picker").load("/html/reserve/_time.php?date=2019-09-02");
 			
@@ -1523,6 +1502,7 @@ $(function(){
 					if(!$(".date_"+selDate).hasClass("closed")){
 						$(".date_"+selDate).addClass('selected');
 						$("#reserveDate").html(selDate);
+						getTimeByDay(selDate)
 						//$(".time-picker").load("/html/reserve/_time.php?date="+selDate);
 						$("#r_date").val(selDate);
 					}else{
