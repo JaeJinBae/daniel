@@ -572,13 +572,11 @@ function makeCalendar(today){
 					prevDate = new Date(cd+((dNum>9?'':'0')+dNum));
 					today = new Date();
 					today.setDate(today.getDate()+2);
-					console.log(today);
 					if(prevDate.getTime() <= today.getTime()){
 						str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
 					}else{
 						str += "<td class='"+arrDow2[k-1]+" calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
 					}
-					
 				}
 				
 				dNum ++;
