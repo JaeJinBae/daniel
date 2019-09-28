@@ -836,12 +836,12 @@ public class HomeController {
 		return "sub/menu09_07";
 	}
 	
-	@RequestMapping(value="/menu09_07timeGet", method=RequestMethod.GET)
-	public ResponseEntity<List<HospitalTimeVO>> menu09_07timeGet(){
-		ResponseEntity<List<HospitalTimeVO>> entity = null;
-		List<HospitalTimeVO> list = htService.selectAll();
+	@RequestMapping(value="/menu09_07timeByDow/{dow}", method=RequestMethod.POST)
+	public ResponseEntity<HospitalTimeVO> menu09_07timeGet(@PathVariable("dow")String dow){
+		ResponseEntity<HospitalTimeVO> entity = null;
+		HospitalTimeVO vo = htService.selectByDow(dow);
 		
-		entity = new ResponseEntity<List<HospitalTimeVO>>(list, HttpStatus.OK);
+		entity = new ResponseEntity<HospitalTimeVO>(vo, HttpStatus.OK);
 		return entity;
 	}
 	

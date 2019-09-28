@@ -11,6 +11,10 @@
 		select * from hospital_time where no=#{no}
 	</select>
 	
+	<select id="selectByDow" resultType="HospitalTimeVO">
+		select * from hospital_time where h_date=#{h_date}
+	</select>
+	
 	<insert id="insert">
 		insert into hospital_time values(0, #{h_date}, #{start_time}, #{end_time})
 	</insert>

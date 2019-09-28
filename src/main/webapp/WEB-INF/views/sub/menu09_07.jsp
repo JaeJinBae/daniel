@@ -482,11 +482,12 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
-function getTimeByDay(){
+function getTimeByDay(dow){
+	console.log(dow);
 	var dt;
 	$.ajax({
-		url:"${pageContext.request.contextPath}/menu09_07timeGet",
-		type:"get",
+		url:"${pageContext.request.contextPath}/menu09_07timeByDow/"+dow,
+		type:"POST",
 		contentType : "application/json; charset=UTF-8",
 		dataType:"json",
 		async:false,
@@ -499,71 +500,40 @@ function getTimeByDay(){
 	});
 	return dt;
 }
-function drawTimePicker(){
-	var timeList = getTimeByDay();
-	var monTimeList = new Array;
-	var tueTimeList = new Array;
-	var wedTimeList = new Array;
-	var thuTimeList = new Array;
-	var friTimeList = new Array;
-	var satTimeList = new Array;
+
+function drawTimePicker(dow){
+	if(dow == ''){
+		return false;
+	}
+	var timeInfo = getTimeByDay(dow);
+	var timeList = new Array;
 	var s_time = 0;
 	var e_time = 0;
 	var str = "";
+	var temp_h = 0;
+	var temp_m = 0;
+
+	s_time = timeInfo.start_time;
+	e_time = timeInfo.end_time;
 	
+	timeList.push(s_time);
+	while(s_time != e_time){
+		s_time += 30;
+		timeList.push(s_time);
+	}
+	timeList.push(e_time);
 	$(timeList).each(function(){
-		
-		s_time = this.start_time;
-		e_time = this.end_time;
- 
-		if(this.h_date == "mon"){
-			monTimeList.push(s_time);
-			while(s_time != e_time){
-				s_time += 30;
-				monTimeList.push(s_time);
-			}
-			monTimeList.push(e_time);
-		}else if(this.h_date == "tue"){
-			tueTimeList.push(s_time);
-			while(s_time != e_time){
-				s_time += 30;
-				tueTimeList.push(s_time);
-			}
-			tueTimeList.push(e_time);
-		}else if(this.h_date == "wed"){
-			wedTimeList.push(s_time);
-			while(s_time != e_time){
-				s_time += 30;
-				wedTimeList.push(s_time);
-			}
-			wedTimeList.push(e_time);
-		}else if(this.h_date == "thu"){
-			thuTimeList.push(s_time);
-			while(s_time != e_time){
-				s_time += 30;
-				thuTimeList.push(s_time);
-			}
-			thuTimeList.push(e_time);
-		}else if(this.h_date == "fri"){
-			friTimeList.push(s_time);
-			while(s_time != e_time){
-				s_time += 30;
-				friTimeList.push(s_time);
-			}
-			friTimeList.push(e_time);
-		}else if(this.h_date == "sat"){
-			satTimeList.push(s_time);
-			while(s_time != e_time){
-				s_time += 30;
-				satTimeList.push(s_time);
-			}
-			satTimeList.push(e_time);
-		}
-		
+		temp_h = parseInt(this/60);
+		temp_h = (temp_h>9?"":"0")+temp_h;
+		temp_m = this%60;
+		temp_m = (temp_m>9?"":"0")+temp_m;
+		str += "<div class='time '>"
+			+"<input type='radio' id='r_time_code"+this+"' name='r_time_code' value='"+temp_h+":"+temp_m+"'>"
+			+"<label for='r_time_code"+this+"' onclick='onCalTime(&quot;&quot;,&quot;"+temp_h+":"+temp_m+"&quot;, &quot;"+temp_h+":"+temp_m+"&quot;);'>"+temp_h+":"+temp_m+"</label></div>";
 	});
-	$(timeList).each(function(){
-		str += "<div class='listOfDow mon-list'>"; 
-	});
+	str += "</div>";
+	console.log(timeList);
+	$(".time-picker").html(str);
 }
 function makeCalendar(today){
 	var year = today.getFullYear();
@@ -585,16 +555,29 @@ function makeCalendar(today){
 	var theDay = firstDate.getDay();
 	var cd = year+"-"+((month>9?'':'0')+month)+"-";
 	var dNum = 1;
+	var prevDate;
+	
 	for(var i=1; i<=6; i++){ 
 		if(dNum > lastDate){
 			break;
 		}
-		str += "<tr class='calendarDateTr'>";
+		str += "<tr>";
 		for( var k=1; k<=7; k++){
 			if(i==1 && k<=theDay||dNum>lastDate){
-				str += "<td class='"+arrDow2[k]+"'></td>";
+				str += "<td class='"+arrDow2[k-1]+" closed calDate date_' onclick=onCalDate('');><button></button></td>";
 			}else{
-				str += "<td class='"+arrDow2[k]+" calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
+				if(k==1){
+					str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
+				}else{
+					prevDate = new Date(cd+((dNum>9?'':'0')+dNum));
+					if(prevDate.getTime() <= today.getTime()){
+						str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
+					}else{
+						str += "<td class='"+arrDow2[k-1]+" calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
+					}
+					
+				}
+				
 				dNum ++;
 			}
 		}
@@ -612,7 +595,6 @@ $(function(){
 	
 	var today = new Date();
 	makeCalendar(today);
-	drawTimePicker();
 	
 	$(document).on("click", ".month-next", function(){
 		var selectDate = $("#selectDate").val();
@@ -716,9 +698,6 @@ $(function(){
 								<button rel="surgery-item653" class=" surgery-category" _parent_seq="653">땀보톡스</button>
 								<button rel="surgery-item658" class=" surgery-category" _parent_seq="658">리프팅보톡스</button>
 								<button rel="surgery-item665" class=" surgery-category" _parent_seq="665">비만프로그램</button>
-								<%-- <c:forEach var="item" items="${c1List}">
-									<button rel="surgery-item477" class=" surgery-category">${item}</button>
-								</c:forEach> --%>
 							</div>
 			
 							<!-- 내용 -->
@@ -913,113 +892,6 @@ $(function(){
 				
 				
 							<script type="text/javascript">
-							function getCalendar($mode, $year, $month, $day, $seq){
-								var date = $year+"-"+$month+"-"+$day;
-								var calUrl = "/html/reserve/_calendar.php";
-							
-								if($mode=="move"){
-									getCalendar("calendar", $year, $month);
-								}else if($mode=="form"){
-									var param = "?getYear="+$year+"&getMonth="+$month+"&getDate="+date+"&roomNum="+$seq;
-									$("#getCalendar").load(calUrl+param);
-								}else if($mode=="calendar"){
-									$("#getCalendar").load(calUrl+"?getYear="+$year+"&getMonth="+$month);
-								}
-							}
-							
-							
-							$(document).ready(function(){
-								$("#r_day").on("change", function(){
-									var thisVal = parseInt(this.value);
-									var s_date = "";
-									var date_str = s_date.split("-");
-							
-									var date = new Date(date_str[0],date_str[1]-1,+date_str[2]);
-									date.setDate(date.getDate() + thisVal );
-							
-									var new_dateY = date.getFullYear();
-									var new_dateM = date.getMonth()+1;
-									var new_dateD = date.getDate();
-									var new_date = new_dateY+"-"+new_dateM+"-"+new_dateD;
-							
-									$("#r_edate_str").empty().append(new_date);
-									$("#r_edate").val(new_date);
-							
-									total_price();
-							
-							
-								}).trigger("change");
-							
-								$(".r_limit").on("change", function(){
-									var r_limit1 = $("#r_limit1 option:selected").val();
-									var r_limit2 = $("#r_limit2 option:selected").val();
-									var r_limit3 = $("#r_limit3 option:selected").val();
-									var r_min_limit = "";
-									var r_max_limit = "";
-									var r_add_price = "";
-									var add_limit = "";
-							
-									var r_total = parseInt(r_limit1) + parseInt(r_limit2) + parseInt(r_limit3);
-									var r_price = 0;
-							
-									if(parseInt(r_total) > parseInt(r_max_limit)){
-										alert("최대 선택가능 인원은 "+r_max_limit+"명 입니다.");
-										$("#r_limit2").val(0);
-										$("#r_limit3").val(0);
-										return false;
-									}
-							
-									if(parseInt(r_limit1)>0 || parseInt(r_limit2)>0){
-										add_limit = parseInt(r_limit1) + parseInt(r_limit2);
-										if(add_limit>r_min_limit){
-											r_price = (add_limit - r_min_limit) * r_add_price;
-										}
-									}
-							
-									$("#people_price").empty().append(number_format(r_price)+"원");
-									$("#add_price").val(r_price);
-							
-									total_price();
-								});
-							
-							
-								//var move = $("#reserve-sub").offset().top;
-								//$('html, body').animate({scrollTop : move}, 550);
-							});
-							
-							
-							function optionPrice($price){
-								$("#opt_price").val($price);
-								$("#option_price").empty().append(number_format($price)+"원");
-							}
-							
-							function optionCheck($seq, $now_price){
-								var opt_price = "";
-								var opt_chk = "";
-							
-								if($("#option"+$seq).prop("checked")==true){
-									$("#option_cnt"+$seq).attr("disabled",false);
-								}else{
-									$("#option_cnt"+$seq).attr("disabled",true);
-									$("#option_cnt"+$seq).val('');
-									$("#option_price").empty();
-									$("#opt_price").val('');
-							
-									total_price();
-								}
-							
-								$("#option_cnt"+$seq).on("change",function(){
-									var selected = $(this).find('option:selected');
-									var price = selected.data('price');
-									var cnt = $(this).val();
-									opt_price = parseInt(price) * parseInt(cnt);
-							
-									optionPrice(opt_price);
-									total_price(opt_price);
-								});
-							}
-							
-							
 							function total_price($opt_price){
 								var $day = $("#r_day option:selected").val();
 								var final_price = "";
@@ -1058,11 +930,7 @@ $(function(){
 			
 						<!-- 시간선택(선택:selected, 진료불가능시간:closed) -->
 						<div class="time-picker">
-							<div id="mon-time">
-								<div class="time "><input type="radio" id="r_time_code1" name="r_time_code" value="RE03"><label for="r_time_code1" onclick="onCalTime(&quot;&quot;,&quot;RE03&quot;, &quot;10:00&quot;);">10:00</label></div><div class="time "><input type="radio" id="r_time_code3" name="r_time_code" value="RE04"><label for="r_time_code3" onclick="onCalTime(&quot;&quot;,&quot;RE04&quot;, &quot;10:30&quot;);">10:30</label></div><div class="time "><input type="radio" id="r_time_code7" name="r_time_code" value="RE05"><label for="r_time_code7" onclick="onCalTime(&quot;&quot;,&quot;RE05&quot;, &quot;11:00&quot;);">11:00</label></div><div class="time "><input type="radio" id="r_time_code15" name="r_time_code" value="RE06"><label for="r_time_code15" onclick="onCalTime(&quot;&quot;,&quot;RE06&quot;, &quot;11:30&quot;);">11:30</label></div><div class="time "><input type="radio" id="r_time_code31" name="r_time_code" value="RE07"><label for="r_time_code31" onclick="onCalTime(&quot;&quot;,&quot;RE07&quot;, &quot;12:00&quot;);">12:00</label></div><div class="time "><input type="radio" id="r_time_code63" name="r_time_code" value="RE08"><label for="r_time_code63" onclick="onCalTime(&quot;&quot;,&quot;RE08&quot;, &quot;12:30&quot;);">12:30</label></div><div class="time "><input type="radio" id="r_time_code127" name="r_time_code" value="RE12"><label for="r_time_code127" onclick="onCalTime(&quot;&quot;,&quot;RE12&quot;, &quot;14:30&quot;);">14:30</label></div><div class="time "><input type="radio" id="r_time_code255" name="r_time_code" value="RE13"><label for="r_time_code255" onclick="onCalTime(&quot;&quot;,&quot;RE13&quot;, &quot;15:00&quot;);">15:00</label></div><div class="time "><input type="radio" id="r_time_code511" name="r_time_code" value="RE14"><label for="r_time_code511" onclick="onCalTime(&quot;&quot;,&quot;RE14&quot;, &quot;15:30&quot;);">15:30</label></div><div class="time "><input type="radio" id="r_time_code1023" name="r_time_code" value="RE15"><label for="r_time_code1023" onclick="onCalTime(&quot;&quot;,&quot;RE15&quot;, &quot;16:00&quot;);">16:00</label></div><div class="time "><input type="radio" id="r_time_code2047" name="r_time_code" value="RE16"><label for="r_time_code2047" onclick="onCalTime(&quot;&quot;,&quot;RE16&quot;, &quot;16:30&quot;);">16:30</label></div><div class="time "><input type="radio" id="r_time_code4095" name="r_time_code" value="RE17"><label for="r_time_code4095" onclick="onCalTime(&quot;&quot;,&quot;RE17&quot;, &quot;17:00&quot;);">17:00</label></div><div class="time "><input type="radio" id="r_time_code8191" name="r_time_code" value="RE18"><label for="r_time_code8191" onclick="onCalTime(&quot;&quot;,&quot;RE18&quot;, &quot;17:30&quot;);">17:30</label></div><div class="time "><input type="radio" id="r_time_code16383" name="r_time_code" value="RE19"><label for="r_time_code16383" onclick="onCalTime(&quot;&quot;,&quot;RE19&quot;, &quot;18:00&quot;);">18:00</label></div><div class="time "><input type="radio" id="r_time_code32767" name="r_time_code" value="RE20"><label for="r_time_code32767" onclick="onCalTime(&quot;&quot;,&quot;RE20&quot;, &quot;18:30&quot;);">18:30</label></div>
-							</div>
 							
-				
 						</div>
 					</div>
 					<!-- 예약날짜 및 시간선택 끝 -->
@@ -1489,7 +1357,7 @@ $(function(){
 				}
 			
 				// 달력에서 날짜 선택시 그 날짜의 시간대 가져온다.
-				function onCalDate(selDate){
+				function onCalDate(dow, selDate){
 					console.log($(".date_"+selDate).hasClass("closed"));
 					$(".calDate").removeClass('selected');
 					$(".time-picker").html("");
@@ -1502,8 +1370,7 @@ $(function(){
 					if(!$(".date_"+selDate).hasClass("closed")){
 						$(".date_"+selDate).addClass('selected');
 						$("#reserveDate").html(selDate);
-						getTimeByDay(selDate)
-						//$(".time-picker").load("/html/reserve/_time.php?date="+selDate);
+						drawTimePicker(dow)
 						$("#r_date").val(selDate);
 					}else{
 						alert("홈페이지 시술예약은 당일이나, 1일전 예약 불가합니다.\n유선상으로 문의하여 주시기 바랍니다");

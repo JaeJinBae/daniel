@@ -13,7 +13,7 @@ public class HospitalTimeServiceImpl implements HospitalTimeService {
 
 	@Autowired
 	private HospitalTimeDao dao;
-	
+
 	@Override
 	public List<HospitalTimeVO> selectAll() {
 		return dao.selectAll();
@@ -22,6 +22,11 @@ public class HospitalTimeServiceImpl implements HospitalTimeService {
 	@Override
 	public HospitalTimeVO selectOne(int no) {
 		return dao.selectOne(no);
+	}
+
+	@Override
+	public HospitalTimeVO selectByDow(String h_date) {
+		return dao.selectByDow(h_date);
 	}
 
 	@Override
