@@ -532,7 +532,7 @@ function drawTimePicker(dow){
 			+"<label for='r_time_code"+this+"' onclick='onCalTime(&quot;&quot;,&quot;"+temp_h+":"+temp_m+"&quot;, &quot;"+temp_h+":"+temp_m+"&quot;);'>"+temp_h+":"+temp_m+"</label></div>";
 	});
 	str += "</div>";
-	console.log(timeList);
+	
 	$(".time-picker").html(str);
 }
 function makeCalendar(today){
@@ -570,6 +570,9 @@ function makeCalendar(today){
 					str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
 				}else{
 					prevDate = new Date(cd+((dNum>9?'':'0')+dNum));
+					today = new Date();
+					today.setDate(today.getDate()+2);
+					console.log(today);
 					if(prevDate.getTime() <= today.getTime()){
 						str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
 					}else{
