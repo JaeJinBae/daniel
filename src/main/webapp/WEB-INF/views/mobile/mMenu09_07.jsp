@@ -490,8 +490,131 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
-$(function(){
+function getTimeByDay(dow){
+	console.log(dow);
+	var dt;
+	$.ajax({
+		url:"${pageContext.request.contextPath}/menu09_07timeByDow/"+dow,
+		type:"POST",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"json",
+		async:false,
+		success:function(json){
+			dt = json;
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+	return dt;
+}
+
+function drawTimePicker(dow){
+	if(dow == ''){
+		return false;
+	}
+	var timeInfo = getTimeByDay(dow);
+	var timeList = new Array;
+	var s_time = 0;
+	var e_time = 0;
+	var str = "";
+	var temp_h = 0;
+	var temp_m = 0;
+
+	s_time = timeInfo.start_time;
+	e_time = timeInfo.end_time;
 	
+	timeList.push(s_time);
+	while(s_time != e_time){
+		s_time += 30;
+		timeList.push(s_time);
+	}
+	timeList.push(e_time);
+	$(timeList).each(function(){
+		temp_h = parseInt(this/60);
+		temp_h = (temp_h>9?"":"0")+temp_h;
+		temp_m = this%60;
+		temp_m = (temp_m>9?"":"0")+temp_m;
+		str += "<div class='time '>"
+			+"<input type='radio' id='r_time_code"+this+"' name='r_time_code' value='"+temp_h+":"+temp_m+"'>"
+			+"<label for='r_time_code"+this+"' onclick='onCalTime(&quot;&quot;,&quot;"+temp_h+":"+temp_m+"&quot;, &quot;"+temp_h+":"+temp_m+"&quot;);'>"+temp_h+":"+temp_m+"</label></div>";
+	});
+	str += "</div>";
+	
+	$(".time-picker").html(str);
+}
+function makeCalendar(today){
+	var year = today.getFullYear();
+	var month = today.getMonth()+1;
+	var arrDow = ["일", "월", "화", "수", "목", "금", "토"];
+	var arrDow2 = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+	var arrLastDate = [31, 28, 31, 30, 31, 31, 30, 31, 30, 31, 30, 31];
+	var lastDate;
+	var str = "<caption>예약날짜 및 시간선택 달력</caption><thead><tr><th class='sun'>일</th><th class='mon'>월</th><th class='the'>화</th><th class='wed'>수</th><th class='thu'>목</th><th class='fri'>금</th><th class='sat'>토</th></tr></thead>";
+	
+	if((year%4 == 0 && year%100 != 0) || year%400 == 0){
+		arrLastDate[1] = 29;
+	}
+	
+	lastDate = arrLastDate[month-1];
+	
+	var row = Math.ceil(lastDate/7);
+	var firstDate = new Date(year, month-1, 1);
+	var theDay = firstDate.getDay();
+	var cd = year+"-"+((month>9?'':'0')+month)+"-";
+	var dNum = 1;
+	var prevDate;
+	
+	for(var i=1; i<=6; i++){ 
+		if(dNum > lastDate){
+			break;
+		}
+		str += "<tr>";
+		for( var k=1; k<=7; k++){
+			if(i==1 && k<=theDay||dNum>lastDate){
+				str += "<td class='"+arrDow2[k-1]+" closed calDate date_' onclick=onCalDate('');><button></button></td>";
+			}else{
+				if(k==1){
+					str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
+				}else{
+					prevDate = new Date(cd+((dNum>9?'':'0')+dNum));
+					today = new Date();
+					today.setDate(today.getDate()+2);
+					if(prevDate.getTime() <= today.getTime()){
+						str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
+					}else{
+						str += "<td class='"+arrDow2[k-1]+" calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
+					}
+				}
+				
+				dNum ++;
+			}
+		}
+		str += "</tr>";
+	}
+	$(".day-info").text(year+"."+((month>9?'':'0')+month));
+	$("#selectDate").val(year+"-"+((month>9?'':'0')+month)+"-01");
+	$("#calendar_tbl_tag").html("");
+	$("#calendar_tbl_tag").append(str);
+}
+
+$(function(){
+	var today = new Date();
+	makeCalendar(today);
+	
+	$(document).on("click", ".month-next", function(){
+		var selectDate = $("#selectDate").val();
+		var nextMonth = new Date(selectDate);
+		nextMonth.setMonth(nextMonth.getMonth()+1);
+		makeCalendar(nextMonth);
+	});
+	
+	$(document).on("click", ".month-prev", function(){
+		var selectDate = $("#selectDate").val();
+		var prevMonth = new Date(selectDate);
+		prevMonth.setMonth(prevMonth.getMonth()-1);
+		makeCalendar(prevMonth);
+	});
 });
 </script>
 </head>
@@ -732,148 +855,20 @@ $(function(){
 						<div class="month">
 							<div class="brick">
 								<button class="month-prev prevMonth"><svg class="svg-inline--fa fa-chevron-left fa-w-10" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg><!-- <i class="fas fa-chevron-left"></i> --></button>
-								<span class="day-info">2019.09</span>
+								<span class="day-info"></span>
+								<input type="hidden" id="selectDate" value="selectDate">
 								<button class="month-next nextMonth" onclick="getCalendar('move','2019','10')"><svg class="svg-inline--fa fa-chevron-right fa-w-10" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg><!-- <i class="fas fa-chevron-right"></i> --></button>
 							</div>
 						</div>
 			
 			
-						<table class="calendar-tbl">
-							<caption>예약날짜 및 시간선택 달력</caption>
-							<thead>
-								<tr>
-									<th class="sun">일</th>
-									<th class="mon">월</th>
-									<th class="the">화</th>
-									<th class="wed">수</th>
-									<th class="thu">목</th>
-									<th class="fri">금</th>
-									<th class="sat">토</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="sun closed ">
-										<button>1</button>
-									</td>
-									<td class="mon  closed   calDate date_2019-09-02" onclick="onCalDate('2019-09-02');">
-										<button>2</button>
-									</td>
-									<td class="the  closed   calDate date_2019-09-03" onclick="onCalDate('2019-09-03');">
-										<button>3</button>
-									</td>
-									<td class="wed  closed   today  calDate date_2019-09-04" onclick="onCalDate('2019-09-04');">
-										<button>4</button>
-									</td>
-									<td class="thu  closed   calDate date_2019-09-05" onclick="onCalDate('2019-09-05');">
-										<button>5</button>
-									</td>
-									<td class="fri   calDate date_2019-09-06" onclick="onCalDate('2019-09-06');">
-										<button>6</button>
-									</td>
-									<td class="sat   calDate date_2019-09-07" onclick="onCalDate('2019-09-07');">
-										<button>7</button>
-									</td>
-								</tr>
-								<tr>						
-									<td class="sun closed ">
-										<button>8</button>
-									</td>
-									<td class="mon   calDate date_2019-09-09" onclick="onCalDate('2019-09-09');">
-										<button>9</button>
-									</td>
-									<td class="the   calDate date_2019-09-10" onclick="onCalDate('2019-09-10');">
-										<button>10</button>
-									</td>
-									<td class="wed   calDate date_2019-09-11" onclick="onCalDate('2019-09-11');">
-										<button>11</button>
-									</td>
-									<td class="thu   calDate date_2019-09-12" onclick="onCalDate('2019-09-12');">
-										<button>12</button>
-									</td>
-									<td class="fri   calDate date_2019-09-13" onclick="onCalDate('2019-09-13');">
-										<button>13</button>
-									</td>
-									<td class="sat   calDate date_2019-09-14" onclick="onCalDate('2019-09-14');">
-										<button>14</button>
-									</td>
-								</tr>
-								<tr>
-									<td class="sun closed ">
-										<button>15</button>
-									</td>
-									<td class="mon   calDate date_2019-09-16" onclick="onCalDate('2019-09-16');">
-										<button>16</button>
-									</td>
-									<td class="the   calDate date_2019-09-17" onclick="onCalDate('2019-09-17');">
-										<button>17</button>
-									</td>
-									<td class="wed   calDate date_2019-09-18" onclick="onCalDate('2019-09-18');">
-										<button>18</button>
-									</td>
-									<td class="thu   calDate date_2019-09-19" onclick="onCalDate('2019-09-19');">
-										<button>19</button>
-									</td>
-									<td class="fri   calDate date_2019-09-20" onclick="onCalDate('2019-09-20');">
-										<button>20</button>
-									</td>
-									<td class="sat   calDate date_2019-09-21" onclick="onCalDate('2019-09-21');">
-										<button>21</button>
-									</td>
-								</tr>
-								<tr>
-									<td class="sun closed ">
-										<button>22</button>
-									</td>
-									<td class="mon   calDate date_2019-09-23" onclick="onCalDate('2019-09-23');">
-										<button>23</button>
-									</td>
-									<td class="the   calDate date_2019-09-24" onclick="onCalDate('2019-09-24');">
-										<button>24</button>
-									</td>
-									<td class="wed   calDate date_2019-09-25" onclick="onCalDate('2019-09-25');">
-										<button>25</button>
-									</td>
-									<td class="thu   calDate date_2019-09-26" onclick="onCalDate('2019-09-26');">
-										<button>26</button>
-									</td>
-									<td class="fri   calDate date_2019-09-27" onclick="onCalDate('2019-09-27');">
-										<button>27</button>
-									</td>
-									<td class="sat   calDate date_2019-09-28" onclick="onCalDate('2019-09-28');">
-										<button>28</button>
-									</td>
-								</tr>
-								<tr>
-									<td class="sun closed ">
-										<button>29</button>
-									</td>
-									<td class="mon   calDate date_2019-09-30" onclick="onCalDate('2019-09-30');">
-										<button>30</button>
-									</td>
-									<td class="the  closed   calDate date_" onclick="onCalDate('');">
-										<button></button>
-									</td>
-									<td class="wed  closed   calDate date_" onclick="onCalDate('');">
-										<button></button>
-									</td>
-									<td class="thu  closed   calDate date_" onclick="onCalDate('');">
-										<button></button>
-									</td>
-									<td class="fri  closed   calDate date_" onclick="onCalDate('');">
-										<button></button>
-									</td>
-									<td class="sat  closed   calDate date_" onclick="onCalDate('');">
-										<button></button>
-									</td>
-								
-								</tr>
-							</tbody>
+						<table id="calendar_tbl_tag" class="calendar-tbl">
+							
 						</table>
 			
 			
 			
-			</div>
+					</div>
 			
 						<!-- 시간선택(선택:selected, 진료불가능시간:closed) -->
 						<div class="time-picker"></div>
