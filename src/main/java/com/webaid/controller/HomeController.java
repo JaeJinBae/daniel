@@ -1,6 +1,7 @@
 package com.webaid.controller;
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -867,6 +868,9 @@ public class HomeController {
 	public ResponseEntity<String> menu09_07register(@RequestBody ReservationJsonVO info) {
 		logger.info("menu09_07register");
 		ResponseEntity<String> entity = null;
+		
+		DecimalFormat df = new DecimalFormat("###,###");
+		
 		ClinicResListVO vo = new ClinicResListVO();
 		vo.setRegdate(info.getR_regdate());
 		vo.setPrice(Integer.parseInt(info.getR_pay()));
@@ -888,14 +892,14 @@ public class HomeController {
 				str += " > ";
 				str += categoryList.get(i).getCategory2_nm();
 				if(categoryList.get(i).getCategory3_nm().equals("") || categoryList.get(i).getCategory3_nm().isEmpty()){
-					str += " <strong>["+categoryList.get(i).getCategory_pay()+"]</strong>";
+					str += " <strong>["+df.format(Integer.parseInt(categoryList.get(i).getCategory_pay()))+"원]</strong>";
 					if(i != categoryList.size()-1){
 						str += "<br>";
 					}
 				}else{
 					str += " > ";
 					str += categoryList.get(i).getCategory3_nm();
-					str += " <strong>["+categoryList.get(i).getCategory_pay()+"]</strong>";
+					str += " <strong>["+df.format(Integer.parseInt(categoryList.get(i).getCategory_pay()))+"원]</strong>";
 					if(i != categoryList.size()-1){
 						str += "<br>";
 					}

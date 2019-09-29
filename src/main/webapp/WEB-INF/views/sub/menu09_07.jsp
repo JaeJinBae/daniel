@@ -1257,6 +1257,7 @@ $(function(){
 						var ndd = nd.getDate();
 						ndd = (ndd>9?'':'0')+ndd;
 						reserveJson.r_regdate = ny+"-"+nm+"-"+ndd;
+						
 						var categoryJsonArray = new Array();
 			
 						/* 예약 카테고리 목록 */
@@ -1288,7 +1289,7 @@ $(function(){
 			
 						reserveJson.categoryList = categoryJsonArray;
 						var sendData = JSON.stringify(reserveJson);
-						console.log(sendData);
+						//console.log(sendData);
 			
 						$.ajax({
 							url : "${pageContext.request.contextPath}/menu09_07register",
@@ -1318,15 +1319,6 @@ $(function(){
 			
 									form.target = "hiddenifr";
 									//form.submit();
-			
-			/*
-									$("#getCalendar").load("/html/reserve/_calendar.php");
-									$.post( "/html/reserve/_alim.php?r_name=test&r_phone=01050663011", function() {
-										alert( "success" );
-									})
-									$.post("/html/reserve/_alim.php", {r_name : $('#r_name').val(), r_phone : $('#r_phone').val()}, function(data){
-									});
-			*/
 								}else{
 									alert("오류가 발생하였습니다. 관리자에게 문의하여 주세요.");
 									return;

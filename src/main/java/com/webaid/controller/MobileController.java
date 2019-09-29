@@ -40,6 +40,7 @@ import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
 import com.webaid.service.ClinicListService;
+import com.webaid.service.ClinicResListService;
 import com.webaid.service.EventService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
@@ -82,6 +83,9 @@ public class MobileController {
 	
 	@Autowired
 	private ClinicListService clService;
+	
+	@Autowired
+	private ClinicResListService crlService;
 	
 	/*@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {

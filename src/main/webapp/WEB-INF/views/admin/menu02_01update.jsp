@@ -90,7 +90,7 @@ $(function(){
 								</tr>
 								<tr class="cont">
 									<td class="title">시술금액</td>
-									<td><input type="hidden" name="price" value="60000">${item.price}</td>
+									<td><input type="hidden" name="price" value="60000"><fmt:formatNumber value="${item.price}" pattern="#,###" />원</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">상담여부</td>

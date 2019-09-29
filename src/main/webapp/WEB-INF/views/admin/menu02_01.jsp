@@ -135,7 +135,7 @@ $(function(){
 													</td>
 													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.clinic_list}</a></td>
 													<td>${item.res_date} ${item.res_time}</td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.price}</a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><fmt:formatNumber value="${item.price}" pattern="#,###" />원</a></td>
 													<td>
 														<a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
 															<c:choose>
