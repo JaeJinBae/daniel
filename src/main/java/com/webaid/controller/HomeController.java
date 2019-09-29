@@ -27,8 +27,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
+import com.webaid.domain.CategoryVO;
 import com.webaid.domain.CautionVO;
 import com.webaid.domain.ClinicListVO;
+import com.webaid.domain.ClinicResListVO;
 import com.webaid.domain.EventVO;
 import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.NoticeVO;
@@ -37,6 +39,7 @@ import com.webaid.domain.PageMakerWith12;
 import com.webaid.domain.PageMakerWith8;
 import com.webaid.domain.PageMakerWith9;
 import com.webaid.domain.RealStoryVO;
+import com.webaid.domain.ReservationJsonVO;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.SearchCriteria12;
@@ -47,6 +50,7 @@ import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
 import com.webaid.service.ClinicListService;
+import com.webaid.service.ClinicResListService;
 import com.webaid.service.EventService;
 import com.webaid.service.HospitalTimeService;
 import com.webaid.service.NoticeService;
@@ -89,6 +93,9 @@ public class HomeController {
 	
 	@Autowired
 	private ClinicListService clService;
+	
+	@Autowired
+	private ClinicResListService crlService;
 	
 	@Autowired
 	private HospitalTimeService htService;
@@ -853,6 +860,51 @@ public class HomeController {
 		List<ClinicListVO> list = clService.listSearch(cri);
 		entity = new ResponseEntity<List<ClinicListVO>>(list, HttpStatus.OK);
 
+		return entity;
+	}
+	
+	@RequestMapping(value = "/menu09_07register", method = RequestMethod.POST)
+	public ResponseEntity<String> menu09_07register(@RequestBody ReservationJsonVO info) {
+		logger.info("menu09_07register");
+		ResponseEntity<String> entity = null;
+		ClinicResListVO vo = new ClinicResListVO();
+		vo.setRegdate(info.getR_regdate());
+		vo.setPrice(Integer.parseInt(info.getR_pay()));
+		vo.setCounseling(info.getR_counsel());
+		vo.setRes_date(info.getR_date());
+		vo.setRes_time(info.getR_time());
+		vo.setName(info.getR_name());
+		vo.setPhone(info.getR_phone());
+		vo.setEmail(info.getR_email());
+		vo.setMemo(info.getR_memo());
+		vo.setRes_state("o");
+		
+		List<CategoryVO> categoryList = info.getCategoryList();
+		String str = "";
+		if(categoryList.size() > 0){
+			
+			for(int i=0; i<categoryList.size(); i++){
+				str += categoryList.get(i).getCategory1_nm();
+				str += " > ";
+				str += categoryList.get(i).getCategory2_nm();
+				if(categoryList.get(i).getCategory3_nm().equals("") || categoryList.get(i).getCategory3_nm().isEmpty()){
+					str += " <strong>["+categoryList.get(i).getCategory_pay()+"]</strong>";
+					if(i != categoryList.size()-1){
+						str += "<br>";
+					}
+				}else{
+					str += " > ";
+					str += categoryList.get(i).getCategory3_nm();
+					str += " <strong>["+categoryList.get(i).getCategory_pay()+"]</strong>";
+					if(i != categoryList.size()-1){
+						str += "<br>";
+					}
+				}
+			}
+		}
+		vo.setClinic_list(str);
+		
+		crlService.insert(vo);
 		return entity;
 	}
 	

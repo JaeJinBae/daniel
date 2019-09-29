@@ -96,8 +96,8 @@ $(function(){
 									<td class="title">상담여부</td>
 									<td>
 										<select name="counseling" id="r_counsel" class="search_sel">
-											<option value="o">상담 요망</option>
-											<option value="x">상담 불필요</option>
+											<option value="Y">상담 요망</option>
+											<option value="N">상담 불필요</option>
 										</select>
 									</td>
 								</tr>

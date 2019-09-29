@@ -1067,7 +1067,7 @@ $(function(){
 						</p>
 					</div>
 					<div class="order-complete-btn">
-						<button class="order-btn-kakao" onclick="window.open('https://pf.kakao.com/_QxfxkCxl')"><img src="/assets/img/m/contents/btn_kakao.png">카카오톡상담</button>
+						<button class="order-btn-kakao" onclick="window.open('https://pf.kakao.com/_QxfxkCxl')"><img src="${pageContext.request.contextPath}/resources/img/m/contents/btn_kakao.png">카카오톡상담</button>
 						<button class="order-btn-complete">예약완료</button>
 						<!-- 예약완료 클릭 시 본 팝업이 사라집니다. -->
 					</div>
@@ -1084,7 +1084,7 @@ $(function(){
 			
 			
 			
-			<iframe id="hidden" name="hiddenifr" style="width:1px; height:1px; border:0;" src="filecreate.php"></iframe>
+			<!-- <iframe id="hidden" name="hiddenifr" style="width:1px; height:1px; border:0;" src="filecreate.php"></iframe> -->
 			<form name="alim" id="alim" method="post" action="/html/reserve/_alim.php">
 				<input type="hidden" name="r_name" id="r_name" value="">
 				<input type="hidden" name="r_phone" id="r_phone" value="">
@@ -1250,31 +1250,22 @@ $(function(){
 						reserveJson.r_email = $('#r_email').val();
 						reserveJson.r_memo = $('#r_memo').val();
 						reserveJson.r_counsel = ($("#agree01").is(":checked")) ? "Y" : "N";
-			
+						var nd = new Date();
+						var ny = nd.getFullYear();
+						var nm = nd.getMonth()+1;
+						nm = (nm>9?'':'0')+nm;
+						var ndd = nd.getDate();
+						ndd = (ndd>9?'':'0')+ndd;
+						reserveJson.r_regdate = ny+"-"+nm+"-"+ndd;
 						var categoryJsonArray = new Array();
-			/*
-						var category1 = new Object();
-						category1.category1_seq = "1";
-						category1.category2_seq = "2";
-						category1.category3_seq = "3";
-						category1.category_pay = "1000";
-						categoryJsonArray.push(category1);
-			
-						var category2 = new Object();
-						category2.category1_seq = "11";
-						category2.category2_seq = "22";
-						category2.category3_seq = "33";
-						category2.category_pay = "2000";
-						categoryJsonArray.push(category2);
-			*/
 			
 						/* 예약 카테고리 목록 */
 						$("#result_category").html();
 						$('.order-list p').each(function (index, item) {
 			
-							var category1 = $(this).attr("_category1");
+							/* var category1 = $(this).attr("_category1");
 							var category2 = $(this).attr("_category2");
-							var category3 = $(this).attr("_category3");
+							var category3 = $(this).attr("_category3"); */
 							var category1nm = $(this).attr("_category1nm");
 							var category2nm = $(this).attr("_category2nm");
 							var category3nm = $(this).attr("_category3nm");
@@ -1283,9 +1274,9 @@ $(function(){
 							var seq = $(this).attr("_seq");
 			
 							var category = new Object();
-							category.category1_seq = category1;
+							/* category.category1_seq = category1;
 							category.category2_seq = category2;
-							category.category3_seq = category3;
+							category.category3_seq = category3; */
 							category.category1_nm = category1nm;
 							category.category2_nm = category2nm;
 							category.category3_nm = category3nm;
@@ -1300,16 +1291,17 @@ $(function(){
 						console.log(sendData);
 			
 						$.ajax({
+							url : "${pageContext.request.contextPath}/menu09_07register",
 							type: "POST",
-							url : "/html/reserve/reserve_proc.php",
 							data: sendData,
 							dataType:"json",
-							success : function(result, status, xhr){
+							contentType : "application/json; charset=UTF-8",
+							success : function(json){
 			
-								if(result.data == "JUNGBOK"){
+								if(json == "JUNGBOK"){
 									alert("예약 하신 시간대에 이미 예약이 되어 있습니다.\n다른시간대를 이용하여 주세요.");
 									return;
-								}else if(result.data == "OK"){
+								}else if(json == "OK"){
 									$("#result_name").html($('#r_name').val());
 									$("#result_phone").html($('#r_phone').val());
 									$("#result_date").html($('#r_date').val() + " " + $('#r_time').val());
@@ -1325,7 +1317,7 @@ $(function(){
 									form.r_time.value = $('#r_time').val();
 			
 									form.target = "hiddenifr";
-									form.submit();
+									//form.submit();
 			
 			/*
 									$("#getCalendar").load("/html/reserve/_calendar.php");
@@ -1348,7 +1340,7 @@ $(function(){
 								$("#result_pay").html("");
 								$("#result_memo").html("");
 								$("#result_category").html("");
-							}
+							} 
 						});
 			
 						/*** 예약하기 - 완료 레이어창 ***/

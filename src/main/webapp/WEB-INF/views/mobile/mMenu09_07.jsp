@@ -580,7 +580,7 @@ function makeCalendar(today){
 				}else{
 					prevDate = new Date(cd+((dNum>9?'':'0')+dNum));
 					today = new Date();
-					today.setDate(today.getDate()+1);
+					today.setDate(today.getDate()+2);
 					if(prevDate.getTime() <= today.getTime()){
 						str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
 					}else{
@@ -1047,7 +1047,7 @@ $(function(){
 						</p>
 					</div>
 					<div class="order-complete-btn">
-						<button class="order-btn-kakao" onclick="window.open('https://pf.kakao.com/_QxfxkCxl')"><img src="/assets/img/m/contents/btn_kakao.png">카카오톡상담</button>
+						<button class="order-btn-kakao" onclick="window.open('https://pf.kakao.com/_QxfxkCxl')"><img src="${pageContext.request.contextPath}/resources/img/m/contents/btn_kakao.png">카카오톡상담</button>
 						<button class="order-btn-complete">예약완료</button>
 						<!-- 예약완료 클릭 시 본 팝업이 사라집니다. -->
 					</div>

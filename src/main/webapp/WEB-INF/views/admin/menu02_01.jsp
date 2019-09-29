@@ -128,7 +128,7 @@ $(function(){
 													<td>
 														<a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
 															<c:choose>
-																<c:when test="${item.counseling == 'o'}">상담요망</c:when>
+																<c:when test="${item.counseling == 'Y'}">상담요망</c:when>
 																<c:otherwise>x</c:otherwise>
 															</c:choose>
 														</a>
