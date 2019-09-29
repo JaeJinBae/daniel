@@ -1295,7 +1295,7 @@ $(function(){
 							url : "${pageContext.request.contextPath}/menu09_07register",
 							type: "POST",
 							data: sendData,
-							dataType:"json",
+							dataType:"text",
 							contentType : "application/json; charset=UTF-8",
 							success : function(json){
 			
@@ -1324,8 +1324,9 @@ $(function(){
 									return;
 								}
 							},
-							error: function(jqXHR, textStatus, errorThrown){
-								console.log(jqXHR.responseText);
+							error: function(request,status,error){
+								//console.log(jqXHR.responseText);
+								console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 								$("#result_name").html("");
 								$("#result_phone").html("");
 								$("#result_date").html("");
