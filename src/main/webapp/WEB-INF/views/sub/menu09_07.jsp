@@ -1390,9 +1390,6 @@ $(function(){
 					}
 				}
 			</script>
-			
-			
-			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
 	
