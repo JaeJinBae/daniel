@@ -513,12 +513,16 @@ function drawTimePicker(dow){
 	var temp_m = 0;
 
 	s_time = timeInfo.start_time;
-	e_time = timeInfo.end_time;
+	e_time = timeInfo.end_time-30;
 	
-	timeList.push(s_time);
+	 
 	while(s_time != e_time){
+		if(s_time == 780 || s_time == 810 || s_time == 840){
+			
+		}else{
+			timeList.push(s_time);
+		}
 		s_time += 30;
-		timeList.push(s_time);
 	}
 	timeList.push(e_time);
 	$(timeList).each(function(){
