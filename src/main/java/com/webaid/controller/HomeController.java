@@ -102,11 +102,12 @@ public class HomeController {
 	@Autowired
 	private HospitalTimeService htService;
 	
-	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.POST)
 	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
 		ResponseEntity<String> entity = null;
 		
 		UserVO vo = uService.selectById(id);
+		System.out.println(vo);
 		if(vo == null){
 			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
 		}else{
@@ -203,10 +204,34 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String joinPost() {
+	public ResponseEntity<String> joinPost(@RequestBody Map<String, String> info) {
 		logger.info("join POST");
+		ResponseEntity<String> entity = null;
+		System.out.println(info);
+		try {
+			UserVO vo = new UserVO();
+			vo.setId(info.get("id"));
+			vo.setName(info.get("name"));
+			vo.setLv("일반회원");
+			vo.setPw(info.get("pw"));
+			vo.setPhone(info.get("phone"));
+			vo.setBirth("");
+			vo.setGender(info.get("gender"));
+			vo.setAddr("");
+			vo.setEmail(info.get("email"));
+			vo.setRegdate(info.get("regdate"));
+			vo.setLogin_cnt(0);
+			
+			uService.insert(vo);
+			
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
 		
-		return "sub/join";
+		
+		return entity;
 	}
 	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)

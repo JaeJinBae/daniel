@@ -481,8 +481,131 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
+function userRegister(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/join",
+		type:"POST",
+		contentType : "application/json; charset=UTF-8",
+		data:JSON.stringify(info),
+		dataType:"text",
+		async:false,
+		success:function(json){
+			if(json == "ok"){
+				alert("회원가입이 완료되었습니다. \n가입한 정보로 로그인하세요.");
+				location.href='${pageContext.request.contextPath}/login';
+			}else{
+				alert("회원가입에 실패하였습니다. \n관리자에게 문의하세요.");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
+function idchk(id){
+	var dt;
+	$.ajax({
+		url:"${pageContext.request.contextPath}/id_duplicate_chk/"+id,
+		type:"POST",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		async:false,
+		success:function(json){
+			dt = json;
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+	return dt;
+}
+
 $(function(){
+	$("#btnIdCheck").click(function(){
+		var id = $("#m_id").val();
+		var idchk_res = idchk(id);
+		
+		if(idchk_res == "empty"){
+			alert("사용가능한 아이디입니다.");
+			$("input[name='m_id_check']").val("o");
+		}else{
+			alert("이미 사용중인 아이디입니다.");
+			$("input[name='m_id_check']").val("x");
+		}
+	});
 	
+	$("#m_id").change(function(){
+		$("input[name='m_id_check']").val("x");
+	});
+	
+	$(".btn-submit").click(function(){
+		var agree = $("#agree").prop("checked");
+		var name = $("#m_name").val();
+		var id = $("#m_id").val();
+		var idConfirm = $("input[name='m_id_check']").val();
+		var pw = $("#m_pass").val();;
+		var pwConfirm = $("#m_repass").val();;
+		var phone1 = $("#phone1").val();
+		var phone2 = $("#phone2").val();
+		var phone3 = $("#phone3").val();
+		var phone = phone1+"-"+phone2+"-"+phone3;
+		var gender = $("input[name='m_sex']:checked").val();
+		var email1 = $("#m_email1").val();
+		var email2 = $("#m_email2").val();
+		var email = email1+"@"+email2;
+		
+		if(agree == false){
+			alert("개인정보취급방침 항목은 필수입니다.");
+			return false;
+		}
+		if(name == ""){
+			alert("이름 항목은 필수입니다.");
+			return false;
+		}
+		if(id == ""){
+			alert("아이디 항목은 필수입니다.");
+			return false;
+		}
+		if(idConfirm == "x"){
+			alert("아이디 중복확인을 진행하세요.");
+			return false;
+		}
+		if(pw == ""){
+			alert("비밀번호 항목은 필수입니다.");
+			return false;
+		}
+		if(pw != pwConfirm){
+			alert("비밀번호가 일치하지 않습니다.");
+			return false;
+		}
+		if(phone2 == ""){
+			alert("휴대폰 항목은 필수입니다.");
+			return false;
+		}
+		if(phone3 == ""){
+			alert("휴대폰 항목은 필수입니다.");
+			return false;
+		}
+		if(gender == ""){
+			alert("성별 항목은 필수입니다.");
+			return false;
+		}
+		if(email == ""){
+			alert("이메일 항목은 필수입니다.");
+			return false;
+		}
+		var nd = new Date();
+		var y = nd.getFullYear();
+		var m = nd.getMonth()+1;
+		m = (m>9?'':'0')+m;
+		var d = nd.getDate();
+		d = (d>9?'':'0')+d;
+		var regdate = y+"-"+m+"-"+d;
+		
+		var info = {"name":name, "id":id, "pw":pw, "phone":phone, "gender":gender, "email":email, "regdate":regdate};
+		userRegister(info);
+	});
 });
 </script>
 </head>
@@ -593,7 +716,7 @@ $(function(){
 							<br>
 							② 필수 정보가 아닌 선택 정보의 경우 개인정보 수집에 동의하지 않을 수 있으며 서비스 이용에 제한은 없습니다.			
 						</p>
-						<input type="checkbox" name="agree" id="agree" value="Y">
+						<input type="checkbox" name="agree" id="agree" value="Y" checked="checked">
 						<label for="agree">개인정보 취급방침에 동의합니다.</label>
 					</li>
 					<li class="join-form">
@@ -601,7 +724,7 @@ $(function(){
 								
 						<legend>개인정보입력</legend>
 						<!-- form join -->
-						<form name="member" id="member" method="post" enctype="multipart/form-data">
+						<form name="member" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/join">
 							<input type="hidden" name="data_array" value="Y">
 							<input type="hidden" name="mode" value="insert">
 							<input type="hidden" name="seq" value="">
@@ -630,7 +753,7 @@ $(function(){
 											<button type="button" id="btnIdCheck">아이디 중복확인</button>
 		
 											<p class="cap">* 영문으로 시작하는 영문소문자, 영문소문자+숫자4~13자 입력해주세요.</p>
-											<input type="hidden" name="m_id_check" value="0">
+											<input type="hidden" name="m_id_check" value="x">
 											<input type="hidden" name="m_id_hidden">
 										</td>
 									</tr>
@@ -656,7 +779,7 @@ $(function(){
 									<tr>
 										<th>성별<i class="star">*</i></th>
 										<td>
-											<input type="radio" name="m_sex" id="m_sex1" value="M" valid="required" element-name="성별"> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="m_sex" id="m_sex2" value="F" valid="required" element-name="성별"> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;					</td>
+											<input type="radio" name="m_sex" id="m_sex1" value="m" valid="required" element-name="성별"> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="m_sex" id="m_sex2" value="f" checked="checked" valid="required" element-name="성별"> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;					</td>
 									</tr>
 									<tr>
 										<th>E-mail<i class="star">*</i></th>
@@ -680,7 +803,7 @@ $(function(){
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group-center">
 				<div class="inner">
-					<input type="submit" class="btn btn-submit" value="회원가입">
+					<button type="button" class="btn btn-submit">회원가입</button>
 					<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/'">취소</button>
 				</div>
 			</div>
