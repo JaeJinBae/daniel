@@ -1,7 +1,5 @@
 package com.webaid.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import java.io.File;
 import java.text.DecimalFormat;
 import java.util.Iterator;
@@ -9,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -164,6 +163,36 @@ public class HomeController {
 		logger.info("login GET");
 		
 		return "sub/login";
+	}
+	
+	@RequestMapping(value = "/loginIdPwChk", method = RequestMethod.POST)
+	public ResponseEntity<String> login(@RequestBody Map<String, String> info, HttpSession session) {
+		logger.info("loginIdPwChk");
+		ResponseEntity<String> entity = null;
+		
+		UserVO vo = uService.selectById(info.get("id"));
+		if(vo == null){
+			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
+		}else{
+			if(vo.getPw().equals(info.get("pw"))){
+				session.setAttribute("id", vo.getId());
+				session.setAttribute("no", vo.getNo());
+				entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+				
+			}else{
+				entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			}
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(HttpServletRequest req){
+		HttpSession session = req.getSession(false);
+		if(session != null){
+			session.invalidate();
+		}
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)

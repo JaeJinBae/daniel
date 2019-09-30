@@ -486,6 +486,8 @@ $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(3)").addClass("active");
 	
+	
+	
 	$(".board-kinds > ul > li > a").click(function(e){
 		e.preventDefault();
 		var k=$(this).find("input").val();
