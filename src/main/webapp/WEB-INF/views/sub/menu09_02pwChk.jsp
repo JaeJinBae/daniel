@@ -482,9 +482,36 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
+function pwChk(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/menu09_02pwChk",
+		type:"POST",
+		data:JSON.stringify(info),
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		async:false,
+		success:function(json){
+			if(json == "ok"){
+				location.href="${pageContext.request.contextPath}/menu09_02read"+$("input[name='cri']").val();
+			}else{
+				alert("비밀번호가 일치하지 않습니다.");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(2)").addClass("active");
+	
+	$(".btn-submit").click(function(){
+		var pw = $("input[name='m_pass']").val();
+		var no = "${no}";
+		var info = {"no":no, "pw":pw};
+		pwChk(info);
+	});
 });
 </script>
 </head>
@@ -555,6 +582,7 @@ $(function(){
 			<div class="board-titl">
 				<h5>온라인 상담</h5>
 			</div>
+			<input type="hidden" name="cri" value="${pageMaker.makeSearch(pageMaker.cri.page)}&no=${no}">
 			<!-- 게시판 타이틀 끝 -->
 			<form name="inquire" id="inquire" method="post" action="" onsubmit="return false">
 				<input type="hidden" name="fparam" value="pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;select_key=&amp;input_key=&amp;nextmode=view&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;mode=password&amp;nextmode=view&amp;seq=2497&amp;pseq=&amp;btap=">
@@ -569,7 +597,7 @@ $(function(){
 					<!-- 게시판 버튼 시작 -->
 					<div class="btn-group-center">
 						<div class="inner">
-							<button type="submit" class="btn btn-submit" onclick="inquire_it('submit')">확인</button>
+							<button type="button" class="btn btn-submit">확인</button>
 							<button class="btn btn-cancel" onclick="history.go('-1')">취소</button>
 						</div>
 					</div>

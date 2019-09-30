@@ -448,10 +448,30 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value = "/menu09_02pwChk", method = RequestMethod.GET)
-	public String mMenu09_02pwChk(Model model) {
-		logger.info("mMenu09_02pwChk GET");
-		
+	public String menu09_02pwChkGet(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) {
+		logger.info("menu09_02pwChk GET");
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("no", no);
 		return "mobile/mMenu09_02pwChk";
+	}
+	
+	@RequestMapping(value = "/menu09_02pwChk", method = RequestMethod.POST)
+	public ResponseEntity<String> menu09_02pwChkPost(@RequestBody Map<String, String> info) {
+		logger.info("menu09_02pwChk GET");
+		ResponseEntity<String> entity = null;
+		AdviceVO vo = aService.selectOne(Integer.parseInt(info.get("no")));
+		if(vo.getPw().equals(info.get("pw"))){
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
+		
+		return entity;
 	}
 	
 	@RequestMapping(value = "/menu09_02read", method = RequestMethod.GET)
@@ -471,12 +491,6 @@ public class MobileController {
 		return "mobile/mMenu09_02read";
 	}
 	
-	@RequestMapping(value = "/menu09_02read2", method = RequestMethod.GET)
-	public String mMenu09_02read2(Model model) {
-		logger.info("mMenu09_02read2 GET");
-		
-		return "mobile/mMenu09_02read2";
-	}
 	
 	@RequestMapping(value = "/menu09_02register", method = RequestMethod.GET)
 	public String mMenu09_02register(Model model) {

@@ -587,7 +587,8 @@ $(function(){
 								<tr>
 									<td>${num}</td>
 									<td class="subject" data-state="비공개">
-										<a href="${pageContext.request.contextPath}/menu09_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
+										<%-- <a href="${pageContext.request.contextPath}/menu09_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a> --%>
+										<a href="${pageContext.request.contextPath}/menu09_02pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
 									</td>
 									<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>
 									<c:if test="${item.state != '상담완료'}"><td><i class="state ready">답변대기</i></td></c:if>

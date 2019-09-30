@@ -490,8 +490,36 @@ keyframes fa-spin { 0%{
 }
 </style>
 <script>
+function pwChk(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/m/menu09_02pwChk",
+		type:"POST",
+		data:JSON.stringify(info),
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		async:false,
+		success:function(json){
+			if(json == "ok"){
+				location.href="${pageContext.request.contextPath}/m/menu09_02read"+$("input[name='cri']").val();
+			}else{
+				alert("비밀번호가 일치하지 않습니다.");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
 $(function(){
+	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(2)").addClass("active");
 	
+	$(".btn-submit").click(function(){
+		var pw = $("input[name='m_pass']").val();
+		var no = "${no}";
+		var info = {"no":no, "pw":pw};
+		pwChk(info);
+	});
 });
 </script>
 </head>
@@ -542,73 +570,23 @@ $(function(){
 			</div>
 			<!-- 서브 비주얼영역 끝 -->
 			
-			<!-- 타이틀 시작 -->
-			<div class="board-title">
-				<h5>온라인 상담</h5>
-			</div>
-			<!-- 타이틀 끝 -->
-			
-			<div class="search-box">
-				<form name="board_search" method="post" action="" onsubmit="return inquire_search_it(this)">
-					<select name="select_key" id="select_key"><option value="i_title|i_content|i_name">전체</option><option value="i_title">제목</option><option value="i_content">내용</option><option value="i_name">작성자</option></select>		<input type="text" title="검색어" name="input_key" value="">
-					<button type="submit">검색</button>
-				</form>
-			</div>
-			
-			
-			<div class="board-counsel-list">
-				<ul class="full">
+			<form name="inquire" id="inquire" method="post" action="" onsubmit="return false">
+				<input type="hidden" name="cri" value="${pageMaker.makeSearch(pageMaker.cri.page)}&no=${no}">
+				<div class="check-password">
+					<h3>비밀번호 입력 <svg class="svg-inline--fa fa-lock fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="lock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg><!-- <i class="fas fa-lock"></i> --></h3>
+					<p>게시물 작성 시 입력한<br>비밀번호를 입력해주세요.</p>
+					<input type="password" name="m_pass" valid="required" element-name="비밀번호">
 					
-					<c:choose>
-					    <c:when test="${fn:length(list) == 0}">
-				        	<li style="text-align: center;">등록된 게시물이 없습니다.</li>
-					    </c:when>
-					    <c:otherwise>
-					    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
-					        <c:forEach var="item" items="${list}">
-								<li>
-									<%-- <a href="${pageContext.request.contextPath}/m/menu09_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"> --%>
-									<a href="${pageContext.request.contextPath}/m/menu09_02pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
-										<b><!---->${item.title}</b>
-										<i class="name">${item.name}</i><span class="line">|</span><i class="date">${item.regdate}</i><span class="line">|</span><i class="date">비공개</i>
-									</a>
-									<div class="answer">
-										<c:if test="${item.state == '상담완료'}"><i class="state com">답변완료</i></c:if>
-										<c:if test="${item.state != '상담완료'}"><i class="state ready">답변대기</i></c:if>
-									</div>
-								</li>
-								<c:set var="num" value="${num-1}"></c:set>	
-							</c:forEach>
-					    </c:otherwise> 
-					</c:choose>
-					
-				</ul>
-			</div>
-			
-			<!-- 게시판 버튼 시작 -->
-			<div class="btn-group">
-				<div class="inner">
-					<a href="${pageContext.request.contextPath}/m/menu09_02register" class="btn btn-list">글쓰기</a>
+					<!-- 게시판 버튼 시작 -->
+					<div class="btn-group-center">
+						<div class="inner">
+							<button type="button" class="btn btn-submit">확인</button>
+							<button class="btn btn-cancel" onclick="history.go('-1')">취소</button>
+						</div>
+					</div>
+					<!-- 게시판 버튼 끝 -->
 				</div>
-			</div>
-			<!-- 게시판 버튼 끝 -->
-			
-			
-			<!-- 페이징 시작 -->
-			<div id="board-pagenation">
-				<div class="inner">
-					<c:if test="${pageMaker.prev}">
-						<a href="${pageMaker.makeSearch(pageMaker.startPage-1) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
-					</c:if>
-					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-						<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
-					</c:forEach>
-					<c:if test="${pageMaker.next}">
-						<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
-					</c:if>
-				</div>
-			</div>	<!-- 페이징 끝 -->
-			
+			</form>
 		</section>
 	
 		<!-- 전체 페이지 오시는길(오시는길, 진료시간 안내, 상담문의, footer) 시작 -->
