@@ -121,3 +121,8 @@
 
 	<a href="${pageContext.request.contextPath}/menu09_07" class="gnb-view"></a>
 </header>
+<script>
+$(function(){
+	console.log(document.referrer);
+});
+</script>

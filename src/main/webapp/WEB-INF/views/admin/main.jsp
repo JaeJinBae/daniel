@@ -135,7 +135,7 @@ $(function(){
 						<div class="b01 board_layout">
 							<div class="board_top">
 								<h2>온라인상담</h2>
-								<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/admin05_01'">더보기 &gt;</a>
+								<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_01'">더보기 &gt;</a>
 							</div>
 							<table class="main_board">
 								<colgroup>
