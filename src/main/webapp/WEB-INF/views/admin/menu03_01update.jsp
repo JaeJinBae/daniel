@@ -135,7 +135,7 @@ $(function(){
 				</ul>
 			</div>
 			
-			<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js" type="text/javascript"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
 			
 			<div class="main_bottom_area">
 				<form name="eventlist" id="eventlist" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu03_01update${pageMaker.makeSearch(pageMaker.cri.page)}">

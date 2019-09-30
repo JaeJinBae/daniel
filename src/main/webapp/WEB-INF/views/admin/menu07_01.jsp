@@ -239,8 +239,8 @@ $(function(){
 	$("#start_year_key > option[value='"+year+"']").prop("selected", true);
 	$("#end_year_key > option[value='"+year+"']").prop("selected", true);
 	
-	month = (month > 10) ? month+"":"0"+month;
-	date = (date > 10) ? date+"":"0"+date;
+	month = (month > 9) ? month+"":"0"+month;
+	date = (date > 9) ? date+"":"0"+date;
 	
 	$(".search_t_box100").val(year+"-"+month+"-"+date);
 	

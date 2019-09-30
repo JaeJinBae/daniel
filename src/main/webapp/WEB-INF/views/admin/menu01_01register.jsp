@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/style_admin.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
 <!-- ********************************************플러그인********************************************* -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <!-- ************************************************************************************************* -->
 <!-- jQuery UI CSS파일 -->
@@ -22,6 +23,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script> --%>
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
@@ -32,8 +34,8 @@ $(function(){
 	var month = ndate.getMonth()+1;
 	var date = ndate.getDate();
 	
-	month = (month > 10) ? month+"":"0"+month;
-	date = (date > 10) ? date+"":"0"+date;
+	month = (month > 9) ? month+"":"0"+month;
+	date = (date > 9) ? date+"":"0"+date;
 	
 	$("#regdate").val(year+"-"+month+"-"+date);
 	
@@ -83,7 +85,7 @@ $(function(){
 				</ul>
 			</div>
 			
-			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
+			
 			
 			<div class="main_bottom_area">
 				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu01_01register${pageMaker.makeSearch(pageMaker.cri.page)}">
@@ -137,6 +139,9 @@ $(function(){
 									<td class="title">내용</td>
 									<td>
 										<textarea id="b_content" name="content"></textarea>
+										<script type="text/javascript">
+											CKEDITOR.replace('content',{filebrowserUploadUrl:"${pageContext.request.contextPath}/admin/imgUpload/notice",height:500});
+										</script>
 									</td>
 								</tr>
 							</table>
@@ -155,9 +160,7 @@ $(function(){
 				</form>
 			</div><!-- main_bottom_area -->
 			
-			<script type="text/javascript">
-					CKEDITOR.replace('content',{filebrowserUploadUrl:"/admin/imgUpload/notice", width:'100%', height:'500px'});
-			</script>
+			
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->

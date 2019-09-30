@@ -535,7 +535,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>아이디찾기 ▼</button>
+							<button>비밀번호찾기 ▼</button>
 						</li>
 					</ul>
 				</div>

@@ -30,8 +30,8 @@ $(function(){
 	var month = ndate.getMonth()+1;
 	var date = ndate.getDate();
 	
-	month = (month > 10) ? month+"":"0"+month;
-	date = (date > 10) ? date+"":"0"+date;
+	month = (month > 9) ? month+"":"0"+month;
+	date = (date > 9) ? date+"":"0"+date;
 	
 	$("#regdate").val(year+"-"+month+"-"+date);
 	
@@ -82,7 +82,7 @@ $(function(){
 				</ul>
 			</div>
 			
-			<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js" type="text/javascript"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
 			
 			<div class="main_bottom_area">
 				<form name="board" id="board" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu01_03register">

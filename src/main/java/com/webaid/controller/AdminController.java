@@ -140,8 +140,8 @@ public class AdminController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/imgUpload/{type}")
-	public Map<String, Object> imgaeUpload(@PathVariable("type")String type, HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
+	@RequestMapping("/imgUpload/{btype}")
+	public Map<String, Object> imgaeUpload(@PathVariable("btype") String btype, HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
 			throws Exception {
 		logger.info("image upload!!!!!");
 
@@ -165,21 +165,22 @@ public class AdminController {
 
 		// 이미지를 업로드할 디렉토리(배포경로로 설정)
 		String innerUploadPath = "";
-		if(type.equals("notice")){
+		if(btype.equals("notice")){
 			innerUploadPath = "resources/uploadNotice/";
-		}else if(type.equals("beforeAfter")){
+		}else if(btype.equals("beforeAfter")){
 			innerUploadPath = "resources/uploadBeforeAfter/";
-		}else if(type.equals("realStory")){
+		}else if(btype.equals("realStory")){
 			innerUploadPath = "resources/uploadRealStory/";
-		}else if(type.equals("caution")){
+		}else if(btype.equals("caution")){
 			innerUploadPath = "resources/uploadCaution/";
-		}else if(type.equals("review")){
+		}else if(btype.equals("review")){
 			innerUploadPath = "resources/uploadReview/";
-		}else if(type.equals("event")){
+		}else if(btype.equals("event")){
 			innerUploadPath = "resources/uploadEvent/";
-		}else if(type.equals("advice")){
+		}else if(btype.equals("advice")){
 			innerUploadPath = "resources/uploadAdvice/";
 		}
+		
 		String uploadPath = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
 		logger.info(uploadPath);
 
@@ -194,7 +195,7 @@ public class AdminController {
 		map.put("uploaded", 1);
 		map.put("fileName", fileName);
 		map.put("url", fileUrl);
-
+		
 		return map;
 	}
 	
@@ -405,7 +406,7 @@ public class AdminController {
 			imgNameList.add(fileName);
 			imgNameList.add(storedFileName);
 			try {
-				//mFile.transferTo(new File(path+storedFileName));
+				mFile.transferTo(new File(path+storedFileName));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -628,7 +629,7 @@ public class AdminController {
 			}
 			
 			try {
-				//mFile.transferTo(new File(path+storedFileName));
+				mFile.transferTo(new File(path+storedFileName));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -825,7 +826,7 @@ public class AdminController {
 			}
 			
 			try {
-				//mFile.transferTo(new File(path+storedFileName));
+				mFile.transferTo(new File(path+storedFileName));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -1315,7 +1316,7 @@ public class AdminController {
 			vo.setThumb_stored(storedFileName);
 			
 			try {
-				//mFile.transferTo(new File(path+storedFileName));
+				mFile.transferTo(new File(path+storedFileName));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -1365,7 +1366,7 @@ public class AdminController {
 			}
 			
 			try {
-				//mFile.transferTo(new File(path+storedFileName));
+				mFile.transferTo(new File(path+storedFileName));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -1709,7 +1710,7 @@ public class AdminController {
 			}
 			
 			try {
-				//mFile.transferTo(new File(path+storedFileName));
+				mFile.transferTo(new File(path+storedFileName));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -1876,7 +1877,7 @@ public class AdminController {
 			}
 			
 			try {
-				//mFile.transferTo(new File(path+storedFileName));
+				mFile.transferTo(new File(path+storedFileName));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -2277,7 +2278,7 @@ public class AdminController {
 		return "admin/menu07_02";
 	}
 	
-	@ResponseBody
+	/*@ResponseBody
 	@RequestMapping("/imgUpload")
 	public Map<String, Object> noticeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
 			throws Exception {
@@ -2319,5 +2320,5 @@ public class AdminController {
 		map.put("url", fileUrl);
 
 		return map;
-	}
+	}*/
 }

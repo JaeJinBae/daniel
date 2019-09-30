@@ -487,41 +487,9 @@ keyframes fa-spin { 0%{
 
 </style>
 <script>
-function findId(info){
-	$.ajax({
-		url:"${pageContext.request.contextPath}/m/findId",
-		type:"POST",
-		contentType : "application/json; charset=UTF-8",
-		dataType:"text",
-		data: JSON.stringify(info),
-		async:false,
-		success:function(json){
-			if(json =="no"){
-				alert("일치하는 정보가 없습니다.");
-				
-			}else{
-				$("#no").val(json);
-				$("#f1").submit();
-				
-			}
-		},
-		error:function(request,status,error){
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		}
-	});
-}
-
 $(function(){
 	$("#btnSubmit").click(function(){
-		var name = $("#m_name").val();
-		var birth_yaer = $("#birth_year").val();
-		var birth_month = $("#birth_month").val();
-		var birth_date = $("#birth_date").val();
-		var email1 = $("#m_email1").val();
-		var email2 = $("#m_email2").val();
-		var email = email1+"@"+email2;
-		var info = {"name":name, "email":email};
-		findId(info);
+		alert("일치하는 정보가 없습니다.");
 	});
 	
 });
@@ -548,7 +516,7 @@ $(function(){
 							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
 						</li>
 						<li class="gnb">
-							<button>아이디찾기 ▼</button>
+							<button>비밀번호찾기 ▼</button>
 						</li>
 					</ul>
 				</div>
@@ -572,8 +540,8 @@ $(function(){
 			<!-- 아이디찾기 폼 시작 -->
 			<div id="find-account">
 				<div class="find-account-nav">
-					<a href="/m-find-id">아이디 찾기</a>
-					<a href="/m-find-pw" class="active">비밀번호 찾기</a>
+					<a href="${pageContext.request.contextPath}/m/findId">아이디 찾기</a>
+					<a href="${pageContext.request.contextPath}/m/findPw" class="active">비밀번호 찾기</a>
 				</div>
 				<ul class="find-account-inner">
 					<form name="member" id="member" method="post" action="" onsubmit="return false">
@@ -618,7 +586,7 @@ $(function(){
 										<select name="m_emailcode" id="m_emailcode" title="이메일의 계정"><option value="" selected="">직접입력</option><option value="EM01">naver.com</option><option value="EM02">daum.net</option><option value="EM03">gmail.com</option><option value="EM04">yahoo.co.kr</option><option value="EM05">yahoo.com</option><option value="EM06">nate.com</option><option value="EM07">paran.com</option><option value="EM08">google.com</option><option value="EM09">empas.com</option><option value="EM10">hotmail.com</option><option value="EM11">msn.com</option><option value="EM12">korea.com</option><option value="EM13">dreamwiz.com</option><option value="EM14">hanafos.com</option><option value="EM15">freechal.com</option><option value="EM16">chol.com</option><option value="EM17">empal.com</option><option value="EM18">lycos.com</option><option value="EM19">netian.com</option></select>						</td>
 								</tr>
 							</tbody></table>
-							<button type="button" id="btnSubmit" onclick="member_it('find_pw')">비밀번호 찾기</button>
+							<button type="button" id="btnSubmit">비밀번호 찾기</button>
 						</li>
 					</form>
 				</ul>

@@ -47,8 +47,8 @@ $(function(){
 		var month = ndate.getMonth()+1;
 		var date = ndate.getDate();
 		
-		month = (month > 10) ? month+"":"0"+month;
-		date = (date > 10) ? date+"":"0"+date;
+		month = (month > 9) ? month+"":"0"+month;
+		date = (date > 9) ? date+"":"0"+date;
 		
 		$("#regdate").val(year+"-"+month+"-"+date);
 		

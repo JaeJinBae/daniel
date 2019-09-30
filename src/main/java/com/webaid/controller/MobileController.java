@@ -143,8 +143,8 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value="/findPw", method=RequestMethod.GET)
-	public String findPw(HttpServletRequest req, Model model){
-		
+	public String findPw(Model model){
+		logger.info("findPw GEt");
 		return "mobile/mFindPw";
 	}
 	

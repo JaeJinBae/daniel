@@ -18,7 +18,7 @@
 		</li>
 		<li>
 			<p>
-				<a href="/admin/login/logout.html">
+				<a href="${pageContext.request.contextPath}/logout">
 					<img src="${pageContext.request.contextPath}/resources/img/admin/top_icon_logout.png" alt="logout">
 					<span class="txt_666_n">Logout</span>
 				</a>
@@ -26,7 +26,7 @@
 		</li>
 		<li>
 			<p>
-				<a href="/admin/login/mypage.html">
+				<a href="#none">
 					<img src="${pageContext.request.contextPath}/resources/img/admin/top_icon_logout.png" alt="정보수정">
 					<span class="txt_666_n">정보수정</span>
 				</a>
