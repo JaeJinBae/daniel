@@ -202,6 +202,13 @@ public class HomeController {
 		return "sub/join";
 	}
 	
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public String joinPost() {
+		logger.info("join POST");
+		
+		return "sub/join";
+	}
+	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(Model model) {
 		logger.info("menu01_01 GET");

@@ -680,8 +680,8 @@ $(function(){
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group-center">
 				<div class="inner">
-					<button type="button" class="btn btn-submit" onclick="member_it('insert')">회원가입</button>
-					<button type="button" class="btn btn-cancel" onclick="member_it('reset')">취소</button>
+					<input type="submit" class="btn btn-submit" value="회원가입">
+					<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/'">취소</button>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->
