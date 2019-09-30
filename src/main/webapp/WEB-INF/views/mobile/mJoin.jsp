@@ -597,7 +597,11 @@ $(function(){
 			alert("성별 항목은 필수입니다.");
 			return false;
 		}
-		if(email == ""){
+		if(email1 == ""){
+			alert("이메일 항목은 필수입니다.");
+			return false;
+		}
+		if(email2 == ""){
 			alert("이메일 항목은 필수입니다.");
 			return false;
 		}
@@ -747,7 +751,8 @@ $(function(){
 								</li>
 								<li>
 									<label for="m_sex1">성별 <i class="star">*</i></label>
-									<p class="radio"><input type="radio" name="m_sex" id="m_sex1" value="M" valid="required" element-name="성별"> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="m_sex" id="m_sex2" value="F" valid="required" element-name="성별"> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;</p>
+									<p class="radio"><input type="radio" name="m_sex" id="m_sex1" value="m" valid="required" element-name="성별"> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="m_sex" id="m_sex2" value="f" valid="required" element-name="성별"> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;</p>
 								</li>
 								<li>
 									<label for="phone1">휴대폰 <i class="star">*</i></label>

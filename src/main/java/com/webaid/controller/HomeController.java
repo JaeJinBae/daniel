@@ -1,6 +1,8 @@
 package com.webaid.controller;
 
 import java.io.File;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.List;
@@ -228,8 +230,119 @@ public class HomeController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}	
+		return entity;
+	}
+	
+	@RequestMapping(value="/myInfo", method=RequestMethod.GET)
+	public String myInfo(Model model){
+		logger.info("myinfo get");
+		
+		return "sub/myInfo";
+	}
+	
+	@RequestMapping(value="/myInfo", method=RequestMethod.POST)
+	public ResponseEntity<String> myInfoPost(@RequestBody Map<String, String> info, Model model){
+		logger.info("myinfo POST");
+		ResponseEntity<String> entity = null;
+		UserVO vo = uService.selectById(info.get("id"));
+		
+		if(vo == null){
+			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
+		}else{
+			if(vo.getPw().equals(info.get("pw"))){
+				entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+				
+			}else{
+				entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			}
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/myInfoEdit", method=RequestMethod.GET)
+	public String myInfoEditGet(HttpServletRequest req, Model model){
+		logger.info("myinfoEdit get");
+		HttpSession session = req.getSession(false);
+		if(session == null){
+			return "redirect:/login";
+		}else{
+			System.out.println(session.getAttribute("no"));
+			int no = Integer.parseInt(session.getAttribute("no")+"");
+			UserVO vo = uService.selectOne(no);
+			model.addAttribute("item", vo);
 		}
 		
+		return "sub/myInfoEdit";
+	}
+	
+	@RequestMapping(value="/myInfoEdit", method=RequestMethod.POST)
+	public ResponseEntity<String> myInfoEditPost(@RequestBody Map<String, String> info, Model model){
+		logger.info("myinfoEdit POST");
+		ResponseEntity<String> entity = null;
+		try {
+			UserVO vo = new UserVO();
+			vo.setNo(Integer.parseInt(info.get("no")));
+			vo.setPhone(info.get("phone"));
+			vo.setGender(info.get("gender"));
+			vo.setEmail(info.get("email"));
+			if(info.get("new_pw").length() <2){
+				UserVO prevVO = uService.selectOne(Integer.parseInt(info.get("no")));
+				vo.setPw(prevVO.getPw());
+			}else{
+				vo.setPw(info.get("new_pw"));
+			}
+			
+			uService.update(vo);
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/quickInquireRegister", method=RequestMethod.POST)
+	public ResponseEntity<String> quickInquireRegister(@RequestBody Map<String, String> info, Model model){
+		logger.info("quickInquireRegister POST");
+		ResponseEntity<String> entity = null;
+		InetAddress local;
+		String ip = "";
+		try {
+			local = InetAddress.getLocalHost();
+			ip = local.getHostAddress();
+			System.out.println("local ip : "+ip); 
+		} catch (UnknownHostException e1){ 
+			e1.printStackTrace();
+		}
+
+		try {
+			AdviceVO vo = new AdviceVO();
+			vo.setName(info.get("name"));
+			vo.setPhone(info.get("phone"));
+			vo.setRegdate(info.get("regdate"));
+			vo.setEmail(info.get("email"));
+			vo.setState("상담예정");
+			vo.setSecret("x");
+			vo.setPw("");
+			vo.setTitle("");
+			vo.setContent(info.get("content"));
+			vo.setReply("");
+			vo.setMemo("");
+			vo.setIp(ip);
+			vo.setAccess_url(info.get("access_url"));
+			vo.setReply_date("");
+			vo.setUpload_origin("");
+			vo.setUpload_stored("");
+			vo.setQuick_state("o");
+			
+			aService.insert(vo);
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
 		
 		return entity;
 	}

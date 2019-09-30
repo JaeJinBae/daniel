@@ -1,5 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<script>
+function quickInquireRegister(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/quickInquireRegister",
+		type:"POST",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		data: JSON.stringify(info),
+		async:false,
+		success:function(json){
+			if(json =="no"){
+				alert("빠른상담 신청에 실패하였습니다. 관리자에게 문의하십시오.");
+				
+			}else if(json == "ok"){
+				alert("상담신청이 완료되었습니다.\n고객님의 소중한 정보는 상담에만 이용됩니다.\n빠른시일내에 답변드리겠습니다. 감사합니다");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+$(function(){
+	$("#quickRegisterBtn").click(function(){
+		var name = $("#i_name").val();
+		var phone1 = $("#i_tel1").val();
+		var phone2 = $("#i_tel2").val();
+		var phone3 = $("#i_tel3").val();
+		var phone = phone1+"-"+phone2+"-"+phone3;
+		var clinic_type = $("#i_kind").val();
+		var content = $("#i_content").val();
+		var access_url = document.referrer;
+		var nd = new Date();
+		var ny = nd.getFullYear();
+		var nm = nd.getMonth()+1;
+		nm = (nm>9?'':'0')+nm;
+		var ndd = nd.getDate();
+		ndd = (ndd>9?'':'0')+ndd;
+		var regdate = ny+"-"+nm+"-"+ndd;
+		
+		var info = {"name":name, "phone":phone, "clinic_type":clinic_type, "content":content, "regdate":regdate, "access_url":access_url};
+		quickInquireRegister(info);
+	});
+	
+});
+</script>
 <a href="#wrap" class="top"> <!-- #wrap 닫기 -->
 	
 	
@@ -70,7 +116,7 @@
 						</span>
 					</li>
 					<li>
-						<button type="button" onclick="land_it('insert')" data-name="간편상담신청"><img src="${pageContext.request.contextPath}/resources/img/landing/web/theme/btn_quick_counsel_submit.jpg" alt=""></button>
+						<button type="button" id="quickRegisterBtn" data-name="간편상담신청"><img src="${pageContext.request.contextPath}/resources/img/landing/web/theme/btn_quick_counsel_submit.jpg" alt=""></button>
 					</li>
 				</ul>
 			</fieldset>
