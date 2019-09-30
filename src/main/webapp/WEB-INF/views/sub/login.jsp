@@ -579,7 +579,7 @@ $(function(){
 			<div id="login-form">
 				<ul class="login-inner">
 					<li class="login">
-						<form name="member" id="member" method="post" action="" onsubmit="return member_login_it(this)">
+						<form name="member" id="member" method="post" action="" onsubmit="">
 							<input type="hidden" name="mode" value="login">
 							<input type="hidden" name="distinction" value="proc">
 							<input type="hidden" name="url" value="">

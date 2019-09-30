@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <header id="header" class="trn">
 	<div class="inner">
 		<div class="logo">
@@ -13,8 +16,16 @@
 		<div id="gnb">
 			<div class="inner">
 				<div class="memer-service">
-					<a href="${pageContext.request.contextPath}/m/login" class="login">로그인 ▶</a>
-					<a href="${pageContext.request.contextPath}/m/join" class="join">회원가입 ▶</a>
+					<input id="session_id" type="hidden" value="${sessionScope.id}">
+					<input id="session_no" type="hidden" value="${sessionScope.no}">
+					<c:if test="${empty sessionScope.id}">
+						<a href="${pageContext.request.contextPath}/m/login" class="login">로그인 ▶</a>
+						<a href="${pageContext.request.contextPath}/m/join" class="join">회원가입 ▶</a>
+					</c:if>
+					<c:if test="${!empty sessionScope.id}">
+						<a href="${pageContext.request.contextPath}/logout" class="login">로그아웃 ▶</a>
+						<a href="${pageContext.request.contextPath}/m/myInfo" class="join">마이페이지 ▶</a>
+					</c:if>
 				</div>
 				<ul>
 					<li class="gnb ">

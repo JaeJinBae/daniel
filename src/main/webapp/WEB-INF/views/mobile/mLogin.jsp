@@ -487,7 +487,36 @@ keyframes fa-spin { 0%{
 
 </style>
 <script>
+function userIdPwChk(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/loginIdPwChk",
+		type:"POST",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		data: JSON.stringify(info),
+		async:false,
+		success:function(json){
+			if(json == "empty" || json =="no"){
+				alert("일치하는 정보가 없습니다.");
+				
+			}else if(json == "ok"){
+				location.href="${pageContext.request.contextPath}/";
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
 $(function(){
+	$("#loginBtn").click(function(){
+		var id = $("#m_id").val();
+		var pw = $("#m_pass").val();
+		var info = {"id":id, "pw":pw};
+		
+		userIdPwChk(info);
+	});
 	
 });
 </script>
@@ -538,7 +567,7 @@ $(function(){
 			<div id="login-form">
 				<ul class="login-inner">
 					<li class="login">
-						<form name="member" id="member" method="post" action="" onsubmit="return member_login_it(this)">
+						<form name="member" id="member" method="post" action="" onsubmit="">
 						<input type="hidden" name="mode" value="login">
 						<input type="hidden" name="distinction" value="proc">
 						<input type="hidden" name="backpage" value="/m-login">
@@ -551,7 +580,7 @@ $(function(){
 								<label for="m_pass">비밀번호</label>
 								<input id="m_pass" name="m_pass" type="password" valid="required" element-name="비밀번호" placeholder="비밀번호를 입력하세요">
 							</p>
-							<button type="submit">로그인</button>
+							<button type="button" id="loginBtn">로그인</button>
 						</form>
 					</li>
 					

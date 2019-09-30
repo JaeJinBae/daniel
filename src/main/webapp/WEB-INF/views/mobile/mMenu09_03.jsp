@@ -491,6 +491,11 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
+	if($("#session_id").val().length <= 1){
+		alert("의료법으로 인하여 로그인 후 확인하실 수 있습니다.");
+		location.href="${pageContext.request.contextPath}/m/login";
+	}
+	
 	$(".board-kinds > ul > li > a").click(function(e){
 		e.preventDefault();
 		var k=$(this).find("input").val();

@@ -486,7 +486,10 @@ $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(3)").addClass("active");
 	
-	
+	if($("#session_id").val().length <= 1){
+		alert("의료법으로 인하여 로그인 후 확인하실 수 있습니다.");
+		location.href="${pageContext.request.contextPath}/login";
+	}
 	
 	$(".board-kinds > ul > li > a").click(function(e){
 		e.preventDefault();
