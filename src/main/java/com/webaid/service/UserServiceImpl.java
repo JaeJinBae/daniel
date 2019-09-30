@@ -26,6 +26,16 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public UserVO selectByNameEmail(UserVO vo) {
+		return dao.selectByNameEmail(vo);
+	}
+
+	@Override
+	public UserVO selectByIdNameEmail(UserVO vo) {
+		return dao.selectByIdNameEmail(vo);
+	}
+
+	@Override
 	public void insert(UserVO vo) {
 		dao.insert(vo);
 	}

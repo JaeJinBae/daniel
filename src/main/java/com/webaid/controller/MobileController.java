@@ -1,6 +1,7 @@
 package com.webaid.controller;
 
 import java.io.File;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +37,7 @@ import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.SearchCriteria12;
 import com.webaid.domain.SearchCriteria8;
+import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.CautionService;
@@ -106,6 +108,44 @@ public class MobileController {
 		logger.info("join GET");
 		
 		return "mobile/mJoin";
+	}
+	
+	@RequestMapping(value="/findId", method=RequestMethod.GET)
+	public String findId(HttpServletRequest req, Model model){
+		GregorianCalendar today = new GregorianCalendar ( );
+		int year = today.get ( today.YEAR );
+		model.addAttribute("year", year);
+		return "mobile/mFindId"; 
+	}
+	
+	@RequestMapping(value="/findId", method=RequestMethod.POST)
+	public ResponseEntity<String> findId(@RequestBody Map<String, String> info){
+		ResponseEntity<String> entity = null;
+		UserVO searchVO = new UserVO();
+		searchVO.setName(info.get("name"));
+		searchVO.setEmail(info.get("email"));
+		UserVO vo = uService.selectByNameEmail(searchVO);
+		if(vo == null){
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>(vo.getNo()+"", HttpStatus.OK);
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/findIdEnd", method=RequestMethod.POST)
+	public String findIdEnd(int no, Model model){
+		logger.info("findIdEnd Get");
+		
+		UserVO vo = uService.selectOne(no);
+		model.addAttribute("item", vo);
+		return "mobile/mFindIdEnd";
+	}
+	
+	@RequestMapping(value="/findPw", method=RequestMethod.GET)
+	public String findPw(HttpServletRequest req, Model model){
+		
+		return "mobile/mFindPw";
 	}
 	
 	@RequestMapping(value = "/personal", method = RequestMethod.GET)

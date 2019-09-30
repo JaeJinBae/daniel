@@ -487,20 +487,22 @@ keyframes fa-spin { 0%{
 
 </style>
 <script>
-function userIdPwChk(info){
+function findId(info){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/loginIdPwChk",
+		url:"${pageContext.request.contextPath}/m/findId",
 		type:"POST",
 		contentType : "application/json; charset=UTF-8",
 		dataType:"text",
 		data: JSON.stringify(info),
 		async:false,
 		success:function(json){
-			if(json == "empty" || json =="no"){
+			if(json =="no"){
 				alert("일치하는 정보가 없습니다.");
 				
-			}else if(json == "ok"){
-				location.href="${pageContext.request.contextPath}/";
+			}else{
+				$("#no").val(json);
+				$("#f1").submit();
+				
 			}
 		},
 		error:function(request,status,error){
@@ -510,12 +512,16 @@ function userIdPwChk(info){
 }
 
 $(function(){
-	$("#loginBtn").click(function(){
-		var id = $("#m_id").val();
-		var pw = $("#m_pass").val();
-		var info = {"id":id, "pw":pw};
-		
-		userIdPwChk(info);
+	$("#btnSubmit").click(function(){
+		var name = $("#m_name").val();
+		var birth_yaer = $("#birth_year").val();
+		var birth_month = $("#birth_month").val();
+		var birth_date = $("#birth_date").val();
+		var email1 = $("#m_email1").val();
+		var email2 = $("#m_email2").val();
+		var email = email1+"@"+email2;
+		var info = {"name":name, "email":email};
+		findId(info);
 	});
 	
 });
@@ -542,7 +548,7 @@ $(function(){
 							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
 						</li>
 						<li class="gnb">
-							<button>로그인 ▼</button>
+							<button>아이디찾기 ▼</button>
 						</li>
 					</ul>
 				</div>
@@ -559,32 +565,31 @@ $(function(){
 			
 			<!-- 게시판 타이틀 시작 -->
 			<div class="board-title">
-				<h5>로그인</h5>
+				<h5>아이디/비밀번호찾기</h5>
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			
-			<!-- 로그인 폼 시작 -->
-			<div id="login-form">
-				<ul class="login-inner">
-					<li class="login">
-						<form name="member" id="member" method="post" action="" onsubmit="">
-						<input type="hidden" name="mode" value="login">
-						<input type="hidden" name="distinction" value="proc">
-						<input type="hidden" name="backpage" value="/m-login">
-						
-							<p>
-								<label for="m_id">아이디</label>
-								<input id="m_id" name="m_id" type="text" valid="required" element-name="아이디" placeholder="아이디를 입력하세요">
-							</p>
-							<p>
-								<label for="m_pass">비밀번호</label>
-								<input id="m_pass" name="m_pass" type="password" valid="required" element-name="비밀번호" placeholder="비밀번호를 입력하세요">
-							</p>
-							<button type="button" id="loginBtn">로그인</button>
-						</form>
+			<!-- 아이디찾기 폼 시작 -->
+			<div id="find-account-check">
+				<ul class="inner">
+					<li class="join-finish-cap">
+						<p>
+							다니엘 성형외과 웹사이트 가입 시 등록한 아이디는 다음과 같습니다.<br>
+							아래의 정보를 확인하신 후, 해당 정보로 로그인하시기 바랍니다.
+						</p>
 					</li>
-					
-			
+					<li class="join-finish-info">
+						<table class="join-finish-form">
+							<tbody>
+							<tr>
+								<th>아이디</th>
+								<td>
+									<span class="fc_cyan">${item.id}</span>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</li>
 					<li class="member">
 						<p>
 							아이디나 비밀번호를 분실하셨나요?
@@ -597,7 +602,7 @@ $(function(){
 					</li>
 				</ul>
 			</div>
-			<!-- 로그인 폼 끝 -->
+			<!-- 아이디찾기 폼 끝 -->
 			
 		</section>
 	

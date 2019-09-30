@@ -12,6 +12,14 @@
 		select * from user where id=#{id}
 	</select>
 	
+	<select id="selectByNameEmail" resultType="UserVO">
+		select * from user where name=#{name} and email=#{email}
+	</select>
+	
+	<select id="selectByIdNameEmail" resultType="UserVO">
+		select * from user where id=#{id} and name=#{name} and email=#{email}
+	</select>
+	
 	<insert id="insert">
 		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{addr}, #{email}, #{regdate}, #{login_cnt}, 'x')
 	</insert>

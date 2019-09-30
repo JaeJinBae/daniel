@@ -487,20 +487,22 @@ keyframes fa-spin { 0%{
 
 </style>
 <script>
-function userIdPwChk(info){
+function findId(info){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/loginIdPwChk",
+		url:"${pageContext.request.contextPath}/m/findId",
 		type:"POST",
 		contentType : "application/json; charset=UTF-8",
 		dataType:"text",
 		data: JSON.stringify(info),
 		async:false,
 		success:function(json){
-			if(json == "empty" || json =="no"){
+			if(json =="no"){
 				alert("일치하는 정보가 없습니다.");
 				
-			}else if(json == "ok"){
-				location.href="${pageContext.request.contextPath}/";
+			}else{
+				$("#no").val(json);
+				$("#f1").submit();
+				
 			}
 		},
 		error:function(request,status,error){
@@ -510,12 +512,16 @@ function userIdPwChk(info){
 }
 
 $(function(){
-	$("#loginBtn").click(function(){
-		var id = $("#m_id").val();
-		var pw = $("#m_pass").val();
-		var info = {"id":id, "pw":pw};
-		
-		userIdPwChk(info);
+	$("#btnSubmit").click(function(){
+		var name = $("#m_name").val();
+		var birth_yaer = $("#birth_year").val();
+		var birth_month = $("#birth_month").val();
+		var birth_date = $("#birth_date").val();
+		var email1 = $("#m_email1").val();
+		var email2 = $("#m_email2").val();
+		var email = email1+"@"+email2;
+		var info = {"name":name, "email":email};
+		findId(info);
 	});
 	
 });
@@ -542,7 +548,7 @@ $(function(){
 							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
 						</li>
 						<li class="gnb">
-							<button>로그인 ▼</button>
+							<button>아이디찾기 ▼</button>
 						</li>
 					</ul>
 				</div>
@@ -559,45 +565,64 @@ $(function(){
 			
 			<!-- 게시판 타이틀 시작 -->
 			<div class="board-title">
-				<h5>로그인</h5>
+				<h5>아이디/비밀번호찾기</h5>
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			
-			<!-- 로그인 폼 시작 -->
-			<div id="login-form">
-				<ul class="login-inner">
-					<li class="login">
-						<form name="member" id="member" method="post" action="" onsubmit="">
-						<input type="hidden" name="mode" value="login">
-						<input type="hidden" name="distinction" value="proc">
-						<input type="hidden" name="backpage" value="/m-login">
-						
-							<p>
-								<label for="m_id">아이디</label>
-								<input id="m_id" name="m_id" type="text" valid="required" element-name="아이디" placeholder="아이디를 입력하세요">
-							</p>
-							<p>
-								<label for="m_pass">비밀번호</label>
-								<input id="m_pass" name="m_pass" type="password" valid="required" element-name="비밀번호" placeholder="비밀번호를 입력하세요">
-							</p>
-							<button type="button" id="loginBtn">로그인</button>
-						</form>
+			<!-- 아이디찾기 폼 시작 -->
+			<div id="find-account">
+				<div class="find-account-nav">
+					<a href="${pageContext.request.contextPath}/m/findId" class="active">아이디 찾기</a>
+					<a href="${pageContext.request.contextPath}/m/findPw">비밀번호 찾기</a>
+				</div>
+				<form name="f1" id="f1" method="post" action="${pageContext.request.contextPath}/m/findIdEnd">
+					<input type="hidden" name="no" id="no">
+				</form>
+				<ul class="find-account-inner">
+					<form name="member" id="member" method="post" action="" onsubmit="return false">
+					<li>
+						<table class="find-account-form">
+							<tbody><tr>
+								<th><label for="m_name">이름</label></th>
+								<td><input type="text" name="m_name" id="m_name" valid="required" element-name="이름"></td>
+							</tr>
+							<tr>
+								<th><label for="birth_year">생년월일</label></th>
+								<td>
+									<select name="birth_year" id="birth_year" valid="required" element-name="생년월일">
+										<option value="">선택</option>
+										<c:forEach var="i" begin="1900" end="${year}">
+											<option value="${year-i+1900}">${year-i+1900}</option>
+										</c:forEach>
+									</select> 년
+									<select name="birth_month" id="birth_month" valid="required" element-name="생년월일">
+										<option value="">선택</option>
+										<c:forEach var="i" begin="1" end="12">
+											<option value="${i}">${i}</option>
+										</c:forEach>
+									</select> 월
+									<select name="birth_date" id="birth_date" valid="required" element-name="생년월일">
+										<option value="">선택</option>
+										<c:forEach var="i" begin="1" end="31">
+											<option value="${i}">${i}</option>
+										</c:forEach>
+									</select> 일
+								</td>
+							</tr>
+							<tr>
+								<th><label for="m_email1">이메일</label></th>
+								<td>
+									<input type="text" name="m_email1" id="m_email1" valid="required" element-name="이메일"> @
+									<input type="text" name="m_email2" id="m_email2" valid="required" element-name="이메일">
+									<select name="m_emailcode" id="m_emailcode" title="이메일의 계정"><option value="" selected="">직접입력</option><option value="EM01">naver.com</option><option value="EM02">daum.net</option><option value="EM03">gmail.com</option><option value="EM04">yahoo.co.kr</option><option value="EM05">yahoo.com</option><option value="EM06">nate.com</option><option value="EM07">paran.com</option><option value="EM08">google.com</option><option value="EM09">empas.com</option><option value="EM10">hotmail.com</option><option value="EM11">msn.com</option><option value="EM12">korea.com</option><option value="EM13">dreamwiz.com</option><option value="EM14">hanafos.com</option><option value="EM15">freechal.com</option><option value="EM16">chol.com</option><option value="EM17">empal.com</option><option value="EM18">lycos.com</option><option value="EM19">netian.com</option></select>					</td>
+							</tr>
+						</tbody></table>
+						<button type="button" id="btnSubmit">아이디 찾기</button>
 					</li>
-					
-			
-					<li class="member">
-						<p>
-							아이디나 비밀번호를 분실하셨나요?
-							<a href="${pageContext.request.contextPath}/m/findId">아이디/비밀번호 찾기</a>
-						</p>
-						<p>
-							아직 회원이 아니신가요?
-							<a href="${pageContext.request.contextPath}/m/join" class="btn-join">회원가입</a>
-						</p>
-					</li>
+					</form>
 				</ul>
 			</div>
-			<!-- 로그인 폼 끝 -->
+			<!-- 아이디찾기 폼 끝 -->
 			
 		</section>
 	

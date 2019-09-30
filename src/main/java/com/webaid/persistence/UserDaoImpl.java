@@ -28,6 +28,16 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	public UserVO selectByNameEmail(UserVO vo) {
+		return session.selectOne(namespace + ".selectByNameEmail", vo);
+	}
+
+	@Override
+	public UserVO selectByIdNameEmail(UserVO vo) {
+		return session.selectOne(namespace + ".selectByIdNameEmail", vo);
+	}
+
+	@Override
 	public void insert(UserVO vo) {
 		session.insert(namespace + ".insert", vo);
 	}
@@ -59,7 +69,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<UserVO> listSearchWithdrawAll(SearchCriteria cri) {
-		return session.selectList(namespace+".listSearchWithdrawAll", cri);
+		return session.selectList(namespace + ".listSearchWithdrawAll", cri);
 	}
 
 	@Override
@@ -69,7 +79,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public int listSearchWithdrawCountAll(SearchCriteria cri) {
-		return session.selectOne(namespace+".listSearchWithdrawCountAll", cri);
+		return session.selectOne(namespace + ".listSearchWithdrawCountAll", cri);
 	}
 
 }

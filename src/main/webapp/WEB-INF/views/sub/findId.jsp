@@ -13,15 +13,11 @@
 <!-- @ = 스타일, # = 자바스크립트 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.reset.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.common.css"><!-- @2 공통 스타일		**삭제금지** -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/slick/slick.css"><!-- @3 플러그인 Slick -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/slick/slick-theme.css"><!-- @4 플러그인 Slick Theme -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/wow/animate.css"><!-- @5 플러그인 Animate CSS -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.layout.css"><!-- @6 공통 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.sub.css"><!-- @ 서브페이지 스타일 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.board.css"><!-- @ 게시판 스타일 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.css"><!-- @ 파일첨부 스타일 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.main.css"><!-- @ 메인페이지 스타일-->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.layout.css"><!-- @6 공통 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.sub.css"><!-- @ 메인페이지 스타일-->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.board.css">
 <!-- ********************************************플러그인********************************************* -->
 <script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AP4T42369817671&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1566887341954"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
@@ -34,7 +30,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.sns.share.js"></script><!-- #7 플러그인 SNS SHARE -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.modernizr.js"></script><!-- #8 플러그인 modernizr -->
 <!-- ************************************************************************************************* -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/m/jquery.main.js"></script><!-- # 메인페이지 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.sub.js"></script><!-- # 메인페이지 함수 -->
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.calendar.js"></script><!-- # 필수 함수 -->
@@ -44,8 +40,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.layer.js"></script><!-- # 필수 함수 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/m/jquery.common.js"></script><!-- # 공통 함수 -->
-<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.common.js"></script><!-- # 공통 함수 -->
 <style type="text/css">
 svg:not (:root ).svg-inline--fa {
 	overflow: visible
@@ -484,23 +479,24 @@ keyframes fa-spin { 0%{
 	position: static;
 	width: auto
 }
-
 </style>
 <script>
-function userIdPwChk(info){
+function findId(info){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/loginIdPwChk",
+		url:"${pageContext.request.contextPath}/findId",
 		type:"POST",
 		contentType : "application/json; charset=UTF-8",
 		dataType:"text",
 		data: JSON.stringify(info),
 		async:false,
 		success:function(json){
-			if(json == "empty" || json =="no"){
+			if(json =="no"){
 				alert("일치하는 정보가 없습니다.");
 				
-			}else if(json == "ok"){
-				location.href="${pageContext.request.contextPath}/";
+			}else{
+				$("#no").val(json);
+				$("#f1").submit();
+				
 			}
 		},
 		error:function(request,status,error){
@@ -510,103 +506,181 @@ function userIdPwChk(info){
 }
 
 $(function(){
-	$("#loginBtn").click(function(){
-		var id = $("#m_id").val();
-		var pw = $("#m_pass").val();
-		var info = {"id":id, "pw":pw};
-		
-		userIdPwChk(info);
+	$("#btnSubmit").click(function(){
+		var name = $("#m_name").val();
+		var birth_yaer = $("#birth_year").val();
+		var birth_month = $("#birth_month").val();
+		var birth_date = $("#birth_date").val();
+		var email1 = $("#m_email1").val();
+		var email2 = $("#m_email2").val();
+		var email = email1+"@"+email2;
+		var info = {"name":name, "email":email};
+		findId(info);
 	});
 	
 });
 </script>
 </head>
 <body>
-	<div class="gnb-dim"></div>
+	<!-- 페이지 로딩 시작 -->
+	<div id="loader-wrapper">
+		<div id="loading"></div>
+	</div>
+	<!-- 페이지 로딩 끝 -->
+	
+	<!-- SkipNavigation 시작 -->
+	<div id="skipnavigation">
+		<ul>
+			<li><a href="#sub-container">본문 바로가기 <svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path></svg><!-- <i class="fas fa-arrow-circle-right"></i> --></a></li>
+		</ul>
+	</div>
+	<!-- SkipNavigation 끝 -->	
 	
 	<div id="wrap">
 		<!-- 해더 시작  -->
-		<jsp:include page="../include/mHeader.jsp"></jsp:include>
+		<jsp:include page="../include/pcHeader.jsp"></jsp:include>
 		<!-- 해더 끝  -->
-	
+		
 		<!-- 콘텐츠 영역 시작 (메인일 경우 #main-container / 서브일 경우 #sub-container) -->
 		<section id="sub-container">
-		<!--  닫기 [위치 : include_web_footer.html ]  -->
-		
+			<!--  닫기 [위치 : include_web_footer.html ]  -->
+
+			<!-- 서브 비주얼영역 시작  -->
+			<div id="sub-visual" data-menu="로그인">
+				<div class="sub-visual-tit">
+				
+				</div>
+			</div>
+			<!-- 서브 비주얼영역 끝 -->
+			
 			<!-- BreadCrumb 시작 -->
 			<div id="breadcrumb">
-				<div class="full">
+				<div class="inner">
 					<ul>
-						<li class="gnb">
-							<button>멤버쉽 ▼</button>
-							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
+						<li class="home">
+							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>로그인 ▼</button>
+							<button>멤버쉽 ▼</button>
+							<ul>
+								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
+							</ul>
+						</li>
+						<li class="gnb">
+							<button>아이디찾기 ▼</button>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<!-- 서브 비주얼영역 시작 (이전, 다음페이지로 이동) -->
-			<div id="sub-visual" data-sec="멤버쉽" data-menu="로그인">
-				<div class="inner">
+			<!-- 타이틀 시작 -->
+			<div class="board-titl">
+				<h5>아이디/비밀번호찾기</h5>
+			</div>
+			<!-- 타이틀 끝 -->
 			
+			
+			<!-- 아이디찾기 폼 시작 -->
+			<div id="find-account">
+				<div class="find-account-nav">
+					<a href="${pageContext.request.contextPath}/findId" class="active">아이디 찾기</a>
+					<a href="${pageContext.request.contextPath}/findPw">비밀번호 찾기</a>
 				</div>
-			</div>
-			<!-- 서브 비주얼영역 끝 -->
-			
-			<!-- 게시판 타이틀 시작 -->
-			<div class="board-title">
-				<h5>로그인</h5>
-			</div>
-			<!-- 게시판 타이틀 끝 -->
-			
-			<!-- 로그인 폼 시작 -->
-			<div id="login-form">
-				<ul class="login-inner">
-					<li class="login">
-						<form name="member" id="member" method="post" action="" onsubmit="">
-						<input type="hidden" name="mode" value="login">
-						<input type="hidden" name="distinction" value="proc">
-						<input type="hidden" name="backpage" value="/m-login">
-						
-							<p>
-								<label for="m_id">아이디</label>
-								<input id="m_id" name="m_id" type="text" valid="required" element-name="아이디" placeholder="아이디를 입력하세요">
-							</p>
-							<p>
-								<label for="m_pass">비밀번호</label>
-								<input id="m_pass" name="m_pass" type="password" valid="required" element-name="비밀번호" placeholder="비밀번호를 입력하세요">
-							</p>
-							<button type="button" id="loginBtn">로그인</button>
-						</form>
+				<form name="f1" id="f1" method="post" action="${pageContext.request.contextPath}/findIdEnd">
+					<input type="hidden" name="no" id="no">
+				</form>
+				<ul class="find-account-inner">
+					<form name="member" id="member" method="post" action="" onsubmit="return false">
+					<li>
+						<table class="find-account-form">
+							<tr>
+								<th><label for="m_name">이름</label></th>
+								<td><input type="text" name="m_name" id="m_name" valid="required" element-name="이름"></td>
+							</tr>
+							<tr>
+								<th><label for="birth_year">생년월일</label></th>
+								<td>
+									<select name="birth_year" id="birth_year" valid="required" element-name="생년월일">
+										<option value="">선택</option>
+										<c:forEach var="i" begin="1900" end="${year}">
+											<option value="${year-i+1900}">${year-i+1900}</option>
+										</c:forEach>
+									</select>
+									<select name="birth_month" id="birth_month" valid="required" element-name="생년월일">
+										<option value="">선택</option>
+										<c:forEach var="i" begin="1" end="12">
+											<option value="${i}">${i}</option>
+										</c:forEach>
+									</select> 월
+									<select name="birth_date" id="birth_date" valid="required" element-name="생년월일">
+										<option value="">선택</option>
+										<c:forEach var="i" begin="1" end="31">
+											<option value="${i}">${i}</option>
+										</c:forEach>
+									</select> 일
+								</td>
+							</tr>
+							<tr>
+								<th><label for="m_email1">이메일</label></th>
+								<td>
+									<input type="text" name="m_email1" id="m_email1" valid="required" element-name="이메일"> @
+									<input type="text" name="m_email2" id="m_email2" valid="required" element-name="이메일">
+									<select name="m_emailcode" id="m_emailcode" title="이메일의 계정">
+										<option value="">직접입력</option>
+										<option value="naver.com">naver.com</option>
+										<option value="daum.net">daum.net</option>
+										<option value="gmail.com">gmail.com</option>
+										<option value="yahoo.co.kr">yahoo.co.kr</option>
+										<option value="yahoo.com">yahoo.com</option>
+										<option value="nate.com">nate.com</option>
+										<option value="paran.com">paran.com</option>
+										<option value="google.com">google.com</option>
+										<option value="empas.com">empas.com</option>
+										<option value="hotmail.com">hotmail.com</option>
+										<option value="msn.com">msn.com</option>
+										<option value="korea.com">korea.com</option>
+										<option value="dreamwiz.com">dreamwiz.com</option>
+										<option value="hanafos.com">hanafos.com</option>
+										<option value="freechal.com">freechal.com</option>
+										<option value="chol.com">chol.com</option>
+										<option value="empal.com">empal.com</option>
+										<option value="lycos.com">lycos.com</option>
+										<option value="netian.com">netian.com</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+						<button type="button" id="btnSubmit">아이디 찾기</button>
 					</li>
-					
-			
-					<li class="member">
-						<p>
-							아이디나 비밀번호를 분실하셨나요?
-							<a href="${pageContext.request.contextPath}/m/findId">아이디/비밀번호 찾기</a>
-						</p>
-						<p>
-							아직 회원이 아니신가요?
-							<a href="${pageContext.request.contextPath}/m/join" class="btn-join">회원가입</a>
-						</p>
-					</li>
+					</form>
 				</ul>
 			</div>
-			<!-- 로그인 폼 끝 -->
+			<!-- 아이디찾기 폼 끝 -->
 			
-		</section>
+		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
-		<!-- 전체 페이지 오시는길(오시는길, 진료시간 안내, 상담문의, footer) 시작 -->
-		<jsp:include page="../include/mFooter.jsp"></jsp:include>
-		<!-- 전체 페이지 오시는길(오시는길, 진료시간 안내, 상담문의, footer) 끝 (style.layout.css) -->
+	
+		<!-- 메인페이지 오시는길(오시는길, 진료시간 안내, 상담문의) 시작 -->
+		<jsp:include page="../include/pcBottom.jsp"></jsp:include>
+		<!-- 메인페이지 오시는길(오시는길, 진료시간 안내, 상담문의) 끝 -->
+	
+		<!-- 풋터 시작 (style.layout.css) -->
+		<jsp:include page="../include/pcFooter.jsp"></jsp:include>
+		<!-- 풋터 끝 (style.layout.css) -->
 		
-	</div>
+		<!-- 서브페이지 우측 퀵배너 시작 -->
+		<jsp:include page="../include/quick.jsp"></jsp:include>
+		<!-- 서브페이지 우측 퀵배너 끝 -->
+
+	</div><!-- #wrap end -->
 	
-	<jsp:include page="../include/mQuickInquire.jsp"></jsp:include>
+	<!-- 빠른상담 신청하기 폼 시작 -->
+	<jsp:include page="../include/pcQuickInquire.jsp"></jsp:include>
+	<!-- 빠른상담 신청하기 폼 끝 -->
+	
+	<!-- 개인정보 취급방침 팝업 시작 -->
+	<jsp:include page="../include/pcPopPrivate.jsp"></jsp:include>
+	<!-- 개인정보 취급방침 팝업 끝 -->
 </body>
 </html>

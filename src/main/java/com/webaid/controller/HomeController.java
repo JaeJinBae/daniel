@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.text.DecimalFormat;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -187,6 +189,44 @@ public class HomeController {
 			}
 		}
 		return entity;
+	}
+	
+	@RequestMapping(value="/findId", method=RequestMethod.GET)
+	public String findId(HttpServletRequest req, Model model){
+		GregorianCalendar today = new GregorianCalendar ( );
+		int year = today.get ( today.YEAR );
+		model.addAttribute("year", year);
+		return "sub/findId";
+	}
+	
+	@RequestMapping(value="/findId", method=RequestMethod.POST)
+	public ResponseEntity<String> findId(@RequestBody Map<String, String> info){
+		ResponseEntity<String> entity = null;
+		UserVO searchVO = new UserVO();
+		searchVO.setName(info.get("name"));
+		searchVO.setEmail(info.get("email"));
+		UserVO vo = uService.selectByNameEmail(searchVO);
+		if(vo == null){
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>(vo.getNo()+"", HttpStatus.OK);
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/findIdEnd", method=RequestMethod.POST)
+	public String findIdEnd(int no, Model model){
+		logger.info("findIdEnd Get");
+		
+		UserVO vo = uService.selectOne(no);
+		model.addAttribute("item", vo);
+		return "sub/findIdEnd";
+	}
+	
+	@RequestMapping(value="/findPw", method=RequestMethod.GET)
+	public String findPw(HttpServletRequest req, Model model){
+		
+		return "sub/findPw";
 	}
 	
 	@RequestMapping(value="/logout", method=RequestMethod.GET)
