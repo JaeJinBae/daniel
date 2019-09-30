@@ -953,48 +953,7 @@ public class HomeController {
 			e.printStackTrace();
 			entity = new ResponseEntity<String>("NO", HttpStatus.OK);
 		}
-		DecimalFormat df = new DecimalFormat("###,###");
 		
-		ClinicResListVO vo = new ClinicResListVO();
-		vo.setRegdate(info.getR_regdate());
-		vo.setPrice(Integer.parseInt(info.getR_pay()));
-		vo.setCounseling(info.getR_counsel());
-		vo.setRes_date(info.getR_date());
-		vo.setRes_time(info.getR_time());
-		vo.setName(info.getR_name());
-		vo.setPhone(info.getR_phone());
-		vo.setEmail(info.getR_email());
-		vo.setMemo(info.getR_memo());
-		vo.setRes_state("o");
-		
-		List<CategoryVO> categoryList = info.getCategoryList();
-		String str = "";
-		if(categoryList.size() > 0){
-			
-			for(int i=0; i<categoryList.size(); i++){
-				str += categoryList.get(i).getCategory1_nm();
-				str += " > ";
-				str += categoryList.get(i).getCategory2_nm();
-				if(categoryList.get(i).getCategory3_nm().equals("") || categoryList.get(i).getCategory3_nm().isEmpty()){
-					str += " <strong>["+df.format(Integer.parseInt(categoryList.get(i).getCategory_pay()))+"원]</strong>";
-					if(i != categoryList.size()-1){
-						str += "<br>";
-					}
-				}else{
-					str += " > ";
-					str += categoryList.get(i).getCategory3_nm();
-					str += " <strong>["+df.format(Integer.parseInt(categoryList.get(i).getCategory_pay()))+"원]</strong>";
-					if(i != categoryList.size()-1){
-						str += "<br>";
-					}
-				}
-			}
-		}
-		vo.setClinic_list(str);
-		
-		crlService.insert(vo);
-		
-		entity = new ResponseEntity<String>("OK", HttpStatus.OK);
 		return entity;
 	}
 	

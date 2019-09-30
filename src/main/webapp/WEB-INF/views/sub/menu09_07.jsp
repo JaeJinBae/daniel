@@ -1084,7 +1084,7 @@ $(function(){
 			
 			
 			<!-- <iframe id="hidden" name="hiddenifr" style="width:1px; height:1px; border:0;" src="filecreate.php"></iframe> -->
-			<form name="alim" id="alim" method="post" action="/html/reserve/_alim.php">
+			<form name="alim" id="alim" method="post" action="">
 				<input type="hidden" name="r_name" id="r_name" value="">
 				<input type="hidden" name="r_phone" id="r_phone" value="">
 				<input type="hidden" name="r_date" id="r_date" value="">
@@ -1318,7 +1318,7 @@ $(function(){
 			
 									form.target = "hiddenifr";
 									//form.submit();
-									vegasRegister(reserveJson)
+									vegasRegister(reserveJson);
 								}else{
 									alert("오류가 발생하였습니다. 관리자에게 문의하여 주세요.");
 									return;
@@ -1341,6 +1341,7 @@ $(function(){
 			
 					}
 				}
+				
 				function vegasRegister(sendData){
 					var resClinicArr = sendData.categoryList;
 					var resvMemo = "";
@@ -1359,7 +1360,7 @@ $(function(){
 					}else{
 						resvMemo += "메모: "+sendData.r_memo;
 					}
-					console.log(resvMemo);
+
 					var data = {
 							orgno : "38347555",				// 요양기관기호
 							name : sendData.r_name,			// varchar(40)
@@ -1384,7 +1385,7 @@ $(function(){
 							if(data.error != null) {
 								console.log(data.error);
 							} else {
-								alert(JSON.stringify(data));
+								//alert(JSON.stringify(data));
 							}
 						},
 						error: function (xhr, option, error) {
@@ -1392,6 +1393,7 @@ $(function(){
 						}
 					});
 				}
+				
 				// 달력에서 날짜 선택시 그 날짜의 시간대 가져온다.
 				function onCalDate(dow, selDate){
 					console.log($(".date_"+selDate).hasClass("closed"));

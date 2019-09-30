@@ -1282,14 +1282,14 @@ $(function(){
 							url : "${pageContext.request.contextPath}/menu09_07register",
 							type: "POST",
 							data: sendData,
-							dataType:"json",
+							dataType:"text",
 							contentType : "application/json; charset=UTF-8",
 							success : function(json){
 			
-								if(result.data == "JUNGBOK"){
+								if(json == "JUNGBOK"){
 									alert("예약 하신 시간대에 이미 예약이 되어 있습니다.\n다른시간대를 이용하여 주세요.");
 									return;
-								}else if(result.data == "OK"){
+								}else if(json == "OK"){
 									$("#result_name").html($('#r_name').val());
 									$("#result_phone").html($('#r_phone').val());
 									$("#result_date").html($('#r_date').val() + " " + $('#r_time').val());
@@ -1306,6 +1306,7 @@ $(function(){
 			
 									form.target = "hiddenifr";
 									//form.submit();
+									vegasRegister(reserveJson);
 								}else{
 									alert("오류가 발생하였습니다. 관리자에게 문의하여 주세요.");
 									return;
@@ -1328,6 +1329,58 @@ $(function(){
 					}
 				}
 			
+				function vegasRegister(sendData){
+					var resClinicArr = sendData.categoryList;
+					var resvMemo = "";
+					$(resClinicArr).each(function(){
+						console.log(this.category1_nm);
+						resvMemo += this.category1_nm+" "+this.category2_nm+" ";
+						if(this.category3_nm == ""){
+							resvMemo += " | " 
+						}else{
+							resvMemo += this.category3_nm +" | ";
+						}
+					});
+					resvMemo += "총 예약금액:"+Number(sendData.r_pay).toLocaleString()+" | ";
+					if(sendData.r_counsel == "Y"){
+						resvMemo += "메모:[상담요망] "+sendData.r_memo;
+					}else{
+						resvMemo += "메모: "+sendData.r_memo;
+					}
+
+					var data = {
+							orgno : "38347555",				// 요양기관기호
+							name : sendData.r_name,			// varchar(40)
+							phone : sendData.r_phone,		// varchar(40)
+							email : sendData.r_email,			// varchar(40)
+							resvdate : sendData.r_regdate,		// varchar(8) YYYYMMDD
+							resvtime : sendData.r_time,		// varchar(4) hhmm
+							resvmemo : resvMemo,	// text
+							doctor : ''		// varchar(40)
+						};
+					
+					$.ajax({
+						url: "https://h00129.vegas-solution.com/WebReservationClient", //베가스에 설정된 정보로 변경하면 안됨
+						type: "POST",
+						dataType: "jsonp",
+						jsonp: "callback",
+						timeout: 10000,
+						crossDomain:true,
+						cache:false,
+						data: data,
+						success: function (data) {
+							if(data.error != null) {
+								console.log(data.error);
+							} else {
+								alert(JSON.stringify(data));
+							}
+						},
+						error: function (xhr, option, error) {
+							alert("Code : " + xhr.status + "\r\n Error : " + error + "\r\nMessage : " + xhr.status);
+						}
+					});
+				}
+				
 				// 달력에서 날짜 선택시 그 날짜의 시간대 가져온다.
 				function onCalDate(dow, selDate){
 					console.log($(".date_"+selDate).hasClass("closed"));
