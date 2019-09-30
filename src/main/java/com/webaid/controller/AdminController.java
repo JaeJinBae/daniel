@@ -311,7 +311,7 @@ public class AdminController {
 		List<String> imgNameList = new ArrayList<String>();
 		
 		//이미지 업로드
-		String innerUploadPath = "resources/img/beforeAfter/";
+		String innerUploadPath = "resources/uploadBeforeAfter/";
 		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
 		String fileName = "";
 		String storedFileName = "";
@@ -378,9 +378,6 @@ public class AdminController {
 	@RequestMapping(value = "/menu01_02update", method = RequestMethod.POST)
 	public String menu01_02updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
 		logger.info("menu01_02update POST");
-		
-		
-		
 		
 		List<String> imgNameList = new ArrayList<String>();
 		
@@ -474,7 +471,7 @@ public class AdminController {
 		int no = Integer.parseInt(info.get("no"));
 		String type = info.get("type");
 		
-		String innerUploadPath = "resources/img/beforeAfter/";
+		String innerUploadPath = "resources/uploadBeforeAfter/";
 		String path = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
 		System.out.println(path);
 		BeforeAfterVO prevVO = baService.selectOne(no);
