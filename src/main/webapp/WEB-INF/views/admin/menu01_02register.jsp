@@ -182,7 +182,7 @@ $(function(){
 			
 			<script type="text/javascript">
 				$(function(){
-					CKEDITOR.replace('b_content', {width:'100%', height:'500px'});
+					CKEDITOR.replace('b_content', {filebrowserUploadUrl:"/admin/imgUpload/beforeAfter", width:'100%', height:'500px'});
 				});
 			</script>
 			

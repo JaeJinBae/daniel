@@ -150,7 +150,7 @@ $(function(){
 			
 			<script type="text/javascript">
 				$(function(){
-					CKEDITOR.replace('b_content', {width:'100%', height:'300px'});
+					CKEDITOR.replace('b_content', {filebrowserUploadUrl:"/admin/imgUpload/review", width:'100%', height:'300px'});
 				});
 			</script>
 		</div><!-- admin_right 끝 -->

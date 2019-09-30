@@ -140,8 +140,8 @@ public class AdminController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/imgUpload")
-	public Map<String, Object> imgaeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
+	@RequestMapping("/imgUpload/{type}")
+	public Map<String, Object> imgaeUpload(@PathVariable("type")String type, HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
 			throws Exception {
 		logger.info("image upload!!!!!");
 
@@ -164,7 +164,22 @@ public class AdminController {
 		byte[] bytes = upload.getBytes();
 
 		// 이미지를 업로드할 디렉토리(배포경로로 설정)
-		String innerUploadPath = "resources/upload/";
+		String innerUploadPath = "";
+		if(type.equals("notice")){
+			innerUploadPath = "resources/uploadNotice/";
+		}else if(type.equals("beforeAfter")){
+			innerUploadPath = "resources/uploadBeforeAfter/";
+		}else if(type.equals("realStory")){
+			innerUploadPath = "resources/uploadRealStory/";
+		}else if(type.equals("caution")){
+			innerUploadPath = "resources/uploadCaution/";
+		}else if(type.equals("review")){
+			innerUploadPath = "resources/uploadReview/";
+		}else if(type.equals("event")){
+			innerUploadPath = "resources/uploadEvent/";
+		}else if(type.equals("advice")){
+			innerUploadPath = "resources/uploadAdvice/";
+		}
 		String uploadPath = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
 		logger.info(uploadPath);
 
@@ -2260,5 +2275,49 @@ public class AdminController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "admin/menu07_02";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/imgUpload")
+	public Map<String, Object> noticeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
+			throws Exception {
+		logger.info("image upload!!!!!");
+
+		// http body
+		OutputStream out = null;
+
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		// 오리지날 파일명
+		String originalName = upload.getOriginalFilename();
+
+		// 랜덤이름 생성(중복 방지용)
+		UUID uid = UUID.randomUUID();
+		String savedName = uid.toString() + "_" + originalName;
+
+		// 업로드한 파일 이름
+		String fileName = savedName;
+
+		// 바이트 배열로 변환
+		byte[] bytes = upload.getBytes();
+
+		// 이미지를 업로드할 디렉토리(배포경로로 설정)
+		String innerUploadPath = "resources/uploadNotice/";
+		String uploadPath = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		logger.info(uploadPath);
+
+		out = new FileOutputStream(new File(uploadPath + fileName));// 서버에 파일 저장
+		// 서버에 저장됨
+		out.write(bytes);
+
+		String fileUrl = "/" + innerUploadPath + fileName;
+
+		System.out.println(fileUrl);
+
+		map.put("uploaded", 1);
+		map.put("fileName", fileName);
+		map.put("url", fileUrl);
+
+		return map;
 	}
 }

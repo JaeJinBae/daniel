@@ -588,11 +588,11 @@ $(function(){
 					<li class="member">
 						<p>
 							아이디나 비밀번호를 분실하셨나요?
-							<a href="/m-find-id">아이디/비밀번호 찾기</a>
+							<a href="#none">아이디/비밀번호 찾기</a>
 						</p>
 						<p>
 							아직 회원이 아니신가요?
-							<a href="/m-join" class="btn-join">회원가입</a>
+							<a href="${pageContext.request.contextPath}/m/join" class="btn-join">회원가입</a>
 						</p>
 					</li>
 				</ul>

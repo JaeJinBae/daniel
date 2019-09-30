@@ -211,7 +211,7 @@ $(function(){
 			</div><!-- main_bottom_area end -->
 			<script>
 			    $(function(){
-			        CKEDITOR.replace('content', {width:'100%', height:'300px'});
+			        CKEDITOR.replace('content', {filebrowserUploadUrl:"/admin/imgUpload/event", width:'100%', height:'300px'});
 			    });
 			</script>
 		</div><!-- admin_right 끝 -->

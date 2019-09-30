@@ -119,5 +119,5 @@
 		</c:if>
 	</div>
 
-	<a href="/590/?pCode=590" class="gnb-view"></a>
+	<a href="${pageContext.request.contextPath}/menu09_07" class="gnb-view"></a>
 </header>

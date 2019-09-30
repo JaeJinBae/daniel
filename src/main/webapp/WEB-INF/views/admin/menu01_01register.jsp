@@ -156,7 +156,7 @@ $(function(){
 			</div><!-- main_bottom_area -->
 			
 			<script type="text/javascript">
-					CKEDITOR.replace('content',{filebrowserUploadUrl:"/admin/imgUpload", width:'100%', height:'500px'});
+					CKEDITOR.replace('content',{filebrowserUploadUrl:"/admin/imgUpload/notice", width:'100%', height:'500px'});
 			</script>
 			
 		</div><!-- admin_right 끝 -->
