@@ -559,6 +559,8 @@ function makeCalendar(today){
 	var cd = year+"-"+((month>9?'':'0')+month)+"-";
 	var dNum = 1;
 	var prevDate;
+	today = new Date();
+	today.setDate(today.getDate()+1);
 	
 	for(var i=1; i<=6; i++){ 
 		if(dNum > lastDate){
@@ -573,8 +575,7 @@ function makeCalendar(today){
 					str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
 				}else{
 					prevDate = new Date(cd+((dNum>9?'':'0')+dNum));
-					today = new Date();
-					today.setDate(today.getDate()+1);
+					
 					if(prevDate.getTime() <= today.getTime()){
 						str += "<td class='"+arrDow2[k-1]+" closed calDate date_"+cd+((dNum>9?'':'0')+dNum)+"' onclick=onCalDate('"+arrDow2[k-1]+"','"+cd+((dNum>9?'':'0')+dNum)+"');><button>"+dNum+"</button></td>";
 					}else{
