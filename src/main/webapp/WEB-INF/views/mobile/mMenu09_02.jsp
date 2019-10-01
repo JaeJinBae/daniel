@@ -491,7 +491,14 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/m/menu09_02${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
 });
 </script>
 </head>
@@ -549,9 +556,15 @@ $(function(){
 			<!-- 타이틀 끝 -->
 			
 			<div class="search-box">
-				<form name="board_search" method="post" action="" onsubmit="return inquire_search_it(this)">
-					<select name="select_key" id="select_key"><option value="i_title|i_content|i_name">전체</option><option value="i_title">제목</option><option value="i_content">내용</option><option value="i_name">작성자</option></select>		<input type="text" title="검색어" name="input_key" value="">
-					<button type="submit">검색</button>
+				<form name="board_search" onsubmit="return false;">
+					<select name="select_key" id="select_key">
+						<option value="">전체</option>
+						<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
+						<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
+						<option value="w" ${cri.searchType=='w'?'selected':''}>작성자</option>
+						</select>
+					<input type="text" title="검색어" name="input_key" value="${cri.keyword}">
+					<button type="button" id="searchBtn">검색</button>
 				</form>
 			</div>
 			

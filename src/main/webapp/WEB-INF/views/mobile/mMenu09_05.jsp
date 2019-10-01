@@ -500,6 +500,7 @@ $(function(){
 			location.href=$(this).attr("href");
 		}
 	});
+	
 });
 </script>
 </head>
