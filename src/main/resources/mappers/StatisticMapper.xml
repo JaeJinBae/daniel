@@ -14,4 +14,8 @@
 	<select id="listSearchCount" resultType="int">
 		select count(no) from statistic
 	</select>
+	
+	<select id="insert">
+		insert into statistic values(0, #{date}, #{dayofweek}, #{hour}, #{minute}, #{browser}, #{os}, #{prev_url})
+	</select>
 </mapper>

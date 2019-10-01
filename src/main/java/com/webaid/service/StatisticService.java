@@ -10,4 +10,5 @@ public interface StatisticService {
 	public List<StatisticVO> selectByDate(StatisticSelectDateVO vo);
 	public List<StatisticVO> listSearch(SearchCriteria cri);
 	public int listSearchCount(SearchCriteria cri);
+	public void insert(StatisticVO vo);
 }

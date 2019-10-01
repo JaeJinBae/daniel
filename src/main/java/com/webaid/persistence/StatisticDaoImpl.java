@@ -33,4 +33,9 @@ public class StatisticDaoImpl implements StatisticDao {
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 
+	@Override
+	public void insert(StatisticVO vo) {
+		session.insert(namespace + ".insert", vo);
+	}
+
 }

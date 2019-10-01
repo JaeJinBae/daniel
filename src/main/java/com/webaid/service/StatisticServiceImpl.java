@@ -31,4 +31,9 @@ public class StatisticServiceImpl implements StatisticService {
 		return dao.listSearchCount(cri);
 	}
 
+	@Override
+	public void insert(StatisticVO vo) {
+		dao.insert(vo);
+	}
+
 }

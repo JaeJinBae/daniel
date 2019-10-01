@@ -99,8 +99,8 @@ $(function(){
 	var year = ndate.getFullYear();
 	var month = ndate.getMonth()+1;
 	var date = ndate.getDate();
-	month = (month > 10) ? month+"":"0"+month;
-	date = (date > 10) ? date+"":"0"+date;
+	month = (month > 9) ? month+"":"0"+month;
+	date = (date > 9) ? date+"":"0"+date;
 	sttGet("time", year+"-"+month+"-"+date, year+"-"+month+"-"+date);
 	$("#chart1 > span").text(year+"년 "+month+"월 "+date+"일 ");
 	$("#chart2 > span").text(year+"년 "+month+"월 "+date+"일 ");

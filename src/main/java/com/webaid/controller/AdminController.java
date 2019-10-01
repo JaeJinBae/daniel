@@ -2211,16 +2211,18 @@ public class AdminController {
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("browser")){
 			List<String> browserList = new ArrayList<String>();
+			browserList.add("Internet Explorer7");
+			browserList.add("Internet Explorer8");
+			browserList.add("Internet Explorer9");
+			browserList.add("Internet Explorer10");
+			browserList.add("Internet Explorer11");
 			browserList.add("Chrome");
-			browserList.add("FireFox");
-			browserList.add("Gecko");
-			browserList.add("Mozilla");
-			browserList.add("MSIE10");
-			browserList.add("MSIE11");
-			browserList.add("MSIE8");
-			browserList.add("MSIE9");
-			browserList.add("Robot");
-			browserList.add("unknown");
+			browserList.add("Safari");
+			browserList.add("Opera");
+			browserList.add("Mac");
+			browserList.add("Safari3");
+			browserList.add("Firefox");
+			browserList.add("Unknown");
 			
 			TreeMap<String, Integer> tm = new TreeMap<String, Integer>();
 			
@@ -2244,17 +2246,15 @@ public class AdminController {
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("os")){
 			List<String> osList = new ArrayList<String>();
-			osList.add("Linux");
-			osList.add("MAC");
-			osList.add("Mozilla");
-			osList.add("Robot");
-			osList.add("unknown");
-			osList.add("Windows7");
-			osList.add("Windows8");
+
+			osList.add("Windows 7");
+			osList.add("Windows 8");
 			osList.add("Windows Vista");
 			osList.add("Windows XP");
-			osList.add("Windows10");
-			osList.add("Windows11");
+			osList.add("Windows 10");
+			osList.add("Linux");
+			osList.add("Mac");
+			osList.add("Unknown");
 			
 			TreeMap<String, Integer> tm = new TreeMap<String, Integer>();
 			

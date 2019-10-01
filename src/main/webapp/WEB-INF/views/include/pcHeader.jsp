@@ -124,11 +124,56 @@
 <script>
 $(function(){
 	var access_url = document.referrer;
-	var os = window.navigator.userAgent.toLowerCase();
-	if(access_url.includes("danielps.co.kr") || access_url.includes("danielps0911.cafe24")){
-		
-	}else{
-		
+	var ua = navigator.userAgent.toLowerCase();
+    var browser = "";
+    var os = "";
+	if(access_url.indexOf("danielps.co.kr") == -1 && access_url.indexOf("danielps0911.cafe24") == -1){
+		//browser
+		if( ua.indexOf('msie 7') != -1 ) {
+            browser = "Internet Explorer7";
+        }else if( ua.indexOf('trident/4.0') != -1 ) {
+        	/* IE8 부터는 msie 값으로 브라우저 버전을 분별할수 없음 trident 값으로 해야한다. */
+        	browser = "Internet Explorer8";
+        }else if( ua.indexOf('trident/5.0') != -1 ) {
+            browser = "Internet Explorer9";
+        }else if( ua.indexOf('trident/6.0') != -1 ) {
+            browser = "Internet Explorer10";
+        }else if( ua.indexOf('trident/7.0') != -1 ) {
+            browser = "Internet Explorer11";
+        }else if( !!window.opera ) {
+            browser = "Opera";
+        }else if( ua.indexOf('safari') != -1 ) {
+            browser = "Safari";
+        }else if( ua.indexOf('applewebkit/5') != -1 ) {
+            browser = "Safari3";
+        }else if( ua.indexOf('mac') != -1 ) {
+            browser = "Mac";
+        }else if( ua.indexOf('chrome') != -1 ) {
+            browser = "Chrome";
+        }else if( ua.indexOf('firefox') != -1 ) {
+            browser = "Firefox";
+        }else{
+        	browser = "Unknown";
+        }
+        
+        //os
+		if( ua.indexOf("NT 5.1") != -1 ) {
+			os = "Windows XP";
+        }else if( ua.indexOf("NT 6.0") != -1 ) {
+        	os = "Windows Vista";
+        }else if( ua.indexOf("NT 6.1") != -1 ) {
+        	os = "Windows 7";
+        }else if( ua.indexOf("NT 6.2") != -1 ) {
+        	os = "Windows 8";
+        }else if(ua.indexOf("WindowsNT6.4") != -1){
+        	os = "Windows 10";
+        }else if( ua.indexOf("Linux") != -1 ) {
+        	os = "Linux";
+        }else if( ua.indexOf("Mac") != -1 ) {
+        	os = "Mac";
+        }else{
+        	os = "Unknown";
+        }
 	}
 });
 </script>
