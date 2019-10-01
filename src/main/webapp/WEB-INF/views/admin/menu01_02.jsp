@@ -78,7 +78,7 @@ $(function(){
 								<input type="radio" name="radio_key" id="radio_key8" value="두피클리닉" ${cri.keyword=='두피클리닉'?'checked':''}> <label for="radio_key8"><i></i>두피클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							</div> --%>
 			
-							<form name="search" method="post" action="">
+							<form name="search" onsubmit="return false;">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key" class="search_sel">

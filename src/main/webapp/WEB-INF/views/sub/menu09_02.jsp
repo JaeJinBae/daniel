@@ -649,7 +649,7 @@ $(function(){
 			</div>	<!-- 페이징 끝 -->
 			
 			<div class="search-box">
-				<form name="board_search" method="post" action="" onsubmit="return board_search_it(this)">
+				<form name="board_search" onsubmit="return false;">
 					<select name="select_key" id="select_key">
 						<option value="">전체</option>
 						<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>

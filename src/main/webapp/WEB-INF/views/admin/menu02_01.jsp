@@ -61,7 +61,7 @@ $(function(){
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top">
-							<form name="search" method="post" action="">
+							<form name="search" onsubmit="return false;">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key" class="search_sel">
