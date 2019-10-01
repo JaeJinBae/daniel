@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -64,6 +63,7 @@ import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
 import com.webaid.service.UserService;
 import com.webaid.util.FileDelete;
+import com.webaid.util.SmsSendUtil;
 
 /**
  * Handles requests for the application home page.
@@ -378,6 +378,9 @@ public class HomeController {
 			vo.setQuick_state("o");
 			
 			aService.insert(vo);
+			
+			SmsSendUtil ssu = new SmsSendUtil();
+			ssu.sendSMS("빠른상담", info.get("name"), info.get("phone"));
 			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -772,6 +775,9 @@ public class HomeController {
 		}//이미지 업로드 끝
 		
 		aService.insert(vo);
+		
+		SmsSendUtil ssu = new SmsSendUtil();
+		ssu.sendSMS("온라인 상담", mtfReq.getParameter("name"), mtfReq.getParameter("phone"));
 		
 		return "redirect:/menu09_02";
 	}

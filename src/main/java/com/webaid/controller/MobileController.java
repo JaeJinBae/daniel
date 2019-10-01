@@ -49,6 +49,7 @@ import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
 import com.webaid.service.UserService;
 import com.webaid.util.FileDelete;
+import com.webaid.util.SmsSendUtil;
 
 /**
  * Handles requests for the application home page.
@@ -592,6 +593,8 @@ public class MobileController {
 		
 		aService.insert(vo);
 		
+		SmsSendUtil ssu = new SmsSendUtil();
+		ssu.sendSMS("온라인 상담", mtfReq.getParameter("name"), mtfReq.getParameter("phone"));
 		return "redirect:/m/menu09_02";
 	}
 	

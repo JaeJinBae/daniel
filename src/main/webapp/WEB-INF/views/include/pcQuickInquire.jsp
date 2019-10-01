@@ -39,7 +39,7 @@ $(function(){
 		var ndd = nd.getDate();
 		ndd = (ndd>9?'':'0')+ndd;
 		var regdate = ny+"-"+nm+"-"+ndd;
-		alert(content.length);
+		
 		var info = {"name":name, "phone":phone, "clinic_type":clinic_type, "content":content, "regdate":regdate, "access_url":access_url};
 		quickInquireRegister(info);
 	});

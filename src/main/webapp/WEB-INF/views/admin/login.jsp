@@ -22,7 +22,36 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <script>
+function admLogin(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/admLogin",
+		type:"POST",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		data: JSON.stringify(info),
+		async:false,
+		success:function(json){
+			if(json =="no"){
+				alert("일치하는 정보가 없습니다.");
+				
+			}else if(json == "ok"){
+				location.href="${pageContext.request.contextPath}/admin/main";
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
 $(function(){
+	$("#loginBtn").click(function(){
+		var id = $("#m_id").val();
+		var pw = $("#m_pass").val();
+		var info = {"id":id, "pw":pw};
+		
+		admLogin(info);
+	});
 	
 });
 </script>
@@ -47,13 +76,13 @@ $(function(){
 						<input type="password" class="box_w" name="m_pass" id="m_pass" value="" valid="required" element-name="비밀번호">
 					</div>
 
-					<div class="id_remem">
+					<!-- <div class="id_remem">
 						<input type="checkbox" id="id_save" name="id_save" value="1">
 						<span><label for="id_save">ID기억하기</label></span>
-					</div>
+					</div> -->
 
 					<div class="btn_area">
-						<button type="submit" class="login_btn btn_blue">LOGIN</button>
+						<button type="button" id="loginBtn" class="login_btn btn_blue">LOGIN</button>
 					</div>
 				</div>
             </form>

@@ -41,7 +41,6 @@ $(function(){
 	var date = ndate.getDate();
 	month = (month > 9) ? month+"":"0"+month;
 	date = (date > 9) ? date+"":"0"+date;
-	$("#regdate").val(year+"-"+month+"-"+date);
 	
 	$("#mailcode").change(function(){
 		var codee = $(this).val();
@@ -53,6 +52,13 @@ $(function(){
 		var email2 = $("#email2").val();
 		var email = email1+"@"+email2; 
 		$("#email").val(email);
+	});
+	
+	$("#state").change(function(){
+		var changeState = $(this).val();
+		if(changeState == "상담완료"){
+			$("input[name='reply_date']").val(year+"-"+month+"-"+date);
+		}
 	});
 });
 </script>

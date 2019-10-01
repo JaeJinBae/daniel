@@ -18,6 +18,7 @@ import java.util.TreeMap;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -123,11 +124,34 @@ public class AdminController {
 		return "admin/login";
 	}
 	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(HttpServletRequest req){
+		HttpSession session = req.getSession(false);
+		if(session != null){
+			session.invalidate();
+		}
+		return "redirect:/admin";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		logger.info("login GET");
 		
 		return "admin/login";
+	}
+	
+	@RequestMapping(value = "/admLogin", method = RequestMethod.POST)
+	public ResponseEntity<String> login(@RequestBody Map<String, String> info, HttpSession session) {
+		logger.info("loginIdPwChk");
+		ResponseEntity<String> entity = null;
+		
+		if(info.get("id").equals("danielclinic") && info.get("pw").equals("danielclinic1")){
+			session.setAttribute("id", "danielclinic");
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
+		return entity;
 	}
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
@@ -1992,30 +2016,30 @@ public class AdminController {
 				}
 			}
 			
-			List<String> part_list00 = new ArrayList<>(); part_list00.add("00"); part_list00.add(t_00+"");
-			List<String> part_list01 = new ArrayList<>(); part_list01.add("01"); part_list01.add(t_01+"");
-			List<String> part_list02 = new ArrayList<>(); part_list02.add("02"); part_list02.add(t_02+"");
-			List<String> part_list03 = new ArrayList<>(); part_list03.add("03"); part_list03.add(t_03+"");
-			List<String> part_list04 = new ArrayList<>(); part_list04.add("04"); part_list04.add(t_04+"");
-			List<String> part_list05 = new ArrayList<>(); part_list05.add("05"); part_list05.add(t_05+"");
-			List<String> part_list06 = new ArrayList<>(); part_list06.add("06"); part_list06.add(t_06+"");
-			List<String> part_list07 = new ArrayList<>(); part_list07.add("07"); part_list07.add(t_07+"");
-			List<String> part_list08 = new ArrayList<>(); part_list08.add("08"); part_list08.add(t_08+"");
-			List<String> part_list09 = new ArrayList<>(); part_list09.add("09"); part_list09.add(t_09+"");
-			List<String> part_list10 = new ArrayList<>(); part_list10.add("10"); part_list10.add(t_10+"");
-			List<String> part_list11 = new ArrayList<>(); part_list11.add("11"); part_list11.add(t_11+"");
-			List<String> part_list12 = new ArrayList<>(); part_list12.add("12"); part_list12.add(t_12+"");
-			List<String> part_list13 = new ArrayList<>(); part_list13.add("13"); part_list13.add(t_13+"");
-			List<String> part_list14 = new ArrayList<>(); part_list14.add("14"); part_list14.add(t_14+"");
-			List<String> part_list15 = new ArrayList<>(); part_list15.add("15"); part_list15.add(t_15+"");
-			List<String> part_list16 = new ArrayList<>(); part_list16.add("16"); part_list16.add(t_16+"");
-			List<String> part_list17 = new ArrayList<>(); part_list17.add("17"); part_list17.add(t_17+"");
-			List<String> part_list18 = new ArrayList<>(); part_list18.add("18"); part_list18.add(t_18+"");
-			List<String> part_list19 = new ArrayList<>(); part_list19.add("19"); part_list19.add(t_19+"");
-			List<String> part_list20 = new ArrayList<>(); part_list20.add("20"); part_list20.add(t_20+"");
-			List<String> part_list21 = new ArrayList<>(); part_list21.add("21"); part_list21.add(t_21+"");
-			List<String> part_list22 = new ArrayList<>(); part_list22.add("22"); part_list22.add(t_22+"");
-			List<String> part_list23 = new ArrayList<>(); part_list23.add("23"); part_list23.add(t_23+"");
+			List<String> part_list00 = new ArrayList<String>(); part_list00.add("00"); part_list00.add(t_00+"");
+			List<String> part_list01 = new ArrayList<String>(); part_list01.add("01"); part_list01.add(t_01+"");
+			List<String> part_list02 = new ArrayList<String>(); part_list02.add("02"); part_list02.add(t_02+"");
+			List<String> part_list03 = new ArrayList<String>(); part_list03.add("03"); part_list03.add(t_03+"");
+			List<String> part_list04 = new ArrayList<String>(); part_list04.add("04"); part_list04.add(t_04+"");
+			List<String> part_list05 = new ArrayList<String>(); part_list05.add("05"); part_list05.add(t_05+"");
+			List<String> part_list06 = new ArrayList<String>(); part_list06.add("06"); part_list06.add(t_06+"");
+			List<String> part_list07 = new ArrayList<String>(); part_list07.add("07"); part_list07.add(t_07+"");
+			List<String> part_list08 = new ArrayList<String>(); part_list08.add("08"); part_list08.add(t_08+"");
+			List<String> part_list09 = new ArrayList<String>(); part_list09.add("09"); part_list09.add(t_09+"");
+			List<String> part_list10 = new ArrayList<String>(); part_list10.add("10"); part_list10.add(t_10+"");
+			List<String> part_list11 = new ArrayList<String>(); part_list11.add("11"); part_list11.add(t_11+"");
+			List<String> part_list12 = new ArrayList<String>(); part_list12.add("12"); part_list12.add(t_12+"");
+			List<String> part_list13 = new ArrayList<String>(); part_list13.add("13"); part_list13.add(t_13+"");
+			List<String> part_list14 = new ArrayList<String>(); part_list14.add("14"); part_list14.add(t_14+"");
+			List<String> part_list15 = new ArrayList<String>(); part_list15.add("15"); part_list15.add(t_15+"");
+			List<String> part_list16 = new ArrayList<String>(); part_list16.add("16"); part_list16.add(t_16+"");
+			List<String> part_list17 = new ArrayList<String>(); part_list17.add("17"); part_list17.add(t_17+"");
+			List<String> part_list18 = new ArrayList<String>(); part_list18.add("18"); part_list18.add(t_18+"");
+			List<String> part_list19 = new ArrayList<String>(); part_list19.add("19"); part_list19.add(t_19+"");
+			List<String> part_list20 = new ArrayList<String>(); part_list20.add("20"); part_list20.add(t_20+"");
+			List<String> part_list21 = new ArrayList<String>(); part_list21.add("21"); part_list21.add(t_21+"");
+			List<String> part_list22 = new ArrayList<String>(); part_list22.add("22"); part_list22.add(t_22+"");
+			List<String> part_list23 = new ArrayList<String>(); part_list23.add("23"); part_list23.add(t_23+"");
 			totalList.add(part_list00); totalList.add(part_list01); totalList.add(part_list02);
 			totalList.add(part_list03); totalList.add(part_list04); totalList.add(part_list05);
 			totalList.add(part_list06); totalList.add(part_list07); totalList.add(part_list08);
@@ -2066,7 +2090,7 @@ public class AdminController {
 			}
 			List<String> tempList = null;
 			for(int i=0;i<dateList.size();i++){
-				tempList = new ArrayList<>();
+				tempList = new ArrayList<String>();
 				tempList.add(dateList.get(i));
 				tempList.add(tm.get(dateList.get(i))+"");
 				totalList.add(tempList);
@@ -2074,7 +2098,7 @@ public class AdminController {
 			
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("dayofweek")){
-			List<String> dowList = new ArrayList<>();
+			List<String> dowList = new ArrayList<String>();
 			dowList.add("월");
 			dowList.add("화");
 			dowList.add("수");
@@ -2091,7 +2115,7 @@ public class AdminController {
 			
 			List<String> tempList = null;
 			for(int i=0;i<dowList.size();i++){
-				tempList = new ArrayList<>();
+				tempList = new ArrayList<String>();
 				tempList.add(dowList.get(i));
 				tempList.add(tm.get(dowList.get(i))+"");
 				totalList.add(tempList);
@@ -2099,7 +2123,7 @@ public class AdminController {
 			
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("month")){
-			List<String> monthList = new ArrayList<>();
+			List<String> monthList = new ArrayList<String>();
 			String[] sd = s_date.split("-");
 			String[] ed = e_date.split("-");
 			int sy=Integer.parseInt(sd[0]);
@@ -2143,7 +2167,7 @@ public class AdminController {
 			
 			List<String> tempList = null;
 			for(int i=0;i<monthList.size();i++){
-				tempList = new ArrayList<>();
+				tempList = new ArrayList<String>();
 				tempList.add(monthList.get(i));
 				tempList.add(tm.get(monthList.get(i))+"");
 				totalList.add(tempList);
@@ -2157,7 +2181,7 @@ public class AdminController {
 			int sy = Integer.parseInt(s_date_txt_arr[0]);
 			int ey = Integer.parseInt(e_date_txt_arr[0]);
 			int resVal = ey-sy;
-			List<String> yearList = new ArrayList<>();
+			List<String> yearList = new ArrayList<String>();
 
 			for(int i=0; i<(resVal+1); i++){
 				yearList.add((sy+i)+"");
@@ -2178,7 +2202,7 @@ public class AdminController {
 			
 			List<String> tempList = null;
 			for(int i=0;i<yearList.size();i++){
-				tempList = new ArrayList<>();
+				tempList = new ArrayList<String>();
 				tempList.add(yearList.get(i));
 				tempList.add(tm.get(yearList.get(i))+"");
 				totalList.add(tempList);
@@ -2186,7 +2210,7 @@ public class AdminController {
 			
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("browser")){
-			List<String> browserList = new ArrayList<>();
+			List<String> browserList = new ArrayList<String>();
 			browserList.add("Chrome");
 			browserList.add("FireFox");
 			browserList.add("Gecko");
@@ -2211,7 +2235,7 @@ public class AdminController {
 			
 			List<String> tempList = null;
 			for(int i=0;i<browserList.size();i++){
-				tempList = new ArrayList<>();
+				tempList = new ArrayList<String>();
 				tempList.add(browserList.get(i));
 				tempList.add(tm.get(browserList.get(i))+"");
 				totalList.add(tempList);
@@ -2219,7 +2243,7 @@ public class AdminController {
 			
 			entity = new ResponseEntity<List<List<String>>>(totalList, HttpStatus.OK);
 		}else if(type.equals("os")){
-			List<String> osList = new ArrayList<>();
+			List<String> osList = new ArrayList<String>();
 			osList.add("Linux");
 			osList.add("MAC");
 			osList.add("Mozilla");
@@ -2245,7 +2269,7 @@ public class AdminController {
 			
 			List<String> tempList = null;
 			for(int i=0;i<osList.size();i++){
-				tempList = new ArrayList<>();
+				tempList = new ArrayList<String>();
 				tempList.add(osList.get(i));
 				tempList.add(tm.get(osList.get(i))+"");
 				totalList.add(tempList);
