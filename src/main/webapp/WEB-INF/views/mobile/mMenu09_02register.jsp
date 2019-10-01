@@ -620,11 +620,7 @@ $(function(){
 								<div class="form-file">
 									<div>
 										<input type="file" name="upload[]" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
-										<div class="jfilestyle jfilestyle-corner  jfilestyle-theme-default">
-											<div name="filedrag" style="position: absolute; width: 100%; height: 70px; z-index: -1;"></div>
-											<input type="text" style="width:150px" placeholder="" disabled=""> <span class="focus-jfilestyle" tabindex="0"><label for="jfilestyle-0">
-											<span>파일첨부</span></label></span>
-										</div><br>
+										<br>
 									</div>
 								</div>
 								<script>
@@ -663,11 +659,11 @@ $(function(){
 							② 필수 정보가 아닌 선택 정보의 경우 개인정보 수집에 동의하지 않을 수 있으며 서비스 이용에 제한은 없습니다.
 						</textarea>
 						<p>
-							<input type="checkbox" id="agree" name="agree" value="Y" checked="checked">
+							<input type="checkbox" id="agree1" name="agree" value="Y" checked="checked">
 							<label for="agree">개인정보취급방침에 동의합니다.</label>
 						</p>
 					</div>
-					
+					 
 				
 					<!-- 게시판 버튼 시작 -->
 					<div class="btn-group-center">

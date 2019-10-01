@@ -519,6 +519,7 @@ $(function(){
 								<li><a href="${pageContext.request.contextPath}/m/menu02_02">안면윤곽주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu02_03">멀티파워주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu02_04">가격안내</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu09_07">예약하기</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -614,8 +615,8 @@ $(function(){
 		
 					<div class="double-banner">
 						<ul>
-							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a></li>
-							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner03.png" alt="다니엘 동안탄력"></a></li>
+							<li><a href="${pageContext.request.contextPath}/m/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a></li>
+							<li><a href="${pageContext.request.contextPath}/m/menu05_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner03.png" alt="다니엘 동안탄력"></a></li>
 						</ul>
 					</div>
 				</div>

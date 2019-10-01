@@ -624,8 +624,8 @@ $(function(){
 		
 					<div class="double-banner">
 						<ul>
-							<li><a href="/m/564/?pCode=564"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a></li>
-							<li><a href="/m/503/?pCode=503"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner03.png" alt="다니엘 레이저"></a></li>
+							<li><a href="${pageContext.request.contextPath}/m/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a></li>
+							<li><a href="${pageContext.request.contextPath}/m/menu05_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner03.png" alt="다니엘 레이저"></a></li>
 						</ul>
 					</div>
 		

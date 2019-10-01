@@ -519,6 +519,7 @@ $(function(){
 								<li><a href="${pageContext.request.contextPath}/m/menu02_02">안면윤곽주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu02_03">멀티파워주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu02_04">가격안내</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu09_07">예약하기</a></li>
 							</ul>
 						</li>
 					</ul>

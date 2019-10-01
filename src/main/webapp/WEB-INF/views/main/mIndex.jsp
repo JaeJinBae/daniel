@@ -495,7 +495,7 @@ $(function(){
 	<!-- 메인페이지 비주얼 영상 시작 -->
 	<section id="video-visual">
 		<div class="visual-footer">
-			<a href="/m/589/?pCode=589" class="quick-reserve" title="예약하기"></a>
+			<a href="${pageContext.request.contextPath}/m/menu09_07" class="quick-reserve" title="예약하기"></a>
 			<div class="call">
 				<a href="tel:055-284-0911">상담문의 : 055 ) 284-0911</a>
 				<!--a href="tel:055-284-0912">피부상담문의 : 055 ) 284-0912</a-->
@@ -504,10 +504,10 @@ $(function(){
 		<i class="visual-logo"><img src="${pageContext.request.contextPath}/resources/img/common/video_logo.png" alt=""></i>
 		<a href="${pageContext.request.contextPath}/resources/video/visual3.mp4" class="visual-txt"><img src="${pageContext.request.contextPath}/resources/img/m/main/play.png" alt=""></a>
 		<div class="visual-icon">
-			<a href="/m/528//?pCode=528"><img src="${pageContext.request.contextPath}/resources/img/common/icon_sms.png" alt=""></a>
+			<a href="${pageContext.request.contextPath}/m/menu09_02"><img src="${pageContext.request.contextPath}/resources/img/common/icon_sms.png" alt=""></a>
 			<a href="https://talk.naver.com/ct/wc45p6" target="_blank"><img src="${pageContext.request.contextPath}/resources/img/common/icon_why.png" alt=""></a>
 			<a href="https://pf.kakao.com/_QxfxkCxl" target="_blank"><img src="${pageContext.request.contextPath}/resources/img/common/icon_kakao.png" alt=""></a>
-			<a href="/m/501/?pCode=501"><img src="${pageContext.request.contextPath}/resources/img/common/icon_location.png" alt=""></a>
+			<a href="${pageContext.request.contextPath}/m/menu01_03"><img src="${pageContext.request.contextPath}/resources/img/common/icon_location.png" alt=""></a>
 		</div>
 		<div class="line-box">
 			<i class="line01"></i>
@@ -562,7 +562,7 @@ $(function(){
 									<i class="line"></i>
 									<h6 class="tit">여드름치료</h6>
 								</div>
-								<div class="flop" onclick="location.href='/m/512/?pCode=512'">
+								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/m/menu03_03'">
 									<h6 class="tit">여드름 치료</h6>
 									<span class="special">지문형 시스템으로<br>피부 진단부터 특별합니다.</span>
 									<p class="cap">풍부한 임상 경험과 체계화된 진단 시스템으로 여드름의 원인을 정확하게 파악합니다.</p>
@@ -585,7 +585,7 @@ $(function(){
 									<h6 class="tit">기미치료</h6>
 								</div>
 			
-								<div class="flop" onclick="location.href='/m/511/?pCode=511'">
+								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/m/menu03_02'">
 									<h6 class="tit">기미치료</h6>
 									<span class="special">피부 타입과 증상에 따라 <br>특화된 치료법을 개발하였습니다.</span>
 									<p class="cap">개개인의 피부 컨디션에 따라 선별적으로 사용되어 100가지가 넘는 복합 프로그램이 존재합니다.</p>
@@ -608,7 +608,7 @@ $(function(){
 									<h6 class="tit">다니엘<br>멜로디 눈성형</h6>
 								</div>
 			
-								<div class="flop" onclick="location.href='/m/517/?pCode=517'">
+								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/m/menu04_01'">
 									<h6 class="tit">다니엘 멜로디 눈성형</h6>
 									<span class="special">단순히 눈을 크게 만드는것이 아니라<br>얼굴의 전반적인 조화를 고려합니다.</span>
 									<p class="cap">얼굴의 형태, 눈의 크기, 피부상태, 눈꺼풀 지방의 함유량 등을 고려해 이상적인 비율과 균형을 이룰 수 있게 디자인 합니다.</p>
@@ -631,7 +631,7 @@ $(function(){
 									<h6 class="tit">리프팅</h6>
 								</div>
 			
-								<div class="flop" onclick="location.href='/m/503/?pCode=503'">
+								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/m/menu05_01'">
 									<h6 class="tit">리프팅</h6>
 									<span class="special">피부 복구와 노화 방지에 <br>최적화된 프로그램</span>
 									<p class="cap">피부 노화는 기능성 화장품으로 해결하기에는 역부족입니다. 피부타입, 노화 진행 패턴에 맞춰서 치료가 진행됩니다.</p>
@@ -654,12 +654,12 @@ $(function(){
 				<!-- 비주얼 타이틀 끝 -->
 				<!-- 슬라이드 배너 시작 -->
 				<ul class="slider-banner">
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb09.jpg) no-repeat center top;">
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb20.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
-							<p class="cap">Summer</p>
+							<p class="cap">Autumn</p>
 							<h6 class="tit">다니엘이 추천하는 상품</h6>
-							<a href="/m/564/?pCode=564&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=46" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb08.png) no-repeat center top;">
@@ -667,7 +667,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">NEW 4세대</p>
 							<h6 class="tit">써마지 FLX</h6>
-							<a href="/m/564/?pCode=564&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=45" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb06.jpg) no-repeat center top;">
@@ -675,7 +675,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">공명플라즈마</p>
 							<h6 class="tit">코레지 도입기념 이벤트</h6>
-							<a href="/m/564/?pCode=564&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb04.jpg) no-repeat center top;">
@@ -683,7 +683,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">Early Bird EVENT</p>
 							<h6 class="tit">얼리버드 데이 이벤트</h6>
-							<a href="/m/564/?pCode=564&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=42" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb05.jpg) no-repeat center top;">
@@ -691,7 +691,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">UP DAY EVENT</p>
 							<h6 class="tit">수요일엔 업데이 이벤트</h6>
-							<a href="/m/564/?pCode=564&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=41" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb02.jpg) no-repeat center top;">
@@ -699,7 +699,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">맞춤웨딩프로그램</p>
 							<h6 class="tit">웨딩 D-Day 패키지</h6>
-							<a href="/m/564/?pCode=564&amp;distinction=view&amp;perm=Y&amp;page=1&amp;seq=39" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 			
@@ -720,10 +720,10 @@ $(function(){
 
 			<section id="daniel-banner">
 				<ul class="inner">
-					<li><a href="/m/520/?pCode=520" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner01.png" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a></li>
-					<li><a href="/m/514/?pCode=514" title="모공＆흉터치료"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner02.png" alt="여드름 흉터와 모공 흔적없이 지워드립니다. 모공 및 흉터치료"></a></li>
-					<li><a href="/m/510/?pCode=510" title="다니엘 복합레이저"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner03.png" alt="말 뿐인 맞춤시술과 비교를 거부합니다. 다니엘 복합레이저"></a></li>
-					<li><a href="/m/521/?pCode=521" title="보톡스＆필러"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner04.png" alt="성형외과 전문의가 직접 시술하는 보톡스 및 필러"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu04_04" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner01.png" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu03_05" title="모공＆흉터치료"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner02.png" alt="여드름 흉터와 모공 흔적없이 지워드립니다. 모공 및 흉터치료"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu03_01" title="다니엘 복합레이저"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner03.png" alt="말 뿐인 맞춤시술과 비교를 거부합니다. 다니엘 복합레이저"></a></li>
+					<li><a href="${pageContext.request.contextPath}/m/menu02_01" title="보톡스＆필러"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner04.png" alt="성형외과 전문의가 직접 시술하는 보톡스 및 필러"></a></li>
 				</ul>
 			</section>
 

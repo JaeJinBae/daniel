@@ -60,7 +60,7 @@
 			<div class="counsel-sns">
 				<a href="http://pf.kakao.com/_EZraj" target="_blank" class="kakao">카카오톡 상담<b>@다니엘성형외과</b></a>
 				<a href="https://talk.naver.com/ct/wc45p6" target="_blank" class="naver">네이버 톡톡</a>
-				<a href="/528/?pCode=528" class="online">온라인 상담</a>
+				<a href="${pageContext.request.contextPath}/menu09_02" class="online">온라인 상담</a>
 			</div>
 		</li>
 		<!-- 상담문의 끝 -->

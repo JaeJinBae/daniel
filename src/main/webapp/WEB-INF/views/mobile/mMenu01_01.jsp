@@ -550,10 +550,10 @@ $(function(){
 				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_01.png" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과" usemap="pCode-499-01"></div>
 			</div>
 			<div class="sub-contents pCode-499-02">
-				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="pCode-499-02"></div>
+				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="#pCode-499-02"></div>
 			</div>
 			<div class="sub-contents pCode-499-03">
-				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="pCode-499-03"></div>
+				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="#pCode-499-03"></div>
 			</div>
 			<div class="sub-contents pCode-499-04">
 				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_04.png" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리" usemap="pCode-499-04"></div>
@@ -562,21 +562,21 @@ $(function(){
 			
 			<!-- 프리미엄 오리지널 명품 레이저 보유 맵 시작 -->
 			<map name="pCode-499-02">
-			  <area shape="rect" coords="69,316,152,336" href="">
-			  <area shape="rect" coords="230,316,312,336" href="">
-			  <area shape="rect" coords="69,495,151,515" href="">
-			  <area shape="rect" coords="229,495,312,515" href="">
-			  <area shape="rect" coords="163,565,212,615" href="">
+			  <area shape="rect" coords="69,316,152,336" href="${pageContext.request.contextPath}/m/menu01_04">
+			  <area shape="rect" coords="230,316,312,336" href="${pageContext.request.contextPath}/m/menu01_04">
+			  <area shape="rect" coords="69,495,151,515" href="${pageContext.request.contextPath}/m/menu01_04">
+			  <area shape="rect" coords="229,495,312,515" href="${pageContext.request.contextPath}/m/menu01_04">
+			  <area shape="rect" coords="163,565,212,615" href="${pageContext.request.contextPath}/m/menu01_04">
 			</map>
 			<!-- 프리미엄 오리지널 명품 레이저 보유 맵 끝 -->
 			
 			<!-- 최적화 프로그램 맵 시작 -->
 			<map name="pCode-499-03">
-			  <area shape="rect" coords="53,274,75,295" href="">
-			  <area shape="rect" coords="176,274,199,295" href="">
-			  <area shape="rect" coords="299,273,320,295" href="">
-			  <area shape="rect" coords="85,420,108,441" href="">
-			  <area shape="rect" coords="267,420,288,441" href="">
+			  <area shape="rect" coords="53,274,75,295" href="${pageContext.request.contextPath}/m/menu03_01">
+			  <area shape="rect" coords="176,274,199,295" href="${pageContext.request.contextPath}/m/menu06_01">
+			  <area shape="rect" coords="299,273,320,295" href="${pageContext.request.contextPath}/m/menu05_05">
+			  <area shape="rect" coords="85,420,108,441" href="${pageContext.request.contextPath}/m/menu05_01">
+			  <area shape="rect" coords="267,420,288,441" href="${pageContext.request.contextPath}/m/menu05_02">
 			</map>
 			<!-- 최적화 프로그램 맵 끝 -->
 		</section>

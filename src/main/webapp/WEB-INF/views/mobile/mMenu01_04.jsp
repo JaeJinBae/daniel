@@ -484,7 +484,9 @@ keyframes fa-spin { 0%{
 	position: static;
 	width: auto
 }
-
+.eqm1_li:last-child, .eqm1_li:nth-child(17){
+	display:none;
+}
 </style>
 <script>
 $(function(){

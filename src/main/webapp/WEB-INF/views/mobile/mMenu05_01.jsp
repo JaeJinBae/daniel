@@ -488,7 +488,7 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	
+	$("img[usemap]").rwdImageMaps();
 });
 </script>
 </head>
@@ -563,7 +563,7 @@ $(function(){
 				<div class="full">
 					<img src="${pageContext.request.contextPath}/resources/img/m/contents/503_img_05.png" alt="" usemap="#pCode-503-05">
 				</div>
-			</div>
+			</div> 
 			<div class="sub-contents pCode-503-06">
 				<div class="full">
 					<img src="${pageContext.request.contextPath}/resources/img/m/contents/503_img_06.png" alt="" usemap="#pCode-503-06">
@@ -628,23 +628,23 @@ $(function(){
 			
 			<!-- 프리미엄 오리지널 명품 레이저 보유 맵 시작 -->
 			<map name="pCode-503-16">
-				<area shape="rect" coords="11,29,181,240" href="/m/533/?pCode=534" alt="사이톤줄 프로파일">
-				<area shape="rect" coords="193,29,363,240" href="/m/533/?pCode=535" alt="엑셀V">
-				<area shape="rect" coords="11,252,182,463" href="/m/533/?pCode=536" alt="스킨타이트">
-				<area shape="rect" coords="193,251,363,463" href="/m/533/?pCode=550" alt="아피니트">
-				<area shape="rect" coords="11,474,182,685" href="/m/533/?pCode=548" alt="노보라떼">
-				<area shape="rect" coords="195,475,363,684" href="/m/533/?pCode=690" alt="LDM 골드">
+				<area shape="rect" coords="11,29,181,240" href="${pageContext.request.contextPath}/m/menu01_04" alt="사이톤줄 프로파일">
+				<area shape="rect" coords="193,29,363,240" href="${pageContext.request.contextPath}/m/menu01_04" alt="엑셀V">
+				<area shape="rect" coords="11,252,182,463" href="${pageContext.request.contextPath}/m/menu01_04" alt="스킨타이트">
+				<area shape="rect" coords="193,251,363,463" href="${pageContext.request.contextPath}/m/menu01_04" alt="아피니트">
+				<area shape="rect" coords="11,474,182,685" href="${pageContext.request.contextPath}/m/menu01_04" alt="노보라떼">
+				<area shape="rect" coords="195,475,363,684" href="${pageContext.request.contextPath}/m/menu01_04" alt="LDM 골드">
 			</map>
 			<!-- 프리미엄 오리지널 명품 레이저 보유 맵 끝 -->
 			
 			<!-- 최적화 프로그램 맵 시작 -->
 			<map name="pCode-503-17">
-				<area shape="rect" coords="12,0,182,210" href="/m/533/?pCode=541" alt="포어타이탄">
-				<area shape="rect" coords="192,1,363,211" href="/m/533/?pCode=576" alt="슈링크">
-				<area shape="rect" coords="11,221,182,433" href="/m/533/?pCode=547" alt="아포렉스">
-				<area shape="rect" coords="193,221,364,434" href="/m/533/?pCode=551" alt="이온토손">
-				<area shape="rect" coords="11,445,182,655" href="/m/533/?pCode=553" alt="고주파">
-				<area shape="rect" coords="192,444,363,655" href="/m/533/?pCode=556" alt="크라이오셀">
+				<area shape="rect" coords="12,0,182,210" href="${pageContext.request.contextPath}/m/menu01_04" alt="포어타이탄">
+				<area shape="rect" coords="192,1,363,211" href="${pageContext.request.contextPath}/m/menu01_04" alt="슈링크">
+				<area shape="rect" coords="11,221,182,433" href="${pageContext.request.contextPath}/m/menu01_04" alt="아포렉스">
+				<area shape="rect" coords="193,221,364,434" href="${pageContext.request.contextPath}/m/menu01_04" alt="이온토손">
+				<area shape="rect" coords="11,445,182,655" href="${pageContext.request.contextPath}/m/menu01_04" alt="고주파">
+				<area shape="rect" coords="192,444,363,655" href="${pageContext.request.contextPath}/m/menu01_04" alt="크라이오셀">
 			</map>
 			<!-- 최적화 프로그램 맵 끝 -->
 			
