@@ -50,6 +50,7 @@ import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.SearchCriteria12;
 import com.webaid.domain.SearchCriteria8;
 import com.webaid.domain.SearchCriteria9;
+import com.webaid.domain.StatisticVO;
 import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
@@ -61,6 +62,7 @@ import com.webaid.service.HospitalTimeService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
+import com.webaid.service.StatisticService;
 import com.webaid.service.UserService;
 import com.webaid.util.FileDelete;
 import com.webaid.util.SmsSendUtil;
@@ -106,6 +108,9 @@ public class HomeController {
 	@Autowired
 	private HospitalTimeService htService;
 	
+	@Autowired
+	private StatisticService sService;
+	
 	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.POST)
 	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
 		ResponseEntity<String> entity = null;
@@ -147,6 +152,25 @@ public class HomeController {
 			
 			return "main/index";
 		}
+	}
+	
+	@RequestMapping(value="/statisticRegister", method=RequestMethod.POST)
+	public ResponseEntity<String> statisticRegister(@RequestBody Map<String, String> info){
+		logger.info("statistic register");
+		ResponseEntity<String> entity = null;
+		
+		StatisticVO vo = new StatisticVO();
+		vo.setDate(info.get("date"));
+		vo.setDayofweek(info.get("dayofweek"));
+		vo.setHour(Integer.parseInt(info.get("hour")));
+		vo.setMinute(Integer.parseInt(info.get("minute")));
+		vo.setBrowser(info.get("browser"));
+		vo.setOs(info.get("os"));
+		vo.setPrev_url(info.get("prev_url"));
+		
+		sService.insert(vo);
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		return entity;
 	}
 	
 	@RequestMapping(value = "/personal", method = RequestMethod.GET)
