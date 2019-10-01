@@ -142,6 +142,7 @@ function statisticRegister(info){
 $(function(){
 	var access_url = document.referrer;
 	var ua = navigator.userAgent.toLowerCase();
+	console.log(ua);
     var browser = "";
     var os = "";
 	if(access_url.indexOf("danielps.co.kr") == -1 && access_url.indexOf("danielps0911.cafe24") == -1){
@@ -179,17 +180,17 @@ $(function(){
 	    //os
 		if( ua.indexOf("NT 5.1") != -1 ) {
 			os = "Windows XP";
-	    }else if( ua.indexOf("NT 6.0") != -1 ) {
+	    }else if( ua.indexOf("nt 6.0") != -1 ) {
 	    	os = "Windows Vista";
-	    }else if( ua.indexOf("NT 6.1") != -1 ) {
+	    }else if( ua.indexOf("nt 6.1") != -1 ) {
 	    	os = "Windows 7";
-	    }else if( ua.indexOf("NT 6.2") != -1 ) {
+	    }else if( ua.indexOf("nt 6.2") != -1 ) {
 	    	os = "Windows 8";
-	    }else if(ua.indexOf("WindowsNT6.4") != -1){
+	    }else if(ua.indexOf("nt 10.0") != -1){
 	    	os = "Windows 10";
-	    }else if( ua.indexOf("Linux") != -1 ) {
+	    }else if( ua.indexOf("linux") != -1 ) {
 	    	os = "Linux";
-	    }else if( ua.indexOf("Mac") != -1 ) {
+	    }else if( ua.indexOf("mac") != -1 ) {
 	    	os = "Mac";
 	    }else{
 	    	os = "Unknown";
@@ -210,6 +211,5 @@ $(function(){
 		var info = {"date":s_date, "dayofweek":s_dow, "hour":s_t_h, "minute":s_t_m, "browser":browser, "os":os, "prev_url":access_url};
 		statisticRegister(info);
 	}
-	
 });
 </script>
