@@ -24,6 +24,14 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
+	 $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/admin/menu05_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
+	
 	$("#btn_withdraw").click(function(){
 		
 		$(".sel_chkbox:checked").each(function(){
@@ -93,18 +101,19 @@ $("#btn_delete").click(function(){
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top">
-							<form name="search" method="post" action="" onsubmit="return search_it(this)">
+							<form name="search" method="post" action="">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key" class="search_sel">
-										<option value="i_name|i_age|i_phone|i_kind|i_state|i_content|i_answer|i_memo">전체</option>
-										<option value="i_name">이름</option><option value="i_phone">전화번호</option>
-										<option value="i_kind">상담분야</option><option value="i_state">처리상태</option>
-										<option value="i_content">문의내용</option><option value="i_answer">상담내용</option>
-										<option value="i_memo">메모</option>
-									</select>
+										<option value="">전체</option>
+										<option value="n" ${cri.searchType=='t'?'selected':''}>이름</option>
+										<option value="p" ${cri.searchType=='c'?'selected':''}>전화번호</option>
+										<option value="t" ${cri.searchType=='w'?'selected':''}>제목</option>
+										<option value="c" ${cri.searchType=='c'?'selected':''}>문의내용</option>
+										<option value="s" ${cri.searchType=='c'?'selected':''}>처리상태</option>
+									</select>						
 									<input type="text" name="input_key" class="search_t_box" value="">
-									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
+									<input type="button" name="submit_btn" value="검색" class="search_btn cursor" id="searchBtn">
 								</div>
 							</form>
 						</div>

@@ -24,9 +24,14 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
-	$(function(){
-		$.ajaxSetup({cache:false});
-	})
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/admin/menu02_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
 });
 </script>
 </head>
@@ -59,29 +64,13 @@ $(function(){
 							<form name="search" method="post" action="">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
-			
-									정렬순서 : 
-									<select name="select_order" id="select_order" class="search_sel">
-										<option value="seq" selected="">기본 정렬</option>
-										<option value="r_date">예약일 정렬</option>
-									</select>&nbsp;&nbsp;&nbsp;
-			
-									예약일 : 
-									<input type="text" id="start_date" name="start_date" class="search_t_box" value="">
-									<input type="text" id="end_date" name="end_date" class="search_t_box" value="">
-									&nbsp;&nbsp;&nbsp;
-			
 									<select name="select_key" id="select_key" class="search_sel">
-										<option value="r_name|r_phone|r_kind|r_state|r_content">전체</option>
-										<option value="r_name">이름</option>
-										<option value="r_phone">전화번호</option>
-										<option value="r_kind">상담분야</option>
-										<option value="r_state">처리상태</option>
-										<option value="r_content">문의내용</option>
-										<option value="r_memo">메모</option>
+										<option value="">전체</option>
+										<option value="n" ${cri.searchType=='t'?'selected':''}>이름</option>
+										<option value="p" ${cri.searchType=='c'?'selected':''}>전화번호</option>
 									</select>						
 									<input type="text" name="input_key" class="search_t_box" value="">
-									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
+									<input type="button" name="submit_btn" value="검색" class="search_btn cursor" id="searchBtn">
 								</div>
 							</form>
 						</div>

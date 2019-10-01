@@ -485,6 +485,15 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(1)").addClass("active");
+	
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/menu09_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
 });
 </script>
 </head>
@@ -642,16 +651,15 @@ $(function(){
 				</div>	<!-- 페이징 끝 -->
 			
 				<div class="search-box">
-					<form name="board_search" method="post" action="" onsubmit="return board_search_it(this)">
+					<form name="board_search" method="post" action="">
 						<select name="select_key" id="select_key">
 							<option value="">전체</option>
-							<option value="">제목</option>
-							<option value="">내용</option>
-							<option value="">아이디</option>
-							<option value="">작성자</option>
-						</select>		
-						<input type="text" title="검색어" name="input_key" value="">
-						<button type="submit">검색</button>
+							<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
+							<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
+							<option value="w" ${cri.searchType=='w'?'selected':''}>작성자</option>
+						</select>	
+						<input type="text" title="검색어" name="input_key" value="${cri.keyword}">
+						<button type="button" id="searchBtn">검색</button>
 					</form>
 				</div>
 			</div>

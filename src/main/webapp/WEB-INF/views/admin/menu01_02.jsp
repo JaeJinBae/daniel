@@ -24,9 +24,20 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
-	$(function(){
-		$.ajaxSetup({cache:false});
-	})
+	 $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/admin/menu01_02${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
+	 
+	 $(".top-left > input").click(function(){
+		var searchType = encodeURIComponent("ct");
+		var k=$("input[name='radio_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/admin/menu01_02${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	 });
 });
 </script>
 </head>
@@ -56,19 +67,28 @@ $(function(){
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top">
-							<div class="top-left"><input type="radio" name="radio_key" id="radio_key1" value="" checked="checked"> <label for="radio_key1"><i></i>전체</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key2" value="동안·탄력 클리닉"> <label for="radio_key2"><i></i>동안·탄력 클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key3" value="레이저클리닉"> <label for="radio_key3"><i></i>레이저클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key4" value="흉터클리닉"> <label for="radio_key4"><i></i>흉터클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key5" value="눈·코 성형"> <label for="radio_key5"><i></i>눈·코 성형</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key6" value="프리미엄 쁘띠클리닉"> <label for="radio_key6"><i></i>프리미엄 쁘띠클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key7" value="체형클리닉"> <label for="radio_key7"><i></i>체형클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio_key" id="radio_key8" value="두피클리닉"> <label for="radio_key8"><i></i>두피클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+							<%-- <div class="top-left">
+								<input type="radio" name="radio_key" id="radio_key1" value="" ${cri.searchType==''?'checked':''}> <label for="radio_key1"><i></i>전체</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key2" value="동안·탄력 클리닉" ${cri.keyword=='동안·탄력 클리닉'?'checked':''}> <label for="radio_key2"><i></i>동안·탄력 클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key3" value="레이저클리닉" ${cri.keyword=='레이저클리닉'?'checked':''}> <label for="radio_key3"><i></i>레이저클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key4" value="흉터클리닉" ${cri.keyword=='흉터클리닉'?'checked':''}> <label for="radio_key4"><i></i>흉터클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key5" value="눈·코 성형" ${cri.keyword=='눈·코 성형'?'checked':''}> <label for="radio_key5"><i></i>눈·코 성형</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key6" value="프리미엄 쁘띠클리닉" ${cri.keyword=='프리미엄 쁘띠클리닉'?'checked':''}> <label for="radio_key6"><i></i>프리미엄 쁘띠클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key7" value="체형클리닉" ${cri.keyword=='체형클리닉'?'checked':''}> <label for="radio_key7"><i></i>체형클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="radio_key" id="radio_key8" value="두피클리닉" ${cri.keyword=='두피클리닉'?'checked':''}> <label for="radio_key8"><i></i>두피클리닉</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							</div> --%>
 			
-							<form name="search" method="post" action="" onsubmit="return search_it(this)">
+							<form name="search" method="post" action="">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key" class="search_sel">
-										<option value="m_id|m_name|b_content">전체</option>
-										<option value="m_id">아이디</option>
-										<option value="m_name">이름</option>
-										<option value="b_content">내용</option>
+										<option value="">전체</option>
+										<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
+										<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
+										<option value="w" ${cri.searchType=='w'?'selected':''}>작성자</option>
 									</select>						
 									<input type="text" name="input_key" class="search_t_box" value="">
-									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
+									<input type="button" name="submit_btn" value="검색" class="search_btn cursor" id="searchBtn">
 								</div>
 							</form>
 						</div>

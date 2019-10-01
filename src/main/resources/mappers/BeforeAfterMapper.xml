@@ -53,14 +53,17 @@
 	</select>
 	
 	<sql id="search">
-		<if test="searchType=='c'.toString()">
-			and clinic_type like concat('%',#{keyword},'%')
-		</if>
 		<if test="searchType=='t'.toString()">
-			and title like concat('%',#{keyword},'%') 
+			and title like concat('%',#{keyword},'%')
 		</if>
-		<if test="searchType=='no'.toString()">
-			and no=#{keyword}
+		<if test="searchType=='c'.toString()">
+			and content like concat('%',#{keyword},'%') 
+		</if>
+		<if test="searchType=='w'.toString()">
+			and writer=#{keyword}
+		</if>
+		<if test="searchType=='ct'.toString()">
+			and clinic_type like concat('%',#{keyword},'%') 
 		</if>
 	</sql>
 	

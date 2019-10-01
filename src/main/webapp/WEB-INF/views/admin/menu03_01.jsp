@@ -24,7 +24,13 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
-	
+	 $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/admin/menu03_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
 });
 </script>
 </head>
@@ -58,9 +64,12 @@ $(function(){
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<input type="hidden" name="select_site_code" value="{$select_site_code}">
-									<select name="select_key" id="select_key" class="search_sel"><option value="title">전체</option></select>	
+									<select name="select_key" id="select_key" class="search_sel">
+										<option value="">전체</option>
+										<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
+									</select>						
 									<input type="text" name="input_key" class="search_t_box" value="">
-									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
+									<input type="button" name="submit_btn" value="검색" class="search_btn cursor" id="searchBtn">
 								</div>
 							</form>
 						</div>

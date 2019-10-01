@@ -24,6 +24,14 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
+	 $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/admin/menu04_02${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
+	
 	$("#btn_withdraw").click(function(){
 		
 		$(".sel_chkbox:checked").each(function(){
@@ -92,16 +100,16 @@ $("#btn_delete").click(function(){
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top">
-							<form name="search" method="post" action="" onsubmit="return search_it(this)">
+							<form name="search" method="post" action="">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key" class="search_sel">
-										<option value="m_id|m_name">전체</option>
-										<option value="m_id">아이디</option>
-										<option value="m_name">이름</option>
+										<option value="">전체</option>
+										<option value="i" ${cri.searchType=='t'?'selected':''}>아이디</option>
+										<option value="n" ${cri.searchType=='c'?'selected':''}>이름</option>
 									</select>						
 									<input type="text" name="input_key" class="search_t_box" value="">
-									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
+									<input type="button" name="submit_btn" value="검색" class="search_btn cursor" id="searchBtn">
 								</div>
 							</form>
 						</div>

@@ -160,17 +160,13 @@ $(function(){
 								<tr class="cont">
 									<td class="title">문의내용</td>
 									<td>
-										<textarea name="content" id="content" cols="120" rows="8" class="w_form_txtArea">
-											${item.content}
-										</textarea>
+										<textarea name="content" id="content" cols="120" rows="8" class="w_form_txtArea">${item.content}</textarea>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">상담내용</td>
 									<td>
-										<textarea name="reply" id="reply" cols="120" rows="8" class="w_form_txtArea">
-											${item.reply}
-										</textarea>
+										<textarea name="reply" id="reply" cols="120" rows="8" class="w_form_txtArea">${item.reply}</textarea>
 									</td>
 								</tr>
 								<tr class="cont">

@@ -93,7 +93,7 @@ $("#btn_delete").click(function(){
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top">
-							<form name="search" method="post" action="" onsubmit="return search_it(this)">
+							<form name="search" method="post" action="">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key" class="search_sel">
@@ -104,7 +104,7 @@ $("#btn_delete").click(function(){
 										<option value="i_memo">메모</option>
 									</select>
 									<input type="text" name="input_key" class="search_t_box" value="">
-									<input type="submit" name="submit_btn" value="검색" class="search_btn cursor">
+									<input type="button" name="submit_btn" value="검색" class="search_btn cursor">
 								</div>
 							</form>
 						</div>

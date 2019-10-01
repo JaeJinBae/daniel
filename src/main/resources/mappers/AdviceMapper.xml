@@ -37,14 +37,20 @@
 	</select>
 	
 	<sql id="search">
-		<if test="searchType=='c'.toString()">
-			and content like concat('%',#{keyword},'%')
-		</if>
 		<if test="searchType=='t'.toString()">
-			and title like concat('%',#{keyword},'%') 
+			and title like concat('%',#{keyword},'%')
 		</if>
-		<if test="searchType=='no'.toString()">
-			and no=#{keyword}
+		<if test="searchType=='c'.toString()">
+			and content like concat('%',#{keyword},'%') 
+		</if>
+		<if test="searchType=='n'.toString()">
+			and name=#{keyword}
+		</if>
+		<if test="searchType=='s'.toString()">
+			and state like concat('%',#{keyword},'%')
+		</if>
+		<if test="searchType=='p'.toString()">
+			and phone like concat('%',#{keyword},'%')
 		</if>
 	</sql>
 	

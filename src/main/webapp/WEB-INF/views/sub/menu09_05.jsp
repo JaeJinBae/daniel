@@ -495,6 +495,15 @@ $(function(){
 			location.href=$(this).attr("href");
 		}
 	});
+	
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/menu09_05${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
 });
 </script>
 </head>
@@ -563,7 +572,7 @@ $(function(){
 			
 			<!-- 게시판 타이틀 시작 -->
 			<div class="board-titl">
-				<h5>리얼스토리</h5>
+				<h5>자필후기</h5>
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			
@@ -637,14 +646,13 @@ $(function(){
 				<div class="search-box">
 					<form name="board_search" method="post" action="" onsubmit="return board_search_it(this)">
 						<select name="select_key" id="select_key">
-							<option value="b_title|b_content|m_id|m_name">전체</option>
-							<option value="b_title">제목</option>
-							<option value="b_content">내용</option>
-							<option value="m_id">아이디</option>
-							<option value="m_name">작성자</option>
-						</select>
-						<input type="text" title="검색어" name="input_key" value="">
-						<button type="submit">검색</button>
+						<option value="">전체</option>
+						<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
+						<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
+						<option value="w" ${cri.searchType=='w'?'selected':''}>작성자</option>
+					</select>	
+					<input type="text" title="검색어" name="input_key" value="${cri.keyword}">
+					<button type="button" id="searchBtn">검색</button>
 					</form>
 				</div>
 			</div>
