@@ -669,7 +669,7 @@ $(function(){
 							창원에서 유일하게 다니엘에서만<br>
 							보유하고 있는 장비
 						</p>
-						<a href="/533/?pCode=534" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -680,7 +680,7 @@ $(function(){
 						<p class="cap">
 							2017년형 엑셀V
 						</p>
-						<a href="/533/?pCode=535" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -692,7 +692,7 @@ $(function(){
 							창원에서 유일하게 다니엘에서만<br>
 							보유하고 있는 장비
 						</p>
-						<a href="/533/?pCode=536" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -703,7 +703,7 @@ $(function(){
 						<p class="cap">
 							이스라엘의 명품 장비
 						</p>
-						<a href="/533/?pCode=550" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -715,7 +715,7 @@ $(function(){
 							창원에서 유일하게 다니엘에서만<br>
 							보유하고 있는 장비
 						</p>
-						<a href="/533/?pCode=548" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -723,10 +723,7 @@ $(function(){
 			
 					<li class="item bg06">
 						<h6 class="tit">LDM 골드</h6>
-						<!--<p class="cap">
-							창원 최초 도입
-						</p>-->
-						<a href="/533/?pCode=687" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -734,11 +731,7 @@ $(function(){
 			
 					<li class="item bg07">
 						<h6 class="tit">포어타이탄</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/533/?pCode=541" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -746,11 +739,7 @@ $(function(){
 			
 					<li class="item bg08">
 						<h6 class="tit">슈링크</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/533/?pCode=575" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -758,11 +747,7 @@ $(function(){
 			
 					<li class="item bg09">
 						<h6 class="tit">아포렉스</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/533/?pCode=547" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -770,11 +755,7 @@ $(function(){
 			
 					<li class="item bg10">
 						<h6 class="tit">이온토손</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/533/?pCode=551" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -782,11 +763,7 @@ $(function(){
 			
 					<li class="item bg11">
 						<h6 class="tit">고주파</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/533/?pCode=553" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -794,11 +771,7 @@ $(function(){
 			
 					<li class="item bg12">
 						<h6 class="tit">크라이오셀</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/533/?pCode=556" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							자세히 보기
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>

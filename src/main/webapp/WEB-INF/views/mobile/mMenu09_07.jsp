@@ -620,6 +620,16 @@ $(function(){
 		prevMonth.setMonth(prevMonth.getMonth()-1);
 		makeCalendar(prevMonth);
 	});
+	
+	today.setDate(today.getDate()+1);
+	var dateFullYear = today.getFullYear();
+	var dateFullMonth = today.getMonth()+1;
+	var dateFullDate = today.getDate();
+	dateFullMonth = (dateFullMonth>9?'':'0')+dateFullMonth;
+	dateFullDate = dateFullDate>9?''+dateFullDate:'0'+dateFullDate;
+	var dateFull = dateFullYear+"-"+dateFullMonth+"-"+dateFullDate;
+	var cname = "date_"+dateFull;
+	$(".date_"+dateFull).addClass('closed');
 });
 </script>
 </head>

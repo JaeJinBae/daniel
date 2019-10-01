@@ -538,7 +538,7 @@ $(function(){
 								<li><a href="${pageContext.request.contextPath}/menu02_02">안면윤곽주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu02_03">멀티파워주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu02_04">가격안내</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu02_05">예약하기</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu09_07">예약하기</a></li>				
 							</ul>
 						</li>
 					</ul>
@@ -562,7 +562,7 @@ $(function(){
 				<div class="inner">
 					<img src="${pageContext.request.contextPath}/resources/img/contents/522_img_03.png" alt="" usemap="#inner">
 			        <map name="inner">
-						  <area shape="rect" coords="883,722,1041,882" href="http://danielclinic.co.kr/503/?pCode=503" title="이너리프팅 바로가기" target="_balnk">
+						  <area shape="rect" coords="883,722,1041,882" href="${pageContext.request.contextPath}/menu05_01" title="이너리프팅 바로가기" target="_balnk">
 						</map>
 				</div>
 			</div>

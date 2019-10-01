@@ -538,7 +538,7 @@ $(function(){
 								<li><a href="${pageContext.request.contextPath}/menu02_02">안면윤곽주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu02_03">멀티파워주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu02_04">가격안내</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu02_05">예약하기</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu09_07">예약하기</a></li>				
 							</ul>
 						</li>
 					</ul>
@@ -638,10 +638,10 @@ $(function(){
 					<div class="double-banner">
 						<ul>
 							<li>
-								<a href="/563/?pCode=563"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
+								<a href="${pageContext.request.contextPath}/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
 							</li>
 							<li>
-								<a href="/503/?pCode=503"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner03.png" alt="다니엘 동안탄력"></a>
+								<a href="${pageContext.request.contextPath}/menu05_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner03.png" alt="다니엘 동안탄력"></a>
 							</li>
 						</ul>
 					</div>

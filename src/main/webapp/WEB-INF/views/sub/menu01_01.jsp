@@ -591,7 +591,7 @@ $(function(){
 						</a>
 					</li>
 				</ul>
-				<a href="/html/?pCode=533" class="more"></a>
+				<a href="${pageContext.request.contextPath}/menu01_04" class="more"></a>
 			</div>
 			
 			<div class="sub-contents pcode49902">
@@ -603,31 +603,31 @@ $(function(){
 				</p>
 				<ul class="inner">
 					<li class="item bg01">
-						<a href="/html/?pCode=510">
+						<a href="${pageContext.request.contextPath}/menu03_01">
 							<b>다니엘 복합레이저</b>
 							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
 						</a>
 					</li>
 					<li class="item bg02">
-						<a href="/html/?pCode=509">
+						<a href="${pageContext.request.contextPath}/menu06_01">
 							<b>흉터클리닉</b>
 							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
 						</a>
 					</li>
 					<li class="item bg03">
-						<a href="/html/?pCode=507">
+						<a href="${pageContext.request.contextPath}/menu05_05">
 							<b>광채지방이식</b>
 							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
 						</a>
 					</li>
 					<li class="item bg04">
-						<a href="/html/?pCode=503">
+						<a href="${pageContext.request.contextPath}/menu05_01">
 							<b>리프팅 레이저</b>
 							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
 						</a>
 					</li>
 					<li class="item bg05">
-						<a href="/html/?pCode=504">
+						<a href="${pageContext.request.contextPath}/menu05_02">
 							<b>안면 거상술</b>
 							<i class="more"><img src="${pageContext.request.contextPath}/resources/img/contents/more.png" alt=""></i>
 						</a>

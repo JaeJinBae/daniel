@@ -142,7 +142,6 @@ function statisticRegister(info){
 $(function(){
 	var access_url = document.referrer;
 	var ua = navigator.userAgent.toLowerCase();
-	console.log(ua);
     var browser = "";
     var os = "";
 	if(access_url.indexOf("danielps.co.kr") == -1 && access_url.indexOf("danielps0911.cafe24") == -1){

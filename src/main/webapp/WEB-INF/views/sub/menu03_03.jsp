@@ -650,7 +650,7 @@ $(function(){
 							창원에서 유일하게 다니엘에서만<br>
 							보유하고 있는 장비
 						</p>
-						<a href="/534/?pCode=534" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							미국 scition사의 세계적으로 인정 받고 있는 흉터에 특화된 오리지널 명품 레이저
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -661,7 +661,7 @@ $(function(){
 						<p class="cap">
 							2017년형 엑셀V
 						</p>
-						<a href="/535/?pCode=535" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							미국 큐테라 사의 여드름, 색소침착, 모공 등 피부 전반적인 문제를 개선시켜주는 오리지널 명품 레이저
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -673,7 +673,7 @@ $(function(){
 							창원에서 유일하게 다니엘에서만<br>
 							보유하고 있는 장비
 						</p>
-						<a href="/=536/?pCode=536" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							미국 사이톤사의 여드름 흔적으로 어두워진 피부톤 개선에 탁월한 오리지널 명품 레이저
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -685,7 +685,7 @@ $(function(){
 							창원에서 유일하게 다니엘에서만<br>
 							보유하고 있는 장비
 						</p>
-						<a href="/537/?pCode=537" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							미국 사이톤사의 SCI급 논문에서도 그 효과를 증명한 여드름 치료에도 좋은 오리지널 명품 레이저
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -693,7 +693,7 @@ $(function(){
 			
 					<li class="item bg05">
 						<h6 class="tit">포어타이탄</h6>
-						<a href="/541/?pCode=541" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							여드름 모양과 부위에 따라 효과적인 맞춤 시술이 가능하여 표피의 손상을 최소화하여 통증이 적고 회복기간이 빠른 레이저
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -701,7 +701,7 @@ $(function(){
 			
 					<li class="item bg06">
 						<h6 class="tit">아그네스</h6>
-						<a href="/542/?pCode=542" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							특허기술로 니들 끝에서 고주파를 발생시켜 피지선을 줄여주어 여드름 치료에 최적화된 레이저
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -713,7 +713,7 @@ $(function(){
 							창원에서 유일하게 다니엘에서만<br>
 							보유하고 있는 장비
 						</p>
-						<a href="/548/?pCode=548" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							독일기술로 피부 활성 성분을 없애고 림프순환을 촉진시켜 여드름 흉터와 모공축소에 효과적인 관리 장비
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -725,7 +725,7 @@ $(function(){
 							창원 최초 도입으로 축적된<br>
 							차별화된 다니엘의 노하우
 						</p>
-						<a href="/549/?pCode=549" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							독일 초음파 장비로 피부 속을 마사지하여 피부 문제 원인을 개선하는 명품 관리 장비
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -733,11 +733,7 @@ $(function(){
 			
 					<li class="item bg09">
 						<h6 class="tit">오페라마스크</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/557/?pCode=557" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							저출력LED 및 갈바닉 전류 기능이 있어 여드름 억제, 피부 진정과 재생에 효과적인 관리 장비
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -745,11 +741,7 @@ $(function(){
 			
 					<li class="item bg10">
 						<h6 class="tit">힐라이트</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/558/?pCode=558" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							강력한 상처 치유 능력을 가진 파장으로 피부의 겉과 속을 건강하게 만들어 피부 진정과 재생에 도움을 주는 관리 장비
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -757,11 +749,7 @@ $(function(){
 			
 					<li class="item bg11">
 						<h6 class="tit">오메가 라이트</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/559/?pCode=559" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							복잡한 피부 문제를 해결하는 LED광선으로 피부 재생과 진정에 효과적이고 트러블 케어에도 탁월한 광원조사 장비
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
@@ -769,11 +757,7 @@ $(function(){
 			
 					<li class="item bg12">
 						<h6 class="tit">아쿠아필</h6>
-						<!--p class="cap">
-							창원에서 유일하게 다니엘에서만<br/>
-							보유하고 있는 장비
-						</p-->
-						<a href="/552/?pCode=552" class="more">
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
 							4세대 수분 박피술로 모공에 수분과 영양을 공급하여 피부트러블을 개선시키는 장비
 							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
 						</a>
