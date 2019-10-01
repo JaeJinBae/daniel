@@ -123,6 +123,12 @@
 </header>
 <script>
 $(function(){
-	console.log(document.referrer);
+	var access_url = document.referrer;
+	var os = window.navigator.userAgent.toLowerCase();
+	if(access_url.includes("danielps.co.kr") || access_url.includes("danielps0911.cafe24")){
+		
+	}else{
+		
+	}
 });
 </script>
