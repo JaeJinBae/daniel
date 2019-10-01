@@ -606,10 +606,10 @@ $(function(){
 					<div class="double-banner">
 						<ul>
 							<li>
-								<a href="/563/?pCode=563"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
+								<a href="${pageContext.request.contextPath}/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
 							</li>
 							<li>
-								<a href="/521/?pCode=521"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
+								<a href="${pageContext.request.contextPath}/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
 							</li>
 						</ul>
 					</div>
