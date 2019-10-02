@@ -1378,11 +1378,13 @@ $(function(){
 					v_r_date = v_r_date.replace(/-/gi,"");
 					var v_r_time = sendData.r_time;
 					v_r_time = v_r_time.replace(":","");
+					var v_r_phone = sendData.r_phone;
+					v_r_phone = v_r_phone.replace(/-/gi, "");
 					
 					var data = {
 							orgno : "38347555",				// 요양기관기호
 							name : sendData.r_name,			// varchar(40)
-							phone : sendData.r_phone,		// varchar(40)
+							phone : v_r_phone,		// varchar(40)
 							email : sendData.r_email,			// varchar(40)
 							resvdate : v_r_date,		// varchar(8) YYYYMMDD
 							resvtime : v_r_time,		// varchar(4) hhmm
