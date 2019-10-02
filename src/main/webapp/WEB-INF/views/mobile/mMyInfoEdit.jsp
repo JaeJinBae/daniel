@@ -487,20 +487,21 @@ keyframes fa-spin { 0%{
 
 </style>
 <script>
-function userRegister(info){
+function userUpdate(info){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/join",
+		url:"${pageContext.request.contextPath}/m/myInfoEdit",
 		type:"POST",
 		contentType : "application/json; charset=UTF-8",
-		data:JSON.stringify(info),
 		dataType:"text",
+		data: JSON.stringify(info),
 		async:false,
 		success:function(json){
-			if(json == "ok"){
-				alert("회원가입이 완료되었습니다. \n가입한 정보로 로그인하세요.");
-				location.href='${pageContext.request.contextPath}/m/login';
-			}else{
-				alert("회원가입에 실패하였습니다. \n관리자에게 문의하세요.");
+			if(json =="no"){
+				alert("정보수정에 실패했습니다. 관리자에게 문의하세요.");
+				
+			}else if(json == "ok"){
+				alert("수정완료하였습니다.");
+				location.href="${pageContext.request.contextPath}/m/myInfo";
 			}
 		},
 		error:function(request,status,error){
@@ -509,49 +510,28 @@ function userRegister(info){
 	});
 }
 
-function idchk(id){
-	var dt;
-	$.ajax({
-		url:"${pageContext.request.contextPath}/id_duplicate_chk/"+id,
-		type:"POST",
-		contentType : "application/json; charset=UTF-8",
-		dataType:"text",
-		async:false,
-		success:function(json){
-			dt = json;
-		},
-		error:function(request,status,error){
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		}
-	});
-	return dt;
-}
-
 $(function(){
-	$("#btnIdCheck").click(function(){
-		var id = $("#m_id").val();
-		var idchk_res = idchk(id);
-		
-		if(idchk_res == "empty"){
-			alert("사용가능한 아이디입니다.");
-			$("input[name='m_id_check']").val("o");
-		}else{
-			alert("이미 사용중인 아이디입니다.");
-			$("input[name='m_id_check']").val("x");
-		}
-	});
+	var phoneArr = "${item.phone}".split("-");
+	var prev_phone1 = phoneArr[0];
+	var prev_phone2 = phoneArr[1];
+	var prev_phone3 = phoneArr[2];
+	$("#phone1 > option[value='"+prev_phone1+"']").prop("selected", true);
+	$("#phone2").val(prev_phone2);
+	$("#phone3").val(prev_phone3);
 	
-	$("#m_id").change(function(){
-		$("input[name='m_id_check']").val("x");
-	});
+	var prev_gender = "${item.gender}";
+	$(".gender[value='"+prev_gender+"']").prop("checked", "checked");
+	
+	var emailArr = "${item.email}".split("@");
+	var prev_email1 = emailArr[0];
+	var prev_email2 = emailArr[1];
+	$("#m_email1").val(prev_email1);
+	$("#m_email2").val(prev_email2);
+	$("#m_emailcode > option[value='"+prev_email2+"']").prop("selected", true);
 	
 	$(".btn-submit").click(function(){
-		var agree = $("#agree").prop("checked");
-		var name = $("#m_name").val();
-		var id = $("#m_id").val();
-		var idConfirm = $("input[name='m_id_check']").val();
-		var pw = $("#m_pass").val();;
-		var pwConfirm = $("#m_repass").val();;
+		var no = $("input[name='no']").val();
+		var new_pw = $("#m_newpass").val();
 		var phone1 = $("#phone1").val();
 		var phone2 = $("#phone2").val();
 		var phone3 = $("#phone3").val();
@@ -560,31 +540,7 @@ $(function(){
 		var email1 = $("#m_email1").val();
 		var email2 = $("#m_email2").val();
 		var email = email1+"@"+email2;
-		
-		if(agree == false){
-			alert("개인정보취급방침 항목은 필수입니다.");
-			return false;
-		}
-		if(name == ""){
-			alert("이름 항목은 필수입니다.");
-			return false;
-		}
-		if(id == ""){
-			alert("아이디 항목은 필수입니다.");
-			return false;
-		}
-		if(idConfirm == "x"){
-			alert("아이디 중복확인을 진행하세요.");
-			return false;
-		}
-		if(pw == ""){
-			alert("비밀번호 항목은 필수입니다.");
-			return false;
-		}
-		if(pw != pwConfirm){
-			alert("비밀번호가 일치하지 않습니다.");
-			return false;
-		}
+
 		if(phone2 == ""){
 			alert("휴대폰 항목은 필수입니다.");
 			return false;
@@ -605,6 +561,7 @@ $(function(){
 			alert("이메일 항목은 필수입니다.");
 			return false;
 		}
+		
 		var nd = new Date();
 		var y = nd.getFullYear();
 		var m = nd.getMonth()+1;
@@ -613,9 +570,10 @@ $(function(){
 		d = (d>9?'':'0')+d;
 		var regdate = y+"-"+m+"-"+d;
 		
-		var info = {"name":name, "id":id, "pw":pw, "phone":phone, "gender":gender, "email":email, "regdate":regdate};
-		userRegister(info);
+		var info = {"no":no, "new_pw":new_pw, "phone":phone, "gender":gender, "email":email};
+		userUpdate(info);
 	});
+	
 });
 </script>
 </head>
@@ -640,7 +598,7 @@ $(function(){
 							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
 						</li>
 						<li class="gnb">
-							<button>회원가입 ▼</button>
+							<button>정보수정 ▼</button>
 						</li>
 					</ul>
 				</div>
@@ -657,118 +615,89 @@ $(function(){
 			
 			<!-- 타이틀 시작 -->
 			<div class="board-title">
-				<h5>회원가입</h5>
+				<h5>회원정보수정</h5>
 			</div>
 			<!-- 타이틀 끝 -->
 			
 			<div id="join-form">
 				<ul class="inner">
-					<li class="private">
-						<p>
-							개인정보의 수집범위<br>
-							<br>
-							다니엘성형외과의원은(는) 별도의 회원가입 절차 없이 대부분의 콘텐츠에 자유롭게 접근할 수 있습니다. 다니엘성형외과의원의 회원제 서비스를 이용하시고자 할 경우 다음의 정보를 입력해주셔야 하며 선택항목을 입력하시지 않았다 하여 서비스 이용에 제한은 없습니다.<br>
-							<br>
-							1) 회원 가입시 수집하는 개인정보의 범위<br>
-							<br>
-							- 필수항목 : 희망 ID, 비밀번호, 이름, 닉네임<br>
-							<br>
-							- 선택항목 : 이메일주소, 이메일 수신 여부, SMS 수신여부, 정보공개여부, 휴대폰번호<br>
-							<br>
-							개인정보의 수집 및 이용 목적<br>
-							<br>
-							① 다니엘성형외과의원은(는) 회원님께 최대한으로 최적화되고 맞춤화된 서비스를 제공하기 위하여 다음과 같은 목적으로 개인정보를 수집하고 있습니다.<br>
-							<br>
-							- 이름, 아이디, 비밀번호, 닉네임 : 회원제 서비스 이용에 따른 본인 식별 절차에 이용<br>
-							<br>
-							- 이메일주소, 이메일 수신여부, SMS 수신여부, 휴대폰 번호: 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보, 새로운 서비스/신상품이나 이벤트 정보의 안내<br>
-							<br>
-							- 주소: 경품과 쇼핑 물품 배송에 대한 정확한 배송지의 확보<br>
-							<br>
-							- 그 외 선택항목 : 개인맞춤 서비스를 제공하기 위한 자료<br>
-							<br>
-							② 단, 이용자의 기본적 인권 침해의 우려가 있는 민감한 개인정보(인종 및 민족, 사상 및 신조, 출신지 및 본적지, 정치적 성향 및 범죄기록, 건강상태 및 성생활 등)는 수집하지 않습니다.<br>
-							<br>
-							개인정보의 보유기간 및 이용기간<br>
-							<br>
-							① 귀하의 개인정보는 다음과 같이 개인정보의 수집목적 또는 제공받은 목적이 달성되면 파기됩니다. 단, 상법 등 관련법령의 규정에 의하여 다음과 같이 거래 관련 권리 의무 관계의 확인 등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간 보유합니다.<br>
-							<br>
-							- 회원가입정보의 경우, 회원가입을 탈퇴하거나 회원에서 제명된 경우 등 일정한 사전에 보유목적, 기간 및 보유하는 개인정보 항목을 명시하여 동의를 구합니다.<br>
-							<br>
-							- 계약 또는 청약철회 등에 관한 기록 : 5년<br>
-							<br>
-							- 대금결제 및 재화등의 공급에 관한 기록 : 5년<br>
-							<br>
-							- 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년<br>
-							<br>
-							② 귀하의 동의를 받아 보유하고 있는 거래정보 등을 귀하께서 열람을 요구하는 경우 다니엘성형외과의원은(는) 지체없이 그 열람,확인 할 수 있도록 조치합니다 <br>
-							<br>
-							필수 개인정보 수집을 동의하지 않는 경우<br>
-							<br>
-							① 귀하의 개인정보 수집을 거부할 수 있는 권리가 있으며 이 경우 당사의 회원전용 서비스 또는 고객 문의사항에 대한 답변이 필수인 코너를 이용하는데 있어 회원 가입 또는 게시물 등록이 불가능 할 수 있습니다.<br>
-							<br>
-							② 필수 정보가 아닌 선택 정보의 경우 개인정보 수집에 동의하지 않을 수 있으며 서비스 이용에 제한은 없습니다.
-						</p>
-						<input type="checkbox" name="agree" id="agree" value="Y" checked="checked">
-						<label for="agree">개인정보 취급방침에 동의합니다.</label>
-					</li>
 					<li>
 						<form name="member" id="member" method="post" enctype="multipart/form-data" action="">
-							<input type="hidden" name="data_array" value="Y">
-							<input type="hidden" name="mobile" value="Y">
-							<input type="hidden" name="mode" value="insert">
-							<input type="hidden" name="seq" value="">
-							<input type="hidden" name="member_seq" value="">
-							<input type="hidden" name="distinction" value="proc">
-							<input type="hidden" name="backpage" value="/m-join">
-							<!-- 회원가입 -> 가입양식작성 시작 -->
+						<!-- 회원가입 -> 가입양식작성 시작 -->
 							<p class="info"><b>*</b> 표시는 필수 입력 사항입니다.</p>
 							<ul class="join-form">
 								<li>
 									<label for="m_name">성명 <i class="star">*</i></label>
-									<input type="text" id="m_name" name="m_name" value="" valid="required" element-name="이름">
+									<input type="text" id="m_name" name="m_name" value="${item.name}" valid="required" element-name="이름">
 								</li>
 								<li>
-									<label for="m_id">아이디 <i class="star">*</i></label>
-									<input type="text" id="m_id" name="m_id" maxlength="13" valid="required,id_pw" element-name="아이디">
-									<button type="button" id="btnIdCheck">아이디 중복확인</button>
-									<p class="check">*영문으로 시작하는 영문소문자, 영문소문자+숫자 4~13자 입력해주세요.</p>
-									<input type="hidden" name="m_id_check" value="0">
-									<input type="hidden" name="m_id_hidden">
+									<label for="m_id">아이디 <i class="star">*</i></label>${item.id}
 								</li>
 								<li>
-									<label for="m_pass">비밀번호 <i class="star">*</i></label>
-									<input type="password" id="m_pass" name="m_pass" class="default" maxlength="13" valid="required,id_pw" element-name="비밀번호">
+									<label for="m_newpass">새비밀번호</label>
+									<input type="password" id="m_newpass" name="m_newpass" class="default" maxlength="13" valid="none,id_pw" element-name="새비밀번호">
 									<p class="check">*영문자+숫자 조합 6~12자 입력해주세요.</p>
 								</li>
 								<li>
-									<label for="m_repass">비밀번호확인 <i class="star">*</i></label>
-									<input type="password" id="m_repass" name="m_repass" class="default" maxlength="13" valid="required,compare-m_pass" element-name="비밀번호 확인">
-								</li>
-								<li>
-									<label for="m_solar1">양력/음력 <i class="star">*</i></label>
-									<p class="radio"><input type="radio" name="m_solar" id="m_solar1" value="1" valid="required" element-name="양력음력"> <label for="m_solar1"><i></i>양력</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="m_solar" id="m_solar2" value="2" valid="required" element-name="양력음력"> <label for="m_solar2"><i></i>음력</label>&nbsp;&nbsp;&nbsp;</p>
-								</li>
-								<li>
 									<label for="m_sex1">성별 <i class="star">*</i></label>
-									<p class="radio"><input type="radio" name="m_sex" id="m_sex1" value="m" valid="required" element-name="성별"> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;
-									<input type="radio" name="m_sex" id="m_sex2" value="f" valid="required" element-name="성별"> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;</p>
+									<p class="radio"><input type="radio" name="m_sex" id="m_sex1" value="M" checked="checked" valid="required" element-name="성별"> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="m_sex" id="m_sex2" value="F" valid="required" element-name="성별"> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;</p>
 								</li>
 								<li>
 									<label for="phone1">휴대폰 <i class="star">*</i></label>
-									<select name="phone1" id="phone1" title="휴대전화의 국번"><option value="010">010</option><option value="011">011</option><option value="016">016</option><option value="017">017</option><option value="018">018</option><option value="019">019</option></select><i>-</i>
-									<input type="text" id="phone2" name="phone2" title="휴대폰의 앞 4자리" maxlength="4" value="" valid="required,number" element-name="휴대전화"><i>-</i>
-									<input type="text" id="phone3" name="phone3" title="휴대폰의 앞 4자리" maxlength="4" value="" valid="required,number" element-name="휴대전화">
+									<select name="phone1" id="phone1" title="휴대전화의 국번"><option value="010" selected="">010</option><option value="011">011</option><option value="016">016</option><option value="017">017</option><option value="018">018</option><option value="019">019</option></select><i>-</i>
+									<input type="text" id="phone2" name="phone2" title="휴대폰의 앞 4자리" maxlength="4" value="2837" valid="required,number" element-name="휴대전화"><i>-</i>
+									<input type="text" id="phone3" name="phone3" title="휴대폰의 앞 4자리" maxlength="4" value="7425" valid="required,number" element-name="휴대전화">
 								</li>
 								<li>
 									<label for="m_email1">이메일 <i class="star">*</i></label>
 									<input type="text" name="m_email1" id="m_email1" class="half" maxlength="13" value="" valid="required" element-name="이메일"><i>@</i>
 									<input type="text" name="m_email2" id="m_email2" class="half" maxlength="13" title="이메일계정의 아이디" value="" valid="required" element-name="이메일">
-									<select name="m_emailcode" id="m_emailcode" element-name="이메일" class="half"><option value="" selected="">직접입력</option><option value="EM01">naver.com</option><option value="EM02">daum.net</option><option value="EM03">gmail.com</option><option value="EM04">yahoo.co.kr</option><option value="EM05">yahoo.com</option><option value="EM06">nate.com</option><option value="EM07">paran.com</option><option value="EM08">google.com</option><option value="EM09">empas.com</option><option value="EM10">hotmail.com</option><option value="EM11">msn.com</option><option value="EM12">korea.com</option><option value="EM13">dreamwiz.com</option><option value="EM14">hanafos.com</option><option value="EM15">freechal.com</option><option value="EM16">chol.com</option><option value="EM17">empal.com</option><option value="EM18">lycos.com</option><option value="EM19">netian.com</option></select>			<p class="check">*비밀번호를 분실한 경우 Email로 비밀번호를 전송합니다.</p>
+									<select name="m_emailcode" id="m_emailcode" element-name="이메일" class="half">
+										<option value="">직접입력</option>
+										<option value="naver.com">naver.com</option>
+										<option value="daum.net">daum.net</option>
+										<option value="gmail.com">gmail.com</option>
+										<option value="yahoo.co.kr">yahoo.co.kr</option>
+										<option value="yahoo.com">yahoo.com</option>
+										<option value="nate.com">nate.com</option>
+										<option value="paran.com">paran.com</option>
+										<option value="google.com">google.com</option>
+										<option value="empas.com">empas.com</option>
+										<option value="hotmail.com">hotmail.com</option>
+										<option value="msn.com">msn.com</option>
+										<option value="korea.com">korea.com</option>
+										<option value="dreamwiz.com">dreamwiz.com</option>
+										<option value="hanafos.com">hanafos.com</option>
+										<option value="freechal.com">freechal.com</option>
+										<option value="chol.com">chol.com</option>
+										<option value="empal.com">empal.com</option>
+										<option value="lycos.com">lycos.com</option>
+										<option value="netian.com">netian.com</option>
+									</select>
+									<p class="check">*비밀번호를 분실한 경우 Email로 비밀번호를 전송합니다.</p>
 								</li>
 							</ul>
 						</form>
-			<!-- 회원가입 -> 가입양식작성 끝 -->
+						<!-- 회원가입 -> 가입양식작성 끝 -->
+
+						<script type="text/javascript">
+							$(function(){
+								$("#m_name").blur(function(){
+									var $mode = "modify",
+										$val = $(this).val();
+						
+									if( ($mode == "insert") && ($val) ){
+										$.post("/html/member/member_proc.php", {mode : "check_name", val : $val}, function(data){
+											if(data == 0){
+												alert("사용이 금지된 이름입니다");
+												$("#m_name").val('').focus();
+												return;
+											}
+										});
+									}
+								});
+							});
+						</script>
 			
 					</li>
 				</ul>
@@ -777,12 +706,12 @@ $(function(){
 			<!-- 게시판 버튼 시작 -->
 			<div class="btn-group-center">
 				<div class="inner">
-					<button type="button" class="btn btn-submit">회원가입</button>
-					<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/'">취소</button>
+					<button type="button" class="btn btn-submit">수정완료</button>
+					<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/m/withdraw/${item.no}';">회원탈퇴</button>
+					<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/';">취소</button>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->
-			
 		</section>
 	
 		<!-- 전체 페이지 오시는길(오시는길, 진료시간 안내, 상담문의, footer) 시작 -->

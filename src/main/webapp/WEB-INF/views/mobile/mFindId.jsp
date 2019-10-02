@@ -502,7 +502,8 @@ function findId(info){
 			}else{
 				$("#no").val(json);
 				$("#f1").submit();
-				
+				//findIdEnd({"no":json});
+				//location.href="${pageContext.request.contextPath}/m/findIdEnd?no="+json;
 			}
 		},
 		error:function(request,status,error){
@@ -575,7 +576,7 @@ $(function(){
 					<a href="${pageContext.request.contextPath}/m/findId" class="active">아이디 찾기</a>
 					<a href="${pageContext.request.contextPath}/m/findPw">비밀번호 찾기</a>
 				</div>
-				<form name="f1" id="f1" method="post" action="${pageContext.request.contextPath}/m/findIdEnd">
+				<form name="f1" id="f1" method="post" action="${pageContext.request.contextPath}/m/mFindIdEnd">
 					<input type="hidden" name="no" id="no">
 				</form>
 				<ul class="find-account-inner">

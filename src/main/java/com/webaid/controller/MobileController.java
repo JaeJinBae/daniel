@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -113,6 +114,7 @@ public class MobileController {
 	
 	@RequestMapping(value="/findId", method=RequestMethod.GET)
 	public String findId(HttpServletRequest req, Model model){
+		logger.info("mobile findId GET");
 		GregorianCalendar today = new GregorianCalendar ( );
 		int year = today.get ( today.YEAR );
 		model.addAttribute("year", year);
@@ -121,6 +123,7 @@ public class MobileController {
 	
 	@RequestMapping(value="/findId", method=RequestMethod.POST)
 	public ResponseEntity<String> findId(@RequestBody Map<String, String> info){
+		logger.info("mobile findId POST");
 		ResponseEntity<String> entity = null;
 		UserVO searchVO = new UserVO();
 		searchVO.setName(info.get("name"));
@@ -134,19 +137,88 @@ public class MobileController {
 		return entity;
 	}
 	
-	@RequestMapping(value="/findIdEnd", method=RequestMethod.POST)
+	@RequestMapping(value="/mFindIdEnd", method=RequestMethod.POST)
 	public String findIdEnd(int no, Model model){
-		logger.info("findIdEnd Get");
+		logger.info("Mobile findIdEnd POST");
 		
 		UserVO vo = uService.selectOne(no);
 		model.addAttribute("item", vo);
-		return "mobile/mFindIdEnd";
+		return "mobile/mFindIdEnd2";
 	}
 	
 	@RequestMapping(value="/findPw", method=RequestMethod.GET)
 	public String findPw(Model model){
 		logger.info("findPw GEt");
 		return "mobile/mFindPw";
+	}
+	
+	@RequestMapping(value="/myInfo", method=RequestMethod.GET)
+	public String myInfo(Model model){
+		logger.info("myinfo get");
+		
+		return "mobile/mMyInfo";
+	}
+	
+	@RequestMapping(value="/myInfo", method=RequestMethod.POST)
+	public ResponseEntity<String> myInfoPost(@RequestBody Map<String, String> info, Model model){
+		logger.info("myinfo POST");
+		ResponseEntity<String> entity = null;
+		UserVO vo = uService.selectById(info.get("id"));
+		
+		if(vo == null){
+			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
+		}else{
+			if(vo.getPw().equals(info.get("pw"))){
+				entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+				
+			}else{
+				entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			}
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/myInfoEdit", method=RequestMethod.GET)
+	public String myInfoEditGet(HttpServletRequest req, Model model){
+		logger.info("myinfoEdit get");
+		HttpSession session = req.getSession(false);
+		if(session == null){
+			return "redirect:/m/login";
+		}else{
+			System.out.println(session.getAttribute("no"));
+			int no = Integer.parseInt(session.getAttribute("no")+"");
+			UserVO vo = uService.selectOne(no);
+			model.addAttribute("item", vo);
+		}
+		
+		return "mobile/mMyInfoEdit";
+	}
+	
+	@RequestMapping(value="/myInfoEdit", method=RequestMethod.POST)
+	public ResponseEntity<String> myInfoEditPost(@RequestBody Map<String, String> info, Model model){
+		logger.info("myinfoEdit POST");
+		ResponseEntity<String> entity = null;
+		try {
+			UserVO vo = new UserVO();
+			vo.setNo(Integer.parseInt(info.get("no")));
+			vo.setPhone(info.get("phone"));
+			vo.setGender(info.get("gender"));
+			vo.setEmail(info.get("email"));
+			if(info.get("new_pw").length() <2){
+				UserVO prevVO = uService.selectOne(Integer.parseInt(info.get("no")));
+				vo.setPw(prevVO.getPw());
+			}else{
+				vo.setPw(info.get("new_pw"));
+			}
+			
+			uService.update(vo);
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
+		
+		return entity;
 	}
 	
 	@RequestMapping(value = "/personal", method = RequestMethod.GET)
