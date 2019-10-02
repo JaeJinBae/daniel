@@ -201,6 +201,7 @@ public class MobileController {
 		try {
 			UserVO vo = new UserVO();
 			vo.setNo(Integer.parseInt(info.get("no")));
+			vo.setName(info.get("name"));
 			vo.setPhone(info.get("phone"));
 			vo.setGender(info.get("gender"));
 			vo.setEmail(info.get("email"));

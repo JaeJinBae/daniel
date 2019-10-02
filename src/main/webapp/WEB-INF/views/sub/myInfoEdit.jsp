@@ -525,6 +525,7 @@ $(function(){
 	
 	$(".btn-submit").click(function(){
 		var no = $("input[name='no']").val();
+		var name = $("#m_name").val();
 		var new_pw = $("#m_newpass").val();
 		var phone1 = $("#phone1").val();
 		var phone2 = $("#phone2").val();
@@ -564,7 +565,7 @@ $(function(){
 		d = (d>9?'':'0')+d;
 		var regdate = y+"-"+m+"-"+d;
 		
-		var info = {"no":no, "new_pw":new_pw, "phone":phone, "gender":gender, "email":email};
+		var info = {"no":no, "name":name, "new_pw":new_pw, "phone":phone, "gender":gender, "email":email};
 		userUpdate(info);
 	});
 	

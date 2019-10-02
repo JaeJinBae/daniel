@@ -531,6 +531,7 @@ $(function(){
 	
 	$(".btn-submit").click(function(){
 		var no = $("input[name='no']").val();
+		var name = $("#m_name").val();
 		var new_pw = $("#m_newpass").val();
 		var phone1 = $("#phone1").val();
 		var phone2 = $("#phone2").val();
@@ -570,7 +571,7 @@ $(function(){
 		d = (d>9?'':'0')+d;
 		var regdate = y+"-"+m+"-"+d;
 		
-		var info = {"no":no, "new_pw":new_pw, "phone":phone, "gender":gender, "email":email};
+		var info = {"no":no, "name":name, "new_pw":new_pw, "phone":phone, "gender":gender, "email":email};
 		userUpdate(info);
 	});
 	
@@ -623,12 +624,13 @@ $(function(){
 				<ul class="inner">
 					<li>
 						<form name="member" id="member" method="post" enctype="multipart/form-data" action="">
+						<input type="hidden" name="no" value="${item.no}">
 						<!-- 회원가입 -> 가입양식작성 시작 -->
 							<p class="info"><b>*</b> 표시는 필수 입력 사항입니다.</p>
 							<ul class="join-form">
 								<li>
 									<label for="m_name">성명 <i class="star">*</i></label>
-									<input type="text" id="m_name" name="m_name" value="${item.name}" valid="required" element-name="이름">
+									<input type="text" id="m_name" name="m_name" value="${item.name}" valid="required" element-name="이름" readonly="readonly">
 								</li>
 								<li>
 									<label for="m_id">아이디 <i class="star">*</i></label>${item.id}
@@ -637,10 +639,6 @@ $(function(){
 									<label for="m_newpass">새비밀번호</label>
 									<input type="password" id="m_newpass" name="m_newpass" class="default" maxlength="13" valid="none,id_pw" element-name="새비밀번호">
 									<p class="check">*영문자+숫자 조합 6~12자 입력해주세요.</p>
-								</li>
-								<li>
-									<label for="m_sex1">성별 <i class="star">*</i></label>
-									<p class="radio"><input type="radio" name="m_sex" id="m_sex1" value="M" checked="checked" valid="required" element-name="성별"> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="m_sex" id="m_sex2" value="F" valid="required" element-name="성별"> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;</p>
 								</li>
 								<li>
 									<label for="phone1">휴대폰 <i class="star">*</i></label>
