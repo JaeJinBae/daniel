@@ -1,9 +1,13 @@
 package com.webaid.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,6 +22,7 @@ import java.util.TreeMap;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -116,6 +121,65 @@ public class AdminController {
 	
 	@Autowired
 	private StatisticService sService;
+	
+	@RequestMapping(value="/filedown")
+	public void filedown(HttpServletRequest request,HttpServletResponse response){
+		String path =  request.getSession().getServletContext().getRealPath("");
+        
+        String filename = request.getParameter("fileName");
+        String downname = request.getParameter("downName");
+        String dPath = request.getParameter("dPath");
+        String realPath = "";
+        System.out.println("downname: "+downname);
+        if (filename == null || "".equals(filename)) {
+            filename = downname;
+        }
+        
+        try {
+            String browser = request.getHeader("User-Agent");
+            boolean ie = browser.indexOf("MSIE") > -1 || browser.indexOf("Edge") > -1 || browser.indexOf("Trident") > -1;
+            logger.debug("IE test " + ie);
+                 
+              if(ie){
+              logger.debug("IE");
+              filename = URLEncoder.encode(filename, "utf-8").replaceAll("\\+", "%20");
+              } else {
+            	  filename = new String(filename.getBytes("UTF-8"),"ISO-8859-1");
+              }
+
+        } catch (UnsupportedEncodingException ex) {
+            System.out.println("UnsupportedEncodingException");
+        }
+        realPath = path + "resources/"+dPath + "/"+downname;
+       // realPath = "D:\down\"+downname;
+        System.out.println(realPath);
+        File file1 = new File(realPath);
+        if (!file1.exists()) {
+            return ;
+        } 
+         
+        // 파일명 지정        
+        response.setContentType("application/octer-stream");
+        response.setHeader("Content-Transfer-Encoding", "binary;");
+        response.setHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"");
+        try {
+            OutputStream os = response.getOutputStream();
+            FileInputStream fis = new FileInputStream(realPath);
+ 
+            int ncount = 0;
+            byte[] bytes = new byte[512];
+ 
+            while ((ncount = fis.read(bytes)) != -1 ) {
+                os.write(bytes, 0, ncount);
+            }
+            fis.close();
+            os.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("FileNotFoundException");
+        } catch (IOException ex) {
+            System.out.println("IOException");
+        }
+	}
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String mainLogin(Model model) {

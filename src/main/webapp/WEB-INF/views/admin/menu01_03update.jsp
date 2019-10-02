@@ -185,7 +185,7 @@ $(function(){
 											</c:when>
 											<c:otherwise>
 												<div>
-													<a href="">${item.thumb_origin}</a>
+													<a href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadRealStory&fileName=${item.thumb_origin}&downName=${item.thumb_stored}">${item.thumb_origin}</a>
 													<img id="thumb" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 													<input type="hidden" name="thumb" value="${item.thumb_origin}">
 												</div>
