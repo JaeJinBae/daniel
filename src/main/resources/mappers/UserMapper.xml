@@ -21,11 +21,15 @@
 	</select>
 	
 	<insert id="insert">
-		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{addr}, #{email}, #{regdate}, #{login_cnt}, 'x')
+		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{addr}, #{email}, #{regdate}, #{login_cnt}, 'x', 'o')
 	</insert>
 	
 	<update id="update">
 		update user set name=#{name}, pw=#{pw}, phone=#{phone}, birth=#{birth}, gender=#{gender}, email=#{email} where no=#{no}
+	</update>
+	
+	<update id="updatePwChangeState">
+		update user set pw=#{pw}, pw_change_state=#{pw_change_state} where no=#{no}
 	</update>
 	
 	<update id="updateWithdraw">

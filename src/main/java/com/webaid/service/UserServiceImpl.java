@@ -80,4 +80,9 @@ public class UserServiceImpl implements UserService {
 		return dao.listSearchWithdrawCountAll(cri);
 	}
 
+	@Override
+	public void updatePwChangeState(UserVO vo) {
+		dao.updatePwChangeState(vo);
+	}
+
 }

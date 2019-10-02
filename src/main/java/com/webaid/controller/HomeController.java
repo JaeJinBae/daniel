@@ -200,16 +200,29 @@ public class HomeController {
 		ResponseEntity<String> entity = null;
 		
 		UserVO vo = uService.selectById(info.get("id"));
+		UserVO newVO = new UserVO();
 		if(vo == null){
 			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
 		}else{
-			if(vo.getPw().equals(info.get("pw"))){
+			if(vo.getPw_change_state().equals("x")){
+				newVO.setNo(vo.getNo());
+				newVO.setPw(info.get("pw"));
+				newVO.setPw_change_state("o");
+				uService.updatePwChangeState(newVO);
 				session.setAttribute("id", vo.getId());
 				session.setAttribute("no", vo.getNo());
+				uService.updateLoginCnt(vo.getNo());
 				entity = new ResponseEntity<String>("ok", HttpStatus.OK);
-				
 			}else{
-				entity = new ResponseEntity<String>("no", HttpStatus.OK);
+				if(vo.getPw().equals(info.get("pw"))){
+					session.setAttribute("id", vo.getId());
+					session.setAttribute("no", vo.getNo());
+					uService.updateLoginCnt(vo.getNo());
+					entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+					
+				}else{
+					entity = new ResponseEntity<String>("no", HttpStatus.OK);
+				}
 			}
 		}
 		return entity;

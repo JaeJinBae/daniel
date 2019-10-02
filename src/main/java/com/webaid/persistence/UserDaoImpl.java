@@ -48,6 +48,11 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	public void updatePwChangeState(UserVO vo) {
+		session.update(namespace + ".updatePwChangeState", vo);
+	}
+
+	@Override
 	public void updateWithdraw(UserVO vo) {
 		session.update(namespace + ".updateWithdraw", vo);
 	}
