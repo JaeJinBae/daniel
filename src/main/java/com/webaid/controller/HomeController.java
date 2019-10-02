@@ -361,6 +361,7 @@ public class HomeController {
 			vo.setNo(Integer.parseInt(info.get("no")));
 			vo.setName(info.get("name"));
 			vo.setPhone(info.get("phone"));
+			vo.setBirth("");
 			vo.setGender(info.get("gender"));
 			vo.setEmail(info.get("email"));
 			if(info.get("new_pw").length() <2){

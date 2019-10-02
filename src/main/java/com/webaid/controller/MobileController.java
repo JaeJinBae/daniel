@@ -199,14 +199,16 @@ public class MobileController {
 		logger.info("myinfoEdit POST");
 		ResponseEntity<String> entity = null;
 		try {
+			UserVO prevVO = uService.selectOne(Integer.parseInt(info.get("no")));
 			UserVO vo = new UserVO();
+			
 			vo.setNo(Integer.parseInt(info.get("no")));
 			vo.setName(info.get("name"));
 			vo.setPhone(info.get("phone"));
-			vo.setGender(info.get("gender"));
+			vo.setGender(prevVO.getGender());
+			vo.setBirth("");
 			vo.setEmail(info.get("email"));
 			if(info.get("new_pw").length() <2){
-				UserVO prevVO = uService.selectOne(Integer.parseInt(info.get("no")));
 				vo.setPw(prevVO.getPw());
 			}else{
 				vo.setPw(info.get("new_pw"));
