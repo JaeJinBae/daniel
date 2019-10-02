@@ -219,7 +219,6 @@ public class HomeController {
 					session.setAttribute("no", vo.getNo());
 					uService.updateLoginCnt(vo.getNo());
 					entity = new ResponseEntity<String>("ok", HttpStatus.OK);
-					
 				}else{
 					entity = new ResponseEntity<String>("no", HttpStatus.OK);
 				}
