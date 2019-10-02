@@ -1330,6 +1330,7 @@ $(function(){
 									form.r_time.value = $('#r_time').val();
 			
 									form.target = "hiddenifr";
+									console.log(reserveJson);
 									//form.submit();
 									vegasRegister(reserveJson);
 								}else{
@@ -1359,7 +1360,6 @@ $(function(){
 					var resClinicArr = sendData.categoryList;
 					var resvMemo = "";
 					$(resClinicArr).each(function(){
-						console.log(this.category1_nm);
 						resvMemo += this.category1_nm+" "+this.category2_nm+" ";
 						if(this.category3_nm == ""){
 							resvMemo += " | " 
@@ -1373,14 +1373,19 @@ $(function(){
 					}else{
 						resvMemo += "메모: "+sendData.r_memo;
 					}
-
+					
+					var v_r_date = sendData.r_date;
+					v_r_date = v_r_date.replace(/-/gi,"");
+					var v_r_time = sendData.r_time;
+					v_r_time = v_r_time.replace(":","");
+					
 					var data = {
 							orgno : "38347555",				// 요양기관기호
 							name : sendData.r_name,			// varchar(40)
 							phone : sendData.r_phone,		// varchar(40)
 							email : sendData.r_email,			// varchar(40)
-							resvdate : sendData.r_regdate,		// varchar(8) YYYYMMDD
-							resvtime : sendData.r_time,		// varchar(4) hhmm
+							resvdate : v_r_date,		// varchar(8) YYYYMMDD
+							resvtime : v_r_time,		// varchar(4) hhmm
 							resvmemo : resvMemo,	// text
 							doctor : ''		// varchar(40)
 						};
