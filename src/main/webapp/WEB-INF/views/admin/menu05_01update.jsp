@@ -66,6 +66,18 @@ $(function(){
 			$("input[name='reply_date']").val(year+"-"+month+"-"+date);
 		}
 	});
+	
+	$(document).on("click", "#downBtn", function(e){
+		e.preventDefault();
+		var href = $(this).prop("href");
+		var f_origin = $("input[name='upload_origin']").val();
+		var fileName = encodeURIComponent(f_origin);
+		var f_stored = $("input[name='upload_stored']").val();
+		var downName =  encodeURIComponent(f_stored);
+		
+		href += "&fileName="+fileName+"&downName="+downName;
+		location.href= href;
+	});
 });
 </script>
 </head>
@@ -202,9 +214,10 @@ $(function(){
 											</c:when>
 											<c:otherwise>
 												<div>
-													<a href="">${item.upload_origin}</a>
+													<a id="downBtn" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadAdvice">${item.upload_origin}</a>
 													<img id="upload" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 													<input type="hidden" name="upload_origin" value="${item.upload_origin}">
+													<input type="hidden" name="upload_stored" value="${item.thumb_stored}">
 												</div>
 											</c:otherwise>
 										</c:choose>

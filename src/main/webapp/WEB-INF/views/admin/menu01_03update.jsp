@@ -116,7 +116,7 @@ $(function(){
 		
 		href += "&fileName="+fileName+"&downName="+downName;
 		location.href= href;
-	})
+	});
 	
 });
 </script>

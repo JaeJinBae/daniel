@@ -114,7 +114,30 @@ $(function(){
 				location.href="${pageContext.request.contextPath}/admin/menu01_02";
 			} 
 		});
+	});
+	
+	$(document).on("click", "#downBtn_before", function(e){
+		e.preventDefault();
+		var href = $(this).prop("href");
+		var f_origin = $("input[name='img_before']").val();
+		var fileName = encodeURIComponent(f_origin);
+		var f_stored = $("input[name='img_before_stored']").val();
+		var downName =  encodeURIComponent(f_stored);
 		
+		href += "&fileName="+fileName+"&downName="+downName;
+		location.href= href;
+	});
+	
+	$(document).on("click", "#downBtn_after", function(e){
+		e.preventDefault();
+		var href = $(this).prop("href");
+		var f_origin = $("input[name='img_after']").val();
+		var fileName = encodeURIComponent(f_origin);
+		var f_stored = $("input[name='img_after_stored']").val();
+		var downName =  encodeURIComponent(f_stored);
+		
+		href += "&fileName="+fileName+"&downName="+downName;
+		location.href= href;
 	});
 	
 });
@@ -212,9 +235,10 @@ $(function(){
 											</c:when>
 											<c:otherwise>
 												<div>
-													<a href="">${item.img_before_origin}</a>
+													<a id="downBtn_before" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadBeforeAfter">${item.img_before_origin}</a>
 													<img id="img_b" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 													<input type="hidden" name="img_before" value="${item.img_before_origin}">
+													<input type="hidden" name="img_before_stored" value="${item.img_before_stored}">
 												</div>
 											</c:otherwise>
 										</c:choose>
@@ -225,9 +249,10 @@ $(function(){
 											</c:when>
 											<c:otherwise>
 												<div class="marginT10">
-													<a href="">${item.img_after_origin}</a>
+													<a id="downBtn_after" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadBeforeAfter">${item.img_after_origin}</a>
 													<img id="img_a" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 													<input type="hidden" name="img_after" value="${item.img_after_origin}">
+													<input type="hidden" name="img_after_stored" value="${item.img_after_stored}">
 												</div>
 											</c:otherwise>
 										</c:choose>

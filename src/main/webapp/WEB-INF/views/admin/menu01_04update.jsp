@@ -109,6 +109,17 @@ $(function(){
 		
 	});
 	
+	$(document).on("click", "#downBtn", function(e){
+		e.preventDefault();
+		var href = $(this).prop("href");
+		var f_origin = $("input[name='thumb']").val();
+		var fileName = encodeURIComponent(f_origin);
+		var f_stored = $("input[name='thumb_stored']").val();
+		var downName =  encodeURIComponent(f_stored);
+		
+		href += "&fileName="+fileName+"&downName="+downName;
+		location.href= href;
+	});
 });
 </script>
 </head>
@@ -201,9 +212,10 @@ $(function(){
 											</c:when>
 											<c:otherwise>
 												<div>
-													<a href="">${item.thumb_origin}</a>
+													<a id="downBtn" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadCaution">${item.thumb_origin}</a>
 													<img id="thumb" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 													<input type="hidden" name="thumb" value="${item.thumb_origin}">
+													<input type="hidden" name="thumb_stored" value="${item.thumb_stored}">
 												</div>
 											</c:otherwise>
 										</c:choose>

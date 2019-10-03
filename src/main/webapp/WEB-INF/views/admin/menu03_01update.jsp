@@ -107,7 +107,18 @@ $(function(){
 				location.href="${pageContext.request.contextPath}/admin/menu01_03";
 			} 
 		});
+	});
+	
+	$(document).on("click", "#downBtn", function(e){
+		e.preventDefault();
+		var href = $(this).prop("href");
+		var f_origin = $("input[name='thumb']").val();
+		var fileName = encodeURIComponent(f_origin);
+		var f_stored = $("input[name='thumb_stored']").val();
+		var downName =  encodeURIComponent(f_stored);
 		
+		href += "&fileName="+fileName+"&downName="+downName;
+		location.href= href;
 	});
 	
 });
@@ -185,9 +196,10 @@ $(function(){
 											<c:otherwise>
 												<img src="${pageContext.request.contextPath}/resources/uploadEvent/${item.thumb_stored}" height="100px">
 												<div>
-													<a href="">${item.thumb_origin}</a>
+													<a id="downBtn" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadEvent">${item.thumb_origin}</a>
 													<img id="thumb" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 													<input type="hidden" name="thumb" value="${item.thumb_origin}">
+													<input type="hidden" name="thumb_stored" value="${item.thumb_stored}">
 												</div>
 											</c:otherwise>
 										</c:choose>
