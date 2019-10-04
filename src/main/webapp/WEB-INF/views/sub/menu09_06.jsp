@@ -485,6 +485,16 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(6)").addClass("active");
+	$(document).on("click", ".item > .daniel-event-info > a", function(e){
+		e.preventDefault();
+		var end_d = new Date($("input[name='enddate']").val());
+		var ndate = new Date();
+		if(ndate.getTime() > end_d.getTime()){
+			alert("종료된 이벤트입니다.");
+		}else{
+			location.href=$(this).prop("href");
+		}
+	});
 });
 </script>
 </head>
@@ -584,7 +594,7 @@ $(function(){
 										</c:choose>
 										<h6 class="tit">${item.title}</h6>
 										<p class="cap"><img src="${pageContext.request.contextPath}/resources/img/contents/period.png" alt="">${item.start_date} ~ ${item.end_date}</p>
-										<a href="${pageContext.request.contextPath}/menu09_06read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="more" title="자세히 보기">자세히</a>
+										<a href="${pageContext.request.contextPath}/menu09_06read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="more" title="자세히 보기">자세히<input type="hidden" name="enddate" value="${item.end_date}"></a>
 									</div>
 								</li>
 							</c:forEach>
