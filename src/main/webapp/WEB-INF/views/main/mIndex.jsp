@@ -659,7 +659,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">Autumn</p>
 							<h6 class="tit">다니엘이 추천하는 상품</h6>
-							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=35" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb08.png) no-repeat center top;">
@@ -667,7 +667,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">NEW 4세대</p>
 							<h6 class="tit">써마지 FLX</h6>
-							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=33" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb06.jpg) no-repeat center top;">
@@ -675,7 +675,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">공명플라즈마</p>
 							<h6 class="tit">코레지 도입기념 이벤트</h6>
-							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=31" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb04.jpg) no-repeat center top;">
@@ -683,7 +683,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">Early Bird EVENT</p>
 							<h6 class="tit">얼리버드 데이 이벤트</h6>
-							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=30" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb05.jpg) no-repeat center top;">
@@ -691,7 +691,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">UP DAY EVENT</p>
 							<h6 class="tit">수요일엔 업데이 이벤트</h6>
-							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=29" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb02.jpg) no-repeat center top;">
@@ -699,7 +699,7 @@ $(function(){
 							<i class="kinds">EVENT</i>
 							<p class="cap">맞춤웨딩프로그램</p>
 							<h6 class="tit">웨딩 D-Day 패키지</h6>
-							<a href="${pageContext.request.contextPath}/m/menu09_06" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=27" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 			
