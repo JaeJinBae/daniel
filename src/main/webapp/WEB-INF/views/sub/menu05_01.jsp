@@ -551,6 +551,12 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
+			<div class="sub-contents">
+				<div class="inner" style="padding:75px 0 50px 0">
+					<iframe width="1045" height="587" src="https://www.youtube.com/embed/He8GaDfbisU?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+				</div>
+			</div>
+			
 			<div class="sub-contents pcode50301">
 				<div class="inner">
 					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_01.png" alt="">

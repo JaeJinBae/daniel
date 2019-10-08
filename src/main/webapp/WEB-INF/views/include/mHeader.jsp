@@ -45,7 +45,7 @@
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu02_02" data-text="안면윤곽주사"><span>안면윤곽주사</span></a></li>
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu02_03" data-text="멀티파워주사"><span>멀티파워주사</span></a></li>
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu02_04" data-text="가격안내"><span>가격안내</span></a></li>
-							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu02_05" data-text="예약하기"><span>예약하기</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu09_07" data-text="예약하기"><span>예약하기</span></a></li>
 						</ul>
 					</li>
 					<li class="gnb ">
