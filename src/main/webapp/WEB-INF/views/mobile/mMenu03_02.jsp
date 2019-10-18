@@ -567,6 +567,13 @@ $(function(){
 					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_06.png" alt="" usemap="pCode-511-06">
 				</div>
 			</div>
+			
+			<div class="sub-contents">
+				<div class="inner" style="padding:75px 0 50px 0">
+					<iframe width="100%" height="224px" src="https://www.youtube.com/embed/noDG-RMO2tc?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+				</div>
+			</div>
+			
 			<div class="sub-contents pCode-511-07">
 				<div class="full">
 					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_07.png" alt="" usemap="pCode-511-07">
