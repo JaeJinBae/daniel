@@ -541,7 +541,7 @@ $(function(){
 			
 			<div class="sub-contents">
 				<div class="inner" style="padding:75px 0 50px 0">
-					<iframe width="100%" height="287" src="https://www.youtube.com/embed/He8GaDfbisU?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+					<iframe width="100%" height="287" src="https://www.youtube.com/embed/He8GaDfbisU?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;"></iframe>
 				</div>
 			</div>
 			

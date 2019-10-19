@@ -42,11 +42,11 @@ public class SmsSendUtil {
 			
 			Map<String, String> sms = new HashMap<String, String>();
 			
-			sms.put("user_id", "bjj7425"); // SMS 아이디
-			sms.put("key", "uybnfxh6xc0wbogbgu7nqgfnbqvx8xy8"); //인증키
+			sms.put("user_id", "danielps"); // SMS 아이디
+			sms.put("key", "2155cwb57i145dkocg5ltyx9f5avac3i"); //인증키
 			
-			//iq1426 유한통증 아이디
-			// 1af4k1p8j29ulusxjdkctfgfasgaby8i 유한통증 인증키
+			//danielps 다니엘 아이디
+			// 2155cwb57i145dkocg5ltyx9f5avac3i	 다니엘 인증키
 			//uybnfxh6xc0wbogbgu7nqgfnbqvx8xy8 웹에이드 인증키
 			/******************** 인증정보 ********************/
 			String msg = type+" 문의가 접수되었습니다."; 
@@ -56,12 +56,12 @@ public class SmsSendUtil {
 			msg += "잔여: "+remainSms;
 			/******************** 전송정보 ********************/
 			sms.put("msg", msg); // 메세지 내용
-			sms.put("receiver", "010-2837-7425"); // 수신번호
+			sms.put("receiver", "010-5158-0999"); // 수신번호
 			sms.put("destination", ""); // 수신인 %고객명% 치환
 			sms.put("sender", ""); // 발신번호
 			sms.put("rdate", ""); // 예약일자 - 20161004 : 2016-10-04일기준
 			sms.put("rtime", ""); // 예약시간 - 1930 : 오후 7시30분
-			sms.put("testmode_yn", "Y"); // Y 인경우 실제문자 전송X , 자동취소(환불) 처리
+			sms.put("testmode_yn", "n"); // Y 인경우 실제문자 전송X , 자동취소(환불) 처리
 			sms.put("title", ""); //  LMS, MMS 제목 (미입력시 본문중 44Byte 또는 엔터 구분자 첫라인)
 			
 			String image = "";
@@ -132,11 +132,11 @@ public class SmsSendUtil {
 			String sms_url = "https://apis.aligo.in/remain/"; // 전송요청 URL
 			
 			String sms = "";
-			sms += "user_id=" + "bjj7425"; // SMS 아이디 
-			sms += "&key=" + "uybnfxh6xc0wbogbgu7nqgfnbqvx8xy8"; //인증키
+			sms += "user_id=" + "danielps"; // SMS 아이디 
+			sms += "&key=" + "2155cwb57i145dkocg5ltyx9f5avac3i"; //인증키
 			
-			//iq1426 원통증아이디
-			//1af4k1p8j29ulusxjdkctfgfasgaby8i 유한통증인증키
+			//danielps 다니엘 아이디
+			// 2155cwb57i145dkocg5ltyx9f5avac3i	 다니엘 인증키
 			//uybnfxh6xc0wbogbgu7nqgfnbqvx8xy8 웹에이드 인증키
 			/******************** 인증정보 ********************/
 			
@@ -171,7 +171,7 @@ public class SmsSendUtil {
 			}
 			
 			
-			res = splitRes[2].split(":")[1]+"/"+splitRes[3].split(":")[1];
+			res = "잔여: SMS "+splitRes[2].split(":")[1]+"건/LMS "+splitRes[3].split(":")[1]+"건";
 
 		}catch(MalformedURLException e1){
 			System.out.println(e1.getMessage());
