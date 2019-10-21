@@ -53,6 +53,15 @@ $(function(){
 		admLogin(info);
 	});
 	
+	$("#m_pass").keypress(function(e){
+		if(e.which == 13){
+			var id = $("#m_id").val();
+			var pw = $("#m_pass").val();
+			var info = {"id":id, "pw":pw};
+			
+			admLogin(info);
+		}
+	});
 });
 </script>
 </head>

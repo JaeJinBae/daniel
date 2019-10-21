@@ -1,2 +1,11 @@
 User-agent: *
- Allow: /
+Disallow: /_init.php
+Disallow: /admin/
+Disallow: /lib/
+Disallow: /filedata/
+Disallow: /html/board/
+Disallow: /html/crboard/
+Disallow: /html/inquire/
+Disallow: /html/member/
+Disallow: /popup/
+Disallow: /*_proc.php$

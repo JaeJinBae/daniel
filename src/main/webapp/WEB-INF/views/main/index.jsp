@@ -10,6 +10,13 @@
 <title>다니엘성형외과의원 진료과목 피부과</title>
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 <!-- ************************************************************************************************* -->
+<meta name="naver-site-verification" content="d53046e7ecfe442e3b973c1baeb37ec7fc75031d"/>
+<meta name="description" content="창원시 상남동 위치. 프리미엄 쁘띠클리닉, 레이저 클리닉, 눈/코 성형, 동안/탄력 클리닉">
+<meta property="og:type" content="website">
+<meta property="og:title" content="다니엘성형외과의원 진료과목 피부과">
+<meta property="og:description" content="창원시 상남동 위치. 프리미엄 쁘띠클리닉, 레이저 클리닉, 눈/코 성형, 동안/탄력 클리닉">
+<meta property="og:image" content="http://www.danielps.co.kr/logo.png">
+<meta property="og:url" content="http://www.danielps.co.kr">
 <!-- @ = 스타일, # = 자바스크립트 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.reset.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.common.css"><!-- @2 공통 스타일		**삭제금지** -->

@@ -144,7 +144,6 @@ $("#btn_delete").click(function(){
 													<td>${num}</td>
 													<td>
 														<a href="${pageContext.request.contextPath}/admin/menu05_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.name}</a>
-														<img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" class="vimg" alt="비밀글아이콘">
 													</td>
 													<td><a href="${pageContext.request.contextPath}/admin/menu05_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
 													<td>${item.regdate}</td>

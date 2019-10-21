@@ -129,7 +129,7 @@ $(function(){
 														<a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
 															<c:choose>
 																<c:when test="${item.res_state == 'o'}">예약완료</c:when>
-																<c:otherwise>예약취소</c:otherwise>
+																<c:otherwise><span style="color:red;font-weight:bold;">예약취소</span></c:otherwise> 
 															</c:choose>
 														</a>
 													</td>
