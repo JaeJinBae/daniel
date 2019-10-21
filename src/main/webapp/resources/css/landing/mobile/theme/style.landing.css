@@ -111,13 +111,13 @@ mark{background:none; color:#fff;}
 /* 공통 간편상담신청 시작 */
 #quick-inquire{position:fixed; box-sizing:border-box; left:0; bottom:-33.5rem; width:100%; height:40rem; z-index:99; text-align:center; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
-#quick-inquire > button{position:fixed; width:17rem; height:3.5rem; background:#c4a165 url(/assets/img/landing/mobile/theme/btn_quick_bg.jpg) no-repeat center center; background-size:cover; left:50%; bottom:6.5rem; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); cursor:pointer; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+#quick-inquire > button{position:fixed; width:17rem; height:3.5rem; background:#c4a165 url(../../../../img/landing/mobile/theme/btn_quick_bg.jpg) no-repeat center center; background-size:cover; left:50%; bottom:6.5rem; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); cursor:pointer; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
 #quick-inquire > button img{display:none;}
 
 #quick-inquire.active{bottom:0;}
 #quick-inquire > button.active{bottom:40rem;}
 
-#quick-inquire .inner{position:relative; padding:7.5rem 1rem 9rem 1rem; box-sizing:border-box; background:#333333 url(/assets/img/landing/mobile/theme/bak_quick_bg.jpg) no-repeat center top; background-size:contain;}
+#quick-inquire .inner{position:relative; padding:7.5rem 1rem 9rem 1rem; box-sizing:border-box; background:#333333 url(../../../../img/landing/mobile/theme/bak_quick_bg.jpg) no-repeat center top; background-size:contain;}
 #quick-inquire .quick-counsel01,
 #quick-inquire .quick-counsel02{position:relative; width:100%; box-sizing:border-box; z-index:9;}
 
@@ -126,7 +126,7 @@ mark{background:none; color:#fff;}
 #quick-inquire .quick-counsel01 li{position:relative; display:inline-block; width:100%; margin-bottom:.5rem ;}
 #quick-inquire .quick-counsel01 li > label{float:left; width:4.5rem; height:2.5rem; line-height:2.5rem; box-sizing:border-box; color:#fff; text-align:left; font-size:1rem;}
 #quick-inquire .quick-counsel01 li input[type="text"]{float:left; width:calc(100% - 4.5rem); width:-webkit-calc(100% - 4.5rem); height:2.5rem; line-height:2.5rem; padding:0 .5rem; box-sizing:border-box; background:#fff;}
-#quick-inquire .quick-counsel01 li select{float:left; height:2.5rem; line-height:2.5rem; padding:0 .5rem; box-sizing:border-box; background:#fff url(/assets/img/landing/mobile/theme/select_arrow.png) no-repeat 95% center; background-size:.5rem; cursor:pointer;}
+#quick-inquire .quick-counsel01 li select{float:left; height:2.5rem; line-height:2.5rem; padding:0 .5rem; box-sizing:border-box; background:#fff url(../../../../img/landing/mobile/theme/select_arrow.png) no-repeat 95% center; background-size:.5rem; cursor:pointer;}
 #quick-inquire .quick-counsel01 li select{width:calc(100% - 4.5rem); width:-webkit-calc(100% - 4.5rem);}
 #quick-inquire .quick-counsel01 li input[data-name="연락처"]{width:calc(33.3333333333% - 1.77rem); margin-right:.4rem;}
 #quick-inquire .quick-counsel01 li input[data-name="연락처"]:last-child{margin-right:0;}
@@ -145,7 +145,7 @@ mark{background:none; color:#fff;}
 
 #quick-inquire .quick-counsel02 li:last-child {margin-left:4.5rem;}
 #quick-inquire .quick-counsel02 li:last-child{display:block; clear:both; padding-top:1.2rem; height:3.6rem;}
-#quick-inquire .quick-counsel02 li:last-child button{display:block; width:100%; height:100%; background:url(/assets/img/landing/mobile/theme/btn_quick.jpg) no-repeat center center; background-size:cover; cursor:pointer;}
+#quick-inquire .quick-counsel02 li:last-child button{display:block; width:100%; height:100%; background:url(../../../../img/landing/mobile/theme/btn_quick.jpg) no-repeat center center; background-size:cover; cursor:pointer;}
 #quick-inquire .quick-counsel02 li:last-child button img {display:none;}
 
 /**********************************************************************

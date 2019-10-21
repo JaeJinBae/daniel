@@ -127,7 +127,6 @@ $(document).ready( function() {
 	// * ------------------------------------------------------------
 
 
-
 	$('#quick-inquire > button, #event').on('click', function() {
 		$('#quick-inquire').toggleClass('active');
 		$('#quick-inquire > button').toggleClass('active');

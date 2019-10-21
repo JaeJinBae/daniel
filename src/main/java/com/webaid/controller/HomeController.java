@@ -125,6 +125,35 @@ public class HomeController {
 		return entity;
 	}
 	
+	@RequestMapping(value = "/landing", method = RequestMethod.GET)
+	public String landing(HttpServletRequest req, Model model) {
+		logger.info("index GET");
+		
+		Device device=DeviceUtils.getCurrentDevice(req);
+		String deviceType="unknown";
+		
+		if(device == null){
+			deviceType="unknown";
+			logger.info("디바이스타입= "+deviceType);
+			
+			return "landing/index";
+		}
+		if(device.isMobile()){
+			deviceType="mobile";
+			logger.info("디바이스타입= "+deviceType);			
+			return "landing/mIndex";
+		}else if(device.isTablet()){
+			deviceType="mobile";
+			logger.info("디바이스타입= "+deviceType);			
+			return "landing/mIndex";
+		}else{
+			deviceType="normal";
+			logger.info("디바이스타입= "+deviceType);
+			
+			return "landing/index";
+		}
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
 		logger.info("index GET");

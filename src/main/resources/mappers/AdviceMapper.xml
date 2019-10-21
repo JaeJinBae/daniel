@@ -9,7 +9,7 @@
 	</select>
 	
 	<select id="selectNonComplete" resultType="AdviceVO">
-		select * from advice where state!='상담완료' order by no desc
+		select * from advice where state!='상담완료' order by no desc, regdate desc
 	</select>
 	
 	<insert id="insert">
