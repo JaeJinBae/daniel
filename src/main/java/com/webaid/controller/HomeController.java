@@ -555,20 +555,6 @@ public class HomeController {
 		return "sub/menu03_05";
 	}
 	
-	@RequestMapping(value = "/menu03_06", method = RequestMethod.GET)
-	public String menu03_06(Model model) {
-		logger.info("menu03_06 GET");
-		
-		return "sub/menu03_06";
-	}
-	
-	@RequestMapping(value = "/menu03_07", method = RequestMethod.GET)
-	public String menu03_07(Model model) {
-		logger.info("menu03_07 GET");
-		
-		return "sub/menu03_07";
-	}
-	
 	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
 	public String menu04_01(Model model) {
 		logger.info("menu04_01 GET");
@@ -595,6 +581,34 @@ public class HomeController {
 		logger.info("menu04_04 GET");
 		
 		return "sub/menu04_04";
+	}
+	
+	@RequestMapping(value = "/menu04_05", method = RequestMethod.GET)
+	public String menu04_05(Model model) {
+		logger.info("menu04_05 GET");
+		
+		return "sub/menu04_05";
+	}
+	
+	@RequestMapping(value = "/menu04_06", method = RequestMethod.GET)
+	public String menu04_06(Model model) {
+		logger.info("menu04_06 GET");
+		
+		return "sub/menu04_06";
+	}
+	
+	@RequestMapping(value = "/menu04_07", method = RequestMethod.GET)
+	public String menu04_07(Model model) {
+		logger.info("menu04_07 GET");
+		
+		return "sub/menu04_07";
+	}
+	
+	@RequestMapping(value = "/menu04_08", method = RequestMethod.GET)
+	public String menu04_08(Model model) {
+		logger.info("menu04_08 GET");
+		
+		return "sub/menu04_08";
 	}
 	
 	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)
@@ -632,46 +646,32 @@ public class HomeController {
 		return "sub/menu05_05";
 	}
 	
-	@RequestMapping(value = "/menu05_06", method = RequestMethod.GET)
-	public String menu05_06(Model model) {
-		logger.info("menu05_06 GET");
-		
-		return "sub/menu05_06";
-	}
-	
-	@RequestMapping(value = "/menu05_07", method = RequestMethod.GET)
-	public String menu05_07(Model model) {
-		logger.info("menu05_07 GET");
-		
-		return "sub/menu05_07";
-	}
-	
-	@RequestMapping(value = "/menu05_08", method = RequestMethod.GET)
-	public String menu05_08(Model model) {
-		logger.info("menu05_08 GET");
-		
-		return "sub/menu05_08";
-	}
-	
-	@RequestMapping(value = "/menu05_09", method = RequestMethod.GET)
-	public String menu05_09(Model model) {
-		logger.info("menu05_09 GET");
-		
-		return "sub/menu05_09";
-	}
-	
-	@RequestMapping(value = "/menu05_10", method = RequestMethod.GET)
-	public String menu05_10(Model model) {
-		logger.info("menu05_10 GET");
-		
-		return "sub/menu05_10";
-	}
-	
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
 	public String menu06_01(Model model) {
 		logger.info("menu06_01 GET");
 		
 		return "sub/menu06_01";
+	}
+	
+	@RequestMapping(value = "/menu06_02", method = RequestMethod.GET)
+	public String menu06_02(Model model) {
+		logger.info("menu06_02 GET");
+		
+		return "sub/menu06_02";
+	}
+	
+	@RequestMapping(value = "/menu06_03", method = RequestMethod.GET)
+	public String menu06_03(Model model) {
+		logger.info("menu06_03 GET");
+		
+		return "sub/menu06_03";
+	}
+	
+	@RequestMapping(value = "/menu06_04", method = RequestMethod.GET)
+	public String menu06_04(Model model) {
+		logger.info("menu06_04 GET");
+		
+		return "sub/menu06_04";
 	}
 	
 	@RequestMapping(value = "/menu07_01", method = RequestMethod.GET)

@@ -678,12 +678,20 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=37" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb04.jpg) no-repeat center top;">
+					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb04.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
 							<p class="cap">Early Bird EVENT</p>
 							<h6 class="tit">얼리버드 데이 이벤트</h6>
 							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=30" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li> --%>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/20191030_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">수험생·학생</p>
+							<h6 class="tit">수험생·학생 EVENT</h6>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571388802207_thumb36.jpg) no-repeat center top;">

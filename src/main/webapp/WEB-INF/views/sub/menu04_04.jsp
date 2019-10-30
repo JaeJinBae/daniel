@@ -511,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="리듬 코성형">
+			<div id="sub-visual" data-menu="안면홍조">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -526,18 +526,22 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>눈/코 성형 ▼</button>
+							<button>레이저 클리닉 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>리듬 코성형 ▼</button>
+							<button>안면홍조 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu04_01">멜로디 눈성형</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu04_02">눈매교정</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu04_03">트임성형</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu04_04">리듬 코성형</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu04_01">다니엘 복합레이저</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_02">난치성색소</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_03">여드름</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_04">안면홍조</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_05">모공/흉터</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_06">프리미엄토닝</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_07">웨딩패키지</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_08">흉터 클리닉</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -545,51 +549,26 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode52001">
+			<div class="sub-contents pcode51301">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/513_img_01.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode52002">
+			
+			
+			<div class="sub-contents pcode51302">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_02.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/513_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode52003">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_03.png" alt="">
+			
+			
+			<div class="sub-contents pcode51303">
+				<div class="full">
+					
 				</div>
 			</div>
-			<div class="sub-contents pcode52004">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_04.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode52005">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_05.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode52006">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_06.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode52007">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_07.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode52008">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_08.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode52009">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/520_img_09.png" alt="">
-				</div>
-			</div>
+			
 			
 			<div id="caoution">
 				<div class="inner">
@@ -603,19 +582,17 @@ $(function(){
 		
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>코성형</em>주의사항</span>
+						<span><em>색소레이저</em>주의사항</span>
 						<ol>
-							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
-							<li>코에서 피가 나올 경우 가볍게 닦아주세요.</li>
-							<li>안경은 한달 뒤에 착용해주세요.</li>
-							<li>3주간 금주,금연하여 주세요.</li>
-							<li>처방약을 꼭 복용해주세요.</li>
-							<li>봉합부위에 연고를 발라주세요.</li>
-							<li>수술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
-							<li>중격사용 수술 시 코를 풀지 말아주세요.</li>
-							
+							<li>수포, 물집 발생 시 병원에 문의해주세요.</li>
+							<li>일주일간 금주,금연해주세요.</li>
+							<li>일주일간 목욕,사우나,수영장, 격한 운동은 삼가주세요.</li>
+							<li>재생크림,썬크림을 꼭 발라주세요.</li>
+							<li>딱지탈락 후 심하게 붉을 경우 재생테이프를 사용해주세요.</li>
+							<li>혈관치료 시 멍,부기, 피딱지 발생할 수 있습니다.</li>
+							<li>처방약이 있을 시  꼭 복용해주세요.</li>
+						
 						</ol>	
-		
 					</div>
 					<!-- 주의사항 리스트 끝 -->
 		
@@ -628,7 +605,7 @@ $(function(){
 								<a href="${pageContext.request.contextPath}/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
+								<a href="${pageContext.request.contextPath}/menu04_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner05.png" alt="다니엘 눈코성형"></a>
 							</li>
 						</ul>
 					</div>

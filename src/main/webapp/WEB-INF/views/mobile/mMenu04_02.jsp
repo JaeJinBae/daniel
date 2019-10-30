@@ -509,16 +509,20 @@ $(function(){
 				<div class="full">
 					<ul>
 						<li class="gnb">
-							<button>눈/코 성형 ▼</button>
+							<button>레이저 클리닉 ▼</button>
 							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
 						</li>
 						<li class="gnb">
-							<button>눈매교정 ▼</button>
+							<button>난치성색소 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/m/menu04_01">멜로디 눈성형</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu04_02">눈매교정</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu04_03">트임성형</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu04_04">리듬 코성형</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu04_01">다니엘 복합레이저</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu04_02">난치성색소</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu04_03">여드름</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu04_04">안면홍조</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu04_05">모공/흉터</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu04_06">프리미엄 토닝</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu04_07">웨딩패키지</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu04_08">흉터 클리닉</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -527,49 +531,73 @@ $(function(){
 			<!-- BreadCrumb 끝 -->
 			
 			<!-- 서브 비주얼영역 시작 (이전, 다음페이지로 이동) -->
-			<div id="sub-visual" data-sec="눈/코 성형" data-menu="눈매교정">
+			<div id="sub-visual" data-sec="레이저 클리닉" data-menu="난치성색소">
 				<div class="inner">
 			
 				</div>
 			</div>
 			<!-- 서브 비주얼영역 끝 -->
-
-			<div class="sub-contents pCode-518-01">
+			
+			<div class="sub-contents pCode-511-01">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/518_img_01.png" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과" usemap="pCode-518-01">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_01.png" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과" usemap="pCode-511-01">
 				</div>
 			</div>
-			<div class="sub-contents pCode-518-02">
+			<div class="sub-contents pCode-511-02">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/518_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="pCode-518-02">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="pCode-511-02">
 				</div>
 			</div>
-			<div class="sub-contents pCode-518-03">
+			<div class="sub-contents pCode-511-03">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/518_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="pCode-518-03">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="pCode-511-03">
 				</div>
 			</div>
-			<div class="sub-contents pCode-518-04">
+			<div class="sub-contents pCode-511-04">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/518_img_04.png" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리" usemap="pCode-518-04">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_04.png" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리" usemap="pCode-511-04">
 				</div>
 			</div>
-			<div class="sub-contents pCode-518-05">
+			<div class="sub-contents pCode-511-05">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/518_img_05.png" alt="" usemap="pCode-518-05">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_05.png" alt="" usemap="pCode-511-05">
 				</div>
 			</div>
-			<div class="sub-contents pCode-518-06">
+			<div class="sub-contents pCode-511-06">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/518_img_06.png" alt="" usemap="pCode-518-06">
-				</div>
-			</div>
-			<div class="sub-contents pCode-518-07">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/518_img_07.png" alt="" usemap="pCode-518-07">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_06.png" alt="" usemap="pCode-511-06">
 				</div>
 			</div>
 			
+			<div class="sub-contents">
+				<div class="inner" style="padding:75px 0 50px 0">
+					<iframe width="100%" height="224px" src="https://www.youtube.com/embed/noDG-RMO2tc?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+				</div>
+			</div>
+			
+			<div class="sub-contents pCode-511-07">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_07.png" alt="" usemap="pCode-511-07">
+				</div>
+			</div>
+			<div class="sub-contents pCode-511-08">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_08.png" alt="" usemap="pCode-511-08">
+				</div>
+			</div>
+			<div class="sub-contents pCode-511-09">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/511_img_09.png" alt="" usemap="pCode-511-09">
+				</div>
+			</div>
+			
+			
+			<!-- 프리미엄 오리지널 명품 레이저 보유 맵 시작 -->
+			<map name="pCode-511-04">
+			
+			  <area shape="rect" coords="96,599,369,831" href="/m/?pCode=689">
+			</map>
+			<!-- 프리미엄 오리지널 명품 레이저 보유 맵 끝 -->
 			
 			<div id="caoution">
 				<div class="inner">
@@ -583,25 +611,31 @@ $(function(){
 		
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>눈매교정술</em>주의사항</span>
+						<span><em>색소레이저</em>주의사항</span>
 						<ol>
-							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
-							<li>3주간 금주,금연하여 주세요.</li>
-							<li>처방약을 꼭 복용해주세요.</li>
-							<li>수술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
-							<li>찜질팩으로 붓기를 완화시켜주세요.</li>
-							
+							<li>수포, 물집 발생 시 병원에 문의해주세요.</li>
+							<li>일주일간 금주,금연해주세요.</li>
+							<li>일주일간 목욕,사우나,수영장, 격한 운동은 삼가주세요.</li>
+							<li>재생크림,썬크림을 꼭 발라주세요.</li>
+							<li>딱지탈락 후 심하게 붉을 경우 재생테이프를 사용해주세요.</li>
+							<li>혈관치료 시 멍,부기, 피딱지 발생할 수 있습니다.</li>
+							<li>처방약이 있을 시  꼭 복용해주세요.</li>
+						
 						</ol>	
-		
 					</div>
 					<!-- 주의사항 리스트 끝 -->
 		
 		
 					<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
+		
 					<div class="double-banner">
 						<ul>
-							<li><a href="${pageContext.request.contextPath}/m/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a></li>
-							<li><a href="${pageContext.request.contextPath}/m/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a></li>
+							<li>
+								<a href="${pageContext.request.contextPath}/m/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/m/menu04_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner05.png" alt="다니엘 눈코성형"></a>
+							</li>
 						</ul>
 					</div>
 		

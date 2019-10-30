@@ -482,8 +482,8 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	$("#header > #gnb > .inner > ul > li:nth-child(5)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(5) > .lnb-wrap > li:nth-child(6)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(4)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(4) > .lnb-wrap > li:nth-child(8)").addClass("active");
 });
 </script>
 </head>
@@ -512,7 +512,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="상안검/하안검">
+			<div id="sub-visual" data-menu="흉터 클리닉">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -527,24 +527,22 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>동안/탄력 클리닉 ▼</button>
+							<button>레이저 클리닉 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>상안검/하안검 ▼</button>
+							<button>흉터 클리닉 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu05_01">리프팅 레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_02">안면거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_03">이마내시경거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_04">실리프팅/스킨보톡스</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_05">광채 지방이식</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_06">상안검/하안검</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_07">슈링크 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_08">필로가135주사</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_09">코레지 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_10">써마지FLX</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu04_01">다니엘 복합레이저</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_02">난치성색소</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_03">여드름</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_04">안면홍조</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_05">모공/흉터</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_06">프리미엄토닝</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_07">웨딩패키지</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_08">흉터 클리닉</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -552,39 +550,59 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode50801">
+			<div class="sub-contents pcode50901">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_01.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50802">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_02.png" alt="">
+			<div class="sub-contents pcode50902">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50803">
+			<div class="sub-contents pcode50903">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_03.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50804">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_04.png" alt="">
+			<div class="sub-contents pcode50904">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_04.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50805">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_05.png" alt="">
+			<div class="sub-contents pcode50905">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_05.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50806">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_06.png" alt="">
+			<div class="sub-contents pcode50906">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_06.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50807">
+			<div class="sub-contents pcode50907">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_07.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50908">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_08.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50909">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_07.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_09.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50910">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_10.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50911">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/509_img_11.png" alt="">
 				</div>
 			</div>
 			
@@ -597,35 +615,36 @@ $(function(){
 							시술&amp;수술 후 <em>주의사항</em>
 						</p>
 					</div>
-		
+			
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>상안검하안검</em>주의사항</span>
+						<span><em>흉터레이저</em>주의사항</span>
 						<ol>
-							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
-							<li>3주간 금주,금연하여 주세요.</li>
-							<li>처방약을 꼭 복용해주세요.</li>
-							<li>수술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
-							<li>찜질팩으로 붓기를 완화시켜주세요.</li>
+							<li>레이저 자국이 남을 가능성이 있습니다.</li>
+							<li>일주일간 금주,금연하여 주세요.</li>
+							<li>일주일간 목욕,사우나,수영장,격한운동은 삼가주세요.</li>
+							<li>얼굴 마사지(마찰)는 피해주세요. (필링제 사용 금지)</li>
+							<li>24시간 이후에 세안이 가능합니다.</li>
+							<li>화끈거림,열감증상 시 시트팩 사용을을 권합니다.</li>
 							
 						</ol>	
-		
+			
 					</div>
 					<!-- 주의사항 리스트 끝 -->
-		
+			
 				<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
-		
+			
 					<div class="double-banner">
 						<ul>
 							<li>
 								<a href="${pageContext.request.contextPath}/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
+								<a href="${pageContext.request.contextPath}/menu03_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner04.png" alt="다니엘 레이저"></a>
 							</li>
 						</ul>
 					</div>
-		
+			
 				</div>
 			</div>
 			

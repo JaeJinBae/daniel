@@ -60,9 +60,9 @@ html, body{}
 #header #gnb ul li.gnb:nth-child(1) ul.lnb-wrap{left:-50px; width:700px;}	/* 다니엘 소개 */
 #header #gnb ul li.gnb:nth-child(2) ul.lnb-wrap{left:-150px; width:650px;}	/* 프리미엄 쁘띠클리닉 */
 #header #gnb ul li.gnb:nth-child(3) ul.lnb-wrap{left:-150px; width:750px;}	/* 레이저 클리닉 */
-#header #gnb ul li.gnb:nth-child(4) ul.lnb-wrap{left:10px; width:450px;}	/* 눈/코 성형 */
-#header #gnb ul li.gnb:nth-child(5) ul.lnb-wrap{left:-600px; width:1230px;}	/* 동안/탄력 클리닉 */
-#header #gnb ul li.gnb:nth-child(6) ul.lnb-wrap{left:-200px; width:530px;}	/* 흉터 클리닉 */
+#header #gnb ul li.gnb:nth-child(4) ul.lnb-wrap{left:-200px; width:750px;}	/* 눈/코 성형 */
+#header #gnb ul li.gnb:nth-child(5) ul.lnb-wrap{left:-150px; width:750px;}	/* 동안/탄력 클리닉 */
+#header #gnb ul li.gnb:nth-child(6) ul.lnb-wrap{left:-200px; width:540px;}	/* 흉터 클리닉 */
 #header #gnb ul li.gnb:nth-child(7) ul.lnb-wrap{left:-250px; width:900px;}	/* 체형 클리닉 */
 #header #gnb ul li.gnb:nth-child(8) ul.lnb-wrap{left:-80px; width:900px;}	/* 메디컬스킨케어 */
 #header #gnb ul li.gnb:nth-child(9) ul.lnb-wrap{left:-650px; width:900px;}	/* 커뮤니티 */

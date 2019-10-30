@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -512,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="광채 지방이식">
+			<div id="sub-visual" data-menu="리프팅 레이저">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -527,24 +526,19 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>동안/탄력 클리닉 ▼</button>
+							<button>리프팅 클리닉 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>광채 지방이식 ▼</button>
+							<button>리프팅 레이저 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu05_01">리프팅 레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_02">안면거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_03">이마내시경거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_04">실리프팅/스킨보톡스</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_05">광채 지방이식</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_06">상안검/하안검</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_07">슈링크 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_08">필로가135주사</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_09">코레지 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_10">써마지FLX</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu05_01">써마지FLX</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu05_02">코레지 리프팅</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu05_03">슈링크 리프팅</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu05_04">필로가135주사</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu05_05">리프팅 레이저</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -552,73 +546,238 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode50701">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/507_img_01.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50702">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/507_img_02.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50703">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/507_img_03.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50704">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/507_img_04.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50705">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/507_img_05.png" alt="">
+			<div class="sub-contents">
+				<div class="inner" style="padding:75px 0 50px 0">
+					<iframe width="1045" height="587" src="https://www.youtube.com/embed/He8GaDfbisU?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
 				</div>
 			</div>
 			
-			<div id="caoution">
+			<div class="sub-contents pcode50301">
 				<div class="inner">
-					
-					<div class="caoution-title">
-						다니엘성형외과
-						<p>
-							시술&amp;수술 후 <em>주의사항</em>
-						</p>
-					</div>
-		
-					<!-- 주의사항 리스트 시작 -->
-					<div class="caoution-list">
-						<span><em>지방이식</em>주의사항</span>
-						<ol>
-							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
-							<li>3주간 금주,금연하여 주세요.</li>
-							<li>수술부위의 압박을 삼가주세요.(모자,안경)</li>
-							<li>시술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
-							<li>처방약을 꼭 복용해주세요.</li>
-							<li>얼굴 마사지나 경락은 피해주세요.</li>
-							
-						</ol>	
-		
-					</div>
-					<!-- 주의사항 리스트 끝 -->
-		
-		
-					<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt=""><em>흡연은 지방 생착률에 영향</em>을미칠 수 있으니 이점 참고해주세요</div>
-		
-					<div class="double-banner">
-						<ul>
-							<li>
-								<a href="${pageContext.request.contextPath}/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
-							</li>
-						</ul>
-					</div>
-		
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_01.png" alt="">
 				</div>
+			</div>
+			<div class="sub-contents pcode50302">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_02.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50303">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_03.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50305">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_05.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50306">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_06.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50307">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_07.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode50308">
+				<ul>
+					<li class="item01">
+						<div class="txt">
+							<span>피부 처짐이 시작되는 경우</span>
+							<p>주름 · 탄력 베이직 프로그램</p>
+						</div>
+						<div class="txt-hover">
+							<span>주름·탄력 베이직<br>프로그램</span>
+							<p>복합 레이저<br>+<br>고주파 관리</p>
+						</div>
+					</li>
+					<li class="item02">
+						<div class="txt">
+							<span>피하지방층이 두껍고<br>모공에 의한 처짐이 없는 경우</span>
+							<p>주름·탄력 프리미엄 프로그램</p>
+						</div>
+						<div class="txt-hover">
+							<span>주름·탄력 프리미엄<br>프로그램</span>
+							<p>복합 레이저<br>+<br>고주파 관리<br>+<br>LDM</p>
+						</div>
+					</li>
+					<li class="item03">
+						<div class="txt">
+							<span>피하지방층이 얇고<br>모공에 의한 처짐이 있는 경우</span>
+							<p>주름·탄력 프리미엄 플러스<br>TYPE·1 프로그램</p>
+						</div>
+						<div class="txt-hover">
+							<span>주름·탄력 프리미엄 플러스<br>TYPE·1 프로그램</span>
+							<p>복합 레이저<br>+<br>고주파 관리<br>+<br>LDM</p>
+						</div>
+					</li>
+					<li class="item04">
+						<div class="txt">
+							<span>피부 처짐이 시작되는 경우</span>
+							<p>피부 처짐이 심하고,<br>모공이 넓고 피하지방층이 두꺼운 경우</p>
+						</div>
+						<div class="txt-hover">
+							<span>주름·탄력 프리미엄 플러스<br>TYPE·2 프로그램</span>
+							<p>스킨타이트<br>+<br>복합 레이저<br>+<br>고주파 관리<br>+<br>LDM</p>
+						</div>
+					</li>
+					<li class="item05">
+						<div class="txt">
+							<span>피부 처짐이 시작되는 경우</span>
+							<p>피부 처짐이 심하고,<br>모공이 넓고 피하지방층이 두꺼운 경우</p>
+						</div>
+						<div class="txt-hover">
+							<span>주름·탄력 프리미엄 플러스<br>TYPE·3 프로그램</span>
+							<p>스킨타이트<br>+<br>복합 레이저<br>+<br>고주파 관리<br>+<br>LDM</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="sub-contents pcode50309">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_09.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode50311">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_10.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode50312">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_11.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode50313">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/503_img_12.png" alt="">
+				</div>
+			</div>
+
+			<div class="sub-contents pcode50310">
+				<ul class="inner">
+					<li class="item bg01">
+						<h6 class="tit">사이톤줄 프로파일</h6>
+						<p class="cap">
+							창원에서 유일하게 다니엘에서만<br>
+							보유하고 있는 장비
+						</p>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg02">
+						<h6 class="tit">엑셀 V</h6>
+						<p class="cap">
+							2017년형 엑셀V
+						</p>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg03">
+						<h6 class="tit">스킨타이트</h6>
+						<p class="cap">
+							창원에서 유일하게 다니엘에서만<br>
+							보유하고 있는 장비
+						</p>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg04">
+						<h6 class="tit">아피니트</h6>
+						<p class="cap">
+							이스라엘의 명품 장비
+						</p>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg05">
+						<h6 class="tit">노라보떼</h6>
+						<p class="cap">
+							창원에서 유일하게 다니엘에서만<br>
+							보유하고 있는 장비
+						</p>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg06">
+						<h6 class="tit">LDM 골드</h6>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg07">
+						<h6 class="tit">포어타이탄</h6>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg08">
+						<h6 class="tit">슈링크</h6>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg09">
+						<h6 class="tit">아포렉스</h6>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg10">
+						<h6 class="tit">이온토손</h6>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg11">
+						<h6 class="tit">고주파</h6>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+			
+					<li class="item bg12">
+						<h6 class="tit">크라이오셀</h6>
+						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
+							자세히 보기
+							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
+						</a>
+					</li>
+				</ul>
 			</div>
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->

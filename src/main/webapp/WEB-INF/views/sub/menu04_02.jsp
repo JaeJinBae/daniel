@@ -511,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="눈매교정">
+			<div id="sub-visual" data-menu="난치성색소">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -526,18 +526,22 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>눈/코 성형 ▼</button>
+							<button>레이저 클리닉 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>눈매교정 ▼</button>
+							<button>난치성색소 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu04_01">멜로디 눈성형</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu04_02">눈매교정</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu04_03">트임성형</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu04_04">리듬 코성형</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu04_01">다니엘 복합레이저</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_02">난치성색소</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_03">여드름</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_04">안면홍조</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_05">모공/흉터</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_06">프리미엄토닝</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_07">웨딩패키지</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_08">흉터 클리닉</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -545,36 +549,134 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode51801">
+			<div class="sub-contents pcode51101">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_01.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode51802">
+			<div class="sub-contents pcode51102">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_02.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_03.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode51803">
+			
+			<div class="sub-contents pcode51102">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_05.png" alt="">
 				</div>
-			</div>		
-			<div class="sub-contents pcode51804">
+			</div>
+			
+			<div class="sub-contents pcode51102">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_04.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode51805">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_05.png" alt="">
+			
+			
+			<div class="sub-contents pcode51103">
+				<ul>
+					<li class="item01">
+						<div class="txt">
+							<span>단순 잡티와 주근깨 제거 후<br>건강한 피부 완성에 집중</span>
+							<p>베이직 프로그램</p>
+						</div>
+						<div class="txt-hover">
+							<span>베이직 프로그램</span>
+							<p>복합 레이저<br>+<br>피부타입별<br>(건성·지성·민감성)<br>관리 &amp; 필링프로그램</p>
+						</div>
+					</li>
+					<li class="item02">
+						<div class="txt">
+							<span>기미, 주근깨, 잡티, 탄력,
+			                  <br>홍조, 리프팅, 수분까지 한번에</span>
+							<p>드림패키지</p>
+						</div>
+						<div class="txt-hover">
+							<span>드림패키지</span>
+							<p>복합 레이저 10회<br>+<br>프랑스천연융카<br>LDM관리5회<br>180만원(부가세별도)</p>
+						</div>
+					</li>
+			
+					<!-- 
+					<li class="item03">
+						<div class="txt">
+							<span>넓고 진한 기미 제거와<br/>피부 재생 집중 관리</span>
+							<p>프리미엄 프로그램</p>
+						</div>
+						<div class="txt-hover">
+							<span>프리미엄 프로그램</span>
+							<p>복합 레이저<br/>+<br/>주사치료<br/>+<br/>피부 타입별<br/>(건성·지성·민감성)<br/>관리 프로그램</p>
+						</div>
+					</li>
+					<li class="item04">
+						<div class="txt">
+							<span>혈관성 기미는 물론<br/>홍조까지 완전 정복</span>
+							<p>프리미엄 플러스 프로그램</p>
+						</div>
+						<div class="txt-hover">
+							<span>프리미엄 플러스 프로그램</span>
+							<p>복합 레이저<br/>+<br/>주사치료<br/>+<br/>LDM 관리</p>
+						</div>
+					</li>
+					-->
+					<li class="item05">
+						<div class="txt">
+							<span>기미 유지 관리 및<br>피부장벽 회복술</span>
+							<p>프리미엄 토닝</p>
+						</div>
+						<div class="txt-hover">
+							<a href="/html/?pCode=685"><span>프리미엄 토닝</span>
+							<p>눈꽃토닝<br>여신토닝<br>핑크토닝<br>물방울토닝</p></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			
+			<div class="sub-contents pcode51104">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_04.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode51806">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_06.png" alt="">
+			
+			
+			<div class="sub-contents pcode51102">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_06.png" alt="">
 				</div>
 			</div>
+			
+			<div class="sub-contents">
+				<div class="inner" style="padding:75px 0 50px 0">
+					<iframe width="1000" height="562" src="https://www.youtube.com/embed/noDG-RMO2tc?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode51102">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_07.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode51102">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_08.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode51102">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_09.png" alt="">
+				</div>
+			</div>
+			
+			
+			<div class="sub-contents pcode51102">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/511_img_10.png" alt="">
+				</div>
+			</div>
+			
 			
 			<div id="caoution">
 				<div class="inner">
@@ -588,28 +690,30 @@ $(function(){
 		
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>눈매교정술</em>주의사항</span>
+						<span><em>색소레이저</em>주의사항</span>
 						<ol>
-							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
-							<li>3주간 금주,금연하여 주세요.</li>
-							<li>처방약을 꼭 복용해주세요.</li>
-							<li>수술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
-							<li>찜질팩으로 붓기를 완화시켜주세요.</li>
-							
+							<li>수포, 물집 발생 시 병원에 문의해주세요.</li>
+							<li>일주일간 금주,금연해주세요.</li>
+							<li>일주일간 목욕,사우나,수영장, 격한 운동은 삼가주세요.</li>
+							<li>재생크림,썬크림을 꼭 발라주세요.</li>
+							<li>딱지탈락 후 심하게 붉을 경우 재생테이프를 사용해주세요.</li>
+							<li>혈관치료 시 멍,부기, 피딱지 발생할 수 있습니다.</li>
+							<li>처방약이 있을 시  꼭 복용해주세요.</li>
+						
 						</ol>	
-		
 					</div>
 					<!-- 주의사항 리스트 끝 -->
 		
 		
 					<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
+		
 					<div class="double-banner">
 						<ul>
 							<li>
 								<a href="${pageContext.request.contextPath}/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
+								<a href="${pageContext.request.contextPath}/menu04_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner05.png" alt="다니엘 눈코성형"></a>
 							</li>
 						</ul>
 					</div>

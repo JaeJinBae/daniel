@@ -509,21 +509,16 @@ $(function(){
 				<div class="full">
 					<ul>
 						<li class="gnb">
-							<button>동안/탄력 클리닉 ▼</button>
+							<button>리프팅 클리닉 ▼</button>
 							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
 						</li>
 						<li class="gnb">
-							<button>안면거상술 ▼</button>
+							<button>슈링크 리프팅 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_01">리프팅 레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_02">안면거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_03">이마내시경거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_04">실리프팅/스킨보톡스</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_05">광채 지방이식</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_06">상안검/하안검</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_07">슈링크 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_08">필로가135주사</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_09">코레지 리프팅</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu05_01">코레지 리프팅</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu05_02">슈링크 리프팅</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu05_03">필로가135주사</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu05_04">리프팅 레이저</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -532,70 +527,53 @@ $(function(){
 			<!-- BreadCrumb 끝 -->
 			
 			<!-- 서브 비주얼영역 시작 (이전, 다음페이지로 이동) -->
-			<div id="sub-visual" data-sec="동안/탄력 클리닉" data-menu="안면거상술">
+			<div id="sub-visual" data-sec="동안/탄력 클리닉" data-menu="슈링크 리프팅">
 				<div class="inner">
 			
 				</div>
 			</div>
 			<!-- 서브 비주얼영역 끝 -->
 			
-			<div class="sub-contents pCode-504-01">
+			<div class="sub-contents pCode-571-01">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_01.png" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과" usemap="pCode-504-01">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_01.png" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과" usemap="pCode-571-01">
 				</div>
 			</div>
-			<div class="sub-contents pCode-504-02">
+			<div class="sub-contents pCode-571-02">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="pCode-504-02">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="pCode-571-02">
 				</div>
 			</div>
-			<div class="sub-contents pCode-504-03">
+			<div class="sub-contents pCode-571-03">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="pCode-504-03">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="pCode-571-03">
 				</div>
 			</div>
-			<div class="sub-contents pCode-504-04">
+			<div class="sub-contents pCode-571-04">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_04.png" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리" usemap="pCode-504-04">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_04.png" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리" usemap="pCode-571-04">
 				</div>
 			</div>
-			<div class="sub-contents pCode-504-05">
+			<div class="sub-contents pCode-571-05">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_05.png" alt="" usemap="pCode-504-05">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_05.png" alt="" usemap="pCode-571-05">
 				</div>
 			</div>
-			<div class="sub-contents pCode-504-06">
+			<div class="sub-contents pCode-571-06">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_06.png" alt="" usemap="pCode-504-06">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_06.png" alt="" usemap="pCode-571-06">
 				</div>
 			</div>
-			<div class="sub-contents pCode-504-07">
+			<div class="sub-contents pCode-571-07">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_07.png" alt="" usemap="pCode-504-07">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_07.png" alt="" usemap="pCode-571-07">
 				</div>
 			</div>
-			<div class="sub-contents pCode-504-08">
+			<div class="sub-contents pCode-571-08">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_08.png" alt="" usemap="pCode-504-08">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_08.png" alt="" usemap="pCode-571-08">
 				</div>
 			</div>
-			<div class="sub-contents pCode-504-09">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_09.png" alt="" usemap="pCode-504-09">
-				</div>
-			</div>
-			<div class="sub-contents pCode-504-10">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/504_img_10.png" alt="" usemap="pCode-504-10">
-				</div>
-			</div>
-			
-			<!-- 오시는길 맵 시작 -->
-			<map name="pCode-501-01">
-			  <area shape="rect" coords="36,727,309,778" href="http://naver.me/GvZ3qwUj" target="_blank">
-			  <area shape="rect" coords="329,727,604,779" href="http://map.daum.net/?urlX=883179&amp;urlY=482896&amp;itemId=26820084" target="_blank">
-			</map>
-			<!-- 오시는길 맵 끝 -->
 			
 			
 			<div id="caoution">
@@ -610,15 +588,13 @@ $(function(){
 		
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>안면거상술</em>주의사항</span>
+						<span><em>슈링크레이저</em>주의사항</span>
 						<ol>
-							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
-							<li>3주간 금주,금연하여 주세요.</li>
-							<li>시술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요</li>
-							<li>처방약을 꼭 복용해주세요.</li>
-							<li>수술부위 연고를 꼭 발라주세요</li>
-							<li>압박밴드는 1~3개월동안 착용하여 주세요.</li>
-							
+							<li>1~2주간 욱신거림이 발생할 수 있습니다.</li>
+							<li>재생크림,썬크림은 꼭 발라주세요.</li>
+							<li>얼굴마사지나 경락은 피해주세요.</li>
+							<li>일주일간 금주,금연해주세요.</li>
+							<li>목욕,사우나,운동,수영장,격한운동은 주의하세요.</li>
 						</ol>	
 					</div>
 					<!-- 주의사항 리스트 끝 -->

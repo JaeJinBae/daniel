@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -511,7 +512,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="여드름">
+			<div id="sub-visual" data-menu="실리프팅/스킨보톡스">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -526,21 +527,19 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>레이저 클리닉 ▼</button>
+							<button>동안 성형 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>여드름 ▼</button>
+							<button>실리프팅/스킨보톡스 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu03_01">다니엘 복합레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_02">난치성색소</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_03">여드름</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_04">안면홍조</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_05">모공/흉터</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_06">프리미엄토닝</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_07">웨딩패키지</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu03_01">안면거상술</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_02">이마내시경거상술</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_03">실리프팅/스킨보톡스</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_04">광채 지방이식</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_05">상안검/하안검</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -548,225 +547,41 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode51201">
+			<div class="inner pcode50601">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/512_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_01.png" alt="">
 				</div>
 			</div>
-			
-			<div class="sub-contents pcode51202">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/512_img_02.png" alt="">
-				</div>
-			</div>
-			
-			<div class="sub-contents pcode51203">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/512_img_03.png" alt="">
-				</div>
-			</div>
-			
-			<div class="sub-contents pcode51204">
+			<div class="sub-contents pcode50602">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/512_img_04.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_02.png" alt="">
 				</div>
 			</div>
-			
-			
-			<div class="sub-contents pcode51205">
-				<ul>
-					<li class="item01">
-						<div class="txt">
-							<span>여드름이 시작될 때,<br>초기 관리로 깨끗한 피부 사수</span>
-							<p>여드름 베이직 프로그램</p>
-						</div>
-						<div class="txt-hover">
-							<span>얼굴 전체에 퍼져 있는<br>여드름 치료</span>
-							<p>복합 레이저<br>+<br>기기 관리</p>
-						</div>
-					</li>
-					<li class="item02">
-						<div class="txt">
-							<span>여드름 베이직 플러스 프로그램</span>
-							<p>베이직 플러스 프로그램</p>
-						</div>
-						<div class="txt-hover">
-							<span>베이직 플러스 프로그램</span>
-							<p>복합 레이저<br>+<br>피부타입별<br>(건성·지성·민감성)<br>관리 프로그램</p>
-						</div>
-					</li>
-					<li class="item03">
-						<div class="txt">
-							<span>화농성, 염증, 화이트헤드<br>트러블의 끝판왕 집중 관리</span>
-							<p>여드름 프리미엄 프로그램</p>
-						</div>
-						<div class="txt-hover">
-							<span>여드름 프리미엄 프로그램</span>
-							<p>복합 레이저<br>+<br>피부 타입별<br>(건성·지성·민감성)<br>관리 프로그램</p>
-						</div>
-					</li>
-					<li class="item04">
-						<div class="txt">
-							<span>다른 문제 없는<br>붉은 여드름 완전 정복</span>
-							<p>여드름 레인보우 프로그램</p>
-						</div>
-						<div class="txt-hover">
-							<span>여드름 레인보우 프로그램</span>
-							<p>복합 레이저<br>+<br>피부 타입별<br>(건성·지성·민감성)<br>관리 프로그램</p>
-						</div>
-					</li>
-					<li class="item05">
-						<div class="txt">
-							<span>염증 좁쌀 여드름이<br>칙칙한 얼굴 탈바꿈</span>
-							<p>여드름 칵테일 관리 프로그램</p>
-						</div>
-						<div class="txt-hover">
-							<span>여드름 칵테일 관리 프로그램</span>
-							<p>아쿠아필<br>+<br>레드블루그린 PDL<br>+<br>피부 타입별<br>(건성·지성·민감성)<br>관리 프로그램</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-			
-			<div class="sub-contents pcode51206">
+			<div class="sub-contents pcode50603">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/512_img_05.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_03.png" alt="">
 				</div>
 			</div>
-			
-			<div class="sub-contents pcode51207">
+			<div class="sub-contents pcode50604">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/512_img_06.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_04.png" alt="">
 				</div>
 			</div>
-			
-			
-			
-			<div class="sub-contents pcode51208">
-				<ul class="inner">
-					<li class="item bg01">
-						<h6 class="tit">사이톤줄 프로파일</h6>
-						<p class="cap">
-							창원에서 유일하게 다니엘에서만<br>
-							보유하고 있는 장비
-						</p>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							미국 scition사의 세계적으로 인정 받고 있는 흉터에 특화된 오리지널 명품 레이저
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg02">
-						<h6 class="tit">엑셀 V</h6>
-						<p class="cap">
-							2017년형 엑셀V
-						</p>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							미국 큐테라 사의 여드름, 색소침착, 모공 등 피부 전반적인 문제를 개선시켜주는 오리지널 명품 레이저
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg03">
-						<h6 class="tit">스킨타이트</h6>
-						<p class="cap">
-							창원에서 유일하게 다니엘에서만<br>
-							보유하고 있는 장비
-						</p>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							미국 사이톤사의 여드름 흔적으로 어두워진 피부톤 개선에 탁월한 오리지널 명품 레이저
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg04">
-						<h6 class="tit">BBL</h6>
-						<p class="cap">
-							창원에서 유일하게 다니엘에서만<br>
-							보유하고 있는 장비
-						</p>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							미국 사이톤사의 SCI급 논문에서도 그 효과를 증명한 여드름 치료에도 좋은 오리지널 명품 레이저
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg05">
-						<h6 class="tit">포어타이탄</h6>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							여드름 모양과 부위에 따라 효과적인 맞춤 시술이 가능하여 표피의 손상을 최소화하여 통증이 적고 회복기간이 빠른 레이저
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg06">
-						<h6 class="tit">아그네스</h6>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							특허기술로 니들 끝에서 고주파를 발생시켜 피지선을 줄여주어 여드름 치료에 최적화된 레이저
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg07">
-						<h6 class="tit">노라보떼</h6>
-						<p class="cap">
-							창원에서 유일하게 다니엘에서만<br>
-							보유하고 있는 장비
-						</p>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							독일기술로 피부 활성 성분을 없애고 림프순환을 촉진시켜 여드름 흉터와 모공축소에 효과적인 관리 장비
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg08">
-						<h6 class="tit">LDM</h6>
-						<p class="cap">
-							창원 최초 도입으로 축적된<br>
-							차별화된 다니엘의 노하우
-						</p>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							독일 초음파 장비로 피부 속을 마사지하여 피부 문제 원인을 개선하는 명품 관리 장비
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg09">
-						<h6 class="tit">오페라마스크</h6>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							저출력LED 및 갈바닉 전류 기능이 있어 여드름 억제, 피부 진정과 재생에 효과적인 관리 장비
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg10">
-						<h6 class="tit">힐라이트</h6>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							강력한 상처 치유 능력을 가진 파장으로 피부의 겉과 속을 건강하게 만들어 피부 진정과 재생에 도움을 주는 관리 장비
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg11">
-						<h6 class="tit">오메가 라이트</h6>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							복잡한 피부 문제를 해결하는 LED광선으로 피부 재생과 진정에 효과적이고 트러블 케어에도 탁월한 광원조사 장비
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-			
-					<li class="item bg12">
-						<h6 class="tit">아쿠아필</h6>
-						<a href="${pageContext.request.contextPath}/menu01_04" class="more">
-							4세대 수분 박피술로 모공에 수분과 영양을 공급하여 피부트러블을 개선시키는 장비
-							<i><img src="${pageContext.request.contextPath}/resources/img/contents/more02.png" alt=""></i>
-						</a>
-					</li>
-				</ul>
+			<div class="sub-contents pcode50605">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_05.png" alt="">
+				</div>
 			</div>
-			
-			
-			
+			<div class="sub-contents pcode50606">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_06.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode50607">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/506_img_07.png" alt="">
+				</div>
+			</div>
 			
 			<div id="caoution">
 				<div class="inner">
@@ -780,16 +595,16 @@ $(function(){
 		
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>여드름레이저</em>주의사항</span>
+						<span><em>실리프팅</em>주의사항</span>
 						<ol>
-							<li>모낭염증상의 발생가능성이 있습니다.</li>
-							<li>처방약이 있을 시  꼭 복용해주세요.</li>
+							<li>일상생활 바로 가능합니다. (세안,메이크업)</li>
+							<li>세안 시 문지르지 말아주세요.</li>
 							<li>일주일간 금주,금연해주세요.</li>
-							<li>일주일간 목욕,사우나,수영장, 격한 운동은 삼가주세요.</li>
-							<li>재생크림,썬크림을 꼭 발라주세요.</li>
-							<li>얼굴 마찰을 피해주세요.(필링제 사용, 압출 금지)</li>
-							<li>아그네스 시술 시 3일 이내로 후 관리 꼭 받으세요</li>
-						
+							<li>빨대 3주간 사용 금지하여 주세요.</li>
+							<li>처방약을 꼭 복용해주세요.</li>
+							<li>냉찜질은 붓기 완화에 도움이 됩니다.</li>
+							<li>입을 크게 벌리지 마세요.</li>
+							<li>시술 당일 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
 						</ol>	
 					</div>
 					<!-- 주의사항 리스트 끝 -->
@@ -803,7 +618,7 @@ $(function(){
 								<a href="${pageContext.request.contextPath}/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/menu04_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner05.png" alt="다니엘 눈코성형"></a>
+								<a href="${pageContext.request.contextPath}/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
 							</li>
 						</ul>
 					</div>

@@ -511,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="다니엘 복합레이저">
+			<div id="sub-visual" data-menu="안면거상술">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -526,21 +526,19 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>레이저 클리닉 ▼</button>
+							<button>동안 성형 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>다니엘 복합레이저 ▼</button>
+							<button>안면거상술 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu03_01">다니엘 복합레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_02">난치성색소</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_03">여드름</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_04">안면홍조</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_05">모공/흉터</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_06">프리미엄토닝</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_07">웨딩패키지</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu03_01">안면거상술</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_02">이마내시경거상술</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_03">실리프팅/스킨보톡스</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_04">광채 지방이식</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_05">상안검/하안검</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -548,38 +546,84 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents">
-				<div class="inner" style="padding:75px 0 50px 0">
-					<iframe width="395" height="222" src="https://www.youtube.com/embed/XUoI4TBSF1U?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
-					<iframe width="395" height="222" src="https://www.youtube.com/embed/VwhGZZ345cs" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
-					<iframe width="395" height="222" src="https://www.youtube.com/embed/lKrNWgIiEqs" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+			<div class="sub-contents pcode50401">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_01.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode51001">
+			
+			<div class="sub-contents pcode50402">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/510_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_02.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode51002">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/510_img_02.png" alt="">
+			<div class="sub-contents pcode50403">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_03.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode51003">
-				<ul class="inner">
-					<li class="item bg01"></li>
-					<li class="item bg02"></li>
-					<li class="item bg03"></li>
-					<li class="item bg04"></li>
-				</ul>
+			
+			<div class="sub-contents pcode50404">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_04.png" alt="">
+				</div>
 			</div>
 			
-			<div class="sub-contents pcode51004">
+			<div class="sub-contents pcode50405">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/510_img_04.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_05.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode50406">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/504_img_06.png" alt="">
+				</div>
+			</div>
+			
+			
+			<div id="caoution">
+				<div class="inner">
+					
+					<div class="caoution-title">
+						다니엘성형외과
+						<p>
+							시술&amp;수술 후 <em>주의사항</em>
+						</p>
+					</div>
+		
+					<!-- 주의사항 리스트 시작 -->
+					<div class="caoution-list">
+						<span><em>안면거상술</em>주의사항</span>
+						<ol>
+							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
+							<li>3주간 금주,금연하여 주세요.</li>
+							<li>시술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요</li>
+							<li>처방약을 꼭 복용해주세요.</li>
+							<li>수술부위 연고를 꼭 발라주세요</li>
+							<li>압박밴드는 1~3개월동안 착용하여 주세요.</li>
+							
+						</ol>	
+					</div>
+					<!-- 주의사항 리스트 끝 -->
+		
+		
+					<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
+		
+					<div class="double-banner">
+						<ul>
+							<li>
+								<a href="${pageContext.request.contextPath}/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a>
+							</li>
+						</ul>
+					</div>
+		
 				</div>
 			</div>
 			

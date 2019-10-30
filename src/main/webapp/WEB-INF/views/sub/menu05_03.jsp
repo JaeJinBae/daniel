@@ -512,7 +512,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="이마내시경거상술">
+			<div id="sub-visual" data-menu="슈링크 리프팅">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -527,24 +527,19 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>동안/탄력 클리닉 ▼</button>
+							<button>리프팅 클리닉 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>이마내시경거상술 ▼</button>
+							<button>슈링크 리프팅 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu05_01">리프팅 레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_02">안면거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_03">이마내시경거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_04">실리프팅/스킨보톡스</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_05">광채 지방이식</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_06">상안검/하안검</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_07">슈링크 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_08">필로가135주사</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_09">코레지 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_10">써마지FLX</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu05_01">써마지FLX</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu05_02">코레지 리프팅</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu05_03">슈링크 리프팅</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu05_04">필로가135주사</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu05_05">리프팅 레이저</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -552,37 +547,41 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode50501">
+			<div class="sub-contents pcode56701">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/567_img_01.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode56702">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/505_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/567_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50502">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/505_img_02.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50503">
+			<div class="sub-contents pcode56703">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/505_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/567_img_03.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50504">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/505_img_04.png" alt="">
+			<div class="sub-contents pcode56704">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/567_img_04.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50505">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/505_img_05.png" alt="">
+			<div class="sub-contents pcode56705">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/567_img_05.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50506">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/505_img_06.png" alt="">
+			<div class="sub-contents pcode56706">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/567_img_06.png" alt="">
 				</div>
 			</div>
-			<br>
+			<div class="sub-contents pcode56707">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/567_img_07.png" alt="">
+				</div>
+			</div>
 			
 			<div id="caoution">
 				<div class="inner">
@@ -596,15 +595,13 @@ $(function(){
 		
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>이마거상술</em>주의사항</span>
+						<span><em>슈링크레이저</em>주의사항</span>
 						<ol>
-							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
-							<li>3주간 금주,금연하여 주세요.</li>
-							<li>시술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
-							<li>처방약을 꼭 복용해주세요.</li>
-							<li>수술부위 연고를 꼭 발라주세요</li>
-							<li>압박밴드는 1~3개월동안 착용하여 주세요.</li>
-							
+							<li>1~2주간 욱신거림이 발생할 수 있습니다.</li>
+							<li>재생크림,썬크림은 꼭 발라주세요.</li>
+							<li>얼굴마사지나 경락은 피해주세요.</li>
+							<li>일주일간 금주,금연해주세요.</li>
+							<li>목욕,사우나,운동,수영장,격한운동은 주의하세요.</li>
 						</ol>	
 					</div>
 					<!-- 주의사항 리스트 끝 -->

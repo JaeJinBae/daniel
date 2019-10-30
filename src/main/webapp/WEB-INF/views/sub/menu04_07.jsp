@@ -13,15 +13,10 @@
 <!-- @ = 스타일, # = 자바스크립트 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.reset.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.common.css"><!-- @2 공통 스타일		**삭제금지** -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/slick/slick.css"><!-- @3 플러그인 Slick -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/slick/slick-theme.css"><!-- @4 플러그인 Slick Theme -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/wow/animate.css"><!-- @5 플러그인 Animate CSS -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.layout.css"><!-- @6 공통 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.sub.css"><!-- @ 서브페이지 스타일 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.board.css"><!-- @ 게시판 스타일 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.css"><!-- @ 파일첨부 스타일 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.main.css"><!-- @ 메인페이지 스타일-->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.layout.css"><!-- @6 공통 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.sub.css"><!-- @ 메인페이지 스타일-->
 <!-- ********************************************플러그인********************************************* -->
 <script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AP4T42369817671&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1566887341954"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
@@ -34,7 +29,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.sns.share.js"></script><!-- #7 플러그인 SNS SHARE -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.modernizr.js"></script><!-- #8 플러그인 modernizr -->
 <!-- ************************************************************************************************* -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/m/jquery.main.js"></script><!-- # 메인페이지 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.sub.js"></script><!-- # 메인페이지 함수 -->
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.calendar.js"></script><!-- # 필수 함수 -->
@@ -44,8 +39,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.layer.js"></script><!-- # 필수 함수 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/m/jquery.common.js"></script><!-- # 공통 함수 -->
-<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.common.js"></script><!-- # 공통 함수 -->
 <style type="text/css">
 svg:not (:root ).svg-inline--fa {
 	overflow: visible
@@ -484,46 +478,70 @@ keyframes fa-spin { 0%{
 	position: static;
 	width: auto
 }
-
 </style>
 <script>
 $(function(){
-	
+	$("#header > #gnb > .inner > ul > li:nth-child(4)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(4) > .lnb-wrap > li:nth-child(7)").addClass("active");
 });
 </script>
 </head>
 <body>
-	<div class="gnb-dim"></div>
+	<!-- 페이지 로딩 시작 -->
+	<div id="loader-wrapper">
+		<div id="loading"></div>
+	</div>
+	<!-- 페이지 로딩 끝 -->
+	
+	<!-- SkipNavigation 시작 -->
+	<div id="skipnavigation">
+		<ul>
+			<li><a href="#sub-container">본문 바로가기 <svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path></svg><!-- <i class="fas fa-arrow-circle-right"></i> --></a></li>
+		</ul>
+	</div>
+	<!-- SkipNavigation 끝 -->	
 	
 	<div id="wrap">
 		<!-- 해더 시작  -->
-		<jsp:include page="../include/mHeader.jsp"></jsp:include>
+		<jsp:include page="../include/pcHeader.jsp"></jsp:include>
 		<!-- 해더 끝  -->
-	
+		
 		<!-- 콘텐츠 영역 시작 (메인일 경우 #main-container / 서브일 경우 #sub-container) -->
 		<section id="sub-container">
-		<!--  닫기 [위치 : include_web_footer.html ]  -->
-		
+			<!--  닫기 [위치 : include_web_footer.html ]  -->
+
+			<!-- 서브 비주얼영역 시작  -->
+			<div id="sub-visual" data-menu="웨딩패키지">
+				<div class="sub-visual-tit">
+
+				</div>
+			</div>
+			<!-- 서브 비주얼영역 끝 -->
+			
 			<!-- BreadCrumb 시작 -->
 			<div id="breadcrumb">
-				<div class="full">
+				<div class="inner">
 					<ul>
-						<li class="gnb">
-							<button>동안/탄력 클리닉 ▼</button>
-							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
+						<li class="home">
+							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>슈링크 리프팅 ▼</button>
+							<button>레이저 클리닉 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_01">리프팅 레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_02">안면거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_03">이마내시경거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_04">실리프팅/스킨보톡스</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_05">광채 지방이식</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_06">상안검/하안검</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_07">슈링크 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_08">필로가135주사</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu05_09">코레지 리프팅</a></li>
+								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
+							</ul>
+						</li>
+						<li class="gnb">
+							<button>웨딩패키지 ▼</button>
+							<ul>
+								<li><a href="${pageContext.request.contextPath}/menu04_01">다니엘 복합레이저</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_02">난치성색소</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_03">여드름</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_04">안면홍조</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_05">모공/흉터</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_06">프리미엄토닝</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_07">웨딩패키지</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_08">흉터 클리닉</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -531,100 +549,77 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<!-- 서브 비주얼영역 시작 (이전, 다음페이지로 이동) -->
-			<div id="sub-visual" data-sec="동안/탄력 클리닉" data-menu="슈링크 리프팅">
+			<div class="sub-contents pcode69101">
 				<div class="inner">
-			
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_01.jpg" alt="">
 				</div>
 			</div>
-			<!-- 서브 비주얼영역 끝 -->
-			
-			<div class="sub-contents pCode-571-01">
+			<div class="sub-contents pcode69102">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_01.png" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과" usemap="pCode-571-01">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pCode-571-02">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="pCode-571-02">
-				</div>
-			</div>
-			<div class="sub-contents pCode-571-03">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="pCode-571-03">
-				</div>
-			</div>
-			<div class="sub-contents pCode-571-04">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_04.png" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리" usemap="pCode-571-04">
-				</div>
-			</div>
-			<div class="sub-contents pCode-571-05">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_05.png" alt="" usemap="pCode-571-05">
-				</div>
-			</div>
-			<div class="sub-contents pCode-571-06">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_06.png" alt="" usemap="pCode-571-06">
-				</div>
-			</div>
-			<div class="sub-contents pCode-571-07">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_07.png" alt="" usemap="pCode-571-07">
-				</div>
-			</div>
-			<div class="sub-contents pCode-571-08">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/571_img_08.png" alt="" usemap="pCode-571-08">
-				</div>
-			</div>
-			
-			
-			<div id="caoution">
+			<div class="sub-contents pcode69103">
 				<div class="inner">
-					
-					<div class="caoution-title">
-						다니엘성형외과
-						<p>
-							시술&amp;수술 후 <em>주의사항</em>
-						</p>
-					</div>
-		
-					<!-- 주의사항 리스트 시작 -->
-					<div class="caoution-list">
-						<span><em>슈링크레이저</em>주의사항</span>
-						<ol>
-							<li>1~2주간 욱신거림이 발생할 수 있습니다.</li>
-							<li>재생크림,썬크림은 꼭 발라주세요.</li>
-							<li>얼굴마사지나 경락은 피해주세요.</li>
-							<li>일주일간 금주,금연해주세요.</li>
-							<li>목욕,사우나,운동,수영장,격한운동은 주의하세요.</li>
-						</ol>	
-					</div>
-					<!-- 주의사항 리스트 끝 -->
-		
-		
-					<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
-		
-					<div class="double-banner">
-						<ul>
-							<li><a href="${pageContext.request.contextPath}/m/menu09_06"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner01.png" alt="다니엘 성형외과 이벤트"></a></li>
-							<li><a href="${pageContext.request.contextPath}/m/menu02_01"><img src="${pageContext.request.contextPath}/resources/img/contents/double_banner02.png" alt="다니엘 쁘띠클리닉"></a></li>
-						</ul>
-					</div>
-		
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_03.jpg" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode69104">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_04.jpg" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode69105">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_05.jpg" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode69106">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_06.jpg" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode69107">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_07.jpg" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode69108">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_08.jpg" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode69109">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/691_img_09.png" alt="">
 				</div>
 			</div>
 			
-		</section>
+		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
-		<!-- 전체 페이지 오시는길(오시는길, 진료시간 안내, 상담문의, footer) 시작 -->
-		<jsp:include page="../include/mFooter.jsp"></jsp:include>
-		<!-- 전체 페이지 오시는길(오시는길, 진료시간 안내, 상담문의, footer) 끝 (style.layout.css) -->
+	
+		<!-- 메인페이지 오시는길(오시는길, 진료시간 안내, 상담문의) 시작 -->
+		<jsp:include page="../include/pcBottom.jsp"></jsp:include>
+		<!-- 메인페이지 오시는길(오시는길, 진료시간 안내, 상담문의) 끝 -->
+	
+		<!-- 풋터 시작 (style.layout.css) -->
+		<jsp:include page="../include/pcFooter.jsp"></jsp:include>
+		<!-- 풋터 끝 (style.layout.css) -->
 		
-	</div>
+		<!-- 서브페이지 우측 퀵배너 시작 -->
+		<jsp:include page="../include/quick.jsp"></jsp:include>
+		<!-- 서브페이지 우측 퀵배너 끝 -->
+
+	</div><!-- #wrap end -->
 	
-	<jsp:include page="../include/mQuickInquire.jsp"></jsp:include>
+	<!-- 빠른상담 신청하기 폼 시작 -->
+	<jsp:include page="../include/pcQuickInquire.jsp"></jsp:include>
+	<!-- 빠른상담 신청하기 폼 끝 -->
+	
+	<!-- 개인정보 취급방침 팝업 시작 -->
+	<jsp:include page="../include/pcPopPrivate.jsp"></jsp:include>
+	<!-- 개인정보 취급방침 팝업 끝 -->
 </body>
 </html>
+
+

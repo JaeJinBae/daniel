@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -482,8 +481,8 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	$("#header > #gnb > .inner > ul > li:nth-child(5)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(5) > .lnb-wrap > li:nth-child(9)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(6)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(6) > .lnb-wrap > li:nth-child(2)").addClass("active");
 });
 </script>
 </head>
@@ -512,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="코레지 리프팅">
+			<div id="sub-visual" data-menu="눈매교정">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -527,24 +526,18 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>동안/탄력 클리닉 ▼</button>
+							<button>눈/코 성형 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>코레지 리프팅 ▼</button>
+							<button>눈매교정 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu05_01">리프팅 레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_02">안면거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_03">이마내시경거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_04">실리프팅/스킨보톡스</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_05">광채 지방이식</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_06">상안검/하안검</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_07">슈링크 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_08">필로가135주사</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_09">코레지 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_10">써마지FLX</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu06_01">멜로디 눈성형</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu06_02">눈매교정</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu06_03">트임성형</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu06_04">리듬 코성형</a></li>				
 							</ul>
 						</li>
 					</ul>
@@ -552,52 +545,36 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode69901">
+			<div class="sub-contents pcode51801">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_01.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_01.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode69902">
+			<div class="sub-contents pcode51802">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_02.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode69903">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_03.jpg" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode69904">
-				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_04.jpg" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode69905">
+			<div class="sub-contents pcode51803">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_05.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_03.png" alt="">
 				</div>
-			</div>
-			<div class="sub-contents pcode69906">
+			</div>		
+			<div class="sub-contents pcode51804">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_06.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_04.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode69907">
+			<div class="sub-contents pcode51805">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_07.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_05.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode69908">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_08.jpg" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode69909">
+			<div class="sub-contents pcode51806">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/699_img_09.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/518_img_06.png" alt="">
 				</div>
 			</div>
-			
 			
 			<div id="caoution">
 				<div class="inner">
@@ -611,20 +588,21 @@ $(function(){
 		
 					<!-- 주의사항 리스트 시작 -->
 					<div class="caoution-list">
-						<span><em>코레지레이저</em>주의사항</span>
+						<span><em>눈매교정술</em>주의사항</span>
 						<ol>
-							<li>1~2주간 욱신거림이 발생할 수 있습니다.</li>
-							<li>재생크림,썬크림은 꼭 발라주세요.</li>
-							<li>얼굴마사지나 경락은 피해주세요.</li>
-							<li>일주일간 금주,금연해주세요.</li>
-							<li>목욕,사우나,운동,수영장,격한운동은 주의하세요.</li>
+							<li>3일간 상체를 높인 자세로 수면을 취해주세요.</li>
+							<li>3주간 금주,금연하여 주세요.</li>
+							<li>처방약을 꼭 복용해주세요.</li>
+							<li>수술 후 3주간 목욕,사우나,운동,수영장 이용은 삼가주세요.</li>
+							<li>찜질팩으로 붓기를 완화시켜주세요.</li>
+							
 						</ol>	
+		
 					</div>
 					<!-- 주의사항 리스트 끝 -->
 		
 		
 					<div class="caoution-info"><img src="${pageContext.request.contextPath}/resources/img/contents/icon_caoution.png" alt="">위 주의사항은 꼭 지켜주시고 <em>이상증상이 있을 시 연락</em>주세요.</div>
-		
 					<div class="double-banner">
 						<ul>
 							<li>

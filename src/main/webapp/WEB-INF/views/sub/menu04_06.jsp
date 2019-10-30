@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -482,8 +481,8 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	$("#header > #gnb > .inner > ul > li:nth-child(5)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(5) > .lnb-wrap > li:nth-child(8)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(4)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(4) > .lnb-wrap > li:nth-child(6)").addClass("active");
 });
 </script>
 </head>
@@ -512,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="필로가135주사">
+			<div id="sub-visual" data-menu="프리미엄토닝">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -527,24 +526,22 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>동안/탄력 클리닉 ▼</button>
+							<button>레이저 클리닉 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>필로가135주사 ▼</button>
+							<button>프리미엄토닝 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu05_01">리프팅 레이저</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_02">안면거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_03">이마내시경거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_04">실리프팅/스킨보톡스</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_05">광채 지방이식</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_06">상안검/하안검</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_07">슈링크 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_08">필로가135주사</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_09">코레지 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_10">써마지FLX</a></li>				
+								<li><a href="${pageContext.request.contextPath}/menu04_01">다니엘 복합레이저</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_02">난치성색소</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_03">여드름</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_04">안면홍조</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_05">모공/흉터</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_06">프리미엄토닝</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_07">웨딩패키지</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu04_08">흉터 클리닉</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -552,39 +549,74 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode68601">
+			<div class="sub-contents pcode68501">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/686_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_01.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68602">
+			<div class="sub-contents pcode68502">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/686_img_02.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_02.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68603">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/686_img_03.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode68604">
+			<div class="sub-contents pcode68503">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/686_img_04.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_03.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68605">
+			<div class="sub-contents pcode68504">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/686_img_05.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_04.png" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode68606">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/686_img_06.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode68607">
+			<div class="sub-contents pcode68505">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/686_img_07.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_05.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68506">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_06.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68507">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_07.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68508">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_08.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68509">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_09.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68510">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_10.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68511">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_11.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68512">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_12.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68513">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_13.png" alt="">
+				</div>
+			</div>
+			<div class="sub-contents pcode68514">
+				<div class="inner">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/685_img_14.png" alt="">
 				</div>
 			</div>
 			
