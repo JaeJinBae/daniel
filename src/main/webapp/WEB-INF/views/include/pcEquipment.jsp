@@ -95,6 +95,7 @@ $(function(){
 		<li class="pnb eqm2_li"><a href="eqm2_12">힐라이트</a></li>
 		<li class="pnb eqm2_li"><a href="eqm2_13">오메가라이트</a></li>
 		<li class="pnb eqm2_li"><a href="eqm2_14">오투덤</a></li>
+		<li class="pnb eqm2_li"><a href="eqm2_15">이온자임</a></li>
 	</ul>
 </div>
 
@@ -584,6 +585,22 @@ $(function(){
 			</p>
 			<b class="tit-small">적용증</b>
 			<span class="hashtag">피부재생/콜라겐생성/안티에이징/여드름개선/PH밸런스/피부톤개선</span>
+			<i class="stamp">
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp01.png" alt="오리지널 수입장비"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp02.png" alt="2017 최신형"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp03.png" alt="창원최초"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp04.png" alt="창원유일"/-->
+			</i>
+		</div>
+		
+		<div class="equipment-item eqm2_item bg53334">
+			<h6 class="tit">이온자임</h6>
+			<p class="con">
+				정품 이온자임 기기의 독자 기술인 펄스 이온토 포레시스와 소노포레시스(22KHz)를 이용해 비타민A와 비타민C등 유효성분을 최대 100배 침투시킵니다.
+		
+			</p>
+			<b class="tit-small">적용증</b>
+			<span class="hashtag">색소침착/난치성기미/주름/탄력/보습 및 여드름 치료</span>
 			<i class="stamp">
 				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp01.png" alt="오리지널 수입장비"/-->
 				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp02.png" alt="2017 최신형"/-->

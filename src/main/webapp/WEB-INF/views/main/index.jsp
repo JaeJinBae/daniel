@@ -606,7 +606,7 @@ $(function(){
 									<i class="line"></i>
 									<h6 class="tit">여드름치료</h6>
 								</div>
-								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/menu03_03'">
+								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/menu04_03'">
 									<h6 class="tit">여드름 치료</h6>
 									<span class="special">지문형 시스템으로<br>피부 진단부터 특별합니다.</span>
 									<p class="cap">풍부한 임상 경험과 체계화된 진단 시스템으로<br>여드름의 원인을 정확하게 파악합니다.</p>
@@ -629,7 +629,7 @@ $(function(){
 									<h6 class="tit">기미치료</h6>
 								</div>
 			
-								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/menu03_02'">
+								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/menu04_02'">
 									<h6 class="tit">기미치료</h6>
 									<span class="special">피부 타입과 증상에 따라 <br>특화된 치료법을 개발하였습니다.</span>
 									<p class="cap">개개인의 피부 컨디션에 따라 선별적으로 사용되어 <br>100가지가 넘는 복합 프로그램이 존재합니다.</p>
@@ -652,7 +652,7 @@ $(function(){
 									<h6 class="tit">다니엘<br>멜로디 눈성형</h6>
 								</div>
 			
-								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/menu04_01'">
+								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/menu06_01'">
 									<h6 class="tit">다니엘 멜로디 눈성형</h6>
 									<span class="special">단순히 눈을 크게 만드는것이 아니라<br>얼굴의 전반적인 조화를 고려합니다.</span>
 									<p class="cap">얼굴의 형태, 눈의 크기, 피부상태, 눈꺼풀 지방의 함유량 등을 고려해<br>이상적인 비율과 균형을 이룰 수 있게 디자인 합니다.</p>
@@ -675,7 +675,7 @@ $(function(){
 									<h6 class="tit">리프팅</h6>
 								</div>
 			
-								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/menu05_01'">
+								<div class="flop" onclick="location.href='${pageContext.request.contextPath}/menu05_05'">
 									<h6 class="tit">리프팅</h6>
 									<span class="special">피부 복구와 노화 방지에 <br>최적화된 프로그램</span>
 									<p class="cap">피부 노화는 기능성 화장품으로 해결하기에는 역부족입니다.<br>피부타입, 노화 진행 패턴에 맞춰서 치료가 진행됩니다.</p>
@@ -762,9 +762,9 @@ $(function(){
 	<div class="daniel-banner">
 		<!-- 고정 배너(4개) 시작 -->
 		<ul class="fixed-banner">
-			<li><a href="${pageContext.request.contextPath}/menu04_04" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner01.jpg" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a></li>
-			<li><a href="${pageContext.request.contextPath}/menu03_05" title="모공＆흉터치료"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner02.jpg" alt="여드름 흉터와 모공 흔적없이 지워드립니다. 모공 및 흉터치료"></a></li>
-			<li><a href="${pageContext.request.contextPath}/menu03_01" title="다니엘 복합레이저"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner03.jpg" alt="말 뿐인 맞춤시술과 비교를 거부합니다. 다니엘 복합레이저"></a></li>
+			<li><a href="${pageContext.request.contextPath}/menu06_04" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner01.jpg" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a></li>
+			<li><a href="${pageContext.request.contextPath}/menu04_05" title="모공＆흉터치료"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner02.jpg" alt="여드름 흉터와 모공 흔적없이 지워드립니다. 모공 및 흉터치료"></a></li>
+			<li><a href="${pageContext.request.contextPath}/menu04_01" title="다니엘 복합레이저"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner03.jpg" alt="말 뿐인 맞춤시술과 비교를 거부합니다. 다니엘 복합레이저"></a></li>
 			<li><a href="${pageContext.request.contextPath}/menu02_01" title="보톡스＆필러"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner04.jpg" alt="성형외과 전문의가 직접 시술하는 보톡스 및 필러"></a></li>
 		</ul>
 		<!-- 고정 배너(4개) 끝 -->

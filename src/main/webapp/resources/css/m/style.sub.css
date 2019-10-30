@@ -22,7 +22,7 @@
 
 #equipment-list{width:100%; display:inline-block;}
 #equipment-list .inner{width:100%; }
-#equipment-list ul li.pnb{float:left; width:50%; text-align:center; }
+#equipment-list ul li.pnb{float:left; width:48%; text-align:center; }
 #equipment-list ul li.pnb a{display:block; height:50px; line-height:50px; background:#fbfbfb; color:#959595; font-weight:700;  border:1px solid #ddd; margin:0 0 -1px -1px;}
 #equipment-list ul li.active a{background:#5877ad; border:1px solid #5877ad; color:#fff; font-weight:700;}
 /**********************************************************************/
@@ -90,6 +90,7 @@
 .bg53329{background:url(../../img/contents/euipment29.png) no-repeat center top;}
 .bg53330{background:url(../../img/contents/euipment30.png) no-repeat center top;}
 .bg53331{background:url(../../img/contents/euipment31.png) no-repeat center top;}
+.bg53334{background:url(../../img/contents/euipment34.jpg) no-repeat left top;}
 
 
 
