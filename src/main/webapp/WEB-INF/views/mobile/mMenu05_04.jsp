@@ -534,9 +534,17 @@ $(function(){
 			</div>
 			<!-- 서브 비주얼영역 끝 -->
 			
-			<div class="sub-contents">
+			<!-- <div class="sub-contents">
 				<div class="inner" style="padding:75px 0 50px 0">
 					<iframe width="100%" height="287" src="https://www.youtube.com/embed/He8GaDfbisU?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;"></iframe>
+				</div>
+			</div> -->
+			
+			<div class="sub-contents">
+				<div class="inner" style="padding:75px 0 50px 0">
+					<video id="vid" controls="controls" autoplay="autoplay" loop="loop" muted width="100%" height="287">
+						<source src="${pageContext.request.contextPath}/resources/video/visual33.mp4">
+					</video>
 				</div>
 			</div>
 			

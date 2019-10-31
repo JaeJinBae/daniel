@@ -569,9 +569,17 @@ $(function(){
 				</div>
 			</div>
 			
-			<div class="sub-contents">
+			<!-- <div class="sub-contents">
 				<div class="inner" style="padding:75px 0 50px 0">
 					<iframe width="100%" height="224px" src="https://www.youtube.com/embed/noDG-RMO2tc?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+				</div>
+			</div> -->
+			
+			<div class="sub-contents">
+				<div class="inner" style="padding:75px 0 50px 0">
+					<video id="vid" controls="controls" autoplay="autoplay" loop="loop" muted width="100%" height="224px">
+						<source src="${pageContext.request.contextPath}/resources/video/visual4_3.mp4">
+					</video>
 				</div>
 			</div>
 			

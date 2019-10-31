@@ -483,6 +483,7 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(4)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(4) > .lnb-wrap > li:nth-child(2)").addClass("active");
+	
 });
 </script>
 </head>
@@ -646,11 +647,21 @@ $(function(){
 				</div>
 			</div>
 			
-			<div class="sub-contents">
+			<!-- <div class="sub-contents">
 				<div class="inner" style="padding:75px 0 50px 0">
 					<iframe width="1000" height="562" src="https://www.youtube.com/embed/noDG-RMO2tc?rel=0&amp;autoplay=1&amp;mute=1" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
 				</div>
+			</div> -->
+			
+			<!-- 영상 시작 -->
+			<div class="sub-contents">
+				<div class="inner" style="padding:75px 0 50px 0">
+					<video id="vid" controls="controls" autoplay="autoplay" loop="loop" muted width="1000" height="562">
+						<source src="${pageContext.request.contextPath}/resources/video/visual4_3.mp4">
+					</video>
+				</div>
 			</div>
+			<!-- 영상 끝 -->
 			
 			<div class="sub-contents pcode51102">
 				<div class="full">
