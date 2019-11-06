@@ -20,7 +20,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.layout.css"><!-- @6 공통 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/m/style.main.css"><!-- @ 메인페이지 스타일-->
 <!-- ********************************************플러그인********************************************* -->
-<script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AP4T42369817671&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1566887341954"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/fontawesome/js/fontawesome-all.min.js"></script><!-- #2 플러그인 fontawesome -->
@@ -493,7 +492,7 @@ $(function(){
 	<div class="gnb-dim"></div>
 	
 	<!-- 메인페이지 비주얼 영상 시작 -->
-	<section id="video-visual">
+	<section id="video-visual" style="display:none;">
 		<div class="visual-footer">
 			<a href="${pageContext.request.contextPath}/m/menu09_07" class="quick-reserve" title="예약하기"></a>
 			<div class="call">
@@ -516,7 +515,7 @@ $(function(){
 			<i class="line04"></i>
 			<i class="line05"></i>
 		</div>
-		<video autoplay="" muted="" loop=""><source src="${pageContext.request.contextPath}/resources/video/visual4_2.mp4" type="video/mp4"></video>
+		<%-- <video autoplay="" muted="" loop=""><source src="${pageContext.request.contextPath}/resources/video/visual4_2.mp4" type="video/mp4"></video> --%>
 		<div class="video-txt">
 			<div class="typo-animation"></div>
 		</div>
@@ -534,8 +533,9 @@ $(function(){
 
 			<!-- 메인페이지 비주얼 슬라이드 시작 -->
 			<section class="visual-slide">
+				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img_m00.jpg" alt="흉터, 고민말고 다니엘"></div>
 				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img01.jpg" alt="흉터, 고민말고 다니엘"></div>
-				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img02.jpg" alt="흉터, 고민말고 다니엘"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img02.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
 				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img03.jpg" alt="흉터, 고민말고 다니엘"></div>
 				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img04.jpg" alt="흉터, 고민말고 다니엘"></div>
 				<div><a href="${pageContext.request.contextPath}/mMenu09_07" title="예약하기"><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img05.jpg" alt="성형외과전문의 쁘띠"></a></div>

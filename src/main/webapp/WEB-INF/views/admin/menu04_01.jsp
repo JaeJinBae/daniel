@@ -31,6 +31,20 @@ $(function(){
 		var keyword = encodeURIComponent(k);
 		location.href="${pageContext.request.contextPath}/admin/menu04_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
 	});
+	 
+	$(document).on("click", ".t_link", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+	
+    $(document).on("click", ".board_paging > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	});
 });
 </script>
 </head>
@@ -106,7 +120,7 @@ $(function(){
 												<tr class="cont">
 													<td><input type="checkbox" name="" value="${item.no}"></td>
 													<td><i class="ico notice">${num}</i></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu04_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title">${item.id}</p></a></td>
+													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu04_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title">${item.id}</p></a></td>
 													<td>${item.name}</td>
 													<td>${item.phone}</td>
 													<td>${item.email}</td>

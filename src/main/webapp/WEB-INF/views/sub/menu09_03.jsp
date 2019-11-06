@@ -500,6 +500,12 @@ $(function(){
 		
 	});
 	
+	$(document).on("click", "#board-pagenation > .inner > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	})
+	
 	var kw = $("#kw").val();
 	$(".board-kinds > ul > li > a > input[value='"+kw+"']").parent().parent().addClass("active");
 	

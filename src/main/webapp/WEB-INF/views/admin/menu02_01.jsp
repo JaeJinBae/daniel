@@ -32,6 +32,20 @@ $(function(){
 		var keyword = encodeURIComponent(k);
 		location.href="${pageContext.request.contextPath}/admin/menu02_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
 	});
+	
+    $(document).on("click", ".t_link", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+	
+    $(document).on("click", ".board_paging > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	});
 });
 </script>
 </head>
@@ -112,21 +126,21 @@ $(function(){
 												<tr class="cont">
 													<td><input type="checkbox" name="" value="${item.no}"></td>
 													<td>${num}</td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.name}</a></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
+													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.name}</a></td>
+													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
 													<td>
-														<a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+														<a class="t_link" href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
 															<c:choose>
 																<c:when test="${item.counseling == 'Y'}">상담요망</c:when>
 																<c:otherwise>x</c:otherwise>
 															</c:choose>
 														</a>
 													</td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.clinic_list}</a></td>
+													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.clinic_list}</a></td>
 													<td>${item.res_date} ${item.res_time}</td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><fmt:formatNumber value="${item.price}" pattern="#,###" />원</a></td>
+													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><fmt:formatNumber value="${item.price}" pattern="#,###" />원</a></td>
 													<td>
-														<a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+														<a class="t_link" href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
 															<c:choose>
 																<c:when test="${item.res_state == 'o'}">예약완료</c:when>
 																<c:otherwise><span style="color:red;font-weight:bold;">예약취소</span></c:otherwise> 

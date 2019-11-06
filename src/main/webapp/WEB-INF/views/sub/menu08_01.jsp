@@ -546,7 +546,7 @@ $(function(){
 			
 			<div class="sub-contents pcode51501">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/515_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/515_img_01.jpg" alt="">
 				</div>
 			</div>
 			
@@ -559,6 +559,7 @@ $(function(){
 			<div class="sub-contents pcode51503">
 				<div class="full">
 					<img src="${pageContext.request.contextPath}/resources/img/contents/515_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/515_img_03_1.jpg" alt="">
 				</div>
 			</div>
 			

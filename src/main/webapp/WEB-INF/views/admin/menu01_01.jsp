@@ -32,6 +32,20 @@ $(function(){
 		var keyword = encodeURIComponent(k);
 		location.href="${pageContext.request.contextPath}/admin/menu01_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
 	});
+	
+	$(document).on("click", ".t_link", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+	
+    $(document).on("click", ".board_paging > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	});
 });
 </script>
 </head>
@@ -67,7 +81,7 @@ $(function(){
 								<input type="radio" name="radio_key" id="radio_key3" value="normal_notice"> <label for="radio_key3"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							</div> -->
 			
-							<form name="search" method="post" action="">
+							<form name="search" method="post" action="" onsubmit="return false;">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key">
@@ -128,7 +142,7 @@ $(function(){
 			                                     </td>
 												<td><i class="ico notice">공지</i></td>
 												<td>
-													<a href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a>
+													<a class="t_link" href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a>
 												</td>
 												<td>${item.writer}</td>
 												<td>${item.regdate}</td>
@@ -157,7 +171,7 @@ $(function(){
 													</c:choose>
 													<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
 													<td><i class="ico notice">${num}</i></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
+													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
 													<td>${item.writer}</td>
 													<td>${item.regdate}</td>
 													<td></td>

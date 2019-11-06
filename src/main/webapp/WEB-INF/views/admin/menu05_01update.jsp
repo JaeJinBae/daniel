@@ -58,6 +58,12 @@ $(function(){
 		var email = email1+"@"+email2; 
 		$("#email").val(email);
 
+		var urlArr = $(this).prop("action").split("keyword=");
+		var keyword = encodeURIComponent(urlArr[1]);
+		var no = $("input[name='no']").val();
+		var target = urlArr[0]+"keyword="+keyword+"&no="+no;
+		$(this).prop("action", target);
+		
 	});
 	
 	$("#state").change(function(){

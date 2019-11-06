@@ -86,7 +86,12 @@ $(function(){
 			alert("제목을 입력해주세요.");
 			return false;
 		}
-		//return false;
+		
+		var urlArr = $(this).prop("action").split("keyword=");
+		var keyword = encodeURIComponent(urlArr[1]);
+		var no = $("input[name='no']").val();
+		var target = urlArr[0]+"keyword="+keyword+"&no="+no;
+		$(this).prop("action", target);
 	});
 	
 	$("#img_b").click(function(){
@@ -95,6 +100,7 @@ $(function(){
 		$(this).parent().html("<input type='file' name='img_before'>");
 		$("#imgBeforeChange").val("o");
 	});
+	
 	$("#img_a").click(function(){
 		var no = $("#form1 > input[name='no']").val();
 		deleteUploadImg(no, "after");

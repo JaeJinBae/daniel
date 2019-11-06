@@ -493,6 +493,7 @@ keyframes fa-spin { 0%{
 $(function(){
 	$(document).on("click", ".item > .daniel-event-info > a", function(e){
 		e.preventDefault();
+		
 		var ed = $(this).find("input[name='enddate']").val();
 		var end_d = new Date(ed);
 		var ndate = new Date();

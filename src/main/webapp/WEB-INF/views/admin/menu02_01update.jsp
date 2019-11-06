@@ -35,6 +35,15 @@ $(function(){
 	}
 	
 	
+	//예외처리
+	$("#form1").submit(function(){		
+		var urlArr = $(this).prop("action").split("keyword=");
+		var keyword = encodeURIComponent(urlArr[1]);
+		var no = $("input[name='no']").val();
+		var target = urlArr[0]+"keyword="+keyword+"&no="+no;
+		$(this).prop("action", target);
+	})
+	
 	$("#delBtn").click(function(){
 		var no = $("input[name='no']").val();
 		

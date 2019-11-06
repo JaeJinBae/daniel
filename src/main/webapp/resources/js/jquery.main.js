@@ -76,8 +76,14 @@ $(document).ready( function() {
 	// * ------------------------------------------------------------
 	// * 메인페이지 Header 스크롤 고정 스크립트
 	 $( window ).scroll(function() {
-		 var defaultPosition = $('#video-visual').offset().top + $('#video-visual').outerHeight();
+		 /*var defaultPosition = $('#video-visual').offset().top + $('#video-visual').outerHeight();
 		 if($(window).scrollTop() > defaultPosition){
+			 $( "#header" ).addClass("fixed-on");
+		 } else {
+			 $( "#header" ).removeClass("fixed-on");
+		 }*/
+		 //==================위: 변경 전 영상 들어있을 때 js, 아래 : 영상 숨김 후 js
+		 if($(window).scrollTop() > 0){
 			 $( "#header" ).addClass("fixed-on");
 		 } else {
 			 $( "#header" ).removeClass("fixed-on");

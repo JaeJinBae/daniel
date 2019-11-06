@@ -96,7 +96,7 @@ $(function(){
 				</div>
             </form>
 
-            <div class="call bg_sky nanum_b">더웹 고객센터 TEL : 070-5056-6030</div>
+            <div class="call bg_sky nanum_b">CONS MARKETING</div>
         </div>
     </div>
 </div>

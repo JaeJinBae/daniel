@@ -17,6 +17,7 @@
 <meta property="og:description" content="창원시 상남동 위치. 프리미엄 쁘띠클리닉, 레이저 클리닉, 눈/코 성형, 동안/탄력 클리닉">
 <meta property="og:image" content="http://www.danielps.co.kr/logo.png">
 <meta property="og:url" content="http://www.danielps.co.kr">
+<link rel="canonical" href=http://www.danielps.co.kr>
 <!-- @ = 스타일, # = 자바스크립트 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.reset.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.common.css"><!-- @2 공통 스타일		**삭제금지** -->
@@ -27,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.layout.css"><!-- @6 공통 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.main.css"><!-- @ 메인페이지 스타일-->
 <!-- ********************************************플러그인********************************************* -->
-<script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AP4T42369817671&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1566887341954"></script>
+<!-- <script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AP4T42369817671&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1566887341954"></script> -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/fontawesome/js/fontawesome-all.min.js"></script><!-- #2 플러그인 fontawesome -->
@@ -509,7 +510,7 @@ $(function(){
 	</div>
 	<!-- skipnavigation 끝 -->
 	<!-- 메인페이지 비주얼 영상 시작 -->
-	<section id="video-visual">
+	<section id="video-visual" style="display:none;">
 		<div class="visual-footer">
 			<div class="info">
 				<span>경남 창원시 성산구 마디미로 22번길 12, 4F 다니엘성형외과의원</span>
@@ -536,7 +537,7 @@ $(function(){
 			<i class="line05"></i>
 		</div> 
 		<div class="top-video-area">
-			<video autoplay="" muted="" loop=""><source src="${pageContext.request.contextPath}/resources/video/visual4_3.mp4" type="video/mp4"></video>
+			<%-- <video autoplay="" muted="" loop=""><source src="${pageContext.request.contextPath}/resources/video/visual4_3.mp4" type="video/mp4"></video> --%>
 		</div>
 		<div class="video-txt">
 			<div class="typo-animation"></div>
@@ -578,8 +579,9 @@ $(function(){
 
 			<!-- 메인페이지 비주얼 슬라이드 시작 -->
 			<section class="visual-slide">
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img_pc00.jpg"></div>
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg"></div>
-				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg"></div> --%>
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg"></div>
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg"></div>
 				<div><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg"></a></div>

@@ -52,7 +52,7 @@ $(function(){
 		location.href="${pageContext.request.contextPath}/admin/menu04_02";
 	});
 	
-$("#btn_delete").click(function(){
+	$("#btn_delete").click(function(){
 		
 		$(".sel_chkbox:checked").each(function(){
 			$.ajax({
@@ -70,6 +70,20 @@ $("#btn_delete").click(function(){
 			});
 		});
 		location.href="${pageContext.request.contextPath}/admin/menu04_02";
+	});
+	
+	$(document).on("click", ".t_link", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+	
+    $(document).on("click", ".board_paging > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
 	});
 });
 </script>
@@ -146,7 +160,7 @@ $("#btn_delete").click(function(){
 												<tr class="cont">
 													<td><input type="checkbox" class="sel_chkbox" name="" value="${item.no}"></td>
 													<td><i class="ico notice">${num}</i></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu04_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title">${item.id}</p></a></td>
+													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu04_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title">${item.id}</p></a></td>
 													<td>${item.name}</td>
 													<td>${item.phone}</td>
 													<td>${item.email}</td>
