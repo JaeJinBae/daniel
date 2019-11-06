@@ -37,7 +37,7 @@
 	</update>
 	
 	<update id="updateUseState">
-		update notice set useState=#{use_state} where no=#{no}
+		update notice set use_state=#{use_state} where no=#{no}
 	</update>
 	
 	<delete id="delete">

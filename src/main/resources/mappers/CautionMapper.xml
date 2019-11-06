@@ -37,7 +37,7 @@
 	</update>
 	
 	<update id="updateUseState">
-		update caution set useState=#{use_state} where no=#{no}
+		update caution set use_state=#{use_state} where no=#{no}
 	</update>
 	
 	<delete id="delete">

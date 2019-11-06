@@ -50,7 +50,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/landing/mobile/theme/style.landing.css"><!-- @ 랜딩페이지 스타일-->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/style.popup.css"><!-- @ 팝업 스타일-->
 <!-- ********************************************플러그인********************************************* -->
-<script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AR3T43226918140&amp;py=0&amp;gd=dgc1&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1571633961830"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.0  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/fontawesome/js/fontawesome-all.min.js"></script><!-- #2 플러그인 fontawesome -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/slick/slick.js"></script><!-- #3 플러그인 Slick -->

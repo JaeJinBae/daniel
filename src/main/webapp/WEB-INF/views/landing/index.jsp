@@ -48,7 +48,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/landing/web/theme/style.landing.css"><!-- @ 랜딩페이지 스타일-->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/style.popup.css"><!-- @ 팝업 스타일-->
 <!-- ********************************************플러그인********************************************* -->
-<script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AR3T43226918140&amp;py=0&amp;gd=dgc1&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1571631171963"></script>
 <script src="https://connect.facebook.net/signals/config/680296252175021?v=2.9.5&amp;r=stable" async=""></script>
 <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.0  -->
