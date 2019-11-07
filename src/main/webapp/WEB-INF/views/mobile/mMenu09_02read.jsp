@@ -525,7 +525,6 @@ $(function(){
 								<li><a href="${pageContext.request.contextPath}/m/menu09_06">이벤트</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu09_07">예약하기</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu09_08">시술&수술주의사항</a></li>
-								<li><a href="${pageContext.request.contextPath}/m/menu09_09">자필후기</a></li>
 							</ul>
 						</li>
 					</ul>

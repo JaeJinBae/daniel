@@ -512,9 +512,9 @@ $(function(){
 							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
 						</li>
 						<li class="gnb">
-							<button>멀티파워주사 ▼</button>
+							<button>가격안내 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/m/menu01_01">보톡스/필러</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu02_01">보톡스/필러</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu02_02">안면윤곽주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu02_03">멀티파워주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu02_04">가격안내</a></li>
