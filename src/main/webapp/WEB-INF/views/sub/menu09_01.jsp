@@ -493,6 +493,25 @@ $(function(){
 		var keyword = encodeURIComponent(k);
 		location.href="${pageContext.request.contextPath}/menu09_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
 	});
+	
+    $(document).on("click", ".subject > a", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+    
+    $(document).on("click", "#board-pagenation > .inner > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		var browser =navigator.userAgent.toLowerCase();
+		if((navigator.appName == 'Netscape' && browser.indexOf('trident') != -1) || (browser.indexOf("msie") != -1)) {
+			location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	    }else{
+	    	location.href=link[0]+"keyword="+link[1];
+	    }
+	})
 });
 </script>
 </head>

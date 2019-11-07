@@ -491,7 +491,11 @@ function pwChk(info){
 		async:false,
 		success:function(json){
 			if(json == "ok"){
-				location.href="${pageContext.request.contextPath}/menu09_02read"+$("input[name='cri']").val();
+				var link = $("input[name='cri']").val().split("&");
+				var k = link[3].split("=");
+				var keyword = encodeURIComponent(k[1]);
+				
+				location.href="${pageContext.request.contextPath}/menu09_02read?"+link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
 			}else{
 				alert("비밀번호가 일치하지 않습니다.");
 			}

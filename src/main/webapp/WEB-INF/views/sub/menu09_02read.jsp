@@ -485,7 +485,13 @@ $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(2)").addClass("active");
 	
-	
+	$(".btn-group > .inner > ul > .fr > a").click(function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
 });
 </script>
 </head>
@@ -622,7 +628,8 @@ $(function(){
 						</li>
 						<li class="fr">
 							<a href="${pageContext.request.contextPath}/menu09_02delete${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-del">삭제</a>&nbsp;
-							<a href="${pageContext.request.contextPath}/menu09_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-update">수정</a></li>
+							<a href="${pageContext.request.contextPath}/menu09_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-update">수정</a>
+						</li>
 					</ul>		
 				</div>
 			</div>

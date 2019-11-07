@@ -484,6 +484,15 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(1)").addClass("active");
+	
+	$(document).on("click", ".prev-next-list > .inner > li > a", function(e){
+		e.preventDefault();
+		var urlArr = $(this).prop("href").split("&");
+		var k = urlArr[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		console.log(keyword);
+		location.href=urlArr[0]+"&"+urlArr[1]+"&"+urlArr[2]+"&keyword="+keyword+"&"+urlArr[4];
+	});
 });
 </script>
 </head>
