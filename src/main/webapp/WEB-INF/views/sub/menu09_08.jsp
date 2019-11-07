@@ -495,6 +495,7 @@ $(function(){
 		var url1 = $(this).prop("href");
 		location.href=url1+keyword;
 	});
+	
 	$(document).on("click", ".item > a", function(e){
 		e.preventDefault();
 		var urlArr = $(this).prop("href").split("&");
@@ -503,6 +504,17 @@ $(function(){
 		console.log(keyword);
 		location.href=urlArr[0]+"&"+urlArr[1]+"&"+urlArr[2]+"&keyword="+keyword+"&"+urlArr[4];
 	});
+	
+	$(document).on("click", "#board-pagenation > .inner > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		var browser =navigator.userAgent.toLowerCase();
+		if((navigator.appName == 'Netscape' && browser.indexOf('trident') != -1) || (browser.indexOf("msie") != -1)) {
+			location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	    }else{
+	    	location.href=link[0]+"keyword="+link[1];
+	    }
+	})
 });
 </script>
 </head>

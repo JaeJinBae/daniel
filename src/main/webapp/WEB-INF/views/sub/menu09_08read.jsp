@@ -495,6 +495,15 @@ $(function(){
 		var url1 = $(this).prop("href");
 		location.href=url1+keyword;
 	});
+	
+	$(document).on("click", ".prev-next-list > .inner > li > a", function(e){
+		e.preventDefault();
+		var urlArr = $(this).prop("href").split("&");
+		var k = urlArr[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		console.log(keyword);
+		location.href=urlArr[0]+"&"+urlArr[1]+"&"+urlArr[2]+"&keyword="+keyword+"&"+urlArr[4];
+	});
 });
 </script>
 </head>

@@ -502,7 +502,12 @@ $(function(){
 	$(document).on("click", "#board-pagenation > .inner > a",function(e){
 		e.preventDefault();
 		var link = $(this).prop("href").split("keyword=");
-		location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+		var browser =navigator.userAgent.toLowerCase();
+		if((navigator.appName == 'Netscape' && browser.indexOf('trident') != -1) || (browser.indexOf("msie") != -1)) {
+			location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	    }else{
+	    	location.href=link[0]+"keyword="+link[1];
+	    }
 	})
 	
 	var kw = $("#kw").val();
