@@ -588,7 +588,7 @@ $(function(){
 			<input type="hidden" name="cri" value="${pageMaker.makeSearch(pageMaker.cri.page)}&no=${no}">
 			<!-- 게시판 타이틀 끝 -->
 			<form name="inquire" id="inquire" method="post" action="" onsubmit="return false">
-				<input type="hidden" name="fparam" value="pCode=528&amp;action=&amp;psseq=&amp;pagecode=&amp;select_key=&amp;input_key=&amp;nextmode=view&amp;backpage=/528/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;mode=password&amp;nextmode=view&amp;seq=2497&amp;pseq=&amp;btap=">
+				<input type="hidden" name="fparam" value="">
 				<input type="hidden" name="distinction" value="proc">
 				<input type="hidden" name="backpage" value="/html/index.html">
 			
