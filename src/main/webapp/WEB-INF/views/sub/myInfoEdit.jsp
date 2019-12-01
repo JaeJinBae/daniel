@@ -676,7 +676,8 @@ $(function(){
 									<th>성별<i class="star">*</i></th>
 									<td>
 										<input type="radio" name="m_sex" class="gender" id="m_sex1" value="m" valid="required" element-name="성별" disabled=""> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="m_sex" class="gender" id="m_sex2" value="f" valid="required" element-name="성별" disabled=""> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;					</td>
+										<input type="radio" name="m_sex" class="gender" id="m_sex2" value="f" valid="required" element-name="성별" disabled=""> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;
+									</td>
 								</tr>
 								<tr>
 									<th>E-mail<i class="star">*</i></th>
