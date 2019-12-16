@@ -562,7 +562,7 @@ $(function(){
 					</div>
 					<div class="con">
 						<ul>
-							<li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_001.png" alt=""></a></li>
+							<li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_005.jpg" alt=""></a></li>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=40"><img src="${pageContext.request.contextPath}/resources/img/main/2019winterPopup.jpg" alt=""></a></li>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li>
 							<%-- <li><a href="https://www.youtube.com/channel/UCQAgZNghpCU1xC84yRL2Wqg"><img src="${pageContext.request.contextPath}/resources/img/main/popupYoutube20190916.jpg" alt=""></a></li> --%>

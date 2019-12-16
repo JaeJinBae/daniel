@@ -592,7 +592,7 @@ $(function(){
 						</div>
 						<div class="txt-hover">
 							<span>드림패키지</span>
-							<p>복합 레이저 10회<br>+<br>프랑스천연융카<br>LDM관리5회<br>180만원(부가세별도)</p>
+							<p>복합 레이저 10회<br>+<br>프랑스천연화장품용카<br>LDM관리10회<br>200만원(부가세별도)</p>
 						</div>
 					</li>
 			

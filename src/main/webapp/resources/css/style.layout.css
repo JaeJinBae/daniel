@@ -252,7 +252,7 @@ html, body{}
 /**********************************************************************
 * Descript : 서브페이지 퀵메뉴
 ***********************************************************************/
-#quick{position:fixed; right:25px; top:25%; width:100px; height:600px; z-index:3;}
+#quick{position:fixed; right:25px; top:15%; width:100px; height:600px; z-index:3;}
 #quick li.item{margin:8px 0;}
 #quick li.item a{display:block; width:100px; height:100px; border-radius:100px; background:#2e405e; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
 #quick li.item a:hover{background:#b9975e;}
