@@ -564,7 +564,8 @@ $(function(){
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_005.jpg" alt=""></a></li>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=40"><img src="${pageContext.request.contextPath}/resources/img/main/2019winterPopup.jpg" alt=""></a></li>
-							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li>
+							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191219.jpg" alt=""></a></li>
+							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="https://www.youtube.com/channel/UCQAgZNghpCU1xC84yRL2Wqg"><img src="${pageContext.request.contextPath}/resources/img/main/popupYoutube20190916.jpg" alt=""></a></li> --%>
 						</ul>
 					</div>
@@ -759,6 +760,9 @@ $(function(){
 				</ul><!-- 슬라이드 배너 끝 -->
 			</section>
 		</section>
+		<!-- 서브페이지 우측 퀵배너 시작 -->
+		<jsp:include page="../include/quick.jsp"></jsp:include>
+		<!-- 서브페이지 우측 퀵배너 끝 -->
 	</div><!-- #wrap end -->
 	
 	<div class="daniel-banner">

@@ -104,12 +104,12 @@ $(function(){
 		var no = $("input[name='no']").val();
 		
 		$.ajax({
-			url:"${pageContext.request.contextPath}/admin/menu01_03delete/"+no,
+			url:"${pageContext.request.contextPath}/admin/menu03_01delete/"+no,
 			type:"get",
 			dataType:"text",
 			async:false,
 			success:function(json){
-				location.href="${pageContext.request.contextPath}/admin/menu01_03";
+				location.href="${pageContext.request.contextPath}/admin/menu03_01";
 			} 
 		});
 	});

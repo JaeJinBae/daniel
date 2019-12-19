@@ -485,7 +485,7 @@ $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");
 	$("#header > #gnb > .inner > ul > li:nth-child(9) > .lnb-wrap > li:nth-child(5)").addClass("active");
 	
-	$(document).on("click", ".subject > a", function(e){
+	/* $(document).on("click", ".subject > a", function(e){
 		e.preventDefault();
 		if($("#session_id").val().length <= 1){
 			alert("의료법으로 인하여 로그인 후 확인하실 수 있습니다.");
@@ -493,7 +493,7 @@ $(function(){
 		}else{
 			location.href=$(this).attr("href");
 		}
-	});
+	}); */
 	
 	//게시판 검색
     $("#searchBtn").click(function(){
@@ -506,10 +506,16 @@ $(function(){
 	
     $(document).on("click", ".subject > a", function(e){
 		e.preventDefault();
-		var link = $(this).prop("href").split("&");
-		var k = link[3].split("=");
-		var keyword = encodeURIComponent(k[1]);
-		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+		if($("#session_id").val().length <= 1){
+			alert("의료법으로 인하여 로그인 후 확인하실 수 있습니다.");
+			location.href="${pageContext.request.contextPath}/login";
+		}else{
+			var link = $(this).prop("href").split("&");
+			var k = link[3].split("=");
+			var keyword = encodeURIComponent(k[1]);
+			location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+		}
+		
 	});
     
     $(document).on("click", "#board-pagenation > .inner > a",function(e){
