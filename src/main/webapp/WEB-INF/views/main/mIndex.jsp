@@ -484,7 +484,10 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	
+	var nowURL = window.location.href;
+	if(nowURL.indexOf("danielclinic.kr")!= -1){
+		location.href="${pageContext.request.contextPath}/landing";
+	}
 });
 </script>
 </head>

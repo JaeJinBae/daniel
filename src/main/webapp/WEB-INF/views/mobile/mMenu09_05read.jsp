@@ -542,7 +542,7 @@ $(function(){
 
 			<!-- 게시판 타이틀 시작 -->
 			<div class="board-titl">
-				<h5>자필후기</h5>
+				<h5 style="line-height: 35px;">고객이 직접 추천하는<br>자필 치료후기</h5>
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			

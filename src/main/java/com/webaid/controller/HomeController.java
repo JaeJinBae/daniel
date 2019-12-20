@@ -149,7 +149,6 @@ public class HomeController {
 		}else{
 			deviceType="normal";
 			logger.info("디바이스타입= "+deviceType);
-			
 			return "landing/index";
 		}
 	}
@@ -160,26 +159,45 @@ public class HomeController {
 		
 		Device device=DeviceUtils.getCurrentDevice(req);
 		String deviceType="unknown";
+		String url = req.getRequestURL()+"";
 		
 		if(device == null){
 			deviceType="unknown";
 			logger.info("디바이스타입= "+deviceType);
-			
-			return "main/index";
+			if(url.contains("danielclinic.kr")){
+				return "landing/index";
+			}else{
+				return "main/index";
+			}
+			//return "main/index";
 		}
 		if(device.isMobile()){
 			deviceType="mobile";
 			logger.info("디바이스타입= "+deviceType);			
-			return "main/mIndex";
+			if(url.contains("danielclinic.kr")){
+				return "landing/mIndex";
+			}else{
+				return "main/mIndex";
+			}
+			//return "main/mIndex";
 		}else if(device.isTablet()){
 			deviceType="mobile";
-			logger.info("디바이스타입= "+deviceType);			
-			return "main/mIndex";
+			logger.info("디바이스타입= "+deviceType);
+			if(url.contains("danielclinic.kr")){
+				return "landing/mIndex";
+			}else{
+				return "main/mIndex";
+			}
+			//return "main/mIndex";
 		}else{
 			deviceType="normal";
 			logger.info("디바이스타입= "+deviceType);
-			
-			return "main/index";
+			if(url.contains("danielclinic.kr")){
+				return "landing/index";
+			}else{
+				return "main/index";
+			}
+			//return "main/index";
 		}
 	}
 	

@@ -577,6 +577,7 @@ $(function(){
 			<!-- 게시판 타이틀 시작 -->
 			<div class="board-titl">
 				<h5>시술 전후 사진</h5>
+				<p style="padding-top:40px;font-size:18px;">실패한 분들이 찾는 재수술 및 시술 전문병원</p>
 			</div>
 			<!-- 게시판 타이틀 끝 -->
 			

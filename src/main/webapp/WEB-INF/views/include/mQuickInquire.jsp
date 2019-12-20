@@ -63,10 +63,22 @@ $(function(){
 	
 	<!-- AceCounter Log Gathering Script V.7.5.2017020801 -->
 	<script language="javascript">
-		var _AceGID=(function(){var Inf=['dgc12.acecounter.com','8080','AP4T42369817671','CW','0','NaPm,Ncisy','ALL','0']; var _CI=(!_AceGID)?[]:_AceGID.val;var _N=0;var _T=new Image(0,0);if(_CI.join('.').indexOf(Inf[3])<0){ _T.src =( location.protocol=="https:"?"https://"+Inf[0]:"http://"+Inf[0]+":"+Inf[1]) +'/?cookie'; _CI.push(Inf);  _N=_CI.length; } return {o: _N,val:_CI}; })();
+		var val1 = "";
+		var val2 = "";
+		var val3 = "";
+		var nowURL = window.location.href;
+		if(nowURL.indexOf("danielclinic")!= -1){
+			val1 = "dgc11.acecounter.com";
+			val2 = "AP3T42369817670";
+			$("body").append("<noscript><img src='http://dgc11.acecounter.com:8080/?uid=AP3T42369817670&je=n&' border='0' width='0' height='0' alt=''></noscript>");
+		}else{
+			val1 = "dgc12.acecounter.com";
+			val2 = "AP4T42369817671";
+			$("body").append("<noscript><img src='http://dgc12.acecounter.com:8080/?uid=AP4T42369817671&je=n&' border='0' width='0' height='0' alt=''></noscript>");
+		}
+		var _AceGID=(function(){var Inf=[val1,'8080',val2,'CW','0','NaPm,Ncisy','ALL','0']; var _CI=(!_AceGID)?[]:_AceGID.val;var _N=0;var _T=new Image(0,0);if(_CI.join('.').indexOf(Inf[3])<0){ _T.src =( location.protocol=="https:"?"https://"+Inf[0]:"http://"+Inf[0]+":"+Inf[1]) +'/?cookie'; _CI.push(Inf);  _N=_CI.length; } return {o: _N,val:_CI}; })();
 		var _AceCounter=(function(){var G=_AceGID;var _sc=document.createElement('script');var _sm=document.getElementsByTagName('script')[0];if(G.o!=0){var _A=G.val[G.o-1];var _G=(_A[0]).substr(0,_A[0].indexOf('.'));var _C=(_A[7]!='0')?(_A[2]):_A[3];var _U=(_A[5]).replace(/\,/g,'_');_sc.src=(location.protocol.indexOf('http')==0?location.protocol:'http:')+'//cr.acecounter.com/Web/AceCounter_'+_C+'.js?gc='+_A[2]+'&py='+_A[4]+'&gd='+_G+'&gp='+_A[1]+'&up='+_U+'&rd='+(new Date().getTime());_sm.parentNode.insertBefore(_sc,_sm);return _sc.src;}})();
 	</script>
-	<noscript><img src='http://dgc12.acecounter.com:8080/?uid=AP4T42369817671&je=n&' border='0' width='0' height='0' alt=''></noscript>	
 	<!-- AceCounter Log Gathering Script End -->
 	
 	
