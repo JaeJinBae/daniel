@@ -544,7 +544,7 @@ $(function(){
 		var id = $("#m_id").val();
 		var idConfirm = $("input[name='m_id_check']").val();
 		var pw = $("#m_pass").val();;
-		var pwConfirm = $("#m_repass").val();;
+		var pwConfirm = $("#m_repass").val();
 		var phone1 = $("#phone1").val();
 		var phone2 = $("#phone2").val();
 		var phone3 = $("#phone3").val();
