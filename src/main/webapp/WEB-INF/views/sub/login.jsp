@@ -487,9 +487,6 @@ keyframes fa-spin { 0%{
 	text-align: center;
 	padding-top: 20px;
 }
-.snsLoginBtn > a > img{
-	width: 160px;
-}
 </style>
 <script>
 function userIdPwChk(info){
@@ -605,11 +602,40 @@ $(function(){
 							</p>
 							<button type="button" id="loginBtn">로그인</button>
 							<div class="snsLoginBtn">
-								<a id="naver_id_login" href=""><%-- <img src="${pageContext.request.contextPath}/resources/img/common/naver_login.png"> --%></a>
-								<a id="custom-login-btn" href="javascript:loginWithKakao()"><img src="${pageContext.request.contextPath}/resources/img/common/kakao_login.png"></a>
+								<span id="naver_id_login"></span>
+								<a id="kakao-login-btn"></a>
 							</div>
 						</form>
 						<script type='text/javascript'>
+							//<![CDATA[
+							// 사용할 앱의 JavaScript 키를 설정해 주세요.
+							Kakao.init('c2e3ed09f957710bbd6a786c6974b3b1');
+							// 카카오 로그인 버튼을 생성합니다.
+							Kakao.Auth.createLoginButton({
+								container: '#kakao-login-btn',
+								success: function(authObj) {
+									//alert(JSON.stringify(authObj));
+									Kakao.API.request({
+							          url: '/v2/user/me',
+							          success: function(res) {
+							            //alert(JSON.stringify(res));
+							            console.log(res);
+							            console.log(res.properties.nickname);
+							            var user = res.properties.nickname;
+							            location.href="/daniel/snsLogin/"+user;
+							          },
+							          fail: function(error) {
+							            alert(JSON.stringify(error));
+							          }
+							        });
+								},
+								fail: function(err) {
+									alert(JSON.stringify(err));
+								}
+							});
+							//]]>
+						</script>
+						<!-- <script type='text/javascript'>
 						//<![CDATA[
 							// 사용할 앱의 JavaScript 키를 설정해 주세요.
 							Kakao.init('c2e3ed09f957710bbd6a786c6974b3b1');
@@ -638,15 +664,22 @@ $(function(){
 								});
 							};
 						//]]>
-						</script>
+						</script> -->
 						<script type="text/javascript">
 							var naver_id_login = new naver_id_login("LLixkeCZzCvTcpfwo_B4", "http://localhost:8080/daniel");
 							var state = naver_id_login.getUniqState();
-							naver_id_login.setButton("white", 2,40);
+							naver_id_login.setButton("green", 3,49);
 							naver_id_login.setDomain("http://localhost:8080/daniel");
 							naver_id_login.setState(state);
 							naver_id_login.setPopup();
-							naver_id_login.init_naver_id_login();
+							naver_id_login.init_naver_id_login({
+								success: function(authObj) {
+									alert(JSON.stringify(authObj));
+								},
+								fail:function(err){
+									alert(JSON.stringify(err));
+								}
+							});
 						</script>
 					</li>
 					<li class="member">
