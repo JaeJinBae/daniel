@@ -793,7 +793,28 @@ $(function(){
 					
 											<input type="text" name="m_email2" id="m_email2" class="half" maxlength="13" title="이메일계정의 아이디" value="" valid="required" element-name="이메일">
 					
-											<select name="m_emailcode" id="m_emailcode" title="이메일의 계정" class="half"><option value="" selected="">직접입력</option><option value="EM01">naver.com</option><option value="EM02">daum.net</option><option value="EM03">gmail.com</option><option value="EM04">yahoo.co.kr</option><option value="EM05">yahoo.com</option><option value="EM06">nate.com</option><option value="EM07">paran.com</option><option value="EM08">google.com</option><option value="EM09">empas.com</option><option value="EM10">hotmail.com</option><option value="EM11">msn.com</option><option value="EM12">korea.com</option><option value="EM13">dreamwiz.com</option><option value="EM14">hanafos.com</option><option value="EM15">freechal.com</option><option value="EM16">chol.com</option><option value="EM17">empal.com</option><option value="EM18">lycos.com</option><option value="EM19">netian.com</option></select>
+											<select name="m_emailcode" id="m_emailcode" title="이메일의 계정" class="half">
+												<option value="">직접입력</option>
+												<option value="naver.com">naver.com</option>
+												<option value="daum.net">daum.net</option>
+												<option value="gmail.com">gmail.com</option>
+												<option value="yahoo.co.kr">yahoo.co.kr</option>
+												<option value="yahoo.com">yahoo.com</option>
+												<option value="nate.com">nate.com</option>
+												<option value="paran.com">paran.com</option>
+												<option value="google.com">google.com</option>
+												<option value="empas.com">empas.com</option>
+												<option value="hotmail.com">hotmail.com</option>
+												<option value="msn.com">msn.com</option>
+												<option value="korea.com">korea.com</option>
+												<option value="dreamwiz.com">dreamwiz.com</option>
+												<option value="hanafos.com">hanafos.com</option>
+												<option value="freechal.com">freechal.com</option>
+												<option value="chol.com">chol.com</option>
+												<option value="empal.com">empal.com</option>
+												<option value="lycos.com">lycos.com</option>
+												<option value="netian.com">netian.com</option>
+											</select>
 											<p class="cap">* 비밀번호를 잊어버렸을 때, 임시비밀번호가 발송될 메일입니다.</p>
 										</td>
 									</tr>

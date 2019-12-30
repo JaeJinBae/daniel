@@ -480,6 +480,15 @@ keyframes fa-spin { 0%{
 	width: auto
 }
 </style>
+<style>
+.board-titl > h5{
+	width: 600px;
+	margin: 0 auto;
+	background: #172b4d;
+	color: #fff;
+	line-height: 60px;
+}
+</style>
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(9)").addClass("active");

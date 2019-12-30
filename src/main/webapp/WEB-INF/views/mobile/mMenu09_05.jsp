@@ -488,6 +488,15 @@ keyframes fa-spin { 0%{
 	margin: 0 !important;
 }
 </style>
+<style>
+.board-title > h5{
+	width: 95%;
+	margin: 0 auto;
+	background: #172b4d;
+	color: #fff;
+	padding: 10px 0;
+}
+</style>
 <script>
 $(function(){
 	$(document).on("click", ".board-notice-list > ul > li > a", function(e){

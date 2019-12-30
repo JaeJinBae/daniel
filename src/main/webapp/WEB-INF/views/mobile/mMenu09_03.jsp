@@ -488,6 +488,15 @@ keyframes fa-spin { 0%{
 	margin: 0 !important;
 }
 </style>
+<style>
+.board-titl > h5{
+	width: 95%;
+	margin: 0 auto;
+	background: #172b4d;
+	color: #fff;
+	line-height: 60px;
+}
+</style>
 <script>
 $(function(){
 	if($("#session_id").val().length <= 1){
@@ -576,7 +585,7 @@ $(function(){
 
 			<!-- 게시판 타이틀 시작 -->
 			<div class="board-titl">
-				<h5>시술 전후 사진</h5>
+				<h5>치료의 자신감<br>시술 전후 사진</h5>
 				<p style="padding-top:40px;font-size:18px;">실패한 분들이 찾는 재수술 및 시술 전문병원</p>
 			</div>
 			<!-- 게시판 타이틀 끝 -->
