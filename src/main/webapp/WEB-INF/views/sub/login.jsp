@@ -40,6 +40,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.layer.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.common.js"></script><!-- # 공통 함수 -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <style type="text/css">
 svg:not (:root ).svg-inline--fa {
 	overflow: visible
@@ -479,6 +481,16 @@ keyframes fa-spin { 0%{
 	width: auto
 }
 </style>
+<style>
+.snsLoginBtn{
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+}
+.snsLoginBtn > a > img{
+	width: 160px;
+}
+</style>
 <script>
 function userIdPwChk(info){
 	$.ajax({
@@ -592,7 +604,50 @@ $(function(){
 								<input id="m_pass" name="m_pass" type="password" valid="required" element-name="비밀번호" placeholder="비밀번호를 입력하세요">
 							</p>
 							<button type="button" id="loginBtn">로그인</button>
+							<div class="snsLoginBtn">
+								<a id="naver_id_login" href=""><%-- <img src="${pageContext.request.contextPath}/resources/img/common/naver_login.png"> --%></a>
+								<a id="custom-login-btn" href="javascript:loginWithKakao()"><img src="${pageContext.request.contextPath}/resources/img/common/kakao_login.png"></a>
+							</div>
 						</form>
+						<script type='text/javascript'>
+						//<![CDATA[
+							// 사용할 앱의 JavaScript 키를 설정해 주세요.
+							Kakao.init('c2e3ed09f957710bbd6a786c6974b3b1');
+							function loginWithKakao() {
+								// 로그인 창을 띄웁니다.
+								Kakao.Auth.login({
+									success: function(authObj) {
+										//alert(JSON.stringify(authObj));
+										Kakao.API.request({
+								          url: '/v2/user/me',
+								          success: function(res) {
+								            //alert(JSON.stringify(res));
+								            console.log(res);
+								            console.log(res.properties.nickname);
+								            var user = res.properties.nickname;
+								            location.href="/daniel/snsLogin/"+user;
+								          },
+								          fail: function(error) {
+								            alert(JSON.stringify(error));
+								          }
+								        });
+									},
+									fail: function(err) {
+										alert(JSON.stringify(err));
+									}
+								});
+							};
+						//]]>
+						</script>
+						<script type="text/javascript">
+							var naver_id_login = new naver_id_login("LLixkeCZzCvTcpfwo_B4", "http://localhost:8080/daniel");
+							var state = naver_id_login.getUniqState();
+							naver_id_login.setButton("white", 2,40);
+							naver_id_login.setDomain("http://localhost:8080/daniel");
+							naver_id_login.setState(state);
+							naver_id_login.setPopup();
+							naver_id_login.init_naver_id_login();
+						</script>
 					</li>
 					<li class="member">
 						<p>

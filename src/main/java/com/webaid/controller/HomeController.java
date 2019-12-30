@@ -234,6 +234,13 @@ public class HomeController {
 		return "sub/fAgree";
 	}
 	
+	@RequestMapping(value = "/snsLogin/{user}", method = RequestMethod.GET)
+	public String snsLogin(@PathVariable("user")String user, Model model, HttpSession session) {
+		logger.info("login GET");
+		session.setAttribute("id", user);
+		return "redirect:/";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		logger.info("login GET");
