@@ -15,7 +15,7 @@ $(document).ready( function() {
 	
 	$('.visual-slide').slick({
 	   autoplay: true,
-	   autoplaySpeed: 4000,
+	   autoplaySpeed: 4500,
 	   dots: true,
 	   arrows: true,
 	   fade: false
@@ -23,7 +23,7 @@ $(document).ready( function() {
 	
 	$('.slider-banner').slick({
 		autoplay: true,
-		autoplaySpeed: 4000,
+		autoplaySpeed: 4500,
 		dots: false,
 		arrows: true,
 		prevArrow: '<button class="slick-prev02" aria-label="Previous" type="button"></button>',
