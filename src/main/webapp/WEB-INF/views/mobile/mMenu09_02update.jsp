@@ -658,7 +658,7 @@ $(function(){
 									})
 								</script>
 							</td>
-						</tr>
+						</tr>						
 					</table>
 				
 					<div class="private-agree">

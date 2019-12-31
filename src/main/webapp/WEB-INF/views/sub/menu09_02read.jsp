@@ -628,8 +628,7 @@ $(function(){
 						</li>
 						<li class="fr">
 							<a href="${pageContext.request.contextPath}/menu09_02delete${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-del">삭제</a>&nbsp;
-							<a href="${pageContext.request.contextPath}/menu09_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-update">수정</a>
-						</li>
+							<a href="${pageContext.request.contextPath}/menu09_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-update">수정</a></li>
 					</ul>		
 				</div>
 			</div>

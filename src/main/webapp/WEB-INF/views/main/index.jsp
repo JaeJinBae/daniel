@@ -567,7 +567,8 @@ $(function(){
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_005.jpg" alt=""></a></li>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=40"><img src="${pageContext.request.contextPath}/resources/img/main/2019winterPopup.jpg" alt=""></a></li>
-							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191219.jpg" alt=""></a></li>
+							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191226.jpg" alt=""></a></li>
+							<%-- <li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191219.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="https://www.youtube.com/channel/UCQAgZNghpCU1xC84yRL2Wqg"><img src="${pageContext.request.contextPath}/resources/img/main/popupYoutube20190916.jpg" alt=""></a></li> --%>
 						</ul>
@@ -704,6 +705,14 @@ $(function(){
 				
 				<!-- 슬라이드 배너 시작 -->
 				<ul class="slider-banner">
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577697316330_20191231event_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">프리미엄 여드름 특화치료</p>
+							<h6 class="tit">GOLD PTT</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=44" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1575202099356_2019winterThumb.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -752,14 +761,7 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=27" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571388802207_thumb36.jpg) no-repeat center top;">
-						<div class="slider-banner-info">
-							<i class="kinds">EVENT</i>
-							<p class="cap">ALL IN ONE SOLUTION</p>
-							<h6 class="tit">필로가 주사 X 포어타이탄</h6>
-							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=36" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
-						</div>
-					</li>
+					
 				</ul><!-- 슬라이드 배너 끝 -->
 			</section>
 		</section>

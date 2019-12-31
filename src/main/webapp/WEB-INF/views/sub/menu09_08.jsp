@@ -495,7 +495,6 @@ $(function(){
 		var url1 = $(this).prop("href");
 		location.href=url1+keyword;
 	});
-	
 	$(document).on("click", ".item > a", function(e){
 		e.preventDefault();
 		var urlArr = $(this).prop("href").split("&");
