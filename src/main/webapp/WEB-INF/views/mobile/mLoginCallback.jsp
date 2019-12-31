@@ -17,7 +17,7 @@
 	var naverLogin = new naver.LoginWithNaverId(
 		{
 			clientId: "LLixkeCZzCvTcpfwo_B4",
-			callbackUrl: "http://218.238.58.31:8080/daniel/m/login",
+			callbackUrl: "http://www.danielps.co.kr/m/login",
 			isPopup: false,
 			callbackHandle: true
 			/* callback 페이지가 분리되었을 경우에 callback 페이지에서는 callback처리를 해줄수 있도록 설정합니다. */
@@ -35,7 +35,7 @@
 				var userName = naverLogin.user.getName();
 				var menu = $("#menu").val();
 				window.location.replace("http://" + window.location.hostname + 
-                           ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/daniel/m/snsLogin/"+userName+"?targeturl="+menu);
+                           ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/m/snsLogin/"+userName+"?targeturl="+menu);
 			                                                    /* 인증이 완료된후 /sample/main.html 페이지로 이동하라는것이다. 본인 페이로 수정해야한다. */
                 } else {
 				console.log("callback 처리에 실패하였습니다.");

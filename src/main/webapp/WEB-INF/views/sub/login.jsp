@@ -645,7 +645,7 @@ $(function(){
 							            if(prev_url.indexOf("menu09_05") >= 0){
 							            	target_url = "menu09_05";
 							            }
-							            location.href="/daniel/snsLogin/"+user+"?targeturl="+target_url;
+							            location.href="/snsLogin/"+user+"?targeturl="+target_url;
 							          },
 							          fail: function(error) {
 							            alert(JSON.stringify(error));
@@ -671,7 +671,7 @@ $(function(){
 							var naverLogin = new naver.LoginWithNaverId(
 								{
 									clientId: "LLixkeCZzCvTcpfwo_B4",
-									callbackUrl: "http://localhost:8080/daniel/loginCallback?purl="+target_url,
+									callbackUrl: "http://www.danielps.co.kr/loginCallback?purl="+target_url,
 									isPopup: false, /* 팝업을 통한 연동처리 여부 */
 									loginButton: {color: "green", type: 3, height: 49} /* 로그인 버튼의 타입을 지정 */
 								}
