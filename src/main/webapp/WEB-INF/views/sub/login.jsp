@@ -503,7 +503,22 @@ function userIdPwChk(info){
 				alert("일치하는 정보가 없습니다.");
 				
 			}else if(json == "ok"){
-				location.href="${pageContext.request.contextPath}/";
+				var prev_url = document.referrer;
+	            var target_url = "n";
+	            if(prev_url.indexOf("menu09_03") >= 0){
+	            	target_url = "menu09_03";
+	            }
+	            if(prev_url.indexOf("menu09_05") >= 0){
+	            	target_url = "menu09_05";
+	            }
+	            if(tartget_url == "menu09_03"){
+	            	location.href="${pageContext.request.contextPath}/menu09_03";
+	            }else if(tartget_url == "menu09_05"){
+	            	location.href="${pageContext.request.contextPath}/menu09_05";
+	            }else{
+	            	location.href="${pageContext.request.contextPath}/";
+	            }
+				
 			}
 		},
 		error:function(request,status,error){
@@ -520,7 +535,6 @@ $(function(){
 		
 		userIdPwChk(info);
 	});
-	
 });
 </script>
 </head>
@@ -623,7 +637,15 @@ $(function(){
 							            console.log(res);
 							            console.log(res.properties.nickname);
 							            var user = res.properties.nickname;
-							            location.href="/daniel/snsLogin/"+user;
+							            var prev_url = document.referrer;
+							            var target_url = "n";
+							            if(prev_url.indexOf("menu09_03") >= 0){
+							            	target_url = "menu09_03";
+							            }
+							            if(prev_url.indexOf("menu09_05") >= 0){
+							            	target_url = "menu09_05";
+							            }
+							            location.href="/daniel/snsLogin/"+user+"?targeturl="+target_url;
 							          },
 							          fail: function(error) {
 							            alert(JSON.stringify(error));
@@ -637,10 +659,19 @@ $(function(){
 							//]]>
 						</script>
 						<script type="text/javascript">
+							var prev_url = document.referrer;
+				            var target_url = "n";
+				            if(prev_url.indexOf("menu09_03") >= 0){
+				            	target_url = "menu09_03";
+				            }
+				            if(prev_url.indexOf("menu09_05") >= 0){
+				            	target_url = "menu09_05";
+				            }
+				            
 							var naverLogin = new naver.LoginWithNaverId(
 								{
 									clientId: "LLixkeCZzCvTcpfwo_B4",
-									callbackUrl: "http://localhost:8080/daniel/loginCallback",
+									callbackUrl: "http://localhost:8080/daniel/loginCallback?purl="+target_url,
 									isPopup: false, /* 팝업을 통한 연동처리 여부 */
 									loginButton: {color: "green", type: 3, height: 49} /* 로그인 버튼의 타입을 지정 */
 								}

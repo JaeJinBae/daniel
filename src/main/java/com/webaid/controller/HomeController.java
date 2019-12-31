@@ -235,16 +235,23 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/snsLogin/{user}", method = RequestMethod.GET)
-	public String snsLogin(@PathVariable("user")String user, Model model, HttpSession session) {
+	public String snsLogin(@PathVariable("user")String user, @ModelAttribute("targeturl")String targeturl, Model model, HttpSession session) {
 		logger.info("login GET");
 		session.setAttribute("id", user);
-		return "redirect:/";
+		if(targeturl.equals("menu09_03")){
+			return "redirect:/menu09_03";
+		}else if(targeturl.equals("menu09_05")){
+			return "redirect:/menu09_05";
+		}else{
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping(value = "/loginCallback", method = RequestMethod.GET)
-	public String loginCallback(Model model) {
+	public String loginCallback(Model model, @ModelAttribute("purl")String purl) {
 		logger.info("loginCallback GET");
-		
+		System.out.println(purl);
+		model.addAttribute("menu", purl);
 		return "sub/loginCallback";
 	}
 	

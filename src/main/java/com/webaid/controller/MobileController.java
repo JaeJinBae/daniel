@@ -100,16 +100,22 @@ public class MobileController {
 	}*/
 	
 	@RequestMapping(value = "/snsLogin/{user}", method = RequestMethod.GET)
-	public String snsLogin(@PathVariable("user")String user, Model model, HttpSession session) {
+	public String snsLogin(@PathVariable("user")String user, @ModelAttribute("targeturl")String targeturl, Model model, HttpSession session) {
 		logger.info("login GET");
 		session.setAttribute("id", user);
-		return "redirect:/";
+		if(targeturl.equals("menu09_03")){
+			return "redirect:/m/menu09_03";
+		}else if(targeturl.equals("menu09_05")){
+			return "redirect:/m/menu09_05";
+		}else{
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping(value = "/loginCallback", method = RequestMethod.GET)
-	public String loginCallback(Model model) {
+	public String loginCallback(Model model, @ModelAttribute("purl")String purl) {
 		logger.info("loginCallback GET");
-		
+		model.addAttribute("menu", purl);
 		return "mobile/mLoginCallback";
 	}
 	

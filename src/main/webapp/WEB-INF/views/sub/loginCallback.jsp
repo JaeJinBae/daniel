@@ -12,6 +12,7 @@
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 </head>
 <body>
+<input type="hidden" id="menu" value="${menu}">
 <script>
 	var naverLogin = new naver.LoginWithNaverId(
 		{
@@ -32,9 +33,9 @@
 			if (status) {
 				/* (5) 필수적으로 받아야하는 프로필 정보가 있다면 callback처리 시점에 체크 */
 				var userName = naverLogin.user.getName();
-
+				var menu = $("#menu").val();
 				window.location.replace("http://" + window.location.hostname + 
-                           ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/daniel/snsLogin/"+userName);
+                           ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/daniel/snsLogin/"+userName+"?targeturl="+menu);
 			                                                    /* 인증이 완료된후 /sample/main.html 페이지로 이동하라는것이다. 본인 페이로 수정해야한다. */
                 } else {
 				console.log("callback 처리에 실패하였습니다.");
