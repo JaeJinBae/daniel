@@ -44,6 +44,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.layer.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/m/jquery.common.js"></script><!-- # 공통 함수 -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
 <style type="text/css">
 svg:not (:root ).svg-inline--fa {
@@ -485,6 +487,16 @@ keyframes fa-spin { 0%{
 }
 
 </style>
+<style>
+.snsLoginBtn{
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+}
+.snsLoginBtn img{
+	width: 150px;
+}
+</style>
 <script>
 function userIdPwChk(info){
 	$.ajax({
@@ -580,7 +592,55 @@ $(function(){
 								<input id="m_pass" name="m_pass" type="password" valid="required" element-name="비밀번호" placeholder="비밀번호를 입력하세요">
 							</p>
 							<button type="button" id="loginBtn">로그인</button>
+							<div class="snsLoginBtn">
+								<span id="naverIdLogin"></span>
+								<a id="kakao-login-btn"></a>
+							</div>
 						</form>
+						<script type='text/javascript'>
+							//<![CDATA[
+							// 사용할 앱의 JavaScript 키를 설정해 주세요.
+							Kakao.init('c2e3ed09f957710bbd6a786c6974b3b1');
+							// 카카오 로그인 버튼을 생성합니다.
+							Kakao.Auth.createLoginButton({
+								container: '#kakao-login-btn',
+								success: function(authObj) {
+									//alert(JSON.stringify(authObj));
+									alert("login");
+									Kakao.API.request({
+							          url: '/v2/user/me',
+							          success: function(res) {
+							            //alert(JSON.stringify(res));
+							            console.log(res);
+							            console.log(res.properties.nickname);
+							            var user = res.properties.nickname;
+							            location.href="/daniel/snsLogin/"+user;
+							          },
+							          fail: function(error) {
+							            alert(JSON.stringify(error));
+							          }
+							        });
+								},
+								fail: function(err) {
+									alert(JSON.stringify(err));
+								}
+							});
+							//]]>
+						</script>
+						<script type="text/javascript">
+							var naverLogin = new naver.LoginWithNaverId(
+								{
+									clientId: "LLixkeCZzCvTcpfwo_B4",
+									callbackUrl: "http://218.238.58.31:8080/daniel/m/loginCallback",
+									isPopup: false, /* 팝업을 통한 연동처리 여부 */
+									loginButton: {color: "green", type: 3, height: 33} /* 로그인 버튼의 타입을 지정 */
+								}
+							);
+							
+							/* 설정정보를 초기화하고 연동을 준비 */
+							naverLogin.init();
+							
+						</script>
 					</li>
 					
 			

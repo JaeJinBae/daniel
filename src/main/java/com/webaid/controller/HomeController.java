@@ -241,6 +241,13 @@ public class HomeController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(value = "/loginCallback", method = RequestMethod.GET)
+	public String loginCallback(Model model) {
+		logger.info("loginCallback GET");
+		
+		return "sub/loginCallback";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		logger.info("login GET");

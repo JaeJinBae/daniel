@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -97,6 +98,20 @@ public class MobileController {
 		
 		return "main/mIndex";
 	}*/
+	
+	@RequestMapping(value = "/snsLogin/{user}", method = RequestMethod.GET)
+	public String snsLogin(@PathVariable("user")String user, Model model, HttpSession session) {
+		logger.info("login GET");
+		session.setAttribute("id", user);
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "/loginCallback", method = RequestMethod.GET)
+	public String loginCallback(Model model) {
+		logger.info("loginCallback GET");
+		
+		return "mobile/mLoginCallback";
+	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String mLogin(Model model) {
