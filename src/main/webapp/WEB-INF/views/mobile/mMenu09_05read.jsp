@@ -550,7 +550,7 @@ $(function(){
 			<!-- 서브 비주얼영역 끝 -->
 
 			<!-- 게시판 타이틀 시작 -->
-			<div class="board-titl">
+			<div class="board-title">
 				<h5 style="line-height: 35px;">고객이 직접 추천하는<br>자필 치료후기</h5>
 			</div>
 			<!-- 게시판 타이틀 끝 -->

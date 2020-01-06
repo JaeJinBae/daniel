@@ -721,6 +721,14 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=40" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577427534679_event20191227_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">학생·학부모</p>
+							<h6 class="tit">학생·학부모 EVENT</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571735453246_191022-물광필-썸네일_resize.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -745,14 +753,14 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=30" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>	 --%>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/20191030_thumb.jpg) no-repeat center top;">
+					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/20191030_thumb.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
 							<p class="cap">수험생·학생</p>
 							<h6 class="tit">수험생·학생 EVENT</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>	
+					</li> --%>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb02.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>

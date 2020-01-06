@@ -519,9 +519,9 @@ function userIdPwChk(info){
 	            if(prev_url.indexOf("menu09_05") >= 0){
 	            	target_url = "menu09_05";
 	            }
-	            if(tartget_url == "menu09_03"){
+	            if(target_url == "menu09_03"){
 	            	location.href="${pageContext.request.contextPath}/m/menu09_03";
-	            }else if(tartget_url == "menu09_05"){
+	            }else if(target_url == "menu09_05"){
 	            	location.href="${pageContext.request.contextPath}/m/menu09_05";
 	            }else{
 	            	location.href="${pageContext.request.contextPath}/";
