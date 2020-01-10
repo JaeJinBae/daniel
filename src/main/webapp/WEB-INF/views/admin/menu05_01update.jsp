@@ -223,7 +223,7 @@ $(function(){
 													<a id="downBtn" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadAdvice">${item.upload_origin}</a>
 													<img id="upload" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
 													<input type="hidden" name="upload_origin" value="${item.upload_origin}">
-													<input type="hidden" name="upload_stored" value="${item.thumb_stored}">
+													<input type="hidden" name="upload_stored" value="${item.upload_stored}">
 												</div>
 											</c:otherwise>
 										</c:choose>
