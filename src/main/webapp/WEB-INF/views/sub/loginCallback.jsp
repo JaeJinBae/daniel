@@ -18,6 +18,7 @@
 		{
 			clientId: "LLixkeCZzCvTcpfwo_B4",
 			callbackUrl: "http://www.danielps.co.kr/login",
+			/* callbackUrl: "http://localhost:8080/daniel/login", */
 			isPopup: false,
 			callbackHandle: true
 			/* callback 페이지가 분리되었을 경우에 callback 페이지에서는 callback처리를 해줄수 있도록 설정합니다. */
@@ -32,7 +33,7 @@
 		naverLogin.getLoginStatus(function (status) {
 			if (status) {
 				/* (5) 필수적으로 받아야하는 프로필 정보가 있다면 callback처리 시점에 체크 */
-				var userName = naverLogin.user.getName();
+				var userName = naverLogin.user.id;
 				var menu = $("#menu").val();
 				window.location.replace("http://" + window.location.hostname + 
                            ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/snsLogin/"+userName+"?targeturl="+menu);

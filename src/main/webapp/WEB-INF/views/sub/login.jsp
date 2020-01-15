@@ -672,6 +672,7 @@ $(function(){
 								{
 									clientId: "LLixkeCZzCvTcpfwo_B4",
 									callbackUrl: "http://www.danielps.co.kr/loginCallback?purl="+target_url,
+									/* callbackUrl: "http://localhost:8080/daniel/loginCallback?purl="+target_url, */
 									isPopup: false, /* 팝업을 통한 연동처리 여부 */
 									loginButton: {color: "green", type: 3, height: 49} /* 로그인 버튼의 타입을 지정 */
 								}
