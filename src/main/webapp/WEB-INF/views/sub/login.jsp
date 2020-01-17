@@ -634,8 +634,6 @@ $(function(){
 							          url: '/v2/user/me',
 							          success: function(res) {
 							            //alert(JSON.stringify(res));
-							            console.log(res);
-							            console.log(res.properties.id);
 							            var user = res.properties.id;
 							            var prev_url = document.referrer;
 							            var target_url = "n";
@@ -645,7 +643,7 @@ $(function(){
 							            if(prev_url.indexOf("menu09_05") >= 0){
 							            	target_url = "menu09_05";
 							            }
-							            //location.href="/snsLogin/"+user+"?targeturl="+target_url;
+							            location.href="/snsLogin/"+user+"?targeturl="+target_url;
 							          },
 							          fail: function(error) {
 							            alert(JSON.stringify(error));
