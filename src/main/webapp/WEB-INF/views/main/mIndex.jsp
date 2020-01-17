@@ -537,7 +537,8 @@ $(function(){
 			<!-- 메인페이지 비주얼 슬라이드 시작 -->
 			<section class="visual-slide">
 				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img_m00.jpg" alt="흉터, 고민말고 다니엘"></div>
-				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img01.jpg" alt="흉터, 고민말고 다니엘"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img_m06.jpg" alt="흉터, 고민말고 다니엘"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img01.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img02.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
 				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img03.jpg" alt="흉터, 고민말고 다니엘"></div>
 				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img04.jpg" alt="흉터, 고민말고 다니엘"></div>

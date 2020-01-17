@@ -585,7 +585,8 @@ $(function(){
 			<!-- 메인페이지 비주얼 슬라이드 시작 -->
 			<section class="visual-slide">
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img_pc00.jpg"></div>
-				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img06.jpg"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg"></div> --%>
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg"></div>
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg"></div>
