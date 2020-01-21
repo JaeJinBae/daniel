@@ -366,7 +366,8 @@
 .before-after li.item span{position:relative; display:inline-block; float:left; width:50%; background-position:center center; background-repeat:no-repeat; background-color:#fafafa; background-size:cover;}
 .before-after li.item span:before {content:""; display:block; position:relative; padding-top:75%; z-index:-1;}
 .before-after li.item span.full{width:100% !important;}
-.before-after li.item span i{position:absolute; display:inline-block; width:120px; height:40px; line-height:40px; text-align:center; color:#fff; font-weight:700; font-size:17px;}
+/* .before-after li.item span i{position:absolute; display:inline-block; width:120px; height:40px; line-height:40px; text-align:center; color:#fff; font-weight:700; font-size:17px;} */
+.before-after li.item span i{position:absolute; display:inline-block; width:50px; /* height:40px; */ line-height:20px; text-align:center; color:#fff; font-weight:700; font-size:12px;}
 .before-after li.item span.before{}
 .before-after li.item span.before i{right:0; bottom:0; background:#b9975e;}
 .before-after li.item span.after{}
