@@ -541,7 +541,8 @@ $(function(){
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img01.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img02.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
 				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img03.jpg" alt="흉터, 고민말고 다니엘"></div>
-				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img04.jpg" alt="흉터, 고민말고 다니엘"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img04.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
+				<div><a href="${pageContext.request.contextPath}/m/menu09_01read?page=1&perPageNum=10&searchType&keyword=undefined&no=178"><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img_m07.jpg"></a></div>
 				<div><a href="${pageContext.request.contextPath}/m/menu09_07" title="예약하기"><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img05.jpg" alt="성형외과전문의 쁘띠"></a></div>
 			</section>
 			<!-- 메인페이지 비주얼 슬라이드 끝 -->
@@ -680,6 +681,14 @@ $(function(){
 							<p class="cap">학생·학부모</p>
 							<h6 class="tit">학생·학부모 EVENT</h6>
 							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1578020889887_event20200103_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">모델&후기모집</p>
+							<h6 class="tit">리얼셀카 모델&후기모집</h6>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571735453246_191022-물광필-썸네일_resize.jpg) no-repeat center top;">

@@ -567,6 +567,7 @@ $(function(){
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_005.jpg" alt=""></a></li>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=40"><img src="${pageContext.request.contextPath}/resources/img/main/2019winterPopup.jpg" alt=""></a></li>
+							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200103.jpg" alt=""></a></li> --%>
 							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191226.jpg" alt=""></a></li>
 							<%-- <li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191219.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li> --%>
@@ -589,7 +590,8 @@ $(function(){
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg"></div> --%>
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg"></div>
-				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg"></div> --%>
+				<div><a href="${pageContext.request.contextPath}/menu09_01read?page=1&perPageNum=10&searchType&keyword=undefined&no=178"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img_pc07.jpg"></a></div>
 				<div><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg"></a></div>
 			</section><!-- 메인페이지 비주얼 슬라이드 끝 -->
 
@@ -730,6 +732,14 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1578020889887_event20200103_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">모델&후기모집</p>
+							<h6 class="tit">리얼셀카 모델&후기모집</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571735453246_191022-물광필-썸네일_resize.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -745,7 +755,7 @@ $(function(){
 							<h6 class="tit">오리지널 이온자임 이벤트</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=37" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>	
+					</li>
 					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb04.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
