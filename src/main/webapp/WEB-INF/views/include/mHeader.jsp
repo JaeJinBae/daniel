@@ -52,7 +52,7 @@
 						<button data-text="동안 성형"><span>동안 성형</span></button>
 						<ul class="lnb-wrap">
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu03_01" data-text="안면거상술"><span>안면거상술</span></a></li>
-							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu03_02" data-text="이마내시경거상술"><span>이마내시경거상술</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu03_02" data-text="이마내시경거상술"><span>내시경이마거상술</span></a></li>
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu03_03" data-text="실리프팅/스킨보톡스"><span>실리프팅/스킨보톡스</span></a></li>
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu03_04" data-text="광채 지방이식"><span>광채 지방이식</span></a></li>
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu03_05" data-text="상안검/하안검"><span>상안검/하안검</span></a></li>

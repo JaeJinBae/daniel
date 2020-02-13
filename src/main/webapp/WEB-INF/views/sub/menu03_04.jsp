@@ -535,7 +535,7 @@ $(function(){
 							<button>광채 지방이식 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu03_01">안면거상술</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu03_02">이마내시경거상술</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_02">내시경이마거상술</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu03_03">실리프팅/스킨보톡스</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu03_04">광채 지방이식</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu03_05">상안검/하안검</a></li>
