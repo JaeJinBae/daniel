@@ -774,5 +774,6 @@ $(function(){
 	</div>
 	
 	<jsp:include page="../include/mQuickInquire.jsp"></jsp:include>
+	
 </body>
 </html>

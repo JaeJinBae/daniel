@@ -26,5 +26,5 @@
 #pop-wrap .pop-controller{position:relative; box-sizing:border-box; height:35px; line-height:35px; padding:0 10px; background:#111; text-align:right;}
 #pop-wrap .pop-controller label{position:absolute; text-align:left; display:block; color:#fff; font-size:13px; height:inherit; line-height:inherit; cursor:pointer;}
 #pop-wrap .pop-controller label input[type="checkbox"]{display:none;}
-#pop-wrap .pop-controller a{display:inline-block; color:#fff; font-size:15px; height:inherit; line-height:inherit; cursor:pointer;}
+#pop-wrap .pop-controller a{/* display:inline-block;  */color:#fff; font-size:15px; height:inherit; line-height:inherit; cursor:pointer;}
 /**********************************************************************/
