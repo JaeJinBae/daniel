@@ -43,7 +43,6 @@ $(function(){
 		var info = {"name":name, "phone":phone, "clinic_type":clinic_type, "content":content, "regdate":regdate, "access_url":access_url};
 		quickInquireRegister(info);
 	});
-	
 });
 </script>
 <a href="#wrap" class="top"> <!-- #wrap 닫기 -->	
@@ -396,17 +395,24 @@ $(function(){
 		<link href="${pageContext.request.contextPath}/resources/css/style.popup.css" rel="stylesheet" type="text/css">
 		<script>
 			$(function(){
-				var $Layer = "popup_layer_14";
-		
-				$("#"+$Layer).css({
-					"position" : "absolute",
-					"z-index" : "9000",
-					"top" : "0px",
-					"left" : "0px"
-				}).draggable({
-					cancel : ".title",
-					cursor : "move"
-				}).show();
+				
+				var now_url = window. location.href;
+				if(now_url.indexOf("menu")>-1){
+					$("#popup_layer_14").css("display","none");
+					console.log("sub");
+				}else{
+					var $Layer = "popup_layer_14";
+					
+					$("#"+$Layer).css({
+						"position" : "absolute",
+						"z-index" : "9000",
+						"top" : "0px",
+						"left" : "0px"
+					}).draggable({
+						cancel : ".title",
+						cursor : "move"
+					}).show();
+				}
 			});
 		</script>
 	</div>

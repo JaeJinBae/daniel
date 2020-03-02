@@ -26,7 +26,7 @@
 					</tr>
 					<tr>
 						<th>화</th>
-						<td>PM 2시 30분 ~ PM 9시 <span>(야간)</span></td>
+						<td>PM 2시 30분 ~ PM 7시</td>
 					</tr>
 					<tr>
 						<th>금</th>
