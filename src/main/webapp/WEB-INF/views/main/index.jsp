@@ -496,6 +496,7 @@ $(function(){
 	if(nowURL.indexOf("danielclinic.kr")!= -1){
 		location.href="${pageContext.request.contextPath}/landing";
 	}
+	$('img[usemap]').rwdImageMaps();
 });
 </script>
 </head>
@@ -623,7 +624,8 @@ $(function(){
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_001.png" alt=""></a></li>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=46"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200302.jpg" alt=""></a></li>
-							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200103.jpg" alt=""></a></li>
+							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=47"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200305.jpg" alt=""></a></li>
+							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200103.jpg" alt=""></a></li> --%>
 							<%-- <li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191219.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="https://www.youtube.com/channel/UCQAgZNghpCU1xC84yRL2Wqg"><img src="${pageContext.request.contextPath}/resources/img/main/popupYoutube20190916.jpg" alt=""></a></li> --%>
@@ -644,12 +646,24 @@ $(function(){
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img06.jpg"></div>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img01.jpg"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img02.jpg"></div> --%>
-				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg"></div> --%>
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img08.jpg" usemap="#img008"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img09.jpg" usemap="#img009"></div>
 				<div><a href="${pageContext.request.contextPath}/menu09_01read?page=1&perPageNum=10&searchType&keyword=undefined&no=178"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img_pc07.jpg"></a></div>
 				<div><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg"></a></div>
+				
 			</section><!-- 메인페이지 비주얼 슬라이드 끝 -->
-
+			<map id="img008" name="img008">
+					<area shape="rect" alt="" title="" coords="144,663,427,711" href="http://www.danielps.co.kr/menu04_02" target="" />
+					<area shape="rect" alt="" title="" coords="451,663,727,710" href="http://www.danielps.co.kr/menu04_06" target="" />
+					<area shape="rect" alt="" title="" coords="755,664,1028,709" href="http://www.danielps.co.kr/menu04_01" target="" />
+				</map>
+				<map id="img009" name="img009">
+					<area shape="rect" alt="" title="" coords="913,689,1188,733" href="http://www.danielps.co.kr/menu03_02" target="" />
+					<area shape="rect" alt="" title="" coords="1216,688,1493,733" href="http://www.danielps.co.kr/menu03_03" target="" />
+					<area shape="rect" alt="" title="" coords="1519,688,1793,733" href="http://www.danielps.co.kr/menu05_01" target="" />
+				</map>
 			<!-- 비주얼 타이틀 시작 -->
 			<section class="visual-title">
 				<img src="${pageContext.request.contextPath}/resources/img/main/visual_title.png" alt="DANIEL SPECIAL SKIN CLINC">
@@ -763,28 +777,12 @@ $(function(){
 				
 				<!-- 슬라이드 배너 시작 -->
 				<ul class="slider-banner">
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577697316330_20191231event_thumb.jpg) no-repeat center top;">
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1583114124940_다니엘-봄추천-이벤트-페이지-배너.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
-							<p class="cap">프리미엄 여드름 특화치료</p>
-							<h6 class="tit">GOLD PTT</h6>
-							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=44" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1575202099356_2019winterThumb.jpg) no-repeat center top;">
-						<div class="slider-banner-info">
-							<i class="kinds">EVENT</i>
-							<p class="cap">Winter</p>
+							<p class="cap">Spring</p>
 							<h6 class="tit">다니엘이 추천하는 상품</h6>
-							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=40" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
-						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577427534679_event20191227_thumb.jpg) no-repeat center top;">
-						<div class="slider-banner-info">
-							<i class="kinds">EVENT</i>
-							<p class="cap">학생·학부모</p>
-							<h6 class="tit">학생·학부모 EVENT</h6>
-							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=46" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1578020889887_event20200103_thumb.jpg) no-repeat center top;">
@@ -793,6 +791,30 @@ $(function(){
 							<p class="cap">모델&후기모집</p>
 							<h6 class="tit">리얼셀카 모델&후기모집</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1583389229331_[다니엘성형외과]면역력주사_썸네일.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">면역력주사</p>
+							<h6 class="tit">면역력주사 EVENT</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=47" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577697316330_20191231event_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">프리미엄 여드름 특화치료</p>
+							<h6 class="tit">GOLD PTT</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=44" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577427534679_event20191227_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">학생·학부모</p>
+							<h6 class="tit">학생·학부모 EVENT</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571735453246_191022-물광필-썸네일_resize.jpg) no-repeat center top;">

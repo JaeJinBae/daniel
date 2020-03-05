@@ -488,6 +488,7 @@ $(function(){
 	if(nowURL.indexOf("danielclinic.kr")!= -1){
 		location.href="${pageContext.request.contextPath}/landing";
 	}
+	$('img[usemap]').rwdImageMaps();
 });
 </script>
 </head>
@@ -540,13 +541,25 @@ $(function(){
 				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img_m06.jpg" alt="흉터, 고민말고 다니엘"></div>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img01.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img02.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
-				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img03.jpg" alt="흉터, 고민말고 다니엘"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img03.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img04.jpg" alt="흉터, 고민말고 다니엘"></div> --%>
+				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img_m08.jpg" alt="흉터, 고민말고 다니엘" usemap="#img008"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img_m09.jpg" alt="흉터, 고민말고 다니엘" usemap="#img009"></div>
 				<div><a href="${pageContext.request.contextPath}/m/menu09_01read?page=1&perPageNum=10&searchType&keyword=undefined&no=178"><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img_m07.jpg"></a></div>
 				<div><a href="${pageContext.request.contextPath}/m/menu09_07" title="예약하기"><img src="${pageContext.request.contextPath}/resources/img/m/main/slide_img05.jpg" alt="성형외과전문의 쁘띠"></a></div>
 			</section>
 			<!-- 메인페이지 비주얼 슬라이드 끝 -->
-		
+			<map id="img008" name="img008">
+				<area shape="rect" alt="" title="" coords="43,469,213,496" href="http://www.danielps.co.kr/m/menu04_02" target="" />
+				<area shape="rect" alt="" title="" coords="233,469,405,496" href="http://www.danielps.co.kr/m/menu04_06" target="" />
+				<area shape="rect" alt="" title="" coords="420,468,595,497" href="http://www.danielps.co.kr/m/menu04_01" target="" />
+			</map>
+			<map id="img009" name="img009">
+				<area shape="rect" alt="" title="" coords="42,470,215,497" href="http://www.danielps.co.kr/m/menu03_02" target="" />
+				<area shape="rect" alt="" title="" coords="231,469,404,496" href="http://www.danielps.co.kr/m/menu03_03" target="" />
+				<area shape="rect" alt="" title="" coords="422,469,594,497" href="http://www.danielps.co.kr/menu05_01" target="" />
+			</map>
+			
 			<div class="visual-title">
 				<img src="${pageContext.request.contextPath}/resources/img/m/main/visual_title01.png" alt="">
 			</div>
@@ -667,6 +680,22 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=46" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1578020889887_event20200103_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">모델&후기모집</p>
+							<h6 class="tit">리얼셀카 모델&후기모집</h6>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1583389229331_[다니엘성형외과]면역력주사_썸네일.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">면역력주사</p>
+							<h6 class="tit">면역력주사 EVENT</h6>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=47" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577697316330_20191231event_thumb.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -683,14 +712,7 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1578020889887_event20200103_thumb.jpg) no-repeat center top;">
-						<div class="slider-banner-info">
-							<i class="kinds">EVENT</i>
-							<p class="cap">모델&후기모집</p>
-							<h6 class="tit">리얼셀카 모델&후기모집</h6>
-							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
-						</div>
-					</li>
+					
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571735453246_191022-물광필-썸네일_resize.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
