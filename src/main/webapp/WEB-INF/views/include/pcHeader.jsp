@@ -57,6 +57,7 @@
 			<li class="gnb ">
 				<a href="${pageContext.request.contextPath}/menu05_01" data-text="리프팅 클리닉"><span>리프팅 클리닉</span></a>
 				<ul class="lnb-wrap">
+					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_06" data-text="울쎄라"><span>울쎄라</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_01" data-text="써마지FLX"><span>써마지FLX</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_02" data-text="코레지 리프팅"><span>코레지 리프팅</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_03" data-text="슈링크 리프팅"><span>슈링크 리프팅</span></a></li>

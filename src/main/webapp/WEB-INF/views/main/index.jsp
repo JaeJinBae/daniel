@@ -809,14 +809,6 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=44" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577427534679_event20191227_thumb.jpg) no-repeat center top;">
-						<div class="slider-banner-info">
-							<i class="kinds">EVENT</i>
-							<p class="cap">학생·학부모</p>
-							<h6 class="tit">학생·학부모 EVENT</h6>
-							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=43" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
-						</div>
-					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571735453246_191022-물광필-썸네일_resize.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>

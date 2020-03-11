@@ -481,7 +481,7 @@ keyframes fa-spin { 0%{
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(5)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(5) > .lnb-wrap > li:nth-child(5)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(5) > .lnb-wrap > li:nth-child(6)").addClass("active");
 });
 </script>
 </head>
@@ -533,6 +533,7 @@ $(function(){
 						<li class="gnb">
 							<button>리프팅 레이저 ▼</button>
 							<ul>
+								<li><a href="${pageContext.request.contextPath}/menu05_06">울쎄라</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu05_01">써마지FLX</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu05_02">코레지 리프팅</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu05_03">슈링크 리프팅</a></li>

@@ -74,10 +74,12 @@
 					<li class="gnb ">
 						<button data-text="리프팅 클리닉"><span>리프팅 클리닉</span></button>
 						<ul class="lnb-wrap">
-							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_01" data-text="코레지 리프팅"><span>코레지 리프팅</span></a></li>
-							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_02" data-text="슈링크 리프팅"><span>슈링크 리프팅</span></a></li>
-							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_03" data-text="필로가135주사"><span>필로가135주사</span></a></li>
-							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_04" data-text="리프팅 레이저"><span>리프팅 레이저</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_06" data-text="울쎄라"><span>울쎄라</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_01" data-text="써마지FLX"><span>코레지 리프팅</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_02" data-text="코레지 리프팅"><span>코레지 리프팅</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_03" data-text="슈링크 리프팅"><span>슈링크 리프팅</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_04" data-text="필로가135주사"><span>필로가135주사</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu05_05" data-text="리프팅 레이저"><span>리프팅 레이저</span></a></li>
 						</ul>
 					</li>
 					<li class="gnb ">

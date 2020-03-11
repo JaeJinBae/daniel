@@ -685,6 +685,13 @@ public class HomeController {
 		return "sub/menu05_05";
 	}
 	
+	@RequestMapping(value = "/menu05_06", method = RequestMethod.GET)
+	public String menu05_06(Model model) {
+		logger.info("menu05_06 GET");
+		
+		return "sub/menu05_06";
+	}
+	
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
 	public String menu06_01(Model model) {
 		logger.info("menu06_01 GET");
