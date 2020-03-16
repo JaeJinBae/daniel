@@ -79,6 +79,7 @@ $(function(){
 		<li class="pnb eqm1_li"><a href="eqm1_16">시크릿 레이저 RF2.1</a></li>
 		<li class="pnb eqm1_li"><a href="eqm1_17">코레지</a></li>
 		<li class="pnb eqm1_li"><a href="eqm1_18">써마지 FLX</a></li>
+		<li class="pnb eqm1_li"><a href="eqm1_19">울쎄라</a></li>
 		
 		<!-- 관리기기 리스트 -->
 		<li class="pnb eqm2_li"><a href="eqm2_1">노라보떼</a></li>
@@ -369,6 +370,23 @@ $(function(){
 			</p>
 			<b class="tit-small">적용증</b>
 			<span class="hashtag">피부톤개선, 입가주른 개선, 타이트닝, 리프팅, 피부재생</span>
+			<i class="stamp">
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp01.png" alt="오리지널 수입장비"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp02.png" alt="2017 최신형"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp03.png" alt="창원최초"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp04.png" alt="창원유일"/-->
+			</i>
+		</div>
+		
+		<div class="equipment-item eqm1_item bg53335">
+			<h6 class="tit">울쎄라</h6>
+			<p class="con">
+				울쎄라는 고강도 집적초음파를 이용하여 피부 표면은 건드리지 않고 3~4.5mm 깊이의 피하지방층과 표층근건막계층에
+				열에너지를 전달하여 피부 재생세포를 자극해 시술 후 6개월동안 지속적으로 콜라겐과 탄력섬유를 재생시켜 탄력을 증가시켜주는 시술입니다.
+		
+			</p>
+			<b class="tit-small">적용증</b>
+			<span class="hashtag">효과적인 주름개선, 피부재생 탄력증진</span>
 			<i class="stamp">
 				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp01.png" alt="오리지널 수입장비"/-->
 				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp02.png" alt="2017 최신형"/-->
