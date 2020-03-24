@@ -862,8 +862,8 @@ $(function(){
 		<!-- 고정 배너(4개) 시작 -->
 		<ul class="fixed-banner">
 			
-			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/VmuY3STytl0" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
-			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/K6U2iNSXk9w" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
+			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/O8MUYo35mMk" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
+			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/lB1zVqGK5WU" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/igalUkax9XQ" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/Gq64xFHBMic" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 			<%-- <li><a href="${pageContext.request.contextPath}/menu06_04" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner01.jpg" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a></li>

@@ -770,8 +770,8 @@ $(function(){
 
 			<section id="daniel-banner">
 				<ul class="inner">
-					<li><iframe width="177" height="171" src="https://www.youtube.com/embed/VmuY3STytl0" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
-					<li><iframe width="177" height="171" src="https://www.youtube.com/embed/K6U2iNSXk9w" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
+					<li><iframe width="177" height="171" src="https://www.youtube.com/embed/O8MUYo35mMk" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
+					<li><iframe width="177" height="171" src="https://www.youtube.com/embed/lB1zVqGK5WU" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 					<li><iframe width="177" height="171" src="https://www.youtube.com/embed/igalUkax9XQ" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 					<li><iframe width="177" height="171" src="https://www.youtube.com/embed/Gq64xFHBMic" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 					<%-- <li><a href="${pageContext.request.contextPath}/m/menu06_04" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/m/main/daniel_banner01.png" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a></li>
