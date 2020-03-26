@@ -21,12 +21,8 @@
 				<caption>진료시간 안내 테이블</caption>
 				<tbody>
 					<tr>
-						<th>월·수·목</th>
+						<th style="width:65px;">월·화·수·목</th>
 						<td>AM 10시 ~ PM 7시</td>
-					</tr>
-					<tr>
-						<th>화</th>
-						<td>PM 2시 30분 ~ PM 7시</td>
 					</tr>
 					<tr>
 						<th>금</th>
@@ -42,6 +38,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<br><br>
 			<p class="cap">
 				※ 토요일은 점심시간 없이 진료합니다.<br>
 				※ 일요일 및 공휴일은 휴진입니다.

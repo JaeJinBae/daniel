@@ -567,10 +567,7 @@ $(function(){
 						<div class="inner">
 							<ul class="time">
 								<li>
-									<b>월·수·목</b><span>오전 10시 – 오후 7시</span>
-								</li>
-								<li>
-									<b>화</b><span>오후 2시 30분 – 저녁 7시</span>
+									<b>월·화·수·목</b><span>오전 10시 – 오후 7시</span>
 								</li>
 								<li>
 									<b>금</b><span>오전 10시 – 저녁 9시 (야간)</span>
