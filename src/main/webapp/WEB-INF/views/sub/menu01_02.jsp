@@ -608,17 +608,15 @@ $(function(){
 				<div class="inner tar">
 					<div class="history">
 						<i class="position">다니엘 피부과 원장</i>
-						<h6 class="tit">신홍일</h6>
+						<h6 class="tit">곽찬이</h6>
 						<p class="con">
-						
-			                진해 해양의료원 과장<br>
-			                안동의료원 과장<br><br>
+							강남LK성형외과 원장<br><br>
 							
-			        		대한비만미용치료학회<br>
-			                대한미용성형레이져의학회<br>
-			                대한피부모발학회<br>
-			                대한여드름학회<br><br>
-			
+							대한성형외과학회 정회원<br>
+							대한미용성형외과학회 정회원<br>
+							대한미세수술학회 정회원<br>
+							대한두개안면성형외과학회 정회원<br>
+							부산 최소침습성형임상연구회원<br><br>
 						</p>
 					</div>
 				</div>
