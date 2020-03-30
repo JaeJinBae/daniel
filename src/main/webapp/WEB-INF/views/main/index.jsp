@@ -624,7 +624,7 @@ $(function(){
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_001.png" alt=""></a></li>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=46"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200302.jpg" alt=""></a></li>
-							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=47"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200305.jpg" alt=""></a></li>
+							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=48"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200330.jpg" alt=""></a></li>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200103.jpg" alt=""></a></li> --%>
 							<%-- <li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191219.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li> --%>
@@ -777,6 +777,14 @@ $(function(){
 				
 				<!-- 슬라이드 배너 시작 -->
 				<ul class="slider-banner">
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1585558871642_eventThumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">특화시술</p>
+							<h6 class="tit">곽찬이 원장 추천 특화시술</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=48" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1583114124940_다니엘-봄추천-이벤트-페이지-배너.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -840,7 +848,7 @@ $(function(){
 							<h6 class="tit">수험생·학생 EVENT</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li> --%>
+					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb02.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -848,7 +856,7 @@ $(function(){
 							<h6 class="tit">웨딩 D-Day 패키지</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=27" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>
+					</li> --%>
 					
 				</ul><!-- 슬라이드 배너 끝 -->
 			</section>
@@ -861,7 +869,6 @@ $(function(){
 	<div class="daniel-banner">
 		<!-- 고정 배너(4개) 시작 -->
 		<ul class="fixed-banner">
-			
 			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/O8MUYo35mMk" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/lB1zVqGK5WU" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/igalUkax9XQ" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>

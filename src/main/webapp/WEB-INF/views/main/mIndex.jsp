@@ -672,6 +672,14 @@ $(function(){
 				<!-- 비주얼 타이틀 끝 -->
 				<!-- 슬라이드 배너 시작 -->
 				<ul class="slider-banner">
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1585558871642_eventThumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">특화시술</p>
+							<h6 class="tit">곽찬이 원장 추천 특화시술</h6>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=48" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1583114124940_다니엘-봄추천-이벤트-페이지-배너.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -743,7 +751,7 @@ $(function(){
 							<h6 class="tit">필로가 주사 X 포어타이탄</h6>
 							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=36" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li> --%>
+					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb02.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -751,7 +759,7 @@ $(function(){
 							<h6 class="tit">웨딩 D-Day 패키지</h6>
 							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=27" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>
+					</li> --%>
 			
 					<!--
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb03.jpg) no-repeat center top;">
