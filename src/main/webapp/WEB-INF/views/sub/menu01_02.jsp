@@ -582,9 +582,9 @@ $(function(){
 						<i class="position">다니엘 성형외과 원장</i>
 						<h6 class="tit">곽찬이</h6>
 						<p class="con">
+							성형외과 전문의<br>
 							강남LK성형외과 원장<br><br>
 							
-							성형외과 전문의<br>
 							대한성형외과학회 정회원<br>
 							대한미용성형외과학회 정회원<br>
 							대한미세수술학회 정회원<br>
