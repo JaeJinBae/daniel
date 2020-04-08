@@ -535,7 +535,7 @@ $(function(){
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu06_01">멜로디 눈성형</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu06_02">눈매교정</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu06_03">트임성형</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu06_03">트임성형/복원술</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu06_04">리듬 코성형</a></li>				
 							</ul>
 						</li>

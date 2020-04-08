@@ -87,7 +87,7 @@
 						<ul class="lnb-wrap">
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu06_01" data-text="멜로디 눈성형"><span>멜로디 눈성형</span></a></li>
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu06_02" data-text="눈매교정"><span>눈매교정</span></a></li>
-							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu06_03" data-text="트임성형"><span>트임성형</span></a></li>
+							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu06_03" data-text="트임성형/복원술"><span>트임성형</span></a></li>
 							<li class="lnb "><a href="${pageContext.request.contextPath}/m/menu06_04" data-text="리듬 코성형"><span>리듬 코성형</span></a></li>
 						</ul>
 					</li>

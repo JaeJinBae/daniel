@@ -624,7 +624,8 @@ $(function(){
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_001.png" alt=""></a></li>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=46"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200302.jpg" alt=""></a></li>
-							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=48"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200330.jpg" alt=""></a></li>
+							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20200408.jpg" alt=""></a></li>
+							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=48"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200330.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200103.jpg" alt=""></a></li> --%>
 							<%-- <li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191219.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li> --%>
