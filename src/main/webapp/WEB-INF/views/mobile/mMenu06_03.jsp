@@ -568,6 +568,16 @@ $(function(){
 					<img src="${pageContext.request.contextPath}/resources/img/m/contents/519_img_07.png" alt="" usemap="pCode-519-07">
 				</div>
 			</div>
+			<div class="sub-contents pCode-519-08">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/519_img_08.png" alt="" usemap="pCode-519-08">
+				</div>
+			</div>
+			<div class="sub-contents pCode-519-09">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/519_img_09.png" alt="" usemap="pCode-519-09">
+				</div>
+			</div>
 			
 			
 			<div id="caoution">
