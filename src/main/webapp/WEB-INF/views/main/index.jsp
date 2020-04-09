@@ -611,6 +611,7 @@ $(function(){
 					});
 				</script>
 			</div>
+			
 		
 			<!-- 메인페이지 슬라이드 팝업 영역 시작 -->
 			<div id="pop_banner">
@@ -621,7 +622,7 @@ $(function(){
 						<a href="#" class="pop-close-btn"></a>
 					</div>
 					<div class="con">
-						<ul>
+						<ul> 
 							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20200408.jpg" alt=""></a></li>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_001.png" alt=""></a></li> --%>
 							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=46"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200302.jpg" alt=""></a></li>
