@@ -482,6 +482,9 @@ keyframes fa-spin { 0%{
 $(function(){
 	$("#header > #gnb > .inner > ul > li:first-child").addClass("active");
 	$("#header > #gnb > .inner > ul > li:first-child > .lnb-wrap > li:first-child").addClass("active");
+	
+	$('img[usemap]').rwdImageMaps();
+
 });
 </script>
 </head>
@@ -550,7 +553,20 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode49900">
+			<div class="sub-contents">
+				<img src="${pageContext.request.contextPath}/resources/img/contents/01_01_img_01.jpg">
+				<img src="${pageContext.request.contextPath}/resources/img/contents/01_01_img_02.jpg">
+				<img src="${pageContext.request.contextPath}/resources/img/contents/01_01_img_03.jpg" usemap="#img03">
+				<img src="${pageContext.request.contextPath}/resources/img/contents/01_01_img_04.jpg">
+				<img src="${pageContext.request.contextPath}/resources/img/contents/01_01_img_05.jpg">
+				<img src="${pageContext.request.contextPath}/resources/img/contents/01_01_img_06.jpg" usemap="#img06">
+				<img src="${pageContext.request.contextPath}/resources/img/contents/01_01_img_07.jpg">
+				
+				<map id="img03" name="img03"><area shape="rect" alt="" title="" coords="382,319,527,355" href="${pageContext.request.contextPath}/menu09_05" target="" /></map>
+				<map id="img06" name="img06"><area shape="rect" alt="" title="" coords="1158,329,1222,395" href="${pageContext.request.contextPath}/menu01_04" target="" /></map>
+			</div>
+			
+			<%-- <div class="sub-contents pcode49900">
 				<i class="num">01</i>
 				<h6 class="tit">성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과</h6>
 				<p class="con">
@@ -641,7 +657,7 @@ $(function(){
 					담당 원장님의 진료와 더불어 전담 관리사가 관리하기 때문에<br>
 					고객의 작은 변화에도 민감하게 반응하여 고객의 컨디션에 맞게 시술과 관리가 커스텀되어 진행됩니다. 
 				</p>
-			</div>
+			</div> --%>
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
 	
