@@ -556,13 +556,68 @@ $(function(){
 		<!-- 콘텐츠 영역 시작 (메인일 경우 #main-container / 서브일 경우 #sub-container) -->
 		<section id="main-container">
 		<!--  닫기 [위치 : include_web_footer.html ]  -->
-		
+			<div id="popup_layer_15" class="popup-wrap-box ui-draggable ui-draggable-handle">
+				<!-- 레이어 팝업 시작 -->
+				<div id="pop-wrap">
+					<div class="pop-inner">
+						<div class="pop-container">
+							<div><a href="http://www.danielps.co.kr/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=52"><img alt="" src="${pageContext.request.contextPath}/resources/uploadEvent/0d1fb6ac-d4d4-4910-9afa-3cba267cfb5d_[다니엘성형외과]여름방학이벤트_피부부문(최종).jpg"></a></div>
+						</div>
+						<div class="pop-controller">
+							<label><input type="checkbox" onclick="close_popup('popup_layer_15','15','7','Y')"> <svg class="svg-inline--fa fa-times fa-w-12" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path></svg><!-- <i class="fas fa-times"></i> --> 일주일간 공지창 띄우지 않음</label>
+							<a href="javascript:;" onclick="Layer_Close('', 'popup_layer_15')">
+								<svg class="svg-inline--fa fa-times-circle fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="times-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path></svg><!-- <i class="fas fa-times-circle"></i> -->
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- 레이어 팝업 끝 -->
+				
+				<script>
+					function close_popup(id, PIdx, expire, user){
+						expire = (expire == "") ? 1 : expire;
+				
+						if(user == "Y")		set_cookie(id, "done", 24 * expire);
+				
+						if(id)	Layer_Close('', id);
+						else	Layer_Close();
+					}
+				
+					function set_cookie(name, value, expire) {
+						var today = new Date();
+						today.setTime(today.getTime() + (60 * 60 * 1000 * expire)); // hours
+						//today.setDate(today.getDate() + expire); // days
+				
+						if (expire == null) var expires_str = "";
+						else var expires_str = "; expires=" + today.toGMTString() + ";";
+						document.cookie = name + "=" + escape(value) + "; path=/" + expires_str;
+					}
+				</script>
+				<link href="${pageContext.request.contextPath}/resources/css/style.popup.css" rel="stylesheet" type="text/css">
+				<script>
+					$(function(){
+						var $Layer = "popup_layer_15";
+				
+						$("#"+$Layer).css({
+							"position" : "absolute",
+							"z-index" : "9000",
+							"top" : "0px",
+							"left" : "0px"
+						}).draggable({
+							cancel : ".title",
+							cursor : "move"
+						}).show();
+					});
+				</script>
+			</div>
+			
+			
 			<div id="popup_layer_14" class="popup-wrap-box ui-draggable ui-draggable-handle">
 				<!-- 레이어 팝업 시작 -->
 				<div id="pop-wrap">
 					<div class="pop-inner">
 						<div class="pop-container">
-							<div><img alt="" src="${pageContext.request.contextPath}/resources/popup/popup20200228.jpg"></div>
+							<div><a href="http://www.danielps.co.kr/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=53"><img alt="" src="${pageContext.request.contextPath}/resources/uploadEvent/cbac2ca0-7461-480f-a71d-790ee97e3155_[다니엘성형외과]여름방학이벤트_성형부문(최종).jpg"></a></div>
 						</div>
 						<div class="pop-controller">
 							<label><input type="checkbox" onclick="close_popup('popup_layer_14','14','7','Y')"> <svg class="svg-inline--fa fa-times fa-w-12" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path></svg><!-- <i class="fas fa-times"></i> --> 일주일간 공지창 띄우지 않음</label>
@@ -611,7 +666,6 @@ $(function(){
 					});
 				</script>
 			</div>
-			
 		
 			<!-- 메인페이지 슬라이드 팝업 영역 시작 -->
 			<div id="pop_banner">
@@ -622,11 +676,11 @@ $(function(){
 						<a href="#" class="pop-close-btn"></a>
 					</div>
 					<div class="con">
-						<ul> 
-							<li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20200408.jpg" alt=""></a></li>
+						<ul>
+							<li><a href="http://www.danielps.co.kr/menu09_01read?page=1&perPageNum=10&searchType&keyword=undefined&no=191"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200513_resize.jpg" alt=""></a></li>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/ban_pop_main_001.png" alt=""></a></li> --%>
-							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=46"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200302.jpg" alt=""></a></li>
-							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=48"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200330.jpg" alt=""></a></li>
+							<li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=49"><img src="${pageContext.request.contextPath}/resources/img/main/main_20200601_se.jpg" alt=""></a></li>
+							<li><a href="http://www.danielps.co.kr/menu09_01read?page=1&perPageNum=10&searchType&keyword=undefined&no=193"><img src="${pageContext.request.contextPath}/resources/img/main/main_popup20200608.jpg" alt=""></a></li>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45"><img src="${pageContext.request.contextPath}/resources/img/main/popup20200103.jpg" alt=""></a></li> --%>
 							<%-- <li><a href=""><img src="${pageContext.request.contextPath}/resources/img/main/popup20191219.jpg" alt=""></a></li> --%>
 							<%-- <li><a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39"><img src="${pageContext.request.contextPath}/resources/img/main/popup20191030.jpg" alt=""></a></li> --%>
@@ -651,7 +705,8 @@ $(function(){
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img03.jpg"></div> --%>
 				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img04.jpg"></div> --%>
 				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img08.jpg" usemap="#img008"></div>
-				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img09.jpg" usemap="#img009"></div>
+				<%-- <div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img09.jpg" usemap="#img009"></div> --%>
+				<div><img src="${pageContext.request.contextPath}/resources/img/main/slide_img10.jpg"></div>
 				<div><a href="${pageContext.request.contextPath}/menu09_01read?page=1&perPageNum=10&searchType&keyword=undefined&no=178"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img_pc07.jpg"></a></div>
 				<div><a href="${pageContext.request.contextPath}/menu09_07"><img src="${pageContext.request.contextPath}/resources/img/main/slide_img05.jpg"></a></div>
 				
@@ -779,20 +834,52 @@ $(function(){
 				
 				<!-- 슬라이드 배너 시작 -->
 				<ul class="slider-banner">
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1585558871642_eventThumb.jpg) no-repeat center top;">
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/20200711_event.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i> 
+							<p class="cap">여름방학</p>
+							<h6 class="tit">여름방학 이벤트 [성형]</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=53" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/20200711_event.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i> 
+							<p class="cap">여름방학</p>
+							<h6 class="tit">여름방학 이벤트 [피부]</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=52" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/main_event_slider_thumb20200609.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i> 
+							<p class="cap">다니엘 6주년</p>
+							<h6 class="tit">다니엘 개원 6주년 이벤트</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=50" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1590975065204_다니엘-여름추천-이벤트-페이지-배너.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">Summer</p>
+							<h6 class="tit">다니엘이 추천하는 상품</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=49" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1585558871642_eventThumb.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
 							<p class="cap">특화시술</p>
 							<h6 class="tit">곽찬이 원장 추천 특화시술</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=48" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1583114124940_다니엘-봄추천-이벤트-페이지-배너.jpg) no-repeat center top;">
+					</li> --%>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb02.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
-							<p class="cap">Spring</p>
-							<h6 class="tit">다니엘이 추천하는 상품</h6>
-							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=46" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<p class="cap">맞춤웨딩프로그램</p>
+							<h6 class="tit">웨딩 D-Day 패키지</h6>
+							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=27" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1578020889887_event20200103_thumb.jpg) no-repeat center top;">
@@ -803,14 +890,14 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=45" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1583389229331_[다니엘성형외과]면역력주사_썸네일.jpg) no-repeat center top;">
+					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1583389229331_[다니엘성형외과]면역력주사_썸네일.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
 							<p class="cap">면역력주사</p>
 							<h6 class="tit">면역력주사 EVENT</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=47" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>
+					</li> --%>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1577697316330_20191231event_thumb.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -827,14 +914,14 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=38" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571735415243_191022-이온자임-썸네일_resize.jpg) no-repeat center top;">
+					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1571735415243_191022-이온자임-썸네일_resize.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
 							<p class="cap">오리니널 이온자임</p>
 							<h6 class="tit">오리지널 이온자임 이벤트</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=37" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>
+					</li> --%>
 					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb04.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
@@ -850,15 +937,8 @@ $(function(){
 							<h6 class="tit">수험생·학생 EVENT</h6>
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=39" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/thumb02.jpg) no-repeat center top;">
-						<div class="slider-banner-info">
-							<i class="kinds">EVENT</i>
-							<p class="cap">맞춤웨딩프로그램</p>
-							<h6 class="tit">웨딩 D-Day 패키지</h6>
-							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=27" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
-						</div>
 					</li> --%>
+					
 					
 				</ul><!-- 슬라이드 배너 끝 -->
 			</section>

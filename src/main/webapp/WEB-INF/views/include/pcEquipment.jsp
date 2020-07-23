@@ -80,6 +80,7 @@ $(function(){
 		<li class="pnb eqm1_li"><a href="eqm1_17">코레지</a></li>
 		<li class="pnb eqm1_li"><a href="eqm1_18">써마지 FLX</a></li>
 		<li class="pnb eqm1_li"><a href="eqm1_19">울쎄라</a></li>
+		<li class="pnb eqm1_li"><a href="eqm1_20">아꼴레이드 레이저</a></li>
 		
 		<!-- 관리기기 리스트 -->
 		<li class="pnb eqm2_li"><a href="eqm2_1">노라보떼</a></li>
@@ -395,6 +396,21 @@ $(function(){
 			</i>
 		</div>
 		
+		<div class="equipment-item eqm1_item bg53336">
+			<h6 class="tit">아꼴레이드 레이저</h6>
+			<p class="con">
+				아꼴레이드 레이저는 멜라닌만을 선택적으로 파괴시켜 재발하기 쉬운 기미 및 잡티, 오타 반점 등의 색소성 병변 치료에 높은 효과가 있습니다.
+		
+			</p>
+			<b class="tit-small">적용증</b>
+			<span class="hashtag">스킨화이트닝, 기미, 주근깨, 잡티, 검버섯, 오타반점 등</span>
+			<i class="stamp">
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp01.png" alt="오리지널 수입장비"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp02.png" alt="2017 최신형"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp03.png" alt="창원최초"/-->
+				<!--img src="${pageContext.request.contextPath}/resources/img/contents/stamp04.png" alt="창원유일"/-->
+			</i>
+		</div>
 		
 		<!-- 관리기기 상세 -->
 		<div class="equipment-item eqm2_item bg53316">

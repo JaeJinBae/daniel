@@ -625,7 +625,7 @@ $(function(){
 			<div class="sub-contents pcode50004">
 				<div class="banner-title">
 					<h6 class="tit">끊임없이 연구하고 소통하는 다니엘</h6>
-					<p class="con">다니엘의 4인의 전문 의료진과 함께 합니다</p>
+					<p class="con">다니엘의 전문 의료진과 함께 합니다</p>
 				</div>
 			</div>
 			
