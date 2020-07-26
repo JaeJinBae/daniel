@@ -954,7 +954,7 @@ $(function(){
 			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/O8MUYo35mMk" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/lB1zVqGK5WU" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/igalUkax9XQ" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
-			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/Gq64xFHBMic" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
+			<li><iframe width="505" height="257" src="https://www.youtube.com/embed/TkToE3rn-jY" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe></li>
 			<%-- <li><a href="${pageContext.request.contextPath}/menu06_04" title="다니엘 리듬 코성형"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner01.jpg" alt="자연스러운 아름다움, 다니엘 리듬 코성형"></a></li>
 			<li><a href="${pageContext.request.contextPath}/menu04_05" title="모공＆흉터치료"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner02.jpg" alt="여드름 흉터와 모공 흔적없이 지워드립니다. 모공 및 흉터치료"></a></li>
 			<li><a href="${pageContext.request.contextPath}/menu04_01" title="다니엘 복합레이저"><img src="${pageContext.request.contextPath}/resources/img/main/daniel_banner03.jpg" alt="말 뿐인 맞춤시술과 비교를 거부합니다. 다니엘 복합레이저"></a></li>

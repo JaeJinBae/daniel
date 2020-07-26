@@ -594,6 +594,13 @@ public class HomeController {
 		return "sub/menu03_05";
 	}
 	
+	@RequestMapping(value = "/menu03_06", method = RequestMethod.GET)
+	public String menu03_06(Model model) {
+		logger.info("menu03_06 GET");
+		
+		return "sub/menu03_06";
+	}
+	
 	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
 	public String menu04_01(Model model) {
 		logger.info("menu04_01 GET");
@@ -753,6 +760,13 @@ public class HomeController {
 		logger.info("menu07_05 GET");
 		
 		return "sub/menu07_05";
+	}
+	
+	@RequestMapping(value = "/menu07_06", method = RequestMethod.GET)
+	public String menu07_06(Model model) {
+		logger.info("menu07_06 GET");
+		
+		return "sub/menu07_06";
 	}
 	
 	@RequestMapping(value = "/menu08_01", method = RequestMethod.GET)

@@ -39,6 +39,7 @@
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu03_03" data-text="실리프팅/스킨보톡스"><span>실리프팅/스킨보톡스</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu03_04" data-text="광채 지방이식"><span>광채 지방이식</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu03_05" data-text="상안검/하안검"><span>상안검/하안검</span></a></li>
+					<li class="lnb "><a href="${pageContext.request.contextPath}/menu03_06" data-text="성형 VIP 프로그램"><span>성형 VIP 프로그램</span></a></li>
 				</ul>
 			</li>
 			<li class="gnb ">
@@ -82,6 +83,7 @@
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu07_03" data-text="리포리바인"><span>리포리바인</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu07_04" data-text="팻다운 주사"><span>팻다운 주사</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu07_05" data-text="바디슈링크"><span>바디슈링크</span></a></li>
+					<li class="lnb "><a href="${pageContext.request.contextPath}/menu07_06" data-text="여유증 교정"><span>여유증 교정</span></a></li>
 				</ul>
 			</li>
 			<li class="gnb ">

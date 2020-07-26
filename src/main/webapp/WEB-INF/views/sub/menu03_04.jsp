@@ -539,6 +539,7 @@ $(function(){
 								<li><a href="${pageContext.request.contextPath}/menu03_03">실리프팅/스킨보톡스</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu03_04">광채 지방이식</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu03_05">상안검/하안검</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu03_06">성형 VIP 프로그램</a></li>
 							</ul>
 						</li>
 					</ul>

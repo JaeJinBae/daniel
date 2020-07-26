@@ -357,6 +357,13 @@ public class MobileController {
 		return "mobile/mMenu03_05";
 	}
 	
+	@RequestMapping(value = "/menu03_06", method = RequestMethod.GET)
+	public String mMenu03_06(Model model) {
+		logger.info("mMenu03_06 GET");
+		
+		return "mobile/mMenu03_06";
+	}
+	
 	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
 	public String mMenu04_01(Model model) {
 		logger.info("mMenu04_01 GET");
@@ -516,6 +523,13 @@ public class MobileController {
 		logger.info("mMenu07_05 GET");
 		
 		return "mobile/mMenu07_05";
+	}
+	
+	@RequestMapping(value = "/menu07_06", method = RequestMethod.GET)
+	public String mMenu07_06(Model model) {
+		logger.info("mMenu07_06 GET");
+		
+		return "mobile/mMenu07_06";
 	}
 	
 	@RequestMapping(value = "/menu08_01", method = RequestMethod.GET)

@@ -482,7 +482,7 @@ keyframes fa-spin { 0%{
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(7)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(7) > .lnb-wrap > li:nth-child(4)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(7) > .lnb-wrap > li:nth-child(5)").addClass("active");
 });
 </script>
 </head>
@@ -511,7 +511,7 @@ $(function(){
 			<!--  닫기 [위치 : include_web_footer.html ]  -->
 
 			<!-- 서브 비주얼영역 시작  -->
-			<div id="sub-visual" data-menu="팻다운 주사">
+			<div id="sub-visual" data-menu="여유증 교정">
 				<div class="sub-visual-tit">
 
 				</div>
@@ -532,7 +532,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>팻다운 주사 ▼</button>
+							<button>여유증 교정 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu07_01">하모니 지방흡입</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu07_02">아큐주사</a></li>
@@ -547,42 +547,34 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode56901">
+			<div class="sub-contents pcode57001">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/569_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_01.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode57002">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_02.png" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents pcode57003">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_03.png" alt="">
 				</div>
 			</div>
 			
 			
-			<div class="sub-contents pcode56902">
+			<div class="sub-contents pcode57004">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/569_img_02.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_04.png" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode56903">
+			<div class="sub-contents pcode57005">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/569_img_03.png" alt="">
-				</div>
-			</div>
-			
-			
-			<div class="sub-contents pcode56904">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/569_img_04.png" alt="">
-				</div>
-			</div>
-			
-			<div class="sub-contents pcode56905">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/569_img_05.png" alt="">
-				</div>
-			</div>
-			
-			
-			<div class="sub-contents pcode56906">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/569_img_06.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_05.png" alt="">
 				</div>
 			</div>
 			
