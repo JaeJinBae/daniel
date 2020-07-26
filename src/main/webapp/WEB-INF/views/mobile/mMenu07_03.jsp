@@ -519,6 +519,7 @@ $(function(){
 								<li><a href="${pageContext.request.contextPath}/m/menu07_03">리포리바인</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu07_04">팻다운 주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu07_05">바디슈링크</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu07_06">여유증 교정</a></li>
 							</ul>
 						</li>
 					</ul>

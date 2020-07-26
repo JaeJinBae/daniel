@@ -183,6 +183,9 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 #sub-visual[data-menu="팻다운 주사"]{display:block; background:url(../../img/m/common/visual_bg0805.jpg) no-repeat center center; background-size:cover; height:600px;}
 #sub-visual[data-menu="바디슈링크"]{display:block; background:url(../../img/m/common/visual_bg0806.jpg) no-repeat center center; background-size:cover; height:600px;}
 
+#sub-visual[data-menu="성형 VIP 프로그램"]{display:block; background:url(../../img/m/common/visual_bg03_06.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="여유증 교정"]{display:block; background:url(../../img/m/common/visual_bg07_06.jpg) no-repeat center center; background-size:cover; height:600px;}
+
 @media (max-width:640px){
 	#sub-visual{background-size:100% !important; height:0 !important; padding-top:93%;}
 	#sub-visual[data-menu="의료진 소개"], #sub-visual[data-menu="진료시간/오시는길"], #sub-visual[data-menu="보유장비"], #sub-visual[data-sec="커뮤니티"]{padding-top:50%;}

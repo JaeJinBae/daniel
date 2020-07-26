@@ -545,18 +545,18 @@ $(function(){
 			4. map 사용시 usemap 또한 class명과 일치합니다.
 			
 			-->
-			<div class="sub-contents pCode-499-01">
-				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_01.png" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과" usemap="pCode-499-01"></div>
+			<div class="sub-contents">
+				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/01_01_img_01.jpg" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과"></div>
 			</div>
-			<div class="sub-contents pCode-499-02">
-				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="#pCode-499-02"></div>
+			<div class="sub-contents">
+				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/01_01_img_02.jpg" alt="프리미엄 오리지널 명품 레이저 보유"></div>
 			</div>
-			<div class="sub-contents pCode-499-03">
+			<%-- <div class="sub-contents pCode-499-03">
 				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="#pCode-499-03"></div>
 			</div>
 			<div class="sub-contents pCode-499-04">
 				<div class="full"><img src="${pageContext.request.contextPath}/resources/img/m/contents/499_img_04.png" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리" usemap="pCode-499-04"></div>
-			</div>
+			</div> --%>
 			
 			
 			<!-- 프리미엄 오리지널 명품 레이저 보유 맵 시작 -->

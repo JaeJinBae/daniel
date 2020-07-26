@@ -512,7 +512,7 @@ $(function(){
 							<jsp:include page="../include/mBreadCrumb.jsp"></jsp:include>
 						</li>
 						<li class="gnb">
-							<button>아큐주사 ▼</button>
+							<button>여유증 교정 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/m/menu07_01">하모니 지방흡입</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu07_02">아큐주사</a></li>
@@ -528,46 +528,31 @@ $(function(){
 			<!-- BreadCrumb 끝 -->
 			
 			<!-- 서브 비주얼영역 시작 (이전, 다음페이지로 이동) -->
-			<div id="sub-visual" data-sec="체형 클리닉" data-menu="아큐주사">
+			<div id="sub-visual" data-sec="체형 클리닉" data-menu="여유증 교정">
 				<div class="inner">
 			
 				</div>
 			</div>
 			<!-- 서브 비주얼영역 끝 -->
 			
-			<div class="sub-contents pCode-526-01">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/526_img_01.png" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과" usemap="pCode-526-01">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/07_06_img_01.jpg" alt="성형외과 &amp; 피부과 협진으로 최소 시술 최대 효과">
 				</div>
 			</div>
-			<div class="sub-contents pCode-526-02">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/526_img_02.png" alt="프리미엄 오리지널 명품 레이저 보유" usemap="pCode-526-02">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/07_06_img_02.jpg" alt="프리미엄 오리지널 명품 레이저 보유">
 				</div>
 			</div>
-			<div class="sub-contents pCode-526-03">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/526_img_03.png" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램" usemap="pCode-526-03">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/07_06_img_03.jpg" alt="오랜 임상 경험과 노하우를 통해 완성된 최적화 프로그램">
 				</div>
 			</div>
-			<div class="sub-contents pCode-526-04">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/526_img_04.png" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리" usemap="pCode-526-04">
-				</div>
-			</div>
-			<div class="sub-contents pCode-526-05">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/526_img_05.png" alt="" usemap="pCode-526-05">
-				</div>
-			</div>
-			<div class="sub-contents pCode-526-06">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/526_img_06.png" alt="" usemap="pCode-526-06">
-				</div>
-			</div>
-			<div class="sub-contents pCode-526-07">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/m/contents/526_img_07.png" alt="" usemap="pCode-526-07">
+					<img src="${pageContext.request.contextPath}/resources/img/m/contents/07_06_img_04.jpg" alt="주치의 &amp; 전담 관리사 &amp; 담당매니저의 집중 관리">
 				</div>
 			</div>
 			
