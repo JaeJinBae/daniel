@@ -482,7 +482,7 @@ keyframes fa-spin { 0%{
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(7)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(7) > .lnb-wrap > li:nth-child(5)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(7) > .lnb-wrap > li:nth-child(6)").addClass("active");
 });
 </script>
 </head>
@@ -547,34 +547,40 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode57001">
+			<div class="sub-contents">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/07_06_img_01.jpg" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode57002">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_02.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/07_06_img_02.jpg" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode57003">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/07_06_img_03.jpg" alt="">
 				</div>
 			</div>
 			
 			
-			<div class="sub-contents pcode57004">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_04.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/07_06_img_04.jpg" alt="">
 				</div>
 			</div>
 			
-			<div class="sub-contents pcode57005">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/570_img_05.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/07_06_img_05.jpg" alt="">
+				</div>
+			</div>
+			
+			<div class="sub-contents">
+				<div class="full">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/07_06_img_06.jpg" alt="">
 				</div>
 			</div>
 			

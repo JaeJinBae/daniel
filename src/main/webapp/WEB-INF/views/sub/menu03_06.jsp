@@ -482,7 +482,7 @@ keyframes fa-spin { 0%{
 <script>
 $(function(){
 	$("#header > #gnb > .inner > ul > li:nth-child(3)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(3) > .lnb-wrap > li:nth-child(5)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(3) > .lnb-wrap > li:nth-child(6)").addClass("active");
 });
 </script>
 </head>
@@ -547,43 +547,28 @@ $(function(){
 			</div>
 			<!-- BreadCrumb 끝 -->
 			
-			<div class="sub-contents pcode50801">
+			<div class="sub-contents">
 				<div class="inner">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_01.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/03_06_img_01.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50802">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_02.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/03_06_img_02.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50803">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_03.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/03_06_img_03.jpg" alt="">
 				</div>
 			</div>
-			<div class="sub-contents pcode50804">
+			<div class="sub-contents">
 				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_04.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50805">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_05.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50806">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_06.png" alt="">
-				</div>
-			</div>
-			<div class="sub-contents pcode50807">
-				<div class="full">
-					<img src="${pageContext.request.contextPath}/resources/img/contents/508_img_07.png" alt="">
+					<img src="${pageContext.request.contextPath}/resources/img/contents/03_06_img_04.jpg" alt="">
 				</div>
 			</div>
 			
-			<div id="caoution">
+			<%-- <div id="caoution">
 				<div class="inner">
 					
 					<div class="caoution-title">
@@ -622,7 +607,7 @@ $(function(){
 					</div>
 		
 				</div>
-			</div>
+			</div> --%>
 			
 		</section> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 	
