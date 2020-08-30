@@ -850,14 +850,6 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=52" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/main_event_slider_thumb20200609.jpg) no-repeat center top;">
-						<div class="slider-banner-info">
-							<i class="kinds">EVENT</i> 
-							<p class="cap">다니엘 6주년</p>
-							<h6 class="tit">다니엘 개원 6주년 이벤트</h6>
-							<a href="${pageContext.request.contextPath}/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=50" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
-						</div>
-					</li>
 					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1590975065204_다니엘-여름추천-이벤트-페이지-배너.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>

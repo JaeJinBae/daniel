@@ -7,7 +7,7 @@ public class Criteria9 {
 	public Criteria9() {
 		super();
 		this.page = 1;
-		this.perPageNum = 8;
+		this.perPageNum = 9;
 	}
 
 	public int getPage() {
