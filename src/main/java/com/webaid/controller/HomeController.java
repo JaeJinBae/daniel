@@ -783,6 +783,13 @@ public class HomeController {
 		return "sub/menu08_02";
 	}
 	
+	@RequestMapping(value = "/menu08_04", method = RequestMethod.GET)
+	public String menu08_04(Model model) {
+		logger.info("menu08_04 GET");
+		
+		return "sub/menu08_04";
+	}
+	
 	@RequestMapping(value = "/menu09_01", method = RequestMethod.GET)
 	public String menu09_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu09_01 GET");
