@@ -349,13 +349,13 @@ $(function(){
 		}
 	</script>
 	
-	<div id="popup_layer_15" class="popup-wrap-box ui-draggable ui-draggable-handle">
+	<%-- <div id="popup_layer_15" class="popup-wrap-box ui-draggable ui-draggable-handle">
 	
 		<!-- 레이어 팝업 시작 -->
 		<div id="pop-wrap">
 			<div class="pop-inner">
 				<div class="pop-container">
-					<div><a href="http://www.danielps.co.kr/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=52"><img alt="" src="${pageContext.request.contextPath}/resources/uploadEvent/0d1fb6ac-d4d4-4910-9afa-3cba267cfb5d_[다니엘성형외과]여름방학이벤트_피부부문(최종).jpg"></a></div>
+					<div><a href="http://www.danielps.co.kr"><img alt="" src="${pageContext.request.contextPath}/resources/img/main/popup_20200920.jpg"></a></div>
 				</div>
 				<div class="pop-controller">
 					<label>
@@ -415,8 +415,9 @@ $(function(){
 				}
 			});
 		</script>
-	</div>
+	</div> --%>
 	
+	<%-- 
 	<div id="popup_layer_14" class="popup-wrap-box ui-draggable ui-draggable-handle">
 	
 		<!-- 레이어 팝업 시작 -->
@@ -483,5 +484,5 @@ $(function(){
 				}
 			});
 		</script>
-	</div>
+	</div> --%>
 </a>

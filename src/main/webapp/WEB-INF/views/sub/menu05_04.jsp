@@ -481,8 +481,8 @@ keyframes fa-spin { 0%{
 </style>
 <script>
 $(function(){
-	$("#header > #gnb > .inner > ul > li:nth-child(5)").addClass("active");
-	$("#header > #gnb > .inner > ul > li:nth-child(5) > .lnb-wrap > li:nth-child(5)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(8)").addClass("active");
+	$("#header > #gnb > .inner > ul > li:nth-child(8) > .lnb-wrap > li:nth-child(3)").addClass("active");
 });
 </script>
 </head>
@@ -526,7 +526,7 @@ $(function(){
 							<a href="${pageContext.request.contextPath}/" title="메인페이지로 이동"></a>
 						</li>
 						<li class="gnb">
-							<button>리프팅 클리닉 ▼</button>
+							<button>메디컬스킨케어 ▼</button>
 							<ul>
 								<jsp:include page="../include/pcBreadCrumb.jsp"></jsp:include>				
 							</ul>
@@ -534,12 +534,10 @@ $(function(){
 						<li class="gnb">
 							<button>필로가135주사 ▼</button>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/menu05_06">울쎄라</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_01">써마지FLX</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_02">코레지 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_03">슈링크 리프팅</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu08_01">메디컬스킨케어</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu08_02">두피탈모</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu05_04">필로가135주사</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_05">리프팅 레이저</a></li>
+								<li><a href="${pageContext.request.contextPath}/menu08_04">스킨부스터</a></li>
 							</ul>
 						</li>
 					</ul>

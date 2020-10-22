@@ -135,6 +135,7 @@ html, body{}
 
 #sub-visual[data-menu="메디컬스킨케어"]{height:630px; background:url(../img/common/visual_bg0501.jpg) no-repeat center center;}
 #sub-visual[data-menu="두피탈모"]{height:630px; background:url(../img/common/visual_bg0502.jpg) no-repeat center center;}
+#sub-visual[data-menu="스킨부스터"]{height:630px; background:url(../img/common/visual_bg0503.png) no-repeat center center;}
 
 #sub-visual[data-menu="멜로디 눈성형"]{height:630px; background:url(../img/common/visual_bg0601.jpg) no-repeat center center;}
 #sub-visual[data-menu="눈매교정"]{height:630px; background:url(../img/common/visual_bg0602.jpg) no-repeat center center;}

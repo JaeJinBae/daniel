@@ -537,7 +537,6 @@ $(function(){
 								<li><a href="${pageContext.request.contextPath}/menu05_01">써마지FLX</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu05_02">코레지 리프팅</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu05_03">슈링크 리프팅</a></li>
-								<li><a href="${pageContext.request.contextPath}/menu05_04">필로가135주사</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu05_05">리프팅 레이저</a></li>
 							</ul>
 						</li>

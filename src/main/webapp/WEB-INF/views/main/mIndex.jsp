@@ -673,7 +673,15 @@ $(function(){
 				<!-- 비주얼 타이틀 끝 -->
 				<!-- 슬라이드 배너 시작 -->
 				<ul class="slider-banner">
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/20200711_event.jpg) no-repeat center top;">
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1599662821426_event20200909_thumb.jpg) no-repeat center top;">
+						<div class="slider-banner-info">
+							<i class="kinds">EVENT</i>
+							<p class="cap">리쥬란 힐러</p>
+							<h6 class="tit">리쥬란 힐러 도입!</h6>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=56" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+						</div>
+					</li>
+					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/img/main/20200711_event.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i> 
 							<p class="cap">여름방학</p>
@@ -688,13 +696,13 @@ $(function(){
 							<h6 class="tit">여름방학 이벤트 [피부]</h6>
 							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=52" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
-					</li>
-					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1590975065204_다니엘-여름추천-이벤트-페이지-배너.jpg) no-repeat center top;">
+					</li> --%>
+					<li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1598927752454_event20200901_thumb.jpg) no-repeat center top;">
 						<div class="slider-banner-info">
 							<i class="kinds">EVENT</i>
-							<p class="cap">Summer</p>
+							<p class="cap">Autumn</p>
 							<h6 class="tit">다니엘이 추천하는 상품</h6>
-							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=49" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
+							<a href="${pageContext.request.contextPath}/m/menu09_06read?page=1&perPageNum=12&searchType&keyword&no=55" class="more" title="자세히 보기" data-slick-inner="5">자세히</a>
 						</div>
 					</li>
 					<%-- <li class="item" style="background:url(${pageContext.request.contextPath}/resources/uploadEvent/1585558871642_eventThumb.jpg) no-repeat center top;">

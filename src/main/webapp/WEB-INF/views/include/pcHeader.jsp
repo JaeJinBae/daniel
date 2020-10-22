@@ -62,7 +62,6 @@
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_01" data-text="써마지FLX"><span>써마지FLX</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_02" data-text="코레지 리프팅"><span>코레지 리프팅</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_03" data-text="슈링크 리프팅"><span>슈링크 리프팅</span></a></li>
-					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_04" data-text="필로가135주사"><span>필로가135주사</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_05" data-text="리프팅 레이저"><span>리프팅 레이저</span></a></li>
 				</ul>
 			</li>
@@ -91,6 +90,8 @@
 				<ul class="lnb-wrap">
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu08_01" data-text="메디컬스킨케어"><span>메디컬스킨케어</span></a></li>
 					<li class="lnb "><a href="${pageContext.request.contextPath}/menu08_02" data-text="두피탈모"><span>두피탈모</span></a></li>
+					<li class="lnb "><a href="${pageContext.request.contextPath}/menu05_04" data-text="필로가135주사"><span>필로가135주사</span></a></li>
+					<li class="lnb "><a href="${pageContext.request.contextPath}/menu08_04" data-text="스킨부스터"><span>스킨부스터</span></a></li>
 				</ul>
 			</li>
 			<li class="gnb ">
