@@ -149,7 +149,6 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 #sub-visual[data-menu="광채 지방이식"]{display:block; background:url(../../img/m/common/visual_bg0205.jpg) no-repeat center center; background-size:cover; height:600px;}
 #sub-visual[data-menu="상안검/하안검"]{display:block; background:url(../../img/m/common/visual_bg0206.jpg) no-repeat center center; background-size:cover; height:600px;}
 #sub-visual[data-menu="슈링크 리프팅"]{display:block; background:url(../../img/m/common/visual_bg0207.jpg) no-repeat center center; background-size:cover; height:600px;}
-#sub-visual[data-menu="필로가135주사"]{display:block; background:url(../../img/m/common/visual_bg0208.jpg) no-repeat center center; background-size:cover; height:600px;}
 #sub-visual[data-menu="코레지 리프팅"]{display:block; background:url(../../img/m/common/visual_bg0209.jpg) no-repeat center center; background-size:cover; height:600px;}
 #sub-visual[data-menu="써마지FLX"]{display:block; background:url(../../img/m/common/visual_bg0210.jpg) no-repeat center center; background-size:cover; height:600px;}
 #sub-visual[data-menu="울쎄라"]{display:block; background:url(../../img/m/common/visual_bg0211.jpg) no-repeat center center; background-size:cover; height:600px;}
@@ -165,6 +164,9 @@ body{background:#000;} /* header position이 fixed되어 header height값만큼 
 #sub-visual[data-menu="웨딩패키지"]{background:url(../../img/m/common/visual_bg0407.jpg) no-repeat center center; background-size:cover; height:600px;}
 
 #sub-visual[data-menu="두피탈모"]{background:url(../../img/m/common/visual_bg0502.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="필로가135주사"]{display:block; background:url(../../img/m/common/visual_bg0208.jpg) no-repeat center center; background-size:cover; height:600px;}
+#sub-visual[data-menu="다니엘스킨부스터"]{display:block; background:url(../../img/m/common/visual_bg0503.png) no-repeat center center; background-size:cover; height:600px;}
+
 
 #sub-visual[data-menu="멜로디 눈성형"]{display:block; background:url(../../img/m/common/visual_bg0601.jpg) no-repeat center center; background-size:cover; height:600px;}
 #sub-visual[data-menu="눈매교정"]{display:block; background:url(../../img/m/common/visual_bg0602.jpg) no-repeat center center; background-size:cover; height:600px;}

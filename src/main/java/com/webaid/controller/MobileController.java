@@ -546,6 +546,14 @@ public class MobileController {
 		return "mobile/mMenu08_02";
 	}
 	
+	@RequestMapping(value = "/menu08_04", method = RequestMethod.GET)
+	public String mMenu08_04(Model model) {
+		logger.info("mMenu08_04 GET");
+		
+		return "mobile/mMenu08_04";
+	}
+	
+	
 	@RequestMapping(value = "/menu09_01", method = RequestMethod.GET)
 	public String mMenu09_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("mMenu09_01 GET");

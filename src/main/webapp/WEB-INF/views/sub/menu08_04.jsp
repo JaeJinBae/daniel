@@ -532,7 +532,7 @@ $(function(){
 							</ul>
 						</li>
 						<li class="gnb">
-							<button>스킨부스터 ▼</button>
+							<button>다니엘스킨부스터 ▼</button>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/menu08_01">메디컬스킨케어</a></li>
 								<li><a href="${pageContext.request.contextPath}/menu08_02">두피탈모</a></li>

@@ -516,6 +516,8 @@ $(function(){
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/m/menu08_01">메디컬스킨케어</a></li>
 								<li><a href="${pageContext.request.contextPath}/m/menu08_02">두피탈모</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu05_04">필로가135주사</a></li>
+								<li><a href="${pageContext.request.contextPath}/m/menu08_04">다니엘스킨부스터</a></li>
 							</ul>
 						</li>
 					</ul>
